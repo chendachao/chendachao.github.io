@@ -1,0 +1,23 @@
+{
+  "name": "chendachao.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "publish": "node scripts/publish.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chendachao/chendachao.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chendachao/chendachao.github.io/issues"
+  },
+  "homepage": "https://github.com/chendachao/chendachao.github.io#readme",
+  "devDependencies": {
+    "gh-pages": "^0.12.0"
+  }
+}

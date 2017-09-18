@@ -1,4 +1,4 @@
-var rollup = require('rollup');
+var rollup = require('tutorial/rollup');
 var babel = require('rollup-plugin-babel');
 
 rollup.rollup({

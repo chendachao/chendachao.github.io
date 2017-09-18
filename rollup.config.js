@@ -6,6 +6,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 import postcss from 'rollup-plugin-postcss';
+// import babelrc from 'babelrc-rollup';
 import json from 'rollup-plugin-json';
 
 const production = process.env.npm_lifecycle_event === 'build';

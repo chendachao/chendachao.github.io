@@ -20,7 +20,7 @@ import cssnano from 'cssnano';
 export default {
   entry: 'src/scripts/main.js',
   dest: 'build/js/main.min.js',
-  format: 'umd',
+  format: 'iife',
   sourceMap: 'inline',
   plugins: [
     json(),

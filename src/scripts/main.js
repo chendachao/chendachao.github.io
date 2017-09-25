@@ -1,3 +1,7 @@
+// Import styles (automatically injected into <head>).
+import '../styles/main.css';
+
+
 // Import a couple modules for testing.
 import { sayHelloTo } from './modules/mod1';
 import addArray from './modules/mod2';
@@ -6,9 +10,14 @@ import addArray from './modules/mod2';
 import debug from 'debug';
 const log = debug('app:log');
 
-// Enable the logger.
-debug.enable('*');
-log('Logging is enabled!');
+
+if (ENV !== 'production') {
+  // Enable the logger.
+  debug.enable('*');
+  log('Logging is enabled!');
+} else {
+  debug.disable();
+}
 
 // Run some functions from our imported modules.
 const result1 = sayHelloTo('Jason');

@@ -4,18 +4,36 @@
     <title>Chen Dachao</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="base.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 </head>
 
 <body>
-  hello
+  hello world
   <script>
-    debugger
-    if ('servivceWorker' in navigator) {
+    if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         navigator.serviceWorker.register('/sw.js').then(function(registration) {
           // Registration was successful
           console.log('ServiceWorker registration successful with scope: ', registration.scope);
+
+          // Notification.requestPermission().then(function(permission) {
+          //   console.log('permission', permission);
+          //   // if (permission === 'granted') {
+          //   //   const options = {
+          //   //     "body": "Did you make a $1,000,000 purchase at Dr. Evil...",
+          //   //     "icon": "images/icon-192x192.png",
+          //   //     "vibrate": [200, 100, 200, 100, 200, 100, 400],
+          //   //     "tag": "request",
+          //   //     "actions": [
+          //   //       { "action": "yes", "title": "Yes", "icon": "images/icon-192x192.png" },
+          //   //       { "action": "no", "title": "No", "icon": "images/icon-192x192.png" }
+          //   //     ]
+          //   //   };
+          //   //   registration.showNotification('title', options);
+          //   // }
+          // });
+
         }, function(err) {
           // registration failed :(
           console.log('ServiceWorker registration failed: ', err);
@@ -23,6 +41,7 @@
       });
     }
   </script>
+  <script src="./script/main.js"></script>
 </body>
 
 </html>

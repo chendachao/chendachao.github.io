@@ -3,8 +3,10 @@
 
 ## Resources
 
-- [service-worker](https://developers.google.com/web/fundamentals/primers/service-workers)
+- [service worker introduction](https://developers.google.com/web/fundamentals/primers/service-workers)
 
 - [learn-rollup](https://github.com/jlengstorf/learn-rollup/blob/master/README.md)
+
+- [resources](https://jakearchibald.github.io/isserviceworkerready/resources.html)
 
 

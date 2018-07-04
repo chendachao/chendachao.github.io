@@ -1,8 +1,11 @@
 
-var CACHE_NAME = `chendachao_site_cache_v3`;
+var CACHE_NAME = `chendachao_site_cache_v4`;
 var urlsToCache = [
   '/',
+  '/reg-update-sw.js',
+  '/update.js',
   '/favicon.ico',
+  '/images/dog.png',
   '/styles/main.css',
   '/script/main.js'
 ];
@@ -10,6 +13,7 @@ var urlsToCache = [
 self.addEventListener('install', function (event) {
   // Perform install steps
   console.log('install');
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME)
     .then(function (cache) {
@@ -19,6 +23,41 @@ self.addEventListener('install', function (event) {
   )
 });
 
+self.addEventListener('activate', function(event) {
+  console.log('activate now ready to handle fetches!');
+  var cacheWhiteList = [CACHE_NAME];
+
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (!cacheWhiteList.includes(cacheName)) {
+            return caches.delete(cacheName);
+          }
+        })
+      )
+    }).then(() => {
+      console.log('now ready to handle fetches!');
+    })
+  )
+});
+
+// self.addEventListener('fetch', function(event) {
+//   console.log('The service worker is serving the asset.');
+
+//   // cache first and then network
+//   if (event.request.url.includes(location.origin)) {
+//     event.respondWith(fromCache(event.request.clone()));
+
+//     event.waitUntil(
+//       update(event.request.clone())
+//       .then(refresh)
+//     );
+//   }
+
+// });
+
+// cache first, if no cache then network
 self.addEventListener('fetch', function (event) {
   console.log('fetch', event.request.url);
   event.respondWith(
@@ -57,24 +96,9 @@ self.addEventListener('fetch', function (event) {
         }
       );
     })
-  )
-});
+  );
 
-
-self.addEventListener('activate', function(event) {
-  var cacheWhiteList = [CACHE_NAME];
-
-  event.waitUntil(
-    caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames.map(function(cacheName) {
-          if (cacheWhiteList.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        })
-      )
-    })
-  )
+  return self.clients.claim();
 });
 
 self.addEventListener('push', function(event) {
@@ -100,19 +124,56 @@ self.addEventListener('notificationclick', function(event) {
   // See: http://crbug.com/463146
   event.notification.close();
 
-  // This looks to see if the current is already open and
-  // focuses if it is
-  event.waitUntil(clients.matchAll({
-    type: 'window'
-  }).then(function(clientList) {
-    for (var i = 0; i < clientList.length; i++) {
-      var client = clientList[i];
-      if (client.url === '/' && ('focus' in client)) {
-        return client.focus();
-      }
-    }
-    if (clients.openWindow) {
-      return clients.openWindow('/');
-    }
-  }));
+  // // This looks to see if the current is already open and
+  // // focuses if it is
+  // event.waitUntil(clients.matchAll({
+  //   type: 'window'
+  // }).then(function(clientList) {
+  //   for (var i = 0; i < clientList.length; i++) {
+  //     var client = clientList[i];
+  //     if (client.url === '/' && ('focus' in client)) {
+  //       return client.focus();
+  //     }
+  //   }
+  //   if (clients.openWindow) {
+  //     return clients.openWindow('/');
+  //   }
+  // }));
 });
+
+self.addEventListener('notificationclose', function(event) {
+  console.log('on notificationclose');
+});
+
+
+function fromCache(request) {
+  return caches.open(CACHE_NAME).then(function (cache) {
+      console.log('cache match', request.url);
+      return cache.match(request);
+    });
+}
+
+function update(request) {
+  return caches.open(CACHE_NAME).then(function (cache) {
+    return fetch(request).then(function (response) {
+      return cache.put(request, response.clone()).then(function () {
+        return response;
+      });
+    });
+  });
+}
+
+function refresh(response) {
+  return self.clients.matchAll().then(function(clients) {
+    clients.forEach(function(client) {
+
+      var message = {
+        type: 'refresh',
+        url: response.url,
+        eTag: response.headers.get('ETag')
+      };
+
+      client.postMessage(JSON.stringify(message));
+    })
+  });
+}

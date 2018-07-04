@@ -9,38 +9,11 @@
 </head>
 
 <body>
-  hello world 123
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
-          // Registration was successful
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-
-          // Notification.requestPermission().then(function(permission) {
-          //   console.log('permission', permission);
-          //   // if (permission === 'granted') {
-          //   //   const options = {
-          //   //     "body": "Did you make a $1,000,000 purchase at Dr. Evil...",
-          //   //     "icon": "images/icon-192x192.png",
-          //   //     "vibrate": [200, 100, 200, 100, 200, 100, 400],
-          //   //     "tag": "request",
-          //   //     "actions": [
-          //   //       { "action": "yes", "title": "Yes", "icon": "images/icon-192x192.png" },
-          //   //       { "action": "no", "title": "No", "icon": "images/icon-192x192.png" }
-          //   //     ]
-          //   //   };
-          //   //   registration.showNotification('title', options);
-          //   // }
-          // });
-
-        }, function(err) {
-          // registration failed :(
-          console.log('ServiceWorker registration failed: ', err);
-        });
-      });
-    }
-  </script>
+  <button id="refersh">Refresh</button>
+  <hr>
+  hello world 
+  <!-- <script src="./reg-update-sw.js"></script> -->
+  <script src="./update.js"></script>
   <script src="./script/main.js"></script>
 </body>
 

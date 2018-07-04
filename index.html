@@ -1,1 +1,28 @@
-hello world
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Chen Dachao</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+</head>
+
+<body>
+  hello
+  <script>
+    debugger
+    if ('servivceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>

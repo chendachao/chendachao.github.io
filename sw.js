@@ -1,5 +1,5 @@
 
-var CACHE_NAME = `chendachao_site_cache_v21`;
+var CACHE_NAME = `chendachao_site_cache_v23`;
 var cacheWhiteList = [CACHE_NAME];
 var urlsToCache = [
   '/',
@@ -8,6 +8,8 @@ var urlsToCache = [
   '/images/maria.png',
   '/styles/main.css',
   '/script/main.js',
+  'https://fonts.googleapis.com/icon?family=Material+Icons',
+  'https://fonts.gstatic.com/s/materialicons/v38/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2',
   'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css',
   'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js'
 ];

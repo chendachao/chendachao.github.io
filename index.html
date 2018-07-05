@@ -3,17 +3,33 @@
 <head>
     <title>Chen Dachao</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="base.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
-  <button id="refersh">Refresh</button>
+
+    <!-- <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">update</i></a>
+    <a class="waves-effect waves-light btn"><i class="material-icons left">update</i>button</a>
+    <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+    <a class="waves-effect waves-light btn">button</a> -->
+
+  <!-- The actual snackbar -->
+  <div id="snackbar">A new version of this app is available. Click <a id="reload"><i class="tiny material-icons">system_update_alt</i> here</a> to update.</div>
+
+  <a id="update" class="waves-effect waves-light btn"><i class="material-icons left">update</i>Check update</a>
   <hr>
-  hello world 
+  hello world 145
+
   <!-- <script src="./reg-update-sw.js"></script> -->
-  <script src="./update.js"></script>
+  <script src="./control.js"></script>
   <script src="./script/main.js"></script>
 </body>
 

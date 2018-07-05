@@ -1,19 +1,21 @@
 
-var CACHE_NAME = `chendachao_site_cache_v4`;
+var CACHE_NAME = `chendachao_site_cache_v21`;
+var cacheWhiteList = [CACHE_NAME];
 var urlsToCache = [
   '/',
-  '/reg-update-sw.js',
-  '/update.js',
+  '/control.js',
   '/favicon.ico',
-  '/images/dog.png',
+  '/images/maria.png',
   '/styles/main.css',
-  '/script/main.js'
+  '/script/main.js',
+  'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css',
+  'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js'
 ];
 
 self.addEventListener('install', function (event) {
   // Perform install steps
   console.log('install');
-  self.skipWaiting();
+  // self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME)
     .then(function (cache) {
@@ -23,9 +25,15 @@ self.addEventListener('install', function (event) {
   )
 });
 
+self.addEventListener('message', function (event) {
+  if (event.data.action === 'skipWaiting') {
+    console.log('Inside Service Worker', event.data.action);
+    self.skipWaiting();
+  }
+});
+
 self.addEventListener('activate', function(event) {
   console.log('activate now ready to handle fetches!');
-  var cacheWhiteList = [CACHE_NAME];
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
@@ -101,6 +109,13 @@ self.addEventListener('fetch', function (event) {
   return self.clients.claim();
 });
 
+self.addEventListener('sync', function(event) {
+  if (event.tag === 'removeCache') {
+    event.waitUntil(removeCache());
+    self.registration.showNotification('cache removed.');
+  }
+});
+
 self.addEventListener('push', function(event) {
   console.log('Received a push message', event);
 
@@ -145,6 +160,22 @@ self.addEventListener('notificationclose', function(event) {
   console.log('on notificationclose');
 });
 
+function removeCache() {
+  console.log('[sync] removeCache');
+
+  return caches.keys().then(function(cacheNames) {
+    return Promise.all(
+      cacheNames.map(function(cacheName) {
+        if (!cacheWhiteList.includes(cacheName)) {
+          return caches.delete(cacheName);
+        }
+      })
+    )
+  }).then(() => {
+    console.log('now ready to handle fetches!');
+  });
+}
+
 
 function fromCache(request) {
   return caches.open(CACHE_NAME).then(function (cache) {
@@ -177,3 +208,4 @@ function refresh(response) {
     })
   });
 }
+

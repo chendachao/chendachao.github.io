@@ -1,17 +1,22 @@
 
-var CACHE_NAME = `chendachao_site_cache_v23`;
+var CACHE_NAME = `chendachao_site_cache_v25`;
 var cacheWhiteList = [CACHE_NAME];
 var urlsToCache = [
   '/',
   '/control.js',
   '/favicon.ico',
   '/images/maria.png',
+  '/styles/base.css',
   '/styles/main.css',
   '/script/main.js',
-  'https://fonts.googleapis.com/icon?family=Material+Icons',
-  'https://fonts.gstatic.com/s/materialicons/v38/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2',
-  'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css',
-  'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js'
+  '/styles/fonts/font-icon.css',
+  '/styles/fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2',
+  '/styles/materialize.min.css',
+  '/libs/materialize.min.js',
+  // 'https://fonts.googleapis.com/icon?family=Material+Icons',
+  // 'https://fonts.gstatic.com/s/materialicons/v38/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2',
+  // 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css',
+  // 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js'
 ];
 
 self.addEventListener('install', function (event) {

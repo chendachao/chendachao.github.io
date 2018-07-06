@@ -1,5 +1,5 @@
 
-var CACHE_NAME = `chendachao_site_cache_v25`;
+var CACHE_NAME = `chendachao_site_cache_v28`;
 var cacheWhiteList = [CACHE_NAME];
 var urlsToCache = [
   '/',

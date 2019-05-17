@@ -1,0 +1,57 @@
+{
+  "name": "chendachao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server -d --env development",
+    "start:prod": "http-server -c-1 dist",
+    "build": "webpack --env production",
+    "watch": "npm run build -- --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "9.5.1",
+    "@babel/core": "7.3.4",
+    "@babel/plugin-syntax-dynamic-import": "7.2.0",
+    "@babel/preset-env": "7.3.4",
+    "babel-loader": "8.0.6",
+    "clean-webpack-plugin": "2.0.2",
+    "css-loader": "2.1.1",
+    "dotenv": "6.0.0",
+    "error-overlay-webpack-plugin": "0.1.5",
+    "file-loader": "3.0.1",
+    "glob-all": "3.1.0",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "http-server": "0.11.1",
+    "img-loader": "3.0.1",
+    "mini-css-extract-plugin": "0.6.0",
+    "postcss-loader": "3.0.0",
+    "purify-css": "1.2.5",
+    "purifycss-webpack": "0.7.0",
+    "style-loader": "0.23.1",
+    "stylelint": "10.0.1",
+    "url-loader": "1.1.2",
+    "webpack": "4.12.1",
+    "webpack-cli": "3.0.8",
+    "webpack-dev-server": "3.1.4",
+    "webpack-merge": "4.2.1",
+    "webpack-notifier": "1.6.0",
+    "workbox-webpack-plugin": "4.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/chendachao/chendachao.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/chendachao/chendachao.github.io/issues"
+  },
+  "homepage": "https://gitlab.com/chendachao/chendachao.github.io#README",
+  "dependencies": {
+    "lodash": "4.17.11",
+    "popper.js": "^1.15.0"
+  }
+}

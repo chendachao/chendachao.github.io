@@ -1,13 +1,6 @@
 import './app/main.css';
 
-import {hideWechatCode, displayWechatCode} from './app/main.js'
-
-const ref = document.querySelector('#wechat-handler');
-const popup = document.querySelector('#wechat-popup');
-
-ref.onmouseenter = displayWechatCode(ref, popup);
-ref.onmouseout = hideWechatCode(popup);
-hideWechatCode(popup)();
+import './app/main.js';
 
 
 if ('serviceWorker' in navigator) {

@@ -1,6 +1,6 @@
 require('dotenv').config();
-const webpack = require("webpack");
-const path = require("path");
+const webpack = require('webpack');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
@@ -60,10 +60,8 @@ const productionConfig = merge([
   }),
   parts.purifyCSS({
     paths: glob.sync([
-      path.join(__dirname, 'src/app/**/*.js'),
-      path.join(__dirname, 'src/app/**/*.css'),
-      path.join(__dirname, 'src/app/**/*.html')
-    ])
+      path.join(__dirname, 'src/**/*'),
+    ], { nodir: true })
   }),
   parts.loadImages({
     options: {
@@ -76,16 +74,16 @@ const productionConfig = merge([
 const developmentConfig = merge([
   {
     plugins: [
-      new ErrorOverlayPlugin(),
+      // new ErrorOverlayPlugin(),
       // Ignore node_modules so CPU usage with poll
       // watching drops significantly.
       new webpack.WatchIgnorePlugin([
-        path.join(__dirname, "node_modules")
+        path.join(__dirname, 'node_modules')
       ]),
       new WebpackNotifierPlugin({
         title: 'Webpack'
       }),
-      
+    
     ]
   },
   parts.devServer({
@@ -101,9 +99,9 @@ const developmentConfig = merge([
 
 module.exports = mode => {
   if (mode === 'production') {
-    return merge(commonConfig, productionConfig, { mode });
+    return merge(commonConfig, productionConfig, {mode});
   }
-
-  return merge(commonConfig, developmentConfig, { mode });
+  
+  return merge(commonConfig, developmentConfig, {mode});
 };
 

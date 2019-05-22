@@ -144,3 +144,38 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
     ]
   }
 });
+
+
+
+exports.loadFonts = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        // Match woff2 in addition to patterns like .woff?v=1.1.1.
+        test: /\.(eot|ttf|woff|woff2|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        include,
+        exclude,
+        use: [
+          // {
+          //   loader: 'url-loader',
+          //   options: {
+          //     // Limit at 50k. Above that it emits separate files
+          //     // limit: 50000,
+          
+          //     // url-loader sets mimetype if it's passed.
+          //     // Without this it derives it from the file extension
+          //     // mimetype: 'application/font-woff',
+          
+          //     name: './fonts/[name].[ext]'
+          //   }
+          // },
+          {
+            loader: 'file-loader',
+            options
+          }
+        ]
+      }
+    ]
+  }
+});
+

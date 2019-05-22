@@ -39,7 +39,12 @@ const commonConfig = merge([
         skipWaiting: true
       })
     ]
-  }
+  },
+  parts.loadFonts({
+    options: {
+      name: './fonts/[name].[ext]'
+    }
+  })
 ]);
 
 

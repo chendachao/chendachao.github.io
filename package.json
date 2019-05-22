@@ -52,6 +52,7 @@
   },
   "homepage": "https://gitlab.com/chendachao/chendachao.github.io#README",
   "dependencies": {
+    "font-awesome": "4.7.0",
     "lodash-es": "4.17.11",
     "popper.js": "1.15.0",
     "tippy.js": "4.3.1"

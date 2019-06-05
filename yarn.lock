@@ -5063,7 +5063,7 @@ pkg-up@2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-popper.js@1.15.0, popper.js@^1.14.7:
+popper.js@^1.14.7:
   version "1.15.0"
   resolved "https://registry.npm.taobao.org/popper.js/download/popper.js-1.15.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpopper.js%2Fdownload%2Fpopper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
   integrity sha1-VWC5m7rXZH6fqkdca4BWYh9aT/I=

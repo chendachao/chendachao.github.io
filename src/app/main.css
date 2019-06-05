@@ -15,6 +15,10 @@ body {
   margin: 0;
 }
 
+.scale-3x {
+  transform: scale(3);
+}
+
 .circle {
   border-radius: 100%;
   background: green;
@@ -69,6 +73,7 @@ body {
 
 .wechat-qrcode {
   width: calc(2em + 15vw);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .fa {

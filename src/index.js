@@ -1,7 +1,5 @@
 import './app/main.css';
-
 import './app/main.js';
-
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {

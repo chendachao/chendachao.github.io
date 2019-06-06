@@ -1,13 +1,11 @@
 {
   "name": "chendachao",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server -d --env development",
-    "start:prod": "http-server -c-1 dist",
     "build": "webpack --env production",
-    "watch": "npm run build -- --watch",
     "publish": "node scripts/publish.js"
   },
   "devDependencies": {
@@ -25,7 +23,6 @@
     "glob-all": "3.1.0",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
-    "http-server": "0.11.1",
     "img-loader": "3.0.1",
     "mini-css-extract-plugin": "0.6.0",
     "postcss-loader": "3.0.0",

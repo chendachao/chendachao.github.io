@@ -6,6 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const merge = require('webpack-merge');
 const glob = require('glob-all');
 
@@ -49,6 +50,11 @@ const commonConfig = merge([
 
 
 const productionConfig = merge([
+  {
+    plugins: [
+      new CompressionPlugin()
+    ]
+  },
   parts.loadJavaScript({
     include: PATHS.app,
     exclude(path) {
@@ -60,13 +66,13 @@ const productionConfig = merge([
       minimize: true
     }
   }),
-  parts.extractCSS({
-    use: ['css-loader', parts.autoprefix()]
-  }),
   parts.purifyCSS({
     paths: glob.sync([
       path.join(__dirname, 'src/**/*'),
     ], { nodir: true })
+  }),
+  parts.extractCSS({
+    use: ['css-loader', parts.autoprefix()]
   }),
   parts.loadImages({
     options: {
@@ -98,7 +104,10 @@ const developmentConfig = merge([
   }),
   parts.loadHTML(),
   parts.loadJavaScript(),
-  parts.loadCSS(),
+  // parts.loadCSS(),
+  parts.extractCSS({
+    use: ['css-loader', parts.autoprefix()]
+  }),
   parts.loadImages(),
 ]);
 

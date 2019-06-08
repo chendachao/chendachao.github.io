@@ -97,7 +97,14 @@ exports.extractCSS = ({include, exclude, use = []}) => {
           include,
           exclude,
           use: [
-            MiniCssExtractPlugin.loader
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: process.env.NODE_ENV === 'development',
+                reloadAll: true,
+                minimize: true,
+              },
+            },
           ].concat(use)
         }
       ]

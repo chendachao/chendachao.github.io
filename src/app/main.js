@@ -1,9 +1,13 @@
-
 import tippy from 'tippy.js';
 
 const template = document.getElementById('wechat-popup');
 const container = document.createElement('div');
-container.appendChild(document.importNode(template.content, true));
+
+if (Detectizr.browser.name === 'ie') {
+  container.appendChild(template);
+} else {
+  container.appendChild(document.importNode(template.content, true));
+}
 
 function handleScale(event) {
   this.classList.toggle('scale-3x');
@@ -30,8 +34,3 @@ tippy('#wechat', {
     qrcode.removeEventListener('click', handleScale);
   }
 });
-
-
-
-
-

@@ -28,6 +28,11 @@ const commonConfig = merge([
       // filename: '[name].bundle.js',
       path: PATHS.build
     },
+    resolve: {
+      extensions: [".ts", ".js"],
+      symlinks: false,
+      modules: ["modernizr", 'detectizr', path.resolve('node_modules')],
+    },
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({

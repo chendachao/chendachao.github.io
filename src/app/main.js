@@ -1,16 +1,18 @@
 import tippy from 'tippy.js';
+import Bowser from 'bowser';
 
+const browser = Bowser.getParser(window.navigator.userAgent);
 const template = document.getElementById('wechat-popup');
 const container = document.createElement('div');
 
-if (Detectizr.browser.name === 'ie') {
+if (browser.getBrowserName() === 'Internet Explorer') {
   container.appendChild(template);
 } else {
   container.appendChild(document.importNode(template.content, true));
 }
 
 function handleScale(event) {
-  this.classList.toggle('scale-3x');
+  this.classList.toggle('scale');
 };
 
 tippy('#wechat', {
@@ -30,7 +32,7 @@ tippy('#wechat', {
   onHide: (instance) => {
     const content = instance.popperChildren.content
     const qrcode = content.querySelector('.wechat-qrcode');
-    qrcode.classList.remove('scale-3x');
+    qrcode.classList.remove('scale');
     qrcode.removeEventListener('click', handleScale);
   }
 });

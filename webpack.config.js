@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const merge = require('webpack-merge');
 const glob = require('glob-all');
@@ -30,19 +30,19 @@ const commonConfig = merge([
     },
     resolve: {
       extensions: [".ts", ".js"],
-      symlinks: false,
-      modules: ["modernizr", 'detectizr', path.resolve('node_modules')],
+      symlinks: false
     },
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: 'src/index.html',
       }),
-      new WorkboxPlugin.GenerateSW({
+      new GenerateSW({
         // these options encourage the ServiceWorkers to get in there fast
         // and not allow any straggling "old" SWs to hang around
         clientsClaim: true,
-        skipWaiting: true
+        skipWaiting: true,
+        importWorkboxFrom: 'local',
       })
     ]
   },

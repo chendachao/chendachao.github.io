@@ -5,8 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
-const { GenerateSW } = require('workbox-webpack-plugin');
+const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const merge = require('webpack-merge');
 const glob = require('glob-all');
 
@@ -37,12 +38,25 @@ const commonConfig = merge([
       new HtmlWebpackPlugin({
         template: 'src/index.html',
       }),
-      new GenerateSW({
-        // these options encourage the ServiceWorkers to get in there fast
-        // and not allow any straggling "old" SWs to hang around
-        clientsClaim: true,
-        skipWaiting: true,
+      new CopyWebpackPlugin([
+        {from: 'src/manifest.json'},
+        {from: 'src/robots.txt'},
+        {from: 'src/assets/images/icons', to: 'images/icons'},
+      ]),
+      // new GenerateSW({
+      //   // these options encourage the ServiceWorkers to get in there fast
+      //   // and not allow any straggling "old" SWs to hang around
+      //   clientsClaim: true,
+      //   skipWaiting: true,
+      //   importWorkboxFrom: 'local',
+      //   swDest: 'sw.js'
+      // }),
+      new InjectManifest({
+        swSrc: './src/sw.js',
         importWorkboxFrom: 'local',
+        // globDirectory: '.',
+        // globIgnores: ['dist/*.map', 'dist/manifest.json', 'dist/*.config'],
+        // globPatterns: ['dist/*.{js,png,php,css}', 'dist/img/*.{png,jpg,jpeg}', 'dist/fonts/*'],
       })
     ]
   },
@@ -81,7 +95,7 @@ const productionConfig = merge([
   }),
   parts.loadImages({
     options: {
-      name: './img/[name].[hash].[ext]',
+      name: './images/[name].[hash].[ext]',
       limit: 10000
     }
   }),

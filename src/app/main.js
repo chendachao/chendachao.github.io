@@ -13,11 +13,11 @@ const showIntro = () => {
     showProgress: true,
     steps: [
       { 
-        intro: "Hello! Welcome to my home page, click the 'Next' button to know more about me."
+        intro: "Hello! This is Larry Chen. Welcome to my homepage. Click the 'Next' button to know more about me."
       },
       {
         element: document.querySelector('#step1'),
-        intro: "This sign bring lucky to me, now I share it with you."
+        intro: "This sign brings me good luck, now I share it with you. ^.^"
       },
       {
         element: document.querySelector('#step2'),

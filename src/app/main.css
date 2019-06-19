@@ -4,7 +4,7 @@
 @import "~intro.js/themes/introjs-modern.css";
 
 /* html {
-  background: url(../assets/img/bg.jpg) no-repeat center center fixed;
+  background: url(../assets/images/bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -32,7 +32,7 @@
 }
 
 .centered-content {
-  color: #589cc4;
+  color: #00aff0;
   width: 68.5%;
   margin: auto;
   line-height: 1.5;

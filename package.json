@@ -39,9 +39,9 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
-    "bowser": "^2.4.0",
-    "font-awesome": "4.7.0",
+    "@babel/polyfill": "7.4.4",
+    "bowser": "2.4.0",
+    "intro.js": "2.9.3",
     "lodash-es": "4.17.11",
     "tippy.js": "4.3.1"
   },

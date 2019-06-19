@@ -40,7 +40,6 @@
 
 .brand {
   text-align: center;
-  margin-bottom: 1rem;
 }
 
 .brand-icon:before {
@@ -59,12 +58,12 @@
 }
 
 .bio {
-  margin-bottom: 2rem;
   text-align: justify;
   font-family: sans-serif;
   font-weight: 900;
   font-size: calc(1em + 1vw);
   letter-spacing: -0.1vw;
+  padding: 1rem;
 }
 
 .highlight {
@@ -102,7 +101,6 @@
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 } */
-
 
 
 ul li {

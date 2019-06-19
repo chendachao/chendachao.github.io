@@ -3,7 +3,7 @@
   "short_name": "LarryChen",
   "theme_color": "#5391c3",
   "background_color": "#168ce9",
-  "display": "browser",
+  "display": "fullscreen",
   "Scope": "/",
   "start_url": "/",
   "icons": [

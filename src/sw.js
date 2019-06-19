@@ -21,7 +21,7 @@ workbox.routing.registerRoute(
         cacheName: 'images',
         plugins: [
             new workbox.expiration.Plugin({
-                maxEntries: 20,
+                maxEntries: 200,
                 purgeOnQuotaError: true,
             })
         ]

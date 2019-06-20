@@ -23,12 +23,56 @@
   height: 100%;
   background: rgb(29, 26, 79);
   background: linear-gradient(97deg, rgba(29, 26, 79, 1) 1%, rgba(142, 21, 218, 1) 100%);
+  /* background: black; */
   /* background: #3d0d04; */
 }
 
 .inner-container {
   display: table-cell;
   vertical-align: middle;
+}
+
+[class^="moon"] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-height: 15vw;
+  max-width: 15vw;
+  background-color: white;
+  border-radius: 100%;
+  animation: colorize 60s infinite linear;
+  transition: 1s;
+}
+
+[class^="moon"]:after, [class^="moon"]:before {
+  display: table;
+}
+
+@keyframes colorize {
+  0% {
+      box-shadow: 0px 0 220px 30px red;
+  }
+  14.29% {
+      box-shadow: 0px 0 220px 30px orange;
+  }
+  28.58% {
+      box-shadow: 0px 0 220px 30px yellow;
+  }
+  42.87% {
+      box-shadow: 0px 0 200px 30px green;
+  }
+  57.16% {
+      box-shadow: 0px 0 220px 30px blue;
+  }
+  71.45% {
+      box-shadow: 0px 0 220px 30px indigo;
+  }
+  100% {
+      box-shadow: 0px 0 220px 30px purple;
+  }
 }
 
 .centered-content {

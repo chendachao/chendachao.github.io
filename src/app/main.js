@@ -44,11 +44,15 @@ if (!displayedIntro) {
 }
 
 // tooltip
-tippy('a[tooltip]', {
+tippy('[tooltip]', {
   arrow: true,
   theme: 'light-border',
-});
+  interactive: true,
+  animation: 'shift-away',
+  inertia: true,
 
+  size: 'large',
+});
 
 // popup wechat qrCode
 if (browser.getBrowserName() === 'Internet Explorer') {

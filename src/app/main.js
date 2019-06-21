@@ -50,7 +50,6 @@ tippy('[tooltip]', {
   interactive: true,
   animation: 'shift-away',
   inertia: true,
-
   size: 'large',
 });
 

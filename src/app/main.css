@@ -53,25 +53,25 @@
 
 @keyframes colorize {
   0% {
-      box-shadow: 0px 0 220px 30px red;
+      box-shadow: 0px 0 10rem 2rem red;
   }
   14.29% {
-      box-shadow: 0px 0 220px 30px orange;
+      box-shadow: 0px 0 10rem 2rem orange;
   }
   28.58% {
-      box-shadow: 0px 0 220px 30px yellow;
+      box-shadow: 0px 0 10rem 2rem yellow;
   }
   42.87% {
-      box-shadow: 0px 0 200px 30px green;
+      box-shadow: 0px 0 10rem 2rem green;
   }
   57.16% {
-      box-shadow: 0px 0 220px 30px blue;
+      box-shadow: 0px 0 10rem 2rem blue;
   }
   71.45% {
-      box-shadow: 0px 0 220px 30px indigo;
+      box-shadow: 0px 0 10rem 2rem indigo;
   }
   100% {
-      box-shadow: 0px 0 220px 30px purple;
+      box-shadow: 0px 0 10rem 2rem purple;
   }
 }
 
@@ -136,6 +136,12 @@
   border-radius: 0;
   filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.25));
   opacity: 1;
+}
+
+.tippy-tooltip .tippy-content {
+  text-align: justify;
+  font-family: sans-serif;
+  letter-spacing: -0.1vw;
 }
 
 [tooltip][tabindex="0"] {

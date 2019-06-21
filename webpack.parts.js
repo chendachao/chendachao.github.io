@@ -1,3 +1,4 @@
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 
@@ -84,9 +85,10 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
 
 exports.extractCSS = ({include, exclude, use = []}) => {
   // Output extracted CSS to a file
+  const devMode = process.env.NODE_ENV === 'development';
   const plugin = new MiniCssExtractPlugin({
-    filename: '[name].css',
-    chunkFilename: '[id].css'
+    filename: devMode ? '[name].css' : '[name].[hash].css',
+    chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
   });
 
   return {

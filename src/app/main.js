@@ -62,7 +62,6 @@ if (browser.getBrowserName() === 'Internet Explorer') {
 
 // click scale qrcode
 function handleScale(event) {
-  console.log(browser.getBrowserName() === 'Internet Explorer');
   if (browser.getBrowserName() === 'Internet Explorer') {
     setTimeout(() => {
       this.classList.toggle('scale');

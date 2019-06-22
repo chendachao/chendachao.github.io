@@ -69,6 +69,7 @@ const commonConfig = merge([
       new InjectManifest({
         swSrc: './src/sw.js',
         importWorkboxFrom: 'local',
+        // importWorkboxFrom: isProduction ? 'local' : 'cdn'
         // globDirectory: '.',
         // globIgnores: ['dist/*.map', 'dist/manifest.json', 'dist/*.config'],
         // globPatterns: ['dist/*.{js,png,php,css}', 'dist/img/*.{png,jpg,jpeg}', 'dist/fonts/*'],

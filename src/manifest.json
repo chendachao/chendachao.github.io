@@ -3,9 +3,9 @@
   "short_name": "LarryChen",
   "theme_color": "#5391c3",
   "background_color": "#168ce9",
-  "display": "fullscreen",
+  "display": "standalone",
   "Scope": "/",
-  "start_url": "/",
+  "start_url": "\/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

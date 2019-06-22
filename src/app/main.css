@@ -136,10 +136,11 @@
   border-radius: 0;
   filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.25));
   opacity: 1;
+  color: #fafafa
 }
 
 .tippy-tooltip .tippy-content {
-  text-align: justify;
+  text-align: left;
   font-family: sans-serif;
   letter-spacing: -0.1vw;
 }

@@ -24,7 +24,8 @@ const commonConfig = merge([
   {
     entry: {
       app: PATHS.app,
-      print: './src/print.js'
+      print: './src/print.js',
+      install: './src/install.js'
     },
     output: {
       filename: '[name].[hash:8].bundle.js',
@@ -117,7 +118,8 @@ const productionConfig = merge([
     options: {
       name: './images/[name].[hash].[ext]',
       limit: 10000
-    }
+    },
+    exclude: path.join(__dirname, 'src/assets/images/icons/*'),
   }),
 ]);
 

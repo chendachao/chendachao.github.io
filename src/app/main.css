@@ -23,7 +23,7 @@
 .pwa-install-container #butInstall {
    position: absolute;
    top: 1rem;
-   right: 1rem;
+   right: 0.1rem;
    background: url(../assets/images/install.svg) center center no-repeat;
    z-index: 999;
 }

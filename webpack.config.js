@@ -55,6 +55,7 @@ const commonConfig = merge([
       }),
       new CopyWebpackPlugin([
         {from: 'src/manifest.json'},
+        {from: 'src/favicon.ico'},
         {from: 'src/robots.txt'},
         {from: 'src/assets/images/icons', to: 'images/icons'},
       ]),

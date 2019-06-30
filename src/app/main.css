@@ -16,9 +16,36 @@
   padding: 0;
 }
 
+.pwa-install-container {
+  position: relative;
+}
+
+.pwa-install-container #butInstall {
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+   background: url(../assets/images/install.svg) center center no-repeat;
+   z-index: 999;
+}
+
+.pwa-install-container button {
+  border: none;
+  cursor: pointer;
+  height: 24px;
+  margin-right: 16px;
+  opacity: 0.54;
+  outline: none;
+  overflow: hidden;
+  text-indent: -30000px;
+  transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+  width: 24px;
+}
+
 .outer-container {
   position: absolute;
   display: table;
+
+  
   width: 100%;
   height: 100%;
   background: rgb(29, 26, 79);

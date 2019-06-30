@@ -1,11 +1,11 @@
 {
   "name": "Chen Dachao",
-  "short_name": "LarryChen",
+  "short_name": "Chen Dachao",
   "theme_color": "#5391c3",
   "background_color": "#168ce9",
   "display": "standalone",
   "Scope": "/",
-  "start_url": "\/",
+  "start_url": "/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

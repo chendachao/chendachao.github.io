@@ -75,7 +75,7 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
         include,
         exclude,
         use: [
-          'style-loader', 'css-loader'
+          'style-loader', 'css-loader?importLoaders=1'
         ]
       }
     ]
@@ -161,7 +161,7 @@ exports.loadFonts = ({ include, exclude, options } = {}) => ({
     rules: [
       {
         // Match woff2 in addition to patterns like .woff?v=1.1.1.
-        test: /\.(eot|ttf|woff|woff2|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
         include,
         exclude,
         use: [

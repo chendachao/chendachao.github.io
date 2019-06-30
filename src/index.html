@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="Description" content="Chen Dachao's homepage.">
 
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#1976d2">
   <meta name="application-name" content="Chen Dachao"/>
   <meta name="mobile-web-app-capable" content="yes">
@@ -14,9 +14,20 @@
   <meta name="msapplication-TileColor" content="blue" />
   <meta name="msapplication-starturl" content="/">
 
+   <!-- Add iOS meta tags and icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Chen Dachao">
+  <link rel="apple-touch-icon" href="/assets/images/icons/icon-152x152.png">
+
   <title>Chen Dachao - 陈大超</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+
+<menu class="pwa-install-container">
+    <button id="butInstall" aria-label="Install" tooltip data-tippy-content="Install app"></button>
+</menu>
     
 <div class="outer-container">
   <div class="inner-container">
@@ -37,7 +48,7 @@
         I'm a <span class="highlight" tooltip data-tippy-content="
         <h3>Web Fullstack Developer</h3>
         <hr>
-        Angular, NodeJS/Express, AWS/serverless, Docker, Nginx, MongoDB
+        Angular, NodeJS/Express, AWS/serverless, Linux, Docker, Nginx, MongoDB
         ">web developer</span> living in Shanghai, China.
         I'm working on a project to help people build web components visually with ease.
         I like <span class="highlight" tooltip data-tippy-content="Life lies in movement.">running</span>,

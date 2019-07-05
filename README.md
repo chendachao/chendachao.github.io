@@ -9,7 +9,6 @@ https://www.cssscript.com/customizable-interactive-tooltips-pure-javascript-tipp
 https://codepen.io/Metty/pen/KrvLQx
 https://codepen.io/Stockin/pen/jeNQEN
 https://www.flaticon.com/
-https://app-manifest.firebaseapp.com/
-https://manifest-validator.appspot.com/
+
 
 

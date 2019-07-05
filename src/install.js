@@ -6,6 +6,18 @@ installButton.addEventListener('click', installPWA);
 // CODELAB: Add event listener for beforeinstallprompt event
 window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 
+// hide install button if app installed
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  console.log('display-mode is standalone');
+  installButton.setAttribute('hidden', ''); 
+}
+
+// Safari
+if (window.navigator.standalone === true) {
+  console.log('display-mode is standalone');
+  installButton.setAttribute('hidden', ''); 
+}
+
 /**
  * Event handler for beforeinstallprompt event.
  *   Saves the event & shows install button.

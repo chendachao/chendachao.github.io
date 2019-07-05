@@ -53,11 +53,17 @@ tippy('[tooltip]', {
   size: 'large',
 });
 
-// popup wechat qrCode
+// show the popup of wechat qrCode
 if (browser.getBrowserName() === 'Internet Explorer') {
   container.appendChild(template);
 } else {
   container.appendChild(document.importNode(template.content, true));
+}
+
+// hide the install app button if in IE
+if (browser.getBrowserName() === 'Internet Explorer') {
+  const installButton = document.getElementById('butInstall');
+  installButton.setAttribute('hidden', '');
 }
 
 // click scale qrcode

@@ -1,5 +1,10 @@
 
+// First, import the library into the service worker global scope:
+importScripts('sw-offline-google-analytics.js');
 
+// Then, call goog.offlineGoogleAnalytics.initialize():
+// See https://github.com/GoogleChrome/workbox/tree/master/packages/workbox-google-analytics
+goog.offlineGoogleAnalytics.initialize();
 
 if (workbox) {
     workbox.core.skipWaiting();
@@ -10,17 +15,17 @@ if (workbox) {
       function({ url, event }) {
         return !url.pathname.match(/^\/api\//)
       },
-      workbox.strategies.staleWhileRevalidate()
+      new workbox.strategies.StaleWhileRevalidate()
     );
     workbox.routing.registerRoute(
         new RegExp('.(?:js|css|ico)$'),
-        workbox.strategies.networkFirst({
+        new workbox.strategies.NetworkFirst({
             cacheName: 'static'
         }),
     );
     workbox.routing.registerRoute(
         new RegExp('.(?:jpg|png|gif|svg)$'),
-        workbox.strategies.cacheFirst({
+        new workbox.strategies.CacheFirst({
             cacheName: 'images',
             plugins: [
                 new workbox.expiration.Plugin({

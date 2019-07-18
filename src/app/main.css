@@ -145,6 +145,10 @@
   border-bottom-style: dotted;
 }
 
+.highlight:hover {
+   color: #ffe506;
+}
+
 .social-icons {
   text-align: center;
 }
@@ -169,7 +173,7 @@
 .tippy-tooltip .tippy-content {
   text-align: left;
   font-family: sans-serif;
-  letter-spacing: -0.1vw;
+  /* letter-spacing: -0.1vw; */
 }
 
 [tooltip][tabindex="0"] {

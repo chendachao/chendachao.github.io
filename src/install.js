@@ -1,4 +1,6 @@
 
+// TODO: if support sw or manifest then show the install buttom
+
 let deferredInstallPrompt = null;
 const installButton = document.getElementById('butInstall');
 installButton.addEventListener('click', installPWA);

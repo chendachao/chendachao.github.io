@@ -185,8 +185,8 @@
 }
 
 .circle {
-  height: calc(2em + 0.5vw);;
-  width: calc(2em + 0.5vw);;
+  height: calc(2em + 0.5vw);
+  width: calc(2em + 0.5vw);
   border-radius: 50%;
 }
 

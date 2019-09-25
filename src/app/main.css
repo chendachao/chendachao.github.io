@@ -103,10 +103,16 @@
 }
 
 .centered-content {
-  color: #00aff0;
+  color: #432fee;
   width: 61.8%;
   margin: auto;
   line-height: 1.5;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px), only screen and (device-width: 767px) {
+  .centered-content {
+    width: 91.8%;
+  }
 }
 
 .brand {
@@ -118,7 +124,7 @@
 }
 
 .brand-icon {
-  font-size: calc(6em + 2vw);
+  font-size: calc(6em + 4vw);
   text-align: center;
   font-weight: 900;
   color: darkgoldenrod;

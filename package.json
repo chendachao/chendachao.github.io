@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server -d --env development",
     "build": "webpack --env production",
+    "prepublish": "yarn build",
     "publish": "node scripts/publish.js"
   },
   "devDependencies": {

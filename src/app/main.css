@@ -70,7 +70,7 @@
   max-width: 15vw;
   background-color: white;
   border-radius: 100%;
-  animation: colorize 60s infinite linear;
+  animation: colorize 24s infinite linear;
   transition: 1s;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .centered-content {
-  color: #432fee;
+  color: #fff;
   width: 61.8%;
   margin: auto;
   line-height: 1.5;
@@ -132,7 +132,7 @@
 }
 
 .brand-icon:hover {
-  color: #f1a10c;
+  color: #ffe506;
 }
 
 .bio {

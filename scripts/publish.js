@@ -4,6 +4,10 @@ ghpages.publish('dist', {
   branch: 'master',
   // repo: 'https://github.com/chendachao/chendachao.github.io.git',
   repo: 'https://$GITHUB_TOKEN@github.com/chendachao/stone.git',
+  user: {
+    name: 'chendachao',
+    email: 'chendachao@outlook.com'
+  }
 }, function(err) {
   if (err) {
     console.error(err);

@@ -5,10 +5,11 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 console.log(123, GITHUB_TOKEN);
 console.log(456, process.env.GH_TOKEN);
 
+const repo = GITHUB_TOKEN ? 'https://github.com/chendachao/chendachao.github.io.git' : `https://${GITHUB_TOKEN}@github.com/chendachao/chendachao.github.io.git`;
+
 ghpages.publish('dist', {
   branch: 'master',
-  // repo: 'https://github.com/chendachao/chendachao.github.io.git',
-  repo: `https://${GITHUB_TOKEN}@github.com/chendachao/chendachao.github.io.git`,
+  repo: repo,
   user: {
     name: 'chendachao',
     email: 'chendachao@outlook.com'

@@ -7,6 +7,7 @@
     "start": "webpack-dev-server -d --env development",
     "build": "webpack --env production",
     "_prepublish": "yarn build",
+    "git:remote": "bash scripts/hooks.sh",
     "publish": "cross-env GITHUB_TOKEN=$GITHUB_TOKEN node scripts/publish.js"
   },
   "devDependencies": {

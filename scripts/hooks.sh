@@ -1,6 +1,6 @@
 #!/bin/sh
 
 echo 'hi'
-git remote add origin 'https://${GITHUB_TOKEN}@github.com/chendachao/chendachao.github.io.git'
+git remote set-url origin 'https://${GITHUB_TOKEN}@github.com/chendachao/chendachao.github.io.git'
 
 

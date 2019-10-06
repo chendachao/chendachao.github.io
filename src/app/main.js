@@ -58,6 +58,15 @@ if (!displayedIntro) {
 tippy('[tooltip]', {
   arrow: true,
   theme: 'light-border',
+  interactive: true,
+  animation: 'shift-away',
+  inertia: true,
+  size: 'large',
+});
+
+tippy('[tooltip-follow]', {
+  arrow: true,
+  theme: 'light-border',
   followCursor: isMobile(),
   interactive: true,
   animation: 'shift-away',

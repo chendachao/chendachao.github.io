@@ -6,6 +6,17 @@ const browser = Bowser.getParser(window.navigator.userAgent);
 const template = document.getElementById('wechat-popup');
 const container = document.createElement('div');
 
+function isMobile() {
+  var match = window.matchMedia || window.msMatchMedia;
+  if(match) {
+      var mq = match("(pointer:coarse)");
+      return mq.matches;
+  }
+  return false;
+}
+
+console.log(11, isMobile())
+
 // intro
 const showIntro = () => {
   const intro = introJs();
@@ -53,6 +64,16 @@ tippy('[tooltip]', {
   size: 'large',
 });
 
+tippy('[tooltip-follow]', {
+  arrow: true,
+  theme: 'light-border',
+  followCursor: isMobile(),
+  interactive: true,
+  animation: 'shift-away',
+  inertia: true,
+  size: 'large',
+});
+
 // show the popup of wechat qrCode
 if (browser.getBrowserName() === 'Internet Explorer') {
   container.appendChild(template);
@@ -81,7 +102,7 @@ function handleScale(event) {
 tippy('#wechat', {
   content: container.innerHTML,
   theme: 'light-border',
-  // trigger: 'click',
+  trigger: 'click',
   animateFill: false,
   interactive: true,
   arrow: true,

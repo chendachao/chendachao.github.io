@@ -69,6 +69,7 @@
   max-height: 15vw;
   max-width: 15vw;
   background-color: white;
+  cursor: pointer;
   border-radius: 100%;
   animation: colorize 24s infinite linear;
   transition: 1s;

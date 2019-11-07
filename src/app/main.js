@@ -102,7 +102,7 @@ function handleScale(event) {
 tippy('#wechat', {
   content: container.innerHTML,
   theme: 'light-border',
-  trigger: 'click',
+  // trigger: 'click',
   animateFill: false,
   interactive: true,
   arrow: true,

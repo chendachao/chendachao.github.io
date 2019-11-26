@@ -1,12 +1,13 @@
 {
   "name": "chendachao",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Larry's Home Page",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server -d --env development",
     "build": "webpack --env production",
     "_prepublish": "yarn build",
+    "c": "gh-pages-clean",
     "git:remote": "bash scripts/hooks.sh",
     "publish": "cross-env GITHUB_TOKEN=$GITHUB_TOKEN node scripts/publish.js"
   },

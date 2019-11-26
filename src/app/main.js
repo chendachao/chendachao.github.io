@@ -5,6 +5,7 @@ import Bowser from 'bowser';
 const browser = Bowser.getParser(window.navigator.userAgent);
 const template = document.getElementById('wechat-popup');
 const container = document.createElement('div');
+const IE = 'Internet Explorer';
 
 function isMobile() {
   var match = window.matchMedia || window.msMatchMedia;
@@ -75,21 +76,21 @@ tippy('[tooltip-follow]', {
 });
 
 // show the popup of wechat qrCode
-if (browser.getBrowserName() === 'Internet Explorer') {
+if (browser.getBrowserName() === IE) {
   container.appendChild(template);
 } else {
   container.appendChild(document.importNode(template.content, true));
 }
 
 // hide the install app button if in IE
-if (browser.getBrowserName() === 'Internet Explorer') {
+if (browser.getBrowserName() === IE) {
   const installButton = document.getElementById('butInstall');
   installButton.setAttribute('hidden', '');
 }
 
 // click scale qrcode
 function handleScale(event) {
-  if (browser.getBrowserName() === 'Internet Explorer') {
+  if (browser.getBrowserName() === IE) {
     setTimeout(() => {
       this.classList.toggle('scale');
     }, 800);

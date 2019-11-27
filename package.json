@@ -7,8 +7,7 @@
     "start": "webpack-dev-server -d --env development",
     "build": "webpack --env production",
     "_prepublish": "yarn build",
-    "c": "gh-pages-clean",
-    "git:remote": "bash scripts/hooks.sh",
+    "gh-page-clean": "gh-pages-clean",
     "publish": "cross-env GITHUB_TOKEN=$GITHUB_TOKEN node scripts/publish.js"
   },
   "devDependencies": {

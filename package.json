@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server -d --env development",
     "build": "webpack --env production",
-    "prepublish": "yarn build",
+    "_prepublish": "yarn build",
     "publish": "cross-env GITHUB_TOKEN=$GITHUB_TOKEN node scripts/publish.js",
     "gh-page-clean": "gh-pages-clean"
   },

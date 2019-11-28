@@ -34,7 +34,7 @@ jobs:
     - name: Deploy
       run: |
         npm install
-        npm run build
+        # npm run build
         npm run publish
       env:
         CI: true

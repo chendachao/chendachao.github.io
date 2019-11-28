@@ -5,11 +5,7 @@ const repo = GITHUB_TOKEN ? `https://chendachao:${GITHUB_TOKEN}@github.com/chend
 
 ghpages.publish('dist', {
   branch: 'master',
-  repo,
-  user: {
-    name: 'chendachao',
-    email: 'chendachao@outlook.com'
-  }
+  repo
 }, function(err) {
   if (err) {
     console.error(err);

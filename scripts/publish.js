@@ -1,5 +1,8 @@
 const ghpages = require('gh-pages');
 
+console.log('github.actor', ${github.actor});
+console.log('github.repository', ${github.repository});
+
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const repo = GITHUB_TOKEN ? `https://chendachao:${GITHUB_TOKEN}@github.com/chendachao/chendachao.github.io.git` : 'https://github.com/chendachao/chendachao.github.io.git';
 const user = GITHUB_TOKEN ? {

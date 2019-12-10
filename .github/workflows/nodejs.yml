@@ -17,8 +17,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, build
       run: |
-        github.repository: ${{ github.repository }}
-        github.actor: ${{github.actor}}
+        repository: ${{ github.repository }}
+        actor: ${{github.actor}}
         secrets.GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         npm install
         npm run build --if-present

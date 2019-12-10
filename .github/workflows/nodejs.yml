@@ -34,8 +34,10 @@ jobs:
     - name: Deploy
       run: |
         npm install
-        # npm run build
-        # npm run publish
+        npm run build
+        ls
+        ls dist
+        npm run publish
       env:
         CI: true
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

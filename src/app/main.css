@@ -1,4 +1,3 @@
-
 @import "~tippy.js/themes/light-border.css";
 @import "~intro.js/introjs.css";
 @import "~intro.js/themes/introjs-modern.css";
@@ -21,11 +20,11 @@
 }
 
 .pwa-install-container #butInstall {
-   position: absolute;
-   top: 1rem;
-   right: 0.1rem;
-   background: url(../assets/images/install.svg) center center no-repeat;
-   z-index: 999;
+  position: absolute;
+  top: 1rem;
+  right: 0.1rem;
+  background: url(../assets/images/install.svg) center center no-repeat;
+  z-index: 999;
 }
 
 .pwa-install-container button {
@@ -45,7 +44,7 @@
   position: absolute;
   display: table;
 
-  
+
   width: 100%;
   height: 100%;
   background: rgb(29, 26, 79);
@@ -81,25 +80,25 @@
 
 @keyframes colorize {
   0% {
-      box-shadow: 0px 0 10rem 2rem red;
+    box-shadow: 0px 0 10rem 2rem red;
   }
   14.29% {
-      box-shadow: 0px 0 10rem 2rem orange;
+    box-shadow: 0px 0 10rem 2rem orange;
   }
   28.58% {
-      box-shadow: 0px 0 10rem 2rem yellow;
+    box-shadow: 0px 0 10rem 2rem yellow;
   }
   42.87% {
-      box-shadow: 0px 0 10rem 2rem green;
+    box-shadow: 0px 0 10rem 2rem green;
   }
   57.16% {
-      box-shadow: 0px 0 10rem 2rem blue;
+    box-shadow: 0px 0 10rem 2rem blue;
   }
   71.45% {
-      box-shadow: 0px 0 10rem 2rem indigo;
+    box-shadow: 0px 0 10rem 2rem indigo;
   }
   100% {
-      box-shadow: 0px 0 10rem 2rem purple;
+    box-shadow: 0px 0 10rem 2rem purple;
   }
 }
 
@@ -153,7 +152,7 @@
 }
 
 .highlight:hover {
-   color: #ffe506;
+  color: #ffe506;
 }
 
 .social-icons {
@@ -187,6 +186,15 @@
   outline: none;
 }
 
+.introjs-helperLayer {
+  background: transparent !important;
+  box-shadow: 0 0 0 9999px rgba(25, 24, 24, 0.51);
+}
+
+.introjs-overlay {
+  background: transparent !important;
+}
+
 .icons li {
   display: inline-block;
 }
@@ -210,7 +218,7 @@ a {
   display: flex;
   align-items: center;
 
-  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
   background: linear-gradient(0deg, #ddd, #fff);
   transition: 1s;
 }
@@ -225,7 +233,7 @@ a {
 
 .icon:hover, .icon:focus {
   opacity: 1;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   /* transition: transform 0.1s ease-out;
   transform: scale(1.25); */
   transition: all 0.3s ease 0s;

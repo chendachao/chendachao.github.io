@@ -1,4 +1,3 @@
-
 // TODO: if support sw or manifest then show the install buttom
 
 let deferredInstallPrompt = null;
@@ -11,13 +10,13 @@ window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 // hide install button if app installed
 if (window.matchMedia('(display-mode: standalone)').matches) {
   console.log('display-mode is standalone');
-  installButton.setAttribute('hidden', ''); 
+  installButton.setAttribute('hidden', '');
 }
 
 // Safari
 if (window.navigator.standalone === true) {
   console.log('display-mode is standalone');
-  installButton.setAttribute('hidden', ''); 
+  installButton.setAttribute('hidden', '');
 }
 
 /**
@@ -43,7 +42,7 @@ function installPWA(evt) {
   deferredInstallPrompt.prompt();
   // Hide the install button, it can't be called twice.
   evt.srcElement.setAttribute('hidden', true);
-
+  
   // CODELAB: Log user response to prompt.
   deferredInstallPrompt.userChoice
     .then((choice) => {

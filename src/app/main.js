@@ -9,14 +9,12 @@ const IE = 'Internet Explorer';
 
 function isMobile() {
   var match = window.matchMedia || window.msMatchMedia;
-  if(match) {
-      var mq = match("(pointer:coarse)");
-      return mq.matches;
+  if (match) {
+    var mq = match('(pointer:coarse)');
+    return mq.matches;
   }
   return false;
 }
-
-console.log(11, isMobile())
 
 // intro
 const showIntro = () => {
@@ -24,27 +22,27 @@ const showIntro = () => {
   intro.setOptions({
     showProgress: true,
     steps: [
-      { 
-        intro: "Hello! This is Larry Chen. Welcome to my home page. Click the 'Next' button to know more about me."
+      {
+        intro: 'Hello! This is Larry Chen. Welcome to my home page. Click the \'Next\' button to know more about me.'
       },
       {
         element: document.querySelector('#step1'),
-        intro: "This sign brings me good luck, now I share it with you. ^.^"
+        intro: 'This sign brings me good luck, now I share it with you. ^.^'
       },
       {
         element: document.querySelector('#step2'),
-        intro: "This is who I am."
+        intro: 'This is who I am.'
       },
       {
         element: document.querySelector('#step3'),
-        intro: "You can reach out to me in the following ways:"
+        intro: 'You can reach out to me in the following ways:'
       }
     ]
   }).start();
-
-  intro.onskip(setDisplayedIntro)
-  intro.oncomplete(setDisplayedIntro)
-}
+  
+  intro.onskip(setDisplayedIntro);
+  intro.oncomplete(setDisplayedIntro);
+};
 
 const setDisplayedIntro = () => {
   localStorage.setItem('displayed_intro', true);
@@ -111,12 +109,12 @@ tippy('#wechat', {
   animation: 'scale',
   duration: [675, 1000],
   onShown: (instance) => {
-    const content = instance.popperChildren.content
+    const content = instance.popperChildren.content;
     const qrCode = content.querySelector('.wechat-qrcode');
     qrCode.addEventListener('click', handleScale);
   },
   onHide: (instance) => {
-    const content = instance.popperChildren.content
+    const content = instance.popperChildren.content;
     const qrCode = content.querySelector('.wechat-qrcode');
     qrCode.classList.remove('scale');
     qrCode.removeEventListener('click', handleScale);

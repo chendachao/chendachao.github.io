@@ -4,7 +4,7 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const repo = GITHUB_TOKEN ? `https://chendachao:${GITHUB_TOKEN}@github.com/chendachao/chendachao.github.io.git` : 'https://github.com/chendachao/chendachao.github.io.git';
 const user = GITHUB_TOKEN ? {
   name: 'chendachao',
-  email: 'chendachao@outlook.com'
+  email: 'chendachao@users.noreply.github.com'
 } : null;
 
 ghpages.publish('dist', {

@@ -23,7 +23,7 @@ jobs:
 
         git pull ${REMOTE}
         git checkout master
-        echo 123 >> index.html
+        echo 123 > index.html
         git add .
         git status
         git commit -am "Add new comment"

@@ -63,7 +63,7 @@ jobs:
           id: lighthouseCheck
           with:
             outputDirectory: /tmp/artifacts
-            urls: 'https://www.foo.software,https://www.foo.software/contact'
+            urls: 'https://chendachao.github.io'
         - name: Upload artifacts
           uses: actions/upload-artifact@master
           with:

@@ -57,9 +57,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@master
-        - run: |
-          mkdir /tmp/artifacts
-          npm install
+        - run: mkdir /tmp/artifacts
         - name: Run Lighthouse
           uses: foo-software/lighthouse-check-action@master
           id: lighthouseCheck

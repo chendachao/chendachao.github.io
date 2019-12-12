@@ -5,7 +5,7 @@ on: [push]
 jobs:
 
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [12.x]
@@ -51,3 +51,24 @@ jobs:
       env:
         CI: true
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+  lighthouse-check:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@master
+        - run: |
+          mkdir /tmp/artifacts
+          npm install
+        - name: Run Lighthouse
+          uses: foo-software/lighthouse-check-action@master
+          id: lighthouseCheck
+          with:
+            outputDirectory: /tmp/artifacts
+            urls: 'https://www.foo.software,https://www.foo.software/contact'
+        - name: Upload artifacts
+          uses: actions/upload-artifact@master
+          with:
+            name: Lighthouse reports
+            path: /tmp/artifacts
+

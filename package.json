@@ -6,8 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server -d --env development",
     "build": "webpack --env production",
-    "_prepublish": "yarn build",
-    "publish": "cross-env GITHUB_TOKEN=$GITHUB_TOKEN node scripts/publish.js",
+    "_predeploy": "yarn build",
+    "deploy": "cross-env GITHUB_TOKEN=$GITHUB_TOKEN node scripts/publish.js",
     "gh-page-clean": "gh-pages-clean"
   },
   "devDependencies": {
@@ -62,5 +62,5 @@
   "bugs": {
     "url": "https://github.com/chendachao/chendachao.github.io/issues"
   },
-  "homepage": "https://github.com/chendachao/chendachao.github.io#README"
+  "homepage": "https://github.com/chendachao/chendachao.github.io"
 }

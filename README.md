@@ -14,5 +14,7 @@
 - https://www.flaticon.com/
 
 ## TODOs:
-- json desc for developers view
+- JSON description for developers' view
+- Click the moon to change the theme
+- Stackoverflow
 

@@ -133,6 +133,7 @@
 
 .brand-icon:hover {
   color: #ffe506;
+  text-shadow: -5px 5px 10px #ab870a;
 }
 
 .bio {
@@ -153,6 +154,7 @@
 
 .highlight:hover {
   color: #ffe506;
+  text-shadow: -3px 3px 2px #7c630a;
 }
 
 .social-icons {
@@ -195,6 +197,7 @@
   background: transparent !important;
 }
 
+/*icons style*/
 .icons li {
   display: inline-block;
 }

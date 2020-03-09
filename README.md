@@ -6,16 +6,17 @@
 - [Github pages](https://chendachao.github.io/)
 - [Netlify](https://chenlarrydachao.netlify.com/)
 
-## Resources
+## References
 - https://simpleicons.org/
 - https://www.cssscript.com/customizable-interactive-tooltips-pure-javascript-tippy-js/
 - https://codepen.io/Metty/pen/KrvLQx
 - https://codepen.io/Stockin/pen/jeNQEN
 - https://www.flaticon.com/
+- https://cssgradient.io/
 
 ## TODOs:
 - JSON description for developers' view
-- Click the moon to change the theme
-- Stackoverflow
-- More icons
+- Add Stackoverflow icon
+- More icons option
+- i18n
 

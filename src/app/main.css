@@ -202,13 +202,7 @@
   display: inline-block;
 }
 
-.circle {
-  height: calc(2em + 0.5vw);
-  width: calc(2em + 0.5vw);
-  border-radius: 50%;
-}
-
-a {
+.icons a {
   text-decoration: none;
 }
 
@@ -216,22 +210,14 @@ a {
   border-radius: 100%;
   margin: calc(0.5em + 0.1vw);
   opacity: 0.8;
-  color: inherit;
+  color: white;
 
   display: flex;
   align-items: center;
 
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.3);
   background: linear-gradient(0deg, #ddd, #fff);
   transition: 1s;
-}
-
-.icon .svg {
-  margin: 0 auto;
-  display: block;
-  fill: currentColor;
-  width: 1.5rem;
-  height: 1.5rem;
 }
 
 .icon:hover, .icon:focus {
@@ -242,53 +228,57 @@ a {
   transition: all 0.3s ease 0s;
 }
 
+.icon.circle {
+  height: calc(2em + 0.5vw);
+  width: calc(2em + 0.5vw);
+  border-radius: 50%;
+}
+
+.icon .svg {
+  margin: 0 auto;
+  display: block;
+  fill: currentColor;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .icon-facebook {
   background: #3B5998;
-  color: white;
 }
 
 .icon-twitter {
   background: #1da1f2;
-  color: white;
 }
 
 .icon-google {
   background: #dd4b39;
-  color: white;
 }
 
 .icon-linkedin {
   background: #007bb5;
-  color: white;
 }
 
 .icon-snapchat-ghost {
   background: #fffc00;
-  color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .icon-skype {
   background: #00aff0;
-  color: white;
 }
 
 .icon-wechat {
   background: #1aad28;
-  color: white;
 }
 
 .icon-envelope-o {
   background: #2368c0;
-  color: white;
 }
 
 .icon-reddit {
   background: #ff5700;
-  color: white;
 }
 
 .icon-github {
   background: #292626;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }

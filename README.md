@@ -17,4 +17,5 @@
 - JSON description for developers' view
 - Click the moon to change the theme
 - Stackoverflow
+- More icons
 

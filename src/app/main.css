@@ -10,6 +10,11 @@
   background-size: cover;
 } */
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 [data-theme-style="light"] {
   background: rgb(131,58,180);
   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(209,63,63,1) 70%, rgba(194,141,65,1) 100%);
@@ -20,42 +25,32 @@
   background: linear-gradient(90deg, rgba(29, 26, 79, 1) 1%, rgba(142, 21, 218, 1) 100%);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.pwa-install-container button {
-  border: none;
-  cursor: pointer;
-  height: 24px;
-  margin-right: 16px;
-  opacity: 0.54;
-  outline: none;
-  overflow: hidden;
-  text-indent: -30000px;
-  transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
-  width: 24px;
-
+.pwa-install-btn {
   position: absolute;
   top: 1vh;
-  right: 0.1rem;
+  right: 1vw;
+  bottom: 0;
+  left: 92%;
+  max-height: 24px;
+  margin: 0 auto;
+  cursor: pointer;
+  opacity: 0.54;
+  transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
   background: url(../assets/images/install.svg) center center no-repeat;
-  z-index: 999;
 }
 
 [class^="moon"] {
   position: absolute;
-  top: 0;
+  top: 4%;
   bottom: 0;
-  left: 0;
+  left: 60%;
   right: 0;
-  margin: auto;
-  max-height: 15vw;
-  max-width: 15vw;
+  margin: 0 auto;
+  max-height: 10vw;
+  max-width: 10vw;
   cursor: pointer;
-  border-radius: 100%;
-  animation: colorize 24s infinite linear;
+  border-radius: 50%;
+  animation: colorize 24s linear infinite;
   transition: 1s;
 }
 

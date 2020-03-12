@@ -39,6 +39,10 @@
   background: url(../assets/images/install.svg) center center no-repeat;
 }
 
+.webkit-mobile-pointer-disable-blue-highlight {
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+}
+
 [class^="moon"] {
   position: absolute;
   top: 4%;

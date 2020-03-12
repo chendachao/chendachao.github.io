@@ -91,11 +91,20 @@
   font-size: calc(6em + 4vw);
   text-align: center;
   font-weight: 900;
-  color: darkgoldenrod;
+  color: #f1a50d;
   transition: 1s;
 }
 
 .brand-icon:hover {
+  color: #ffe506;
+  text-shadow: -5px 5px 10px #ab870a;
+}
+
+[data-theme-style="light"] .brand-icon {
+
+}
+
+[data-theme-style="dark"] .brand-icon {
   color: #ffe506;
   text-shadow: -5px 5px 10px #ab870a;
 }
@@ -245,6 +254,11 @@
 
 .icon-github {
   background: #292626;
+}
+
+.icon-stackoverflow {
+  /*background: #45160814;*/
+  background: rgb(250, 250, 251);
 }
 
 

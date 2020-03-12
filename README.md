@@ -15,8 +15,7 @@
 - https://cssgradient.io/
 
 ## TODOs:
-- JSON description for developers' view
-- Add Stackoverflow icon
-- More icons option
+- JSON description for developer view
+- More social icons option
 - i18n
 

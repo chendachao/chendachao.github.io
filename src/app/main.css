@@ -210,7 +210,7 @@
 .icon .svg {
   margin: 0 auto;
   display: block;
-  fill: #fff;
+  fill: currentColor;
   width: 1.5rem;
   height: 1.5rem;
 }

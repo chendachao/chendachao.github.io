@@ -1,15 +1,12 @@
 import Theme from './theme';
-import Intro from './intro';
-import TooltipAndPopover from './tooltip-popover';
-
 // Initial theme
 Theme();
 
 // Show intro
-let intro = new Intro();
+import('./intro').then(Intro => new Intro.default());
 
 // Initialize tooltip and popover
-TooltipAndPopover();
+import('./tooltip-popover').then(TooltipAndPopover => TooltipAndPopover.default());
 
 
 

@@ -18,4 +18,5 @@
 - JSON description for developer view
 - More social icons option
 - i18n
+- QRCode
 

@@ -23,7 +23,7 @@ const PATHS = {
 const commonConfig = merge([
   {
     entry: {
-      app: PATHS.app,
+      app: ['@babel/polyfill', PATHS.app],
       print: './src/print.js',
       install: './src/install.js'
     },
@@ -60,7 +60,7 @@ const commonConfig = merge([
         {from: 'src/robots.txt'},
         {from: 'src/assets/images/icons', to: 'images/icons'},
         {
-          from: 'node_modules/sw-offline-google-analytics/build/importScripts/sw-offline-google-analytics.prod.v0.0.25.js', 
+          from: 'node_modules/sw-offline-google-analytics/build/importScripts/sw-offline-google-analytics.prod.v0.0.25.js',
           to: 'sw-offline-google-analytics.js'
         },
       ]),

@@ -149,7 +149,7 @@
   /* letter-spacing: -0.1vw; */
 }
 
-[tooltip][tabindex="0"] {
+[tooltip][tabindex="0"], [tooltip-follow][tabindex="0"] {
   outline: none;
 }
 

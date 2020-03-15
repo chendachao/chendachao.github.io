@@ -55,7 +55,7 @@
   cursor: pointer;
   border-radius: 50%;
   animation: colorize 24s linear infinite;
-  transition: 1s;
+  transition: 2s;
 }
 
 [data-theme-style="light"] [class^="moon"] {
@@ -100,10 +100,6 @@
   text-shadow: -5px 5px 10px #ab870a;
 }
 
-[data-theme-style="light"] .brand-icon {
-
-}
-
 [data-theme-style="dark"] .brand-icon {
   color: #ffe506;
   text-shadow: -5px 5px 10px #ab870a;
@@ -130,10 +126,6 @@
   text-shadow: -3px 3px 2px #7c630a;
 }
 
-.social-icons {
-  text-align: center;
-}
-
 .scale {
   transform: scale(2.5);
 }
@@ -153,7 +145,7 @@
 
 .tippy-tooltip .tippy-content {
   text-align: left;
-  font-family: sans-serif;
+  /*font-family: sans-serif;*/
   /* letter-spacing: -0.1vw; */
 }
 
@@ -171,16 +163,22 @@
 }
 
 /*icons style*/
-.icons li {
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-icons li {
   display: inline-block;
 }
 
-.icons a {
+.social-icons li a {
   text-decoration: none;
 }
 
 .icon {
-  border-radius: 100%;
+  border-radius: 50%;
   margin: calc(0.5em + 0.1vw);
   opacity: 0.8;
   color: #fff;

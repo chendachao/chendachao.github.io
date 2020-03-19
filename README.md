@@ -13,6 +13,7 @@
 - https://codepen.io/Stockin/pen/jeNQEN
 - https://www.flaticon.com/
 - https://cssgradient.io/
+- https://kazuhikoarase.github.io/qrcode-generator/js/demo/
 
 ## TODOs:
 - JSON description for developer view

@@ -87,8 +87,8 @@ exports.extractCSS = ({include, exclude, use = []}) => {
   // Output extracted CSS to a file
   const devMode = process.env.NODE_ENV === 'development';
   const plugin = new MiniCssExtractPlugin({
-    filename: devMode ? '[name].css' : '[name].[hash].css',
-    chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+    filename: devMode ? '[name].css' : '[name].[contenthash].css', // long term caching
+    chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css',
   });
 
   return {
@@ -103,6 +103,7 @@ exports.extractCSS = ({include, exclude, use = []}) => {
               loader: MiniCssExtractPlugin.loader,
               options: {
                 hmr: process.env.NODE_ENV === 'development',
+                esModule: true,
                 reloadAll: true,
                 minimize: true,
               },

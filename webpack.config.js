@@ -25,10 +25,18 @@ const commonConfig = merge([
     entry: {
       app: ['@babel/polyfill', PATHS.app],
       print: './src/print.js',
-      install: './src/install.js'
+      install: './src/install.js',
+      vendor: [
+        'bowser',
+        'dialog-polyfill',
+        'intro.js',
+        'qrcode',
+        'tippy.js',
+      ]
     },
     output: {
-      filename: '[name].[hash:8].bundle.js',
+      filename: '[name].[contenthash].bundle.js',
+      // filename: '[name].[hash:8].bundle.js',
       // filename: '[name].bundle.js',
       path: PATHS.build
     },
@@ -38,14 +46,15 @@ const commonConfig = merge([
     },
     optimization: {
       splitChunks: {
-        cacheGroups: {
-          vendor: {
-            chunks: 'initial',
-            name: 'vendor',
-            test: 'vendor',
-            enforce: true
-          },
-        }
+        chunks: 'all',
+        // cacheGroups: {
+        //   vendor: {
+        //     name: 'vendor',
+        //     test: 'vendor',
+        //     chunks: 'all',
+        //     enforce: true
+        //   },
+        // }
       },
       runtimeChunk: 'single',
     },
@@ -120,7 +129,7 @@ const productionConfig = merge([
   }),
   parts.loadImages({
     options: {
-      name: './images/[name].[hash].[ext]',
+      name: './images/[name].[contenthash].[ext]',
       limit: 10000
     },
     exclude: path.join(__dirname, 'src/assets/images/icons/*'),

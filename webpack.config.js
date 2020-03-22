@@ -33,7 +33,7 @@ const commonConfig = merge([
       path: PATHS.build
     },
     resolve: {
-      extensions: [".ts", ".js"],
+      extensions: [".ts", ".js", 'css', 'scss'],
       symlinks: false
     },
     optimization: {

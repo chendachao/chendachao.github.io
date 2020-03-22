@@ -1,6 +1,7 @@
 @import "~tippy.js/themes/light-border.css";
 @import "~intro.js/introjs.css";
 @import "~intro.js/themes/introjs-modern.css";
+@import "~dialog-polyfill/dialog-polyfill.css";
 
 /* html {
   background: url(../assets/images/bg.jpg) no-repeat center center fixed;
@@ -264,6 +265,59 @@
 .icon-stackoverflow {
   /*background: #45160814;*/
   background: rgb(250, 250, 251);
+}
+
+.qrcode-container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.mobile-qrcode {
+  /*width: 100%;*/
+}
+
+.qrcode-dialog {
+  max-width: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.dialog-bg::backdrop {
+  /* native */
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  background-color: rgba(0, 0, 0, 0.66);
+}
+
+.dialog-bg+.backdrop {
+  /* polyfill */
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  background-color: rgba(0, 0, 0, 0.66);
+}
+
+.dialog-animation:not([aria-hidden='true']) {
+  animation: appear-from-bottom 400ms 150ms 1 both;
+}
+
+@keyframes appear-from-bottom {
+  from {
+    transform: translate(0, 80%);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes show {

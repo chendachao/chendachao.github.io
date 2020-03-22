@@ -107,6 +107,24 @@
   </div>
 </main>
 
+<footer>
+  <div class="qrcode-container">
+    <img class="qrcode-handler" src="./assets/images/qr-code-mobile.svg" alt="qrcode view on mobile"
+         data-tippy-content="View on mobile" tooltip>
+  </div>
+</footer>
+
+<dialog id="dialog" class="qrcode-dialog dialog-bg dialog-animation">
+  <div style="text-align: center;">
+    <small>Scan the qrcode to view on your moblie</small>
+    <hr>
+    <img alt="mobile-qrcode" class="mobile-qrcode">
+  </div>
+  <div style="text-align: end;">
+    <button id="closeBtn" style="padding: 5px">Close</button>
+  </div>
+</dialog>
+
 <noscript>To run this application, JavaScript is required to be enabled.</noscript>
 
 </body>

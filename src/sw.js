@@ -17,19 +17,25 @@ if (workbox) {
     new workbox.strategies.StaleWhileRevalidate()
   );
   workbox.routing.registerRoute(
-    new RegExp('.(?:js|css|ico)$'),
+    new RegExp('.(?:js|css)$'),
     new workbox.strategies.NetworkFirst({
-      cacheName: 'static'
+      cacheName: 'static',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxAgeSeconds: 7 * 24 * 60 * 60,
+        })
+      ]
     }),
   );
   workbox.routing.registerRoute(
-    new RegExp('.(?:jpg|png|gif|svg)$'),
+    new RegExp('.(?:jpg|png|gif|svg|ico)$'),
     new workbox.strategies.CacheFirst({
       cacheName: 'images',
       plugins: [
         new workbox.expiration.Plugin({
           maxEntries: 200,
           purgeOnQuotaError: true,
+          maxAgeSeconds: 365 * 24 * 60 * 60,
         })
       ]
     })

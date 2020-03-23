@@ -45,18 +45,19 @@ const commonConfig = merge([
       symlinks: false
     },
     optimization: {
-      splitChunks: {
-        chunks: 'all',
-        // cacheGroups: {
-        //   vendor: {
-        //     name: 'vendor',
-        //     test: 'vendor',
-        //     chunks: 'all',
-        //     enforce: true
-        //   },
-        // }
-      },
+      moduleIds: 'hashed',
       runtimeChunk: 'single',
+      splitChunks: {
+        // chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+            enforce: true
+          },
+        }
+      }
     },
     plugins: [
       new CleanWebpackPlugin(),

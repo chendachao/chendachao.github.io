@@ -16,6 +16,7 @@
 - https://kazuhikoarase.github.io/qrcode-generator/js/demo/
 
 ## Performance
+- [website-optimization-tools](https://www.crazyegg.com/blog/website-optimization-tools/)
 - [Page Speed Insights](https://developers.google.com/speed/pagespeed/insights)
 - [Google Search Console](https://search.google.com/search-console)
 - [GTmetrix](https://gtmetrix.com)

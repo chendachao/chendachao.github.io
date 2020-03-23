@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server -d --env development",
     "build": "webpack --env production",
+    "analyse": "webpack --env production --profile --json > stats.json",
     "_predeploy": "yarn build",
     "deploy": "cross-env GITHUB_TOKEN=$GITHUB_TOKEN node scripts/publish.js",
     "gh-page-clean": "gh-pages-clean"

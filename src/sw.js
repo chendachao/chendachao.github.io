@@ -1,38 +1,50 @@
-// First, import the library into the service worker global scope:
-importScripts('sw-offline-google-analytics.js');
+import * as googleAnalytics from 'workbox-google-analytics';
+import {skipWaiting, clientsClaim } from 'workbox-core';
+import {registerRoute} from 'workbox-routing';
+import {CacheFirst, NetworkFirst, StaleWhileRevalidate} from 'workbox-strategies';
+import {ExpirationPlugin} from 'workbox-expiration';
+import {precacheAndRoute} from 'workbox-precaching';
 
-// Then, call goog.offlineGoogleAnalytics.initialize():
-// See https://github.com/GoogleChrome/workbox/tree/master/packages/workbox-google-analytics
-goog.offlineGoogleAnalytics.initialize();
+googleAnalytics.initialize();
 
 if (workbox) {
-  workbox.core.skipWaiting();
-  workbox.core.clientsClaim();
+  skipWaiting();
+  clientsClaim();
   
   // make sure we grab from cache if no network
-  workbox.routing.registerRoute(
+  registerRoute(
     function ({url, event}) {
       return !url.pathname.match(/^\/api\//);
     },
-    new workbox.strategies.StaleWhileRevalidate()
+    new StaleWhileRevalidate()
   );
-  workbox.routing.registerRoute(
-    new RegExp('.(?:js|css)$'),
-    new workbox.strategies.NetworkFirst({
-      cacheName: 'static',
-      plugins: [
-        new workbox.expiration.Plugin({
-          maxAgeSeconds: 7 * 24 * 60 * 60,
-        })
-      ]
-    }),
+  
+  registerRoute(
+    /\.(?:js|css)$/,
+    // Use cache but update in the background.
+    new StaleWhileRevalidate({
+      // Use a custom cache name.
+      cacheName: 'js-css-cache',
+    })
   );
-  workbox.routing.registerRoute(
-    new RegExp('.(?:jpg|png|gif|svg|ico)$'),
-    new workbox.strategies.CacheFirst({
+  // registerRoute(
+  //   /\.(?:js|css)$/,
+  //   new NetworkFirst({
+  //     cacheName: 'static',
+  //     plugins: [
+  //       new ExpirationPlugin({
+  //         maxAgeSeconds: 7 * 24 * 60 * 60,
+  //       })
+  //     ]
+  //   }),
+  // );
+  
+  registerRoute(
+    /\.(?:png|gif|jpg|jpeg|svg|ico)$/,
+    new CacheFirst({
       cacheName: 'images',
       plugins: [
-        new workbox.expiration.Plugin({
+        new ExpirationPlugin({
           maxEntries: 200,
           purgeOnQuotaError: true,
           maxAgeSeconds: 365 * 24 * 60 * 60,
@@ -47,7 +59,7 @@ if (workbox) {
    * See https://goo.gl/S9QRab
    */
   self.__WB_MANIFEST = [].concat(self.__WB_MANIFEST || []);
-  workbox.precaching.precacheAndRoute(self.__WB_MANIFEST, {});
+  precacheAndRoute(self.__WB_MANIFEST, {});
 } else {
   console.log(`Boo! Workbox didn't load 😬`);
 }

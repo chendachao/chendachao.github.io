@@ -46,8 +46,8 @@ if (workbox) {
    * requests for URLs in the manifest.
    * See https://goo.gl/S9QRab
    */
-  self.__precacheManifest = [].concat(self.__precacheManifest || []);
-  workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+  self.__WB_MANIFEST = [].concat(self.__WB_MANIFEST || []);
+  workbox.precaching.precacheAndRoute(self.__WB_MANIFEST, {});
 } else {
   console.log(`Boo! Workbox didn't load 😬`);
 }

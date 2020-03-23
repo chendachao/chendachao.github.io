@@ -59,6 +59,7 @@ const commonConfig = merge([
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: 'src/index.html',
+        minify: false
       }),
       new ScriptExtHtmlWebpackPlugin({
         inline: inlineBundles,
@@ -85,14 +86,11 @@ const commonConfig = merge([
       //   // and not allow any straggling "old" SWs to hang around
       //   clientsClaim: true,
       //   skipWaiting: true,
-      //   importWorkboxFrom: 'local',
       //   swDest: 'sw.js'
       // }),
       new InjectManifest({
         swSrc: './src/sw.js',
-        importWorkboxFrom: 'local',
         exclude: [inlineBundles],
-        // importWorkboxFrom: isProduction ? 'local' : 'cdn'
         // globDirectory: '.',
         // globIgnores: ['dist/*.map', 'dist/manifest.json', 'dist/*.config'],
         // globPatterns: ['dist/*.{js,png,php,css}', 'dist/img/*.{png,jpg,jpeg}', 'dist/fonts/*'],
@@ -124,7 +122,7 @@ const productionConfig = merge([
   }),
   parts.loadHTML({
     options: {
-      minimize: true
+      // minimize: true
     }
   }),
   parts.purifyCSS({

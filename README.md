@@ -6,6 +6,14 @@
 - [Github pages](https://chendachao.github.io/)
 - [Netlify](https://chenlarrydachao.netlify.com/)
 
+## Performance
+- [performance](https://developers.google.com/web/fundamentals/performance/why-performance-matters)
+- [website-optimization-tools](https://www.crazyegg.com/blog/website-optimization-tools/)
+- [Page Speed Insights](https://developers.google.com/speed/pagespeed/insights)
+- [Google Search Console](https://search.google.com/search-console)
+- [GTmetrix](https://gtmetrix.com)
+- [Image Compressor](https://imagecompressor.com/)
+
 ## References
 - https://simpleicons.org/
 - https://www.cssscript.com/customizable-interactive-tooltips-pure-javascript-tippy-js/
@@ -15,18 +23,8 @@
 - https://cssgradient.io/
 - https://kazuhikoarase.github.io/qrcode-generator/js/demo/
 
-## Performance
-- [performance](https://developers.google.com/web/fundamentals/performance/why-performance-matters)
-- [website-optimization-tools](https://www.crazyegg.com/blog/website-optimization-tools/)
-- [Page Speed Insights](https://developers.google.com/speed/pagespeed/insights)
-- [Google Search Console](https://search.google.com/search-console)
-- [GTmetrix](https://gtmetrix.com)
-- [Image Compressor](https://imagecompressor.com/)
-
-
 ## TODOs:
 - JSON description for developer view
 - More social icons option
 - i18n
-- QRCode
 

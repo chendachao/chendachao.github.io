@@ -24,8 +24,8 @@ const commonConfig = merge([
   {
     entry: {
       app: ['@babel/polyfill', PATHS.app],
-      print: './src/print.js',
-      install: './src/install.js',
+      // print: './src/print.js',
+      // install: './src/install.js',
       vendor: [
         'bowser',
         'dialog-polyfill',

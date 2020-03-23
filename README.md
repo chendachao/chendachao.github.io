@@ -15,6 +15,12 @@
 - https://cssgradient.io/
 - https://kazuhikoarase.github.io/qrcode-generator/js/demo/
 
+## Performance
+- [Page Speed Insights](https://developers.google.com/speed/pagespeed/insights)
+- [Google Search Console](https://search.google.com/search-console)
+- [GTmetrix](https://gtmetrix.com)
+
+
 ## TODOs:
 - JSON description for developer view
 - More social icons option

@@ -2,6 +2,8 @@ require('dotenv').config();
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const InlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -24,20 +26,19 @@ const commonConfig = merge([
   {
     entry: {
       app: ['@babel/polyfill', PATHS.app],
-      // print: './src/print.js',
-      // install: './src/install.js',
-      vendor: [
-        'bowser',
-        'dialog-polyfill',
-        'intro.js',
-        'qrcode',
-        'tippy.js',
-      ]
+      print: './src/print.js',
+      install: './src/install.js',
+      // vendor: [
+      //   'bowser',
+      //   'dialog-polyfill',
+      //   'intro.js',
+      //   'qrcode',
+      //   'tippy.js',
+      // ]
     },
     output: {
       filename: '[name].[contenthash].bundle.js',
       // filename: '[name].[hash:8].bundle.js',
-      // filename: '[name].bundle.js',
       path: PATHS.build
     },
     resolve: {
@@ -47,16 +48,17 @@ const commonConfig = merge([
     optimization: {
       moduleIds: 'hashed',
       runtimeChunk: 'single',
+      // runtimeChunk: true,
       splitChunks: {
-        // chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-            enforce: true
-          },
-        }
+        chunks: 'all',
+        // cacheGroups: {
+        //   vendor: {
+        //     test: /[\\/]node_modules[\\/]/,
+        //     name: 'vendors',
+        //     chunks: 'all',
+        //     enforce: true
+        //   },
+        // }
       }
     },
     plugins: [
@@ -64,6 +66,16 @@ const commonConfig = merge([
       new HtmlWebpackPlugin({
         template: 'src/index.html',
       }),
+      new ScriptExtHtmlWebpackPlugin({
+        inline: /^(app|runtime).*.bundle.js$/,
+        preload: /^vendors~app.*.bundle.js$/,
+        defer: [
+          /^print.*.bundle.js$/,
+          /^install.*.bundle.js$/,
+        ],
+        defaultAttribute: 'async'
+      }),
+      new webpack.HashedModuleIdsPlugin(),
       new CopyWebpackPlugin([
         {from: 'src/manifest.json'},
         {from: 'src/favicon.ico'},

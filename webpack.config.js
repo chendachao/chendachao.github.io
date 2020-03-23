@@ -21,6 +21,8 @@ const PATHS = {
   build: path.resolve(__dirname, 'dist')
 };
 
+const inlineBundles = /^(app|runtime).*.bundle.js$/;
+
 const commonConfig = merge([
   {
     entry: {
@@ -59,7 +61,7 @@ const commonConfig = merge([
         template: 'src/index.html',
       }),
       new ScriptExtHtmlWebpackPlugin({
-        inline: /^(app|runtime).*.bundle.js$/,
+        inline: inlineBundles,
         preload: /^vendors~app.*.bundle.js$/,
         defer: [
           /^print.*.bundle.js$/,
@@ -89,6 +91,7 @@ const commonConfig = merge([
       new InjectManifest({
         swSrc: './src/sw.js',
         importWorkboxFrom: 'local',
+        exclude: [inlineBundles],
         // importWorkboxFrom: isProduction ? 'local' : 'cdn'
         // globDirectory: '.',
         // globIgnores: ['dist/*.map', 'dist/manifest.json', 'dist/*.config'],

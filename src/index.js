@@ -1,9 +1,9 @@
 // import '@babel/polyfill';
-// import './app/main.css';
-import(/* webpackPreload: true */'./app/main.css');
+import './app/main.css';
 import(/* webpackPrefetch: true */'./install');
 import(/* webpackPreload: true */'./print');
-import './app/main.js';
+import(/* webpackPreload: true */'./app/main.js');
+// import './app/main.js';
 
 if (process.env.NODE_ENV !== 'development' && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {

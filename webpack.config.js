@@ -2,7 +2,6 @@ require('dotenv').config();
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const InlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -27,14 +26,7 @@ const commonConfig = merge([
     entry: {
       app: ['@babel/polyfill', PATHS.app],
       print: './src/print.js',
-      install: './src/install.js',
-      // vendor: [
-      //   'bowser',
-      //   'dialog-polyfill',
-      //   'intro.js',
-      //   'qrcode',
-      //   'tippy.js',
-      // ]
+      install: './src/install.js'
     },
     output: {
       filename: '[name].[contenthash].bundle.js',

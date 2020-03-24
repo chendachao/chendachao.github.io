@@ -82,52 +82,6 @@ const commonConfig = merge([
           to: 'sw-offline-google-analytics.js'
         },
       ]),
-      new GenerateSW({
-        // and not allow any straggling "old" SWs to hang around
-        // these options encourage the ServiceWorkers to get in there fast
-        swDest: 'sw.js',
-        clientsClaim: true,
-        skipWaiting: true,
-      exclude: [inlineBundles],
-        cleanupOutdatedCaches: true,
-        offlineGoogleAnalytics: true,
-        // sourcemap: true,
-        importScripts: [
-          'assets/push.js'
-        ],
-        runtimeCaching: [
-          {
-            urlPattern: /^\/api\//,
-            handler: 'StaleWhileRevalidate',
-          },
-          {
-            urlPattern: /\.(?:js|css)$/,
-            handler: 'StaleWhileRevalidate',
-            options: {
-              cacheName: 'js-css-cache',
-            }
-          },
-          {
-            urlPattern: /\.(?:png|gif|jpg|jpeg|svg|ico)$/,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'images',
-              expiration: {
-                maxEntries: 200,
-                purgeOnQuotaError: true,
-                maxAgeSeconds: 365 * 24 * 60 * 60,
-              },
-            }
-          },
-        ]
-      }),
-      // new InjectManifest({
-      //   swSrc: './src/sw.js',
-      //   exclude: [inlineBundles],
-      //   // globDirectory: '.',
-      //   // globIgnores: ['dist/*.map', 'dist/manifest.json', 'dist/*.config'],
-      //   // globPatterns: ['dist/*.{js,png,php,css}', 'dist/img/*.{png,jpg,jpeg}', 'dist/fonts/*'],
-      // })
     ]
   },
   parts.loadFonts({
@@ -137,6 +91,54 @@ const commonConfig = merge([
   })
 ]);
 
+const pwaPlugins = [
+  new GenerateSW({
+    // and not allow any straggling "old" SWs to hang around
+    // these options encourage the ServiceWorkers to get in there fast
+    swDest: 'sw.js',
+    clientsClaim: true,
+    skipWaiting: true,
+    exclude: [inlineBundles],
+    cleanupOutdatedCaches: true,
+    offlineGoogleAnalytics: true,
+    sourcemap: true,
+    importScripts: [
+      'assets/push.js'
+    ],
+    runtimeCaching: [
+      {
+        urlPattern: /^\/api\//,
+        handler: 'StaleWhileRevalidate',
+      },
+      {
+        urlPattern: /\.(?:js|css)$/,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'js-css-cache',
+        }
+      },
+      {
+        urlPattern: /\.(?:png|gif|jpg|jpeg|svg|ico)$/,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'images',
+          expiration: {
+            maxEntries: 200,
+            purgeOnQuotaError: true,
+            maxAgeSeconds: 365 * 24 * 60 * 60,
+          },
+        }
+      },
+    ]
+  }),
+  // new InjectManifest({
+  //   swSrc: './src/sw.js',
+  //   exclude: [inlineBundles],
+  //   // globDirectory: '.',
+  //   // globIgnores: ['dist/*.map', 'dist/manifest.json', 'dist/*.config'],
+  //   // globPatterns: ['dist/*.{js,png,php,css}', 'dist/img/*.{png,jpg,jpeg}', 'dist/fonts/*'],
+  // })
+];
 
 const productionConfig = merge([
   {
@@ -206,6 +208,8 @@ const developmentConfig = merge([
 
 module.exports = mode => {
   if (mode === 'production') {
+    // TODO: workaround for workbox issue https://github.com/GoogleChrome/workbox/issues/1790
+    commonConfig.plugins.push(...pwaPlugins);
     return merge(commonConfig, productionConfig, {mode});
   }
   

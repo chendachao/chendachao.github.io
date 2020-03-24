@@ -6,6 +6,10 @@ exports.devServer = ({ host, port } = {}) => ({
   devServer: {
     historyApiFallback: true,
     stats: 'errors-only',
+    // stats: {
+    //   errors: true,
+    //   warnings: false
+    // },
     // Parse host and port from env to allow customization.
     //
     // If you use Docker, Vagrant or Cloud9, set

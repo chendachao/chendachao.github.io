@@ -306,7 +306,8 @@
 }
 
 .dialog-animation:not([aria-hidden='true']) {
-  animation: appear-from-bottom 400ms 150ms 1 both;
+  animation: appear-from-bottom 600ms 150ms 1 both;
+  transition: opacity 4s;
 }
 
 @keyframes appear-from-bottom {

@@ -121,13 +121,13 @@ const commonConfig = merge([
       //     },
       //   ]
       // }),
-      new InjectManifest({
-        swSrc: './src/sw.js',
-        exclude: [inlineBundles],
-        // globDirectory: '.',
-        // globIgnores: ['dist/*.map', 'dist/manifest.json', 'dist/*.config'],
-        // globPatterns: ['dist/*.{js,png,php,css}', 'dist/img/*.{png,jpg,jpeg}', 'dist/fonts/*'],
-      })
+      // new InjectManifest({
+      //   swSrc: './src/sw.js',
+      //   exclude: [inlineBundles],
+      //   // globDirectory: '.',
+      //   // globIgnores: ['dist/*.map', 'dist/manifest.json', 'dist/*.config'],
+      //   // globPatterns: ['dist/*.{js,png,php,css}', 'dist/img/*.{png,jpg,jpeg}', 'dist/fonts/*'],
+      // })
     ]
   },
   parts.loadFonts({

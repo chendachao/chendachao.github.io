@@ -75,6 +75,7 @@ const commonConfig = merge([
         {from: 'src/manifest.json'},
         {from: 'src/favicon.ico'},
         {from: 'src/robots.txt'},
+        {from: 'src/assets/push.js', to: 'assets'},
         {from: 'src/assets/images/icons', to: 'images/icons'},
         {
           from: 'node_modules/sw-offline-google-analytics/build/importScripts/sw-offline-google-analytics.prod.v0.0.25.js',
@@ -82,11 +83,43 @@ const commonConfig = merge([
         },
       ]),
       // new GenerateSW({
-      //   // these options encourage the ServiceWorkers to get in there fast
       //   // and not allow any straggling "old" SWs to hang around
+      //   // these options encourage the ServiceWorkers to get in there fast
+      //   swDest: 'sw.js',
       //   clientsClaim: true,
       //   skipWaiting: true,
-      //   swDest: 'sw.js'
+      // exclude: [inlineBundles],
+      //   cleanupOutdatedCaches: true,
+      //   offlineGoogleAnalytics: true,
+      //   // sourcemap: true,
+      //   importScripts: [
+      //     'assets/push.js'
+      //   ],
+      //   runtimeCaching: [
+      //     {
+      //       urlPattern: /^\/api\//,
+      //       handler: 'StaleWhileRevalidate',
+      //     },
+      //     {
+      //       urlPattern: /\.(?:js|css)$/,
+      //       handler: 'StaleWhileRevalidate',
+      //       options: {
+      //         cacheName: 'js-css-cache',
+      //       }
+      //     },
+      //     {
+      //       urlPattern: /\.(?:png|gif|jpg|jpeg|svg|ico)$/,
+      //       handler: 'CacheFirst',
+      //       options: {
+      //         cacheName: 'images',
+      //         expiration: {
+      //           maxEntries: 200,
+      //           purgeOnQuotaError: true,
+      //           maxAgeSeconds: 365 * 24 * 60 * 60,
+      //         },
+      //       }
+      //     },
+      //   ]
       // }),
       new InjectManifest({
         swSrc: './src/sw.js',

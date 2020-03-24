@@ -27,4 +27,5 @@
 - JSON description for developer view
 - More social icons option
 - i18n
-
+- Update event subscribe with push/notifications API, recommend a 'Subscribe Update' button
+- font

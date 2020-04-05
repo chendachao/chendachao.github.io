@@ -18,8 +18,8 @@
 }
 
 [data-theme-style="light"] {
-  background: rgb(131,58,180);
-  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(209,63,63,1) 70%, rgba(194,141,65,1) 100%);
+  background: rgb(131, 58, 180);
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(209, 63, 63, 1) 70%, rgba(194, 141, 65, 1) 100%);
 
   animation: show 2s ease-in-out;
 }
@@ -29,6 +29,17 @@
   background: linear-gradient(90deg, rgba(29, 26, 79, 1) 1%, rgba(142, 21, 218, 1) 100%);
 
   animation: show 2s ease-in-out;
+}
+
+[data-theme-style="gray"] {
+  /* Set the theme to special gray */
+  background: gray;
+  filter: grayscale(100%);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}
+
+.main {
+  height: 100vh;
 }
 
 .pwa-install-btn {
@@ -46,7 +57,7 @@
 }
 
 .webkit-mobile-pointer-disable-blue-highlight {
-  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 [class^="moon"] {
@@ -79,7 +90,8 @@
   line-height: 1.5;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 767px), only screen and (device-width: 767px) {
+@media only screen and (min-width: 320px) and (max-width: 767px),
+only screen and (device-width: 767px) {
   .centered-content {
     width: 91.8%;
   }
@@ -155,7 +167,8 @@
   /* letter-spacing: -0.1vw; */
 }
 
-[tooltip][tabindex="0"], [tooltip-follow][tabindex="0"] {
+[tooltip][tabindex="0"],
+[tooltip-follow][tabindex="0"] {
   outline: none;
 }
 
@@ -197,7 +210,8 @@
   transition: 1s;
 }
 
-.icon:hover, .icon:focus {
+.icon:hover,
+.icon:focus {
   opacity: 1;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   /* transition: transform 0.1s ease-out;
@@ -323,21 +337,27 @@
   0% {
     opacity: 0.1;
   }
+
   14.29% {
     opacity: 0.2;
   }
+
   28.58% {
     opacity: 0.3;
   }
+
   42.87% {
     opacity: 0.4;
   }
+
   57.16% {
     opacity: 0.6;
   }
+
   71.45% {
     opacity: 0.8;
   }
+
   100% {
     opacity: 1;
   }
@@ -347,21 +367,27 @@
   0% {
     box-shadow: 0 0 10rem 2rem red;
   }
+
   14.29% {
     box-shadow: 0 0 10rem 2rem orange;
   }
+
   28.58% {
     box-shadow: 0 0 10rem 2rem yellow;
   }
+
   42.87% {
     box-shadow: 0 0 10rem 2rem green;
   }
+
   57.16% {
     box-shadow: 0 0 10rem 2rem blue;
   }
+
   71.45% {
     box-shadow: 0 0 10rem 2rem indigo;
   }
+
   100% {
     box-shadow: 0 0 10rem 2rem purple;
   }

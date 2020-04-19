@@ -15,6 +15,7 @@ export function isMobile() {
   }
   return false;
 }
+
 export const numDaysBetween = (d1, d2) => {
   const diff = Math.abs(d1.getTime() - d2.getTime());
   return diff / (1000 * 60 * 60 * 24);

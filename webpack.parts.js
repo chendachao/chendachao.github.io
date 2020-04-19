@@ -146,12 +146,15 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
         include,
         exclude,
         use: [
-          {
+          { 
             loader: 'url-loader',
             options
           },
           {
-            loader: 'img-loader'
+            loader: 'image-webpack-loader',
+            options: {
+              disable: true, // webpack@2.x and newer
+            },
           }
         ]
       }
@@ -183,7 +186,7 @@ exports.loadFonts = ({ include, exclude, options } = {}) => ({
           //     name: './fonts/[name].[ext]'
           //   }
           // },
-          {
+          { // TODO: remove, cos url-loader default fallback is file-loader
             loader: 'file-loader',
             options
           }

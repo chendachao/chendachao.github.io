@@ -9,7 +9,7 @@
     "build": "webpack --env production",
     "analyse": "webpack --env production --profile --json > stats.json",
     "_predeploy": "yarn build",
-    "deploy": "gh-pages -d dist -u 'Dachao <chendachao@outlook.com>' ",
+    "deploy": "gh-pages -d dist -u 'chendachao <chendachao@outlook.com>' ",
     "deploy:local": "cross-env GITHUB_TOKEN=$GITHUB_TOKEN node scripts/publish.js"
   },
   "devDependencies": {

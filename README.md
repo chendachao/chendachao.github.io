@@ -1,5 +1,5 @@
 
-[![Github Actions](https://github.com/chendachao/chendachao.github.io/workflows/Github%20Actions/badge.svg)](https://github.com/chendachao/chendachao.github.io/actions)
+![Publish Github Pages](https://github.com/chendachao/chendachao.github.io/workflows/Publish%20Github%20Pages/badge.svg)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f38782ce-8baa-4295-aa71-12c5ce788b8a/deploy-status)](https://app.netlify.com/sites/chenlarrydachao/deploys)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 

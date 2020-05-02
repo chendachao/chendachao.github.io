@@ -8,7 +8,7 @@
     "start": "webpack-dev-server -d --env development",
     "build": "webpack --env production",
     "analyse": "webpack --env production --profile --json > stats.json",
-    "_predeploy": "yarn build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d dist -u 'chendachao <chendachao@outlook.com>' -r https://chendachao:$GITHUB_TOKEN@github.com/chendachao/chendachao.github.io.git",
     "deploy:local": "cross-env GITHUB_TOKEN=$GITHUB_TOKEN node scripts/publish.js"
   },

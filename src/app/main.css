@@ -324,9 +324,16 @@ only screen and (device-width: 767px) {
   transition: opacity 4s;
 }
 
+/* TODO: fix dialog css issue, need to check the vendor css again */
+dialog {
+  top: 0;
+  bottom: 0;
+}
+
+/* TODO: some issues here */
 @keyframes appear-from-bottom {
   from {
-    transform: translate(0, 80%);
+    /* transform: translate(0, 80%); */
     opacity: 0;
   }
 

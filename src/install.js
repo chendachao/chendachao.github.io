@@ -1,4 +1,4 @@
-// TODO: if support sw or manifest then show the install buttom
+// TODO: if support sw or manifest then show the install button
 
 let deferredInstallPrompt = null;
 const installButton = document.getElementById('butInstall');

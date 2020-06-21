@@ -1,7 +1,7 @@
 {
   "name": "chendachao",
   "homepage": "https://github.com/chendachao/chendachao.github.io",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Larry's Home Page",
   "main": "src/index.js",
   "scripts": {
@@ -61,8 +61,8 @@
     "type": "git",
     "url": "git+https://github.com/chendachao/chendachao.github.io.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Homepage", "Larry Chen", "Webpack"],
+  "author": "chendachao",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/chendachao/chendachao.github.io/issues"

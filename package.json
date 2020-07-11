@@ -61,7 +61,11 @@
     "type": "git",
     "url": "git+https://github.com/chendachao/chendachao.github.io.git"
   },
-  "keywords": ["Homepage", "Larry Chen", "Webpack"],
+  "keywords": [
+    "Homepage",
+    "Larry Chen",
+    "Webpack"
+  ],
   "author": "chendachao",
   "license": "ISC",
   "bugs": {

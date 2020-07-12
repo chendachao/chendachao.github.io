@@ -1,29 +1,35 @@
-import tippy from 'tippy.js';
+import tippy, {animateFill, followCursor, roundArrow} from 'tippy.js';
+import 'tippy.js/dist/tippy.css'; // optional for styling
+import 'tippy.js/dist/svg-arrow.css';
+import 'tippy.js/themes/light-border.css';
+import 'tippy.js/dist/backdrop.css';
+import 'tippy.js/animations/shift-away.css';
+import 'tippy.js/animations/shift-away-subtle.css';
+import 'tippy.js/animations/shift-away-extreme.css';
+
 import { isIE, isMobile } from './utils';
 
 function TooltipAndPopover() {
   
   const template = document.getElementById('wechat-popup');
   const container = document.createElement('div');
+  const defaultConig = {
+    allowHTML: true,
+    arrow: true,
+    theme: 'light-border',
+    interactive: true,
+    animation: 'shift-away',
+    inertia: true,
+  };
 
 // tooltip
-  tippy('[tooltip]', {
-    arrow: true,
-    theme: 'light-border',
-    interactive: true,
-    animation: 'shift-away',
-    inertia: true,
-    size: 'large',
-  });
+  tippy('[tooltip]', defaultConig);
   
   tippy('[tooltip-follow]', {
-    arrow: true,
-    theme: 'light-border',
+    ...defaultConig,
+    trigger: 'click',
     followCursor: isMobile(),
-    interactive: true,
-    animation: 'shift-away',
-    inertia: true,
-    size: 'large',
+    plugins: [followCursor],
   });
 
 // show the popup of wechat qrCode
@@ -52,23 +58,22 @@ function TooltipAndPopover() {
 
 // wechat qrcode popup
   tippy('#wechat', {
-    content: container.innerHTML,
-    theme: 'light-border',
-    // trigger: 'click',
-    animateFill: false,
-    interactive: true,
-    arrow: true,
-    arrowType: 'round', // or 'sharp' (default)
-    animation: 'scale',
+    ...defaultConig,
+    content: container,
+    // content: template,
+    trigger: 'click',
+    // arrow: roundArrow,
+    animateFill: true,
+    plugins: [animateFill],
     duration: [675, 1000],
     onShown: (instance) => {
-      const content = instance.popperChildren.content;
-      const qrCode = content.querySelector('.wechat-qrcode');
+      const content = instance.popper;
+      const qrCode = content.querySelector('.tippy-box');
       qrCode.addEventListener('click', handleScale);
     },
     onHide: (instance) => {
-      const content = instance.popperChildren.content;
-      const qrCode = content.querySelector('.wechat-qrcode');
+      const content = instance.popper;
+      const qrCode = content.querySelector('.tippy-box');
       qrCode.classList.remove('scale');
       qrCode.removeEventListener('click', handleScale);
     }

@@ -11,7 +11,7 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const glob = require('glob-all');
 
 const parts = require('./webpack.parts');
@@ -71,17 +71,19 @@ const commonConfig = merge([
         defaultAttribute: 'async'
       }),
       new webpack.HashedModuleIdsPlugin(),
-      new CopyWebpackPlugin([
-        {from: 'src/manifest.json'},
-        {from: 'src/favicon.ico'},
-        {from: 'src/robots.txt'},
-        {from: 'src/assets/push.js', to: 'assets'},
-        {from: 'src/assets/images/icons', to: 'images/icons'},
-        {
-          from: 'node_modules/sw-offline-google-analytics/build/importScripts/sw-offline-google-analytics.prod.v0.0.25.js',
-          to: 'sw-offline-google-analytics.js'
-        },
-      ]),
+      new CopyWebpackPlugin({
+        patterns: [
+          {from: 'src/manifest.json'},
+          {from: 'src/favicon.ico'},
+          {from: 'src/robots.txt'},
+          {from: 'src/assets/push.js', to: 'assets'},
+          {from: 'src/assets/images/icons', to: 'images/icons'},
+          {
+            from: 'node_modules/sw-offline-google-analytics/build/importScripts/sw-offline-google-analytics.prod.v0.0.25.js',
+            to: 'sw-offline-google-analytics.js'
+          },
+        ]
+      }),
     ]
   },
   parts.loadFonts({

@@ -1,18 +1,23 @@
 import introJs from 'intro.js';
 
+import 'intro.js/introjs.css';
+import 'intro.js/themes/introjs-modern.css';
+
 class Intro {
-  
+
+  isHintDisplayed = false;
+
   constructor() {
     const hideIntro = JSON.parse(localStorage.getItem('hideIntro'));
-    !hideIntro && this.showIntro();
+    !hideIntro && this.initAndShowIntro();
+    // this.initAndShowIntro();
   }
   
   hideIntro = () => {
     localStorage.setItem('hideIntro', true);
   };
   
-  // intro
-  showIntro() {
+  initAndShowIntro() {
     const intro = introJs();
     intro.setOptions({
       showProgress: true,
@@ -21,28 +26,74 @@ class Intro {
           intro: 'Hello! This is Larry Chen. Welcome to my Homepage. Click the \'Next\' button to know more about me.'
         },
         {
-          element: document.querySelector('#step1'),
+          element: '#step1',
           intro: 'This sign brings me good luck, now I share it with you. ^.^'
         },
         {
-          element: document.querySelector('#step2'),
+          element: '#step2',
           intro: 'This is who I am.'
         },
         {
-          element: document.querySelector('#step3'),
+          element: '#step3',
           intro: 'You can reach out to me in the following ways:'
         },
         {
-          element: document.querySelector('#step4'),
-          intro: 'Click here to have a surprise'
+          element: '#step4',
+          intro: 'Click here to have a surprise',
+          position: 'left'
         }
-      ]
-    }).start();
+      ],
+    });
+
+    intro.start();
     
     intro.onskip(this.hideIntro);
     intro.oncomplete(this.hideIntro);
-  };
-  
+  }
+
+  initHint() {
+    const intro = introJs();
+    intro.setOptions({
+      showProgress: true,
+      hints: [
+        {
+          element: '.step11',
+          hint: 'This sign brings me good luck, now I share it with you. ^.^',
+          position: 'left'
+        },
+        {
+          element: '.step12',
+          hint: 'This is who I am.',
+          position: 'left'
+        },
+        {
+          element: '.step13',
+          hint: 'You can reach out to me in the following ways:',
+          position: 'left'
+        },
+        {
+          element: '.step14',
+          hint: 'Click here to have a surprise',
+          position: 'left'
+        }
+      ]
+    });
+
+    intro.addHints();
+  }
+
+  toggleHint() {
+    const intro = introJs();
+    if(this.isHintDisplayed) {
+      intro.hideHints();
+      this.isHintDisplayed = false;
+    } else {
+      this.initHint();
+      intro.showHints();
+      this.isHintDisplayed = true;
+    }
+  }
+
 }
 
 export default Intro;

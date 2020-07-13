@@ -27,7 +27,6 @@ function TooltipAndPopover() {
   
   tippy('[tooltip-follow]', {
     ...defaultConig,
-    trigger: 'click',
     followCursor: isMobile(),
     plugins: [followCursor],
   });

@@ -1,7 +1,7 @@
 /* @import '~tippy.js/dist/tippy.css';
 @import "~tippy.js/themes/light-border.css"; */
-@import "~intro.js/introjs.css";
-@import "~intro.js/themes/introjs-modern.css";
+/* @import "~intro.js/introjs.css";
+@import "~intro.js/themes/introjs-modern.css"; */
 @import "~dialog-polyfill/dialog-polyfill.css";
 
 /* html {
@@ -45,7 +45,7 @@
   height: 100vh;
 }
 
-.pwa-install-btn {
+.help-icon-menu-bar {
   position: absolute;
   top: 1vh;
   right: 1vw;
@@ -56,9 +56,19 @@
   cursor: pointer;
   opacity: 0.54;
   transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
+}
+
+.help-icon-menu-bar .pwa-install-btn {
+  
+  max-height: 24px;
+  margin: 0 auto;
+  cursor: pointer;
+  opacity: 0.54;
+  transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
   background: url(../assets/images/install.svg) center center no-repeat;
 }
 
+/* Bugfix for blue border when click on modile and tablet devices */
 .webkit-mobile-pointer-disable-blue-highlight {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
@@ -149,7 +159,7 @@ only screen and (device-width: 767px) {
 }
 
 .scale {
-  transform: scale(2.5);
+  transform: scale(2.3);
 }
 
 .wechat-qrcode {

@@ -1,11 +1,12 @@
-import tippy, {animateFill, followCursor, roundArrow} from 'tippy.js';
+import tippy, {followCursor, roundArrow} from 'tippy.js';
 import 'tippy.js/dist/tippy.css'; // optional for styling
 import 'tippy.js/dist/svg-arrow.css';
 import 'tippy.js/themes/light-border.css';
 import 'tippy.js/dist/backdrop.css';
-import 'tippy.js/animations/shift-away.css';
-import 'tippy.js/animations/shift-away-subtle.css';
-import 'tippy.js/animations/shift-away-extreme.css';
+
+import 'tippy.js/animations/scale.css';
+import 'tippy.js/animations/scale-subtle.css';
+import 'tippy.js/animations/scale-extreme.css';
 
 import { isIE, isMobile } from './utils';
 
@@ -18,7 +19,7 @@ function TooltipAndPopover() {
     arrow: true,
     theme: 'light-border',
     interactive: true,
-    animation: 'shift-away',
+    animation: 'scale',
     inertia: true,
   };
 
@@ -61,9 +62,7 @@ function TooltipAndPopover() {
     content: container,
     // content: template,
     trigger: 'click',
-    // arrow: roundArrow,
-    animateFill: true,
-    plugins: [animateFill],
+    arrow: roundArrow,
     duration: [675, 1000],
     onShown: (instance) => {
       const content = instance.popper;

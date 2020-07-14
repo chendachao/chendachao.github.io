@@ -6,7 +6,7 @@ function SetQRCode() {
   let mySite = LOCAL_REGEXP.test(window.location.origin) ? 'https://chendachao.github.io' : window.location.origin;
   
   var dialog = document.querySelector('#dialog');
-  var closeBtn = document.querySelector('#closeBtn');
+  var closeBtns = document.querySelectorAll('.closeBtn');
   let qrcodeHandler = document.querySelector('.qrcode-handler');
   
   dialogPolyfill.registerDialog(dialog);
@@ -34,9 +34,11 @@ function SetQRCode() {
       });
   });
   
-  closeBtn.onclick = function () {
-    dialog.close();
-  };
+  closeBtns.forEach(closeBtn => {
+    closeBtn.addEventListener('click', function() {
+      dialog.close();
+    });
+  });
   
   dialog.addEventListener('click', function (event) {
     const rect = dialog.getBoundingClientRect();

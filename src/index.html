@@ -39,12 +39,15 @@
 </head>
 <body data-theme-style="light">
 
-<main class="main">
+<header>
   <div class="help-icon-menu-bar">
-    <button class="start-replay-tour">Tour</button>
-    <button class="start-hint">Hint</button>
-    <div class="pwa-install-btn webkit-mobile-pointer-disable-blue-highlight" id="butInstall" aria-label="Install">PWA</div>
+    <button class="start-replay-tour"></button>
+    <button class="start-hint"></button>
+    <button class="pwa-install-btn webkit-mobile-pointer-disable-blue-highlight" id="butInstall" aria-label="Install"></button>
   </div>
+</header>
+
+<main class="main">
   <div class="moon webkit-mobile-pointer-disable-blue-highlight step14" id="step4"></div>
   <div class="centered-content">
     <!-- <div class="brand"><span class="brand-icon">&#9964;</span></div> -->
@@ -71,12 +74,8 @@
       <template id="wechat-popup">
         <div style="text-align: center">
           <img class="wechat-qrcode" src="./assets/images/wechat-qr-code.jpg" alt="wechat: ProgrammerLarry">
-          <div style="margin-top: -10px; line-height: 15px;">
-            <small>
-                <i>
-                  Scan the QR Code to <br> add me on WeChat
-                </i>
-            </small>
+          <div class="wechat-qrcode-desc">
+            Scan the QR Code to add me on WeChat
           </div>
         </div>
       </template>
@@ -123,22 +122,25 @@
 
 <footer>
   <div class="qrcode-container">
-    <img class="qrcode-handler" src="./assets/images/qr-code-mobile.svg" alt="qrcode view on mobile"
-         data-tippy-content="View on mobile" tooltip>
+    <!-- <img class="qrcode-handler" src="./assets/images/qr-code-mobile.svg" alt="qrcode view on mobile"> -->
+    <img class="qrcode-handler" src="./assets/images/qr-code.svg" alt="qrcode view on mobile">
   </div>
 </footer>
 
 <dialog id="dialog" class="qrcode-dialog dialog-bg dialog-animation">
-  <div style="text-align: right;">
-    <button type="button" class="close">&times;</button>
+  <div>
+    <small>Scan the QR Code to view this site on moblie</small>
+    <button type="button" class="close closeBtn" style="
+      border: none;
+      background: none;
+      cursor: pointer;">&times;</button>
   </div>
+  <hr style="margin-top: 8px; margin-bottom: 8px">
   <div style="text-align: center;">
-    <small>Scan the QRcode to view this site on moblie</small>
-    <hr>
     <img alt="mobile-qrcode" class="mobile-qrcode">
   </div>
   <div style="text-align: end;">
-    <button id="closeBtn" style="padding: 5px">Close</button>
+    <button class="closeBtn" style="padding: 5px">Close</button>
   </div>
 </dialog>
 

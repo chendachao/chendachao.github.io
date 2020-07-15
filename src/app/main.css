@@ -216,9 +216,10 @@ only screen and (device-width: 767px) {
   outline: none;
 }
 
+/* Override */
 .introjs-helperLayer {
   background: transparent !important;
-  box-shadow: 0 0 0 9999px rgba(25, 24, 24, 0.51);
+  box-shadow: 0 0 0 9999px rgba(25, 24, 24, 0.51) !important;
 }
 
 .introjs-overlay {
@@ -331,7 +332,8 @@ only screen and (device-width: 767px) {
 }
 
 .mobile-qrcode {
-  /*width: 100%;*/
+  width: 100% !important;
+  height: auto !important;
 }
 
 .qrcode-dialog {
@@ -341,6 +343,21 @@ only screen and (device-width: 767px) {
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
 }
 
+.qrcode-dialog .close-icon {
+  border: none;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.qrcode-dialog .close-btn {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
 .dialog-bg::backdrop {
   /* native */
   /* position: fixed;
@@ -348,7 +365,7 @@ only screen and (device-width: 767px) {
   left: 0;
   right: 0;
   bottom: 0; */
-  background-color: rgba(0, 0, 0, 0.46);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .dialog-bg+.backdrop {
@@ -358,11 +375,25 @@ only screen and (device-width: 767px) {
   left: 0;
   right: 0;
   bottom: 0; */
-  background-color: rgba(0, 0, 0, 0.46);
+  /* background-color: rgba(0, 0, 0, 0.46); */
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.shake {
+  animation: shake 300ms ease-in-out !important;
+}
+
+@keyframes shake {
+  0% {transform: translateX(0);}
+  12.5% {transform: translateX(-6px) rotateY(-5deg)}
+  37.5% {transform: translateX(5px) rotateY(4deg)}
+  62.5% {transform: translateX(-3px) rotateY(-2deg)}
+  87.5% {transform: translateX(2px) rotateY(1deg)}
+  100% {transform: translateX(0)}
 }
 
 .dialog-animation:not([aria-hidden='true']) {
-  animation: appear-from-bottom 600ms 150ms 1 both;
+  /* animation: appear-from-bottom 600ms 150ms 1 both; */
   transition: opacity 4s;
 }
 

@@ -130,17 +130,14 @@
 <dialog id="dialog" class="qrcode-dialog dialog-bg dialog-animation">
   <div>
     <small>Scan the QR Code to view this site on moblie</small>
-    <button type="button" class="close closeBtn" style="
-      border: none;
-      background: none;
-      cursor: pointer;">&times;</button>
+    <button type="button" class="dialog-dismiss-trigger close-icon">&times;</button>
   </div>
   <hr style="margin-top: 8px; margin-bottom: 8px">
   <div style="text-align: center;">
-    <img alt="mobile-qrcode" class="mobile-qrcode">
+    <canvas class="mobile-qrcode"></canvas>
   </div>
   <div style="text-align: end;">
-    <button class="closeBtn" style="padding: 5px">Close</button>
+    <button autofocus class="dialog-dismiss-trigger close-btn">Close</button>
   </div>
 </dialog>
 

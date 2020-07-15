@@ -6,7 +6,7 @@ function SetQRCode() {
   let mySite = LOCAL_REGEXP.test(window.location.origin) ? 'https://chendachao.github.io' : window.location.origin;
   
   var dialog = document.querySelector('#dialog');
-  var closeBtns = document.querySelectorAll('.closeBtn');
+  var dismissTriggers = document.querySelectorAll('.dialog-dismiss-trigger');
   let qrcodeHandler = document.querySelector('.qrcode-handler');
   
   dialogPolyfill.registerDialog(dialog);
@@ -14,11 +14,15 @@ function SetQRCode() {
   qrcodeHandler.addEventListener('click', () => {
   
     dialog.showModal();
+
+    let canvas = document.querySelector('.mobile-qrcode');
   
-    QRCode.toDataURL(mySite, {
+    QRCode.toDataURL(canvas, mySite, {
         errorCorrectionLevel: 'H',
         type: 'image/jpeg',
         quality: 1,
+        // type: 'image/svg',
+        // version: 4, // 6
         margin: 1,
         color: {
           // dark: "#010599FF",
@@ -26,16 +30,21 @@ function SetQRCode() {
         }
       })
       .then(url => {
-        let img = document.querySelector('.mobile-qrcode');
-        img.src = url;
+        console.log('url', url);
       })
       .catch(err => {
+        const context = canvas.getContext("2d");
+
+        context.fillStyle = "blue";
+        context.font = "bold 20px Arial";
+        context.fillText(`${mySite}`, 10, 50);
+
         console.error(err);
       });
   });
   
-  closeBtns.forEach(closeBtn => {
-    closeBtn.addEventListener('click', function() {
+  dismissTriggers.forEach(ele => {
+    ele.addEventListener('click', function() {
       dialog.close();
     });
   });
@@ -47,7 +56,11 @@ function SetQRCode() {
     const isInDialog=(rect.top <= event.clientY && event.clientY <= rect.bottom
       && rect.left <= event.clientX && event.clientX <= rect.right);
     if (!isInDialog) {
-      dialog.close();
+      // dialog.close();
+      // TODO: also need to shake when user tab 'ESC'
+      dialog.classList.add('shake');
+      setTimeout(() => dialog.classList.remove('shake'), 300);
+      dismissTriggers[1].focus();
     }
   });
 }

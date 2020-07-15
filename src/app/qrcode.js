@@ -15,9 +15,9 @@ function SetQRCode() {
   
     dialog.showModal();
 
-    let canvas = document.querySelector('.mobile-qrcode');
+    let img = document.querySelector('.mobile-qrcode');
   
-    QRCode.toDataURL(canvas, mySite, {
+    QRCode.toDataURL(mySite, {
         errorCorrectionLevel: 'H',
         type: 'image/jpeg',
         quality: 1,
@@ -30,15 +30,10 @@ function SetQRCode() {
         }
       })
       .then(url => {
-        console.log('url', url);
+        img.src = url;
       })
       .catch(err => {
-        const context = canvas.getContext("2d");
-
-        context.fillStyle = "blue";
-        context.font = "bold 20px Arial";
-        context.fillText(`${mySite}`, 10, 50);
-
+        img.setAttribute('alt', mySite);
         console.error(err);
       });
   });

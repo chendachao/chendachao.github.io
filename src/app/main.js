@@ -1,3 +1,5 @@
+import { isIE } from './utils';
+
 import Theme from './theme';
 
 // Initial theme
@@ -23,6 +25,27 @@ import('./intro').then(Intro => {
 // Initialize tooltip and popover
 import('./tooltip-popover').then(TooltipAndPopover => TooltipAndPopover.default());
 
-import('./qrcode').then(SetQRCode => SetQRCode.default());
+import('./qrcode-dialog').then(SetQRCode => SetQRCode.default());
 
+// hide the install app button if in IE
+if (isIE()) {
+  const installButton = document.getElementById('btnInstall');
+  installButton.setAttribute('hidden', '');
+}
+
+window.addEventListener('load', function() {
+  var status = document.getElementById("status");
+  
+  const updateOnlineStatus = function (event) {
+    // var message = navigator.onLine ? "online" : "offline";
+    var message = navigator.onLine ? "" : "You're current in offline status, use cache Simida!";
+    status.className = message;
+    status.innerHTML = message.toUpperCase();
+  }
+
+  updateOnlineStatus();
+  
+  window.addEventListener('online', updateOnlineStatus);
+  window.addEventListener('offline', updateOnlineStatus);
+});
 

@@ -26,9 +26,11 @@
 - https://www.flaticon.com/
 - https://cssgradient.io/
 - https://kazuhikoarase.github.io/qrcode-generator/js/demo/
+- https://iconmonstr.com/
 
 ## TODOs:
 - JSON description for developer view
 - More social icons option
 - i18n
-- Update event subscribe with push/notifications API, recommend a 'Subscribe Update' button
+- [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Update' button
+- [PWA] Update alert

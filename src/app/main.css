@@ -94,7 +94,7 @@
 
 [class^="moon"] {
   position: absolute;
-  top: 6%;
+  top: 8%;
   bottom: 0;
   left: 60%;
   right: 0;
@@ -185,7 +185,7 @@ only screen and (device-width: 767px) {
 }
 
 .scale {
-  transform: scale(2.3);
+  transform: scale(1.8);
 }
 
 .wechat-qrcode {
@@ -220,6 +220,14 @@ only screen and (device-width: 767px) {
 .introjs-helperLayer {
   background: transparent !important;
   box-shadow: 0 0 0 9999px rgba(25, 24, 24, 0.51) !important;
+}
+
+.introjs-tooltiptext {
+  font-weight: bold;
+}
+
+.introjs-button {
+  text-shadow: none !important;
 }
 
 .introjs-overlay {
@@ -344,12 +352,14 @@ only screen and (device-width: 767px) {
 }
 
 .qrcode-dialog .close-icon {
+  float: right;
   border: none;
   cursor: pointer;
-  height: 24px;
-  width: 24px;
+  width: 20px;
+  margin-left: 5px;
   border-radius: 50%;
   font-size: 1rem;
+  color: red;
 }
 
 .qrcode-dialog .close-btn {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta charset="utf-8">
@@ -9,13 +10,13 @@
 
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#1976d2">
-  <meta name="application-name" content="Chen Dachao"/>
+  <meta name="application-name" content="Chen Dachao" />
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="msapplication-TileColor" content="blue" />
   <meta name="msapplication-starturl" content="/">
 
-   <!-- Add iOS meta tags and icons -->
+  <!-- Add iOS meta tags and icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Chen Dachao">
@@ -31,119 +32,137 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143770576-1"></script>
   <script defer>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'UA-143770576-1');
   </script>
 
 </head>
+
 <body data-theme-style="light">
 
-<header>
-  <div class="help-icon-menu-bar">
-    <button class="start-replay-tour"></button>
-    <button class="start-hint"></button>
-    <button class="pwa-install-btn webkit-mobile-pointer-disable-blue-highlight" id="butInstall" aria-label="Install"></button>
-  </div>
-</header>
+  <header>
+    <div id="status" style="color: darkgrey; padding-left: 5px; padding-top: 3px; margin-bottom: -5px; text-align: center;"></div>
+    <div class="help-icon-menu-bar">
+      <button class="start-replay-tour webkit-mobile-pointer-disable-blue-highlight"></button>
+      <button class="start-hint webkit-mobile-pointer-disable-blue-highlight"></button>
+      <button class="pwa-install-btn webkit-mobile-pointer-disable-blue-highlight" id="btnInstall"
+        aria-label="Install"></button>
+    </div>
+  </header>
 
-<main class="main">
-  <div class="moon webkit-mobile-pointer-disable-blue-highlight step14" id="step4"></div>
-  <div class="centered-content">
-    <!-- <div class="brand"><span class="brand-icon">&#9964;</span></div> -->
-    <!-- <div class="brand"><span class="brand-icon">&#9883;</span></div> -->
-    <!-- <div class="brand"><span class="brand-icon">&#10031;</span></div> -->
-    <div class="brand"><span id="step1" class="brand-icon step11"></span></div>
-    <!-- <div class="brand"><span class="brand-icon">&#127788;</span></div> -->
-    <!-- <div class="brand"><span class="brand-icon">&#128329;</span></div> -->
-    <div class="bio step12" id="step2">
-      Hello, this is <span class="highlight" tooltip data-tippy-content="<div style='text-align: center'>Chen Dachao<br/>陈大超</div>">Larry Chen</span>.
-      I'm a <span class="highlight" style="outline: none;" tooltip-follow data-tippy-content="
+  <main class="main">
+    <div class="moon webkit-mobile-pointer-disable-blue-highlight step14" id="step4"></div>
+    <div class="centered-content">
+      <!-- <div class="brand"><span class="brand-icon">&#9964;</span></div> -->
+      <!-- <div class="brand"><span class="brand-icon">&#9883;</span></div> -->
+      <!-- <div class="brand"><span class="brand-icon">&#10031;</span></div> -->
+      <div class="brand"><span id="step1" class="brand-icon step11"></span></div>
+      <!-- <div class="brand"><span class="brand-icon">&#127788;</span></div> -->
+      <!-- <div class="brand"><span class="brand-icon">&#128329;</span></div> -->
+      <div class="bio step12" id="step2">
+        Hello, this is <span class="highlight" tooltip
+          data-tippy-content="<div style='text-align: center'>Chen Dachao<br/>陈大超</div>">Larry Chen</span>.
+        I'm a <span class="highlight" style="outline: none;" tooltip-follow data-tippy-content="
         <h3>Web Developer & Technology Architect</h3>
         <hr>
         HTML(5)/CSS(3), <strong>Angular</strong>, React, NodeJS/Express, AWS/Serverless,
         <strong>Linux</strong>, Docker, Nginx, Python, MongoDB
         ">web developer</span> living in Shanghai, China.
-      I'm working on a project that better helps people create web components visually with ease.
-      I like <span class="highlight" tooltip data-tippy-content="Life lies in movement.">running</span>,
-      <span class="highlight" tooltip data-tippy-content="Why the universe is so vast?">thinking</span> and
-      <span class="highlight" tooltip data-tippy-content="Change the world, make our life better.">programming</span>.
-    </div>
+        I'm working on a project that better helps people create web components visually with ease.
+        I like <span class="highlight" tooltip data-tippy-content="Life lies in movement.">running</span>,
+        <span class="highlight" tooltip data-tippy-content="Why the universe is so vast?">thinking</span> and
+        <span class="highlight" tooltip data-tippy-content="Change the world, make our life better.">programming</span>.
+      </div>
 
-    <div>
-      <template id="wechat-popup">
-        <div style="text-align: center">
-          <img class="wechat-qrcode" src="./assets/images/wechat-qr-code.jpg" alt="wechat: ProgrammerLarry">
-          <div class="wechat-qrcode-desc">
-            Scan the QR Code to add me on WeChat
+      <div>
+        <template id="wechat-popup">
+          <div style="text-align: center">
+            <img class="wechat-qrcode" src="./assets/images/wechat-qr-code.jpg" alt="wechat: ProgrammerLarry">
+            <div class="wechat-qrcode-desc">
+              Scan the QR Code to add me on WeChat
+            </div>
           </div>
-        </div>
-      </template>
-      <ul id="step3" class="social-icons step13">
-        <li>
-          <a data-tippy-content="Github: chendachao" tooltip class="icon icon-github circle webkit-mobile-pointer-disable-blue-highlight" href="https://github.com/chendachao" target="_blank" rel="noopener noreferrer">
-            <img class="svg" src="./assets/images/social/github.svg" alt="Github">
-          </a>
-        </li>
-        <li>
-          <a data-tippy-content="Email: chendachao@outlook.com" tooltip class="icon icon-envelope-o circle webkit-mobile-pointer-disable-blue-highlight" href="mailto:chendachao@outlook.com?subject=Greetings Larry" rel="noopener noreferrer">
-            <img class="svg" src="./assets/images/social/outlook.svg" alt="Outlook">
-          </a>
-        </li>
-        <li>
-          <a class="icon icon-wechat circle webkit-mobile-pointer-disable-blue-highlight" href="javascript:void(0)" id="wechat" rel="noopener noreferrer">
-            <img class="svg" src="./assets/images/social/wechat.svg" alt="Wechat">
-          </a>
-        </li>
-        <li>
-          <a data-tippy-content="Skype" tooltip class="icon icon-skype circle webkit-mobile-pointer-disable-blue-highlight" href="skype:chendachao@outlook.com?chat" rel="noopener noreferrer">
-            <img class="svg" src="./assets/images/social/skype.svg" alt="Skype">
-          </a>
-        </li>
-        <li>
-          <a data-tippy-content="Linkedin: chendachao" tooltip class="icon icon-linkedin circle webkit-mobile-pointer-disable-blue-highlight" href="https://www.linkedin.com/in/chendachao" target="_blank" rel="noopener noreferrer">
-            <img class="svg" src="./assets/images/social/linkedin.svg" alt="Linkedin">
-          </a>
-        </li>
-        <li>
-          <a data-tippy-content="Twitter: dachaochen" tooltip class="icon icon-twitter circle webkit-mobile-pointer-disable-blue-highlight" target="_blank" href="https://twitter.com/dachaochen">
-            <img class="svg" src="./assets/images/social/twitter.svg" alt="Twitter">
-          </a>
-        </li>
-        <li>
-          <a data-tippy-content="Stackoverflow: chen-dachao" tooltip class="icon icon-stackoverflow circle webkit-mobile-pointer-disable-blue-highlight" target="_blank" href="https://stackoverflow.com/users/6294371/chen-dachao">
-            <img class="svg" src="./assets/images/social/so.svg" alt="Stackoverflow">
-          </a>
-        </li>
-      </ul>
+        </template>
+        <ul id="step3" class="social-icons step13">
+          <li>
+            <a data-tippy-content="Github: chendachao" tooltip
+              class="icon icon-github circle webkit-mobile-pointer-disable-blue-highlight"
+              href="https://github.com/chendachao" target="_blank" rel="noopener noreferrer">
+              <img class="svg" src="./assets/images/social/github.svg" alt="Github">
+            </a>
+          </li>
+          <li>
+            <a data-tippy-content="Email: chendachao@outlook.com" tooltip
+              class="icon icon-envelope-o circle webkit-mobile-pointer-disable-blue-highlight"
+              href="mailto:chendachao@outlook.com?subject=Greetings Larry" rel="noopener noreferrer">
+              <img class="svg" src="./assets/images/social/outlook.svg" alt="Outlook">
+            </a>
+          </li>
+          <li>
+            <a class="icon icon-wechat circle webkit-mobile-pointer-disable-blue-highlight" href="javascript:void(0)"
+              id="wechat" rel="noopener noreferrer">
+              <img class="svg" src="./assets/images/social/wechat.svg" alt="Wechat">
+            </a>
+          </li>
+          <li>
+            <a data-tippy-content="Skype" tooltip
+              class="icon icon-skype circle webkit-mobile-pointer-disable-blue-highlight"
+              href="skype:chendachao@outlook.com?chat" rel="noopener noreferrer">
+              <img class="svg" src="./assets/images/social/skype.svg" alt="Skype">
+            </a>
+          </li>
+          <li>
+            <a data-tippy-content="Linkedin: chendachao" tooltip
+              class="icon icon-linkedin circle webkit-mobile-pointer-disable-blue-highlight"
+              href="https://www.linkedin.com/in/chendachao" target="_blank" rel="noopener noreferrer">
+              <img class="svg" src="./assets/images/social/linkedin.svg" alt="Linkedin">
+            </a>
+          </li>
+          <li>
+            <a data-tippy-content="Twitter: dachaochen" tooltip
+              class="icon icon-twitter circle webkit-mobile-pointer-disable-blue-highlight" target="_blank"
+              href="https://twitter.com/dachaochen">
+              <img class="svg" src="./assets/images/social/twitter.svg" alt="Twitter">
+            </a>
+          </li>
+          <li>
+            <a data-tippy-content="Stackoverflow: chen-dachao" tooltip
+              class="icon icon-stackoverflow circle webkit-mobile-pointer-disable-blue-highlight" target="_blank"
+              href="https://stackoverflow.com/users/6294371/chen-dachao">
+              <img class="svg" src="./assets/images/social/so.svg" alt="Stackoverflow">
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</main>
+  </main>
 
-<footer>
-  <div class="qrcode-container">
-    <!-- <img class="qrcode-handler" src="./assets/images/qr-code-mobile.svg" alt="qrcode view on mobile"> -->
-    <img class="qrcode-handler" src="./assets/images/qr-code.svg" alt="qrcode view on mobile">
-  </div>
-</footer>
+  <footer>
+    <div class="qrcode-container">
+      <!-- <img class="qrcode-handler" src="./assets/images/qr-code-mobile.svg" alt="qrcode view on mobile"> -->
+      <img class="qrcode-handler" src="./assets/images/qr-code.svg" alt="qrcode view on mobile">
+    </div>
+  </footer>
 
-<dialog id="dialog" class="qrcode-dialog dialog-bg dialog-animation">
-  <div>
-    <small>Scan the QR Code to view this site on moblie</small>
-    <button type="button" class="dialog-dismiss-trigger close-icon">&times;</button>
-  </div>
-  <hr style="margin-top: 8px; margin-bottom: 8px">
-  <div style="text-align: center;">
-    <img alt="mobile-qrcode" class="mobile-qrcode">
-  </div>
-  <div style="text-align: end;">
-    <button autofocus class="dialog-dismiss-trigger close-btn">Close</button>
-  </div>
-</dialog>
+  <dialog id="dialog" class="qrcode-dialog dialog-bg dialog-animation">
+    <div>
+      <button type="button" class="dialog-dismiss-trigger close-icon">&times;</button>
+      <small>Scan the QR Code to view this site on moblie</small>
+    </div>
+    <hr style="margin-top: 8px; margin-bottom: 8px">
+    <div style="text-align: center;">
+      <img alt="https://chendachao.github.io" class="mobile-qrcode">
+    </div>
+    <div style="text-align: end;">
+      <button class="dialog-dismiss-trigger close-btn">Close</button>
+    </div>
+  </dialog>
 
-<noscript>
-  <h2>To run this application, JavaScript is required to be enabled.</h2> 
-</noscript>
+  <noscript>
+    <h2>To run this application, JavaScript is required to be enabled.</h2>
+  </noscript>
 
 </body>
+
 </html>

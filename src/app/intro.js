@@ -1,7 +1,12 @@
 import introJs from 'intro.js';
 
 import 'intro.js/introjs.css';
-import 'intro.js/themes/introjs-modern.css';
+// import 'intro.js/themes/introjs-modern.css';
+// import 'intro.js/themes/introjs-royal.css';
+
+import 'intro.js/themes/introjs-nazanin.css';
+// import 'intro.js/themes/introjs-nassim.css';
+// import 'intro.js/themes/introjs-flattener.css';
 
 class Intro {
 
@@ -27,15 +32,18 @@ class Intro {
         },
         {
           element: '#step1',
-          intro: 'This sign brings me good luck, now I share it with you. ^.^'
+          intro: 'This sign brings me good luck, now I share it with you. ^.^',
+          tooltipPosition: 'auto'
         },
         {
           element: '#step2',
-          intro: 'This is who I am.'
+          intro: 'This is who I am.',
+          tooltipPosition: 'top'
         },
         {
           element: '#step3',
-          intro: 'You can reach out to me in the following ways:'
+          intro: 'You can reach out to me in the following ways:',
+          tooltipPosition: 'auto'
         },
         {
           element: '#step4',
@@ -64,7 +72,7 @@ class Intro {
         {
           element: '.step12',
           hint: 'This is who I am.',
-          position: 'left'
+          position: 'top-left'
         },
         {
           element: '.step13',

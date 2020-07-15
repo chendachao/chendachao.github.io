@@ -1,4 +1,4 @@
-import tippy, {followCursor, roundArrow} from 'tippy.js';
+import tippy, { followCursor, roundArrow } from 'tippy.js';
 import 'tippy.js/dist/tippy.css'; // optional for styling
 import 'tippy.js/dist/svg-arrow.css';
 import 'tippy.js/themes/light-border.css';
@@ -11,42 +11,35 @@ import 'tippy.js/animations/scale-extreme.css';
 import { isIE, isMobile } from './utils';
 
 function TooltipAndPopover() {
-  
   const template = document.getElementById('wechat-popup');
   const container = document.createElement('div');
   const defaultConig = {
     allowHTML: true,
-    arrow: true,
+    arrow: roundArrow,
     theme: 'light-border',
     interactive: true,
     animation: 'scale',
     inertia: true,
   };
 
-// tooltip
+  // tooltip
   tippy('[tooltip]', defaultConig);
-  
+
   tippy('[tooltip-follow]', {
     ...defaultConig,
     followCursor: isMobile(),
     plugins: [followCursor],
   });
 
-// show the popup of wechat qrCode
+  // show the popup of wechat qrCode
   if (isIE()) {
     container.appendChild(template);
   } else {
     container.appendChild(document.importNode(template.content, true));
   }
 
-// hide the install app button if in IE
-  if (isIE()) {
-    const installButton = document.getElementById('butInstall');
-    installButton.setAttribute('hidden', '');
-  }
-
-// click scale qrcode
-  function handleScale(event) {
+  // click to scale qrcode
+  function toggleScale(event) {
     if (isIE()) {
       setTimeout(() => {
         this.classList.toggle('scale');
@@ -56,27 +49,24 @@ function TooltipAndPopover() {
     }
   }
 
-// wechat qrcode popup
+  // wechat qrcode popup
   tippy('#wechat', {
     ...defaultConig,
     content: container,
-    // content: template,
-    trigger: 'click',
-    arrow: roundArrow,
+    // trigger: 'click',
     duration: [675, 1000],
-    onShown: (instance) => {
+    onShown: instance => {
       const content = instance.popper;
       const qrCode = content.querySelector('.tippy-box');
-      qrCode.addEventListener('click', handleScale);
+      qrCode.addEventListener('click', toggleScale);
     },
-    onHide: (instance) => {
+    onHide: instance => {
       const content = instance.popper;
       const qrCode = content.querySelector('.tippy-box');
       qrCode.classList.remove('scale');
-      qrCode.removeEventListener('click', handleScale);
-    }
+      qrCode.removeEventListener('click', toggleScale);
+    },
   });
 }
 
 export default TooltipAndPopover;
-

@@ -16,6 +16,7 @@ function SetQRCode() {
     dialog.showModal();
 
     let img = document.querySelector('.mobile-qrcode');
+    img.setAttribute('alt', mySite);
   
     QRCode.toDataURL(mySite, {
         errorCorrectionLevel: 'H',
@@ -33,7 +34,7 @@ function SetQRCode() {
         img.src = url;
       })
       .catch(err => {
-        img.setAttribute('alt', mySite);
+        img.setAttribute('alt', `Failed to generate QRCode, please visit ${mySite}`);
         console.error(err);
       });
   });
@@ -55,7 +56,6 @@ function SetQRCode() {
       // TODO: also need to shake when user tab 'ESC'
       dialog.classList.add('shake');
       setTimeout(() => dialog.classList.remove('shake'), 300);
-      dismissTriggers[1].focus();
     }
   });
 }

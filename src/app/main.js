@@ -37,8 +37,7 @@ window.addEventListener('load', function() {
   var status = document.getElementById("status");
   
   const updateOnlineStatus = function (event) {
-    // var message = navigator.onLine ? "online" : "offline";
-    var message = navigator.onLine ? "" : "You're current in offline status, use cache Simida!";
+    var message = navigator.onLine ? "" : "offline simida, will use cache!";
     status.className = message;
     status.innerHTML = message.toUpperCase();
   }

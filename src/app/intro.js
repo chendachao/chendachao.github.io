@@ -33,7 +33,7 @@ class Intro {
         {
           element: '#step1',
           intro: 'This sign brings me good luck, now I share it with you. ^.^',
-          tooltipPosition: 'auto'
+          tooltipPosition: 'bottom'
         },
         {
           element: '#step2',
@@ -77,7 +77,7 @@ class Intro {
         {
           element: '.step13',
           hint: 'You can reach out to me in the following ways:',
-          position: 'left'
+          position: 'top'
         },
         {
           element: '.step14',

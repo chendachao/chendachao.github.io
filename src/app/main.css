@@ -22,9 +22,9 @@
 
 [data-theme-style="light"] {
   background: rgb(131, 58, 180);
-  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(209, 63, 63, 1) 70%, rgba(194, 141, 65, 1) 100%);
+  background: linear-gradient(90deg, rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%);
 
-  animation: show 2s ease-in-out;
+  animation: show 2s ease-in-out, light-sky 10s;
 }
 
 [data-theme-style="dark"] {
@@ -85,7 +85,7 @@
 
 [class^="moon"] {
   position: absolute;
-  top: 8%;
+  top: 7%;
   bottom: 0;
   left: 60%;
   right: 0;
@@ -94,12 +94,14 @@
   max-width: 10vw;
   cursor: pointer;
   border-radius: 50%;
-  animation: colorize 24s linear infinite;
+  animation: colorize 24s cubic-bezier(0.2, 1.05, 0.45, 0.94) infinite, rise 10s;
   transition: 2s;
 }
 
 [data-theme-style="light"] [class^="moon"] {
-  background-color: gold;
+  /* background: linear-gradient(gold, #d00); */
+  background: linear-gradient(to top, #d00 0%,#fc8b53 50%,#fdd55a 100%);
+  background-size: 200% 200%;
 }
 
 [data-theme-style="dark"] [class^="moon"] {
@@ -461,32 +463,49 @@ dialog {
   }
 }
 
+@keyframes light-sky {
+  0% {
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(209, 63, 63, 1) 70%, rgba(194, 141, 65, 1) 100%);
+  }
+  100% {
+    background: linear-gradient(90deg, rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%);
+  }
+}
+
+@keyframes rise {
+  0% {
+    top: 40%;
+    left: -50%;
+    background-position: 50% 100%;
+    transform: scale(1.2);
+  }
+  100% {
+    top: 7%;
+    left: 60%;
+    background-position: 50% 0;
+  }
+}
+
 @keyframes colorize {
   0% {
-    box-shadow: 0 0 10rem 2rem red;
+    box-shadow: 0 0 40px 6px #f20, 0 0 150px 10px #f33;
   }
 
-  14.29% {
-    box-shadow: 0 0 10rem 2rem orange;
+  35% {
+    box-shadow: 0 0 40px 6px orange, 0 0 150px 10px #e0596b;
   }
 
-  28.58% {
-    box-shadow: 0 0 10rem 2rem yellow;
+  65% {
+    box-shadow: none;
   }
-
-  42.87% {
-    box-shadow: 0 0 10rem 2rem green;
-  }
-
-  57.16% {
-    box-shadow: 0 0 10rem 2rem blue;
-  }
-
-  71.45% {
-    box-shadow: 0 0 10rem 2rem indigo;
+  
+  85% {
+    box-shadow: none;
+    background: linear-gradient(gold, #d90 #d00);
+    background-position: 50% 0;
   }
 
   100% {
-    box-shadow: 0 0 10rem 2rem purple;
+    box-shadow: 0 0 40px 6px #efb503, 0 0 150px 10px #d66c39;
   }
 }

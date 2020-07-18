@@ -1,3 +1,5 @@
+import IntlMessageFormat from 'intl-messageformat';
+
 import { isIE } from './utils';
 
 import Theme from './theme';
@@ -7,19 +9,20 @@ Theme();
 
 // Show intro
 import('./intro').then(Intro => {
-  const intro = new Intro.default();
-
-  const startReplayBtn = document.querySelector('.start-replay-tour');
-  const starthintBtn = document.querySelector('.start-hint');
-
-  startReplayBtn.addEventListener('click', () => {
-    intro.initAndShowIntro();
-  });
-
-  starthintBtn.addEventListener('click', () => {
-    intro.toggleHint();
-  });
-
+  setTimeout(() => {
+    const intro = new Intro.default();
+  
+    const startReplayBtn = document.querySelector('.start-replay-tour');
+    const starthintBtn = document.querySelector('.start-hint');
+  
+    startReplayBtn.addEventListener('click', () => {
+      intro.initAndShowIntro();
+    });
+  
+    starthintBtn.addEventListener('click', () => {
+      intro.toggleHint();
+    });
+  }, 10000);
 });
 
 // Initialize tooltip and popover
@@ -47,4 +50,9 @@ window.addEventListener('load', function() {
   window.addEventListener('online', updateOnlineStatus);
   window.addEventListener('offline', updateOnlineStatus);
 });
+
+
+const msg = new IntlMessageFormat('My name is {name}.', 'en-US');
+console.log('IntlMessageFormat', msg.format({name: 'larry'}));
+
 

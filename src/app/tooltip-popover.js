@@ -13,7 +13,7 @@ import { isIE, isMobile } from './utils';
 function TooltipAndPopover() {
   const template = document.getElementById('wechat-popup');
   const container = document.createElement('div');
-  const defaultConig = {
+  const commonConig = {
     allowHTML: true,
     arrow: roundArrow,
     theme: 'light-border',
@@ -22,11 +22,8 @@ function TooltipAndPopover() {
     inertia: true,
   };
 
-  // tooltip
-  tippy('[tooltip]', defaultConig);
-
-  tippy('[tooltip-follow]', {
-    ...defaultConig,
+  tippy('[tooltip]', {
+    ...commonConig,
     followCursor: isMobile(),
     plugins: [followCursor],
   });
@@ -53,7 +50,7 @@ function TooltipAndPopover() {
 
   // wechat qrcode popup
   tippy('#wechat', {
-    ...defaultConig,
+    ...commonConig,
     content: container,
     // trigger: 'click',
     duration: [675, 1000],

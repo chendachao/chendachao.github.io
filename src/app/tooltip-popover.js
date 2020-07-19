@@ -32,6 +32,8 @@ function TooltipAndPopover() {
   });
 
   // show the popup of wechat qrCode
+  // const clone = template.content.cloneNode(true);
+  // container.appendChild(clone);
   if (isIE()) {
     container.appendChild(template);
   } else {

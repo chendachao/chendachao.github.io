@@ -11,8 +11,13 @@ import 'intro.js/themes/introjs-nazanin.css';
 class Intro {
 
   isHintDisplayed = false;
+  format = null;
 
-  constructor() {
+  constructor(format) {
+    this.format = format;
+  }
+
+  init() {
     const hideIntro = JSON.parse(localStorage.getItem('hideIntro'));
     !hideIntro && this.initAndShowIntro();
     // this.initAndShowIntro();
@@ -28,26 +33,26 @@ class Intro {
       showProgress: true,
       steps: [
         {
-          intro: 'Hello! This is Larry Chen. Welcome to my Homepage. Click the \'Next\' button to know more about me.'
+          intro: this.format('APP.INTRO.INTRO')
         },
         {
           element: '#step1',
-          intro: 'This sign brings me good luck, now I share it with you. ^.^',
+          intro: this.format('APP.INTRO.STEP1'),
           tooltipPosition: 'bottom'
         },
         {
           element: '#step2',
-          intro: 'This is who I am.',
+          intro: this.format('APP.INTRO.STEP2'),
           tooltipPosition: 'top'
         },
         {
           element: '#step3',
-          intro: 'You can reach out to me in the following ways:',
+          intro: this.format('APP.INTRO.STEP3'),
           tooltipPosition: 'auto'
         },
         {
           element: '#step4',
-          intro: 'Click here to have a surprise',
+          intro: this.format('APP.INTRO.STEP4'),
           position: 'left'
         }
       ],
@@ -66,22 +71,22 @@ class Intro {
       hints: [
         {
           element: '.step11',
-          hint: 'This sign brings me good luck, now I share it with you. ^.^',
+          hint: this.format('APP.INTRO.STEP1'),
           position: 'left'
         },
         {
           element: '.step12',
-          hint: 'This is who I am.',
+          hint: this.format('APP.INTRO.STEP2'),
           position: 'top-left'
         },
         {
           element: '.step13',
-          hint: 'You can reach out to me in the following ways:',
+          hint: this.format('APP.INTRO.STEP3'),
           position: 'top'
         },
         {
           element: '.step14',
-          hint: 'Click here to have a surprise',
+          hint: this.format('APP.INTRO.STEP4'),
           position: 'left'
         }
       ]

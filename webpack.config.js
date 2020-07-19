@@ -78,6 +78,7 @@ const commonConfig = merge([
           {from: 'src/robots.txt'},
           {from: 'src/assets/push.js', to: 'assets'},
           {from: 'src/assets/images/icons', to: 'images/icons'},
+          {from: 'src/assets/i18n', to: 'assets/i18n'},
           {
             from: 'node_modules/sw-offline-google-analytics/build/importScripts/sw-offline-google-analytics.prod.v0.0.25.js',
             to: 'sw-offline-google-analytics.js'

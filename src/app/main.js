@@ -4,25 +4,28 @@ import { isIE } from './utils';
 
 import Theme from './theme';
 
-// Initial theme
-Theme();
+import I18n from './i18n';
+const i18n = I18n();
 
 // Show intro
 import('./intro').then(Intro => {
+  const intro = new Intro.default(i18n.format);
+
   setTimeout(() => {
-    const intro = new Intro.default();
-  
-    const startReplayBtn = document.querySelector('.start-replay-tour');
-    const starthintBtn = document.querySelector('.start-hint');
-  
-    startReplayBtn.addEventListener('click', () => {
-      intro.initAndShowIntro();
-    });
-  
-    starthintBtn.addEventListener('click', () => {
-      intro.toggleHint();
-    });
-  }, 10000);
+    intro.init();
+  }, 6000);
+
+  const startReplayBtn = document.querySelector('.start-replay-tour');
+  const starthintBtn = document.querySelector('.start-hint');
+
+  startReplayBtn.addEventListener('click', () => {
+    intro.initAndShowIntro();
+  });
+
+  starthintBtn.addEventListener('click', () => {
+    intro.toggleHint();
+  });
+ 
 });
 
 // Initialize tooltip and popover
@@ -37,6 +40,9 @@ if (isIE()) {
 }
 
 window.addEventListener('load', function() {
+  // Initial theme
+  Theme();
+
   var status = document.getElementById("status");
   
   const updateOnlineStatus = function (event) {

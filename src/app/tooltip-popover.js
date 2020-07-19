@@ -58,13 +58,13 @@ function TooltipAndPopover() {
     onShown: instance => {
       const content = instance.popper;
       const qrCode = content.querySelector('.tippy-box');
-      qrCode.addEventListener('click', toggleScale);
+      qrCode.addEventListener('click', toggleScale, true);
     },
     onHide: instance => {
       const content = instance.popper;
       const qrCode = content.querySelector('.tippy-box');
       qrCode.classList.remove('scale');
-      qrCode.removeEventListener('click', toggleScale);
+      qrCode.removeEventListener('click', toggleScale, true);
     },
   });
 }

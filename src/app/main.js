@@ -1,6 +1,7 @@
 import IntlMessageFormat from 'intl-messageformat';
 
 import { isIE } from './utils';
+import { scrollToTop } from '././scroll-to-top';
 
 import Theme from './theme';
 
@@ -13,7 +14,7 @@ import('./intro').then(Intro => {
 
   setTimeout(() => {
     intro.init();
-  }, 6000);
+  }, 5000);
 
   const startReplayBtn = document.querySelector('.start-replay-tour');
   const starthintBtn = document.querySelector('.start-hint');
@@ -42,6 +43,8 @@ if (isIE()) {
 window.addEventListener('load', function() {
   // Initial theme
   Theme();
+
+  scrollToTop();
 
   var status = document.getElementById("status");
   

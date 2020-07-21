@@ -1,4 +1,14 @@
-import IntlMessageFormat from 'intl-messageformat';
+import toasted from './utils/toasted';
+
+// toasted.success('New version available.', {
+//   action: {
+//     text: 'Reload',
+//     onClick: (e, toasted) => {
+//       toasted.delete();
+//        window.location.reload();
+//     },
+//   },
+// });
 
 import { isIE } from './utils';
 import { scrollToTop } from '././scroll-to-top';
@@ -41,17 +51,22 @@ if (isIE()) {
 }
 
 window.addEventListener('load', function() {
-  // Initial theme
-  Theme();
 
   scrollToTop();
 
-  var status = document.getElementById("status");
-  
+  // Initial theme
+  Theme();
+
   const updateOnlineStatus = function (event) {
-    var message = navigator.onLine ? "" : "offline simida, will use cache!";
-    status.className = message;
-    status.innerHTML = message.toUpperCase();
+    var message = navigator.onLine ? "" : "You are in offline status!";
+    message && toasted.error(message.toUpperCase(), { 
+      action: {
+        text: 'Close',
+        onClick: (e, toasted) => {
+          toasted.delete();
+        },
+      },
+    });
   }
 
   updateOnlineStatus();
@@ -60,8 +75,5 @@ window.addEventListener('load', function() {
   window.addEventListener('offline', updateOnlineStatus);
 });
 
-
-const msg = new IntlMessageFormat('My name is {name}.', 'en-US');
-console.log('IntlMessageFormat', msg.format({name: 'larry'}));
 
 

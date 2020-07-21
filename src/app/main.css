@@ -64,6 +64,10 @@
   height: 100vh;
 }
 
+.toasted-container {
+  margin-bottom: 10px;
+}
+
 .help-icon-menu-bar {
   padding-top: 6px;
   margin-right: 1rem;
@@ -100,7 +104,8 @@
 
 /* Bugfix for blue border when click on modile and tablet devices */
 .webkit-mobile-pointer-disable-blue-highlight {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  /* -webkit-tap-highlight-color: rgba(255, 255, 255, 0); */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .bird-left,
@@ -535,7 +540,12 @@ only screen and (device-width: 767px) {
   margin-left: 5px;
   border-radius: 50%;
   font-size: 1rem;
-  color: red;
+}
+
+.qrcode-dialog .close-icon:hover {
+  transform: none;
+  background: 0 0;
+  color: #f27474;
 }
 
 .qrcode-dialog .close-btn {

@@ -1,10 +1,10 @@
 { 
   "APP.HELLO": "你好, 在下 ",
   "APP.NAME": "陈大超",
-  "APP.IMA": "一个 ",
+  "APP.IMA": "一位来自中国上海的",
   "APP.WEB_DEVELOPER": "WEB 开发者",
-  "APP.LIVING": " 来自中国上海。",
-  "APP.CURRENT_PROJECT": " 目前在做一个帮助开发者通过可视化的方式创建WEB组建的项目。",
+  "APP.LIVING": "",
+  "APP.CURRENT_PROJECT": "。 目前在做一个可通过可视化的方式创建WEB组建的项目。",
   "APP.ILIKE": "我喜欢 ",
   "APP.RUNNING": "跑步",
   "APP.RUNNING_DESC": "生命在于运动。",

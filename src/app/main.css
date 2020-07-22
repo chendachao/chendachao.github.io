@@ -552,6 +552,7 @@ only screen and (device-width: 767px) {
   padding: 10px;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 
 .dialog-bg::backdrop {

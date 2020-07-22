@@ -6,7 +6,7 @@ const commonConfig = {
   position: 'bottom-center',
   theme: 'venice', // alive, colombo, venice, material, bootstrap, bulma
   // icon : 'update',
-  fullWidth: true,
+  fullWidth: false,
   fitToScreen: true,
 };
 

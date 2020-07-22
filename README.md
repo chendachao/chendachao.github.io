@@ -31,5 +31,7 @@
 ## TODOs:
 - JSON description for developer view
 - More social icons option
+- Share on Wechat, QQ, twitter and so on.
+- Show rainbow sometimes.
 - [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Update' button
 - [PWA] Update alert

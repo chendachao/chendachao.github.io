@@ -10,6 +10,8 @@ import 'tippy.js/animations/scale-extreme.css';
 
 import { isIE, isMobile } from './utils';
 
+import i18n from './i18n';
+
 function TooltipAndPopover() {
   const template = document.getElementById('wechat-popup');
   const container = document.createElement('div');
@@ -24,8 +26,8 @@ function TooltipAndPopover() {
 
   tippy('[tooltip]', {
     ...commonConig,
-    followCursor: isMobile(),
-    plugins: [followCursor],
+    // followCursor: isMobile(),
+    // plugins: [followCursor],
   });
 
   // show the popup of wechat qrCode
@@ -34,7 +36,9 @@ function TooltipAndPopover() {
   if (isIE()) {
     container.appendChild(template);
   } else {
-    container.appendChild(document.importNode(template.content, true));
+    // container.appendChild(document.importNode(template.content, true));
+    const clone = template.content.cloneNode(true);
+    container.appendChild(clone);
   }
 
   // click to scale qrcode
@@ -58,6 +62,11 @@ function TooltipAndPopover() {
       const content = instance.popper;
       const qrCode = content.querySelector('.tippy-box');
       qrCode.addEventListener('click', toggleScale, true);
+      content.querySelectorAll('[data-i18n-id]').forEach(i18nLabel => {
+        console.log('i18nLabel', i18nLabel);
+        const {i18nId} = i18nLabel.dataset;
+        i18nLabel.innerHTML = i18n.format(i18nId);
+      });
     },
     onHide: instance => {
       const content = instance.popper;

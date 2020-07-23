@@ -44,30 +44,22 @@ const I18n = () => {
   }
 
   function render() {
+    // Change label
     const i18nLabels = document.querySelectorAll('*[data-i18n-id]');
     i18nLabels.forEach(i18nLabel => {
       const {i18nId} = i18nLabel.dataset;
       i18nLabel.innerHTML = format(i18nId);
     });
 
+    // Change attr like tooltip
     document.querySelectorAll('*[data-i18n-attr]').forEach(i18nLabel => {
       const {i18nAttr} = i18nLabel.dataset;
       const attr = i18nAttr.split('=');
       i18nLabel.setAttribute(attr[0], format(attr[1]));
     });
-
-    document.querySelectorAll('template').forEach(template => {
-      const content = template.content;
-      content.querySelectorAll('[data-i18n-id]').forEach(i18nLabel => {
-        console.log('i18nLabel', i18nLabel);
-        const {i18nId} = i18nLabel.dataset;
-        i18nLabel.innerHTML = format(i18nId);
-      });
-    });
-
   }
 
-  function changeLocale(lang) {
+  function setLocale(lang) {
     locale = lang;
     localStorage.setItem('lang', lang);
   }
@@ -89,26 +81,26 @@ const I18n = () => {
     render();
   }
 
-  const languageBtn = document.querySelector('.language-btn');
-  languageBtn.setAttribute('data-lang', initialLocale);
-
-  reformat(initialLocale);
-
-  const languageHandler = function () {
-    let lang = this.dataset.lang;
-    // this.setAttribute('title', `Change to ${lang}`);
-    lang = lang === 'en' ? 'zh' : 'en';
-    changeLocale(lang);
-    window.location.reload(); // TODO：rm
-    // reformat(lang);
-    // this.setAttribute('data-lang', lang);
+  const triggerLanguageHandler = function () {
+    setLocale(locale);
+    reformat(locale);
   }
 
-  languageBtn.addEventListener('click', languageHandler);
+  function init() {
+    triggerLanguageHandler(initialLocale);
+    const languageBtn = document.querySelector('.language-btn');
+    languageBtn.addEventListener('click', function (e) {
+      locale = locale === 'en' ? 'zh' : 'en';
+      triggerLanguageHandler(locale);
+    });
+  }
 
   return {
-    format
+    init,
+    format,
   }
 };
 
-export default I18n;
+const i18n = I18n();
+
+export default i18n;

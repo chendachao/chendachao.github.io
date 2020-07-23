@@ -8,13 +8,15 @@ import 'intro.js/themes/introjs-nazanin.css';
 // import 'intro.js/themes/introjs-nassim.css';
 // import 'intro.js/themes/introjs-flattener.css';
 
+import i18n from './i18n';
+
 class Intro {
 
   isHintDisplayed = false;
-  format = null;
+  format = i18n.format;
 
-  constructor(format) {
-    this.format = format;
+  constructor() {
+    // this.format = i18n.format;
   }
 
   init() {

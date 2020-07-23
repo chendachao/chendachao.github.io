@@ -15,12 +15,12 @@ import { scrollToTop } from '././scroll-to-top';
 
 import Theme from './theme';
 
-import I18n from './i18n';
-const i18n = I18n();
+import i18n from './i18n';
+i18n.init();
 
 // Show intro
 import('./intro').then(Intro => {
-  const intro = new Intro.default(i18n.format);
+  const intro = new Intro.default();
 
   setTimeout(() => {
     intro.init();

@@ -28,7 +28,8 @@ const commonConfig = merge([
     entry: {
       app: ['@babel/polyfill', PATHS.app],
       print: './src/print.js',
-      install: './src/install.js'
+      install: './src/install.js',
+      cv: './src/cv.js',
     },
     output: {
       filename: '[name].[contenthash].bundle.js',
@@ -60,6 +61,12 @@ const commonConfig = merge([
       new HtmlWebpackPlugin({
         template: 'src/index.html',
         minify: false
+      }),
+      new HtmlWebpackPlugin({
+        template: 'src/cv.html',
+        minify: false,
+        filename: 'cv.html',
+        chunks: ['cv']
       }),
       new ScriptExtHtmlWebpackPlugin({
         inline: inlineBundles,

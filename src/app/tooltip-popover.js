@@ -28,6 +28,14 @@ function TooltipAndPopover() {
     ...commonConig,
     // followCursor: isMobile(),
     // plugins: [followCursor],
+    onShown: instance => {
+      const content = instance.popper;
+      content.querySelectorAll('[data-i18n-id]').forEach(i18nLabel => {
+        console.log('i18nLabel', i18nLabel);
+        const {i18nId} = i18nLabel.dataset;
+        i18nLabel.innerHTML = i18n.format(i18nId);
+      });
+    },
   });
 
   // show the popup of wechat qrCode

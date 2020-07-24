@@ -92,6 +92,7 @@ const I18n = () => {
     languageBtn.addEventListener('click', function (e) {
       locale = locale === 'en' ? 'zh' : 'en';
       triggerLanguageHandler(locale);
+      window.location.reload();
     });
   }
 

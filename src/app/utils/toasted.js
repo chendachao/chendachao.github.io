@@ -4,10 +4,10 @@ import 'toastedjs/dist/toasted.min.css';
 
 const commonConfig = {
   position: 'bottom-center',
-  theme: 'venice', // alive, colombo, venice, material, bootstrap, bulma
+  theme: 'alive', // alive, colombo, venice, material, bootstrap, bulma
   // icon : 'update',
-  fullWidth: false,
-  fitToScreen: true,
+  fullWidth: true,
+  fitToScreen: false,
 };
 
 let toasted = new Toasted({

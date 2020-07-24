@@ -1,4 +1,4 @@
-import tippy, { followCursor, roundArrow } from 'tippy.js';
+import tippy, { createSingleton, followCursor, roundArrow } from 'tippy.js';
 import 'tippy.js/dist/tippy.css'; // optional for styling
 import 'tippy.js/dist/svg-arrow.css';
 import 'tippy.js/themes/light-border.css';
@@ -22,20 +22,12 @@ function TooltipAndPopover() {
     interactive: true,
     animation: 'scale',
     inertia: true,
+    moveTransition: 'transform 0.2s ease-out',
   };
 
-  tippy('[tooltip]', {
+  const tippyInstances = tippy('[tooltip]');
+  const singleton = createSingleton(tippyInstances, {
     ...commonConig,
-    // followCursor: isMobile(),
-    // plugins: [followCursor],
-    onShown: instance => {
-      const content = instance.popper;
-      content.querySelectorAll('[data-i18n-id]').forEach(i18nLabel => {
-        console.log('i18nLabel', i18nLabel);
-        const {i18nId} = i18nLabel.dataset;
-        i18nLabel.innerHTML = i18n.format(i18nId);
-      });
-    },
   });
 
   // show the popup of wechat qrCode

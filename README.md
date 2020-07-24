@@ -35,3 +35,8 @@
 - Show rainbow sometimes.
 - [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Update' button
 - [PWA] Update alert
+
+
+PS:
+  - [JSON description](/assets/data/en/chendachao.json)
+  - [JSON description Local](http://localhost:8088/assets/data/en/chendachao.json)

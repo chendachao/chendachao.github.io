@@ -58,7 +58,7 @@ window.addEventListener('load', function() {
   Theme();
 
   const updateOnlineStatus = function (event) {
-    var message = navigator.onLine ? "" : "You are in offline status!";
+    var message = navigator.onLine ? "" : "You are offline!";
     message && toasted.error(message.toUpperCase(), { 
       action: {
         text: 'Close',

@@ -77,6 +77,7 @@ const commonConfig = merge([
           {from: 'src/favicon.ico'},
           {from: 'src/robots.txt'},
           {from: 'src/assets/push.js', to: 'assets'},
+          {from: 'src/assets/data', to: 'assets/data'},
           {from: 'src/assets/images/icons', to: 'images/icons'},
           {from: 'src/assets/i18n', to: 'assets/i18n'},
           {

@@ -367,8 +367,11 @@ only screen and (device-width: 767px) {
 }
 
 .wechat-qrcode-desc {
-  font-size: 7px;
+  color: #666;
+  font-style: italic;
+  font-weight: bold;
   margin-top: -8px;
+  font-size: 7px;
 }
 
 .tippy-box {

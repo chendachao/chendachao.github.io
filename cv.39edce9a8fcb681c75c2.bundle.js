@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{w65o:function(o,w){console.log("123")}},[["w65o",0]]]);

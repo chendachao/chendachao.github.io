@@ -29,7 +29,7 @@ const commonConfig = merge([
       app: ['@babel/polyfill', PATHS.app],
       print: './src/print.js',
       install: './src/install.js',
-      cv: './src/cv.js',
+      cv: ['@babel/polyfill', './src/index-cv.js'],
     },
     output: {
       filename: '[name].[contenthash].bundle.js',
@@ -60,10 +60,11 @@ const commonConfig = merge([
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: 'src/index.html',
-        minify: false
+        minify: false,
+        excludeChunks: ['cv']
       }),
       new HtmlWebpackPlugin({
-        template: 'src/cv.html',
+        template: 'src/index-cv.html',
         minify: false,
         filename: 'cv.html',
         chunks: ['cv']

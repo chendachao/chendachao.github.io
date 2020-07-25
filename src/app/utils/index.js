@@ -1,5 +1,8 @@
 import Bowser from 'bowser';
 
+export * from './i18n';
+export * from './toasted';
+
 const browser = Bowser.getParser(window.navigator.userAgent);
 const IE = 'Internet Explorer';
 

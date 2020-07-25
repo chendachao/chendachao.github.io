@@ -5,6 +5,7 @@
   "description": "Larry's Home Page",
   "main": "src/index.js",
   "scripts": {
+    "setnode": "bash ./scripts/nvm.sh",
     "start": "webpack-dev-server -d --env development",
     "build": "webpack --env production",
     "analyse": "webpack --env production --profile --json > stats.json",

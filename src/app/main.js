@@ -11,15 +11,15 @@ import toasted from './utils/toasted';
 // });
 
 import { isIE } from './utils';
-import { scrollToTop } from '././scroll-to-top';
+import { scrollToTop } from './components/scroll-to-top';
 
-import Theme from './theme';
+import Theme from './components/theme';
 
-import i18n from './i18n';
+import i18n from './utils/i18n';
 i18n.init();
 
 // Show intro
-import('./intro').then(Intro => {
+import('./components/intro').then(Intro => {
   const intro = new Intro.default();
 
   setTimeout(() => {
@@ -40,9 +40,9 @@ import('./intro').then(Intro => {
 });
 
 // Initialize tooltip and popover
-import('./tooltip').then(TooltipAndPopover => TooltipAndPopover.default());
+import('./components/tooltip').then(TooltipAndPopover => TooltipAndPopover.default());
 
-import('./qrcode-dialog').then(SetQRCode => SetQRCode.default());
+import('./components/qrcode-dialog').then(SetQRCode => SetQRCode.default());
 
 // hide the install app button if in IE
 if (isIE()) {

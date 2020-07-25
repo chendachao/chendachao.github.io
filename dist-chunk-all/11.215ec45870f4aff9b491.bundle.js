@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{"5yLx":function(n,e,o){"serviceWorker"in navigator&&window.addEventListener("load",(function(){navigator.serviceWorker.register("/sw.js").then((function(n){console.log("SW registered: ",n)})).catch((function(n){console.log("SW registration failed: ",n)}))}))}}]);

@@ -1,0 +1,1 @@
+self.addEventListener("push",t=>{const e={body:t.data.text()};t.waitUntil(self.registration.showNotification("Welcome!",e))});

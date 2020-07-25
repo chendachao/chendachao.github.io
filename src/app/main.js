@@ -40,7 +40,7 @@ import('./intro').then(Intro => {
 });
 
 // Initialize tooltip and popover
-import('./tooltip-popover').then(TooltipAndPopover => TooltipAndPopover.default());
+import('./tooltip').then(TooltipAndPopover => TooltipAndPopover.default());
 
 import('./qrcode-dialog').then(SetQRCode => SetQRCode.default());
 

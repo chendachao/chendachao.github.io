@@ -8,7 +8,7 @@ import 'tippy.js/animations/scale.css';
 import 'tippy.js/animations/scale-subtle.css';
 import 'tippy.js/animations/scale-extreme.css';
 
-import { isIE, isMobile } from './utils';
+import { isIE, isMobile, isPC } from './utils';
 
 import i18n from './i18n';
 
@@ -25,10 +25,18 @@ function TooltipAndPopover() {
     moveTransition: 'transform 0.2s ease-out',
   };
 
-  const tippyInstances = tippy('[tooltip]');
-  const singleton = createSingleton(tippyInstances, {
-    ...commonConig,
-  });
+  if(isPC()) {
+    const tippyInstances = tippy('[tooltip]');
+    const singleton = createSingleton(tippyInstances, {
+      ...commonConig,
+    });
+  } else {
+    tippy('[tooltip]', {
+      ...commonConig,
+      // followCursor: isMobile(),
+      // plugins: [followCursor],
+    });
+  }
 
   // show the popup of wechat qrCode
   // const clone = template.content.cloneNode(true);

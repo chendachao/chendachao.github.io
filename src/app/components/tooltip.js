@@ -26,12 +26,12 @@ function TooltipAndPopover() {
   };
 
   if(isPC()) {
-    const tippyInstances = tippy('[tooltip]');
+    const tippyInstances = tippy('[data-tooltip]');
     const singleton = createSingleton(tippyInstances, {
       ...commonConig,
     });
   } else {
-    tippy('[tooltip]', {
+    tippy('[data-tooltip]', {
       ...commonConig,
       // followCursor: isMobile(),
       // plugins: [followCursor],

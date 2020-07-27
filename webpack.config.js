@@ -72,6 +72,11 @@ const commonConfig = merge([
       new ScriptExtHtmlWebpackPlugin({
         // inline: inlineBundles, // cause pwa update issue
         preload: /^vendors~app.*.bundle.js$/,
+        custom: {
+          test: /^vendors~app.*.bundle.js$/,
+          attribute: 'crossorigin',
+          value: 'anonymous'
+        },
         defer: [
           /^print.*.bundle.js$/,
           /^install.*.bundle.js$/,

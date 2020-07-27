@@ -42,11 +42,10 @@
 
   <header>
     <div class="help-icon-menu-bar">
-      <button class="help-icon language-btn webkit-mobile-pointer-disable-blue-highlight"></button>
-      <button class="help-icon start-replay-tour webkit-mobile-pointer-disable-blue-highlight"></button>
-      <button class="help-icon start-hint webkit-mobile-pointer-disable-blue-highlight"></button>
-      <button class="help-icon pwa-install-btn webkit-mobile-pointer-disable-blue-highlight" id="btnInstall"
-        aria-label="Install"></button>
+      <button aria-label="language" class="help-icon language-btn webkit-mobile-pointer-disable-blue-highlight"></button>
+      <button aria-label="guide" class="help-icon start-replay-tour webkit-mobile-pointer-disable-blue-highlight"></button>
+      <button aria-label="hint" class="help-icon start-hint webkit-mobile-pointer-disable-blue-highlight"></button>
+      <button aria-label="pwa install" class="help-icon pwa-install-btn webkit-mobile-pointer-disable-blue-highlight" id="btnInstall"></button>
     </div>
   </header>
 
@@ -121,13 +120,13 @@
           </li>
           <li data-tippy-content="Twitter: dachaochen" data-tooltip>
             <a class="icon icon-twitter circle webkit-mobile-pointer-disable-blue-highlight" target="_blank"
-              href="https://twitter.com/dachaochen">
+              href="https://twitter.com/dachaochen" rel="noopener noreferrer">
               <img class="svg" alt="Twitter" src="./assets/images/social/twitter.svg">
             </a>
           </li>
           <li data-tippy-content="Stackoverflow: chen-dachao" data-tooltip>
             <a class="icon icon-stackoverflow circle webkit-mobile-pointer-disable-blue-highlight" target="_blank"
-              href="https://stackoverflow.com/users/6294371/chen-dachao">
+              href="https://stackoverflow.com/users/6294371/chen-dachao" rel="noopener noreferrer">
               <img class="svg" alt="Stackoverflow" src="./assets/images/social/so.svg">
             </a>
           </li>
@@ -145,7 +144,7 @@
 
   <dialog id="dialog" class="qrcode-dialog dialog-bg dialog-animation">
     <div>
-      <button type="button" class="dialog-dismiss-trigger close-icon">&times;</button>
+      <button aria-label="close" type="button" class="dialog-dismiss-trigger close-icon">&times;</button>
       <small data-i18n-id="APP.QRCODE_MOBILE_DESC">Scan the QR Code to view this site on moblie</small>
     </div>
     <hr style="margin-top: 8px; margin-bottom: 8px">
@@ -153,7 +152,7 @@
       <img src="./assets/images/site.jpeg" alt="https://chendachao.github.io" class="mobile-qrcode">
     </div>
     <div style="text-align: end;">
-      <button class="dialog-dismiss-trigger close-btn" data-i18n-id="APP.CLOSE">Close</button>
+      <button aria-label="close" class="dialog-dismiss-trigger close-btn" data-i18n-id="APP.CLOSE">Close</button>
     </div>
   </dialog>
 

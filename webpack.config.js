@@ -169,7 +169,14 @@ const productionConfig = merge([
   }),
   parts.loadHTML({
     options: {
-      // minimize: true
+      minimize: {
+        // minimize: true,
+        // minifyJS: true,
+        // minifyCSS: true,
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: false
+      },
     }
   }),
   parts.purifyCSS({

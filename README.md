@@ -29,6 +29,7 @@
 - https://kazuhikoarase.github.io/qrcode-generator/js/demo/
 - https://iconmonstr.com/
 - https://validator.nu/
+- https://mailto.now.sh/
 
 ## TODOs:
 - JSON description for developer view

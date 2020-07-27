@@ -294,20 +294,6 @@
   line-height: 1.5;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 767px),
-only screen and (device-width: 767px) {
-  .centered-content {
-    width: 91.8%;
-  }
-
-  .wechat-qrcode-desc {
-    font-size: 6px;
-    margin-top: -8px;
-    line-height: 7px;
-    width: 5rem;
-  }
-}
-
 .brand {
   text-align: center;
 }
@@ -370,8 +356,22 @@ only screen and (device-width: 767px) {
   color: #666;
   font-style: italic;
   font-weight: bold;
-  margin-top: -8px;
+  margin-top: -10px;
   font-size: 7px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px),
+only screen and (device-width: 767px) {
+  .centered-content {
+    width: 91.8%;
+  }
+
+  .wechat-qrcode-desc {
+    font-size: 6px;
+    margin-top: -5px;
+    line-height: 7px;
+    width: 5rem;
+  }
 }
 
 .tippy-box {

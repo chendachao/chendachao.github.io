@@ -21,7 +21,7 @@ const PATHS = {
   build: path.resolve(__dirname, 'dist')
 };
 
-const inlineBundles = /^(app|runtime).*.bundle.js$/;
+// const inlineBundles = /^(app|runtime).*.bundle.js$/;
 
 const commonConfig = merge([
   {
@@ -70,12 +70,13 @@ const commonConfig = merge([
         chunks: ['cv']
       }),
       new ScriptExtHtmlWebpackPlugin({
-        inline: inlineBundles,
+        // inline: inlineBundles, // cause pwa update issue
         preload: /^vendors~app.*.bundle.js$/,
         defer: [
           /^print.*.bundle.js$/,
           /^install.*.bundle.js$/,
         ],
+        // sync: 'first.js',
         defaultAttribute: 'async'
       }),
       new webpack.HashedModuleIdsPlugin(),
@@ -110,7 +111,7 @@ const pwaPlugins = [
     swDest: 'sw.js',
     clientsClaim: true,
     skipWaiting: true,
-    exclude: [inlineBundles],
+    // exclude: [inlineBundles],
     cleanupOutdatedCaches: true,
     offlineGoogleAnalytics: true,
     sourcemap: true,

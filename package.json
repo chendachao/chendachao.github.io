@@ -59,7 +59,7 @@
     "normalize.css": "8.0.1",
     "qrcode": "1.4.4",
     "sw-offline-google-analytics": "0.0.25",
-    "tippy.js": "6.2.5",
+    "tippy.js": "6.2.6",
     "toastedjs": "0.0.2"
   },
   "repository": {

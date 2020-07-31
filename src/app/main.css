@@ -35,10 +35,10 @@
 }
 
 @keyframes light-sky {
-  0% {
+  from {
     background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(209, 63, 63, 1) 70%, rgba(194, 141, 65, 1) 100%);
   }
-  100% {
+  to {
     background: linear-gradient(90deg, rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%);
   }
 }
@@ -51,11 +51,10 @@
 }
 
 @keyframes show {
-  0% {
+  from {
     opacity: 0.1;
   }
-
-  100% {
+  to {
     opacity: 1;
   }
 }
@@ -207,19 +206,19 @@
 }
 
 @keyframes move2 {
-  0% {
+  from {
     left: 0;
   }
-  100% {
+  to {
     left: 100%;
   }
 }
 
 @keyframes flap {
-  0% {
+  from {
     border-radius: 90%;
   }
-  100% {
+  to {
     border-radius: 10%;
   }
 }
@@ -264,13 +263,13 @@
 }
 
 @keyframes rise {
-  0% {
+  from {
     top: 40%;
     left: -50%;
     background-position: 50% 100%;
     transform: scale(1.2);
   }
-  100% {
+  to {
     top: 7%;
     left: 60%;
     background-position: 50% 0;
@@ -616,7 +615,6 @@ dialog {
     /* transform: translate(0, 80%); */
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }

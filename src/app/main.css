@@ -605,8 +605,8 @@ only screen and (device-width: 767px) {
 
 /* TODO: fix dialog css issue, need to check the vendor css again */
 dialog {
-  top: 0;
-  bottom: 0;
+  /* top: 0;
+  bottom: 0; */
 }
 
 /* TODO: some issues here */

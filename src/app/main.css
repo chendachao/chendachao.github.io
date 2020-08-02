@@ -341,6 +341,10 @@
   text-shadow: -3px 3px 2px #7c630a;
 }
 
+.text-nowrap {
+  white-space: nowrap;
+}
+
 .scale {
   transform: scale(1.8);
 }

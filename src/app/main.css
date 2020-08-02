@@ -297,22 +297,9 @@
   text-align: center;
 }
 
-.brand-icon:before {
-  content: '\272C';
-}
-
 .brand-icon {
-  font-size: calc(6em + 4vw);
-  text-align: center;
-  font-weight: 900;
-  color: #f1a50d;
+  width: calc(5em + 4vw);
   transition: 1s;
-  text-shadow: -10px 10px 15px rgba(0, 0, 0, 0.3);
-}
-
-.brand-icon:hover {
-  color: #ffe506;
-  text-shadow: -5px 5px 10px #ab870a;
 }
 
 [data-theme-style="dark"] .brand-icon {

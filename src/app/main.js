@@ -11,7 +11,7 @@ import toasted from './utils/toasted';
 // });
 
 import { isIE } from './utils';
-import { scrollToTop } from './components/scroll-to-top';
+import { scrollToTop } from './utils/scroll';
 
 import Theme from './components/theme';
 

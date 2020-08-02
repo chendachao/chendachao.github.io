@@ -341,6 +341,10 @@
   text-shadow: -3px 3px 2px #7c630a;
 }
 
+.text-nowrap {
+  white-space: nowrap;
+}
+
 .scale {
   transform: scale(1.8);
 }
@@ -605,8 +609,8 @@ only screen and (device-width: 767px) {
 
 /* TODO: fix dialog css issue, need to check the vendor css again */
 dialog {
-  top: 0;
-  bottom: 0;
+  /* top: 0;
+  bottom: 0; */
 }
 
 /* TODO: some issues here */

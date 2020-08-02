@@ -74,7 +74,7 @@ window.addEventListener('scroll', function (ev) {
 // <button class="scroll-into-view-btn">Scroll into View</button>
 
 // https://stackoverflow.com/a/48942924/6294371
-var scrollToTop = (ratio = 20, smooth) => {
+export var scrollToTop = (ratio = 20, smooth) => {
   if (smooth) {
     window.scrollTo({
       top: 0,
@@ -89,7 +89,7 @@ var scrollToTop = (ratio = 20, smooth) => {
   }
 }
 
-var scrollToBottom = (ratio = 20, smooth) => {
+export var scrollToBottom = (ratio = 20, smooth) => {
   var offsetHeight = getOffsetHeight();
   if (smooth) {
     window.scrollTo({
@@ -107,7 +107,7 @@ var scrollToBottom = (ratio = 20, smooth) => {
 }
 
 // Scroll to a certain element
-var scrollIntoView = (element) => {
+export var scrollIntoView = (element) => {
   element.scrollIntoView({ 
     behavior: 'smooth' 
   });

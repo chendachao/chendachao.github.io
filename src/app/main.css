@@ -333,7 +333,7 @@
 }
 
 .scale {
-  transform: scale(1.8);
+  transform: scale(1.8) !important;
 }
 
 .wechat-qrcode {

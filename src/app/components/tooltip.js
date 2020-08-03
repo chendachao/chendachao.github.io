@@ -1,4 +1,4 @@
-import tippy, { createSingleton, followCursor, roundArrow } from 'tippy.js';
+import tippy, { createSingleton, roundArrow } from 'tippy.js';
 import 'tippy.js/dist/tippy.css'; // optional for styling
 import 'tippy.js/dist/svg-arrow.css';
 import 'tippy.js/themes/light-border.css';
@@ -8,7 +8,19 @@ import 'tippy.js/animations/scale.css';
 import 'tippy.js/animations/scale-subtle.css';
 import 'tippy.js/animations/scale-extreme.css';
 
-import { isIE, isMobile, isPC } from '../utils';
+import 'tippy.js/animations/perspective.css';
+import 'tippy.js/animations/perspective-subtle.css';
+import 'tippy.js/animations/perspective-extreme.css';
+
+// import 'tippy.js/animations/shift-away.css';
+// import 'tippy.js/animations/shift-away-subtle.css';
+// import 'tippy.js/animations/shift-away-extreme.css';
+
+// import 'tippy.js/animations/shift-toward.css';
+// import 'tippy.js/animations/shift-toward-subtle.css';
+// import 'tippy.js/animations/shift-toward-extreme.css';
+
+import { isIE, isPC } from '../utils';
 
 import i18n from '../utils/i18n';
 
@@ -20,33 +32,26 @@ function TooltipAndPopover() {
     arrow: roundArrow,
     theme: 'light-border',
     interactive: true,
-    animation: 'scale',
+    animation: isPC() ? 'scale' : 'perspective',
     inertia: true,
     moveTransition: 'transform 0.2s ease-out',
+    appendTo: document.body,
   };
 
   if(isPC()) {
     const tippyInstances = tippy('[data-tooltip]');
-    const singleton = createSingleton(tippyInstances, {
-      ...commonConig,
-    });
+    const singleton = createSingleton(tippyInstances, commonConig);
   } else {
-    tippy('[data-tooltip]', {
-      ...commonConig,
-      // followCursor: isMobile(),
-      // plugins: [followCursor],
-    });
+    tippy('[data-tooltip]', commonConig);
   }
 
   // show the popup of wechat qrCode
-  // const clone = template.content.cloneNode(true);
-  // container.appendChild(clone);
   if (isIE()) {
     container.appendChild(template);
   } else {
-    // container.appendChild(document.importNode(template.content, true));
-    const clone = template.content.cloneNode(true);
-    container.appendChild(clone);
+    container.appendChild(document.importNode(template.content, true));
+    // const clone = template.content.cloneNode(true);
+    // container.appendChild(clone);
   }
 
   // click to scale qrcode

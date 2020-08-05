@@ -14,6 +14,8 @@ import { isIE } from './utils';
 import { scrollToTop } from './utils/scroll';
 
 import Theme from './components/theme';
+// Initial theme
+Theme();
 
 import i18n from './utils/i18n';
 i18n.init();
@@ -53,9 +55,6 @@ if (isIE()) {
 window.addEventListener('load', function() {
 
   scrollToTop();
-
-  // Initial theme
-  Theme();
   
   let errorToasted;
   const updateOnlineStatus = function (event) {

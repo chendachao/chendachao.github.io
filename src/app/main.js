@@ -42,7 +42,7 @@ import('./components/intro').then(Intro => {
 // Initialize tooltip and popover
 import('./components/tooltip').then(TooltipAndPopover => TooltipAndPopover.default());
 
-import('./components/qrcode-dialog').then(SetQRCode => SetQRCode.default());
+import('./components/dialog').then(SetQRCode => SetQRCode.default());
 
 // hide the install app button if in IE
 if (isIE()) {
@@ -56,17 +56,22 @@ window.addEventListener('load', function() {
 
   // Initial theme
   Theme();
-
+  
+  let errorToasted;
   const updateOnlineStatus = function (event) {
     var message = navigator.onLine ? "" : "You are offline!";
-    message && toasted.error(message.toUpperCase(), { 
-      action: {
-        text: 'Close',
-        onClick: (e, toasted) => {
-          toasted.delete();
+    if(message) {
+      errorToasted = toasted.error(message.toUpperCase(), { 
+        action: {
+          text: 'Close',
+          onClick: (e, toasted) => {
+            toasted.delete();
+          },
         },
-      },
-    });
+      });
+    } else {
+      errorToasted && errorToasted.delete();
+    }
   }
 
   updateOnlineStatus();

@@ -1,0 +1,191 @@
+@import "~dialog-polyfill/dialog-polyfill.css";
+
+/* dialog */
+.qrcode-dialog {
+  min-width: 250px;
+  max-width: 310px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.qrcode-dialog .close-icon {
+  float: right;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 20px;
+  margin-left: 5px;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.qrcode-dialog .close-icon:hover {
+  transform: none;
+  background: 0 0;
+  color: #f27474;
+}
+
+.qrcode-dialog .close-btn {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.dialog-bg::backdrop {
+  /* native */
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dialog-bg+.backdrop {
+  /* polyfill */
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  /* background-color: rgba(0, 0, 0, 0.46); */
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.shake {
+  animation: shake 300ms ease-in-out !important;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  12.5% {
+    transform: translateX(-6px) rotateY(-5deg)
+  }
+
+  37.5% {
+    transform: translateX(5px) rotateY(4deg)
+  }
+
+  62.5% {
+    transform: translateX(-3px) rotateY(-2deg)
+  }
+
+  87.5% {
+    transform: translateX(2px) rotateY(1deg)
+  }
+
+  100% {
+    transform: translateX(0)
+  }
+}
+
+.dialog-animation:not([aria-hidden='true']) {
+  transition: opacity transform 0.5s;
+}
+
+.fade {
+  transition: opacity 5s linear;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.scale-in {
+  animation: scale-in .5s;
+}
+
+.scale-out {
+  animation: scale-out .5s;
+}
+
+.appear-from-top {
+  animation: appear-from-top .5s;
+}
+
+.disappear-from-top {
+  animation: disappear-from-top .5s;
+}
+
+.appear-from-bottom {
+  animation: appear-from-bottom .5s;
+}
+
+.disappear-from-bottom {
+  animation: disappear-from-bottom .5s;
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-out {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes appear-from-top {
+  from {
+    transform: translate(0, -100%);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear-from-top {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(0, -100%);
+    opacity: 0;
+  }
+}
+
+@keyframes appear-from-bottom {
+  from {
+    transform: translate(0, 100%);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear-from-bottom {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(0, 100%);
+    opacity: 0;
+  }
+}

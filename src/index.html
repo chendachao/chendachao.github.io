@@ -141,7 +141,7 @@
     </div>
   </footer>
 
-  <dialog id="dialog" class="qrcode-dialog dialog-bg dialog-animation">
+  <dialog id="dialog" class="qrcode-dialog dialog-bg fade" data-animation="scale-in scale-out">
     <div>
       <button aria-label="close" type="button" class="dialog-dismiss-trigger close-icon">&times;</button>
       <small data-i18n-id="APP.QRCODE_MOBILE_DESC">Scan the QR Code to view this site on moblie ㊙️</small>
@@ -154,6 +154,15 @@
       <button aria-label="close" class="dialog-dismiss-trigger close-btn" data-i18n-id="APP.CLOSE">Close</button>
     </div>
   </dialog>
+
+  <p hidden style="color: red;" id="error"></p>
+  <script>
+    window.addEventListener('error', function(event) {
+      var errorNode = document.getElementById('error');
+      errorNode.textContent = event.error.toString();
+      errorNode.removeAttribute('hidden');
+    });
+    </script>
 
   <a href="/cv.html" target="_blank">cv</a>
 

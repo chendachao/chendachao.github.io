@@ -1,7 +1,15 @@
 import QRCode from 'qrcode';
 import dialogPolyfill from 'dialog-polyfill';
+import './dialog.css';
 
 function SetQRCode() {
+  // const showModalClass = 'scale-in';
+  // const hideModalClass = 'scale-out';
+  // const showModalClass = 'appear-from-top';
+  // const hideModalClass = 'disappear-from-top';
+  const showModalClass = 'appear-from-bottom';
+  const hideModalClass = 'disappear-from-bottom';
+
   let LOCAL_REGEXP= /localhost|127.0.0.1/;
   let mySite = LOCAL_REGEXP.test(window.location.origin) ? 'https://chendachao.github.io' : window.location.origin;
   
@@ -12,6 +20,11 @@ function SetQRCode() {
   dialogPolyfill.registerDialog(dialog);
   
   qrcodeHandler.addEventListener('click', () => {
+
+    dialog.classList.add(showModalClass);
+    setTimeout(() => {
+      dialog.classList.remove(showModalClass);
+    }, 500);
   
     dialog.showModal();
 
@@ -38,10 +51,19 @@ function SetQRCode() {
         console.error(err);
       });
   });
+
+  function shake() {
+    dialog.classList.add('shake');
+    setTimeout(() => dialog.classList.remove('shake'), 300);
+  }
   
   dismissTriggers.forEach(ele => {
     ele.addEventListener('click', function() {
-      dialog.close();
+      dialog.classList.add(hideModalClass);
+      setTimeout(() => {
+        dialog.classList.remove(hideModalClass);
+        dialog.close();
+      }, 500);
     });
   });
   
@@ -53,11 +75,15 @@ function SetQRCode() {
       && rect.left <= event.clientX && event.clientX <= rect.right);
     if (!isInDialog) {
       // dialog.close();
-      // TODO: also need to shake when user tab 'ESC'
-      dialog.classList.add('shake');
-      setTimeout(() => dialog.classList.remove('shake'), 300);
+      shake();
     }
   });
+
+  dialog.addEventListener('cancel', (ev) => {
+    ev.preventDefault();
+    shake();
+  });
+
 }
 
 export default SetQRCode;

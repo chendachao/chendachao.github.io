@@ -2,7 +2,6 @@
 @import "~tippy.js/themes/light-border.css"; */
 /* @import "~intro.js/introjs.css";
 @import "~intro.js/themes/introjs-modern.css"; */
-@import "~dialog-polyfill/dialog-polyfill.css";
 
 /* html {
   background: url(../assets/images/bg.jpg) no-repeat center center fixed;
@@ -15,8 +14,6 @@
 * {
   margin: 0;
   padding: 0;
-  /* TODO: find a better font-family */
-  /* font-family: Arial, Roboto, Helvetica, Ubuntu, monospace, sans-serif; */
 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -38,6 +35,7 @@
   from {
     background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(209, 63, 63, 1) 70%, rgba(194, 141, 65, 1) 100%);
   }
+
   to {
     background: linear-gradient(90deg, rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%);
   }
@@ -54,6 +52,7 @@
   from {
     opacity: 0.1;
   }
+
   to {
     opacity: 1;
   }
@@ -64,14 +63,6 @@
   background: gray;
   filter: grayscale(100%);
   filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-}
-
-.main {
-  /* height: 100vh; */
-}
-
-.toasted-container {
-  margin-bottom: 10px;
 }
 
 .help-icon-menu-bar {
@@ -139,7 +130,7 @@
 
 .bird-right {
   z-index: 70;
-  
+
   opacity: 1;
   top: 50px;
   width: 10px;
@@ -172,7 +163,7 @@
 
 .bird-small-r {
   z-index: 70;
-  
+
   opacity: 1;
   top: 45px;
   width: 9px;
@@ -191,15 +182,19 @@
   0% {
     left: 0px;
   }
+
   33% {
     top: 20px;
   }
+
   50% {
     top: 70px;
   }
+
   66% {
     top: 100px;
   }
+
   100% {
     left: 100%;
   }
@@ -209,6 +204,7 @@
   from {
     left: 0;
   }
+
   to {
     left: 100%;
   }
@@ -218,6 +214,7 @@
   from {
     border-radius: 90%;
   }
+
   to {
     border-radius: 10%;
   }
@@ -250,7 +247,7 @@
   65% {
     box-shadow: none;
   }
-  
+
   85% {
     box-shadow: none;
     background: linear-gradient(gold, #d90 #d00);
@@ -269,6 +266,7 @@
     background-position: 50% 100%;
     transform: scale(1.2);
   }
+
   to {
     top: 7%;
     left: 60%;
@@ -278,7 +276,7 @@
 
 [data-theme-style="light"] [class^="moon"] {
   /* background: linear-gradient(gold, #d00); */
-  background: linear-gradient(to top, #d00 0%,#fc8b53 50%,#fdd55a 100%);
+  background: linear-gradient(to top, #d00 0%, #fc8b53 50%, #fdd55a 100%);
   background-size: 200% 200%;
 }
 
@@ -318,25 +316,6 @@
   transition: 1s;
 }
 
-.highlight {
-  color: #f1a50d;
-  cursor: help;
-  border-bottom-style: dotted;
-}
-
-.highlight:hover {
-  color: #ffe506;
-  text-shadow: -3px 3px 2px #7c630a;
-}
-
-.text-nowrap {
-  white-space: nowrap;
-}
-
-.scale {
-  transform: scale(1.8) !important;
-}
-
 .wechat-qrcode {
   width: calc(2em + 10vw);
   cursor: pointer;
@@ -363,55 +342,6 @@ only screen and (device-width: 767px) {
     line-height: 7px;
     width: 5rem;
   }
-}
-
-.tippy-box {
-  border-radius: 0;
-  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.25));
-  opacity: 1;
-  color: #fafafa
-}
-
-.tippy-box .tippy-content {
-  text-align: left;
-  /* letter-spacing: -0.1vw; */
-}
-
-[tooltip][tabindex="0"],
-[tooltip-follow][tabindex="0"] {
-  outline: none;
-}
-
-/* Override */
-.introjs-helperLayer {
-  background: transparent !important;
-  box-shadow: 0 0 0 9999px rgba(25, 24, 24, 0.51) !important;
-}
-
-.introjs-tooltiptext {
-  font-weight: bold;
-}
-
-.introjs-button {
-  text-shadow: none !important;
-}
-
-.introjs-overlay {
-  background: transparent !important;
-}
-
-/* bugfix for arrow */
-.introjs-arrow.top-middle {
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: #ecf0f1;
-  border-left-color: transparent;
-}
-.introjs-arrow.bottom-middle {
-  border-top-color: #ecf0f1;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
 }
 
 /*icons style*/
@@ -524,92 +454,22 @@ only screen and (device-width: 767px) {
   height: auto !important;
 }
 
-.qrcode-dialog {
-  min-width: 250px;
-  max-width: 310px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 6px;
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+/* Common */
+.highlight {
+  color: #f1a50d;
+  cursor: help;
+  border-bottom-style: dotted;
 }
 
-.qrcode-dialog .close-icon {
-  float: right;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  width: 20px;
-  margin-left: 5px;
-  border-radius: 50%;
-  font-size: 1rem;
+.highlight:hover {
+  color: #ffe506;
+  text-shadow: -3px 3px 2px #7c630a;
 }
 
-.qrcode-dialog .close-icon:hover {
-  transform: none;
-  background: 0 0;
-  color: #f27474;
+.text-nowrap {
+  white-space: nowrap;
 }
 
-.qrcode-dialog .close-btn {
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+.scale {
+  transform: scale(1.8) !important;
 }
-
-.dialog-bg::backdrop {
-  /* native */
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; */
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.dialog-bg+.backdrop {
-  /* polyfill */
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; */
-  /* background-color: rgba(0, 0, 0, 0.46); */
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.shake {
-  animation: shake 300ms ease-in-out !important;
-}
-
-@keyframes shake {
-  0% {transform: translateX(0);}
-  12.5% {transform: translateX(-6px) rotateY(-5deg)}
-  37.5% {transform: translateX(5px) rotateY(4deg)}
-  62.5% {transform: translateX(-3px) rotateY(-2deg)}
-  87.5% {transform: translateX(2px) rotateY(1deg)}
-  100% {transform: translateX(0)}
-}
-
-.dialog-animation:not([aria-hidden='true']) {
-  /* animation: appear-from-bottom 600ms 150ms 1 both; */
-  transition: opacity 4s;
-}
-
-/* TODO: fix dialog css issue, need to check the vendor css again */
-dialog {
-  /* top: 0;
-  bottom: 0; */
-}
-
-/* TODO: some issues here */
-@keyframes appear-from-bottom {
-  from {
-    /* transform: translate(0, 80%); */
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-

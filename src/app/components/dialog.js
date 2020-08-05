@@ -5,10 +5,10 @@ import './dialog.css';
 function SetQRCode() {
   // const showModalClass = 'scale-in';
   // const hideModalClass = 'scale-out';
-  // const showModalClass = 'appear-from-top';
-  // const hideModalClass = 'disappear-from-top';
-  const showModalClass = 'appear-from-bottom';
-  const hideModalClass = 'disappear-from-bottom';
+  const showModalClass = 'appear-from-top';
+  const hideModalClass = 'disappear-from-top';
+  // const showModalClass = 'appear-from-bottom';
+  // const hideModalClass = 'disappear-from-bottom';
 
   let LOCAL_REGEXP= /localhost|127.0.0.1/;
   let mySite = LOCAL_REGEXP.test(window.location.origin) ? 'https://chendachao.github.io' : window.location.origin;
@@ -21,12 +21,12 @@ function SetQRCode() {
   
   qrcodeHandler.addEventListener('click', () => {
 
+    dialog.showModal();
+
     dialog.classList.add(showModalClass);
     setTimeout(() => {
       dialog.classList.remove(showModalClass);
     }, 500);
-  
-    dialog.showModal();
 
     let img = document.querySelector('.mobile-qrcode');
     img.setAttribute('alt', mySite);

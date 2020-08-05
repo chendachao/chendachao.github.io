@@ -43,7 +43,7 @@
   right: 0;
   bottom: 0; */
   background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px); */
 }
 
 .dialog-bg+.backdrop {
@@ -55,7 +55,7 @@
   bottom: 0; */
   /* background-color: rgba(0, 0, 0, 0.46); */
   background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px); */
 }
 
 .shake {
@@ -93,17 +93,7 @@
 }
 
 .fade {
-  transition: opacity 5s linear;
-}
-
-@keyframes opacity {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  transition: opacity .15s linear;
 }
 
 .scale-in {

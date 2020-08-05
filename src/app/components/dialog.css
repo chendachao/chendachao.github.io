@@ -2,6 +2,7 @@
 
 /* dialog */
 .qrcode-dialog {
+  /* position: fixed; */
   min-width: 250px;
   max-width: 310px;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -41,6 +42,7 @@
   right: 0;
   bottom: 0; */
   background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
 }
 
 .dialog-bg+.backdrop {
@@ -52,6 +54,7 @@
   bottom: 0; */
   /* background-color: rgba(0, 0, 0, 0.46); */
   background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
 }
 
 .shake {
@@ -170,7 +173,7 @@
 
 @keyframes appear-from-bottom {
   from {
-    transform: translate(0, 100%);
+    transform: translate(0, 50%);
     opacity: 0;
   }
 
@@ -185,7 +188,7 @@
   }
 
   to {
-    transform: translate(0, 100%);
+    transform: translate(0, 50%);
     opacity: 0;
   }
 }

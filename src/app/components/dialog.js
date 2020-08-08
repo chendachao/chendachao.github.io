@@ -61,8 +61,8 @@ function SetQRCode() {
     ele.addEventListener('click', function() {
       dialog.classList.add(hideModalClass);
       setTimeout(() => {
-        dialog.classList.remove(hideModalClass);
         dialog.close();
+        dialog.classList.remove(hideModalClass);
       }, 500);
     });
   });

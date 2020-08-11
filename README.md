@@ -17,6 +17,7 @@
 - [Google Search Console](https://search.google.com/search-console)
 - [GTmetrix](https://gtmetrix.com)
 - [Image Compressor](https://imagecompressor.com/)
+- [hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
 
 ## References
 - https://web.dev/tags/performance/

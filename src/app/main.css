@@ -313,15 +313,21 @@
 .brand-icon {
   width: calc(5em + 4vw);
   transition: 1s;
-  /* animation: App-logo-spin infinite .2s linear; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.brand-icon:hover {
+  animation: App-logo-float infinite 3s ease-in-out;
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-10px)
+  }
+  100% {
+    transform: translateY(0px)
   }
 }
 

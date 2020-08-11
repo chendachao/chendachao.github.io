@@ -313,6 +313,16 @@
 .brand-icon {
   width: calc(5em + 4vw);
   transition: 1s;
+  /* animation: App-logo-spin infinite .2s linear; */
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 [data-theme-style="dark"] .brand-icon {

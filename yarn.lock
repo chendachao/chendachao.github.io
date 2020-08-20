@@ -3104,10 +3104,10 @@ detect-port-alt@1.1.6:
     address "^1.0.1"
     debug "^2.6.0"
 
-dialog-polyfill@0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/dialog-polyfill/-/dialog-polyfill-0.5.2.tgz#55eac558142c1d990d52816f9283a658e7d9483a"
-  integrity sha512-xbL9o6n6JZS4lTGxa9HcZlHQ/SpMuL4f3E90NMSwrU0jiTCNfBtTuA+O7scItmC4bPTcpVRfZfvNi+S91HvftA==
+dialog-polyfill@0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/dialog-polyfill/-/dialog-polyfill-0.5.3.tgz#ba7a288ea34a79210cb220bc305dd33ac08aaee5"
+  integrity sha512-DVYazl3klQtPjs4dOzDTOt4uQ8cRDfu8EBhoY81ISmH0fbrMvYuaethcQ9UevmF9kAaLnBJ0O5eDUnZ7QalArA==
 
 diffie-hellman@^5.0.0:
   version "5.0.3"

@@ -54,7 +54,7 @@
     "axios": "0.19.2",
     "bowser": "2.10.0",
     "bwip-js": "^2.0.10",
-    "dialog-polyfill": "0.5.2",
+    "dialog-polyfill": "0.5.3",
     "intl-messageformat": "9.3.2",
     "intro.js": "2.9.3",
     "normalize.css": "8.0.1",

@@ -1,4 +1,5 @@
 import QRCode from 'qrcode';
+// import bwipjs from 'bwip-js';
 import dialogPolyfill from 'dialog-polyfill';
 import './dialog.css';
 
@@ -30,26 +31,42 @@ function SetQRCode() {
 
     let img = document.querySelector('.mobile-qrcode');
     img.setAttribute('alt', mySite);
-  
-    QRCode.toDataURL(mySite, {
-        errorCorrectionLevel: 'H',
-        type: 'image/jpeg',
-        quality: 1,
-        // type: 'image/svg',
-        // version: 4, // 6
-        margin: 1,
-        color: {
-          // dark: "#010599FF",
-          // light: "#FFBF60FF"
-        }
-      })
-      .then(url => {
-        img.src = url;
-      })
-      .catch(err => {
-        img.setAttribute('alt', `Failed to generate QRCode, please visit ${mySite}`);
-        console.error(err);
-      });
+    
+    let canvas = document.createElement('canvas');
+    // const options = {
+    //   bcid: 'qrcode',
+    //   text: mySite,
+    //   scale: 6,
+    //   // height: 10,              // Bar height, in millimeters
+    //   includetext: true,            // Show human-readable text
+    //   textxalign: 'center',        // Always good to set this,
+    //   eclevel: 'M',
+    // }
+    // try {
+    //   bwipjs.toCanvas(canvas, options);
+    //   img.src = canvas.toDataURL('image/png');
+    // } catch (err) {
+    //   img.setAttribute('alt', `Failed to generate QRCode, please visit ${mySite}`);
+    //   console.error(err);
+    // }
+
+    QRCode.toCanvas(canvas, mySite, {
+      width: 320,
+      height: 320,
+      margin: 0,
+      errorCorrectionLevel: 'H',
+      quality: 1,
+      version: 4, // 6
+      // color: {
+      //   dark: "#010599FF",
+      //   light: "#FFBF60FF"
+      // }
+    }).then(c => {
+      img.src = canvas.toDataURL('image/png');
+    }).catch(err => {
+      img.setAttribute('alt', `Failed to generate QRCode, please visit ${mySite}`);
+      console.error(err);
+    })
   });
 
   function shake() {

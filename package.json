@@ -53,6 +53,7 @@
     "@babel/polyfill": "7.10.4",
     "axios": "0.19.2",
     "bowser": "2.10.0",
+    "bwip-js": "^2.0.10",
     "dialog-polyfill": "0.5.2",
     "intl-messageformat": "9.2.0",
     "intro.js": "2.9.3",

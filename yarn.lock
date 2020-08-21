@@ -1981,11 +1981,6 @@ builtin-status-codes@^3.0.0:
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
 
-bwip-js@^2.0.10:
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/bwip-js/-/bwip-js-2.0.10.tgz#94e0ba37aee824b279d06db5970b7db2bae0e86d"
-  integrity sha512-aF+f2fVmK+gmvUPUR0oPY36pDW0haIWB/ktE9fc6oX0vr5qmquA0o4ItDHDLbe24PezDM5yqdjkhuHJkxLsyaQ==
-
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"

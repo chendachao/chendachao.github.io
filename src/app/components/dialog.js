@@ -1,5 +1,4 @@
 import QRCode from 'qrcode';
-// import bwipjs from 'bwip-js';
 import dialogPolyfill from 'dialog-polyfill';
 import './dialog.css';
 
@@ -11,17 +10,16 @@ function SetQRCode() {
   // const showModalClass = 'appear-from-bottom';
   // const hideModalClass = 'disappear-from-bottom';
 
-  let LOCAL_REGEXP= /localhost|127.0.0.1/;
+  let LOCAL_REGEXP = /localhost|127.0.0.1/;
   let mySite = LOCAL_REGEXP.test(window.location.origin) ? 'https://chendachao.github.io' : window.location.origin;
-  
+
   var dialog = document.querySelector('#dialog');
   var dismissTriggers = document.querySelectorAll('.dialog-dismiss-trigger');
   let qrcodeHandler = document.querySelector('.qrcode-handler');
-  
-  dialogPolyfill.registerDialog(dialog);
-  
-  qrcodeHandler.addEventListener('click', () => {
 
+  dialogPolyfill.registerDialog(dialog);
+
+  qrcodeHandler.addEventListener('click', () => {
     dialog.showModal();
 
     dialog.classList.add(showModalClass);
@@ -31,25 +29,8 @@ function SetQRCode() {
 
     let img = document.querySelector('.mobile-qrcode');
     img.setAttribute('alt', mySite);
-    
-    let canvas = document.createElement('canvas');
-    // const options = {
-    //   bcid: 'qrcode',
-    //   text: mySite,
-    //   scale: 6,
-    //   // height: 10,              // Bar height, in millimeters
-    //   includetext: true,            // Show human-readable text
-    //   textxalign: 'center',        // Always good to set this,
-    //   eclevel: 'M',
-    // }
-    // try {
-    //   bwipjs.toCanvas(canvas, options);
-    //   img.src = canvas.toDataURL('image/png');
-    // } catch (err) {
-    //   img.setAttribute('alt', `Failed to generate QRCode, please visit ${mySite}`);
-    //   console.error(err);
-    // }
 
+    let canvas = document.createElement('canvas');
     QRCode.toCanvas(canvas, mySite, {
       width: 320,
       height: 320,
@@ -61,31 +42,67 @@ function SetQRCode() {
       //   dark: "#010599FF",
       //   light: "#FFBF60FF"
       // }
-    }).then(cvs => {
-      const imgDim={width:30,height:30}; //logo dimention
-      const logo = 'favicon.ico';
-      const context = cvs.getContext('2d');
-      const logoObj = new Image();
-      logoObj.src = logo;
-      logoObj.onload = function() {
-        context.drawImage(logoObj, 
-          cvs.width / 2 - imgDim.width / 2,
-          cvs.height / 2 - imgDim.height / 2,imgDim.width,imgDim.height);
-          img.src = cvs.toDataURL('image/png');
-      }; 
-    }).catch(err => {
-      img.setAttribute('alt', `Failed to generate QRCode, please visit ${mySite}`);
-      console.error(err);
     })
+      .then(cvs => {
+        const imgDim = {
+          //logo dimention
+          width: 80,
+          height: 80,
+        };
+        const logo = 'favicon.ico';
+        const ctx = cvs.getContext('2d');
+        const logoObj = new Image();
+        logoObj.src = logo;
+        logoObj.onload = function () {
+          // fill logo background, cos the logo by default is transparent
+          const bgWhiteMargin = 20;
+
+          // stroke margin
+          ctx.lineWidth = bgWhiteMargin;
+          ctx.lineJoin = 'round';
+          ctx.lineCap = 'round';
+          ctx.strokeStyle = '#ffffff';
+          ctx.beginPath();
+          ctx.rect(
+            cvs.width / 2 - imgDim.width / 2 - bgWhiteMargin / 2, 
+            cvs.width / 2 - imgDim.width / 2 - bgWhiteMargin / 2, 
+            imgDim.width + bgWhiteMargin, 
+            imgDim.height + bgWhiteMargin
+            );
+          ctx.stroke();
+
+          // ctx.fillStyle = '#ddd';
+          ctx.fillStyle = '#BADA55';
+          ctx.fillRect(
+            cvs.width / 2 - imgDim.width / 2 - bgWhiteMargin / 2,
+            cvs.height / 2 - imgDim.height / 2 - bgWhiteMargin / 2,
+            imgDim.width + bgWhiteMargin,
+            imgDim.height + bgWhiteMargin
+          );
+
+          ctx.drawImage(
+            logoObj,
+            cvs.width / 2 - imgDim.width / 2,
+            cvs.height / 2 - imgDim.height / 2,
+            imgDim.width,
+            imgDim.height
+          );
+          img.src = cvs.toDataURL('image/png');
+        };
+      })
+      .catch(err => {
+        img.setAttribute('alt', `Failed to generate QRCode, please visit ${mySite}`);
+        console.error(err);
+      });
   });
 
   function shake() {
     dialog.classList.add('shake');
     setTimeout(() => dialog.classList.remove('shake'), 300);
   }
-  
+
   dismissTriggers.forEach(ele => {
-    ele.addEventListener('click', function() {
+    ele.addEventListener('click', function () {
       dialog.classList.add(hideModalClass);
       setTimeout(() => {
         dialog.classList.remove(hideModalClass);
@@ -93,25 +110,23 @@ function SetQRCode() {
       }, 300);
     });
   });
-  
+
   dialog.addEventListener('click', function (event) {
     const rect = dialog.getBoundingClientRect();
     // const isInDialog=(rect.top <= event.clientY && event.clientY <= rect.top + rect.height
     //   && rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
-    const isInDialog=(rect.top <= event.clientY && event.clientY <= rect.bottom
-      && rect.left <= event.clientX && event.clientX <= rect.right);
+    const isInDialog =
+      rect.top <= event.clientY && event.clientY <= rect.bottom && rect.left <= event.clientX && event.clientX <= rect.right;
     if (!isInDialog) {
       // dialog.close();
       shake();
     }
   });
 
-  dialog.addEventListener('cancel', (ev) => {
+  dialog.addEventListener('cancel', ev => {
     ev.preventDefault();
     shake();
   });
-
 }
 
 export default SetQRCode;
-

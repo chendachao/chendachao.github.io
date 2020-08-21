@@ -61,8 +61,18 @@ function SetQRCode() {
       //   dark: "#010599FF",
       //   light: "#FFBF60FF"
       // }
-    }).then(c => {
-      img.src = canvas.toDataURL('image/png');
+    }).then(cvs => {
+      const imgDim={width:30,height:30}; //logo dimention
+      const logo = 'favicon.ico';
+      const context = cvs.getContext('2d');
+      const logoObj = new Image();
+      logoObj.src = logo;
+      logoObj.onload = function() {
+        context.drawImage(logoObj, 
+          cvs.width / 2 - imgDim.width / 2,
+          cvs.height / 2 - imgDim.height / 2,imgDim.width,imgDim.height);
+          img.src = cvs.toDataURL('image/png');
+      }; 
     }).catch(err => {
       img.setAttribute('alt', `Failed to generate QRCode, please visit ${mySite}`);
       console.error(err);

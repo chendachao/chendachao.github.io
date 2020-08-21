@@ -53,7 +53,7 @@ function SetQRCode() {
     QRCode.toCanvas(canvas, mySite, {
       width: 320,
       height: 320,
-      margin: 0,
+      margin: 1.5,
       errorCorrectionLevel: 'H',
       quality: 1,
       version: 4, // 6

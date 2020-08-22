@@ -66,7 +66,7 @@
     <div class="bird-right"></div>
     <div class="bird-small-l"></div>
     <div class="bird-small-r"></div>
-    <div class="moon webkit-mobile-pointer-disable-blue-highlight step14" id="step4"></div>
+    <div style="border-radius: 50%" class="moon webkit-mobile-pointer-disable-blue-highlight step14" id="step4"></div>
     <div class="centered-content">
       <div class="brand">
         <img id="step1" class="brand-icon step11" src="./assets/images/star.svg" alt="Star">
@@ -112,7 +112,7 @@
             </a>
           </li>
           <li>
-            <a class="icon icon-wechat circle webkit-mobile-pointer-disable-blue-highlight" href="javascript:void(0)"
+            <a class="icon icon-wechat circle webkit-mobile-pointer-disable-blue-highlight"
               id="wechat" rel="noopener noreferrer">
               <img class="svg" alt="Wechat" src="./assets/images/social/wechat.svg">
             </a>
@@ -160,10 +160,14 @@
     </div>
     <hr style="margin-top: 8px; margin-bottom: 8px">
     <div style="text-align: center;">
-      <img src="./assets/images/site.jpeg" alt="https://chendachao.github.io" class="mobile-qrcode">
+      <!-- TODO: change to loading placeholder -->
+      <img src="./assets/images/site.png" alt="https://chendachao.github.io" class="mobile-qrcode">
     </div>
-    <div style="text-align: end;">
-      <button aria-label="close" class="dialog-dismiss-trigger close-btn" data-i18n-id="APP.CLOSE">Close</button>
+    <div class="actions">
+      <button class="btn">
+        <a aria-label="download" class="download-btn" data-i18n-id="APP.DOWNLOAD">Download QRCode</a>
+      </button>
+      <button aria-label="close" class="btn dialog-dismiss-trigger close-btn" data-i18n-id="APP.CLOSE">Close</button>
     </div>
   </dialog>
 

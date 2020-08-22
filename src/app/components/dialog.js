@@ -15,7 +15,11 @@ function SetQRCode() {
 
   var dialog = document.querySelector('#dialog');
   var dismissTriggers = document.querySelectorAll('.dialog-dismiss-trigger');
+  var downloadBtn = document.querySelector('.download-btn');
   let qrcodeHandler = document.querySelector('.qrcode-handler');
+
+  let img = document.querySelector('.mobile-qrcode');
+  img.setAttribute('alt', mySite);
 
   dialogPolyfill.registerDialog(dialog);
 
@@ -26,9 +30,6 @@ function SetQRCode() {
     setTimeout(() => {
       dialog.classList.remove(showModalClass);
     }, 500);
-
-    let img = document.querySelector('.mobile-qrcode');
-    img.setAttribute('alt', mySite);
 
     let canvas = document.createElement('canvas');
     QRCode.toCanvas(canvas, mySite, {
@@ -71,8 +72,7 @@ function SetQRCode() {
             );
           ctx.stroke();
 
-          // ctx.fillStyle = '#ddd';
-          ctx.fillStyle = '#BADA55';
+          ctx.fillStyle = 'gold';
           ctx.fillRect(
             cvs.width / 2 - imgDim.width / 2 - bgWhiteMargin / 2,
             cvs.height / 2 - imgDim.height / 2 - bgWhiteMargin / 2,
@@ -101,14 +101,32 @@ function SetQRCode() {
     setTimeout(() => dialog.classList.remove('shake'), 300);
   }
 
+  function close(message) {
+    dialog.classList.add(hideModalClass);
+    setTimeout(() => {
+      dialog.classList.remove(hideModalClass);
+      dialog.close(message);
+    }, 300);
+  }
+
+  function download(imgData) {
+    downloadBtn.download = `${window.location.hostname}.png`;
+    downloadBtn.href = imgData;
+  }
+
   dismissTriggers.forEach(ele => {
     ele.addEventListener('click', function () {
-      dialog.classList.add(hideModalClass);
-      setTimeout(() => {
-        dialog.classList.remove(hideModalClass);
-        dialog.close();
-      }, 300);
+      close();
     });
+  });
+
+  downloadBtn.addEventListener('click', function () {
+    close();
+    download(img.src);
+  });
+
+  dialog.addEventListener('close', function() {
+    dialog.returnValue = '';
   });
 
   dialog.addEventListener('click', function (event) {

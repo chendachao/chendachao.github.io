@@ -22,6 +22,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+*,
+*:after,
+*:before {
+  box-sizing: border-box
+}
+
 :root {
   --color-global-light-background: rgb(131, 58, 180);
   --color-global-light-start-gradient: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(209, 63, 63, 1) 70%, rgba(194, 141, 65, 1) 100%);
@@ -31,6 +37,80 @@
   --color-global-dark-gradient: linear-gradient(90deg, rgba(29, 26, 79, 1) 1%, rgba(142, 21, 218, 1) 100%);
 
   --color-global-dark-background: gray;
+
+  --bg: #fff;
+  --bg2: #fafafa;
+  --bg3: #fcfcfc;
+  --bg4: #f8f8f8;
+  --footer-bg: rgba(114, 186, 94, .15);
+  --code: #dc3958;
+  --code-text: #6C7757;
+  --code-comment: #9AA880;
+  --text-color: #555;
+  --pale-text: #999;
+  --info-box-text: #84613d;
+  --gs0: #eee;
+  --gs1: #CCC;
+  --gs2: #AAA;
+  --green1: #008f68;
+  --green2: #6DB65B;
+  --green3: #4AAE9B;
+  --yellow1: #EFBB35;
+  --yellow2: #dfa612;
+  --yellow3: #FAE042;
+  --subtle: rgba(0, 0, 0, .1);
+  --very-subtle: rgba(0, 0, 0, .05);
+  --top1: rgba(107, 183, 86, .95);
+  --top2: rgba(0, 143, 104, .95);
+  --subtle-green1: rgba(114, 186, 94, 0.55);
+  --subtle-green2: rgba(114, 186, 94, 0.05);
+  --subtle-yellow1: rgba(239, 187, 53, 0.6);
+  --subtle-yellow2: rgba(236, 198, 48, .1);
+  --subtle-yellow3: rgba(236, 198, 48, .3);
+  --fb: #3b5998;
+  --reddit: #FC471E;
+  --h-news: #F60;
+  --twitter: #00aced;
+  --cat-head: rgba(114, 186, 94, 0.1);
+  --front-text-color: #93a791;
+  --info-box-bg: rgba(255, 213, 70, 0.1)
+}
+
+.dark {
+  --bg: #222831;
+  --bg2: #181C22;
+  --bg3: #1A1D24;
+  --bg4: black;
+  --footer-bg: rgba(0, 0, 0, .3);
+  --code: #F59BAC;
+  --code-text: #FAD7A0;
+  --code-text: #FEE6C0;
+  --code-comment: #81899B;
+  --text-color: #F9FFEE;
+  --pale-text: #dfa612;
+  --info-box-text: antiquewhite;
+  --gs0: rgba(239, 187, 53, 0.6);
+  --gs1: rgba(239, 187, 53, 0.6);
+  --green1: #EFBB35;
+  --green2: #E84279;
+  --green3: #dfa612;
+  --top1: #302E24;
+  --top2: #28313E;
+  --subtle-green1: rgba(236, 198, 48, .1);
+  --subtle-green2: #1A1D24;
+  --subtle-yellow3: rgba(236, 198, 48, .1);
+  --fb: #fff;
+  --reddit: #fff;
+  --h-news: #fff;
+  --twitter: #fff;
+  --cat-head: #1A1D24;
+  --front-text-color: antiquewhite;
+  --info-box-bg: #1A1D24
+}
+
+::selection {
+  background-color: #efbb35;
+  color: #fff
 }
 
 [data-theme-style="light"] {
@@ -358,6 +438,40 @@
   font-weight: bold;
   margin-top: -10px;
   font-size: 7px;
+}
+
+.btn,
+ button,
+ a {
+   text-decoration: none
+ }
+
+ .btn,
+ button,
+ label,
+ a {
+   cursor: pointer
+ }
+
+ .btn,
+ button.btn,
+ a.btn {
+   background-image: linear-gradient(to bottom, var(--bg), var(--bg4));
+   border-radius: 8px;
+   color: var(--green3);
+   letter-spacing: 1px;
+   padding: 10px 20px;
+   border: 0;
+   box-shadow: 0 0 10px var(--subtle);
+   font: inherit;
+   text-decoration: none;
+   transition: transform 0.15s cubic-bezier(0, 1.8, 1, 1.8)
+ }
+
+.btn:hover,
+button.btn:hover,
+a.btn:hover {
+  transform: translateY(-1px)
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px),

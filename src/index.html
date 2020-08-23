@@ -171,35 +171,6 @@
     </div>
   </dialog>
 
-  <p hidden style="color: red;text-align: center;" id="error"></p>
-  <script>
-    window.addEventListener('error', function(event) {
-      var errorNode = document.getElementById('error');
-      var message = (event.error || event.message).toString();
-      if(event.error) {
-        message += '\n' + event.error.stack;
-      }
-      errorNode.textContent = message;
-      errorNode.removeAttribute('hidden');
-    });
-
-    // window.onerror = function(msg, url, line, col, error) {
-    //   // Note that col & error are new to the HTML 5 spec and may not be 
-    //   // supported in every browser.  It worked for me in Chrome.
-    //   var extra = !col ? '' : '\ncolumn: ' + col;
-    //   extra += !error ? '' : '\nerror: ' + error;
-    //   console.log("Error: " + msg + "\nurl: " + url + "\nline: " + line + extra);
-
-    //   var suppressErrorAlert = true;
-    //   // If you return true, then error alerts (like in older versions of 
-    //   // Internet Explorer) will be suppressed.
-    //   return suppressErrorAlert;
-    // };
-
-    // trigger
-    // window.setTimeout(function() {throw new Error('sdfsdfd')}, 0);
-    </script>
-
   <a href="/cv.html" style="position: fixed; bottom: 0;" target="_blank">cv</a>
 
   <noscript>

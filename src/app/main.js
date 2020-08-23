@@ -79,5 +79,28 @@ window.addEventListener('load', function() {
   window.addEventListener('offline', updateOnlineStatus);
 });
 
+window.addEventListener('error', function(event) {
+  var message = (event.error || event.message).toString();
+  // if(event.error) {
+  //   message = event.error.stack;
+  // }
+  toasted.error(message);
+});
+
+ // window.onerror = function(msg, url, line, col, error) {
+//   // Note that col & error are new to the HTML 5 spec and may not be 
+//   // supported in every browser.  It worked for me in Chrome.
+//   var extra = !col ? '' : '\ncolumn: ' + col;
+//   extra += !error ? '' : '\nerror: ' + error;
+//   console.log("Error: " + msg + "\nurl: " + url + "\nline: " + line + extra);
+
+//   var suppressErrorAlert = true;
+//   // If you return true, then error alerts (like in older versions of 
+//   // Internet Explorer) will be suppressed.
+//   return suppressErrorAlert;
+// };
+
+// trigger
+// window.setTimeout(function() {throw new Error('sdfsdfd')}, 0);
 
 

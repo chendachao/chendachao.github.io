@@ -3,7 +3,7 @@
 /* dialog */
 .qrcode-dialog {
   min-width: 250px;
-  max-width: 100vw;
+  max-width: 90vw;
   border: none;
   border-radius: 6px;
   background-color: var(--bg);

@@ -325,8 +325,7 @@
   max-width: 10vw;
   cursor: pointer;
   border-radius: 50%;
-  animation: colorize 24s cubic-bezier(0.2, 1.05, 0.45, 0.94) infinite, rise 10s;
-  transition: 2s;
+  animation: colorize 24s cubic-bezier(0.2, 1.05, 0.45, 0.94) infinite, rise 5s;
 }
 
 @keyframes colorize {

@@ -8,6 +8,7 @@
     "setnode": "bash ./scripts/nvm.sh",
     "start": "webpack-dev-server -d --env development",
     "build": "webpack --env production",
+    "build:w": "webpack --env production --watch --progress",
     "analyse": "webpack --env production --profile --json > stats.json",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist -b master -u 'chendachao <chendachao@outlook.com>' -r https://chendachao:$GITHUB_TOKEN@github.com/chendachao/chendachao.github.io.git",

@@ -189,6 +189,11 @@
   background: url(../assets/images/info.svg) center center no-repeat;
 }
 
+.help-icon-menu-bar .subscribe-btn {
+  /* background: url(../assets/images/notification.svg) center center no-repeat; */
+  background: url(../assets/images/bell.svg) center center no-repeat;
+}
+
 .help-icon-menu-bar .pwa-install-btn {
   background: url(../assets/images/install.svg) center center no-repeat;
 }

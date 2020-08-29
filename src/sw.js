@@ -5,7 +5,7 @@ import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategi
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute } from 'workbox-precaching';
 
-importScripts('/assets/push.js');
+importScripts('/assets/sw-patch.js');
 
 googleAnalytics.initialize();
 

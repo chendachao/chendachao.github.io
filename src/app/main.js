@@ -1,15 +1,4 @@
 import toasted from './utils/toasted';
-
-// toasted.success('New version available.', {
-//   action: {
-//     text: 'Reload',
-//     onClick: (e, toasted) => {
-//       toasted.delete();
-//        window.location.reload();
-//     },
-//   },
-// });
-
 import { isIE } from './utils';
 import { scrollToTop } from './utils/scroll';
 

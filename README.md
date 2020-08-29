@@ -11,13 +11,28 @@
 - [Netlify](https://chenlarrydachao.netlify.com/)
 
 ## Performance
-- [performance](https://developers.google.com/web/fundamentals/performance/why-performance-matters)
-- [website-optimization-tools](https://www.crazyegg.com/blog/website-optimization-tools/)
+- [Performance](https://developers.google.com/web/fundamentals/performance/why-performance-matters)
+- [Website Optimization Tools](https://www.crazyegg.com/blog/website-optimization-tools/)
 - [Page Speed Insights](https://developers.google.com/speed/pagespeed/insights)
 - [Google Search Console](https://search.google.com/search-console)
 - [GTmetrix](https://gtmetrix.com)
 - [Image Compressor](https://imagecompressor.com/)
-- [hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
+- [Hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
+
+## TODOs:
+- [ ] JSON description for developer view
+- [ ] More social icons
+- [ ] Share on Wechat, QQ, twitter and so on.
+- [ ] Show rainbow sometimes.
+- [x] Change them to gray on specific day.
+- [x] [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Update' button
+- [x] [PWA] Update alert
+
+## PWA Debug:
+
+1. Run command `yarn build:w`.
+2. Install `http-server` globally and run command `http-server dist -c-1` in root directory.
+3. Make some changes, then refresh the page
 
 ## References
 - https://web.dev/tags/performance/
@@ -29,16 +44,9 @@
 - https://cssgradient.io/
 - https://kazuhikoarase.github.io/qrcode-generator/js/demo/
 - https://iconmonstr.com/
+- https://www.flaticon.com/
 - https://validator.nu/
 - https://mailto.now.sh/
-
-## TODOs:
-- JSON description for developer view
-- More social icons option
-- Share on Wechat, QQ, twitter and so on.
-- Show rainbow sometimes.
-- [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Update' button
-- [PWA] Update alert
 
 
 PS:

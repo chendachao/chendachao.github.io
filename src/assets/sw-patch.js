@@ -18,7 +18,7 @@ self.addEventListener('push', (event) => {
 });
 
 self.addEventListener('message', function (event) {
-  if (event.data.action === 'skipWaiting') {
+  if (event.data && event.data.action === 'SKIP_WAITING') {
     console.log('Inside Service Worker', event.data.action);
     self.skipWaiting();
     self.clients.claim();

@@ -65,7 +65,7 @@ if (process.env.NODE_ENV !== 'development' && 'serviceWorker' in navigator) {
                   action: {
                     text: 'Update',
                     onClick: (e, toasted) => {
-                      installingWorker.postMessage({ action: 'skipWaiting'});
+                      installingWorker.postMessage({ action: 'SKIP_WAITING'});
                     },
                   },
                 });

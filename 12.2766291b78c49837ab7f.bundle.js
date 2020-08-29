@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{"oQ7+":function(o,n,s){"use strict";s.r(n),console.log("1235678")}}]);

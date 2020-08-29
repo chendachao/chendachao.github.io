@@ -48,12 +48,15 @@ if (process.env.NODE_ENV !== 'development' && 'serviceWorker' in navigator) {
       registration.update();
 
       registration.addEventListener('updatefound', function () {
-        const newWorker = registration.installing;
+        const installingWorker = registration.installing;
+        if (installingWorker == null) {
+          return;
+        }
 
-        newWorker.addEventListener('statechange', () => {
+        installingWorker.addEventListener('statechange', () => {
           // Has network.state changed!
-          console.log('statechange', newWorker.state);
-          switch (newWorker.state) {
+          console.log('statechange', installingWorker.state);
+          switch (installingWorker.state) {
             case 'installed':
               if (navigator.serviceWorker.controller) {
                 // new update available
@@ -62,13 +65,13 @@ if (process.env.NODE_ENV !== 'development' && 'serviceWorker' in navigator) {
                   action: {
                     text: 'Update',
                     onClick: (e, toasted) => {
-                      newWorker.postMessage({ action: 'skipWaiting'});
+                      installingWorker.postMessage({ action: 'skipWaiting'});
                     },
                   },
                 });
               } else {
                 // no update available
-                console.log('dont show a toast', newWorker.state);
+                console.log('Content is cached for offline use.', installingWorker.state);
               }
               break;
               case 'redundant':
@@ -79,7 +82,8 @@ if (process.env.NODE_ENV !== 'development' && 'serviceWorker' in navigator) {
           }
          });
       })
-    }).catch(registrationError => {
+    })
+    .catch(registrationError => {
       console.log('SW registration failed: ', registrationError);
     });
 

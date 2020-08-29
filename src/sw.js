@@ -7,7 +7,11 @@ import { precacheAndRoute } from 'workbox-precaching';
 
 importScripts('/assets/sw-patch.js');
 
-googleAnalytics.initialize();
+googleAnalytics.initialize({
+  parameterOverrides: {
+    cd1: 'offline',
+  },
+});
 
 skipWaiting();
 clientsClaim();

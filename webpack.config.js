@@ -118,7 +118,11 @@ const pwaPlugins = [
     skipWaiting: true,
     // exclude: [inlineBundles],
     cleanupOutdatedCaches: true,
-    offlineGoogleAnalytics: true,
+    offlineGoogleAnalytics: {
+      parameterOverrides: {
+        cd1: 'offline',
+      },
+    },
     sourcemap: true,
     importScripts: [
       'assets/sw-patch.js'

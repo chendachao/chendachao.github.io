@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{dSPy:function(o,n){console.log("Hello, nice to meet you🌹. This is Larry from China. 🌝 666")}},[["dSPy",0]]]);

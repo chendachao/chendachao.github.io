@@ -1,3 +1,3 @@
 
-console.log('Hello, nice to meet you🌹. This is Larry from China. 🌝 123');
+console.log('Hello, nice to meet you🌹. This is Larry from China. 🌝');
 

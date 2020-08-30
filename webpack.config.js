@@ -115,7 +115,7 @@ const pwaPlugins = [
     // these options encourage the ServiceWorkers to get in there fast
     swDest: 'sw.js',
     clientsClaim: true,
-    skipWaiting: true,
+    skipWaiting: false,
     // exclude: [inlineBundles],
     cleanupOutdatedCaches: true,
     offlineGoogleAnalytics: {

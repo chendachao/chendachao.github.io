@@ -13,7 +13,7 @@ googleAnalytics.initialize({
   },
 });
 
-skipWaiting();
+// skipWaiting();
 clientsClaim();
 
 // make sure we grab from cache if no network

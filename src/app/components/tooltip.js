@@ -69,7 +69,7 @@ function TooltipAndPopover() {
   tippy('#wechat', {
     ...commonConig,
     content: container,
-    trigger: 'click',
+    // trigger: 'click',
     duration: [675, 1000],
     onShown: instance => {
       const content = instance.popper;

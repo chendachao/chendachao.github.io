@@ -32,13 +32,18 @@ function SetQRCode() {
     }, 500);
 
     let canvas = document.createElement('canvas');
-    QRCode.toCanvas(canvas, mySite, {
+    const QRCodeDim = {
       width: 320,
       height: 320,
       margin: 1.5,
+    };
+    QRCode.toCanvas(canvas, mySite, {
+      width: QRCodeDim.width,
+      height: QRCodeDim.height,
+      margin: QRCodeDim.margin,
       errorCorrectionLevel: 'H',
       quality: 1,
-      version: 4, // 6
+      version: 5, // 6
       // color: {
       //   dark: "#010599FF",
       //   light: "#FFBF60FF"
@@ -47,8 +52,8 @@ function SetQRCode() {
       .then(cvs => {
         const imgDim = {
           //logo dimention
-          width: 80,
-          height: 80,
+          width: 35,
+          height: 35,
         };
         const logo = 'favicon.ico';
         const ctx = cvs.getContext('2d');
@@ -59,31 +64,31 @@ function SetQRCode() {
           const bgWhiteMargin = 20;
 
           // stroke margin
-          ctx.lineWidth = bgWhiteMargin;
+          ctx.lineWidth = bgWhiteMargin / 2;
           ctx.lineJoin = 'round';
           ctx.lineCap = 'round';
           ctx.strokeStyle = '#ffffff';
           ctx.beginPath();
           ctx.rect(
-            cvs.width / 2 - imgDim.width / 2 - bgWhiteMargin / 2, 
-            cvs.width / 2 - imgDim.width / 2 - bgWhiteMargin / 2, 
+            cvs.width / 2 - imgDim.width / 2 - bgWhiteMargin / 4, 
+            cvs.width / 2 - imgDim.width / 2 - bgWhiteMargin / 4, 
             imgDim.width + bgWhiteMargin, 
             imgDim.height + bgWhiteMargin
             );
           ctx.stroke();
 
-          ctx.fillStyle = 'gold';
+          ctx.fillStyle = '#ffe506';
           ctx.fillRect(
-            cvs.width / 2 - imgDim.width / 2 - bgWhiteMargin / 2,
-            cvs.height / 2 - imgDim.height / 2 - bgWhiteMargin / 2,
+            cvs.width / 2 - imgDim.width / 2 - bgWhiteMargin / 4,
+            cvs.height / 2 - imgDim.height / 2 - bgWhiteMargin / 4,
             imgDim.width + bgWhiteMargin,
             imgDim.height + bgWhiteMargin
           );
 
           ctx.drawImage(
             logoObj,
-            cvs.width / 2 - imgDim.width / 2,
-            cvs.height / 2 - imgDim.height / 2,
+            cvs.width / 2 - imgDim.width / 2 + bgWhiteMargin / 4,
+            cvs.height / 2 - imgDim.height / 2 + bgWhiteMargin / 4,
             imgDim.width,
             imgDim.height
           );

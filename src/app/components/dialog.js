@@ -43,7 +43,7 @@ function SetQRCode() {
       margin: QRCodeDim.margin,
       errorCorrectionLevel: 'H',
       quality: 1,
-      version: 5, // 6
+      version: 4, // 6
       // color: {
       //   dark: "#010599FF",
       //   light: "#FFBF60FF"
@@ -64,7 +64,7 @@ function SetQRCode() {
           const bgWhiteMargin = 20;
 
           // stroke margin
-          ctx.lineWidth = bgWhiteMargin / 2;
+          ctx.lineWidth = bgWhiteMargin / 3;
           ctx.lineJoin = 'round';
           ctx.lineCap = 'round';
           ctx.strokeStyle = '#ffffff';

@@ -43,17 +43,17 @@ function SetQRCode() {
       margin: QRCodeDim.margin,
       errorCorrectionLevel: 'H',
       quality: 1,
-      version: 4, // 6
-      // color: {
-      //   dark: "#010599FF",
-      //   light: "#FFBF60FF"
-      // }
+      version: 5, // 6
+      color: {
+        // dark: "#010599FF",
+        light: "#f5f5f5"
+      }
     })
       .then(cvs => {
         const imgDim = {
           //logo dimention
-          width: 35,
-          height: 35,
+          width: 30,
+          height: 30,
         };
         const logo = 'favicon.ico';
         const ctx = cvs.getContext('2d');

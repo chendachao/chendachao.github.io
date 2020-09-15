@@ -20,10 +20,12 @@
 - [Hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
 
 ## TODOs:
-- [ ] JSON description for developer view
+- [x] JSON description for developer view
 - [ ] More social icons
 - [ ] Share on Wechat, QQ, twitter and so on.
 - [ ] Show rainbow sometimes.
+- [ ] My projects section.
+- [ ] Intro for all sections.
 - [x] Change them to gray on specific day.
 - [x] [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Update' button
 - [x] [PWA] Update alert

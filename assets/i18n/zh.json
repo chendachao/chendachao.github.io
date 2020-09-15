@@ -1,6 +1,7 @@
 { 
   "APP.COMMA": "，",
   "APP.PERIOD": "。",
+  "APP.DEVELOPER_MODE": "开发者视图",
   "APP.HELLO": "你好，在下 ",
   "APP.NAME": "陈大超",
   "APP.IMA": "一位来自中国上海的",

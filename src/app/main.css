@@ -421,6 +421,7 @@
 }
 
 .bio {
+  position: relative;
   text-align: justify;
   font-weight: 900;
   font-size: calc(1em + 1vw);
@@ -428,6 +429,12 @@
   padding: 1rem;
   text-shadow: -10px 10px 15px rgba(0, 0, 0, 0.3);
   transition: 1s;
+}
+
+.bio .code-icon {
+  position: absolute;
+  right: 10px;
+  top: -1rem;
 }
 
 .wechat-qrcode {

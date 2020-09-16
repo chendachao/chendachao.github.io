@@ -99,6 +99,7 @@ const I18n = () => {
   return {
     init,
     format,
+    locale
   }
 };
 

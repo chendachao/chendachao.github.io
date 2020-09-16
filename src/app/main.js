@@ -44,7 +44,11 @@ if (isIE()) {
 window.addEventListener('load', function() {
 
   scrollToTop();
-  
+
+  // Click to open json file
+  const developerModeLink = document.querySelector('.developer-mode-link');
+  developerModeLink.setAttribute('href', `/assets/data/${i18n.locale}/chendachao.json`);
+
   let errorToasted;
   const updateOnlineStatus = function (event) {
     var message = navigator.onLine ? "" : "You are offline!";

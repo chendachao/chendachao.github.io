@@ -1,11 +1,14 @@
 {
-  "name": "Chen Dachao",
   "short_name": "Chen Dachao",
+  "name": "Chen Dachao",
+  "description": "It's Larry Chen's Homepage.",
   "theme_color": "#5391c3",
   "background_color": "#168ce9",
   "display": "standalone",
   "scope": "/",
   "start_url": "/index.html?utm_source=homescreen",
+  "gcm_sender_id": "103953800507",
+  "gcm_user_visible_only": true,
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

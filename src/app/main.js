@@ -1,5 +1,5 @@
 import toasted from './utils/toasted';
-import { isIE } from './utils';
+import { isIE, isPC } from './utils';
 import { scrollToTop } from './utils/scroll';
 
 import Theme from './components/theme';
@@ -18,9 +18,14 @@ import('./components/dialog').then(SetQRCode => SetQRCode.default());
 import('./components/intro').then(Intro => {
   const intro = new Intro.default();
 
-  // setTimeout(() => {
+  if(isPC()) {
+    // Load two fast in PC, need delay the intro popup
+    setTimeout(() => {
+      intro.init();
+    }, 5000);
+  } else {
     intro.init();
-  // }, 5000);
+  }
 
   const startReplayBtn = document.querySelector('.start-replay-tour');
   const starthintBtn = document.querySelector('.start-hint');

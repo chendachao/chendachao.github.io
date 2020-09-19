@@ -50,6 +50,7 @@
 - https://www.flaticon.com/
 - https://validator.nu/
 - https://mailto.now.sh/
+- https://vercel.com/
 
 
 PS:

@@ -9,13 +9,18 @@ Theme();
 import i18n from './utils/i18n';
 i18n.init();
 
+// Initialize tooltip and popover
+import('./components/tooltip').then(TooltipAndPopover => TooltipAndPopover.default());
+
+import('./components/dialog').then(SetQRCode => SetQRCode.default());
+
 // Show intro
 import('./components/intro').then(Intro => {
   const intro = new Intro.default();
 
-  setTimeout(() => {
+  // setTimeout(() => {
     intro.init();
-  }, 5000);
+  // }, 5000);
 
   const startReplayBtn = document.querySelector('.start-replay-tour');
   const starthintBtn = document.querySelector('.start-hint');
@@ -29,11 +34,6 @@ import('./components/intro').then(Intro => {
   });
  
 });
-
-// Initialize tooltip and popover
-import('./components/tooltip').then(TooltipAndPopover => TooltipAndPopover.default());
-
-import('./components/dialog').then(SetQRCode => SetQRCode.default());
 
 // hide the install app button if in IE
 if (isIE()) {

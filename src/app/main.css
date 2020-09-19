@@ -397,6 +397,7 @@
 .brand-icon {
   width: calc(5em + 4vw);
   transition: 1s;
+  position: relative;
 }
 
 .brand-icon:hover {

@@ -55,7 +55,7 @@
     "axios": "0.20.0",
     "bowser": "2.11.0",
     "dialog-polyfill": "0.5.3",
-    "intl-messageformat": "9.3.6",
+    "intl-messageformat": "9.3.8",
     "intro.js": "2.9.3",
     "normalize.css": "8.0.1",
     "qrcode": "1.4.4",

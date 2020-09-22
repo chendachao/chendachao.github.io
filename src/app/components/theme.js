@@ -4,9 +4,9 @@ const startDate = new Date(2020, 3, 4); // Tomb-Sweeping Day
 const endDate = new Date(2020, 7, 4);
 
 function Theme() {
-  const setTheme = (theme) => {
+  const setTheme = theme => {
     const body = document.getElementsByTagName('body')[0];
-    body.setAttribute('data-theme-style', theme);
+    body.setAttribute('data-theme', theme);
   };
 
   if (daysBetween(new Date(), startDate, endDate)) {
@@ -16,10 +16,10 @@ function Theme() {
     defaultTheme && setTheme(defaultTheme);
 
     let moon = document.querySelector('.moon');
+
     moon.addEventListener('click', () => {
       const body = document.getElementsByTagName('body')[0];
-      let theme =
-        body.getAttribute('data-theme-style') === 'light' ? 'dark' : 'light';
+      let theme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       setTheme(theme);
       localStorage.setItem('theme', theme);
     });

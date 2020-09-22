@@ -113,7 +113,7 @@
   color: #fff
 }
 
-[data-theme-style="light"] {
+[data-theme="light"] {
   background: var(--color-global-light-background);
   background: var(--color-global-light-gradient);
 
@@ -131,14 +131,14 @@
   }
 }
 
-[data-theme-style="dark"] {
+[data-theme="dark"] {
   background: var(--color-global-dark-background);
   background: var(--color-global-dark-gradient);
 
   animation: fade-in 5s ease-in-out;
 }
 
-[data-theme-style="gray"] {
+[data-theme="gray"] {
   /* Set the theme to special gray */
   background: var(--color-global-dark-background);
   filter: grayscale(100%);
@@ -372,13 +372,13 @@
   }
 }
 
-[data-theme-style="light"] [class^="moon"] {
+[data-theme="light"] [class^="moon"] {
   /* background: linear-gradient(gold, #d00); */
   background: linear-gradient(to top, #d00 0%, #fc8b53 50%, #fdd55a 100%);
   background-size: 200% 200%;
 }
 
-[data-theme-style="dark"] [class^="moon"] {
+[data-theme="dark"] [class^="moon"] {
   background-color: lightgoldenrodyellow;
 }
 
@@ -416,7 +416,7 @@
   }
 }
 
-[data-theme-style="dark"] .brand-icon {
+[data-theme="dark"] .brand-icon {
   color: #ffe506;
   text-shadow: -5px 5px 10px #ab870a;
 }

@@ -53,7 +53,7 @@
   "dependencies": {
     "@babel/polyfill": "7.11.5",
     "axios": "0.20.0",
-    "bowser": "2.10.0",
+    "bowser": "2.11.0",
     "dialog-polyfill": "0.5.3",
     "intl-messageformat": "9.3.6",
     "intro.js": "2.9.3",

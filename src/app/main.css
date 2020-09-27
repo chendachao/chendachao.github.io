@@ -110,7 +110,7 @@
 
 ::selection {
   background-color: #efbb35;
-  color: #fff
+  color: black;
 }
 
 [data-theme="light"] {

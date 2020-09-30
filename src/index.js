@@ -3,8 +3,8 @@ import toasted from './app/utils/toasted';
 // import(/* webpackPrefetch: true */'./app/pwa');
 import(/* webpackPreload: true */'./app/main');
 import 'normalize.css';
-import './app/main.css';
-import(/* webpackPreload: true */'./app/override.css');
+import './styles/main.css';
+import(/* webpackPreload: true */'./styles/override.css');
 
 import * as serviceWorker from './app/pwa';
 

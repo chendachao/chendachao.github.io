@@ -30,6 +30,7 @@ function TooltipAndPopover() {
   const commonConig = {
     allowHTML: true,
     arrow: roundArrow,
+    // placement: 'left',
     theme: 'light-border',
     interactive: true,
     animation: isPC() ? 'scale' : 'perspective',
@@ -38,6 +39,7 @@ function TooltipAndPopover() {
     appendTo: document.body,
   };
 
+  // Common tooltip
   if(isPC()) {
     const tippyInstances = tippy('[data-tooltip]');
     const singleton = createSingleton(tippyInstances, commonConig);

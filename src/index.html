@@ -55,11 +55,16 @@
 
   <header>
     <div class="help-icon-menu-bar">
-      <button aria-label="language" class="help-icon language-btn webkit-mobile-pointer-disable-blue-highlight"></button>
-      <button aria-label="guide" class="help-icon start-replay-tour webkit-mobile-pointer-disable-blue-highlight"></button>
-      <button aria-label="hint" class="help-icon start-hint webkit-mobile-pointer-disable-blue-highlight"></button>
-      <button aria-label="subscribe" class="help-icon subscribe-btn webkit-mobile-pointer-disable-blue-highlight"></button>
-      <button aria-label="pwa install" class="help-icon pwa-install-btn webkit-mobile-pointer-disable-blue-highlight" id="btnInstall"></button>
+      <button aria-label="language" class="help-icon language-btn webkit-mobile-pointer-disable-blue-highlight"
+        data-tooltip data-tippy-content="Switch language" data-i18n-attr="data-tippy-content=APP.LANGUAGE_SWITCH"></button>
+      <button aria-label="guide" class="help-icon start-replay-tour webkit-mobile-pointer-disable-blue-highlight"
+        data-tooltip data-tippy-content="Tutorial guide" data-i18n-attr="data-tippy-content=APP.TUTOR_GUIDE"></button>
+      <button aria-label="hint" class="help-icon start-hint webkit-mobile-pointer-disable-blue-highlight"
+        data-tooltip data-tippy-content="Tutorial turorial with hint" data-i18n-attr="data-tippy-content=APP.TUTOR_HINT_GUIDE"></button>
+      <button aria-label="subscribe" class="help-icon subscribe-btn webkit-mobile-pointer-disable-blue-highlight"
+        data-tooltip data-tippy-content="Subscribe notification" data-i18n-attr="data-tippy-content=APP.NOTIFICATION_SUBSCRIBE"></button>
+      <button aria-label="pwa install" class="help-icon pwa-install-btn webkit-mobile-pointer-disable-blue-highlight" id="btnInstall"
+        data-tooltip data-tippy-content="Install to Desktop" data-i18n-attr="data-tippy-content=APP.INSTALL"></button>
     </div>
   </header>
 
@@ -156,7 +161,8 @@
   </main>
 
   <footer>
-    <button class="qrcode-container webkit-mobile-pointer-disable-blue-highlight">
+    <button class="qrcode-container webkit-mobile-pointer-disable-blue-highlight"
+      data-tooltip data-tippy-content="This site's QRCode" data-i18n-attr="data-tippy-content=APP.SITE_QRCODE">
       <img class="qrcode-handler" src="./assets/images/scan-qr-code.svg" alt="qrcode view on mobile">
     </button>
   </footer>

@@ -48,6 +48,17 @@ if (isIE()) {
 
 window.addEventListener('load', function() {
 
+  const languageBtn = document.querySelector('.language-btn');
+  languageBtn.removeAttribute('hidden');
+
+  const startReplayBtn = document.querySelector('.start-replay-tour');
+  const starthintBtn = document.querySelector('.start-hint');
+  startReplayBtn.removeAttribute('hidden');
+  starthintBtn.removeAttribute('hidden');
+  
+  const qrcodeContainerBtn = document.querySelector('.qrcode-container');
+  qrcodeContainerBtn.removeAttribute('hidden');
+
   scrollToTop();
 
   // Click to open json file

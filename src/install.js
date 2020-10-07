@@ -11,12 +11,16 @@ window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 if (window.matchMedia('(display-mode: standalone)').matches) {
   console.log('display-mode is standalone');
   installButton.setAttribute('hidden', '');
+} else {
+  deferredInstallPrompt && installButton.removeAttribute('hidden');
 }
 
 // Safari
 if (window.navigator.standalone === true) {
   console.log('display-mode is standalone');
   installButton.setAttribute('hidden', '');
+} else {
+  deferredInstallPrompt && installButton.removeAttribute('hidden');
 }
 
 /**

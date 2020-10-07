@@ -49,6 +49,8 @@ function registerValidSW(swUrl, config) {
   const isSubscribed = JSON.parse(localStorage.getItem('subscribed'));
   if (isSubscribed) {
     subscribeBtn.setAttribute('hidden', '');
+  } else {
+    subscribeBtn.removeAttribute('hidden');
   }
   // subscribe push notifications
   subscribeBtn.addEventListener('click', async () => {

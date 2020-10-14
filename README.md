@@ -54,6 +54,8 @@
 - https://myraah.io/index.php/visualmind
 - https://thomaspark.co/projects/fontcdn/
 - https://glyphsearch.com/
+- https://editor.method.ac/
+- https://svg-edit.github.io/svgedit/dist/editor/index.html
 
 
 PS:

@@ -638,8 +638,16 @@ only screen and (device-width: 767px) {
 }
 
 .highlight:hover {
-  color: #ffe506;
-  text-shadow: -3px 3px 2px #7c630a;
+  /* color: #ffe506; */
+  /* text-shadow: -3px 3px 2px #7c630a; */
+
+  background: linear-gradient(330deg, #e05252 0%, #99e052 25%, #52e0e0 50%, #9952e0 75%, #e05252 100%);
+
+  /* background: rgb(63,94,251);
+  background: radial-gradient(circle, #ffe506 0%, rgba(63,94,251,1) 100%); */
+
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .text-nowrap {

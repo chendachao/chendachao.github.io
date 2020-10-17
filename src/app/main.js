@@ -102,3 +102,20 @@ window.addEventListener('error', function(event) {
 // window.setTimeout(function() {throw new Error('sdfsdfd')}, 0);
 
 
+// var width=300;
+// var height=200;
+// var from_top=350;
+// var from_left=500;
+// var toolbar='no';
+// var location='no';
+// var directories='no';
+// var status='no';
+// var menubar='no';
+// var scrollbars='yes';
+// var resizable='yes';
+// var atts='width='+width+'show,height='+height+',top='+from_top+',screenY=';
+// atts+= from_top+',left='+from_left+',screenX='+from_left+',toolbar='+toolbar;
+// atts+=',location='+location+',directories='+directories+',status='+status;
+// atts+=',menubar='+menubar+',scrollbars='+scrollbars+',resizable='+resizable;
+// var url = "/ems/ezrf_get_details.html?op_type="+key+"&title="+title +"#";
+// window.open(url,‘win_name’,s atts);

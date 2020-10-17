@@ -30,8 +30,10 @@ function TooltipAndPopover() {
   const commonConig = {
     allowHTML: true,
     arrow: roundArrow,
+    // trigger: 'click',
     // placement: 'left',
-    theme: 'light-border',
+    // theme: 'light-border',
+    theme: 'gradient',
     interactive: true,
     animation: isPC() ? 'scale' : 'perspective',
     inertia: true,
@@ -70,6 +72,7 @@ function TooltipAndPopover() {
   // wechat qrcode popup
   tippy('#wechat', {
     ...commonConig,
+    theme: 'light-border',
     content: container,
     // trigger: 'click',
     duration: [675, 1000],

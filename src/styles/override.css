@@ -12,6 +12,16 @@
   /* letter-spacing: -0.1vw; */
 }
 
+.tippy-box[data-theme~='gradient'] {
+  background: linear-gradient(130deg, #507bf4, #f166b2);
+  box-shadow: -3px 3px 12px #6a3da7;
+  font-weight: bold;
+}
+
+.tippy-box[data-theme~='gradient'] > .tippy-svg-arrow {
+  fill: mediumpurple;
+}
+
 [tooltip][tabindex="0"] {
   outline: none;
 }

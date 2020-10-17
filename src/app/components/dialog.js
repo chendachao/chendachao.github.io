@@ -77,7 +77,8 @@ function SetQRCode() {
             );
           ctx.stroke();
 
-          ctx.fillStyle = '#ffe506';
+          // fill content color
+          ctx.fillStyle = '#f5f5f5';
           ctx.fillRect(
             cvs.width / 2 - imgDim.width / 2 - bgWhiteMargin / 4,
             cvs.height / 2 - imgDim.height / 2 - bgWhiteMargin / 4,

@@ -22,6 +22,14 @@
   fill: mediumpurple;
 }
 
+[data-theme="light"] .tippy-box[data-theme~='gradient'] {
+  background: linear-gradient(130deg, #666af1, #ca6767);
+}
+
+[data-theme="light"] .tippy-box[data-theme~='gradient'] > .tippy-svg-arrow {
+  fill: #6b838e;
+}
+
 [tooltip][tabindex="0"] {
   outline: none;
 }

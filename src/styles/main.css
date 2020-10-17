@@ -73,7 +73,7 @@
   --twitter: #00aced;
   --cat-head: rgba(114, 186, 94, 0.1);
   --front-text-color: #93a791;
-  --info-box-bg: rgba(255, 213, 70, 0.1)
+  --info-box-bg: rgba(255, 213, 70, 0.1);
 }
 
 .dark {
@@ -105,7 +105,7 @@
   --twitter: #fff;
   --cat-head: #1A1D24;
   --front-text-color: antiquewhite;
-  --info-box-bg: #1A1D24
+  --info-box-bg: #1A1D24;
 }
 
 ::selection {
@@ -635,6 +635,13 @@ only screen and (device-width: 767px) {
 }
 
 /* Common */
+.signature {
+  float: right;
+  height: 35px;
+  margin-top: 5rem;
+  margin-right: 2rem;
+}
+
 .highlight {
   color: #f1a50d;
   cursor: help;
@@ -646,7 +653,8 @@ only screen and (device-width: 767px) {
   /* text-shadow: -3px 3px 2px #7c630a; */
 
   /* background: linear-gradient(330deg, #178bb7 0%, #d8ca1e 25%, #52e0e0 50%, #f1e526 75%, #095090 100%); */
-  background: linear-gradient(330deg, #178bb7 0%, #8bc1ef 25%, #52e0e0 50%, #f1e526 75%, #076b39 100%);
+  /* background: linear-gradient(330deg, #178bb7 0%, #8bc1ef 25%, #52e0e0 50%, #f1e526 75%, #076b39 100%); */
+  background: linear-gradient(90deg, rgb(233 111 241) 0%, rgb(60 226 226) 70%, rgb(245 181 90) 100%);
 
   /* background: rgb(63,94,251);
   background: radial-gradient(circle, #ffe506 0%, purple 100%); */

@@ -111,6 +111,10 @@
 ::selection {
   background-color: #efbb35;
   color: black;
+
+  /* fix for hover highlight text */
+  background: #efbb35;
+  -webkit-text-fill-color: black;
 }
 
 [data-theme="light"] {
@@ -637,7 +641,7 @@ only screen and (device-width: 767px) {
   border-bottom-style: dotted;
 }
 
-.highlight:not(::selection):hover {
+.highlight:hover {
   /* color: #ffe506; */
   /* text-shadow: -3px 3px 2px #7c630a; */
 
@@ -652,7 +656,7 @@ only screen and (device-width: 767px) {
   -moz-text-fill-color: transparent;
 }
 
-[data-theme="dark"] .highlight:not(::selection):hover {
+[data-theme="dark"] .highlight:hover {
   background: linear-gradient(130deg, #507bf4, #f166b2);
   background-clip: text;
   -webkit-text-fill-color: transparent;

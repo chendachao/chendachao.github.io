@@ -1,3 +1,4 @@
+import toasted from './utils/toasted';
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
@@ -46,28 +47,32 @@ export function register(config) {
 function registerValidSW(swUrl, config) {
   // TODO: maybe use hooks to handle the subscribe button
   var subscribeBtn = document.querySelector('.subscribe-btn');
-  const isSubscribed = JSON.parse(localStorage.getItem('subscribed'));
-  if (isSubscribed) {
-    subscribeBtn.setAttribute('hidden', '');
-  } else {
+  if(['default', 'denied'].includes(Notification.permission)) {
     subscribeBtn.removeAttribute('hidden');
   }
+  
   // subscribe push notifications
   subscribeBtn.addEventListener('click', async () => {
     try {
       const result = await Notification.requestPermission();
       if (result === 'granted') {
-        localStorage.setItem('subscribed', true);
-        subscribeBtn.setAttribute('hidden', '');
         navigator.serviceWorker.getRegistration().then(function (reg) {
           // Show Local Notification
           reg.pushManager.subscribe({ userVisibleOnly: true });
         });
       } else {
-        throw new Error('Denied notification permission');
+        throw new Error('Notifications blocked. Please enable them in your browser.');
       }
     } catch (error) {
-      console.log('error', error);
+      toasted.error(error, { 
+        action: {
+          text: 'Close',
+          onClick: (e, toasted) => {
+            toasted.delete();
+          },
+        },
+      });
+      console.log('Notifications error', error);
     }
   });
 

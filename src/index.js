@@ -54,7 +54,7 @@ serviceWorker.register({
     }
   },
   onSuccess: registration => {
-    console.log("registered app for offline use. details:", registration)
+    console.log("registered app for offline use. details:", registration);
   }
 });
  

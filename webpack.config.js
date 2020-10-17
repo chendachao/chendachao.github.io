@@ -30,6 +30,7 @@ const commonConfig = merge([
       print: './src/print.js',
       install: './src/install.js',
       cv: ['@babel/polyfill', './src/index-cv.js'],
+      stone: ['@babel/polyfill', './src/index-stone.js'],
     },
     output: {
       filename: '[name].[contenthash].bundle.js',
@@ -61,13 +62,19 @@ const commonConfig = merge([
       new HtmlWebpackPlugin({
         template: 'src/index.html',
         minify: false,
-        excludeChunks: ['cv']
+        excludeChunks: ['cv', 'stone']
       }),
       new HtmlWebpackPlugin({
         template: 'src/index-cv.html',
         minify: false,
         filename: 'cv.html',
         chunks: ['cv']
+      }),
+      new HtmlWebpackPlugin({
+        template: 'src/index-stone.html',
+        minify: false,
+        filename: 'stone.html',
+        chunks: ['stone']
       }),
       new ScriptExtHtmlWebpackPlugin({
         // inline: inlineBundles, // cause pwa update issue

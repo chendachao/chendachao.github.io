@@ -58,6 +58,7 @@
 - https://svg-edit.github.io/svgedit/dist/editor/index.html
 - https://vectr.com/
 - https://www.calligrapher.ai/
+- http://patorjk.com/text-color-fader/
 
 
 PS:

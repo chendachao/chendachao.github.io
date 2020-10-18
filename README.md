@@ -56,6 +56,7 @@
 - https://glyphsearch.com/
 - https://editor.method.ac/
 - https://svg-edit.github.io/svgedit/dist/editor/index.html
+- https://vectr.com/
 - https://www.calligrapher.ai/
 
 

@@ -215,6 +215,7 @@ const productionConfig = merge([
 
 const developmentConfig = merge([
   {
+    // devtool: 'source-map',
     plugins: [
       // new ErrorOverlayPlugin(),
       // Ignore node_modules so CPU usage with poll

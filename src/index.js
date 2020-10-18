@@ -9,6 +9,40 @@ import(/* webpackPreload: true */'./styles/override.css');
 import * as serviceWorker from './app/pwa';
 
 serviceWorker.register({
+  onRegister: registration => {
+    var subscribeBtn = document.querySelector('.subscribe-btn');
+    if(['default', 'denied'].includes(Notification.permission)) {
+      subscribeBtn.removeAttribute('hidden');
+    }
+    
+    // subscribe push notifications
+    subscribeBtn.addEventListener('click', async () => {
+      try {
+        const result = await Notification.requestPermission();
+        if (result === 'granted') {
+          subscribeBtn.setAttribute('hidden', '');
+          // navigator.serviceWorker.getRegistration().then(function (reg) {
+          //   // Show Local Notification
+          //   reg.pushManager.subscribe({ userVisibleOnly: true });
+          // });
+          // Show Local Notification
+          registration.pushManager.subscribe({ userVisibleOnly: true });
+        } else {
+          throw new Error('Notifications blocked. Please enable them in your browser.');
+        }
+      } catch (error) {
+        toasted.error(error, { 
+          action: {
+            text: 'X',
+            onClick: (e, toasted) => {
+              toasted.delete();
+            },
+          },
+        });
+        console.log('Notifications error', error);
+      }
+    });
+  },
   onUpdate: registration => {
     // registration.unregister().then(() => {
     //   window.location.reload();

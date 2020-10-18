@@ -1,4 +1,3 @@
-import toasted from './utils/toasted';
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
@@ -45,40 +44,11 @@ export function register(config) {
 }
 
 function registerValidSW(swUrl, config) {
-  // TODO: maybe use hooks to handle the subscribe button
-  var subscribeBtn = document.querySelector('.subscribe-btn');
-  if(['default', 'denied'].includes(Notification.permission)) {
-    subscribeBtn.removeAttribute('hidden');
-  }
-  
-  // subscribe push notifications
-  subscribeBtn.addEventListener('click', async () => {
-    try {
-      const result = await Notification.requestPermission();
-      if (result === 'granted') {
-        navigator.serviceWorker.getRegistration().then(function (reg) {
-          // Show Local Notification
-          reg.pushManager.subscribe({ userVisibleOnly: true });
-        });
-      } else {
-        throw new Error('Notifications blocked. Please enable them in your browser.');
-      }
-    } catch (error) {
-      toasted.error(error, { 
-        action: {
-          text: 'Close',
-          onClick: (e, toasted) => {
-            toasted.delete();
-          },
-        },
-      });
-      console.log('Notifications error', error);
-    }
-  });
-
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
+      // execute onRegister callback
+      config && config.onRegister && config.onRegister(registration);
       // check update
       // registration.update();
       registration.addEventListener('updatefound', () => {

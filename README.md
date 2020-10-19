@@ -45,6 +45,8 @@
 - https://codepen.io/Stockin/pen/jeNQEN
 - https://www.flaticon.com/
 - https://cssgradient.io/
+- https://coolors.co/gradient-maker/f8dadc-b6edc8-eeacdc
+- https://www.checkmycolours.com/
 - https://kazuhikoarase.github.io/qrcode-generator/js/demo/
 - https://iconmonstr.com/
 - https://www.flaticon.com/

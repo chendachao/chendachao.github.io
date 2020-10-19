@@ -35,7 +35,7 @@ function SetQRCode() {
     const QRCodeDim = {
       width: 320,
       height: 320,
-      margin: 1.5,
+      margin: 3,
     };
     QRCode.toCanvas(canvas, mySite, {
       width: QRCodeDim.width,

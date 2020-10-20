@@ -19,7 +19,7 @@
 }
 
 .tippy-box[data-theme~='gradient'] > .tippy-svg-arrow {
-  fill: mediumpurple;
+  fill: #b170ce;
 }
 
 [data-theme="light"] .tippy-box[data-theme~='gradient'] {
@@ -27,7 +27,7 @@
 }
 
 [data-theme="light"] .tippy-box[data-theme~='gradient'] > .tippy-svg-arrow {
-  fill: mediumpurple;
+  fill: #a068a3;
 }
 
 [tooltip][tabindex="0"] {

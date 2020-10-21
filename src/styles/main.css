@@ -30,11 +30,11 @@
 
 :root {
   --color-global-light-background: rgb(131, 58, 180);
-  --color-global-light-start-gradient: linear-gradient(45deg, rgba(131, 58, 180, 1) 0%, rgba(209, 63, 63, 1) 70%, rgba(194, 141, 65, 1) 100%);
-  --color-global-light-gradient: linear-gradient(45deg, rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%);
+  --color-global-light-start-gradient: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(209, 63, 63, 1) 70%, rgba(194, 141, 65, 1) 100%);
+  --color-global-light-gradient: linear-gradient(90deg, rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%);
  
   --color-global-dark-background: rgb(29, 26, 79);
-  --color-global-dark-gradient: linear-gradient(45deg, rgba(29, 26, 79, 1) 0%, rgba(142, 21, 218, 1) 100%);
+  --color-global-dark-gradient: linear-gradient(90deg, rgba(29, 26, 79, 1) 0%, rgba(142, 21, 218, 1) 100%);
 
   --color-global-dark-background: gray;
 
@@ -117,7 +117,7 @@
   -webkit-text-fill-color: black;
 }
 
-/* fix CSS3 gradient background set on body doesn't stretch but instead repeats? */
+/* fix CSS3 gradient background set !90deg on body doesn't stretch but instead repeats? */
 /* https://stackoverflow.com/a/3294418/6294371 */
 /* html {
   height: 100%;
@@ -134,7 +134,7 @@ body {
   background: var(--color-global-light-background);
   background: var(--color-global-light-gradient);
 
-  /* animation: fade-in 2s ease-in-out, light-sky 10s; */
+  animation: fade-in 2s ease-in-out, light-sky 10s;
 }
 
 /* light when sunrise */
@@ -152,7 +152,7 @@ body {
   background: var(--color-global-dark-background);
   background: var(--color-global-dark-gradient);
 
-  /* animation: fade-in 5s ease-in-out; */
+  animation: fade-in 5s ease-in-out;
 }
 
 [data-theme="gray"] {
@@ -163,7 +163,7 @@ body {
 
   height: 100vh;
 
-  /* animation: fade-in 5s ease-in-out; */
+  animation: fade-in 5s ease-in-out;
 }
 
 @keyframes fade-in {

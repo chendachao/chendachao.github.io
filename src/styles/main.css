@@ -134,7 +134,7 @@ body {
   background: var(--color-global-light-background);
   background: var(--color-global-light-gradient);
 
-  animation: fade-in 2s ease-in-out, light-sky 10s;
+  /* animation: fade-in 2s ease-in-out, light-sky 10s; */
 }
 
 /* light when sunrise */
@@ -152,7 +152,7 @@ body {
   background: var(--color-global-dark-background);
   background: var(--color-global-dark-gradient);
 
-  animation: fade-in 5s ease-in-out;
+  /* animation: fade-in 5s ease-in-out; */
 }
 
 [data-theme="gray"] {
@@ -163,7 +163,7 @@ body {
 
   height: 100vh;
 
-  animation: fade-in 5s ease-in-out;
+  /* animation: fade-in 5s ease-in-out; */
 }
 
 @keyframes fade-in {
@@ -654,6 +654,7 @@ only screen and (device-width: 767px) {
   height: 35px;
   margin-top: 5rem;
   margin-right: 2rem;
+  margin-bottom: 2rem;
 }
 
 .highlight {
@@ -676,6 +677,12 @@ only screen and (device-width: 767px) {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+
+  /* background: linear-gradient(92.05deg, #BCA1F7 12.09%, #E577B4 42.58%, #FF7170 84.96%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  box-decoration-break: clone; */
 }
 
 [data-theme="dark"] .highlight:hover {

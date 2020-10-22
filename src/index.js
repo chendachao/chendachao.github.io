@@ -1,4 +1,6 @@
-// import '@babel/polyfill';
+// es6 generator support
+import '@babel/polyfill';
+
 import toasted from './app/utils/toasted';
 // import(/* webpackPrefetch: true */'./app/pwa');
 import(/* webpackPreload: true */'./app/main');

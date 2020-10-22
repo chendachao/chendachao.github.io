@@ -26,11 +26,11 @@ const PATHS = {
 const commonConfig = merge([
   {
     entry: {
-      app: ['@babel/polyfill', PATHS.app],
+      app: [PATHS.app],
       print: './src/print.js',
       install: './src/install.js',
-      cv: ['@babel/polyfill', './src/index-cv.js'],
-      stone: ['@babel/polyfill', './src/index-stone.js'],
+      cv: ['./src/index-cv.js'],
+      stone: ['./src/index-stone.js'],
     },
     output: {
       filename: '[name].[contenthash].bundle.js',

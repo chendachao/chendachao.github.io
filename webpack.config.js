@@ -39,7 +39,10 @@ const commonConfig = merge([
     },
     resolve: {
       extensions: [".ts", ".js", 'css', 'scss'],
-      symlinks: false
+      symlinks: false,
+      alias: {
+        '@app': path.resolve(__dirname, './src/app')
+      }
     },
     optimization: {
       moduleIds: 'hashed',

@@ -355,6 +355,12 @@ body {
   animation: colorize 24s cubic-bezier(0.2, 1.05, 0.45, 0.94) infinite, rise 5s;
 }
 
+@media screen and (max-height: 500px) {
+  [class^="moon"] {
+    top: 14%;
+  }
+}
+
 @keyframes colorize {
   0% {
     box-shadow: 0 0 40px 6px #f20, 0 0 150px 10px #f33;

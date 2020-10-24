@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const pkg = require('./package.json');
 const GitRevisionPlugin = require('git-revision-webpack-plugin');
 const gitRevisionPlugin = new GitRevisionPlugin({
   lightweightTags: true
@@ -206,6 +207,7 @@ exports.attachRevision = () => ({
     gitRevisionPlugin,
     new webpack.DefinePlugin({
       'process.env.VERSION': JSON.stringify(gitRevisionPlugin.version()),
+      // 'process.env.VERSION': JSON.stringify(`v${pkg.version}-${gitRevisionPlugin.version()}`),
     }),
   ]
 });

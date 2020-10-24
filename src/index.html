@@ -185,16 +185,22 @@
           </li> -->
 
         </ul>
-        <img class="signature" src="./assets/images/signature.svg" alt="Larry Chen">
+        <div style="text-align: right">
+          <img class="signature" src="./assets/images/signature.svg" alt="Larry Chen">
+        </div>
       </div>
     </div>
   </main>
 
-  <footer>
-    <button class="qrcode-container webkit-mobile-pointer-disable-blue-highlight"
-      data-tooltip data-tippy-content="This site's QRCode" data-i18n-attr="data-tippy-content=APP.SITE_QRCODE">
-      <img class="qrcode-handler" src="./assets/images/scan-qr-code.svg" alt="qrcode view on mobile">
-    </button>
+  <footer class="footer">
+    <div style="flex-grow: 1"></div>
+    <div class="version"></div>
+    <div style="text-align: right">
+      <button class="qrcode-container webkit-mobile-pointer-disable-blue-highlight"
+        data-tooltip data-tippy-content="This site's QRCode" data-i18n-attr="data-tippy-content=APP.SITE_QRCODE">
+        <img class="qrcode-handler" src="./assets/images/scan-qr-code.svg" alt="qrcode view on mobile">
+      </button>
+    </div>
   </footer>
 
   <dialog id="dialog" class="qrcode-dialog dialog-bg fade" data-animation="scale-in scale-out">
@@ -213,7 +219,7 @@
       <img src="./assets/images/site.png" alt="https://chendachao.github.io" class="mobile-qrcode">
     </div>
     <div class="actions">
-      <button class="btn">
+      <button class="btn btn-primary">
         <a aria-label="download" class="download-btn" data-i18n-id="APP.DOWNLOAD">Download QRCode</a>
       </button>
       <button aria-label="close" class="btn dialog-dismiss-trigger close-btn" data-i18n-id="APP.CLOSE">Close</button>

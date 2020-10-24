@@ -1,7 +1,7 @@
 {
   "name": "chendachao",
   "homepage": "https://github.com/chendachao/chendachao.github.io",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Larry's Home Page",
   "main": "src/index.js",
   "scripts": {
@@ -16,13 +16,14 @@
     "version:minor": "npm run release -- --release-as minor",
     "version:major": "npm run release -- --release-as major",
     "push": "git push --follow-tags",
+    "dd": "npm run version && npm run push",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist -b master -u 'chendachao <chendachao@outlook.com>' -r https://chendachao:$GITHUB_TOKEN@github.com/chendachao/chendachao.github.io.git",
     "deploy:local": "npm run version:patch && cross-env GITHUB_TOKEN=$GITHUB_TOKEN node scripts/publish.js"
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn version"
+      "pre-push": "yarn dd"
     }
   },
   "devDependencies": {

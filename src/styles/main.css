@@ -715,7 +715,7 @@ only screen and (device-width: 767px) {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  box-decoration-break: clone;
+  /* box-decoration-break: clone; */
 }
 
 [data-theme="dark"] .highlight:hover {

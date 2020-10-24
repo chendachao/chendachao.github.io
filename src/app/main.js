@@ -48,6 +48,9 @@ if (isIE()) {
 
 window.addEventListener('load', function() {
 
+  const versionEl = document.querySelector('.version');
+  versionEl.innerText = process.env.VERSION;
+
   scrollToTop();
 
   // Click to open json file

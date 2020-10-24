@@ -665,7 +665,6 @@ only screen and (device-width: 767px) {
 
 .qrcode-container {
   margin-right: 1rem;
-  margin-bottom: 1rem;
   cursor: pointer;
   opacity: 0.54;
   border: none;
@@ -681,6 +680,19 @@ only screen and (device-width: 767px) {
   /* height: auto !important; */
   border: 1px solid rgb(245 242 238);
   border-radius: 4px;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.footer .version {
+  flex-grow: 1;
+  color: var(--subtle);
 }
 
 /* Common */

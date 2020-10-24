@@ -116,7 +116,8 @@ const commonConfig = merge([
     options: {
       name: './fonts/[name].[ext]'
     }
-  })
+  }),
+  parts.attachRevision(),
 ]);
 
 const pwaPlugins = [
@@ -218,7 +219,7 @@ const productionConfig = merge([
 
 const developmentConfig = merge([
   {
-    // devtool: 'source-map',
+    devtool: 'source-map',
     plugins: [
       // new ErrorOverlayPlugin(),
       // Ignore node_modules so CPU usage with poll

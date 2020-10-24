@@ -16,7 +16,10 @@
     "version:minor": "npm run release -- --release-as minor",
     "version:major": "npm run release -- --release-as major",
     "push": "git push --follow-tags",
-    "--ps": "npm run version && npm run push",
+    "--deploy": "npm run version && npm run push",
+    "deploy:patch": "npm run version:patch && npm run push",
+    "deploy:minor": "npm run version:minor && npm run push",
+    "deploy:major": "npm run version:major && npm run push",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist -b master -u 'chendachao <chendachao@outlook.com>' -r https://chendachao:$GITHUB_TOKEN@github.com/chendachao/chendachao.github.io.git",
     "deploy:local": "npm run version:patch && cross-env GITHUB_TOKEN=$GITHUB_TOKEN node scripts/publish.js"

@@ -29,14 +29,18 @@
 }
 
 :root {
-  --color-global-light-background: rgb(131, 58, 180);
-  --color-global-light-start-gradient: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(209, 63, 63, 1) 70%, rgba(194, 141, 65, 1) 100%);
-  --color-global-light-gradient: linear-gradient(90deg, rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%);
+  --color-global-bg-fallback: rgb(131, 58, 180);
+  --color-global-bg-loading: linear-gradient(45deg, rgba(131, 58, 180, 1) 0%, rgba(209, 63, 63, 1) 70%, rgba(194, 141, 65, 1) 100%);
+  --color-global-bg: linear-gradient(45deg, rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%);
  
-  --color-global-dark-background: rgb(29, 26, 79);
-  --color-global-dark-gradient: linear-gradient(90deg, rgba(29, 26, 79, 1) 0%, rgba(142, 21, 218, 1) 100%);
+  /* --color-moon-background: background: linear-gradient(gold, #d00); */
+  --color-moon-bg: linear-gradient(to top, #d00 0%, #fc8b53 50%, #fdd55a 100%);
+  --color-moon-bg-size: 200% 200%;
 
-  --color-global-dark-background: gray;
+  --brand-icon-color: #ffe506;
+  --brand-icon-text-shadow: -5px 5px 10px #ab870a;
+
+  --bird-fly-speed: 90s;
 
   --bg: #fff;
   --bg2: #fafafa;
@@ -76,8 +80,18 @@
   --info-box-bg: rgba(255, 213, 70, 0.1);
 }
 
-.dark {
-  --bg: #222831;
+:root [data-theme="dark"] {
+  --color-global-bg-fallback: rgb(29, 26, 79);
+  --color-global-bg: linear-gradient(45deg, rgba(29, 26, 79, 1) 0%, rgba(142, 21, 218, 1) 100%);
+
+  --color-moon-bg: lightgoldenrodyellow;
+
+  --bg: #fff;
+  --bg2: #fafafa;
+  --bg3: #fcfcfc;
+  --bg4: #f8f8f8;
+
+  /* --bg: #222831;
   --bg2: #181C22;
   --bg3: #1A1D24;
   --bg4: black;
@@ -105,7 +119,11 @@
   --twitter: #fff;
   --cat-head: #1A1D24;
   --front-text-color: antiquewhite;
-  --info-box-bg: #1A1D24;
+  --info-box-bg: #1A1D24; */
+}
+
+:root [data-theme="gray"] {
+  --color-global-bg: gray;
 }
 
 ::selection {
@@ -117,9 +135,17 @@
   -webkit-text-fill-color: black;
 }
 
+/* mobile */
+@media only screen and (min-width: 320px) and (max-width: 767px),
+only screen and (device-width: 767px) {
+  :root {
+    --bird-fly-speed: 25s;
+  }
+}
+
 /* fix CSS3 gradient background set !90deg on body doesn't stretch but instead repeats? */
 /* https://stackoverflow.com/a/3294418/6294371 */
-/* html {
+html {
   min-height: 100%;
 }
 
@@ -128,42 +154,39 @@ body {
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
-} */
+}
 
-[data-theme="light"] {
-  background: var(--color-global-light-background);
-  background: var(--color-global-light-gradient);
+body {
+  background: var(--color-global-bg-fallback);
+  background: var(--color-global-bg);
 
   animation: fade-in 2s ease-in-out, light-sky 10s;
 }
 
-/* light when sunrise */
-@keyframes light-sky {
-  from {
-    background: var(--color-global-light-start-gradient);
-  }
-
-  to {
-    background: var(--color-global-light-gradient);
-  }
-}
-
 [data-theme="dark"] {
-  background: var(--color-global-dark-background);
-  background: var(--color-global-dark-gradient);
-
   animation: fade-in 5s ease-in-out;
 }
 
 [data-theme="gray"] {
   /* Set the theme to special gray */
-  background: var(--color-global-dark-background);
+  background: var(--color-global-bg);
   filter: grayscale(100%);
   filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
 
   height: 100vh;
 
   animation: fade-in 5s ease-in-out;
+}
+
+/* light when sunrise */
+@keyframes light-sky {
+  from {
+    background: var(--color-global-bg-loading);
+  }
+
+  to {
+    background: var(--color-global-bg);
+  }
 }
 
 @keyframes fade-in {
@@ -245,7 +268,7 @@ body {
   border-left-color: transparent;
   border-bottom-color: transparent;
   transform: rotateZ(-75deg);
-  animation: move 25s linear infinite, flap .5s linear alternate infinite;
+  animation: move var(--bird-fly-speed) linear infinite, flap .5s linear alternate infinite;
   z-index: 70;
 }
 
@@ -263,7 +286,7 @@ body {
   border-top-color: transparent;
   transform: rotateZ(80deg);
   margin: 0px 6px;
-  animation: move 25s linear infinite, flap .5s linear alternate infinite;
+  animation: move var(--bird-fly-speed) linear infinite, flap .5s linear alternate infinite;
 }
 
 .bird-small-l {
@@ -278,7 +301,7 @@ body {
   border-left-color: transparent;
   border-bottom-color: transparent;
   transform: rotateZ(-80deg);
-  animation: move2 25s linear infinite 1.5s, flap .5s linear alternate infinite 1.5s;
+  animation: move2 var(--bird-fly-speed) linear infinite 1.5s, flap .5s linear alternate infinite 1.5s;
   z-index: 70;
 }
 
@@ -296,7 +319,7 @@ body {
   border-top-color: transparent;
   transform: rotateZ(75deg);
   margin: 0px 5px;
-  animation: move2 25s linear infinite 1.5s, flap .5s linear alternate infinite 1.5s;
+  animation: move2 var(--bird-fly-speed) linear infinite 1.5s, flap .5s linear alternate infinite 1.5s;
 }
 
 @keyframes move {
@@ -352,6 +375,8 @@ body {
   max-width: 10vw;
   cursor: pointer;
   border-radius: 50%;
+  background: var(--color-moon-bg);
+  background-size: var(--color-moon-bg-size);
   animation: colorize 24s cubic-bezier(0.2, 1.05, 0.45, 0.94) infinite, rise 5s;
 }
 
@@ -400,16 +425,6 @@ body {
   }
 }
 
-[data-theme="light"] [class^="moon"] {
-  /* background: linear-gradient(gold, #d00); */
-  background: linear-gradient(to top, #d00 0%, #fc8b53 50%, #fdd55a 100%);
-  background-size: 200% 200%;
-}
-
-[data-theme="dark"] [class^="moon"] {
-  background-color: lightgoldenrodyellow;
-}
-
 .centered-content {
   color: #fff;
   width: 61.8%;
@@ -426,6 +441,9 @@ body {
   width: calc(5em + 4vw);
   transition: 1s;
   position: relative;
+
+  color: var(--brand-icon-color);
+  text-shadow: var(--brand-icon-text-shadow);
 }
 
 .brand-icon:hover {
@@ -442,11 +460,6 @@ body {
   100% {
     transform: translateY(0px)
   }
-}
-
-[data-theme="dark"] .brand-icon {
-  color: #ffe506;
-  text-shadow: -5px 5px 10px #ab870a;
 }
 
 .bio {
@@ -506,6 +519,22 @@ body {
    font: inherit;
    text-decoration: none;
    transition: transform 0.15s cubic-bezier(0, 1.8, 1, 1.8)
+ }
+
+ .btn.btn-primary,
+ button.btn.btn-primary,
+ a.btn.btn-primary {
+   
+   /* color: var(--bg3);
+   background: var(--green2); */
+
+   /* background: linear-gradient(264.51deg, #FFE580 4.38%, #FF7571 11.51%, #FF7270 25.06%, #EA5DAD 36.04%, #C2A0FD 47.63%, #9867F0 59.03%, #3BF0E4 69.96%, #33CE43 83.74%, #B2F4B6 95.62%);
+   background-position: 71% 61%;
+   background-size: 500%; */
+
+   /* background: linear-gradient(267.91deg, #FFE57F 9.35%, #FF7170 96.48%); */
+
+   border: 1px solid var(--green3);
  }
 
 .btn:hover,
@@ -635,9 +664,8 @@ only screen and (device-width: 767px) {
 }
 
 .qrcode-container {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   opacity: 0.54;
   border: none;
@@ -651,12 +679,12 @@ only screen and (device-width: 767px) {
 .mobile-qrcode {
   width: 100% !important;
   /* height: auto !important; */
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgb(245 242 238);
+  border-radius: 4px;
 }
 
 /* Common */
 .signature {
-  float: right;
   height: 35px;
   margin-top: 5rem;
   margin-right: 2rem;
@@ -680,15 +708,14 @@ only screen and (device-width: 767px) {
   /* background: rgb(63,94,251);
   background: radial-gradient(circle, #ffe506 0%, purple 100%); */
 
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
 
-  /* background: linear-gradient(92.05deg, #BCA1F7 12.09%, #E577B4 42.58%, #FF7170 84.96%);
+  /* github */
+  /* background: linear-gradient(92.05deg, #BCA1F7 12.09%, #E577B4 42.58%, #FF7170 84.96%); */
+  
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  box-decoration-break: clone; */
+  box-decoration-break: clone;
 }
 
 [data-theme="dark"] .highlight:hover {

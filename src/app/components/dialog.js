@@ -46,7 +46,7 @@ function SetQRCode() {
       version: 5, // 6
       color: {
         // dark: "#010599FF",
-        light: "#f5f5f5"
+        // light: "#f5f5f5"
       }
     })
       .then(cvs => {

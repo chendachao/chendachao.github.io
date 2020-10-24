@@ -66,3 +66,6 @@
 PS:
   - [JSON description](https://chendachao.github.io/assets/data/en/chendachao.json)
   - [JSON description Local](http://localhost:8088/assets/data/en/chendachao.json)
+
+Push with `yarn deploy:patch` not ps
+

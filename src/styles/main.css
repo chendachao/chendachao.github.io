@@ -674,20 +674,26 @@ summary::-webkit-details-marker {
 summary {
   list-style-image: none;
 }
-summary:after {
+summary:before {
   content: "+";
   /* content:"❮"; */
   /* transform:rotate(90deg); */
   float: left;
   font-weight: bold;
   text-align: center;
-  width: 30px;
   color: #ffeead;
-  padding-right: .25rem;
+  padding-left: 0.5rem;
+  padding-right: 1.5rem;
+  height: 20px;
+  width: 20px;
 }
 
-details[open] summary:after {
+details[open] summary:before {
   content: "-";
+}
+
+summary:focus {
+  outline: none;
 }
 
 details > summary {

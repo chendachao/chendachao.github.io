@@ -51,7 +51,7 @@ window.addEventListener('load', function() {
   const versionEl = document.querySelector('.version');
   versionEl.innerText = process.env.VERSION;
 
-  scrollToTop();
+  // scrollToTop();
 
   // Click to open json file
   const developerModeLink = document.querySelector('.developer-mode-link');

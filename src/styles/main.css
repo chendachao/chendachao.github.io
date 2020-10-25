@@ -164,6 +164,17 @@ body {
   background: var(--color-global-bg);
 
   animation: fade-in 2s ease-in-out, light-sky 10s;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background: var(--color-global-bg-fallback) fixed;
+    background: var(--color-global-bg) fixed;
+  }
 }
 
 [data-theme="dark"] {
@@ -184,11 +195,11 @@ body {
 /* light when sunrise */
 @keyframes light-sky {
   from {
-    background: var(--color-global-bg-loading);
+    background: var(--color-global-bg-loading) fixed;
   }
 
   to {
-    background: var(--color-global-bg);
+    background: var(--color-global-bg) fixed;
   }
 }
 
@@ -250,6 +261,10 @@ body {
 .webkit-mobile-pointer-disable-blue-highlight {
   /* -webkit-tap-highlight-color: rgba(255, 255, 255, 0); */
   -webkit-tap-highlight-color: transparent;
+}
+
+.main {
+  flex-grow: 1;
 }
 
 .bird-left,
@@ -715,8 +730,8 @@ details > summary {
 }
 
 details[open] summary {
-  box-shadow: 0px 0px 4px 1px #bbbbbb;
-  border-radius: 20px;
+  /* box-shadow: 0px 0px 4px 1px #bbbbbb;
+  border-radius: 20px; */
   font-style: italic;
 }
 
@@ -729,7 +744,7 @@ details > .container-grid {
 }
 
 details[open] > .container-grid {
-  box-shadow: 1px 1px 4px 1px #bbbbbb, -1px 1px 4px 1px #bbbbbb;
+  /* box-shadow: 1px 1px 4px 1px #bbbbbb, -1px 1px 4px 1px #bbbbbb; */
 }
 
 .container-grid {

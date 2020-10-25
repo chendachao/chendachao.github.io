@@ -666,22 +666,59 @@ only screen and (device-width: 767px) {
   opacity: 1;
 }
 
+details summary { list-style-type: none; } /* Firefox */
+/* summary::marker, */
+summary::-webkit-details-marker {
+  display: none
+}
+summary {
+  list-style-image: none;
+}
+summary:after {
+  content: "+";
+  /* content:"❮"; */
+  /* transform:rotate(90deg); */
+  float: left;
+  font-weight: bold;
+  text-align: center;
+  width: 30px;
+  color: #ffeead;
+  padding-right: .25rem;
+}
+
+details[open] summary:after {
+  content: "-";
+}
+
 details > summary {
   padding: 4px;
   border: none;
   /* box-shadow: 1px 1px 2px #bbbbbb; */
   cursor: pointer;
+
+  font-weight: 900;
+  font-size: calc(1em + 1vw);
+
+  box-shadow: 0px 0px 4px 0px #bbbbbb;
+  border-radius: 20px;
 }
 
 details[open] summary {
-  /* border-bottom: 1px solid #bbbbbb; */
-  box-shadow: 0px 1px 0px 0px #bbbbbb;
+  box-shadow: 0px 0px 4px 1px #bbbbbb;
+  border-radius: 20px;
+  font-style: italic;
 }
 
 details > .container-grid {
   margin: 0;
   border-radius: 6px;
-  /* box-shadow: 0px 0 1px #bbbbbb; */
+  box-shadow: 1px 1px 4px 0px #bbbbbb, -1px 1px 4px 0px #bbbbbb;
+  border-radius: 6px;
+  /* box-shadow: 0px -1px 4px #bbbbbb; */
+}
+
+details[open] > .container-grid {
+  box-shadow: 1px 1px 4px 1px #bbbbbb, -1px 1px 4px 1px #bbbbbb;
 }
 
 .container-grid {
@@ -699,9 +736,7 @@ details > .container-grid {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1em;
-  font-weight: bold;
-  color: #ffeead;
+  font-weight: 900;
   cursor: pointer;
 
   box-shadow: -1px 1px 2px 1px #bbbbbb;
@@ -723,7 +758,7 @@ details > .container-grid {
 .mobile-qrcode {
   width: 100% !important;
   /* height: auto !important; */
-  border: 1px solid #e3880d;
+  border: 1px solid #ffeead;
   border-radius: 4px;
 }
 
@@ -743,7 +778,6 @@ details > .container-grid {
 /* Common */
 .signature {
   height: 35px;
-  margin-top: 1rem;
   margin-right: 2rem;
 }
 

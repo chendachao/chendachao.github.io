@@ -678,14 +678,19 @@ summary:before {
   content: "+";
   /* content:"❮"; */
   /* transform:rotate(90deg); */
-  float: left;
+
+  /* float: left;
   font-weight: bold;
   text-align: center;
   color: #ffeead;
   padding-left: 0.5rem;
   padding-right: 1.5rem;
   height: 20px;
-  width: 20px;
+  width: 20px; */
+
+  color: #ffeead;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
 }
 
 details[open] summary:before {

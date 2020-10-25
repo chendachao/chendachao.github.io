@@ -29,7 +29,7 @@
 }
 
 :root {
-  --color-global-bg-fallback: rgb(131, 58, 180);
+  --color-global-bg-fallback: #833ab4;
   --color-global-bg-loading: linear-gradient(45deg, rgba(131, 58, 180, 1) 0%, rgba(209, 63, 63, 1) 70%, rgba(194, 141, 65, 1) 100%);
   --color-global-bg: linear-gradient(45deg, rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%);
  
@@ -714,7 +714,7 @@ only screen and (device-width: 767px) {
 
   /* background: linear-gradient(330deg, #178bb7 0%, #d8ca1e 25%, #52e0e0 50%, #f1e526 75%, #095090 100%); */
   /* background: linear-gradient(330deg, #178bb7 0%, #8bc1ef 25%, #52e0e0 50%, #f1e526 75%, #076b39 100%); */
-  background: linear-gradient(90deg, rgb(233 111 241) 0%, rgb(60 226 226) 70%, rgb(245 181 90) 100%);
+  background: linear-gradient(90deg, #e86ff1 0%, #3ce2e2 70%, #f5b45a 100%);
 
   /* background: rgb(63,94,251);
   background: radial-gradient(circle, #ffe506 0%, purple 100%); */

@@ -23,7 +23,7 @@ html {
 }
 
 :root {
-  --color-global-background: rgb(131, 58, 180);
+  --color-global-background: #833ab4;
 }
 
 #sunset:checked~* {

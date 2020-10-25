@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.1](https://github.com/chendachao/chendachao.github.io/compare/v1.4.0...v1.4.1) (2020-10-25)
+
+
+### Bug Fixes
+
+* **style:** flex layout and fix bg issue ([9c3e088](https://github.com/chendachao/chendachao.github.io/commit/9c3e088b2682a1490d4048b087440a1385273cf0))
+
 ## [1.4.0](https://github.com/chendachao/chendachao.github.io/compare/v1.3.0...v1.4.0) (2020-10-25)
 
 ## [1.3.0](https://github.com/chendachao/chendachao.github.io/compare/v1.2.3...v1.3.0) (2020-10-25)

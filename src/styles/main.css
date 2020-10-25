@@ -673,10 +673,15 @@ details > summary {
   cursor: pointer;
 }
 
+details[open] summary {
+  /* border-bottom: 1px solid #bbbbbb; */
+  box-shadow: 0px 1px 0px 0px #bbbbbb;
+}
+
 details > .container-grid {
   margin: 0;
   border-radius: 6px;
-  box-shadow: 0px 0 1px #bbbbbb;
+  /* box-shadow: 0px 0 1px #bbbbbb; */
 }
 
 .container-grid {
@@ -699,7 +704,7 @@ details > .container-grid {
   color: #ffeead;
   cursor: pointer;
 
-  box-shadow: -1px 1px 2px 1px lightgrey;
+  box-shadow: -1px 1px 2px 1px #bbbbbb;
   border-radius: 6px;
 }
 

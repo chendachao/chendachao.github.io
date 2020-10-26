@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/chendachao/chendachao.github.io/compare/v1.6.0...v1.6.1) (2020-10-26)
+
+
+### Bug Fixes
+
+* **summary:** tab blue highlight in mobile chrome ([bce213c](https://github.com/chendachao/chendachao.github.io/commit/bce213c59a5b4a7b1c20b1f2ec28e15150960461))
+
 ## [1.6.0](https://github.com/chendachao/chendachao.github.io/compare/v1.5.0...v1.6.0) (2020-10-26)
 
 ## [1.5.0](https://github.com/chendachao/chendachao.github.io/compare/v1.4.1...v1.5.0) (2020-10-26)

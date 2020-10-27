@@ -4,9 +4,7 @@
   margin: 0;
   padding: 0;
 
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-family-sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,11 +16,11 @@
 }
 
 ::selection {
-  background-color: #efbb35;
+  background-color: var(--select-bg);
   color: black;
 
   /* fix for hover highlight text */
-  background: #efbb35;
+  background: var(--select-bg);
   -webkit-text-fill-color: black;
 }
 
@@ -44,7 +42,7 @@ body {
   background: var(--color-global-bg-fallback);
   background: var(--color-global-bg);
 
-  animation: fade-in 2s ease-in-out, light-sky 10s;
+  animation: fade-in 2s ease-in-out;
 
   display: flex;
   flex-direction: column;
@@ -71,17 +69,6 @@ body {
   height: 100vh;
 
   animation: fade-in 5s ease-in-out;
-}
-
-/* light when sunrise */
-@keyframes light-sky {
-  from {
-    background: var(--color-global-bg-loading) fixed;
-  }
-
-  to {
-    background: var(--color-global-bg) fixed;
-  }
 }
 
 @keyframes fade-in {
@@ -341,8 +328,8 @@ body {
   transition: 1s;
   position: relative;
 
-  color: var(--brand-icon-color);
-  text-shadow: var(--brand-icon-text-shadow);
+  color: var(--color-brand);
+  text-shadow: var(--brand-text-shadow);
 }
 
 .brand-icon:hover {
@@ -509,49 +496,48 @@ only screen and (device-width: 767px) {
 }
 
 .icon-facebook {
-  background: #3B5998;
+  background: var(--fb);
 }
 
 .icon-twitter {
-  background: #1da1f2;
+  background: var(--twitter);
 }
 
 .icon-google {
-  background: #dd4b39;
+  background: var(--google);
 }
 
 .icon-linkedin {
-  background: #007bb5;
+  background: var(--linkedin);
 }
 
 .icon-snapchat-ghost {
-  background: #fffc00;
+  background: var(--snapchat);
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .icon-skype {
-  background: #00aff0;
+  background: var(--skype);
 }
 
 .icon-wechat {
-  background: #1aad28;
+  background: var(--wechat);
 }
 
 .icon-envelope-o {
-  background: #2368c0;
+  background: var(--envelope);
 }
 
 .icon-reddit {
-  background: #ff5700;
+  background: var(--reddit);
 }
 
 .icon-github {
-  background: #292626;
+  background: var(--github);
 }
 
 .icon-stackoverflow {
-  /*background: #45160814;*/
-  background: rgb(250, 250, 251);
+  background: var(--stackoverflow)
 }
 
 .developer-mode-link {
@@ -576,7 +562,7 @@ details > summary.custom-marker:before {
   content: "+";
   /* content:"❮"; */
   /* transform:rotate(90deg); */
-  color: #f1a50d;
+  color: var(--text-highlight);
   padding-left: 0.5rem;
   padding-right: 1rem;
 }
@@ -605,53 +591,34 @@ details > summary:focus {
 }
 
 details[open] > summary {
-  /* box-shadow: 0px 0px 4px 1px var(--color-shadow2);
-  border-radius: 20px; */
   font-style: italic;
 }
 
-/* common end */
-
-details > summary.border-bottom {
-  padding: 4px;
-  border: none;
-  box-shadow: 1px 1px 0px var(--color-shadow2);
-  box-shadow: 0px 1px 0px var(--color-shadow2);
-
-  font-size: calc(1em + 1vw);
-
-  border-radius: 10px;
-}
-
-details > summary.border {
-  padding: 4px;
-  border: none;
-
-  font-size: calc(1em + 1vw);
-
-  box-shadow: 0px 0px 4px 0px var(--color-shadow2);
-  border-radius: 20px;
-}
-
-details > summary + div {
+details > summary + .content {
   margin: 0;
-  border-radius: 10px;
   padding: 1rem;
 }
+/* common end */
 
-.border-1 {
-  box-shadow: 1px 1px 4px 0px var(--color-shadow2), -1px 1px 4px 0px var(--color-shadow2);
+/* my-project style */
+details.my-project {
+  border-radius: 24px;
+  box-shadow: 0px 0px 4px var(--color-shadow2);
 }
 
-.border-2 {
-  box-shadow: 0px -1px 4px var(--color-shadow2);
+details.my-project summary {
+  padding: 4px;
+  border: none;
+
+  font-size: calc(1em + 1vw);
 }
 
-.border-3 {
-  box-shadow: 1px 1px 0px var(--color-shadow), -1px 1px 0px var(--color-shadow);
-  margin-top: -1rem;
-  padding-top: 2rem;
+details.my-project[open] summary {
+  box-shadow: 0 1px 4px 0px rgb(228 179 179 / 20%);;
+  border-top-right-radius: 24px;
+  border-top-left-radius: 24px;
 }
+/* my-project end */
 
 .container-grid {
   display: grid;
@@ -721,7 +688,7 @@ details > summary + div {
 }
 
 .highlight {
-  color: #f1a50d;
+  color: var(--text-highlight);
   cursor: help;
   border-bottom-style: dotted;
 }

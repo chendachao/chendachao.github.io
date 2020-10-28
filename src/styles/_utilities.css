@@ -1,0 +1,10 @@
+
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.scale {
+  transform: scale(1.8) !important;
+}
+

@@ -1,4 +1,7 @@
 @import '_variables';
+@import '_utilities';
+
+/* 🔥 */
 
 * {
   margin: 0;
@@ -7,6 +10,10 @@
   font-family: var(--font-family-sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Bugfix for blue border when tab on modile and tablet devices */
+  /* -webkit-tap-highlight-color: rgba(255, 255, 255, 0); */
+  -webkit-tap-highlight-color: transparent;
 }
 
 *,
@@ -16,12 +23,12 @@
 }
 
 ::selection {
-  background-color: var(--select-bg);
-  color: black;
+  background-color: var(--selection-bg);
+  color: var(--black);
 
   /* fix for hover highlight text */
-  background: var(--select-bg);
-  -webkit-text-fill-color: black;
+  background: var(--selection-bg);
+  -webkit-text-fill-color: var(--black);
 }
 
 /* fix CSS3 gradient background set !90deg on body doesn't stretch but instead repeats? */
@@ -49,7 +56,7 @@ body {
   height: 100vh;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   body {
     background: var(--color-global-bg-fallback) fixed;
     background: var(--color-global-bg) fixed;
@@ -71,13 +78,16 @@ body {
   animation: fade-in 5s ease-in-out;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0.1;
+/* print mode style */
+@media print {
+  *, :after, :before {
+    /* text-shadow: none !important;
+    box-shadow: none !important; */
+    background-color: var(--color-global-bg-fallback) !important;
+    -webkit-print-color-adjust: exact;
   }
-
-  to {
-    opacity: 1;
+  body {
+    background-attachment: fixed;
   }
 }
 
@@ -125,12 +135,6 @@ body {
   background: url(../assets/images/install.svg) center center no-repeat;
 }
 
-/* Bugfix for blue border when tab on modile and tablet devices */
-.webkit-mobile-disable-blue-highlight {
-  /* -webkit-tap-highlight-color: rgba(255, 255, 255, 0); */
-  -webkit-tap-highlight-color: transparent;
-}
-
 .main {
   flex-grow: 1;
 }
@@ -148,7 +152,7 @@ body {
   left: 00px;
   width: 10px;
   height: 10px;
-  border: 2px solid black;
+  border: 2px solid var(--black);
   border-radius: 50%;
   border-top-color: transparent;
   border-left-color: transparent;
@@ -165,7 +169,7 @@ body {
   top: 50px;
   width: 10px;
   height: 10px;
-  border: 2px solid black;
+  border: 2px solid var(--black);
   border-radius: 50%;
   border-bottom-color: transparent;
   border-right-color: transparent;
@@ -181,7 +185,7 @@ body {
   left: 0px;
   width: 10px;
   height: 8px;
-  border: 2px solid black;
+  border: 2px solid var(--black);
   border-radius: 50%;
   border-top-color: transparent;
   border-left-color: transparent;
@@ -198,7 +202,7 @@ body {
   top: 45px;
   width: 10px;
   height: 8px;
-  border: 2px solid black;
+  border: 2px solid var(--black);
   border-radius: 50%;
   border-bottom-color: transparent;
   border-right-color: transparent;
@@ -206,48 +210,6 @@ body {
   transform: rotateZ(75deg);
   margin: 0px 5px;
   animation: move2 var(--bird-fly-speed) linear infinite 1.5s, flap .5s linear alternate infinite 1.5s;
-}
-
-@keyframes move {
-  0% {
-    left: 0px;
-  }
-
-  33% {
-    top: 20px;
-  }
-
-  50% {
-    top: 70px;
-  }
-
-  66% {
-    top: 100px;
-  }
-
-  100% {
-    left: 100%;
-  }
-}
-
-@keyframes move2 {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes flap {
-  from {
-    border-radius: 90%;
-  }
-
-  to {
-    border-radius: 10%;
-  }
 }
 
 [class^="moon"] {
@@ -272,47 +234,8 @@ body {
   }
 }
 
-@keyframes colorize {
-  0% {
-    box-shadow: 0 0 40px 6px #f20, 0 0 150px 10px #f33;
-  }
-
-  35% {
-    box-shadow: 0 0 40px 6px orange, 0 0 150px 10px #e0596b;
-  }
-
-  65% {
-    box-shadow: none;
-  }
-
-  85% {
-    box-shadow: none;
-    background: linear-gradient(gold, #d90 #d00);
-    background-position: 50% 0;
-  }
-
-  100% {
-    box-shadow: 0 0 40px 6px #efb503, 0 0 150px 10px #d66c39;
-  }
-}
-
-@keyframes rise {
-  from {
-    top: 40%;
-    left: -50%;
-    background-position: 50% 100%;
-    transform: scale(1.2);
-  }
-
-  to {
-    top: 7%;
-    left: 60%;
-    background-position: 50% 0;
-  }
-}
-
 .centered-content {
-  color: #fff;
+  color: var(--text-color);
   width: 61.8%;
   margin: auto;
   margin-top: 5%;
@@ -334,18 +257,6 @@ body {
 
 .brand-icon:hover {
   animation: App-logo-float infinite 3s ease-in-out;
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px)
-  }
-  100% {
-    transform: translateY(0px)
-  }
 }
 
 .bio {
@@ -372,7 +283,7 @@ body {
 }
 
 .wechat-qrcode-desc {
-  color: #666;
+  color: var(--text-subtle-color);
   font-style: italic;
   font-weight: bold;
   margin-top: -10px;
@@ -395,7 +306,7 @@ body {
  .btn,
  button.btn,
  a.btn {
-   background-image: linear-gradient(to bottom, var(--bg), var(--bg4));
+   background-image: linear-gradient(to bottom, var(--bg-white), var(--bg-light));
    border-radius: 8px;
    color: var(--green3);
    letter-spacing: 1px;
@@ -410,16 +321,6 @@ body {
  .btn.btn-primary,
  button.btn.btn-primary,
  a.btn.btn-primary {
-   
-   /* color: var(--bg3);
-   background: var(--green2); */
-
-   /* background: linear-gradient(264.51deg, #FFE580 4.38%, #FF7571 11.51%, #FF7270 25.06%, #EA5DAD 36.04%, #C2A0FD 47.63%, #9867F0 59.03%, #3BF0E4 69.96%, #33CE43 83.74%, #B2F4B6 95.62%);
-   background-position: 71% 61%;
-   background-size: 500%; */
-
-   /* background: linear-gradient(267.91deg, #FFE57F 9.35%, #FF7170 96.48%); */
-
    border: 1px solid var(--green3);
  }
 
@@ -462,20 +363,20 @@ only screen and (device-width: 767px) {
   border-radius: 50%;
   margin: calc(0.5em + 0.1vw);
   opacity: 0.8;
-  color: #fff;
+  color: var(--text-color);
 
   display: flex;
   align-items: center;
 
-  box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(0deg, #ddd, #fff);
+  box-shadow: -10px 10px 15px var(--subtle3);
+  background: linear-gradient(0deg, var(--bg-light), var(--bg-white));
   transition: 1s;
 }
 
 .icon:hover,
 .icon:focus {
   opacity: 1;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px var(--subtle3);
   /* transition: transform 0.1s ease-out;
   transform: scale(1.25); */
   transition: all 0.3s ease 0s;
@@ -513,7 +414,7 @@ only screen and (device-width: 767px) {
 
 .icon-snapchat-ghost {
   background: var(--snapchat);
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
 .icon-skype {
@@ -588,10 +489,6 @@ details > summary:before {
 
 details > summary:focus {
   outline: none;
-}
-
-details[open] > summary {
-  font-style: italic;
 }
 
 details > summary + .content {
@@ -672,13 +569,12 @@ details.my-project[open] summary {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  color: #fff;
+  color: var(--text-color);
   margin-bottom: 1rem;
 }
 
 .footer .version {
   margin-left: auto;
-  color: var(--subtle);
 }
 
 /* Common */
@@ -694,7 +590,7 @@ details.my-project[open] summary {
 }
 
 .highlight:hover {
-  color: #ffe506;
+  color: var(--text-highlight2);
   /* text-shadow: -3px 3px 2px #7c630a; */
 
   /* background: linear-gradient(330deg, #178bb7 0%, #d8ca1e 25%, #52e0e0 50%, #f1e526 75%, #095090 100%); */
@@ -724,10 +620,3 @@ details.my-project[open] summary {
   box-decoration-break: clone;
 }
 
-.text-nowrap {
-  white-space: nowrap;
-}
-
-.scale {
-  transform: scale(1.8) !important;
-}

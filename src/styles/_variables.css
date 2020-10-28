@@ -25,14 +25,15 @@
 
   --red1: #d00;
   --red2: #f20;
-  --red3: rgb(236, 61, 61);
-  --red4: rgba(209, 63, 63, 1);
+  --red3: #f33;
+  --red4: rgb(236, 61, 61);
+  --red5: rgba(209, 63, 63, 1);
 
-  --orange1:  #f1a50d;
+  --orange1: #f1a50d;
   --orange2: rgb(220, 144, 37);
   --orange3: rgba(194, 141, 65, 1);
-  --orange4:  #ab870a;
-  --orange5:  #f5b45a;
+  --orange4: #ab870a;
+  --orange5: #f5b45a;
   --orange6: #fc8b53;
   --orange7: #efbb35;
 
@@ -60,17 +61,20 @@
 
   --subtle: rgba(0, 0, 0, .1);
   --subtle2: rgba(0, 0, 0, .05);
+  --subtle3: rgba(0, 0, 0, 0.3);
 
   --text-highlight: var(--orange1);
-  --select-bg: var(--orange7);
+  --text-highlight2: var(--yellow1);
+  --text-color: var(--white);
+  --text-subtle-color: var(--gray6);
+  --selection-bg: var(--orange7);
 
-  --color-shadow: #f4f4f4;
-  --color-shadow2: #bbbbbb;
+  --color-shadow: var(--gray2);
+  --color-shadow2: var(--gray4);
 
-  --bg: #fff;
-  --bg2: #fafafa;
-  --bg3: #fcfcfc;
-  --bg4: #f8f8f8;
+  --bg-white: var(--white);
+  --bg-light: var(--gray3);
+  --bg-gray: #fff;
 
   --color-global-bg-deg: 45deg;
   --color-global-bg-fallback: #833ab4;
@@ -80,7 +84,7 @@
   --color-moon-bg: linear-gradient(to top, #d00 0%, #fc8b53 50%, #fdd55a 100%);
   --color-moon-bg-size: 200% 200%;
 
-  --color-brand: #ffe506;
+  --color-brand: var(--yellow1);
   --brand-text-shadow: -5px 5px 10px #ab870a;
 
   --bird-fly-speed: 90s;
@@ -88,7 +92,7 @@
 
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
+  --breakpoint-md: 767px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -107,8 +111,8 @@
   --envelope: #2368c0;
   --reddit: #ff5700;
   --github: #292626;
-  --stackoverflow: rgb(250, 250, 251);  /*#45160814;*/
-  
+  /*#45160814;*/
+  --stackoverflow: rgb(250, 250, 251);
 }
 
 :root [data-theme="dark"] {
@@ -122,8 +126,9 @@
   --color-global-bg: gray;
 }
 
+/* Resposible varaibles */
 /* mobile */
-@media only screen and (min-width: 320px) and (max-width: 767px),
+@media only screen and (max-width: 767px),
 only screen and (device-width: 767px) {
   :root {
     --bird-fly-speed: 25s;
@@ -131,3 +136,106 @@ only screen and (device-width: 767px) {
   }
 }
 
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes move {
+  0% {
+    left: 0px;
+  }
+
+  33% {
+    top: 20px;
+  }
+
+  50% {
+    top: 70px;
+  }
+
+  66% {
+    top: 100px;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes move2 {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes flap {
+  from {
+    border-radius: 90%;
+  }
+
+  to {
+    border-radius: 10%;
+  }
+}
+
+@keyframes colorize {
+  0% {
+    box-shadow: 0 0 40px 6px #f20, 0 0 150px 10px #f33;
+  }
+
+  35% {
+    box-shadow: 0 0 40px 6px orange, 0 0 150px 10px #e0596b;
+  }
+
+  65% {
+    box-shadow: none;
+  }
+
+  85% {
+    box-shadow: none;
+    background: linear-gradient(gold, #d90 #d00);
+    background-position: 50% 0;
+  }
+
+  100% {
+    box-shadow: 0 0 40px 6px #efb503, 0 0 150px 10px #d66c39;
+  }
+}
+
+@keyframes rise {
+  from {
+    top: 40%;
+    left: -50%;
+    background-position: 50% 100%;
+    transform: scale(1.2);
+  }
+
+  to {
+    top: 7%;
+    left: 60%;
+    background-position: 50% 0;
+  }
+}
+
+@keyframes App-logo-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px)
+  }
+  100% {
+    transform: translateY(0px)
+  }
+}

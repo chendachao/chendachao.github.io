@@ -23,6 +23,7 @@
   "APP.PROGRAMMING": "编程",
   "APP.PROGRAMMING_DESC": "每天改变一点点，生活变得更美好。",
   "APP.QRCODE_DESC": "扫描二维码加我微信",
+  "APP.BUSY_WITH": "最近弄啥嘞。。。",
   "APP.QRCODE_MOBILE_DESC": "扫描二维码在手机上访问 ㊙️",
   "APP.CLOSE": "关闭",
   "APP.DOWNLOAD": "下载二维码",
@@ -30,5 +31,6 @@
   "APP.INTRO.STEP1": "这个标志给我带来了好运，现在我把它分享给你。^.^",
   "APP.INTRO.STEP2": "这是我的简介",
   "APP.INTRO.STEP3": "你可以通过以下方式联系我",
-  "APP.INTRO.STEP4": "点击这里有惊喜😲"
+  "APP.INTRO.STEP4": "废寝忘食，醉心于此",
+  "APP.INTRO.STEP5": "点击这里有惊喜😲"
 }

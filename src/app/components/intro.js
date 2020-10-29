@@ -55,8 +55,13 @@ class Intro {
         {
           element: '#step4',
           intro: this.format('APP.INTRO.STEP4'),
-          position: 'left'
-        }
+          tooltipPosition: 'left'
+        },
+        {
+          element: '#step5',
+          intro: this.format('APP.INTRO.STEP5'),
+          tooltipPosition: 'left'
+        },
       ],
     });
 
@@ -74,23 +79,28 @@ class Intro {
         {
           element: '.step11',
           hint: this.format('APP.INTRO.STEP1'),
-          position: 'left'
+          hintPosition: 'left'
         },
         {
           element: '.step12',
           hint: this.format('APP.INTRO.STEP2'),
-          position: 'top-left'
+          hintPosition: 'top-left'
         },
         {
           element: '.step13',
           hint: this.format('APP.INTRO.STEP3'),
-          position: 'top'
+          hintPosition: 'top'
         },
         {
           element: '.step14',
           hint: this.format('APP.INTRO.STEP4'),
-          position: 'left'
-        }
+          hintPosition: 'left'
+        },
+        {
+          element: '.step15',
+          hint: this.format('APP.INTRO.STEP5'),
+          hintPosition: 'left'
+        },
       ]
     });
 

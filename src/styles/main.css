@@ -78,19 +78,6 @@ body {
   animation: fade-in 5s ease-in-out;
 }
 
-/* print mode style */
-@media print {
-  *, :after, :before {
-    /* text-shadow: none !important;
-    box-shadow: none !important; */
-    background-color: var(--color-global-bg-fallback) !important;
-    -webkit-print-color-adjust: exact;
-  }
-  body {
-    background-attachment: fixed;
-  }
-}
-
 .help-icon-menu-bar {
   padding-top: 6px;
   margin-right: 1rem;
@@ -575,6 +562,7 @@ details.my-project[open] summary {
 
 .footer .version {
   margin-left: auto;
+  color: var(--subtle3);
 }
 
 /* Common */

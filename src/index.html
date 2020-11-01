@@ -28,7 +28,8 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <!-- Hover preload link -->
-  <script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+  <script src="//instant.page/5.1.0" type="module"
+    integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
 
   <link rel="preconnect" href="https://www.google-analytics.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com"> <!--  fallback-->
@@ -42,14 +43,15 @@
 
   <!-- Hotjar Tracking Code for https://chendachao.github.io/ -->
   <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:1939682,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    (function (h, o, t, j, a, r)
+    {
+      h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+      h._hjSettings = { hjid: 1939682, hjsv: 6 };
+      a = o.getElementsByTagName('head')[0];
+      r = o.createElement('script'); r.async = 1;
+      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
   </script>
 
 </head>
@@ -58,24 +60,24 @@
 
   <header>
     <div class="help-icon-menu-bar">
-      <button aria-label="language" class="help-icon language-btn"
-        data-tooltip data-tippy-content="Switch language" data-i18n-attr="data-tippy-content=APP.LANGUAGE_SWITCH"></button>
-      <button aria-label="guide" class="help-icon start-replay-tour"
-        data-tooltip data-tippy-content="Tutorial guide" data-i18n-attr="data-tippy-content=APP.TUTOR_GUIDE"></button>
-      <button aria-label="hint" class="help-icon start-hint"
-        data-tooltip data-tippy-content="Tutorial with hint" data-i18n-attr="data-tippy-content=APP.TUTOR_HINT_GUIDE"></button>
-      <button aria-label="subscribe" hidden class="help-icon subscribe-btn"
-        data-tooltip data-tippy-content="Subscribe" data-i18n-attr="data-tippy-content=APP.NOTIFICATION_SUBSCRIBE"></button>
-      <button aria-label="pwa install" hidden class="help-icon pwa-install-btn" id="btnInstall"
-        data-tooltip data-tippy-content="Install to Desktop" data-i18n-attr="data-tippy-content=APP.INSTALL"></button>
+      <button aria-label="language" class="help-icon language-btn" data-tooltip data-tippy-content="Switch language"
+        data-i18n-attr="data-tippy-content=APP.LANGUAGE_SWITCH"></button>
+      <button aria-label="guide" class="help-icon start-replay-tour" data-tooltip data-tippy-content="Tutorial guide"
+        data-i18n-attr="data-tippy-content=APP.TUTOR_GUIDE"></button>
+      <button aria-label="hint" class="help-icon start-hint" data-tooltip data-tippy-content="Tutorial with hint"
+        data-i18n-attr="data-tippy-content=APP.TUTOR_HINT_GUIDE"></button>
+      <button aria-label="subscribe" hidden class="help-icon subscribe-btn" data-tooltip data-tippy-content="Subscribe"
+        data-i18n-attr="data-tippy-content=APP.NOTIFICATION_SUBSCRIBE"></button>
+      <button aria-label="pwa install" hidden class="help-icon pwa-install-btn" id="btnInstall" data-tooltip
+        data-tippy-content="Install to Desktop" data-i18n-attr="data-tippy-content=APP.INSTALL"></button>
     </div>
   </header>
 
   <main class="main">
-    <div class="bird-left"></div>
-    <div class="bird-right"></div>
-    <div class="bird-small-l"></div>
-    <div class="bird-small-r"></div>
+    <div class="bird-big-left"></div>
+    <div class="bird-big-right"></div>
+    <div class="bird-small-left"></div>
+    <div class="bird-small-right"></div>
     <div style="border-radius: 50%" class="moon step15" id="step5"></div>
     <div class="brand">
       <img id="step1" class="brand-icon step11" src="./assets/images/star.svg" alt="Star">
@@ -83,15 +85,17 @@
     <div class="centered-content">
       <div class="bio step12" id="step2">
         <div class="code-icon">
-          <a class="developer-mode-link" href="/assets/data/en/chendachao.json" target="_blank"
-             data-tooltip data-tippy-content="Developer mode" data-i18n-attr="data-tippy-content=APP.DEVELOPER_MODE">
+          <a class="developer-mode-link" href="/assets/data/en/chendachao.json" target="_blank" data-tooltip
+            data-tippy-content="Developer mode" data-i18n-attr="data-tippy-content=APP.DEVELOPER_MODE">
             <img src="./assets/images/code.svg" alt="Developer mode">
           </a>
         </div>
 
         <span data-i18n-id="APP.HELLO">Hello, this is </span><span class="highlight text-nowrap" data-tooltip
-          data-tippy-content="<div style='text-align: center'>Chen Dachao<br/>陈大超</div>" data-i18n-id="APP.NAME">Larry Chen</span><span data-i18n-id="APP.COMMA">,</span>
-        <span data-i18n-id="APP.IMA">I'm a </span><span class="highlight text-nowrap" style="outline: none;" data-tooltip data-tippy-content="
+          data-tippy-content="<div style='text-align: center'>Chen Dachao<br/>陈大超</div>" data-i18n-id="APP.NAME">Larry
+          Chen</span><span data-i18n-id="APP.COMMA">,</span>
+        <span data-i18n-id="APP.IMA">I'm a </span><span class="highlight text-nowrap" style="outline: none;"
+          data-tooltip data-tippy-content="
           <div>
             <h3>Web Developer & Technology Architect</h3>
             <hr style='
@@ -102,11 +106,19 @@
             HTML(5)/CSS(3), <strong>Angular</strong>, React, NodeJS/Express, AWS/Serverless,
             <strong>Linux</strong>, Docker, Nginx, MongoDB
           </div> 
-        " data-i18n-id="APP.WEB_DEVELOPER">web developer</span><span data-i18n-id="APP.LIVING"> living in Shanghai, China.</span>
-        <span data-i18n-id="APP.CURRENT_PROJECT">I'm working on a project to better helps developers create web components visually with ease.</span>
-        <span data-i18n-id="APP.ILIKE">I like </span><span class="highlight text-nowrap" data-tooltip data-tippy-content="Life lies in movement." data-i18n-attr="data-tippy-content=APP.RUNNING_DESC" data-i18n-id="APP.RUNNING">running</span><span data-i18n-id="APP.COMMA">,</span>
-        <span class="highlight text-nowrap" data-tooltip data-tippy-content="Why the universe is so vast?" data-i18n-attr="data-tippy-content=APP.THINKING_DESC" data-i18n-id="APP.THINKING">thinking</span> <span data-i18n-id="APP.AND">and</span>
-        <span class="highlight text-nowrap" data-tooltip data-tippy-content="Change the world, make our life better." data-i18n-attr="data-tippy-content=APP.PROGRAMMING_DESC" data-i18n-id="APP.PROGRAMMING">programming</span><span data-i18n-id="APP.PERIOD">.</span>
+        " data-i18n-id="APP.WEB_DEVELOPER">web developer</span><span data-i18n-id="APP.LIVING"> living in Shanghai,
+          China.</span>
+        <span data-i18n-id="APP.CURRENT_PROJECT">I'm working on a project to better helps developers create web
+          components visually with ease.</span>
+        <span data-i18n-id="APP.ILIKE">I like </span><span class="highlight text-nowrap" data-tooltip
+          data-tippy-content="Life lies in movement." data-i18n-attr="data-tippy-content=APP.RUNNING_DESC"
+          data-i18n-id="APP.RUNNING">running</span><span data-i18n-id="APP.COMMA">,</span>
+        <span class="highlight text-nowrap" data-tooltip data-tippy-content="Why the universe is so vast?"
+          data-i18n-attr="data-tippy-content=APP.THINKING_DESC" data-i18n-id="APP.THINKING">thinking</span> <span
+          data-i18n-id="APP.AND">and</span>
+        <span class="highlight text-nowrap" data-tooltip data-tippy-content="Change the world, make our life better."
+          data-i18n-attr="data-tippy-content=APP.PROGRAMMING_DESC"
+          data-i18n-id="APP.PROGRAMMING">programming</span><span data-i18n-id="APP.PERIOD">.</span>
       </div>
 
       <div>
@@ -114,45 +126,45 @@
           <div style="text-align: center">
             <figure>
               <img class="wechat-qrcode" src="./assets/images/wechat-qr-code.jpg" alt="wechat: ProgrammerLarry">
-              <figcaption class="wechat-qrcode-desc" data-i18n-id="APP.QRCODE_DESC">Scan the QR Code to add me on WeChat</figcaption>
+              <figcaption class="wechat-qrcode-desc" data-i18n-id="APP.QRCODE_DESC">Scan the QR Code to add me on WeChat
+              </figcaption>
             </figure>
           </div>
         </template>
         <ul id="step3" class="social-icons step13">
           <li data-tippy-content="Github: chendachao" data-tooltip>
-            <a class="icon icon-github circle"
-              href="https://github.com/chendachao" target="_blank" rel="noopener noreferrer nofollow">
+            <a class="icon icon-github circle" href="https://github.com/chendachao" target="_blank"
+              rel="noopener noreferrer nofollow">
               <img class="svg" alt="Github" src="./assets/images/social/github.svg">
             </a>
           </li>
           <li data-tippy-content="Email: chendachao@outlook.com" data-tooltip>
             <a class="icon icon-envelope-o circle"
-              href="mailto:chendachao@outlook.com?subject=Greetings%20Larry&body=Hi%20Larry%2C%20%0A%0AI%20like%20the%20color%20of%20your%20website%2C%20It's%20very%20interesting...%0A%0A%0A%0A" 
+              href="mailto:chendachao@outlook.com?subject=Greetings%20Larry&body=Hi%20Larry%2C%20%0A%0AI%20like%20the%20color%20of%20your%20website%2C%20It's%20very%20interesting...%0A%0A%0A%0A"
               target="_blank" rel="noopener noreferrer nofollow">
               <img class="svg" alt="Outlook" src="./assets/images/social/outlook.svg">
             </a>
           </li>
           <li>
-            <a class="icon icon-wechat circle"
-              id="wechat" rel="noopener noreferrer nofollow">
+            <a class="icon icon-wechat circle" id="wechat" rel="noopener noreferrer nofollow">
               <img class="svg" alt="Wechat" src="./assets/images/social/wechat.svg">
             </a>
           </li>
           <li data-tippy-content="Skype" data-tooltip>
-            <a class="icon icon-skype circle"
-              href="skype:chendachao@outlook.com?chat" rel="noopener noreferrer nofollow">
+            <a class="icon icon-skype circle" href="skype:chendachao@outlook.com?chat"
+              rel="noopener noreferrer nofollow">
               <img class="svg" alt="Skype" src="./assets/images/social/skype.svg">
             </a>
           </li>
           <li data-tippy-content="Linkedin: chendachao" data-tooltip>
-            <a class="icon icon-linkedin circle"
-              href="https://www.linkedin.com/in/chendachao" target="_blank" rel="noopener noreferrer nofollow">
+            <a class="icon icon-linkedin circle" href="https://www.linkedin.com/in/chendachao" target="_blank"
+              rel="noopener noreferrer nofollow">
               <img class="svg" alt="Linkedin" src="./assets/images/social/linkedin.svg">
             </a>
           </li>
           <li data-tippy-content="Twitter: dachaochen" data-tooltip>
-            <a class="icon icon-twitter circle" target="_blank"
-              href="https://twitter.com/dachaochen" rel="noopener noreferrer nofollow">
+            <a class="icon icon-twitter circle" target="_blank" href="https://twitter.com/dachaochen"
+              rel="noopener noreferrer nofollow">
               <img class="svg" alt="Twitter" src="./assets/images/social/twitter.svg">
             </a>
           </li>
@@ -196,14 +208,6 @@
             <div class="card">Coder</div>
             <div class="card">Longmen</div>
             <div class="card">Stone</div>
-            <div class="card">5</div>
-            <div class="card">6</div>
-            <div class="card">7</div>
-            <div class="card">8</div>
-            <div class="card">9</div>
-            <div class="card">10</div>
-            <div class="card">11</div>
-            <div class="card">12</div>
           </div>
         </details>
 
@@ -218,8 +222,8 @@
     <div></div>
     <div class="version"></div>
     <div style="text-align: right; margin-left: auto;">
-      <button class="qrcode-container"
-        data-tooltip data-tippy-content="This site's QRCode" data-i18n-attr="data-tippy-content=APP.SITE_QRCODE">
+      <button class="qrcode-container" data-tooltip data-tippy-content="This site's QRCode"
+        data-i18n-attr="data-tippy-content=APP.SITE_QRCODE">
         <img class="qrcode-handler" src="./assets/images/scan-qr-code.svg" alt="qrcode view on mobile">
       </button>
     </div>
@@ -234,8 +238,7 @@
       background-color: lightgray;
       border: none;
       height: 1px;
-      margin: 1rem 0 0.5rem;"
-    >
+      margin: 1rem 0 0.5rem;">
     <div style="text-align: center;">
       <!-- TODO: change to loading placeholder -->
       <img src="./assets/images/site.png" alt="https://chendachao.github.io" class="mobile-qrcode">

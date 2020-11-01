@@ -126,14 +126,14 @@ body {
   flex-grow: 1;
 }
 
-.bird-left,
-.bird-right,
-.bird-small-l,
-.bird-small-r {
-  position: fixed;
+.bird-big-left,
+.bird-big-right,
+.bird-small-left,
+.bird-small-right {
+  position: absolute;
 }
 
-.bird-left {
+.bird-big-left {
   opacity: 1;
   top: 50px;
   left: 00px;
@@ -149,7 +149,7 @@ body {
   z-index: 70;
 }
 
-.bird-right {
+.bird-big-right {
   z-index: 70;
 
   opacity: 1;
@@ -166,7 +166,7 @@ body {
   animation: move var(--bird-fly-speed) linear infinite, flap .5s linear alternate infinite;
 }
 
-.bird-small-l {
+.bird-small-left {
   opacity: 1;
   top: 45px;
   left: 0px;
@@ -182,7 +182,7 @@ body {
   z-index: 70;
 }
 
-.bird-small-r {
+.bird-small-right {
   z-index: 70;
 
   opacity: 1;
@@ -212,7 +212,7 @@ body {
   border-radius: 50%;
   background: var(--color-moon-bg);
   background-size: var(--color-moon-bg-size);
-  animation: colorize 24s cubic-bezier(0.2, 1.05, 0.45, 0.94) infinite, rise 5s;
+  animation: colorize 24s 0s cubic-bezier(0.2, 1.05, 0.45, 0.94) infinite alternate, rise 5s;
 }
 
 @media screen and (max-height: 500px) {
@@ -455,7 +455,7 @@ details > summary.custom-marker:before {
   padding-right: 1rem;
 }
 details[open] > summary.custom-marker:before {
-  content: "-";
+  content: "–";
 }
 /* custom-marker end */
 
@@ -502,7 +502,17 @@ details.my-project[open] summary {
   border-top-right-radius: 24px;
   border-top-left-radius: 24px;
 }
+
 /* my-project end */
+
+details.my-project[open] summary + div {
+  animation: sweep .5s ease-in-out normal forwards;
+  animation-delay: 0s;
+}
+details.my-project[open] summary + div:before {
+  animation: grow .5s ease-in-out normal forwards;
+  animation-delay: 0.1s;
+}
 
 .container-grid {
   display: grid;
@@ -565,8 +575,8 @@ details.my-project[open] summary {
   color: var(--subtle3);
 }
 
-/* Common */
 .signature {
+/* Common */
   height: 35px;
   margin-right: 2rem;
 }

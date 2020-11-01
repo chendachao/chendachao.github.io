@@ -2,6 +2,7 @@
 import '@babel/polyfill';
 
 import toasted from './app/utils/toasted';
+import i18n from './app/utils/i18n';
 // import(/* webpackPrefetch: true */'./app/pwa');
 import(/* webpackPreload: true */'./app/main');
 import 'normalize.css';
@@ -9,6 +10,8 @@ import './styles/main.css';
 import(/* webpackPreload: true */'./styles/override.css');
 
 import * as serviceWorker from './app/pwa';
+
+const format = i18n.format;
 
 serviceWorker.register({
   onRegister: registration => {
@@ -66,15 +69,15 @@ serviceWorker.register({
     }
 
     const updateReady = function () {
-       showNotification('New version available.', 'Please refresh the window');
-        toasted.success('New version available.', {
+      showNotification(format('APP.NEW_VERSION_TITLE'), format('APP.NEW_VERSION_CONTENT'));
+      toasted.success(format('APP.NEW_VERSION_TITLE'), {
           action: {
             text: 'Update',
             onClick: (e, toasted) => {
               window.location.reload();
             },
           },
-        });
+      });
     }
 
     const waitingServiceWorker = registration.waiting;

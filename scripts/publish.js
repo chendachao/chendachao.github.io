@@ -8,7 +8,7 @@ const user = GITHUB_TOKEN ? {
 } : null;
 
 ghpages.publish('dist', {
-  branch: 'master',
+  branch: 'gh-pages',
   repo,
   user
 }, function(err) {

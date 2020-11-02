@@ -21,7 +21,7 @@
     "deploy:minor": "npm run version:minor && npm run push",
     "deploy:major": "npm run version:major && npm run push",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d dist -b master -u 'chendachao <chendachao@outlook.com>' -r https://chendachao:$GITHUB_TOKEN@github.com/chendachao/chendachao.github.io.git",
+    "deploy": "gh-pages -d dist -b gh-pages -u 'chendachao <chendachao@outlook.com>' -r https://chendachao:$GITHUB_TOKEN@github.com/chendachao/chendachao.github.io.git",
     "deploy:local": "npm run version:patch && cross-env GITHUB_TOKEN=$GITHUB_TOKEN node scripts/publish.js"
   },
   "husky": {

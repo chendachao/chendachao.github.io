@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.9](https://github.com/chendachao/chendachao.github.io/compare/v1.6.8...v1.6.9) (2020-11-02)
+
+### [1.6.8](https://github.com/chendachao/chendachao.github.io/compare/v1.6.7...v1.6.8) (2020-11-02)
+
+### [1.6.7](https://github.com/chendachao/chendachao.github.io/compare/v1.6.6...v1.6.7) (2020-10-30)
+
+
+### Features
+
+* **intro:** add intro 5 for projects ([c9d2fa8](https://github.com/chendachao/chendachao.github.io/commit/c9d2fa8df26b23e4678db9cde138443bb5ac7529))
+
+### [1.6.6](https://github.com/chendachao/chendachao.github.io/compare/v1.6.5...v1.6.6) (2020-10-29)
+
+### [1.6.5](https://github.com/chendachao/chendachao.github.io/compare/v1.6.4...v1.6.5) (2020-10-28)
+
+### [1.6.4](https://github.com/chendachao/chendachao.github.io/compare/v1.6.3...v1.6.4) (2020-10-28)
+
+### [1.6.3](https://github.com/chendachao/chendachao.github.io/compare/v1.6.2...v1.6.3) (2020-10-28)
+
+### [1.6.2](https://github.com/chendachao/chendachao.github.io/compare/v1.6.1...v1.6.2) (2020-10-27)
+
+### [1.6.1](https://github.com/chendachao/chendachao.github.io/compare/v1.6.0...v1.6.1) (2020-10-26)
+
+
+### Bug Fixes
+
+* **summary:** tab blue highlight in mobile chrome ([bce213c](https://github.com/chendachao/chendachao.github.io/commit/bce213c59a5b4a7b1c20b1f2ec28e15150960461))
+
+## [1.6.0](https://github.com/chendachao/chendachao.github.io/compare/v1.5.0...v1.6.0) (2020-10-26)
+
+## [1.5.0](https://github.com/chendachao/chendachao.github.io/compare/v1.4.1...v1.5.0) (2020-10-26)
+
 ### [1.4.1](https://github.com/chendachao/chendachao.github.io/compare/v1.4.0...v1.4.1) (2020-10-25)
 
 

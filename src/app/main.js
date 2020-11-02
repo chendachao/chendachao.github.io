@@ -59,7 +59,7 @@ window.addEventListener('load', function() {
 
   let errorToasted;
   const updateOnlineStatus = function (event) {
-    var message = navigator.onLine ? "" : "You are offline!";
+    var message = navigator.onLine ? "" : i18n.format('APP.OFFLINE');
     if(message) {
       errorToasted = toasted.error(message.toUpperCase(), { 
         action: {

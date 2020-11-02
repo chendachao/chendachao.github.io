@@ -1,0 +1,45 @@
+
+
+/* TODO: black bg and white text for faster print */
+/* print mode style */
+@media print {
+  *,
+  *::before,
+  *::after {
+    /* Black prints faster */
+    /* color: var(--black) !important;  */
+    /* text-shadow: none !important; */
+    box-shadow: none !important;
+    background: var(--color-global-bg-fallback) !important;
+    -webkit-print-color-adjust: exact;
+  }
+  body {
+    background-attachment: fixed;
+  }
+
+  details.my-project {
+    border: 1px solid var(--color-shadow2);
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.scale {
+  transform: scale(1.8) !important;
+}
+
+

@@ -68,3 +68,18 @@ PS:
 
 Push with `yarn deploy:patch` not ps
 
+## Commit Message
+type must be one of [build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test] [type-enum]
+```
+type(scope?): subject
+body?
+footer?
+```
+
+## Branches
+
+`dev -> main -> gh-pages`
+
+
+
+

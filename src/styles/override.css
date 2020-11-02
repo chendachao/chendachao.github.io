@@ -66,3 +66,7 @@
   border-bottom-color: transparent;
   border-left-color: transparent;
 }
+
+.introjs-arrow.top-right {
+  border: 5px solid transparent;
+}

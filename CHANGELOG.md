@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.10](https://github.com/chendachao/chendachao.github.io/compare/v1.6.9...v1.6.10) (2020-11-04)
+
+
+### Bug Fixes
+
+* **i18n:** workaround to fix tooltip i18n issue ([c0df60d](https://github.com/chendachao/chendachao.github.io/commit/c0df60d2bbb77254b44c5357c3032fd1308728c5))
+* **webpack:** mode dev ([326eb8f](https://github.com/chendachao/chendachao.github.io/commit/326eb8f3dceba8d7b4668ee45bf2dc371a16e72d))
+
 ### [1.6.9](https://github.com/chendachao/chendachao.github.io/compare/v1.6.8...v1.6.9) (2020-11-02)
 
 ### [1.6.8](https://github.com/chendachao/chendachao.github.io/compare/v1.6.7...v1.6.8) (2020-11-02)

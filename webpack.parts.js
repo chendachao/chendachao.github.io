@@ -2,9 +2,9 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const GitRevisionPlugin = require('git-revision-webpack-plugin');
-const gitRevisionPlugin = new GitRevisionPlugin({
-  lightweightTags: true
-});
+// const gitRevisionPlugin = new GitRevisionPlugin({
+//   lightweightTags: true
+// });
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
@@ -202,7 +202,8 @@ exports.loadFonts = ({ include, exclude, options } = {}) => ({
 
 console.log('process.env.npm_package_version', process.env.npm_package_version);
 // const bundleVersion = `${gitRevisionPlugin.version()} (${new Date().toISOString().substr(0, 10)})`; 
-const bundleVersion = `${gitRevisionPlugin.version()}`; 
+// const bundleVersion = `${gitRevisionPlugin.version()}`; 
+const bundleVersion = `v${process.env.npm_package_version}`; 
 exports.attachRevision = () => ({
   plugins: [
     gitRevisionPlugin,

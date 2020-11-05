@@ -1,0 +1,327 @@
+/* dialog */
+.qrcode-dialog {
+  min-width: 250px;
+  max-width: 95vw;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--bg-white);
+  -webkit-box-shadow: 0 0 40px rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.25);
+          box-shadow: 0 0 40px rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.25);
+}
+
+.qrcode-dialog .close-icon {
+  float: right;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  width: 20px;
+  margin-left: 5px;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.qrcode-dialog .close-icon:hover {
+  -webkit-transform: none;
+          transform: none;
+  background: 0 0;
+  color: #f27474;
+}
+
+.qrcode-dialog .actions {
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.dialog-bg::-webkit-backdrop {
+  /* native */
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* backdrop-filter: blur(2px); */
+}
+
+.dialog-bg::backdrop {
+  /* native */
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* backdrop-filter: blur(2px); */
+}
+
+.dialog-bg+.backdrop {
+  /* polyfill */
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+  /* background-color: rgba(0, 0, 0, 0.46); */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* backdrop-filter: blur(2px); */
+}
+
+.shake {
+  -webkit-animation: shake 300ms ease-in-out !important;
+          animation: shake 300ms ease-in-out !important;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  12.5% {
+    -webkit-transform: translateX(-6px) rotateY(-5deg);
+            transform: translateX(-6px) rotateY(-5deg)
+  }
+
+  37.5% {
+    -webkit-transform: translateX(5px) rotateY(4deg);
+            transform: translateX(5px) rotateY(4deg)
+  }
+
+  62.5% {
+    -webkit-transform: translateX(-3px) rotateY(-2deg);
+            transform: translateX(-3px) rotateY(-2deg)
+  }
+
+  87.5% {
+    -webkit-transform: translateX(2px) rotateY(1deg);
+            transform: translateX(2px) rotateY(1deg)
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0)
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  12.5% {
+    -webkit-transform: translateX(-6px) rotateY(-5deg);
+            transform: translateX(-6px) rotateY(-5deg)
+  }
+
+  37.5% {
+    -webkit-transform: translateX(5px) rotateY(4deg);
+            transform: translateX(5px) rotateY(4deg)
+  }
+
+  62.5% {
+    -webkit-transform: translateX(-3px) rotateY(-2deg);
+            transform: translateX(-3px) rotateY(-2deg)
+  }
+
+  87.5% {
+    -webkit-transform: translateX(2px) rotateY(1deg);
+            transform: translateX(2px) rotateY(1deg)
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0)
+  }
+}
+
+.dialog-animation:not([aria-hidden='true']) {
+  -webkit-transition: opacity transform 0.5s;
+  transition: opacity transform 0.5s;
+}
+
+.fade {
+  -webkit-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+
+.scale-in {
+  -webkit-animation: scale-in .5s;
+          animation: scale-in .5s;
+}
+
+.scale-out {
+  -webkit-animation: scale-out .5s;
+          animation: scale-out .5s;
+}
+
+.appear-from-top {
+  -webkit-animation: appear-from-top .5s;
+          animation: appear-from-top .5s;
+}
+
+.disappear-from-top {
+  -webkit-animation: disappear-from-top .5s;
+          animation: disappear-from-top .5s;
+}
+
+.appear-from-bottom {
+  -webkit-animation: appear-from-bottom .5s;
+          animation: appear-from-bottom .5s;
+}
+
+.disappear-from-bottom {
+  -webkit-animation: disappear-from-bottom .5s;
+          animation: disappear-from-bottom .5s;
+}
+
+@-webkit-keyframes scale-in {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes scale-out {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes scale-out {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes appear-from-top {
+  from {
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear-from-top {
+  from {
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes disappear-from-top {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+    opacity: 0;
+  }
+}
+
+@keyframes disappear-from-top {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate(0, -100%);
+            transform: translate(0, -100%);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes appear-from-bottom {
+  from {
+    -webkit-transform: translate(0, 50%);
+            transform: translate(0, 50%);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear-from-bottom {
+  from {
+    -webkit-transform: translate(0, 50%);
+            transform: translate(0, 50%);
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes disappear-from-bottom {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate(0, 50%);
+            transform: translate(0, 50%);
+    opacity: 0;
+  }
+}
+
+@keyframes disappear-from-bottom {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate(0, 50%);
+            transform: translate(0, 50%);
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=4.f8ea159d1356490e5b9c.css.map*/

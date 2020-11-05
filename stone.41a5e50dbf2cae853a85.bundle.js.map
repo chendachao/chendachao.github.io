@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/index-stone.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AACA;AACA","file":"stone.41a5e50dbf2cae853a85.bundle.js","sourcesContent":["// es6 generator support\nimport '@babel/polyfill';\nimport(/* webpackPreload: true */'./app/pages/stone/index.js');\nimport 'normalize.css';\n\n\n"],"sourceRoot":""}

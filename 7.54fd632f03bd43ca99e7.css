@@ -1,0 +1,78 @@
+
+/* Override */
+.tippy-box {
+  border-radius: 0;
+  -webkit-filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.25));
+  opacity: 1;
+  color: #fafafa
+}
+
+.tippy-box .tippy-content {
+  text-align: left;
+  /* letter-spacing: -0.1vw; */
+}
+
+.tippy-box[data-theme~='gradient'] {
+  background: linear-gradient(130deg, #507bf4, #f166b2);
+  -webkit-box-shadow: -3px 3px 12px #6a3da7;
+          box-shadow: -3px 3px 12px #6a3da7;
+  font-weight: bold;
+}
+
+.tippy-box[data-theme~='gradient'] > .tippy-svg-arrow {
+  fill: #b170ce;
+}
+
+[data-theme="light"] .tippy-box[data-theme~='gradient'] {
+  background: linear-gradient(130deg, #666af1, #ca6767);
+}
+
+[data-theme="light"] .tippy-box[data-theme~='gradient'] > .tippy-svg-arrow {
+  fill: #a068a3;
+}
+
+[tooltip][tabindex="0"] {
+  outline: none;
+}
+
+.introjs-helperLayer {
+  background: transparent !important;
+  -webkit-box-shadow: 0 0 0 9999px rgba(25, 24, 24, 0.51) !important;
+          box-shadow: 0 0 0 9999px rgba(25, 24, 24, 0.51) !important;
+}
+
+.introjs-tooltiptext {
+  font-weight: bold;
+  line-height: 17pt;
+}
+
+.introjs-button {
+  text-shadow: none !important;
+}
+
+.introjs-overlay {
+  background: transparent !important;
+}
+
+/* bugfix for arrow */
+.introjs-arrow.top-middle {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: #ecf0f1;
+  border-left-color: transparent;
+}
+
+.introjs-arrow.bottom-middle {
+  border-top-color: #ecf0f1;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.introjs-arrow.top-right {
+  border: 5px solid transparent;
+}
+
+
+/*# sourceMappingURL=7.54fd632f03bd43ca99e7.css.map*/

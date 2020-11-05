@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/print.js"],"names":["console","log"],"mappings":";;;;;;;;;AACAA,OAAO,CAACC,GAAR,CAAY,yDAAZ,E","file":"print.e3cdd3c270732072af74.bundle.js","sourcesContent":["\nconsole.log('Hello, nice to meet you🌹. This is Larry from China. 🌝');\n\n"],"sourceRoot":""}

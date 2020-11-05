@@ -97,13 +97,11 @@ const commonConfig = merge([
       new webpack.HashedModuleIdsPlugin(),
       new CopyWebpackPlugin({
         patterns: [
+          {from: 'LICENSE'},
           {from: 'src/manifest.json'},
           {from: 'src/favicon.ico'},
           {from: 'src/robots.txt'},
-          {from: 'src/assets/sw-patch.js', to: 'assets'},
-          {from: 'src/assets/data', to: 'assets/data'},
-          {from: 'src/assets/images/icons', to: 'images/icons'},
-          {from: 'src/assets/i18n', to: 'assets/i18n'},
+          {from: 'src/assets', to: 'assets'},
           {
             from: 'node_modules/sw-offline-google-analytics/build/importScripts/sw-offline-google-analytics.prod.v0.0.25.js',
             to: 'sw-offline-google-analytics.js'

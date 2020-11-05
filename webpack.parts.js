@@ -206,7 +206,7 @@ console.log('process.env.npm_package_version', process.env.npm_package_version);
 const bundleVersion = `v${process.env.npm_package_version}`; 
 exports.attachRevision = () => ({
   plugins: [
-    gitRevisionPlugin,
+    // gitRevisionPlugin,
     new webpack.DefinePlugin({
       'process.env.VERSION': JSON.stringify(bundleVersion),
       // 'process.env.VERSION': JSON.stringify(`v${pkg.version}-${gitRevisionPlugin.version()}`),

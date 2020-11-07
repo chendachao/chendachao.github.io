@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
-const GitRevisionPlugin = require('git-revision-webpack-plugin');
+// const GitRevisionPlugin = require('git-revision-webpack-plugin');
 // const gitRevisionPlugin = new GitRevisionPlugin({
 //   lightweightTags: true
 // });

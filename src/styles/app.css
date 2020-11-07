@@ -1,6 +1,3 @@
-@import '_variables';
-@import '_utilities';
-
 /* 🔥 */
 
 * {
@@ -347,7 +344,6 @@ only screen and (device-width: 767px) {
 }
 
 .icon {
-  border-radius: 50%;
   margin: calc(0.5em + 0.1vw);
   opacity: 0.8;
   color: var(--text-color);
@@ -357,7 +353,8 @@ only screen and (device-width: 767px) {
 
   box-shadow: -10px 10px 15px var(--subtle3);
   background: linear-gradient(0deg, var(--bg-light), var(--bg-white));
-  transition: 1s;
+  /* transition: 1s; */
+  transition: all 0.3s ease 0s;
 }
 
 .icon:hover,
@@ -366,13 +363,16 @@ only screen and (device-width: 767px) {
   box-shadow: 0 2px 5px var(--subtle3);
   /* transition: transform 0.1s ease-out;
   transform: scale(1.25); */
-  transition: all 0.3s ease 0s;
 }
 
 .icon.circle {
   height: calc(2em + 0.5vw);
   width: calc(2em + 0.5vw);
-  border-radius: 50%;
+}
+
+.icon.rounded {
+  height: 2em;
+  width: 2em;
 }
 
 .icon .svg {
@@ -516,31 +516,52 @@ details.my-project[open] summary + div:before {
 
 .container-grid {
   display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
-  grid-auto-rows: 85px;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  grid-auto-rows: 70px;
 }
 
 .container-grid > .card {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  position: relative;
+  opacity: 0.8;
+  transition: opacity 0.3s ease 0s;
+}
+
+.container-grid > .card:hover {
+  opacity: 1;
+}
+
+.container-grid > .card > .link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media only screen and (max-width: 992px),
+only screen and (device-width: 992px) {
+  .container-grid > .card {
+    flex-direction: column;
+  }
 }
 
 .card {
-  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  /* transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); */
   /* box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); */
  
-  border-radius: 8px;
-  box-shadow: 0px 0px 4px 0px var(--color-shadow);
+  /* border-radius: 8px; */
+  /* box-shadow: 0px 0px 4px 0px var(--color-shadow); */
 }
 
 .card:hover {
-  transform: translate(0, -5px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.16);
-  box-shadow: 0 5px 10px 0px var(--color-shadow);
+  /* transform: translate(0, -5px); */
+  /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 5px 10px 0px var(--color-shadow); */
 }
 
 .qrcode-container {
@@ -580,3 +601,4 @@ details.my-project[open] summary + div:before {
   height: 35px;
   margin-right: 2rem;
 }
+

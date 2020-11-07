@@ -38,6 +38,14 @@
   white-space: nowrap;
 }
 
+.circle {
+  border-radius: 100%;
+}
+
+.rounded {
+  border-radius: 4px;
+}
+
 .scale {
   transform: scale(1.8) !important;
 }
@@ -64,6 +72,7 @@
   /* background: linear-gradient(92.05deg, #BCA1F7 12.09%, #E577B4 42.58%, #FF7170 84.96%); */
   
   background-clip: text;
+  -webkit-background-clip: text;
   text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
@@ -73,12 +82,11 @@
 [data-theme="dark"] .highlight:hover {
   background: linear-gradient(130deg, #507bf4, #f166b2);
   background-clip: text;
+  -webkit-background-clip: text;
   text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   box-decoration-break: clone;
 }
-
-
 
 

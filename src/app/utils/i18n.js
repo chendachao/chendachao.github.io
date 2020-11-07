@@ -1,6 +1,5 @@
 import IntlMessageFormat from 'intl-messageformat';
 import axios from 'axios';
-// import tippy, { createSingleton, roundArrow } from 'tippy.js';
 
 const I18n = () => {
   const getDefaultLang = function () {
@@ -94,26 +93,6 @@ const I18n = () => {
       locale = locale === 'en' ? 'zh' : 'en';
       triggerLanguageHandler(locale);
       window.location.reload();
-
-      // setTimeout(() => {
-      //   const commonConig = {
-      //     allowHTML: true,
-      //     arrow: roundArrow,
-      //     // trigger: 'click',
-      //     // placement: 'left',
-      //     // theme: 'light-border',
-      //     theme: 'gradient',
-      //     interactive: true,
-      //     inertia: true,
-      //     moveTransition: 'transform 0.2s ease-out',
-      //     appendTo: document.body,
-      //   };
-      //   console.log('tippy', tippy);
-        
-      //     const tippyInstances = tippy('[data-tooltip]');
-      //   const singleton = createSingleton(tippyInstances, commonConig);
-      // }, 10);
-
     });
   }
 

@@ -43,14 +43,10 @@ function TooltipAndPopover() {
 
   // Common tooltip
   if(isPC()) {
-    setTimeout(() => {
-      const tippyInstances = tippy('[data-tooltip]');
-      const singleton = createSingleton(tippyInstances, commonConig);
-    });
+    const tippyInstances = tippy('[data-tooltip]');
+    const singleton = createSingleton(tippyInstances, commonConig);
   } else {
-    setTimeout(() => {
-      tippy('[data-tooltip]', commonConig);
-    });
+    tippy('[data-tooltip]', commonConig);
   }
 
   // show the popup of wechat qrCode

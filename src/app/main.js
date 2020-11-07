@@ -10,7 +10,9 @@ import i18n from './utils/i18n';
 i18n.init();
 
 // Initialize tooltip and popover
-import('./components/tooltip').then(TooltipAndPopover => TooltipAndPopover.default());
+setTimeout(() => {
+  import('./components/tooltip').then(TooltipAndPopover => TooltipAndPopover.default());
+}, 10);
 
 import('./components/dialog').then(SetQRCode => SetQRCode.default());
 

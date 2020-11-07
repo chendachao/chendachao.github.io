@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.15](https://github.com/chendachao/chendachao.github.io/compare/v1.6.14...v1.6.15) (2020-11-07)
+
+
+### Bug Fixes
+
+* **i18n:** chores ([cda5c36](https://github.com/chendachao/chendachao.github.io/commit/cda5c360dccd1498b2a3baa4280db4bd1711d95b))
+
 ### [1.6.14](https://github.com/chendachao/chendachao.github.io/compare/v1.6.13...v1.6.14) (2020-11-07)
 
 

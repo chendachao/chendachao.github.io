@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.14](https://github.com/chendachao/chendachao.github.io/compare/v1.6.13...v1.6.14) (2020-11-07)
+
+
+### Bug Fixes
+
+* **style:** fixed bg & fly ([02b8364](https://github.com/chendachao/chendachao.github.io/commit/02b836452340a1fa1d5a3dd740a04983d769c4f3))
+
 ### [1.6.13](https://github.com/chendachao/chendachao.github.io/compare/v1.6.12...v1.6.13) (2020-11-05)
 
 ### [1.6.12](https://github.com/chendachao/chendachao.github.io/compare/v1.6.11...v1.6.12) (2020-11-05)

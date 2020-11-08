@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.17](https://github.com/chendachao/chendachao.github.io/compare/v1.6.16...v1.6.17) (2020-11-08)
+
+
+### Features
+
+* **style:** my projects ([d06f340](https://github.com/chendachao/chendachao.github.io/commit/d06f34076668cb193c47214906493f3fce44b955))
+
 ### [1.6.16](https://github.com/chendachao/chendachao.github.io/compare/v1.6.15...v1.6.16) (2020-11-07)
 
 ### [1.6.15](https://github.com/chendachao/chendachao.github.io/compare/v1.6.14...v1.6.15) (2020-11-07)

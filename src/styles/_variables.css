@@ -245,11 +245,13 @@ only screen and (device-width: 767px) {
     opacity: 0;
     margin-left: -1em;
     margin-right: 1em;
+    margin-top: -1em;
   }
   100% {
     opacity: 1;
     margin-left: 0;
     margin-right: 0;
+    margin-top: 0;
   }
 }
 

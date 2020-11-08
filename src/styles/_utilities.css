@@ -38,6 +38,18 @@
   white-space: nowrap;
 }
 
+.font-weight-bold {
+  font-weight: 900;
+}
+
+.box-shadow {
+  box-shadow: -10px 10px 15px var(--subtle3);
+}
+
+.text-shadow {
+  text-shadow: -10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
 .circle {
   border-radius: 100%;
 }

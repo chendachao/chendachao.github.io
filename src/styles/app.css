@@ -250,7 +250,6 @@ body {
   font-size: calc(1em + 1vw);
   /* letter-spacing: -0.1vw; */
   padding: 1rem;
-  text-shadow: -10px 10px 15px rgba(0, 0, 0, 0.3);
   transition: 1s;
 }
 
@@ -351,8 +350,7 @@ only screen and (device-width: 767px) {
   display: flex;
   align-items: center;
 
-  box-shadow: -10px 10px 15px var(--subtle3);
-  background: linear-gradient(0deg, var(--bg-light), var(--bg-white));
+  /* background: linear-gradient(0deg, var(--bg-light), var(--bg-white)); */
   /* transition: 1s; */
   transition: all 0.3s ease 0s;
 }
@@ -480,7 +478,7 @@ details > summary:focus {
 
 details > summary + .content {
   margin: 0;
-  padding: 1rem;
+  padding: 0.2rem 1rem 1rem;
 }
 /* common end */
 

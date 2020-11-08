@@ -368,11 +368,6 @@ only screen and (device-width: 767px) {
   width: calc(2em + 0.5vw);
 }
 
-.icon.rounded {
-  height: 2em;
-  width: 2em;
-}
-
 .icon .svg {
   margin: 0 auto;
   display: block;
@@ -478,7 +473,7 @@ details > summary:focus {
 
 details > summary + .content {
   margin: 0;
-  padding: 0.2rem 1rem 1rem;
+  padding: 0.5rem;
 }
 /* common end */
 
@@ -515,14 +510,15 @@ details.my-project[open] summary + div:before {
 .container-grid {
   display: grid;
   grid-gap: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   grid-auto-rows: 70px;
 }
 
 .container-grid > .card {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  flex-direction: column;
   cursor: pointer;
   position: relative;
   opacity: 0.8;
@@ -544,7 +540,7 @@ details.my-project[open] summary + div:before {
 @media only screen and (max-width: 992px),
 only screen and (device-width: 992px) {
   .container-grid > .card {
-    flex-direction: column;
+    /* flex-direction: column; */
   }
 }
 

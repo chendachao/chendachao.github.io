@@ -48,7 +48,6 @@
 - https://www.checkmycolours.com/
 - https://kazuhikoarase.github.io/qrcode-generator/js/demo/
 - https://iconmonstr.com/
-- https://www.flaticon.com/
 - https://validator.nu/
 - https://mailto.now.sh/
 - https://vercel.com/

@@ -217,6 +217,7 @@ only screen and (device-width: 767px) {
   from {
     top: 40%;
     left: -50%;
+    opacity: 0.6;
     background-position: 50% 100%;
     transform: scale(1.2);
   }
@@ -224,7 +225,9 @@ only screen and (device-width: 767px) {
   to {
     top: 7%;
     left: 60%;
+    opacity: 1;
     background-position: 50% 0;
+    transform: scale(1);
   }
 }
 

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.19](https://github.com/chendachao/chendachao.github.io/compare/v1.6.18...v1.6.19) (2020-11-09)
+
+
+### Features
+
+* **icon:** new icon for potfolio ([0612b6e](https://github.com/chendachao/chendachao.github.io/commit/0612b6e820d2a0263526ebfaa6e4f03add7891de))
+
 ### [1.6.18](https://github.com/chendachao/chendachao.github.io/compare/v1.6.17...v1.6.18) (2020-11-08)
 
 ### [1.6.17](https://github.com/chendachao/chendachao.github.io/compare/v1.6.16...v1.6.17) (2020-11-08)

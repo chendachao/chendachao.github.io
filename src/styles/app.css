@@ -128,6 +128,8 @@ body {
 .bird-small-left,
 .bird-small-right {
   position: absolute;
+   /* open hardware acceleration */
+   transform: translateZ(0); 
 }
 
 .bird-big-left {
@@ -209,6 +211,8 @@ body {
   border-radius: 50%;
   background: var(--color-moon-bg);
   background-size: var(--color-moon-bg-size);
+  /* open hardware acceleration */
+  transform: translateZ(0); 
   animation: colorize 24s 0s cubic-bezier(0.2, 1.05, 0.45, 0.94) infinite alternate, rise 5s;
 }
 
@@ -499,11 +503,11 @@ details.my-portfolio[open] summary {
 /* my-portfolio end */
 
 details.my-portfolio[open] summary + div {
-  animation: sweep .5s ease-in-out normal forwards;
+  animation: sweep .5s ease-in-out normal forwards, fade-in 0.5s;
   animation-delay: 0s;
 }
 details.my-portfolio[open] summary + div:before {
-  animation: grow .5s ease-in-out normal forwards;
+  animation: grow .5s ease-in-out normal forwards, fade-in 0.5s;
   animation-delay: 0.1s;
 }
 

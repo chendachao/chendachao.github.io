@@ -42,6 +42,14 @@
   font-weight: 900;
 }
 
+.hover-visible:hover,
+.hover-visible:focus {
+  opacity: 1;
+  box-shadow: 0 2px 5px var(--subtle3);
+   /* transition: transform 0.1s ease-out;
+  transform: scale(1.25); */
+}
+
 .box-shadow {
   box-shadow: -10px 10px 15px var(--subtle3);
 }

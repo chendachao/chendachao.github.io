@@ -359,14 +359,6 @@ only screen and (device-width: 767px) {
   transition: all 0.3s ease 0s;
 }
 
-.icon:hover,
-.icon:focus {
-  opacity: 1;
-  box-shadow: 0 2px 5px var(--subtle3);
-  /* transition: transform 0.1s ease-out;
-  transform: scale(1.25); */
-}
-
 .icon.circle {
   height: calc(2em + 0.5vw);
   width: calc(2em + 0.5vw);
@@ -523,13 +515,12 @@ details.my-portfolio[open] summary + div:before {
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
-  cursor: pointer;
   position: relative;
   opacity: 0.8;
   transition: opacity 0.3s ease 0s;
 }
 
-.container-grid > .card:hover {
+.container-grid > .card:not(.disabled):hover {
   opacity: 1;
 }
 
@@ -539,6 +530,15 @@ details.my-portfolio[open] summary + div:before {
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.container-grid > .card.disabled {
+  color: var(--gray);
+  cursor: not-allowed;
+}
+
+.container-grid > .card.disabled > .link {
+  pointer-events: none;
 }
 
 @media only screen and (max-width: 992px),

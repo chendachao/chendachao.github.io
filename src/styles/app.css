@@ -1,5 +1,4 @@
 /* 🔥 */
-
 * {
   margin: 0;
   padding: 0;
@@ -331,7 +330,7 @@ only screen and (device-width: 767px) {
   }
 }
 
-/*icons style*/
+/* icons style */
 .social-icons {
   display: flex;
   flex-wrap: wrap;
@@ -425,7 +424,6 @@ only screen and (device-width: 767px) {
   opacity: 1;
 }
 
-
 /* custom-marker */
 details > summary.custom-marker { list-style-type: none; } /* Firefox */
 /* summary::marker, */
@@ -492,8 +490,6 @@ details.my-portfolio[open] summary {
   border-top-left-radius: 24px;
 }
 
-/* my-portfolio end */
-
 details.my-portfolio[open] summary + div {
   animation: sweep .5s ease-in-out normal forwards, fade-in 0.5s;
   animation-delay: 0s;
@@ -502,6 +498,7 @@ details.my-portfolio[open] summary + div:before {
   animation: grow .5s ease-in-out normal forwards, fade-in 0.5s;
   animation-delay: 0.1s;
 }
+/* my-portfolio end */
 
 .container-grid {
   display: grid;
@@ -512,7 +509,6 @@ details.my-portfolio[open] summary + div:before {
 
 .container-grid > .card {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
   position: relative;
@@ -537,31 +533,8 @@ details.my-portfolio[open] summary + div:before {
   right: 0;
 }
 
-
-
 .container-grid > .card.disabled > .link {
   pointer-events: none;
-}
-
-@media only screen and (max-width: 992px),
-only screen and (device-width: 992px) {
-  .container-grid > .card {
-    /* flex-direction: column; */
-  }
-}
-
-.card {
-  /* transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); */
-  /* box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12); */
- 
-  /* border-radius: 8px; */
-  /* box-shadow: 0px 0px 4px 0px var(--color-shadow); */
-}
-
-.card:hover {
-  /* transform: translate(0, -5px); */
-  /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.16);
-  box-shadow: 0 5px 10px 0px var(--color-shadow); */
 }
 
 .qrcode-container {
@@ -578,7 +551,6 @@ only screen and (device-width: 992px) {
 
 .mobile-qrcode {
   width: 100% !important;
-  /* height: auto !important; */
   box-shadow: 0px 0px 4px 0px var(--color-shadow2);
   border-radius: 4px;
 }
@@ -597,7 +569,6 @@ only screen and (device-width: 992px) {
 }
 
 .signature {
-/* Common */
   height: 35px;
   margin-right: 2rem;
 }

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.21](https://github.com/chendachao/chendachao.github.io/compare/v1.6.20...v1.6.21) (2020-11-12)
+
+
+### Bug Fixes
+
+* card ([f5cf1ae](https://github.com/chendachao/chendachao.github.io/commit/f5cf1aed0e5d4b0d1a60d333b8f30ee4c91ae48d))
+
 ### [1.6.20](https://github.com/chendachao/chendachao.github.io/compare/v1.6.19...v1.6.20) (2020-11-11)
 
 

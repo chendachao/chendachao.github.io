@@ -54,8 +54,17 @@
   box-shadow: -10px 10px 15px var(--subtle3);
 }
 
+.border-active:not(.disabled):active {
+  outline: var(--text-highlight) auto 1px;
+}
+
 .text-shadow {
   text-shadow: -10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.icon-size-md {
+  width: 2rem !important;
+  height: 2rem !important;
 }
 
 .circle {

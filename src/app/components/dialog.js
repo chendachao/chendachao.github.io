@@ -55,7 +55,8 @@ function SetQRCode() {
           width: 30,
           height: 30,
         };
-        const logo = 'favicon.ico';
+        // const logo = 'favicon.ico';
+        const logo = '/assets/images/home.svg';
         const ctx = cvs.getContext('2d');
         const logoObj = new Image();
         logoObj.src = logo;

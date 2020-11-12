@@ -520,7 +520,7 @@ details.my-portfolio[open] summary + div:before {
   transition: opacity 0.3s ease 0s;
 }
 
-.container-grid > .card:not(.disabled):hover {
+.container-grid > .card:hover {
   opacity: 1;
 }
 

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.23](https://github.com/chendachao/chendachao.github.io/compare/v1.6.22...v1.6.23) (2020-11-13)
+
+
+### Features
+
+* repalce site image ([1d6e1e7](https://github.com/chendachao/chendachao.github.io/commit/1d6e1e74b9fbdb7efc353eb859de06aef3b3b369))
+
 ### [1.6.22](https://github.com/chendachao/chendachao.github.io/compare/v1.6.21...v1.6.22) (2020-11-12)
 
 ### [1.6.21](https://github.com/chendachao/chendachao.github.io/compare/v1.6.20...v1.6.21) (2020-11-12)

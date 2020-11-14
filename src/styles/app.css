@@ -29,7 +29,7 @@
 
 /* fix CSS3 gradient background set !90deg on body doesn't stretch but instead repeats? */
 /* https://stackoverflow.com/a/3294418/6294371 */
-html {
+/* html {
   min-height: 100%;
 }
 
@@ -38,40 +38,64 @@ body {
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
+
+  background: var(--color-global-bg-fallback);
+  background-image: var(--color-global-bg);
+} */
 /* fix end */
 
-body {
-  background: var(--color-global-bg-fallback);
-  background: var(--color-global-bg);
+body:before,
+body:after { 
+  content: '';
+  display: block;
+  background-attachment: scroll;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  background-size: auto;
+  transform: scale(1);
+  transition: opacity 1s ease-in-out;
+}
 
-  animation: fade-in 2s ease-in-out;
+body:before {
+  background: var(--color-global-bg-fallback-light);
+  background-image: var(--color-global-bg-light);
+}
+
+body:after {
+  background: var(--color-global-bg-fallback-dark);
+  background-image: var(--color-global-bg-dark);
+  opacity: 0;
+}
+
+body[data-theme="dark"]:after {
+  opacity: 1;
+}
+
+body[data-theme="gray"]:after {
+  opacity: 1;
+  background-image: var(--color-global-bg-gray);
+  filter: grayscale(100%);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}
+
+body[data-theme="gray"] * {
+  filter: grayscale(100%);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}
+
+body {
+  animation: fade-in 3s ease;
 
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
-
-@media only screen and (min-width: 767px) {
-  body {
-    background: var(--color-global-bg-fallback);
-    background: var(--color-global-bg);
-  }
-}
-
-[data-theme="dark"] {
-  animation: fade-in 5s ease-in-out;
-}
-
-[data-theme="gray"] {
-  /* Set the theme to special gray */
-  background: var(--color-global-bg);
-  filter: grayscale(100%);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
-
-  height: 100vh;
-
-  animation: fade-in 5s ease-in-out;
 }
 
 .help-icon-menu-bar {

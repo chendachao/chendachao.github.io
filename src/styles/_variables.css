@@ -77,8 +77,11 @@
   --bg-gray: #fff;
 
   --color-global-bg-deg: 45deg;
-  --color-global-bg-fallback: #833ab4;
-  --color-global-bg: linear-gradient(var(--color-global-bg-deg), rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%) fixed;
+  --color-global-bg-fallback-light: #833ab4;
+  --color-global-bg-fallback-dark: rgb(29, 26, 79);
+  --color-global-bg-light: linear-gradient(var(--color-global-bg-deg), rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%);
+  --color-global-bg-dark: linear-gradient(var(--color-global-bg-deg), rgb(2 24 103) 0%, rgb(107 3 109) 100%);
+  --color-global-bg-gray: gray;
 
   /* --color-moon-bg: linear-gradient(gold, #d00); */
   --color-moon-bg: linear-gradient(to top, #d00 0%, #fc8b53 50%, #fdd55a 100%);
@@ -116,14 +119,10 @@
 }
 
 :root [data-theme="dark"] {
-  --color-global-bg-fallback: rgb(29, 26, 79);
-  --color-global-bg: linear-gradient(var(--color-global-bg-deg), rgba(29, 26, 79, 1) 0%, rgba(142, 21, 218, 1) 100%) fixed;
-
   --color-moon-bg: lightgoldenrodyellow;
 }
 
 :root [data-theme="gray"] {
-  --color-global-bg: gray;
 }
 
 /* Resposible varaibles */

@@ -24,6 +24,7 @@
 - [ ] More social icons
 - [ ] Share on Wechat, QQ, twitter and so on.
 - [ ] Show rainbow sometimes.
+- [ ] FM/Music section.
 - [x] My projects section.
 - [x] Intro for all sections.
 - [x] Change them to gray on specific day.

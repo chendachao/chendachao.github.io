@@ -25,7 +25,7 @@
 - [ ] Share on Wechat, QQ, twitter and so on.
 - [ ] Show rainbow sometimes.
 - [x] My projects section.
-- [ ] Intro for all sections.
+- [x] Intro for all sections.
 - [x] Change them to gray on specific day.
 - [x] [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Update' button
 - [x] [PWA] Update alert
@@ -38,6 +38,7 @@
 
 ## References
 - https://web.dev/tags/performance/
+- https://formito.com/tools/favicon
 - https://simpleicons.org/
 - https://icomoon.io/
 - https://www.cssscript.com/customizable-interactive-tooltips-pure-javascript-tippy-js/
@@ -60,6 +61,8 @@
 - https://vectr.com/
 - https://www.calligrapher.ai/
 - http://patorjk.com/text-color-fader/
+- https://realfavicongenerator.net/
+- https://www.pwabuilder.com/imageGenerator
 
 
 PS:

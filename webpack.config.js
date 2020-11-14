@@ -99,7 +99,6 @@ const commonConfig = merge([
         patterns: [
           {from: 'LICENSE'},
           {from: 'src/manifest.json'},
-          {from: 'src/favicon.ico'},
           {from: 'src/robots.txt'},
           {from: 'src/assets', to: 'assets'},
           {

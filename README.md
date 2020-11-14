@@ -59,6 +59,7 @@
 - https://glyphsearch.com/
 - https://editor.method.ac/
 - https://svg-edit.github.io/svgedit/dist/editor/index.html
+- https://yqnn.github.io/svg-path-editor/
 - https://vectr.com/
 - https://www.calligrapher.ai/
 - http://patorjk.com/text-color-fader/

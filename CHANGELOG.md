@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/chendachao/chendachao.github.io/compare/v1.6.26...v1.7.0) (2020-11-15)
+
+
+### Features
+
+* screenshot ([89b329b](https://github.com/chendachao/chendachao.github.io/commit/89b329b53507a0d212ed22c9e661a3b304577f2c))
+* **qrcode:** qrcode with larrychen logo ([a96767d](https://github.com/chendachao/chendachao.github.io/commit/a96767db4d10c17e7b4136c8d8dc6a8970750044))
+
 ### [1.6.26](https://github.com/chendachao/chendachao.github.io/compare/v1.6.25...v1.6.26) (2020-11-14)
 
 ### [1.6.25](https://github.com/chendachao/chendachao.github.io/compare/v1.6.24...v1.6.25) (2020-11-14)

@@ -10,6 +10,9 @@
 - [Netlify](https://chenlarrydachao.netlify.com/)
 - [Vercel](https://chendachao-github-io.vercel.app/)
 
+## Screenshot
+![site](screenshot.png "my site")
+
 ## Performance
 - [Performance](https://developers.google.com/web/fundamentals/performance/why-performance-matters)
 - [Website Optimization Tools](https://www.crazyegg.com/blog/website-optimization-tools/)

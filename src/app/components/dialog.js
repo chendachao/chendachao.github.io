@@ -52,17 +52,18 @@ function SetQRCode() {
       .then(cvs => {
         const imgDim = {
           //logo dimention
-          width: 30,
-          height: 30,
+          width: 70,
+          height: 70,
         };
         // const logo = '/assets/images/home.svg';
-        const logo = '/assets/images/home-page.svg';
+        // const logo = '/assets/images/home-page.svg';
+        const logo = '/assets/images/larrychen.png';
         const ctx = cvs.getContext('2d');
         const logoObj = new Image();
         logoObj.src = logo;
         logoObj.onload = function () {
           // fill logo background, cos the logo by default is transparent
-          const bgWhiteMargin = 20;
+          const bgWhiteMargin = 8;
 
           // stroke margin
           ctx.lineWidth = bgWhiteMargin / 3;
@@ -79,7 +80,8 @@ function SetQRCode() {
           ctx.stroke();
 
           // fill content color
-          ctx.fillStyle = '#f5f5f5';
+          ctx.fillStyle = '#ffffff';
+          // ctx.fillStyle = '#f5f5f5';
           ctx.fillRect(
             cvs.width / 2 - imgDim.width / 2 - bgWhiteMargin / 4,
             cvs.height / 2 - imgDim.height / 2 - bgWhiteMargin / 4,

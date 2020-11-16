@@ -56,7 +56,6 @@ function SetQRCode() {
           height: 70,
         };
         // const logo = '/assets/images/home.svg';
-        // const logo = '/assets/images/home-page.svg';
         const logo = '/assets/images/larrychen.png';
         const ctx = cvs.getContext('2d');
         const logoObj = new Image();

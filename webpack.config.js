@@ -98,7 +98,7 @@ const commonConfig = merge([
       new CopyWebpackPlugin({
         patterns: [
           {from: 'LICENSE'},
-          {from: 'src/manifest.json'},
+          {from: 'src/site.webmanifest'},
           {from: 'src/robots.txt'},
           {from: 'src/assets', to: 'assets'},
           {
@@ -165,7 +165,7 @@ const pwaPlugins = [
   //   swSrc: './src/sw.js',
   //   exclude: [inlineBundles],
   //   // globDirectory: '.',
-  //   // globIgnores: ['dist/*.map', 'dist/manifest.json', 'dist/*.config'],
+  //   // globIgnores: ['dist/*.map', 'dist/site.webmanifest', 'dist/*.config'],
   //   // globPatterns: ['dist/*.{js,png,php,css}', 'dist/img/*.{png,jpg,jpeg}', 'dist/fonts/*'],
   // })
 ];

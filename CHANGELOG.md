@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.3](https://github.com/chendachao/chendachao.github.io/compare/v1.7.2...v1.7.3) (2020-11-17)
+
+
+### Bug Fixes
+
+* pwa bg ([267fea9](https://github.com/chendachao/chendachao.github.io/commit/267fea9713f743d742babcb68c9c97d44238b803))
+
 ### [1.7.2](https://github.com/chendachao/chendachao.github.io/compare/v1.7.1...v1.7.2) (2020-11-17)
 
 

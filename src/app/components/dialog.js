@@ -57,12 +57,13 @@ function SetQRCode() {
         };
         // const logo = '/assets/images/home.svg';
         const logo = '/assets/images/larrychen.png';
+        // const logo = '/assets/images/icons/favicon.ico';
         const ctx = cvs.getContext('2d');
         const logoObj = new Image();
         logoObj.src = logo;
         logoObj.onload = function () {
           // fill logo background, cos the logo by default is transparent
-          const bgWhiteMargin = 8;
+          const bgWhiteMargin = 6;
 
           // stroke margin
           ctx.lineWidth = bgWhiteMargin / 3;

@@ -66,8 +66,7 @@
 - https://vectr.com/
 - https://www.calligrapher.ai/
 - http://patorjk.com/text-color-fader/
-- https://realfavicongenerator.net/
-- https://www.pwabuilder.com/imageGenerator
+- [Favicon checker and generator](https://realfavicongenerator.net/)
 
 
 PS:

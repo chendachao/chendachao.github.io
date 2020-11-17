@@ -3,7 +3,7 @@
   "name": "Larry Chen",
   "description": "It's Larry Chen's Homepage.",
   "theme_color": "#da532c",
-  "background_color": "#da532c",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
   "start_url": "/index.html?utm_source=homescreen",

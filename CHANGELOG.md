@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.4](https://github.com/chendachao/chendachao.github.io/compare/v1.7.3...v1.7.4) (2020-11-17)
+
+
+### Bug Fixes
+
+* site icon ([515fe48](https://github.com/chendachao/chendachao.github.io/commit/515fe487ede0b218cfcce29e6467771b74e9c7b3))
+
 ### [1.7.3](https://github.com/chendachao/chendachao.github.io/compare/v1.7.2...v1.7.3) (2020-11-17)
 
 

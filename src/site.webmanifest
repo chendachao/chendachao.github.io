@@ -1,6 +1,6 @@
 {
-  "short_name": "Chen Dachao",
-  "name": "Chen Dachao",
+  "short_name": "Larry Chen",
+  "name": "Larry Chen",
   "description": "It's Larry Chen's Homepage.",
   "theme_color": "#da532c",
   "background_color": "#da532c",
@@ -55,5 +55,5 @@
         "sizes": "512x512",
         "type": "image/png"
     }
-],
+]
 }

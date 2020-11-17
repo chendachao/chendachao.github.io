@@ -29,7 +29,7 @@ function SetQRCode() {
     dialog.classList.add(showModalClass);
     setTimeout(() => {
       dialog.classList.remove(showModalClass);
-    }, 500);
+    }, 650);
 
     let canvas = document.createElement('canvas');
     const QRCodeDim = {

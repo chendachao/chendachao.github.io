@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.5](https://github.com/chendachao/chendachao.github.io/compare/v1.7.4...v1.7.5) (2020-11-18)
+
+
+### Features
+
+* change pwa theme color to purple ([9314c23](https://github.com/chendachao/chendachao.github.io/commit/9314c23592cab1eb5d2da7eb4cec7e9730c16b57))
+
 ### [1.7.4](https://github.com/chendachao/chendachao.github.io/compare/v1.7.3...v1.7.4) (2020-11-17)
 
 

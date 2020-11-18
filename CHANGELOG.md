@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.6](https://github.com/chendachao/chendachao.github.io/compare/v1.7.5...v1.7.6) (2020-11-18)
+
+
+### Features
+
+* pwa bg to white ([3e95c64](https://github.com/chendachao/chendachao.github.io/commit/3e95c64cc2cec824f7b38e54549b30c8f36f25ba))
+
 ### [1.7.5](https://github.com/chendachao/chendachao.github.io/compare/v1.7.4...v1.7.5) (2020-11-18)
 
 

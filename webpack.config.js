@@ -16,9 +16,13 @@ const glob = require('glob-all');
 
 const parts = require('./webpack.parts');
 
+const rootPath = process.cwd();
+// const rootPath = __dirname;
+const resolve = relativePath => path.resolve(rootPath, relativePath);
+
 const PATHS = {
-  app: path.resolve(__dirname, 'src'),
-  build: path.resolve(__dirname, 'dist')
+  app: resolve('src'),
+  build: resolve('dist')
 };
 
 // const inlineBundles = /^(app|runtime).*.bundle.js$/;
@@ -27,7 +31,7 @@ const commonConfig = merge([
   {
     entry: {
       app: [PATHS.app],
-      print: './src/print.js',
+      log: './src/log.js',
       install: './src/install.js',
       cv: ['./src/index-cv.js'],
       stone: ['./src/index-stone.js'],
@@ -35,13 +39,14 @@ const commonConfig = merge([
     output: {
       filename: '[name].[contenthash].bundle.js',
       // filename: '[name].[hash:8].bundle.js',
+      chunkFilename: '[name].[chunkhash].chunk.js',
       path: PATHS.build
     },
     resolve: {
       extensions: [".ts", ".js", 'css', 'scss'],
       symlinks: false,
       alias: {
-        '@app': path.resolve(__dirname, './src/app')
+        '@app': resolve('./src/app')
       }
     },
     optimization: {
@@ -88,7 +93,7 @@ const commonConfig = merge([
           value: 'anonymous'
         },
         defer: [
-          /^print.*.bundle.js$/,
+          /^log.*.bundle.js$/,
           /^install.*.bundle.js$/,
         ],
         // sync: 'first.js',

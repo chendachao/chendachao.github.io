@@ -97,6 +97,7 @@ exports.extractCSS = ({include, exclude, use = []}) => {
   const plugin = new MiniCssExtractPlugin({
     filename: devMode ? '[name].css' : '[name].[contenthash].css', // long term caching
     chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css',
+    ignoreOrder: true, // Enable to remove warnings about conflicting order
   });
 
   return {

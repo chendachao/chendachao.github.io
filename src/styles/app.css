@@ -98,6 +98,11 @@ body {
   height: 100vh;
 }
 
+/*--- optional styling for placeholder images ---*/
+img[data-src] {
+  background-color: var(--subtle);
+}
+
 .help-icon-menu-bar {
   padding-top: 6px;
   margin-right: 1rem;
@@ -603,7 +608,7 @@ details.my-portfolio[open] summary + div:before {
 
 .footer .version {
   margin-left: auto;
-  color: var(--subtle3);
+  color: var(--text-color);
 }
 
 .signature {

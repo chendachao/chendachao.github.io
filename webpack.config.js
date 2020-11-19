@@ -40,7 +40,7 @@ const commonConfig = merge([
       filename: '[name].[contenthash].bundle.js',
       // filename: '[name].[hash:8].bundle.js',
       chunkFilename: '[name].[chunkhash].chunk.js',
-      path: PATHS.build
+      path: PATHS.build,
     },
     resolve: {
       extensions: [".ts", ".js", 'css', 'scss'],

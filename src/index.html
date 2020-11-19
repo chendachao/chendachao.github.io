@@ -7,6 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="Description" content="Chen Dachao's Homepage.">
 
+  <meta http-equiv="cache-control" content="Private" />
+  <meta http-equiv="Expires" content="600" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Content-Security-Policy" 
+  content="default-src 'self' data: gap: 'unsafe-eval' instant.page www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net static.hotjar.com vars.hotjar.com; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+ 
   <link rel="manifest" href="/site.webmanifest">
   <meta name="application-name" content="Larry Chen" />
   <meta name="mobile-web-app-capable" content="yes">
@@ -78,7 +85,7 @@
     <div class="bird-small-right"></div>
     <div style="border-radius: 50%" class="moon step15" id="step5"></div>
     <div class="brand">
-      <img id="step1" class="brand-icon step11" src="./assets/images/star.svg" alt="Star">
+      <img id="step1" class="brand-icon step11" src="./assets/images/star.svg" alt="Star" width="calc(5em + 4vw)" loading="lazy">
     </div>
     <div class="centered-content text-shadow">
       <div class="bio step12" id="step2">
@@ -123,7 +130,7 @@
         <template id="wechat-popup">
           <div style="text-align: center">
             <figure>
-              <img class="wechat-qrcode" src="./assets/images/wechat-qr-code.jpg" alt="wechat: ProgrammerLarry">
+              <img class="wechat-qrcode" src="./assets/images/wechat-qr-code.jpg" alt="wechat: ProgrammerLarry" width="calc(2em + 10vw)" loading="lazy">
               <figcaption class="wechat-qrcode-desc" data-i18n-id="APP.QRCODE_DESC">Scan the QR Code to add me on WeChat
               </figcaption>
             </figure>
@@ -281,7 +288,7 @@
     <div style="text-align: right; margin-left: auto;">
       <button class="qrcode-container border-active" data-tooltip data-tippy-content="This site's QRCode"
         data-i18n-attr="data-tippy-content=APP.SITE_QRCODE">
-        <img class="qrcode-handler" src="./assets/images/scan-qr-code.svg" alt="qrcode view on mobile">
+        <img class="qrcode-handler" src="./assets/images/scan-qr-code.svg" alt="qrcode view on mobile" loading="lazy">
       </button>
     </div>
   </footer>
@@ -298,7 +305,7 @@
       margin: 1rem 0 0.5rem;">
     <div style="text-align: center;">
       <!-- TODO: change to loading placeholder -->
-      <img src="./assets/images/chendachao.github.io.png" alt="https://chendachao.github.io" class="mobile-qrcode">
+      <img src="./assets/images/chendachao.github.io.png" alt="https://chendachao.github.io" class="mobile-qrcode" width="100%" loading="lazy">
     </div>
     <div class="actions">
       <!-- <a aria-label="download" class="btn btn-primary download-btn" style="margin-right: 1rem;" data-i18n-id="APP.DOWNLOAD">Download QRCode</a> -->

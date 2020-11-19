@@ -1,6 +1,7 @@
 import QRCode from 'qrcode';
 import dialogPolyfill from 'dialog-polyfill';
-import './dialog.css';
+// import './dialog.css';
+import(/* webpackPreload: true */'./dialog.css');
 
 function SetQRCode() {
   // const showModalClass = 'scale-in';

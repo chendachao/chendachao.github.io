@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.8](https://github.com/chendachao/chendachao.github.io/compare/v1.7.7...v1.7.8) (2020-11-19)
+
+
+### Bug Fixes
+
+* redirect http tp https ([e7cf75d](https://github.com/chendachao/chendachao.github.io/commit/e7cf75d13488dadb11a481cdeea0a41b9af66770))
+
 ### [1.7.7](https://github.com/chendachao/chendachao.github.io/compare/v1.7.6...v1.7.7) (2020-11-19)
 
 

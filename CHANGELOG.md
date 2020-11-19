@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.7](https://github.com/chendachao/chendachao.github.io/compare/v1.7.6...v1.7.7) (2020-11-19)
+
+
+### Features
+
+* defer gtag and change pw bg ([00c39d9](https://github.com/chendachao/chendachao.github.io/commit/00c39d903537b47d87c2482c7926f2afaefd58bc))
+
 ### [1.7.6](https://github.com/chendachao/chendachao.github.io/compare/v1.7.5...v1.7.6) (2020-11-18)
 
 

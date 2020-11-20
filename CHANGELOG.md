@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.11](https://github.com/chendachao/chendachao.github.io/compare/v1.7.10...v1.7.11) (2020-11-20)
+
+
+### Bug Fixes
+
+* lazy load image ([0c8b68b](https://github.com/chendachao/chendachao.github.io/commit/0c8b68b32abd4967b29c2c627035262a5baabebd))
+
 ### [1.7.10](https://github.com/chendachao/chendachao.github.io/compare/v1.7.9...v1.7.10) (2020-11-19)
 
 

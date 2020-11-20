@@ -65,7 +65,7 @@ window.addEventListener('load', function() {
     if(message) {
       errorToasted = toasted.error(message.toUpperCase(), { 
         action: {
-          text: 'Close',
+          text: i18n.format('APP.CLOSE'),
           onClick: (e, toasted) => {
             toasted.delete();
           },

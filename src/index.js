@@ -33,7 +33,7 @@ serviceWorker.register({
           // Show Local Notification
           registration.pushManager.subscribe({ userVisibleOnly: true });
         } else {
-          throw new Error('Notifications blocked. Please enable them in your browser.');
+          throw new Error(format('APP.NOTIFICATIONS_BLOCKED'));
         }
       } catch (error) {
         toasted.error(error, { 
@@ -59,8 +59,8 @@ serviceWorker.register({
           const options = {
             body: message,
             // TODO: these image cna't work
-            icon: '/images/bell.svg',
-            badge: '/images/notification.svg',
+            icon: '/assets/images/bell.svg',
+            badge: '/assets/images/notification.svg',
           };
           // Show Local Notification
           reg.showNotification(title, options);
@@ -72,7 +72,7 @@ serviceWorker.register({
       showNotification(format('APP.NEW_VERSION_TITLE'), format('APP.NEW_VERSION_CONTENT'));
       toasted.success(format('APP.NEW_VERSION_TITLE'), {
           action: {
-            text: 'Update',
+            text: format('APP.UPDATE'),
             onClick: (e, toasted) => {
               window.location.reload();
             },

@@ -1,8 +1,5 @@
 // TODO: if support sw or manifest then show the install button
-
 let deferredInstallPrompt = null;
-const installButton = document.getElementById('btnInstall');
-installButton.addEventListener('click', installPWA);
 
 // CODELAB: Add event listener for beforeinstallprompt event
 window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
@@ -30,9 +27,13 @@ if (window.navigator.standalone === true) {
  * @param {Event} evt
  */
 function saveBeforeInstallPromptEvent(evt) {
+  // Analytics.trackEvent('eligible for prompt');
   // CODELAB: Add code to save event & show the install button.
   deferredInstallPrompt = evt;
   installButton.removeAttribute('hidden');
+
+  const installButton = document.getElementById('btnInstall');
+  installButton.addEventListener('click', installPWA);
 }
 
 /**
@@ -41,23 +42,38 @@ function saveBeforeInstallPromptEvent(evt) {
  * @param {Event} evt
  */
 function installPWA(evt) {
-  // CODELAB: Add code show install prompt & hide the install button.
-  deferredInstallPrompt.prompt();
-  // Hide the install button, it can't be called twice.
-  evt.srcElement.setAttribute('hidden', true);
+  // Analytics.trackEvent('prompt shown')
 
-  // CODELAB: Log user response to prompt.
-  deferredInstallPrompt.userChoice.then(choice => {
-    if (choice.outcome === 'accepted') {
-      console.log('User accepted the A2HS prompt', choice);
+  // Add code show install prompt & hide the install button.
+  deferredInstallPrompt.prompt()
+  .then(evt => {
+    return deferredInstallPrompt.userChoice;
+  })
+  .then(choiceResult => {
+    // Analytics.trackEvent(`prompt ${choice.outcome}`);
+    // Log user response to prompt.
+    if (choiceResult.outcome === 'accepted') {
+      console.log('User accepted the A2HS prompt', choiceResult);
+      // Hide the install button, it can't be called twice.
+      evt.srcElement.setAttribute('hidden', true);
     } else {
-      console.log('User dismissed the A2HS prompt', choice);
+      console.log('User dismissed the A2HS prompt', choiceResult);
     }
     deferredInstallPrompt = null;
+  })
+  .catch(err => {
+    console.err(err);
+    if ( err.message.indexOf( "user gesture" ) > -1 ) { 
+    //recycle, but make sure there is a user gesture involved 
+    } else if ( err.message.indexOf( "The app is already installed" ) > -1 ) { 
+    //the app is installed, no need to prompt, but you may need to log or update state values 
+    } else { 
+      return err; 
+    } 
   });
 }
 
-// CODELAB: Add event listener for appinstalled event
+// Add event listener for appinstalled event
 window.addEventListener('appinstalled', logAppInstalled);
 
 /**

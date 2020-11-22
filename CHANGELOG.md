@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.15](https://github.com/chendachao/chendachao.github.io/compare/v1.7.14...v1.7.15) (2020-11-22)
+
+
+### Bug Fixes
+
+* add error close action ([d3446e8](https://github.com/chendachao/chendachao.github.io/commit/d3446e82aa96f0bd1b0698590bc4a56d17718560))
+
 ### [1.7.14](https://github.com/chendachao/chendachao.github.io/compare/v1.7.13...v1.7.14) (2020-11-22)
 
 

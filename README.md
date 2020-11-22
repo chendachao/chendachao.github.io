@@ -10,8 +10,9 @@
 - [Netlify](https://chenlarrydachao.netlify.com/)
 - [Vercel](https://chendachao-github-io.vercel.app/)
 
-## Screenshot
-![site](screenshot.png "my site")
+## Screenshots
+![site](src/assets/images/screenshots/screenshot1.png "my site with dark theme")
+![site](src/assets/images/screenshots/screenshot2.png "my site with light theme")
 
 ## Performance
 - [Performance](https://developers.google.com/web/fundamentals/performance/why-performance-matters)
@@ -70,6 +71,7 @@
 - https://www.calligrapher.ai/
 - http://patorjk.com/text-color-fader/
 - [Favicon checker and generator](https://realfavicongenerator.net/)
+- [PWA Builder](https://www.pwabuilder.com/)
 
 
 PS:

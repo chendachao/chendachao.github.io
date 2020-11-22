@@ -87,7 +87,14 @@ window.addEventListener('error', function(event) {
   // if(event.error) {
   //   message = event.error.stack;
   // }
-  toasted.error(message);
+  toasted.error(message, { 
+    action: {
+      text: i18n.format('APP.CLOSE'),
+      onClick: (e, toasted) => {
+        toasted.delete();
+      },
+    },
+  });
 });
 
  // window.onerror = function(msg, url, line, col, error) {

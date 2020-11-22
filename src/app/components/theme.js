@@ -5,7 +5,7 @@ const endDate = new Date(2020, 7, 4);
 
 function Theme() {
   const setTheme = theme => {
-    const body = document.getElementsByTagName('body')[0];
+    const body = document.querySelector('body');
     body.setAttribute('data-theme', theme);
   };
 
@@ -18,7 +18,7 @@ function Theme() {
     let moon = document.querySelector('.moon');
 
     moon.addEventListener('click', () => {
-      const body = document.getElementsByTagName('body')[0];
+      const body = document.querySelector('body');
       let theme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       setTheme(theme);
       localStorage.setItem('theme', theme);

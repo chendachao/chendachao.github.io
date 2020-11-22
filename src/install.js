@@ -1,5 +1,6 @@
 // TODO: if support sw or manifest then show the install button
 let deferredInstallPrompt = null;
+const installButton = document.querySelector('#btnInstall');
 
 // CODELAB: Add event listener for beforeinstallprompt event
 window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
@@ -32,7 +33,6 @@ function saveBeforeInstallPromptEvent(evt) {
   deferredInstallPrompt = evt;
   installButton.removeAttribute('hidden');
 
-  const installButton = document.getElementById('btnInstall');
   installButton.addEventListener('click', installPWA);
 }
 

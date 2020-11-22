@@ -44,7 +44,7 @@ import('./components/intro').then(Intro => {
 
 // hide the install app button if in IE
 if (isIE()) {
-  const installButton = document.getElementById('btnInstall');
+  const installButton = document.querySelector('#btnInstall');
   installButton.setAttribute('hidden', '');
 }
 

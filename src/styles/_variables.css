@@ -79,7 +79,7 @@
   --color-global-bg-deg: 45deg;
   --color-global-bg-fallback-light: #833ab4;
   --color-global-bg-fallback-dark: rgb(29, 26, 79);
-  --color-global-bg-light: linear-gradient(var(--color-global-bg-deg), rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%);
+  --color-global-bg-light: linear-gradient(var(--color-global-bg-deg), rgb(28 17 115) 0%, rgb(238 36 36) 70%, rgb(220, 144, 37) 100%);
   --color-global-bg-dark: linear-gradient(var(--color-global-bg-deg), rgb(2 24 103) 0%, rgb(107 3 109) 100%);
   --color-global-bg-gray: gray;
 

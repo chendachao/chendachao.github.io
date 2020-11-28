@@ -17,7 +17,6 @@
 ## Performance
 - [Performance](https://developers.google.com/web/fundamentals/performance/why-performance-matters)
 - [Website Optimization Tools](https://www.crazyegg.com/blog/website-optimization-tools/)
-- [Page Speed Insights](https://developers.google.com/speed/pagespeed/insights)
 - [Website Speed Test](https://webspeedtest.cloudinary.com/)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Webpage Test](https://www.webpagetest.org/)

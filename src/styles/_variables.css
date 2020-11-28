@@ -83,6 +83,12 @@
   --color-global-bg-dark: linear-gradient(var(--color-global-bg-deg), rgb(2 24 103) 0%, rgb(107 3 109) 100%);
   --color-global-bg-gray: gray;
 
+  /* --color-portfolio-bg-light: var(--color-global-bg-light); */
+  --color-portfolio-bg-light: transparent;
+  --color-portfolio-bg-dark: var(--color-global-bg-dark);
+
+  --color-portfolio-bg: var(--color-portfolio-bg-light);
+
   /* --color-moon-bg: linear-gradient(gold, #d00); */
   --color-moon-bg: linear-gradient(to top, #d00 0%, #fc8b53 50%, #fdd55a 100%);
   --color-moon-bg-size: 200% 200%;
@@ -120,6 +126,7 @@
 
 :root [data-theme="dark"] {
   --color-moon-bg: lightgoldenrodyellow;
+  --color-portfolio-bg: var(--color-portfolio-bg-dark);
 }
 
 :root [data-theme="gray"] {

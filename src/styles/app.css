@@ -517,6 +517,11 @@ details.my-portfolio summary {
   border: none;
 
   font-size: calc(1em + 1vw);
+  background: var(--color-portfolio-bg);
+}
+
+details.my-portfolio:not([open]) summary {
+  border-radius: 24px;
 }
 
 details.my-portfolio[open] summary {

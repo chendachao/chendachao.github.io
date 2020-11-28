@@ -43,6 +43,7 @@ const commonConfig = merge([
       path: PATHS.build,
     },
     resolve: {
+      modules: ['node_modules', './src'],
       extensions: [".ts", ".js", 'css', 'scss'],
       symlinks: false,
       alias: {

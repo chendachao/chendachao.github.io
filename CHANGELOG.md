@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.18](https://github.com/chendachao/chendachao.github.io/compare/v1.7.17...v1.7.18) (2020-11-28)
+
+
+### Features
+
+* module & portfolio style ([ad977e5](https://github.com/chendachao/chendachao.github.io/commit/ad977e533a37f8725b49d2a72a9a5fac817227d4))
+
 ### [1.7.17](https://github.com/chendachao/chendachao.github.io/compare/v1.7.16...v1.7.17) (2020-11-25)
 
 ### [1.7.16](https://github.com/chendachao/chendachao.github.io/compare/v1.7.15...v1.7.16) (2020-11-25)

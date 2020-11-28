@@ -40,7 +40,6 @@
 - [x] [PWA] Update alert
 
 ## PWA Debug:
-
 1. Run command `yarn build:w`.
 2. Install `http-server` globally and run command `http-server dist -c-1` in root directory.
 3. Make some changes, then refresh the page
@@ -90,9 +89,4 @@ footer?
 ```
 
 ## Branches
-
 `dev -> main -> gh-pages`
-
-
-
-

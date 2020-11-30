@@ -258,10 +258,6 @@ img[data-src] {
   line-height: 1.5;
 }
 
-.brand {
-  text-align: center;
-}
-
 .brand-icon {
   width: calc(5em + 4vw);
   transition: 1s;

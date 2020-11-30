@@ -84,8 +84,8 @@
     <div class="bird-big-right"></div>
     <div class="bird-small-left"></div>
     <div class="bird-small-right"></div>
-    <div style="border-radius: 50%" class="moon step15" id="step5"></div>
-    <div class="brand">
+    <div class="moon step15" id="step5"></div>
+    <div class="brand text-center">
       <img id="step1" class="brand-icon step11" src="./assets/images/star.svg" alt="Star" width="calc(5em + 4vw)" height="calc(5em + 4vw)" loading="lazy">
     </div>
     <div class="centered-content text-shadow">
@@ -98,7 +98,7 @@
         </div>
 
         <span data-i18n-id="APP.HELLO">Hello, this is </span><span class="highlight text-nowrap" data-tooltip
-          data-tippy-content="<div style='text-align: center'>Chen Dachao<br/>陈大超</div>" data-i18n-id="APP.NAME">Larry
+          data-tippy-content="<div class='text-center'>Chen Dachao<br/>陈大超</div>" data-i18n-id="APP.NAME">Larry
           Chen</span><span data-i18n-id="APP.COMMA">,</span>
         <span data-i18n-id="APP.IMA">I'm a </span><span class="highlight text-nowrap" style="outline: none;"
           data-tooltip data-tippy-content="
@@ -129,7 +129,7 @@
 
       <div>
         <template id="wechat-popup">
-          <div style="text-align: center">
+          <div class="text-center">
             <figure>
               <img class="wechat-qrcode" src="./assets/images/wechat-qr-code.jpg" alt="wechat: ProgrammerLarry">
               <figcaption class="wechat-qrcode-desc" data-i18n-id="APP.QRCODE_DESC">Scan the QR Code to add me on WeChat
@@ -276,7 +276,7 @@
           </div>
         </details>
 
-        <div style="text-align: right">
+        <div class="text-right">
           <img class="signature" src="./assets/images/signature.svg" alt="Larry Chen">
         </div>
       </div>
@@ -286,7 +286,7 @@
   <footer class="footer">
     <div></div>
     <div class="version"></div>
-    <div style="text-align: right; margin-left: auto;">
+    <div class="text-right" style="margin-left: auto;">
       <button class="qrcode-container border-active" data-tooltip data-tippy-content="This site's QRCode"
         data-i18n-attr="data-tippy-content=APP.SITE_QRCODE">
         <img class="qrcode-handler" src="./assets/images/scan-qr-code.svg" alt="qrcode view on mobile" loading="lazy">
@@ -304,20 +304,18 @@
       border: none;
       height: 1px;
       margin: 1rem 0 0.5rem;">
-    <div style="text-align: center;">
+    <div class="text-center">
       <!-- TODO: change to loading placeholder -->
       <img src="./assets/images/chendachao.github.io.png" alt="https://chendachao.github.io" class="mobile-qrcode" height="300px" loading="lazy">
     </div>
     <div class="actions">
-      <!-- <a aria-label="download" class="btn btn-primary download-btn" style="margin-right: 1rem;" data-i18n-id="APP.DOWNLOAD">Download QRCode</a> -->
-      <button class="btn btn-primary" style="margin-right: 1rem;">
+      <!-- <a aria-label="download" class="btn btn-primary download-btn mr-1" data-i18n-id="APP.DOWNLOAD">Download QRCode</a> -->
+      <button class="btn btn-primary mr-1">
         <a aria-label="download" class="download-btn" data-i18n-id="APP.DOWNLOAD">Download QRCode</a>
       </button>
       <button aria-label="close" class="btn dialog-dismiss-trigger close-btn" data-i18n-id="APP.CLOSE">Close</button>
     </div>
   </dialog>
-
-  <!-- <a href="/cv.html" style="position: fixed; bottom: 0;" target="_blank">cv ↗</a> -->
 
   <noscript>
     <h2>To run this application, JavaScript is required to be enabled.</h2>

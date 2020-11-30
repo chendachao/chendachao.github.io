@@ -80,7 +80,8 @@
   --color-global-bg-fallback-light: #833ab4;
   --color-global-bg-fallback-dark: rgb(29, 26, 79);
   --color-global-bg-light: linear-gradient(var(--color-global-bg-deg), rgb(28 17 115) 0%, rgb(238 36 36) 70%, rgb(220, 144, 37) 100%);
-  --color-global-bg-dark: linear-gradient(var(--color-global-bg-deg), rgb(2 24 103) 0%, rgb(107 3 109) 100%);
+  --color-global-bg-dark: linear-gradient(var(--color-global-bg-deg), rgb(1 20 86) 0%, rgb(107 3 109) 100%);
+  /* --color-global-bg-dark: linear-gradient(var(--color-global-bg-deg), rgba(19,0,45,1) 0%, rgba(19,0,45,1) 0%, rgba(92,16,160,1) 100%); */
   --color-global-bg-gray: gray;
 
   /* --color-portfolio-bg-light: var(--color-global-bg-light); */

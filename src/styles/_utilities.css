@@ -30,6 +30,18 @@
   text-shadow: -10px 10px 15px rgba(0, 0, 0, 0.3);
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+} 
+
 .icon-size-md {
   width: 2rem !important;
   height: 2rem !important;

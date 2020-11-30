@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.21](https://github.com/chendachao/chendachao.github.io/compare/v1.7.20...v1.7.21) (2020-11-30)
+
+
+### Bug Fixes
+
+* x-xss-protection ([a02fad2](https://github.com/chendachao/chendachao.github.io/commit/a02fad2ed40f8f2e5f6e4ff6bb4bfbe20f16b12f))
+
 ### [1.7.20](https://github.com/chendachao/chendachao.github.io/compare/v1.7.19...v1.7.20) (2020-11-28)
 
 ### [1.7.19](https://github.com/chendachao/chendachao.github.io/compare/v1.7.18...v1.7.19) (2020-11-28)

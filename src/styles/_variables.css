@@ -83,12 +83,7 @@
   --color-global-bg-dark: linear-gradient(var(--color-global-bg-deg), rgb(1 20 86) 0%, rgb(107 3 109) 100%);
   /* --color-global-bg-dark: linear-gradient(var(--color-global-bg-deg), rgba(19,0,45,1) 0%, rgba(19,0,45,1) 0%, rgba(92,16,160,1) 100%); */
   --color-global-bg-gray: gray;
-
-  /* --color-portfolio-bg-light: var(--color-global-bg-light); */
-  --color-portfolio-bg-light: transparent;
-  --color-portfolio-bg-dark: var(--color-global-bg-dark);
-
-  --color-portfolio-bg: var(--color-portfolio-bg-light);
+  --color-card-bg: radial-gradient(circle farthest-corner at right bottom,#9e1985 0,#d08452 100%);
 
   /* --color-moon-bg: linear-gradient(gold, #d00); */
   --color-moon-bg: linear-gradient(to top, #d00 0%, #fc8b53 50%, #fdd55a 100%);
@@ -99,7 +94,6 @@
 
   --bird-fly-speed: 90s;
 
-
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 767px;
@@ -107,7 +101,6 @@
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
 
   --fb: #3B5998;
   --reddit: #FC471E;
@@ -127,7 +120,7 @@
 
 :root [data-theme="dark"] {
   --color-moon-bg: lightgoldenrodyellow;
-  --color-portfolio-bg: var(--color-portfolio-bg-dark);
+  --color-card-bg: radial-gradient(circle farthest-corner at right bottom,#2c20a6 0,#c642db 100%);
 }
 
 :root [data-theme="gray"] {

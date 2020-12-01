@@ -65,7 +65,7 @@
 <body data-theme="light">
 
   <header>
-    <div class="help-icon-menu-bar">
+    <section class="help-icon-menu-bar">
       <button aria-label="language" class="help-icon language-btn border-active" data-tooltip data-tippy-content="Switch language"
         data-i18n-attr="data-tippy-content=APP.LANGUAGE_SWITCH"></button>
       <button aria-label="guide" class="help-icon start-replay-tour border-active" data-tooltip data-tippy-content="Tutorial guide"
@@ -76,7 +76,7 @@
         data-i18n-attr="data-tippy-content=APP.NOTIFICATION_SUBSCRIBE"></button>
       <button aria-label="pwa install" hidden class="help-icon pwa-install-btn border-active" id="btnInstall" data-tooltip
         data-tippy-content="Install to Desktop" data-i18n-attr="data-tippy-content=APP.INSTALL"></button>
-    </div>
+    </section>
   </header>
 
   <main class="main">
@@ -89,7 +89,7 @@
       <img id="step1" class="brand-icon step11" src="./assets/images/star.svg" alt="Star" width="calc(5em + 4vw)" height="calc(5em + 4vw)" loading="lazy">
     </div>
     <div class="centered-content text-shadow">
-      <div class="bio step12" id="step2">
+      <section class="bio step12" id="step2">
         <div class="code-icon">
           <a class="developer-mode-link" href="/assets/data/en/chendachao.json" target="_blank" data-tooltip
             data-tippy-content="Developer mode" data-i18n-attr="data-tippy-content=APP.DEVELOPER_MODE">
@@ -125,9 +125,9 @@
         <span class="highlight text-nowrap" data-tooltip data-tippy-content="Change the world, make our life better."
           data-i18n-attr="data-tippy-content=APP.PROGRAMMING_DESC"
           data-i18n-id="APP.PROGRAMMING">programming</span><span data-i18n-id="APP.PERIOD">.</span>
-      </div>
+      </section>
 
-      <div>
+      <section>
         <template id="wechat-popup">
           <div class="text-center">
             <figure>
@@ -207,7 +207,7 @@
         <details class="my-portfolio step14" id="step4" open>
           <summary class="custom-marker" data-i18n-id="APP.BUSY_WITH">I'm busy with...</summary>
           <div class="container-grid content font-weight-bold">
-            <div class="card border-active">
+            <section class="card border-active" data-tooltip data-tippy-content="My Homepage." data-i18n-attr="data-tippy-content=APP.PORTFOLIO.HOMEPAGE">
               <div class="icon rounded p-relative">
                 <span class="notify-badge" data-i18n-id="APP.NEW">NEWs</span>
                 <img class="svg icon-size-md" alt="Wechat" src="./assets/images/home.svg">
@@ -215,8 +215,8 @@
               <div>Homepage</div>
               <a class="link" href="https://chendachao.github.io/" target="_blank" rel="noopener noreferrer nofollow">
               </a>
-            </div>
-            <div class="card border-active">
+            </section>
+            <section class="card border-active" data-tooltip data-tippy-content="Online code editor." data-i18n-attr="data-tippy-content=APP.PORTFOLIO.CODER">
               <div class="icon rounded">
                 <img class="svg icon-size-md" alt="Wechat" src="./assets/images/coder.svg">
               </div>
@@ -224,62 +224,61 @@
               <a class="link" href="https://coder.larrychen.tech/temp" target="_blank"
                 rel="noopener noreferrer nofollow">
               </a>
-            </div>
-            <div class="card border-active">
+            </section>
+            <section class="card border-active" data-tooltip data-tippy-content="My Blog." data-i18n-attr="data-tippy-content=APP.PORTFOLIO.BLOG">
               <div class="icon rounded">
                 <img class="svg icon-size-md" alt="Wechat" src="./assets/images/rss.svg">
               </div>
               <div>Blog</div>
               <a class="link" href="https://blog.larrychen.tech/" target="_blank" rel="noopener noreferrer nofollow">
               </a>
-            </div>
-            <div class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
+            </section>
+            <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
                 <img class="svg icon-size-md" alt="Wechat" src="./assets/images/longmen.svg">
               </div>
               <div>Longmen</div>
               <a class="link" href="https://longmen.larrychen.tech/" target="_blank" rel="noopener noreferrer nofollow">
               </a>
-            </div>
-            <div class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
+            </section>
+            <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
                 <img class="svg icon-size-md" alt="Wechat" src="./assets/images/throwing_a_stone.svg">
               </div>
               <div>Stone</div>
               <a class="link" href="https://mystone.netlify.app" target="_blank" rel="noopener noreferrer nofollow">
               </a>
-            </div>
-            <div class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
+            </section>
+            <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
                 <img class="svg icon-size-md" alt="Wechat" src="./assets/images/dashboard2.svg">
               </div>
               <div>Dashboard</div>
               <a class="link" href="https://mystone.netlify.app" target="_blank" rel="noopener noreferrer nofollow">
               </a>
-            </div>
-            <div class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
+            </section>
+            <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
                 <img class="svg icon-size-md" alt="Wechat" src="./assets/images/cv.svg">
               </div>
               <div>Flower</div>
               <a class="link" href="https://mystone.netlify.app" target="_blank" rel="noopener noreferrer nofollow">
               </a>
-            </div>
-            <div class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
+            </section>
+            <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
                 <img class="svg icon-size-md" alt="Wechat" src="./assets/images/notepad.svg">
               </div>
               <div>Note</div>
               <a class="link" href="https://mystone.netlify.app" target="_blank" rel="noopener noreferrer nofollow">
               </a>
-            </div>
+            </section>
           </div>
         </details>
-
-        <div class="text-right">
+        <section class="text-right">
           <img class="signature" src="./assets/images/signature.svg" alt="Larry Chen">
-        </div>
-      </div>
+        </section>
+      </section>
     </div>
   </main>
 

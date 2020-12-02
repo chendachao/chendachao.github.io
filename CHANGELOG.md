@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.23](https://github.com/chendachao/chendachao.github.io/compare/v1.7.22...v1.7.23) (2020-12-02)
+
+
+### Bug Fixes
+
+* card opacity ([93bc6fe](https://github.com/chendachao/chendachao.github.io/commit/93bc6fe924f6a71d6af885a63ab7b5391dce78bd))
+
 ### [1.7.22](https://github.com/chendachao/chendachao.github.io/compare/v1.7.21...v1.7.22) (2020-12-01)
 
 ### [1.7.21](https://github.com/chendachao/chendachao.github.io/compare/v1.7.20...v1.7.21) (2020-11-30)

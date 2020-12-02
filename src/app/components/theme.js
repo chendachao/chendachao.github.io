@@ -1,4 +1,4 @@
-import { isSameDay, daysBetween } from '../utils';
+import { daysBetween } from '../utils';
 
 const startDate = new Date(2020, 3, 4); // Tomb-Sweeping Day
 const endDate = new Date(2020, 7, 4);

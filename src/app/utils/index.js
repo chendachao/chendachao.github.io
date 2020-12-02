@@ -23,18 +23,15 @@ export const isPC = function() {
   return browser.getPlatformType() === 'desktop';
 };
 
-export const daysDiff = (d1, d2) => {
-  // const diff = Math.abs(d1.getTime() - d2.getTime());
-  const diff = d1.getTime() - d2.getTime();
-  return diff / (1000 * 60 * 60 * 24);
-};
-
 export const isSameDay = (d1, d2) => {
-  return daysDiff(d1, d2) >= -1 && daysDiff(d1, d2) <= 1;
-};
-
-export const daysBetween = (d, d1 = new Date(), d2 = new Date()) => {
-  const diff1 = daysDiff(d, d1);
-  const diff2 = daysDiff(d2, d);
-  return diff1 >= -1 && diff2 >= -1;
-};
+  return d1.getFullYear() === d2.getFullYear()
+  && d1.getMonth() === d2.getMonth()
+  && d1.getDate() === d2.getDate()
+ };
+ 
+ export const daysBetween = (d, d1 = new Date(), d2 = new Date()) => {
+   const dts = d.getTime();
+   const d1ts = d1.getTime();
+   const d2ts = d2.getTime();
+   return (d1ts <= dts) && (dts <= d2ts);
+ };

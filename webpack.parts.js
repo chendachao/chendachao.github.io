@@ -204,7 +204,7 @@ exports.loadFonts = ({ include, exclude, options } = {}) => ({
 console.log('process.env.npm_package_version', process.env.npm_package_version);
 // const bundleVersion = `${gitRevisionPlugin.version()} (${new Date().toISOString().substr(0, 10)})`; 
 // const bundleVersion = `${gitRevisionPlugin.version()}`; 
-const bundleVersion = `V ${process.env.npm_package_version}`; 
+const bundleVersion = `v ${process.env.npm_package_version}`; 
 exports.attachRevision = () => ({
   plugins: [
     // gitRevisionPlugin,

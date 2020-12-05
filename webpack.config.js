@@ -179,7 +179,11 @@ const pwaPlugins = [
 const productionConfig = merge([
   {
     optimization: {
-      minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+      minimizer: [new TerserJSPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true,
+      }), new OptimizeCSSAssetsPlugin({})],
     },
     plugins: [
       new CompressionPlugin()

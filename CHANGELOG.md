@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.27](https://github.com/chendachao/chendachao.github.io/compare/v1.7.26...v1.7.27) (2020-12-05)
+
+
+### Bug Fixes
+
+* detail summary ([c616252](https://github.com/chendachao/chendachao.github.io/commit/c616252f5813c05a3fa40e7bdb0659d243dc1f21))
+
 ### [1.7.26](https://github.com/chendachao/chendachao.github.io/compare/v1.7.25...v1.7.26) (2020-12-05)
 
 

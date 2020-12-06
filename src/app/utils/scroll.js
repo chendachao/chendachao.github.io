@@ -15,8 +15,8 @@ var getOffsetHeight = function () {
   // The overall height of the html
   // Grodriguez's fix for scrollHeight:
   // accounting for cases where html/body are set to height:100%
+  // document.body.offsetHeight ||
   var offsetHeight =
-    document.body.offsetHeight ||
     (document.documentElement && document.documentElement.scrollHeight) ||
     document.body.scrollHeight;
   return offsetHeight;
@@ -41,8 +41,8 @@ window.addEventListener('scroll', function (ev) {
     // >= is needed because if the horizontal scrollbar is visible then window.innerHeight includes
     // it and in that case the left side of the equation is somewhat greater.
     // window.innerHeight: viewport height
-    // var scrolledToBottom = (scrollTop + window.innerHeight) >= scrollHeight - 2;
-    var scrolledToBottom = scrollTop + window.innerHeight >= offsetHeight;
+    // var scrolledToBottom = (scrollTop + window.innerHeight) >= offsetHeight - 2;
+    var scrolledToBottom = (scrollTop + window.innerHeight) >= offsetHeight;
     if (scrolledToBottom) {
       console.log("you're at the bottom of the page");
     }

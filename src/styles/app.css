@@ -557,7 +557,7 @@ details.my-portfolio[open] summary + div:before {
   cursor: not-allowed;
 }
 
-.container-grid > .card:hover {
+.container-grid > .card:focus, .container-grid > .card:hover {
   background: var(--color-card-bg);
 }
 

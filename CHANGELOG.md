@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.28](https://github.com/chendachao/chendachao.github.io/compare/v1.7.27...v1.7.28) (2020-12-06)
+
+
+### Bug Fixes
+
+* card active style ([02204c9](https://github.com/chendachao/chendachao.github.io/commit/02204c975fff3d09bfb4fa41b0ec27f68853c586))
+
 ### [1.7.27](https://github.com/chendachao/chendachao.github.io/compare/v1.7.26...v1.7.27) (2020-12-05)
 
 

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.29](https://github.com/chendachao/chendachao.github.io/compare/v1.7.28...v1.7.29) (2020-12-06)
+
+
+### Bug Fixes
+
+* scroll to bottom and card active style ([ee20951](https://github.com/chendachao/chendachao.github.io/commit/ee20951d913bb68feffba74340d428b33531d9ce))
+
 ### [1.7.28](https://github.com/chendachao/chendachao.github.io/compare/v1.7.27...v1.7.28) (2020-12-06)
 
 

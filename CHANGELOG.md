@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.34](https://github.com/chendachao/chendachao.github.io/compare/v1.7.33...v1.7.34) (2020-12-07)
+
+
+### Bug Fixes
+
+* env ([edd6d84](https://github.com/chendachao/chendachao.github.io/commit/edd6d84d95d6bc44a77441e6bb06b0af3333016c))
+
 ### [1.7.33](https://github.com/chendachao/chendachao.github.io/compare/v1.7.32...v1.7.33) (2020-12-07)
 
 ### [1.7.32](https://github.com/chendachao/chendachao.github.io/compare/v1.7.31...v1.7.32) (2020-12-07)

@@ -264,8 +264,6 @@ module.exports = mode => {
     // TODO: workaround for workbox issue https://github.com/GoogleChrome/workbox/issues/1790
     commonConfig.plugins.push(...pwaPlugins);
     return merge(commonConfig, productionConfig, {mode});
-  } else {
-    mode = 'development';
   }
   
   return merge(commonConfig, developmentConfig, {mode});

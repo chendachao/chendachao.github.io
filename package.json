@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "setnode": "bash ./scripts/nvm.sh",
-    "start": "webpack-dev-server -d --env development",
+    "start": "cross-env NODE_ENV=development webpack-dev-server -d --env development",
     "build": "webpack --env production",
     "build:w": "webpack --env production --watch --progress --devtool eval-cheap-source-map",
     "analyse": "webpack --env production --profile --json > stats.json",

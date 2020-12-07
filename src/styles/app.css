@@ -571,6 +571,11 @@ details.my-portfolio[open] summary + div:before {
   right: 0;
 }
 
+.container-grid > .card > .link:active,
+.container-grid > .card > .link:focus {
+  outline: var(--text-highlight) auto 1px;
+}
+
 .container-grid > .card.disabled > .link {
   pointer-events: none;
 }

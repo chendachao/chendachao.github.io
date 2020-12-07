@@ -1,5 +1,6 @@
 require('dotenv').config();
 const webpack = require('webpack');
+const WebpackBar = require('webpackbar');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
@@ -112,6 +113,10 @@ const commonConfig = merge([
             to: 'sw-offline-google-analytics.js'
           },
         ]
+      }),
+      new WebpackBar({
+        name: `🔥  Larry's Homepage`,
+        color: '#3ce2e2',
       }),
     ]
   },

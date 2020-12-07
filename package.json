@@ -1,7 +1,7 @@
 {
   "name": "chendachao",
   "homepage": "https://github.com/chendachao/chendachao.github.io",
-  "version": "1.7.31",
+  "version": "1.7.32",
   "description": "Larry's Home Page",
   "main": "src/index.js",
   "scripts": {

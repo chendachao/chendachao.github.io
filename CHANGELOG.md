@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.31](https://github.com/chendachao/chendachao.github.io/compare/v1.7.30...v1.7.31) (2020-12-07)
+
+
+### Bug Fixes
+
+* netlify ci ([32e1d1d](https://github.com/chendachao/chendachao.github.io/commit/32e1d1d79300f5cbbcfb359804849b02022e5ed8))
+
 ### [1.7.30](https://github.com/chendachao/chendachao.github.io/compare/v1.7.29...v1.7.30) (2020-12-07)
 
 ### [1.7.29](https://github.com/chendachao/chendachao.github.io/compare/v1.7.28...v1.7.29) (2020-12-06)

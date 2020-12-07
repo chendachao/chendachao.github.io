@@ -1,6 +1,6 @@
 [![Github Pages](https://github.com/chendachao/chendachao.github.io/workflows/Github%20Pages/badge.svg)](https://chendachao.github.io/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f38782ce-8baa-4295-aa71-12c5ce788b8a/deploy-status)](https://app.netlify.com/sites/chenlarrydachao/deploys)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/af85d52b-e5b9-4453-bd05-8ceb4199a79a/deploy-status)](https://app.netlify.com/sites/chendachao/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f65e2795-31ad-40c3-98bc-cd11159b00d2/deploy-status)](https://app.netlify.com/sites/chendachao/deploys)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Fchendachao.github.io%2F)](https://validator.nu/?doc=https%3A%2F%2Fchendachao.github.io%2F)
 

@@ -12,7 +12,7 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1
         with:
-          publish-dir: './dist'
+          publish-dir: '.'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
@@ -22,5 +22,5 @@ jobs:
           netlify-config-path: ./netlify.toml
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }} 
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }} 
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         timeout-minutes: 1

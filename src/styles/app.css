@@ -461,19 +461,32 @@ details > summary.custom-marker { list-style-type: none; } /* Firefox */
 details > summary.custom-marker::-webkit-details-marker {
   display: none
 }
+
 details > summary.custom-marker {
-  list-style-image: none;
+  position: relative;
+  padding-left: 2.5rem !important;
 }
-details > summary.custom-marker:before {
-  content: "+";
-  /* content:"❮"; */
-  /* transform:rotate(90deg); */
-  color: var(--text-highlight);
-  padding-left: 0.5rem;
-  padding-right: 1rem;
+
+details > summary.custom-marker::before,
+details > summary.custom-marker::after {
+  width: .5em;
+  height: 0.15em;
+  border-radius: 2px;
+  background-color: var(--text-highlight);
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  transition: transform .2s ease-in-out;
 }
-details[open] > summary.custom-marker:before {
-  content: "–";
+
+details > summary.custom-marker::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+details[open] > summary.custom-marker::before {
+  transform: translateY(-50%) rotate(180deg);
 }
 /* custom-marker end */
 
@@ -486,11 +499,6 @@ details summary {
   font-weight: bold;
   cursor: pointer;
   user-select: none;
-}
-
-details > summary:before {
-  content: "";
-  padding-left: 0.5rem;
 }
 
 details > summary:focus {
@@ -527,12 +535,7 @@ details.my-portfolio[open] summary {
 }
 
 details.my-portfolio[open] summary + div {
-  animation: sweep .5s ease-in-out normal forwards, fade-in 0.5s;
-  animation-delay: 0s;
-}
-details.my-portfolio[open] summary + div:before {
-  animation: grow .5s ease-in-out normal forwards, fade-in 0.5s;
-  animation-delay: 0.1s;
+  animation: sweep .2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 /* my-portfolio end */
 

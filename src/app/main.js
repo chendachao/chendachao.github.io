@@ -82,7 +82,7 @@ window.addEventListener('load', function() {
   window.addEventListener('offline', updateOnlineStatus);
 });
 
-window.addEventListener('error', function(event) {
+const globalErrorHandler = (event) => {
   var message = (event.error || event.message).toString();
   // if(event.error) {
   //   message = event.error.stack;
@@ -95,7 +95,10 @@ window.addEventListener('error', function(event) {
       },
     },
   });
-});
+}
+
+window.addEventListener('error', globalErrorHandler);
+window.addEventListener('unhandledrejection', globalErrorHandler);
 
  // window.onerror = function(msg, url, line, col, error) {
 //   // Note that col & error are new to the HTML 5 spec and may not be 

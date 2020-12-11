@@ -59,6 +59,7 @@ body:after {
   background-position: 0% 0%;
   background-repeat: repeat;
   background-size: auto;
+  will-change: transform;
   transform: scale(1);
   transition: opacity 1s ease-in-out;
 }
@@ -157,7 +158,7 @@ img[data-src] {
 .bird-small-right {
   position: absolute;
    /* open hardware acceleration */
-   transform: translateZ(0); 
+  transform: translateZ(0); 
 }
 
 .bird-big-left {
@@ -290,6 +291,7 @@ img[data-src] {
 .wechat-qrcode {
   width: calc(2em + 10vw);
   cursor: pointer;
+  will-change: transform;
   transition: transform 1.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -326,6 +328,7 @@ img[data-src] {
    box-shadow: 0 0 10px var(--subtle);
    font: inherit;
    text-decoration: none;
+   will-change: transform;
    transition: transform 0.15s cubic-bezier(0, 1.8, 1, 1.8)
  }
 
@@ -599,6 +602,7 @@ details.my-portfolio[open] summary + div {
   width: 100% !important;
   border-radius: 4px;
   box-shadow: 0px 0px 4px 0px var(--color-shadow2);
+  will-change: transform;
   transition:
   .4s ease-in-out transform,
   .4s ease-in-out box-shadow;

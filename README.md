@@ -23,6 +23,7 @@
 - [Google Search Console](https://search.google.com/search-console)
 - [GTmetrix](https://gtmetrix.com)
 - [Image Compressor](https://imagecompressor.com/)
+- [Smart PNG and JPEG compression](https://tinypng.com/)
 - [SVG Compressor](https://jakearchibald.github.io/svgomg/)
 - [Hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
 

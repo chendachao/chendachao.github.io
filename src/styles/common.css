@@ -1,0 +1,54 @@
+.btn,
+button,
+a {
+  text-decoration: none
+}
+
+.btn,
+button,
+label,
+a {
+  cursor: pointer
+}
+
+.btn,
+button.btn,
+a.btn {
+  background-image: linear-gradient(to bottom, var(--bg-white), var(--bg-light));
+  border-radius: 8px;
+  color: var(--green3);
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border: 0;
+  box-shadow: 0 0 10px var(--subtle);
+  font: inherit;
+  text-decoration: none;
+  will-change: transform;
+  transition: transform 0.15s cubic-bezier(0, 1.8, 1, 1.8)
+}
+
+.btn.btn-primary,
+button.btn.btn-primary,
+a.btn.btn-primary {
+  border: 1px solid var(--green3);
+}
+
+.btn:hover,
+button.btn:hover,
+a.btn:hover {
+  transform: translateY(-1px)
+}
+
+.notify-badge {
+  position: absolute;
+  right: -1rem;
+  top: -0.5rem;
+  background: var(--text-highlight);
+  text-align: center;
+  border-radius: 30px 30px 30px 30px;
+  color: white;
+  padding: 1px 3px;
+  font-size: 8px;
+  min-width: 1.2rem;
+}
+

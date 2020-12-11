@@ -253,7 +253,7 @@ img[data-src] {
 
 .centered-content {
   color: var(--text-color);
-  width: 61.8%;
+  width: var(--centered-content-width);
   margin: auto;
   margin-top: 5%;
   line-height: 1.5;
@@ -263,13 +263,14 @@ img[data-src] {
   width: calc(5em + 4vw);
   transition: 1s;
   position: relative;
+  transform-origin: bottom;
 
   color: var(--color-brand);
   text-shadow: var(--brand-text-shadow);
 }
 
 .brand-icon:hover {
-  animation: App-logo-float infinite 3s ease-in-out;
+  animation: jump infinite 5s cubic-bezier(0.280, 0.840, 0.420, 1);
 }
 
 .bio {
@@ -303,53 +304,8 @@ img[data-src] {
   font-size: 7px;
 }
 
-.btn,
- button,
- a {
-   text-decoration: none
- }
-
- .btn,
- button,
- label,
- a {
-   cursor: pointer
- }
-
- .btn,
- button.btn,
- a.btn {
-   background-image: linear-gradient(to bottom, var(--bg-white), var(--bg-light));
-   border-radius: 8px;
-   color: var(--green3);
-   letter-spacing: 1px;
-   padding: 10px 20px;
-   border: 0;
-   box-shadow: 0 0 10px var(--subtle);
-   font: inherit;
-   text-decoration: none;
-   will-change: transform;
-   transition: transform 0.15s cubic-bezier(0, 1.8, 1, 1.8)
- }
-
- .btn.btn-primary,
- button.btn.btn-primary,
- a.btn.btn-primary {
-   border: 1px solid var(--green3);
- }
-
-.btn:hover,
-button.btn:hover,
-a.btn:hover {
-  transform: translateY(-1px)
-}
-
-@media only screen and (min-width: 320px) and (max-width: 767px),
+@media only screen and (max-width: 767px),
 only screen and (device-width: 767px) {
-  .centered-content {
-    width: 91.8%;
-  }
-
   .wechat-qrcode-desc {
     font-size: 6px;
     margin-top: -5px;
@@ -371,11 +327,12 @@ only screen and (device-width: 767px) {
 
 .social-icons li a {
   text-decoration: none;
+  will-change: transform;
 }
 
 .social-icons li a:hover {
   transform: translateY(-3px);
-  transition: transform 0.5s ease 0s;
+  transition: transform 0.3s ease 0s;
 }
 
 .icon {
@@ -389,7 +346,7 @@ only screen and (device-width: 767px) {
 
   /* background: linear-gradient(0deg, var(--bg-light), var(--bg-white)); */
   /* transition: 1s; */
-  transition: all 0.3s ease 0s;
+  /* transition: all 0.3s ease 0s; */
 }
 
 .icon.circle {

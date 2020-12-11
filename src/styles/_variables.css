@@ -94,6 +94,8 @@
 
   --bird-fly-speed: 90s;
 
+  --centered-content-width: 61.8%;
+
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 767px;
@@ -133,5 +135,6 @@ only screen and (device-width: 767px) {
   :root {
     --bird-fly-speed: 25s;
     /* --color-global-bg-deg: 45deg; */
+    --centered-content-width: 91.8%;
   }
 }

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.38](https://github.com/chendachao/chendachao.github.io/compare/v1.7.37...v1.7.38) (2020-12-11)
+
+
+### Bug Fixes
+
+* safari ([629f712](https://github.com/chendachao/chendachao.github.io/commit/629f71261fab4bf19b1baa8c3344a9b5cffdb641))
+
 ### [1.7.37](https://github.com/chendachao/chendachao.github.io/compare/v1.7.36...v1.7.37) (2020-12-11)
 
 ### [1.7.36](https://github.com/chendachao/chendachao.github.io/compare/v1.7.35...v1.7.36) (2020-12-11)

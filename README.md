@@ -8,7 +8,7 @@
 ## Websites
 - [Github pages](https://chendachao.github.io/)
 - [Netlify](https://chendachao.netlify.app/)
-- [Vercel](https://chendachao-github-io.vercel.app/)
+- [Vercel](https://chendachao-github-io.chendachao.vercel.app/)
 
 ## Screenshots
 ![site](src/assets/images/screenshots/screenshot1.png "my site with dark theme")

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.43](https://github.com/chendachao/chendachao.github.io/compare/v1.7.42...v1.7.43) (2020-12-13)
+
+
+### Bug Fixes
+
+* share ([70629aa](https://github.com/chendachao/chendachao.github.io/commit/70629aaccb67ffdf5d63fe1b6073054cf7dcc2c1))
+
 ### [1.7.42](https://github.com/chendachao/chendachao.github.io/compare/v1.7.41...v1.7.42) (2020-12-13)
 
 

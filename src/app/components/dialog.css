@@ -7,7 +7,7 @@
   border: none;
   border-radius: 6px;
   background-color: var(--bg-white);
-  box-shadow: 0 0 40px rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.25);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 @media only screen and (max-width: 767px),
@@ -70,27 +70,27 @@ only screen and (device-width: 767px) {
 
 @keyframes shake {
   0% {
-    transform: translateX(0);
+    transform: translate3D(0, 0, 1000px);
   }
 
   12.5% {
-    transform: translateX(-6px) rotateY(-5deg) translateZ(1000px)
+    transform: translate3D(-6px, 0, 1000px) rotateY(-5deg);
   }
 
   37.5% {
-    transform: translateX(5px) rotateY(4deg) translateZ(1000px)
+    transform: translate3D(5px, 0, 1000px) rotateY(4deg);
   }
 
   62.5% {
-    transform: translateX(-3px) rotateY(-2deg) translateZ(1000px)
+    transform: translate3D(-3px, 0, 1000px) rotateY(-2deg);
   }
 
   87.5% {
-    transform: translateX(2px) rotateY(1deg) translateZ(1000px)
+    transform: translate3D(2px, 0, 1000px) rotateY(1deg);
   }
 
   100% {
-    transform: translateX(0)
+    transform: translate3D(0, 0, 1000px);
   }
 }
 

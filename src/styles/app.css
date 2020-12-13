@@ -575,7 +575,7 @@ details.my-portfolio[open] summary + div {
   flex-wrap: wrap;
   align-items: center;
   color: var(--text-color);
-  margin-bottom: 1rem;
+  padding-bottom: .5rem;
 }
 
 .footer .version {
@@ -588,3 +588,7 @@ details.my-portfolio[open] summary + div {
   margin-right: 2rem;
 }
 
+.share-btn {
+  background: transparent;
+  vertical-align: top;
+}

@@ -13,7 +13,7 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
   <meta http-equiv="Content-Security-Policy" 
-  content="default-src 'self' data: gap: 'unsafe-eval' instant.page www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws12.hotjar.com; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+  content="default-src 'self' data: gap: 'unsafe-eval' instant.page www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws12.hotjar.com static.bshare.cn; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
  
   <link rel="manifest" href="site.webmanifest">
   <meta name="application-name" content="Larry Chen" />
@@ -66,6 +66,9 @@
 
   <header>
     <section class="help-icon-menu-bar">
+      <button class="help-icon share-btn border-active">
+        <a class="bshareDiv" href="http://www.bshare.cn/share" rel="noopener noreferrer nofollow"></a>
+      </button>
       <button aria-label="language" class="help-icon language-btn border-active" data-tooltip data-tippy-content="Switch language"
         data-i18n-attr="data-tippy-content=APP.LANGUAGE_SWITCH"></button>
       <button aria-label="guide" class="help-icon start-replay-tour border-active" data-tooltip data-tippy-content="Tutorial guide"
@@ -315,6 +318,8 @@
       <button aria-label="close" class="btn dialog-dismiss-trigger close-btn" data-i18n-id="APP.CLOSE">Close</button>
     </div>
   </dialog>
+
+  <script type="text/javascript" defer charset="utf-8" src="http://static.bshare.cn/b/button.js#uuid=&amp;style=10&amp;bgcolor=Orange&amp;ssc=false"></script>
 
   <noscript>
     <h2>To run this application, JavaScript is required to be enabled.</h2>

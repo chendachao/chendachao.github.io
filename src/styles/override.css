@@ -74,3 +74,24 @@
 .introjs-arrow.top-right {
   border: 5px solid transparent;
 }
+
+/* Share box */
+.bsBox {
+  height: auto !important;
+  width: auto !important;
+}
+
+.bFind-wrapper-top {
+  height: 25px !important;
+}
+
+a.bshareDiv {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.buzzButton {
+  width: 25px !important;
+  height: 25px !important;
+  background: transparent url(../assets/images/share.svg) no-repeat center center!important;
+}

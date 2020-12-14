@@ -587,8 +587,3 @@ details.my-portfolio[open] summary + div {
   height: 35px;
   margin-right: 2rem;
 }
-
-.share-btn {
-  background: transparent;
-  vertical-align: top;
-}

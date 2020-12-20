@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.50](https://github.com/chendachao/chendachao.github.io/compare/v1.7.49...v1.7.50) (2020-12-20)
+
+
+### Features
+
+* social sahre images ([bdaf362](https://github.com/chendachao/chendachao.github.io/commit/bdaf362ed85e146a3e5a9b880c4d20d86534b16a))
+
 ### [1.7.49](https://github.com/chendachao/chendachao.github.io/compare/v1.7.48...v1.7.49) (2020-12-16)
 
 ### [1.7.48](https://github.com/chendachao/chendachao.github.io/compare/v1.7.47...v1.7.48) (2020-12-14)

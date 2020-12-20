@@ -1,4 +1,4 @@
-/* 🔥🇨🇳🇬🇧 */
+/*🔥*/
 * {
   margin: 0;
   padding: 0;
@@ -61,7 +61,7 @@ body:after {
   background-size: auto;
   will-change: transform;
   transform: scale(1);
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s linear;
 }
 
 body:before {
@@ -328,11 +328,11 @@ only screen and (device-width: 767px) {
 .social-icons li a {
   text-decoration: none;
   will-change: transform;
+  transition: transform 0.3s ease-in-out 0s;
 }
 
 .social-icons li a:hover {
   transform: translateY(-3px);
-  transition: transform 0.3s ease 0s;
 }
 
 .icon {

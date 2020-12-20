@@ -92,6 +92,7 @@ body[data-theme="gray"] * {
 }
 
 body {
+  overflow-x: hidden;
   animation: fade-in 3s ease;
 
   display: flex;

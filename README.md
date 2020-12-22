@@ -25,6 +25,7 @@
 - [Image Compressor](https://imagecompressor.com/)
 - [Smart PNG and JPEG compression](https://tinypng.com/)
 - [SVG Compressor](https://jakearchibald.github.io/svgomg/)
+- [SVG Sprit](https://svgsprit.es/)
 - [Hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
 
 ## TODOs:

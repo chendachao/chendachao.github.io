@@ -588,3 +588,9 @@ details.my-portfolio[open] summary + div {
   height: 35px;
   margin-right: 2rem;
 }
+
+.svgicon {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}

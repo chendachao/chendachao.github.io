@@ -2,6 +2,8 @@ import toasted from './utils/toasted';
 import { isIE, isPC } from './utils';
 import { scrollToTop } from './utils/scroll';
 
+import SvgSprit from './components/svgsprit';
+
 import Theme from './components/theme';
 // Initial theme
 Theme();
@@ -29,9 +31,12 @@ import('./components/intro').then(Intro => {
     intro.init();
   }
 
+  const svgSprit = document.querySelector('#svgSprit');
+  svgSprit.innerHTML = SvgSprit();
+
   const startReplayBtn = document.querySelector('.start-replay-tour');
   const starthintBtn = document.querySelector('.start-hint');
-
+  
   startReplayBtn.addEventListener('click', () => {
     intro.initAndShowIntro();
   });

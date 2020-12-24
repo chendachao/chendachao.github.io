@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.55](https://github.com/chendachao/chendachao.github.io/compare/v1.7.54...v1.7.55) (2020-12-24)
+
+
+### Bug Fixes
+
+* svg ([823e711](https://github.com/chendachao/chendachao.github.io/commit/823e71179b1731b2fdbf3fa33ff554e710e84a1f))
+
 ### [1.7.54](https://github.com/chendachao/chendachao.github.io/compare/v1.7.53...v1.7.54) (2020-12-24)
 
 ### [1.7.53](https://github.com/chendachao/chendachao.github.io/compare/v1.7.52...v1.7.53) (2020-12-24)

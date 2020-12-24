@@ -560,10 +560,10 @@ details.my-portfolio[open] summary + div {
 }
 
 .signature {
-  height: 35px !important;
-  width: auto !important;
+  height: 35px;
+  /* height: 35px !important; */
+  /* width: auto !important; */
   margin-right: 2rem;
-  color: black;
 }
 
 .svgicon,

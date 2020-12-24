@@ -589,8 +589,13 @@ details.my-portfolio[open] summary + div {
   margin-right: 2rem;
 }
 
-.svgicon {
-  width: 24px;
-  height: 24px;
-  color: #fff;
+.svgicon,
+[class^="svgicon-"],
+[class*=" svgicon-"] {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
 }

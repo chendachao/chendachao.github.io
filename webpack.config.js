@@ -36,6 +36,7 @@ const commonConfig = merge([
       install: './src/install.js',
       cv: ['./src/index-cv.js'],
       stone: ['./src/index-stone.js'],
+      svgxuse: ['./src/app/svgxuse.js'],
     },
     output: {
       filename: '[name].[contenthash].bundle.js',
@@ -88,15 +89,16 @@ const commonConfig = merge([
       }),
       new ScriptExtHtmlWebpackPlugin({
         // inline: inlineBundles, // cause pwa update issue
-        preload: /^vendors~app.*.bundle.js$/,
+        preload: /^vendors~app.*.chunk.js$/,
         custom: {
-          test: /^vendors~app.*.bundle.js$/,
+          test: /^vendors~app.*.chunk.js$/,
           attribute: 'crossorigin',
           value: 'anonymous'
         },
         defer: [
-          /^log.*.bundle.js$/,
-          /^install.*.bundle.js$/,
+          /^log.*.chunk.js$/,
+          /^install.*.chunk.js$/,
+          /^svgxuse.*.chunk.js$/,
         ],
         // sync: 'first.js',
         defaultAttribute: 'async'
@@ -222,7 +224,7 @@ const productionConfig = merge([
   }),
   parts.loadImages({
     options: {
-      name: './images/[name].[contenthash].[ext]',
+      name: './assets/images/[name].[contenthash].[ext]',
       limit: 10000
     },
     exclude: path.join(__dirname, 'src/assets/images/icons/*'),

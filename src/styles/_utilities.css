@@ -38,6 +38,10 @@
   text-align: right;
 }
 
+.text-white {
+  color: var(--white); 
+}
+
 .mr-1 {
   margin-right: 1rem;
 } 

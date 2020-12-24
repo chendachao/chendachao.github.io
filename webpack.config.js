@@ -36,7 +36,7 @@ const commonConfig = merge([
       install: './src/install.js',
       cv: ['./src/index-cv.js'],
       stone: ['./src/index-stone.js'],
-      svgxuse: ['./src/app/svgxuse.js'],
+      svgxuse: ['./src/app/svgxuse.js'], // For IE to load external svg defs
     },
     output: {
       filename: '[name].[contenthash].bundle.js',

@@ -91,18 +91,41 @@
 
   <header>
     <section class="help-icon-menu-bar">
-      <button hidden class="help-icon share-btn border-active">
-      </button>
+      <!-- <button class="help-icon share-btn border-active">
+        <svg class="svgicon text-white">
+          <use href="/assets/images/base-svgsprit.svg#share"></use>
+        </svg>
+      </button> -->
       <button aria-label="language" class="help-icon language-btn border-active" data-tooltip data-tippy-content="Switch language"
-        data-i18n-attr="data-tippy-content=APP.LANGUAGE_SWITCH"></button>
+        data-i18n-attr="data-tippy-content=APP.LANGUAGE_SWITCH">
+        <svg class="svgicon text-white">
+          <use href="/assets/images/base-svgsprit.svg#i18n"></use>
+        </svg>
+      </button>
       <button aria-label="guide" class="help-icon start-replay-tour border-active" data-tooltip data-tippy-content="Tutorial guide"
-        data-i18n-attr="data-tippy-content=APP.TUTOR_GUIDE"></button>
+        data-i18n-attr="data-tippy-content=APP.TUTOR_GUIDE">
+        <svg class="svgicon text-white">
+          <use href="/assets/images/base-svgsprit.svg#map"></use>
+        </svg>
+      </button>
       <button aria-label="hint" class="help-icon start-hint border-active" data-tooltip data-tippy-content="Tutorial with hint"
-        data-i18n-attr="data-tippy-content=APP.TUTOR_HINT_GUIDE"></button>
+        data-i18n-attr="data-tippy-content=APP.TUTOR_HINT_GUIDE">
+        <svg class="svgicon text-white">
+          <use href="/assets/images/base-svgsprit.svg#info"></use>
+        </svg>
+      </button>
       <button aria-label="subscribe" hidden class="help-icon subscribe-btn border-active" data-tooltip data-tippy-content="Subscribe"
-        data-i18n-attr="data-tippy-content=APP.NOTIFICATION_SUBSCRIBE"></button>
+        data-i18n-attr="data-tippy-content=APP.NOTIFICATION_SUBSCRIBE">
+        <svg class="svgicon text-white">
+          <use href="/assets/images/base-svgsprit.svg#bell"></use>
+        </svg>
+      </button>
       <button aria-label="pwa install" hidden class="help-icon pwa-install-btn border-active" id="btnInstall" data-tooltip
-        data-tippy-content="Install to Desktop" data-i18n-attr="data-tippy-content=APP.INSTALL"></button>
+        data-tippy-content="Install to Desktop" data-i18n-attr="data-tippy-content=APP.INSTALL">
+        <svg class="svgicon text-white">
+          <use href="/assets/images/base-svgsprit.svg#install"></use>
+        </svg>
+      </button>
     </section>
   </header>
 
@@ -113,7 +136,10 @@
     <div class="bird-small-right"></div>
     <div class="moon step15" id="step5"></div>
     <div class="brand text-center">
-      <img id="step1" class="brand-icon step11" src="./assets/images/bases/star.svg" alt="Star" width="calc(5em + 4vw)" height="calc(5em + 4vw)" loading="lazy">
+      <!-- <img id="step1" class="brand-icon step11" src="./assets/images/bases/star.svg" alt="Star" width="calc(5em + 4vw)" height="calc(5em + 4vw)" loading="lazy"> -->
+      <svg id="step1" class="brand-icon step11 svgicon" width="calc(5em + 4vw)" height="calc(5em + 4vw)">
+        <use href="/assets/images/base-svgsprit.svg#star"></use>
+      </svg>
     </div>
     <div class="centered-content text-shadow">
       <section class="bio step12" id="step2">
@@ -122,7 +148,7 @@
             data-tippy-content="Developer mode" data-i18n-attr="data-tippy-content=APP.DEVELOPER_MODE">
             <!-- <img class="border-active" src="./assets/images/bases/code.svg" alt="Developer mode"> -->
             <svg class="border-active svgicon text-white">
-              <use href="/assets/images/svgsprit.svg#baseline-code-24px"></use>
+              <use href="/assets/images/base-svgsprit.svg#code"></use>
             </svg>
           </a>
         </div>
@@ -171,43 +197,64 @@
           <li data-tippy-content="Github: chendachao" data-tooltip>
             <a class="icon icon-github hover-visible box-shadow circle" href="https://github.com/chendachao" target="_blank"
               rel="noopener noreferrer nofollow">
-              <img class="svg" alt="Github" src="./assets/images/socials/github.svg">
+              <!-- <img class="svg" alt="Github" src="./assets/images/socials/github.svg"> -->
+              <svg class="svg svgicon">
+                <use xlink:href="/assets/images/social-svgsprit.svg#github"></use>
+              </svg>
             </a>
           </li>
           <li data-tippy-content="Email: chendachao@outlook.com" data-tooltip>
             <a class="icon icon-envelope-o hover-visible box-shadow circle"
               href="mailto:chendachao@outlook.com?subject=Greetings%20Larry&body=Hi%20Larry%2C%20%0A%0AI%20like%20the%20color%20of%20your%20website%2C%20It's%20very%20interesting...%0A%0A%0A%0A"
               target="_blank" rel="noopener noreferrer nofollow">
-              <img class="svg" alt="Outlook" src="./assets/images/socials/outlook.svg">
+              <!-- <img class="svg" alt="Outlook" src="./assets/images/socials/outlook.svg"> -->
+              <svg class="svg svgicon">
+                <use xlink:href="/assets/images/social-svgsprit.svg#outlook"></use>
+              </svg>
             </a>
           </li>
           <li>
             <a class="icon icon-wechat hover-visible box-shadow circle" id="wechat" rel="noopener noreferrer nofollow">
-              <img class="svg" alt="Wechat" src="./assets/images/socials/wechat.svg">
+              <!-- <img class="svg" alt="Wechat" src="./assets/images/socials/wechat.svg"> -->
+              <svg class="svg svgicon">
+                <use xlink:href="/assets/images/social-svgsprit.svg#wechat"></use>
+              </svg>
             </a>
           </li>
           <li data-tippy-content="Skype" data-tooltip>
             <a class="icon icon-skype hover-visible box-shadow circle" href="skype:chendachao@outlook.com?chat"
               rel="noopener noreferrer nofollow">
-              <img class="svg" alt="Skype" src="./assets/images/socials/skype.svg">
+              <!-- <img class="svg" alt="Skype" src="./assets/images/socials/skype.svg"> -->
+              <svg class="svg svgicon">
+                <use xlink:href="/assets/images/social-svgsprit.svg#skype"></use>
+              </svg>
             </a>
           </li>
           <li data-tippy-content="Linkedin: chendachao" data-tooltip>
             <a class="icon icon-linkedin hover-visible box-shadow circle" href="https://www.linkedin.com/in/chendachao"
               target="_blank" rel="noopener noreferrer nofollow">
-              <img class="svg" alt="Linkedin" src="./assets/images/socials/linkedin.svg">
+              <!-- <img class="svg" alt="Linkedin" src="./assets/images/socials/linkedin.svg"> -->
+              <svg class="svg svgicon">
+                <use xlink:href="/assets/images/social-svgsprit.svg#linkedin"></use>
+              </svg>
             </a>
           </li>
           <li data-tippy-content="Twitter: dachaochen" data-tooltip>
             <a class="icon icon-twitter hover-visible box-shadow circle" target="_blank" href="https://twitter.com/dachaochen"
               rel="noopener noreferrer nofollow">
-              <img class="svg" alt="Twitter" src="./assets/images/socials/twitter.svg">
+              <!-- <img class="svg" alt="Twitter" src="./assets/images/socials/twitter.svg"> -->
+              <svg class="svg svgicon">
+                <use xlink:href="/assets/images/social-svgsprit.svg#twitter"></use>
+              </svg>
             </a>
           </li>
           <li data-tippy-content="Stackoverflow: chen-dachao" data-tooltip>
             <a class="icon icon-stackoverflow hover-visible box-shadow circle" target="_blank"
               href="https://stackoverflow.com/users/6294371/chen-dachao" rel="noopener noreferrer nofollow">
-              <img class="svg" alt="Stackoverflow" src="./assets/images/socials/so.svg">
+              <!-- <img class="svg" alt="Stackoverflow" src="./assets/images/socials/so.svg"> -->
+              <svg class="svg svgicon">
+                <use xlink:href="/assets/images/social-svgsprit.svg#so"></use>
+              </svg>
             </a>
           </li>
 
@@ -241,6 +288,9 @@
               <div class="icon rounded p-relative">
                 <span class="notify-badge" data-i18n-id="APP.NEW">NEWs</span>
                 <img class="svg icon-size-md" alt="Wechat" src="./assets/images/portfolios/home.svg">
+                <!-- <svg class="svg icon-size-md svgicon">
+                  <use xlink:href="/assets/images/portfolio-svgsprit.svg#home"></use>
+                </svg> -->
               </div>
               <div>Homepage</div>
               <a class="link" href="https://chendachao.github.io/" target="_blank" rel="noopener noreferrer nofollow">
@@ -257,7 +307,10 @@
             </section>
             <section class="card border-active" data-tooltip data-tippy-content="My Blog." data-i18n-attr="data-tippy-content=APP.PORTFOLIO.BLOG">
               <div class="icon rounded">
-                <img class="svg icon-size-md" alt="Wechat" src="./assets/images/portfolios/rss.svg">
+                <!-- <img class="svg icon-size-md" alt="Wechat" src="./assets/images/portfolios/rss.svg"> -->
+                <svg class="svg icon-size-md svgicon">
+                  <use xlink:href="/assets/images/portfolio-svgsprit.svg#rss"></use>
+                </svg>
               </div>
               <div>Blog</div>
               <a class="link" href="https://blog.larrychen.tech/" target="_blank" rel="noopener noreferrer nofollow">
@@ -273,7 +326,10 @@
             </section>
             <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
-                <img class="svg icon-size-md" alt="Wechat" src="./assets/images/portfolios/throwing_a_stone.svg">
+                <!-- <img class="svg icon-size-md" alt="Wechat" src="./assets/images/portfolios/throwing_a_stone.svg"> -->
+                <svg class="svg icon-size-md svgicon">
+                  <use xlink:href="/assets/images/portfolio-svgsprit.svg#throwing_a_stone"></use>
+                </svg>
               </div>
               <div>Stone</div>
               <a class="link" href="https://mystone.netlify.app" target="_blank" rel="noopener noreferrer nofollow">
@@ -281,7 +337,10 @@
             </section>
             <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
-                <img class="svg icon-size-md" alt="Wechat" src="./assets/images/portfolios/dashboard2.svg">
+                <!-- <img class="svg icon-size-md" alt="Wechat" src="./assets/images/portfolios/dashboard2.svg"> -->
+                <svg class="svg icon-size-md svgicon">
+                  <use xlink:href="/assets/images/portfolio-svgsprit.svg#dashboard2"></use>
+                </svg>
               </div>
               <div>Dashboard</div>
               <a class="link" href="https://mystone.netlify.app" target="_blank" rel="noopener noreferrer nofollow">
@@ -289,7 +348,10 @@
             </section>
             <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
-                <img class="svg icon-size-md" alt="Wechat" src="./assets/images/portfolios/cv.svg">
+                <!-- <img class="svg icon-size-md" alt="Wechat" src="./assets/images/portfolios/cv.svg"> -->
+                <svg class="svg icon-size-md svgicon">
+                  <use xlink:href="/assets/images/portfolio-svgsprit.svg#cv"></use>
+                </svg>
               </div>
               <div>Flower</div>
               <a class="link" href="https://mystone.netlify.app" target="_blank" rel="noopener noreferrer nofollow">
@@ -297,7 +359,10 @@
             </section>
             <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress." data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
-                <img class="svg icon-size-md" alt="Wechat" src="./assets/images/portfolios/notepad.svg">
+                <!-- <img class="svg icon-size-md" alt="Wechat" src="./assets/images/portfolios/notepad.svg"> -->
+                <svg class="svg icon-size-md svgicon">
+                  <use xlink:href="/assets/images/portfolio-svgsprit.svg#notepad"></use>
+                </svg>
               </div>
               <div>Note</div>
               <a class="link" href="https://mystone.netlify.app" target="_blank" rel="noopener noreferrer nofollow">
@@ -318,7 +383,10 @@
     <div class="text-right" style="margin-left: auto;">
       <button class="qrcode-container border-active" data-tooltip data-tippy-content="This site's QRCode"
         data-i18n-attr="data-tippy-content=APP.SITE_QRCODE">
-        <img class="qrcode-handler" src="./assets/images/bases/scan-qr-code.svg" alt="qrcode view on mobile" loading="lazy">
+        <!-- <img class="qrcode-handler" src="./assets/images/bases/scan-qr-code.svg" alt="qrcode view on mobile" loading="lazy"> -->
+        <svg class="border-active svgicon text-white qrcode-handler">
+          <use href="/assets/images/base-svgsprit.svg#scan-qr-code"></use>
+        </svg>
       </button>
     </div>
   </footer>

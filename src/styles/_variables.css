@@ -89,6 +89,9 @@
   --color-moon-bg: linear-gradient(to top, #d00 0%, #fc8b53 50%, #fdd55a 100%);
   --color-moon-bg-size: 200% 200%;
 
+  --color-peach-gradient: linear-gradient(40deg,#ffd86f,#fc6262);
+  --color-purple-gradient: linear-gradient(40deg,#ff6ec4,#7873f5);
+
   --color-brand: var(--yellow1);
   --brand-text-shadow: -5px 5px 10px #ab870a;
 

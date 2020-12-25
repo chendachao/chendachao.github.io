@@ -30,7 +30,8 @@ a.btn {
 .btn.btn-primary,
 button.btn.btn-primary,
 a.btn.btn-primary {
-  border: 1px solid var(--green3);
+  background: var(--color-purple-gradient);
+  color: var(--text-color);
 }
 
 .btn:hover,

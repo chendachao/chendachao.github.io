@@ -14,6 +14,14 @@
   transform: scale(1.25); */
 }
 
+.peach-gradient {
+  background: var(--color-peach-gradient) !important;
+}
+
+.purple-gradient {
+  background: var(--color-purple-gradient) !important;
+}
+
 .box-shadow {
   box-shadow: -10px 10px 15px var(--subtle3);
 }
@@ -39,7 +47,7 @@
 }
 
 .text-white {
-  color: var(--white); 
+  color: var(--white) !important; 
 }
 
 .text-black {

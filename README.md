@@ -25,7 +25,9 @@
 - [Image Compressor](https://imagecompressor.com/)
 - [Smart PNG and JPEG compression](https://tinypng.com/)
 - [SVG Compressor](https://jakearchibald.github.io/svgomg/)
-- [SVG Sprit](https://svgsprit.es/)
+- [Convert Font to SVG](https://onlinefontconverter.com/)
+- [Pixel Perfect Icon Solutions && Custom Font](https://icomoon.io/)
+- [SVG Sprit](https://svgsprit.es/) - has some issues, be caution with it.
 - [Hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
 
 ## TODOs:

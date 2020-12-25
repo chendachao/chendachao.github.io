@@ -29,6 +29,7 @@
 - [Pixel Perfect Icon Solutions && Custom Font](https://icomoon.io/)
 - [SVG Sprit](https://svgsprit.es/) - has some issues, be caution with it.
 - [Hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
+- [emoji](http://xahlee.info/comp/unicode_arrows.html)
 
 ## TODOs:
 - [x] JSON description for developer view

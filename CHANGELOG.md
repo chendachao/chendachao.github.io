@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.2](https://github.com/chendachao/chendachao.github.io/compare/v1.8.1...v1.8.2) (2020-12-26)
+
+
+### Features
+
+* bg ([5c33699](https://github.com/chendachao/chendachao.github.io/commit/5c3369924c991fba6a081021136795e411888181))
+
 ### [1.8.1](https://github.com/chendachao/chendachao.github.io/compare/v1.8.0...v1.8.1) (2020-12-25)
 
 ## [1.8.0](https://github.com/chendachao/chendachao.github.io/compare/v1.7.56...v1.8.0) (2020-12-25)

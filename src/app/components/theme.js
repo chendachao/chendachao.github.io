@@ -12,7 +12,8 @@ function Theme() {
   if (daysBetween(new Date(), startDate, endDate)) {
     setTheme('gray');
   } else {
-    let defaultTheme = localStorage.getItem('theme');
+    const isSystemDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+    let defaultTheme = localStorage.getItem('theme') || isSystemDarkTheme;
     defaultTheme && setTheme(defaultTheme);
 
     let moon = document.querySelector('.moon');

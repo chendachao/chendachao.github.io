@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.5](https://github.com/chendachao/chendachao.github.io/compare/v1.8.4...v1.8.5) (2020-12-31)
+
+
+### Features
+
+* dark theme ([b15ec52](https://github.com/chendachao/chendachao.github.io/commit/b15ec52af9219b37c53a86e960fbf2d692837056))
+
 ### [1.8.4](https://github.com/chendachao/chendachao.github.io/compare/v1.8.3...v1.8.4) (2020-12-30)
 
 ### [1.8.3](https://github.com/chendachao/chendachao.github.io/compare/v1.8.2...v1.8.3) (2020-12-30)

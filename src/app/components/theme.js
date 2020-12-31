@@ -13,7 +13,7 @@ function Theme() {
     setTheme('gray');
   } else {
     const isSystemDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
-    let defaultTheme = localStorage.getItem('theme') || isSystemDarkTheme;
+    let defaultTheme = localStorage.getItem('theme') || (isSystemDarkTheme && 'dark');
     defaultTheme && setTheme(defaultTheme);
 
     let moon = document.querySelector('.moon');

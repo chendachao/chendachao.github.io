@@ -117,7 +117,7 @@ const commonConfig = merge([
         ]
       }),
       new WebpackBar({
-        name: `🔥  Larry's Homepage`,
+        name: `🔥 Larry's Homepage`,
         color: '#3ce2e2',
       }),
     ]

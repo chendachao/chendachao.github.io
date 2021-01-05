@@ -128,6 +128,13 @@
   --color-card-bg: radial-gradient(circle farthest-corner at right bottom,#2c20a6 0,#c642db 100%);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-moon-bg: lightgoldenrodyellow;
+    --color-card-bg: radial-gradient(circle farthest-corner at right bottom,#2c20a6 0,#c642db 100%);
+  }
+}
+
 :root [data-theme="gray"] {
 }
 

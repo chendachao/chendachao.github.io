@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.7](https://github.com/chendachao/chendachao.github.io/compare/v1.8.6...v1.8.7) (2021-01-09)
+
+
+### Features
+
+* i18n ([cfb40ad](https://github.com/chendachao/chendachao.github.io/commit/cfb40ad7c2b5a3ee7de5528a14c8e5ec8aa36ad8))
+
 ### [1.8.6](https://github.com/chendachao/chendachao.github.io/compare/v1.8.5...v1.8.6) (2021-01-05)
 
 

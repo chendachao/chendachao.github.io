@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.8](https://github.com/chendachao/chendachao.github.io/compare/v1.8.7...v1.8.8) (2021-01-10)
+
+
+### Features
+
+* add web share fn ([9d9aa28](https://github.com/chendachao/chendachao.github.io/commit/9d9aa288220009506f2509d74e69293af06cc4d6))
+
 ### [1.8.7](https://github.com/chendachao/chendachao.github.io/compare/v1.8.6...v1.8.7) (2021-01-09)
 
 

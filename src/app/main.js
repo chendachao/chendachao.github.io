@@ -59,6 +59,26 @@ window.addEventListener('load', function() {
   const developerModeLink = document.querySelector('.developer-mode-link');
   developerModeLink.setAttribute('href', `/assets/data/${i18n.locale}/chendachao.json`);
 
+  // Share application
+  if(navigator.share) {
+    const shareBtn = document.querySelector('.share-btn');
+    shareBtn.removeAttribute('hidden');
+    shareBtn.addEventListener('click', () => {
+      let url = document.location.href;
+      const canonicalElement = document.querySelector('link[rel=canonical]');
+      if (canonicalElement !== null) {
+          url = canonicalElement.href;
+      }
+      navigator.share({
+        title: `Larry Chen' Homepage`,
+        text: `Welcome to visite Larry Chen's homepage`,
+        url,
+      })
+      .then(() => console.log('Successful share!'))
+      .catch(error => console.log('Error sharing', error));
+    });
+  }
+
   let errorToasted;
   const updateOnlineStatus = function (event) {
     var message = navigator.onLine ? "" : i18n.format('APP.OFFLINE');

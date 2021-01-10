@@ -75,6 +75,7 @@
 - http://patorjk.com/text-color-fader/
 - [Favicon checker and generator](https://realfavicongenerator.net/)
 - [PWA Builder](https://www.pwabuilder.com/)
+- [Web Share](https://web.dev/web-share/)
 
 
 PS:

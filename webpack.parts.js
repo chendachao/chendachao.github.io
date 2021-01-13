@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
+const openBrowser = require('react-dev-utils/openBrowser');
 // const GitRevisionPlugin = require('git-revision-webpack-plugin');
 // const gitRevisionPlugin = new GitRevisionPlugin({
 //   lightweightTags: true
@@ -27,14 +28,16 @@ exports.devServer = ({ host, port } = {}) => ({
       errors: true,
       warnings: true
     },
-    open: true,
     watchOptions: {
       // Delay the rebuild after the first change
       aggregateTimeout: 300,
 
       // Poll using interval (in ms, accepts boolean too)
       poll: 1000,
-    }
+    },
+    // open: true,
+    // TODO: webpack-dev-server will integrate this feature later
+    after: () => { openBrowser(`http://localhost:${port || 8088}`); }
   }
 });
 

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.9](https://github.com/chendachao/chendachao.github.io/compare/v1.8.8...v1.8.9) (2021-01-13)
+
+
+### Features
+
+* auto open or refresh the existing browser tab ([20ee082](https://github.com/chendachao/chendachao.github.io/commit/20ee0821569ede5b5be4f02c6f00929d0816ea04))
+
 ### [1.8.8](https://github.com/chendachao/chendachao.github.io/compare/v1.8.7...v1.8.8) (2021-01-10)
 
 

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.8.10](https://github.com/chendachao/chendachao.github.io/compare/v1.8.9...v1.8.10) (2021-01-16)
+
+
+### Features
+
+* optimnize svg ([f24b22c](https://github.com/chendachao/chendachao.github.io/commit/f24b22ce091bc9d654a47b5a61d480fe2c9b3944))
+
 ### [1.8.9](https://github.com/chendachao/chendachao.github.io/compare/v1.8.8...v1.8.9) (2021-01-13)
 
 

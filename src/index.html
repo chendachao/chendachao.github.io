@@ -143,10 +143,12 @@
     <div class="bird-small-right"></div>
     <div class="moon step15" id="step5"></div>
     <div class="brand text-center">
-      <!-- <img id="step1" class="brand-icon step11" src="./assets/images/bases/star.svg" alt="Star" width="calc(5em + 4vw)" height="calc(5em + 4vw)" loading="lazy"> -->
-      <svg id="step1" class="brand-icon step11 svgicon" width="calc(5em + 4vw)" height="calc(5em + 4vw)">
+      <img id="step1" class="brand-icon step11 lazyload" src="./assets/images/bases/star.svg" alt="Star" width="calc(5em + 4vw)" height="calc(5em + 4vw)" loading="lazy">
+      <!-- <svg id="step1" class="brand-icon step11 svgicon" width="calc(5em + 4vw)" height="calc(5em + 4vw)" role="img" aria-label="Star">
+        <title id="title" lang="en">Star</title>
+        <desc>Star</desc>
         <use href="/assets/images/base-symbol-defs.svg#star"></use>
-      </svg>
+      </svg> -->
     </div>
     <div class="centered-content text-shadow">
       <section class="bio step12" id="step2">
@@ -194,7 +196,7 @@
         <template id="wechat-popup">
           <div class="text-center">
             <figure>
-              <img class="wechat-qrcode" src="./assets/images/wechat-qr-code.jpg" alt="wechat: ProgrammerLarry">
+              <img class="wechat-qrcode lazyload" loading="lazy" src="./assets/images/wechat-qr-code.jpg" alt="wechat: ProgrammerLarry">
               <figcaption class="wechat-qrcode-desc" data-i18n-id="APP.QRCODE_DESC">Scan the QR Code to add me on WeChat
               </figcaption>
             </figure>
@@ -204,7 +206,9 @@
           <li data-tippy-content="Github: chendachao" data-tooltip>
             <a class="icon icon-github hover-visible box-shadow circle" href="https://github.com/chendachao"
               target="_blank" rel="noopener noreferrer nofollow">
-              <svg class="svg svgicon">
+              <svg class="svg svgicon" role="img" aria-label="Github">
+                <title id="title" lang="en">github</title>
+                <desc>github</desc>
                 <use href="/assets/images/social-symbol-defs.svg#github"></use>
               </svg>
             </a>
@@ -213,14 +217,18 @@
             <a class="icon icon-envelope-o hover-visible box-shadow circle"
               href="mailto:chendachao@outlook.com?subject=Greetings%20Larry&body=Hi%20Larry%2C%20%0A%0AI%20like%20the%20color%20of%20your%20website%2C%20It's%20very%20interesting...%0A%0A%0A%0A"
               target="_blank" rel="noopener noreferrer nofollow">
-              <svg class="svg svgicon">
+              <svg class="svg svgicon" role="img" aria-label="Email">
+                <title id="title" lang="en">Email</title>
+                <desc>Email</desc>
                 <use href="/assets/images/social-symbol-defs.svg#outlook"></use>
               </svg>
             </a>
           </li>
           <li>
             <a class="icon icon-wechat hover-visible box-shadow circle" id="wechat" rel="noopener noreferrer nofollow">
-              <svg class="svg svgicon">
+              <svg class="svg svgicon" role="img" aria-label="wechat">
+                <title id="title" lang="en">wechat</title>
+                <desc>wechat</desc>
                 <use href="/assets/images/social-symbol-defs.svg#wechat"></use>
               </svg>
             </a>
@@ -228,7 +236,9 @@
           <li data-tippy-content="Skype" data-tooltip>
             <a class="icon icon-skype hover-visible box-shadow circle" href="skype:chendachao@outlook.com?chat"
               rel="noopener noreferrer nofollow">
-              <svg class="svg svgicon">
+              <svg class="svg svgicon" role="img" aria-label="Skype">
+                <title id="title" lang="en">Skype</title>
+                <desc>Skype</desc>
                 <use href="/assets/images/social-symbol-defs.svg#skype"></use>
               </svg>
             </a>
@@ -236,7 +246,9 @@
           <li data-tippy-content="Linkedin: chendachao" data-tooltip>
             <a class="icon icon-linkedin hover-visible box-shadow circle" href="https://www.linkedin.com/in/chendachao"
               target="_blank" rel="noopener noreferrer nofollow">
-              <svg class="svg svgicon">
+              <svg class="svg svgicon" role="img" aria-label="Linkedin">
+                <title id="title" lang="en">Linkedin</title>
+                <desc>Linkedin</desc>
                 <use href="/assets/images/social-symbol-defs.svg#linkedin"></use>
               </svg>
             </a>
@@ -244,7 +256,9 @@
           <li data-tippy-content="Twitter: dachaochen" data-tooltip>
             <a class="icon icon-twitter hover-visible box-shadow circle" target="_blank"
               href="https://twitter.com/dachaochen" rel="noopener noreferrer nofollow">
-              <svg class="svg svgicon">
+              <svg class="svg svgicon" role="img" aria-label="Twitter">
+                <title id="title" lang="en">Twitter</title>
+                <desc>Twitter</desc>
                 <use href="/assets/images/social-symbol-defs.svg#twitter"></use>
               </svg>
             </a>
@@ -252,7 +266,9 @@
           <li data-tippy-content="Stackoverflow: chen-dachao" data-tooltip>
             <a class="icon icon-stackoverflow hover-visible box-shadow circle" target="_blank"
               href="https://stackoverflow.com/users/6294371/chen-dachao" rel="noopener noreferrer nofollow">
-              <svg class="svg svgicon">
+              <svg class="svg svgicon" role="img" aria-label="Stackoverflow">
+                <title id="title" lang="en">Stackoverflow</title>
+                <desc>Stackoverflow</desc>
                 <use href="/assets/images/social-symbol-defs.svg#so"></use>
               </svg>
             </a>
@@ -297,7 +313,9 @@
             <section class="card border-active" data-tooltip data-tippy-content="Online code editor."
               data-i18n-attr="data-tippy-content=APP.PORTFOLIO.CODER">
               <div class="icon rounded">
-                <svg class="svg icon-size-md svgicon">
+                <svg class="svg icon-size-md svgicon" role="img" aria-label="Coder">
+                  <title id="title" lang="en">Coder</title>
+                  <desc>Coder</desc>
                   <use href="/assets/images/portfolio-symbol-defs.svg#coder"></use>
                   Sorry, your browser does not support inline SVG.
                 </svg>
@@ -310,7 +328,9 @@
             <section class="card border-active" data-tooltip data-tippy-content="My Blog."
               data-i18n-attr="data-tippy-content=APP.PORTFOLIO.BLOG">
               <div class="icon rounded">
-                <svg class="svg icon-size-md svgicon">
+                <svg class="svg icon-size-md svgicon" role="img" aria-label="Blog">
+                  <title id="title" lang="en">Blog</title>
+                  <desc>Blog</desc>
                   <use href="/assets/images/portfolio-symbol-defs.svg#rss"></use>
                 </svg>
               </div>
@@ -330,7 +350,9 @@
             <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress."
               data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
-                <svg class="svg icon-size-md svgicon">
+                <svg class="svg icon-size-md svgicon" role="img" aria-label="Stone">
+                  <title id="title" lang="en">Stone</title>
+                  <desc>Stone</desc>
                   <use href="/assets/images/portfolio-symbol-defs.svg#throwing_a_stone"></use>
                 </svg>
               </div>
@@ -341,7 +363,9 @@
             <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress."
               data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
-                <svg class="svg icon-size-md svgicon">
+                <svg class="svg icon-size-md svgicon" role="img" aria-label="Dashboard">
+                  <title id="title" lang="en">Dashboard</title>
+                  <desc>Dashboard</desc>
                   <use href="/assets/images/portfolio-symbol-defs.svg#dashboard2"></use>
                 </svg>
               </div>
@@ -352,7 +376,9 @@
             <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress."
               data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
-                <svg class="svg icon-size-md svgicon">
+                <svg class="svg icon-size-md svgicon" role="img" aria-label="Flower">
+                  <title id="title" lang="en">Flower</title>
+                  <desc>Flower</desc>
                   <use href="/assets/images/portfolio-symbol-defs.svg#cv"></use>
                 </svg>
               </div>
@@ -363,7 +389,9 @@
             <section class="card border-active disabled" data-tooltip data-tippy-content="Work in progress."
               data-i18n-attr="data-tippy-content=APP.WIP">
               <div class="icon rounded">
-                <svg class="svg icon-size-md svgicon">
+                <svg class="svg icon-size-md svgicon" role="img" aria-label="Note">
+                  <title id="title" lang="en">Note</title>
+                  <desc>Note</desc>
                   <use href="/assets/images/portfolio-symbol-defs.svg#notepad"></use>
                 </svg>
               </div>
@@ -374,7 +402,9 @@
           </div>
         </details>
         <section class="text-right">
-          <svg class="svgicon text-black signature">
+          <svg class="svgicon text-black signature" role="img" aria-label="Larry Chen">
+            <title id="title" lang="en">Larry Chen</title>
+            <desc>Larry Chen</desc>
             <use href="/assets/images/base-symbol-defs.svg#signature"></use>
           </svg>
         </section>
@@ -388,7 +418,9 @@
     <div class="text-right" style="margin-left: auto;">
       <button class="qrcode-container border-active" data-tooltip data-tippy-content="This site's QRCode"
         data-i18n-attr="data-tippy-content=APP.SITE_QRCODE">
-        <svg class="border-active svgicon text-white qrcode-handler">
+        <svg class="border-active svgicon text-white qrcode-handler" role="img" aria-label="QR Code">
+          <title id="title" lang="en">QR Code</title>
+          <desc>QR Code</desc>
           <use href="/assets/images/base-symbol-defs.svg#scan-qr-code"></use>
         </svg>
       </button>

@@ -1,3 +1,6 @@
+import 'lazysizes';
+// import a plugin
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import toasted from './utils/toasted';
 import { isIE, isPC } from './utils';
 import { scrollToTop } from './utils/scroll';

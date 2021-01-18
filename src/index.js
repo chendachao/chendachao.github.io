@@ -1,5 +1,6 @@
 // es6 generator support
 import '@babel/polyfill';
+import './error-tracing';
 
 import toasted from '@app/utils/toasted';
 import i18n from '@app/utils/i18n';

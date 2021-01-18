@@ -74,6 +74,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "7.12.1",
+    "@sentry/browser": "5.30.0",
+    "@sentry/tracing": "5.30.0",
     "axios": "0.21.1",
     "bowser": "2.11.0",
     "dialog-polyfill": "0.5.3",

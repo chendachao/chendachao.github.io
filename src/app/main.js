@@ -51,6 +51,18 @@ if (isIE()) {
   installButton.setAttribute('hidden', '');
 }
 
+// Loading skeleton for svg icons
+const svgContainers = document.querySelectorAll('.icon.loading');
+if(svgContainers.length) {
+  const svg = svgContainers[0].querySelector('svg');
+  svg.onload = function() {
+    console.log('svg loaded');
+    svgContainers.forEach(svg => {
+      svg.classList.remove('loading');
+    });
+  }
+}
+
 window.addEventListener('load', function() {
 
   const versionEl = document.querySelector('.version');

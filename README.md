@@ -73,6 +73,7 @@
 - https://vectr.com/
 - https://www.calligrapher.ai/
 - http://patorjk.com/text-color-fader/
+- [Log tracing](https://sentry.io/)
 - [Favicon checker and generator](https://realfavicongenerator.net/)
 - [PWA Builder](https://www.pwabuilder.com/)
 - [Web Share](https://web.dev/web-share/)

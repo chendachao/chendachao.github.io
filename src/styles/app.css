@@ -338,6 +338,27 @@ only screen and (device-width: 767px) {
   height: 1.5rem;
 }
 
+.icon.loading {
+  /* background: var(--bg-light); */
+  /* border-radius: 4px; */
+  /* display: block; */
+  position: relative;
+  overflow: hidden;
+}
+
+.icon.loading:before {
+  content: "";
+  animation: sweep-loading 1.3s infinite;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  transform: translateX(-100%);
+  z-index: 1;
+  background: linear-gradient(90deg, transparent, var(--bg-gray), transparent);
+}
+
 .icon-facebook {
   background: var(--fb);
 }

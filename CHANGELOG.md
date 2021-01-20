@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/chendachao/chendachao.github.io/compare/v1.8.15...v1.9.0) (2021-01-20)
+
+
+### Features
+
+* loading skeleton for icons ([38c71dc](https://github.com/chendachao/chendachao.github.io/commit/38c71dc65ba849510eb3a17d0bc64fd0e927d9f7))
+
 ### [1.8.15](https://github.com/chendachao/chendachao.github.io/compare/v1.8.14...v1.8.15) (2021-01-18)
 
 

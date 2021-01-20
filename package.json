@@ -78,7 +78,7 @@
     "@sentry/tracing": "5.30.0",
     "axios": "0.21.1",
     "bowser": "2.11.0",
-    "dialog-polyfill": "0.5.3",
+    "dialog-polyfill": "0.5.6",
     "intl-messageformat": "9.3.20",
     "intro.js": "3.0.1",
     "lazysizes": "5.3.0",

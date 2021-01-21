@@ -12,6 +12,18 @@ Theme();
 import i18n from './utils/i18n';
 i18n.init();
 
+// Loading skeleton for svg icons
+const svgContainers = document.querySelectorAll('.icon.loading');
+if(svgContainers.length) {
+  const svg = svgContainers[0].querySelector('svg');
+  svg.addEventListener('load', () => {
+    console.log('svg loaded');
+    svgContainers.forEach(svg => {
+      svg.classList.remove('loading');
+    });
+  });
+}
+
 // Initialize tooltip and popover
 setTimeout(() => {
   import('./components/tooltip').then(TooltipAndPopover => TooltipAndPopover.default());
@@ -50,18 +62,6 @@ if (isIE()) {
   const installButton = document.querySelector('#btnInstall');
   installButton.setAttribute('hidden', '');
 }
-
-// Loading skeleton for svg icons
-// const svgContainers = document.querySelectorAll('.icon.loading');
-// if(svgContainers.length) {
-//   const svg = svgContainers[0].querySelector('svg');
-//   svg.onload = function() {
-//     console.log('svg loaded');
-//     svgContainers.forEach(svg => {
-//       svg.classList.remove('loading');
-//     });
-//   }
-// }
 
 window.addEventListener('load', function() {
 

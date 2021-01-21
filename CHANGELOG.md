@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.1](https://github.com/chendachao/chendachao.github.io/compare/v1.9.0...v1.9.1) (2021-01-21)
+
+
+### Features
+
+* onload svg ([0ea44c8](https://github.com/chendachao/chendachao.github.io/commit/0ea44c8522a87a1cc5a7406d5244575095b984b9))
+
 ## [1.9.0](https://github.com/chendachao/chendachao.github.io/compare/v1.8.15...v1.9.0) (2021-01-20)
 
 

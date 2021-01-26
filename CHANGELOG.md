@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.3](https://github.com/chendachao/chendachao.github.io/compare/v1.9.2...v1.9.3) (2021-01-26)
+
+
+### Features
+
+* remove onload ([b965de8](https://github.com/chendachao/chendachao.github.io/commit/b965de894d5a8ab5bee7a0be093be26253385579))
+
 ### [1.9.2](https://github.com/chendachao/chendachao.github.io/compare/v1.9.1...v1.9.2) (2021-01-21)
 
 

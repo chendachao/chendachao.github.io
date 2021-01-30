@@ -43,6 +43,7 @@ const commonConfig = merge([
       // filename: '[name].[hash:8].bundle.js',
       chunkFilename: '[name].[chunkhash].chunk.js',
       path: PATHS.build,
+      // ecmaVersion: 5 // work in webpack 5
     },
     resolve: {
       modules: ['node_modules', './src'],
@@ -72,6 +73,7 @@ const commonConfig = merge([
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: 'src/index.html',
+        // hash: true,
         minify: false,
         excludeChunks: ['cv', 'stone']
       }),

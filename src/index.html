@@ -14,7 +14,7 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' data: gap: 'unsafe-eval' instant.page www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws12.hotjar.com *.ingest.sentry.io/; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+    content="default-src 'self' data: gap: 'unsafe-eval' instant.page www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="application-name" content="Larry Chen" />
@@ -62,7 +62,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
   <link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#5bbad5">
   <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
-  <!-- <link rel="icon" type="image/svg+xml" href="/assets/images/portfolios/home.svg" /> -->
+  <link rel="icon" type="image/svg+xml" href="/assets/images/portfolios/home.svg" />
   <link rel="shortcut icon" href="/assets/images/icons/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="/assets/images/icons/browserconfig.xml">
@@ -82,7 +82,7 @@
   <script defer src="/assets/hotjar.js"></script>
 
   <script>
-    if (!(['127.0.0.1', 'localhost'].some(host => window.location.host.startsWith(host)))
+    if (!(['127.0.0.1', 'localhost'].some(function(host) { return window.location.host.startsWith(host) }))
       && (window.location.host.endsWith('.github.io') && window.location.protocol != "https:"))
       window.location.protocol = "https";
   </script>
@@ -97,7 +97,6 @@
 </head>
 
 <body data-theme="light">
-
   <header>
     <section class="help-icon-menu-bar">
       <button hidden class="help-icon share-btn border-active">

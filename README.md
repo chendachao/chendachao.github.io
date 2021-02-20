@@ -32,16 +32,16 @@
 - [emoji](http://xahlee.info/comp/unicode_arrows.html)
 
 ## TODOs:
-- [x] JSON description for developer view
+- ✅ JSON description for developer view
 - [ ] More social icons
 - [ ] Share on Wechat, QQ, twitter and so on.
 - [ ] Show rainbow sometimes.
 - [ ] FM/Music section.
-- [x] My projects section.
-- [x] Intro for all sections.
-- [x] Change them to gray on specific day.
-- [x] [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Update' button
-- [x] [PWA] Update alert
+- ✅ My projects section.
+- ✅ Intro for all sections.
+- ✅ Change them to gray on specific day.
+- ✅ [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Up✅e' button
+- ✅ [PWA] Update alert
 
 ## PWA Debug:
 1. Run command `yarn build:w`.

@@ -27,12 +27,13 @@ only screen and (device-width: 767px) {
   margin-left: 5px;
   border-radius: 50%;
   font-size: 1rem;
+  will-change: transform;
 }
 
 .qrcode-dialog .close-icon:hover {
-  transform: none;
+  transform: scale(1.5);
   background: 0 0;
-  color: #f27474;
+  color: var(--red);
 }
 
 .qrcode-dialog .actions {
@@ -70,27 +71,27 @@ only screen and (device-width: 767px) {
 
 @keyframes shake {
   0% {
-    transform: translate3D(0, 0, 1000px);
+    transform: translate3D(0, -50%, 1000px);
   }
 
   12.5% {
-    transform: translate3D(-6px, 0, 1000px) rotateY(-5deg);
+    transform: translate3D(-6px, -50%, 1000px) rotateY(-5deg);
   }
 
   37.5% {
-    transform: translate3D(5px, 0, 1000px) rotateY(4deg);
+    transform: translate3D(5px, -50%, 1000px) rotateY(4deg);
   }
 
   62.5% {
-    transform: translate3D(-3px, 0, 1000px) rotateY(-2deg);
+    transform: translate3D(-3px, -50%, 1000px) rotateY(-2deg);
   }
 
   87.5% {
-    transform: translate3D(2px, 0, 1000px) rotateY(1deg);
+    transform: translate3D(2px, -50%, 1000px) rotateY(1deg);
   }
 
   100% {
-    transform: translate3D(0, 0, 1000px);
+    transform: translate3D(0, -50%, 1000px);
   }
 }
 
@@ -148,12 +149,12 @@ only screen and (device-width: 767px) {
 
 @keyframes appear-from-top {
   0% {
-    transform: translate(0, -100%);
+    transform: translate(0, -60%);
     opacity: 0;
   }
 
-  85% {
-    transform: translate(0, 5%);
+  75% {
+    transform: translate(0, -40%);
     opacity: 0.5;
   }
 

@@ -554,6 +554,8 @@ details.my-portfolio[open] summary + div {
 
 .mobile-qrcode {
   width: 100% !important;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
   border-radius: 4px;
   box-shadow: 0px 0px 4px 0px var(--color-shadow2);
   will-change: transform;

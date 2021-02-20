@@ -53,12 +53,12 @@ function SetQRCode() {
       .then(cvs => {
         const imgDim = {
           //logo dimention
-          width: 70,
-          height: 70,
+          width: 48,
+          height: 48,
         };
         // const logo = '/assets/images/bases/home.svg';
-        const logo = '/assets/images/larrychen.png';
-        // const logo = '/assets/images/icons/favicon.ico';
+        // const logo = '/assets/images/larrychen.png';
+        const logo = '/assets/images/icons/favicon.ico';
         const ctx = cvs.getContext('2d');
         const logoObj = new Image();
         logoObj.src = logo;

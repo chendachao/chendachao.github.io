@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.4](https://github.com/chendachao/chendachao.github.io/compare/v1.9.3...v1.9.4) (2021-02-20)
+
+
+### Features
+
+* chores ([6ea9543](https://github.com/chendachao/chendachao.github.io/commit/6ea954339135540f4c250633a7ee482a47b0dd46))
+
+
+### Bug Fixes
+
+* dialog position fixed center ([64140d4](https://github.com/chendachao/chendachao.github.io/commit/64140d4eb4b932189eb7fa12b8ecff46cdf0aff1))
+
 ### [1.9.3](https://github.com/chendachao/chendachao.github.io/compare/v1.9.2...v1.9.3) (2021-01-26)
 
 

@@ -64,13 +64,13 @@
     "stylelint": "13.7.2",
     "terser-webpack-plugin": "4.2.3",
     "url-loader": "4.1.1",
-    "webpack": "4.44.2",
+    "webpack": "4.46.0",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0",
     "webpack-merge": "5.3.0",
     "webpack-notifier": "1.8.0",
     "webpackbar": "5.0.0-3",
-    "workbox-webpack-plugin": "5.1.4"
+    "workbox-webpack-plugin": "6.1.1"
   },
   "dependencies": {
     "@babel/polyfill": "7.12.1",
@@ -78,7 +78,7 @@
     "@sentry/tracing": "5.30.0",
     "axios": "0.21.1",
     "bowser": "2.11.0",
-    "dialog-polyfill": "0.5.3",
+    "dialog-polyfill": "0.5.6",
     "intl-messageformat": "9.3.20",
     "intro.js": "3.0.1",
     "lazysizes": "5.3.0",

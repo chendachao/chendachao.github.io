@@ -116,7 +116,7 @@ function SetQRCode() {
     setTimeout(() => {
       dialog.classList.remove(hideModalClass);
       dialog.close(message);
-    }, 300);
+    }, 500);
   }
 
   function download(imgData) {

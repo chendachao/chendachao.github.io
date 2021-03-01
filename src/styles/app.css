@@ -127,6 +127,7 @@ img[data-src] {
 
 .main {
   flex-grow: 1;
+  /* padding: 15px calc((100vw - min(900px, calc(100vw - 50px))) / 2); */
 }
 
 .bird-big-left,
@@ -256,6 +257,7 @@ img[data-src] {
   text-align: justify;
   font-weight: 900;
   font-size: calc(1em + 1vw);
+  /* font-size: clamp(min, viewport-width-unit, max); */
   /* letter-spacing: -0.1vw; */
   padding: 1rem;
   transition: 1s;
@@ -356,7 +358,7 @@ only screen and (device-width: 767px) {
   top: 0;
   transform: translateX(-100%);
   z-index: 1;
-  background: linear-gradient(90deg, transparent, var(--bg-gray), transparent);
+  background: linear-gradient(135deg, transparent 30%, var(--bg-gray) 50%, transparent 70%);
 }
 
 .icon-facebook {

@@ -116,7 +116,7 @@ only screen and (device-width: 767px) {
 }
 
 .disappear-from-top {
-  animation: disappear-from-top .6s;
+  animation: disappear-from-top .4s forwards;
 }
 
 .appear-from-bottom {
@@ -124,7 +124,7 @@ only screen and (device-width: 767px) {
 }
 
 .disappear-from-bottom {
-  animation: disappear-from-bottom .6s;
+  animation: disappear-from-bottom .4s forwards;
 }
 
 @keyframes scale-in {
@@ -149,12 +149,12 @@ only screen and (device-width: 767px) {
 
 @keyframes appear-from-top {
   0% {
-    transform: translate(0, -60%);
+    transform: translate(0, -55%);
     opacity: 0;
   }
 
-  75% {
-    transform: translate(0, -40%);
+  65% {
+    transform: translate(0, -45%);
     opacity: 0.5;
   }
 

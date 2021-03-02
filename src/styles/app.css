@@ -356,7 +356,7 @@ only screen and (device-width: 767px) {
   left: 0;
   right: 0;
   top: 0;
-  transform: translateX(-100%);
+  /* transform: translate(-50%, -50%); */
   z-index: 1;
   background: linear-gradient(135deg, transparent 30%, var(--bg-gray) 50%, transparent 70%);
 }

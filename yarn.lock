@@ -6446,10 +6446,10 @@ into-stream@^3.1.0:
     from2 "^2.1.1"
     p-is-promise "^1.1.0"
 
-intro.js@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/intro.js/-/intro.js-3.0.1.tgz#ccea302ebcf14e3ba817de83a8e3be15f3f72be1"
-  integrity sha512-tFOLaFUJbhRvKixgNw/hjFtcsbsS9cUmj4XraE2uC9huYVQSoQKSTioknyRZ/KZeaTMObmcxOvKtVIkHQNyKeQ==
+intro.js@3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/intro.js/-/intro.js-3.3.1.tgz#f9fa4253b159bd640f06d86ca67248bab7f6579f"
+  integrity sha512-Y+iMbIzVQou9PDRP5miKa7NNQeUkSA6XFp+atnGiTarEi2jghthSLK+9JUvdM6QvQ9G+bpOEfKd+DNtWJlGb9w==
 
 ip-regex@^2.1.0:
   version "2.1.0"

@@ -121,9 +121,9 @@
 
 @keyframes sweep-loading {
   from {
-      transform: translateX(-100%);
+      transform: translate(-50%, -50%);
   }
   to {
-      transform: translateX(100%);
+      transform: translate(50%, 50%);
   }
 }

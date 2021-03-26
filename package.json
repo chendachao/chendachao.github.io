@@ -1,7 +1,7 @@
 {
   "name": "chendachao",
   "homepage": "https://github.com/chendachao/chendachao.github.io",
-  "version": "1.9.7",
+  "version": "1.9.9",
   "description": "Larry's Home Page",
   "main": "src/index.js",
   "scripts": {
@@ -41,7 +41,7 @@
     "babel-loader": "8.2.2",
     "clean-webpack-plugin": "3.0.0",
     "compression-webpack-plugin": "6.1.1",
-    "copy-webpack-plugin": "6.3.2",
+    "copy-webpack-plugin": "6.4.1",
     "cross-env": "7.0.3",
     "css-loader": "5.0.1",
     "dotenv": "8.2.0",
@@ -59,7 +59,7 @@
     "purgecss-webpack-plugin": "3.0.0",
     "react-dev-utils": "11.0.4",
     "script-ext-html-webpack-plugin": "2.1.5",
-    "standard-version": "9.0.0",
+    "standard-version": "9.1.1",
     "style-loader": "2.0.0",
     "stylelint": "13.12.0",
     "terser-webpack-plugin": "4.2.3",

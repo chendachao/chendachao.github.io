@@ -280,8 +280,14 @@ img[data-src] {
   color: var(--text-subtle-color);
   font-style: italic;
   font-weight: bold;
-  margin-top: -10px;
+  width: 10rem;
+  /* margin-top: -10px; */
   font-size: 7px;
+
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 8px;
 }
 
 @media only screen and (max-width: 767px),
@@ -291,6 +297,7 @@ only screen and (device-width: 767px) {
     margin-top: -5px;
     line-height: 7px;
     width: 5rem;
+    bottom: 4px;
   }
 }
 

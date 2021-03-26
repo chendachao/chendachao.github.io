@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.9](https://github.com/chendachao/chendachao.github.io/compare/v1.9.8...v1.9.9) (2021-03-26)
+
+
+### Bug Fixes
+
+* wechat popup in mobile ([2cf6eb8](https://github.com/chendachao/chendachao.github.io/commit/2cf6eb859c7903bc4efe9cbabf105d466f4d6f77))
+
 ### [1.9.8](https://github.com/chendachao/chendachao.github.io/compare/v1.9.7...v1.9.8) (2021-03-22)
 
 

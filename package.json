@@ -79,7 +79,7 @@
     "axios": "0.21.1",
     "bowser": "2.11.0",
     "dialog-polyfill": "0.5.6",
-    "intl-messageformat": "9.5.2",
+    "intl-messageformat": "9.6.3",
     "intro.js": "3.3.1",
     "lazysizes": "5.3.0",
     "normalize.css": "8.0.1",

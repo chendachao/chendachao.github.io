@@ -55,7 +55,8 @@ jobs:
         id: lighthouseCheck
         with:
           outputDirectory: /tmp/artifacts
-          urls: 'https://chendachao.github.io'
+          urls: 'https://chendachao.github.io,https://chendachao.netlify.app/,https://chendachao-github-io.chendachao.vercel.app/'
+          slackWebhookUrl: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}
       - name: Upload artifacts
         uses: actions/upload-artifact@master
         with:

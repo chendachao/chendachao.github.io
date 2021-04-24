@@ -78,7 +78,7 @@ exports.loadHTML = ({ include, exclude, options } = {}) => ({
   }
 });
 
-exports.loadCSS = ({ include, exclude } = {}) => ({
+exports.loadCSS = ({ include, exclude, use = [] } = {}) => ({
   module: {
     rules: [
       {
@@ -87,7 +87,7 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
         exclude,
         use: [
           'style-loader', 'css-loader?importLoaders=1'
-        ]
+        ].concat(use)
       }
     ]
   }

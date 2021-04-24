@@ -188,11 +188,15 @@ const pwaPlugins = [
 const productionConfig = merge([
   {
     optimization: {
-      minimizer: [new TerserJSPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true,
-      }), new OptimizeCSSAssetsPlugin({})],
+      minimize: true,
+      minimizer: [
+        new TerserJSPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: true,
+        }),
+        new OptimizeCSSAssetsPlugin({})
+      ],
     },
     plugins: [
       new CompressionPlugin()
@@ -246,7 +250,6 @@ const developmentConfig = merge([
       new WebpackNotifierPlugin({
         title: 'Webpack'
       }),
-    
     ]
   },
   parts.devServer({
@@ -256,9 +259,8 @@ const developmentConfig = merge([
   }),
   parts.loadHTML(),
   parts.loadJavaScript(),
-  // parts.loadCSS(),
-  parts.extractCSS({
-    use: ['css-loader', parts.autoprefix()]
+  parts.loadCSS({
+    use: [parts.autoprefix()]
   }),
   parts.loadImages(),
 ]);

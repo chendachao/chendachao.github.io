@@ -8,7 +8,7 @@ import i18n from '@app/utils/i18n';
 import(/* webpackPreload: true */'@app/main');
 import 'normalize.css';
 import 'styles/index.css';
-import(/* webpackPreload: true */'styles/override.css');
+import(/* webpackPreload: true */ 'styles/override.css');
 
 import * as serviceWorker from '@app/pwa';
 

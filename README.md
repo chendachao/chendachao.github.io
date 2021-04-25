@@ -45,7 +45,7 @@
 
 ## PWA Debug:
 1. Run command `yarn build:w`.
-2. Install `http-server` globally and run command `http-server dist -c-1` in root directory.
+2. Then run command `yarn serve`.
 3. Make some changes, then refresh the page
 
 ## References

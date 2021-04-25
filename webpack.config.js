@@ -40,27 +40,31 @@ const commonConfig = merge([
     },
     output: {
       filename: '[name].[contenthash].bundle.js',
-      // filename: '[name].[hash:8].bundle.js',
       chunkFilename: '[name].[chunkhash].chunk.js',
       path: PATHS.build,
+      publicPath: '',
       // ecmaVersion: 5 // work in webpack 5
     },
+    target: process.env.NODE_ENV === "development" ? "web" : "browserslist",
     resolve: {
+      // preferRelative: true,
+      preferAbsolute: true,
       modules: ['node_modules', './src'],
       extensions: [".ts", ".js", 'css', 'scss'],
       symlinks: false,
       alias: {
+        // process: 'process/browser',
         '@app': resolve('./src/app')
       }
     },
     optimization: {
-      moduleIds: 'hashed',
+      moduleIds: 'deterministic',
       runtimeChunk: 'single',
       // runtimeChunk: true,
       splitChunks: {
         chunks: 'all',
         // cacheGroups: {
-        //   vendor: {
+        //   defaultVendors: {
         //     test: /[\\/]node_modules[\\/]/,
         //     name: 'vendors',
         //     chunks: 'all',
@@ -72,6 +76,7 @@ const commonConfig = merge([
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
+        title: 'Chen Dachao - 陈大超',
         template: 'src/index.html',
         // hash: true,
         minify: false,
@@ -89,23 +94,22 @@ const commonConfig = merge([
         filename: 'stone.html',
         chunks: ['stone']
       }),
-      new ScriptExtHtmlWebpackPlugin({
-        // inline: inlineBundles, // cause pwa update issue
-        preload: /^vendors~app.*.chunk.js$/,
-        custom: {
-          test: /^vendors~app.*.chunk.js$/,
-          attribute: 'crossorigin',
-          value: 'anonymous'
-        },
-        defer: [
-          /^log.*.chunk.js$/,
-          /^install.*.chunk.js$/,
-          /^svgxuse.*.chunk.js$/,
-        ],
-        // sync: 'first.js',
-        defaultAttribute: 'async'
-      }),
-      new webpack.HashedModuleIdsPlugin(),
+      // new ScriptExtHtmlWebpackPlugin({
+      //   // inline: inlineBundles, // cause pwa update issue
+      //   preload: /^vendors~app.*.chunk.js$/,
+      //   custom: {
+      //     test: /^vendors~app.*.chunk.js$/,
+      //     attribute: 'crossorigin',
+      //     value: 'anonymous'
+      //   },
+      //   defer: [
+      //     /^log.*.chunk.js$/,
+      //     /^install.*.chunk.js$/,
+      //     /^svgxuse.*.chunk.js$/,
+      //   ],
+      //   // sync: 'first.js',
+      //   defaultAttribute: 'async'
+      // }),
       new CopyWebpackPlugin({
         patterns: [
           {from: 'LICENSE'},
@@ -122,6 +126,9 @@ const commonConfig = merge([
         name: `🔥 Larry's Homepage`,
         color: '#3ce2e2',
       }),
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+      })
     ]
   },
   parts.loadFonts({
@@ -208,25 +215,13 @@ const productionConfig = merge([
       return path.match(/node_modules/);
     }
   }),
-  parts.loadHTML({
-    options: {
-      minimize: {
-        // minimize: true,
-        // minifyJS: true,
-        // minifyCSS: true,
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: false
-      },
-    }
-  }),
   parts.purifyCSS({
     paths: glob.sync([
       path.join(__dirname, 'src/**/*'),
     ], { nodir: true })
   }),
   parts.extractCSS({
-    use: ['css-loader', parts.autoprefix()]
+    use: ['css-loader?importLoaders=1', parts.autoprefix()]
   }),
   parts.loadImages({
     options: {
@@ -244,12 +239,13 @@ const developmentConfig = merge([
       // new ErrorOverlayPlugin(),
       // Ignore node_modules so CPU usage with poll
       // watching drops significantly.
-      new webpack.WatchIgnorePlugin([
-        path.join(__dirname, 'node_modules')
-      ]),
+      new webpack.WatchIgnorePlugin({
+        paths: [ path.join(__dirname, 'node_modules') ]
+      }),
       new WebpackNotifierPlugin({
         title: 'Webpack'
       }),
+      new webpack.HotModuleReplacementPlugin()
     ]
   },
   parts.devServer({
@@ -257,21 +253,24 @@ const developmentConfig = merge([
     host: process.env.HOST,
     port: process.env.PORT,
   }),
-  parts.loadHTML(),
   parts.loadJavaScript(),
   parts.loadCSS({
     use: [parts.autoprefix()]
   }),
+  // parts.extractCSS({
+  //   use: ['css-loader?importLoaders=1', parts.autoprefix()]
+  // }),
   parts.loadImages(),
 ]);
 
 module.exports = mode => {
-  if (mode === 'production') {
+  console.log('mode', mode);
+  if (mode.production) {
     // TODO: workaround for workbox issue https://github.com/GoogleChrome/workbox/issues/1790
     commonConfig.plugins.push(...pwaPlugins);
-    return merge(commonConfig, productionConfig, {mode});
+    return merge(commonConfig, productionConfig, {mode: 'production'});
   }
   
-  return merge(commonConfig, developmentConfig, {mode});
+  return merge(commonConfig, developmentConfig, {mode: 'development'});
 };
 

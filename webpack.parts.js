@@ -24,6 +24,8 @@ exports.devServer = ({ host, port } = {}) => ({
     // unlike default `localhost`.
     host: host || localhost, // Defaults to `localhost`
     port: port || 8088, // Defaults to 8080
+    // contentBase: path.join(__dirname, "/dist"),
+    // writeToDisk: true,
     overlay: {
       errors: true,
       warnings: true
@@ -60,24 +62,6 @@ exports.loadJavaScript = ({ include, exclude, options } = {}) => ({
   }
 });
 
-exports.loadHTML = ({ include, exclude, options } = {}) => ({
-  module: {
-    rules: [
-      {
-        test: /\.html$/,
-        include,
-        exclude,
-        use: [
-          {
-            loader: 'html-loader',
-            options
-          }
-        ]
-      },
-    ]
-  }
-});
-
 exports.loadCSS = ({ include, exclude, use = [] } = {}) => ({
   module: {
     rules: [
@@ -86,22 +70,34 @@ exports.loadCSS = ({ include, exclude, use = [] } = {}) => ({
         include,
         exclude,
         use: [
-          'style-loader', 'css-loader?importLoaders=1'
+          'style-loader', 
+          'css-loader?importLoaders=1',
         ].concat(use)
       }
     ]
   }
 });
 
-
 exports.extractCSS = ({include, exclude, use = []}) => {
   // Output extracted CSS to a file
   const devMode = process.env.NODE_ENV === 'development';
+  console.log('process.env.NODE_ENV', process.env.NODE_ENV);
   const plugin = new MiniCssExtractPlugin({
     filename: devMode ? '[name].css' : '[name].[contenthash].css', // long term caching
     chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css',
     ignoreOrder: true, // Enable to remove warnings about conflicting order
   });
+
+  const prodOptions = {
+    esModule: true,
+    modules: {
+      namedExport: true,
+    },
+    publicPath: '',
+    // publicPath: (resourcePath, context) => {
+    //   return path.relative(path.dirname(resourcePath), context) + '/';
+    // },
+  };
 
   return {
     module: {
@@ -113,12 +109,7 @@ exports.extractCSS = ({include, exclude, use = []}) => {
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
-              options: {
-                hmr: process.env.NODE_ENV === 'development',
-                esModule: true,
-                reloadAll: true,
-                minimize: true,
-              },
+              options: devMode ? {} : prodOptions,
             },
           ].concat(use)
         }
@@ -149,22 +140,30 @@ exports.purifyCSS = ({ paths }) => ({
 exports.loadImages = ({ include, exclude, options } = {}) => ({
   module: {
     rules: [
+      // {
+      //   test: /\.(gif|png|jpe?g|svg)$/i,
+      //   include,
+      //   exclude,
+      //   use: [
+      //     { 
+      //       loader: 'url-loader',
+      //       options
+      //     },
+      //     {
+      //       loader: 'image-webpack-loader',
+      //       options: {
+      //         disable: true, // webpack@2.x and newer
+      //       },
+      //     }
+      //   ]
+      // },
+
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        include,
-        exclude,
-        use: [
-          { 
-            loader: 'url-loader',
-            options
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              disable: true, // webpack@2.x and newer
-            },
-          }
-        ]
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/[hash][ext][query]'
+        }
       }
     ]
   }
@@ -175,31 +174,36 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
 exports.loadFonts = ({ include, exclude, options } = {}) => ({
   module: {
     rules: [
+      // {
+      //   // Match woff2 in addition to patterns like .woff?v=1.1.1.
+      //   test: /\.(eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+      //   include,
+      //   exclude,
+      //   use: [
+      //     // {
+      //     //   loader: 'url-loader',
+      //     //   options: {
+      //     //     // Limit at 50k. Above that it emits separate files
+      //     //     // limit: 50000,
+          
+      //     //     // url-loader sets mimetype if it's passed.
+      //     //     // Without this it derives it from the file extension
+      //     //     // mimetype: 'application/font-woff',
+          
+      //     //     name: './fonts/[name].[ext]'
+      //     //   }
+      //     // },
+      //     { // TODO: remove, cos url-loader default fallback is file-loader
+      //       loader: 'file-loader',
+      //       options
+      //     }
+      //   ]
+      // },
+
       {
-        // Match woff2 in addition to patterns like .woff?v=1.1.1.
         test: /\.(eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        include,
-        exclude,
-        use: [
-          // {
-          //   loader: 'url-loader',
-          //   options: {
-          //     // Limit at 50k. Above that it emits separate files
-          //     // limit: 50000,
-          
-          //     // url-loader sets mimetype if it's passed.
-          //     // Without this it derives it from the file extension
-          //     // mimetype: 'application/font-woff',
-          
-          //     name: './fonts/[name].[ext]'
-          //   }
-          // },
-          { // TODO: remove, cos url-loader default fallback is file-loader
-            loader: 'file-loader',
-            options
-          }
-        ]
-      }
+        type: 'asset/resource',
+      },
     ]
   }
 });

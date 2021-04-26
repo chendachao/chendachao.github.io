@@ -5,6 +5,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
+const { ESBuildMinifyPlugin } = require('esbuild-loader');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
@@ -197,10 +198,16 @@ const productionConfig = merge([
     optimization: {
       minimize: true,
       minimizer: [
-        new TerserJSPlugin({
-          cache: true,
-          parallel: true,
-          sourceMap: true,
+        // new TerserJSPlugin({
+        //   parallel: true,
+        //   // terserOptions: {
+        //   //   cache: true,
+        //   //   sourceMap: true,
+        //   // }
+        // }),
+        new ESBuildMinifyPlugin({
+          target: 'es2015', // Syntax to compile to (see options below for possible values)
+          css: true,
         }),
         new OptimizeCSSAssetsPlugin({})
       ],
@@ -254,12 +261,12 @@ const developmentConfig = merge([
     port: process.env.PORT,
   }),
   parts.loadJavaScript(),
-  parts.loadCSS({
-    use: [parts.autoprefix()]
-  }),
-  // parts.extractCSS({
-  //   use: ['css-loader?importLoaders=1', parts.autoprefix()]
+  // parts.loadCSS({
+  //   use: [parts.autoprefix()]
   // }),
+  parts.extractCSS({
+    use: ['css-loader?importLoaders=1', parts.autoprefix()]
+  }),
   parts.loadImages(),
 ]);
 

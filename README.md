@@ -95,3 +95,9 @@ footer?
 
 ## Branches
 `dev -> main -> gh-pages`
+
+
+## Husky
+```
+npx husky add .husky/commit-msg "yarn commitlint --edit $1"
+```

@@ -1,7 +1,8 @@
 import 'lazysizes';
 // import a plugin
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-import toasted from './utils/toasted';
+import notify from './utils/notify';
+// import notify3 from './utils/notify3';
 import { isIE, isPC } from './utils';
 import { scrollToTop } from './utils/scroll';
 
@@ -63,6 +64,11 @@ if (isIE()) {
   installButton.setAttribute('hidden', '');
 }
 
+// const test = document.querySelector('.test');
+// test.addEventListener('click', () => {
+//   notify3('test', {type: 'error'});
+// });
+
 window.addEventListener('load', function() {
 
   const versionEl = document.querySelector('.version');
@@ -98,16 +104,16 @@ window.addEventListener('load', function() {
   const updateOnlineStatus = function (event) {
     var message = navigator.onLine ? "" : i18n.format('APP.OFFLINE');
     if(message) {
-      errorToasted = toasted.error(message.toUpperCase(), { 
-        action: {
-          text: i18n.format('APP.CLOSE'),
-          onClick: (e, toasted) => {
-            toasted.delete();
-          },
-        },
+      errorToasted = notify.error(message.toUpperCase(), i18n.format('APP.NETWORK'), {
+        extendedTimeOut: 0,
       });
     } else {
-      errorToasted && errorToasted.delete();
+      if(errorToasted) {
+        errorToasted.remove();
+        notify.success(i18n.format('APP.ONLINE'), i18n.format('APP.NETWORK'), {
+          timeOut: 800,
+        });
+      }
     }
   }
 
@@ -122,14 +128,7 @@ const globalErrorHandler = (event) => {
   // if(event.error) {
   //   message = event.error.stack;
   // }
-  toasted.error(message, { 
-    action: {
-      text: i18n.format('APP.CLOSE'),
-      onClick: (e, toasted) => {
-        toasted.delete();
-      },
-    },
-  });
+  notify.error(message, 'Global Error');
 }
 
 window.addEventListener('error', globalErrorHandler);

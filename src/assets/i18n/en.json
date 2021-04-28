@@ -23,6 +23,8 @@
   "APP.PROGRAMMING": "programming",
   "APP.PROGRAMMING_DESC": "Change the world, make our life better.",
   "APP.QRCODE_DESC": "Add me in WeChat",
+  "APP.NETWORK": "Network",
+  "APP.ONLINE": "You are online!",
   "APP.OFFLINE": "You are offline!",
   "APP.UPDATE": "Update",
   "APP.NEW_VERSION_TITLE": "New version available.",

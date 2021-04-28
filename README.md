@@ -12,7 +12,7 @@
 
 ## Screenshots
 ![site](src/assets/images/screenshots/screenshot1.png "my site with dark theme")
-![site](src/assets/images/screenshots/screenshot2.png "my site with light theme")
+![site](src/assets/images/screenshots/screenshot2.jpg "my site with light theme")
 
 ## Performance
 - [Performance](https://developers.google.com/web/fundamentals/performance/why-performance-matters)

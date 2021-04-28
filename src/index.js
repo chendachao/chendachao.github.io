@@ -1,8 +1,10 @@
 // es6 generator support
-import '@babel/polyfill';
-import './error-tracing';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+// import './error-tracing';
+import(/* webpackPrefetch: true */ './error-tracing');
 
-import toasted from '@app/utils/toasted';
+import notify from '@app/utils/notify';
 import i18n from '@app/utils/i18n';
 // import(/* webpackPrefetch: true */'@app/pwa');
 import(/* webpackPreload: true */'@app/main');
@@ -37,15 +39,8 @@ serviceWorker.register({
           throw new Error(format('APP.NOTIFICATIONS_BLOCKED'));
         }
       } catch (error) {
-        toasted.error(error, { 
-          action: {
-            text: 'X',
-            onClick: (e, toasted) => {
-              toasted.delete();
-            },
-          },
-        });
-        console.log('Notifications error', error);
+        notify.error(error, 'Notifications Error');
+        console.log('Notifications Error', error);
       }
     });
   },
@@ -71,13 +66,10 @@ serviceWorker.register({
 
     const updateReady = function () {
       showNotification(format('APP.NEW_VERSION_TITLE'), format('APP.NEW_VERSION_CONTENT'));
-      toasted.success(format('APP.NEW_VERSION_TITLE'), {
-          action: {
-            text: format('APP.UPDATE'),
-            onClick: (e, toasted) => {
-              window.location.reload();
-            },
-          },
+      notify.info(format('APP.NEW_VERSION_TITLE'), format('APP.UPDATE'), {
+        onclick: () => { 
+          window.location.reload();
+        }
       });
     }
 

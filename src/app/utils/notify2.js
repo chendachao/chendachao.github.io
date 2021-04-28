@@ -1,5 +1,4 @@
 import Toasted from 'toastedjs';
-
 import 'toastedjs/dist/toasted.min.css';
 
 const commonConfig = {

@@ -10,7 +10,6 @@ const I18n = () => {
     if (shortLang.indexOf('-') !== -1) shortLang = shortLang.split('-')[0];
     if (shortLang.indexOf('_') !== -1) shortLang = shortLang.split('_')[0];
 
-    console.log(lang, shortLang);
     return shortLang;
   };
 

@@ -424,7 +424,8 @@ only screen and (device-width: 767px) {
 /* custom-marker */
 details > summary.custom-marker { list-style-type: none; } /* Firefox */
 /* summary::marker, */
-details > summary.custom-marker::-webkit-details-marker {
+/* details > summary.custom-marker::-webkit-details-marker { */
+details > summary.custom-marker::marker {
   display: none
 }
 

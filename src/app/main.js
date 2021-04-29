@@ -18,7 +18,6 @@ const svgContainers = document.querySelectorAll('.icon.loading');
 if(svgContainers.length) {
   const svg = svgContainers[0].querySelector('svg');
   svg.addEventListener('load', () => {
-    console.log('svg loaded');
     svgContainers.forEach(svg => {
       svg.classList.remove('loading');
     });
@@ -100,13 +99,14 @@ window.addEventListener('load', function() {
   const updateOnlineStatus = function (event) {
     var message = navigator.onLine ? "" : i18n.format('APP.OFFLINE');
     if(message) {
-      errorToasted = notify.error(message.toUpperCase(), i18n.format('APP.NETWORK'), {
-        extendedTimeOut: 0,
+      errorToasted = notify.error(message.toUpperCase(), '', {
+        timeOut: 0,
+        positionClass: 'toast-top-full-width',
       });
     } else {
       if(errorToasted) {
         errorToasted.remove();
-        notify.success(i18n.format('APP.ONLINE'), i18n.format('APP.NETWORK'), {
+        notify.success(i18n.format('APP.ONLINE'), '', {
           timeOut: 800,
         });
       }

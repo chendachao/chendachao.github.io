@@ -69,24 +69,27 @@
   <meta name="msapplication-config" content="/assets/images/icons/browserconfig.xml">
   <meta name="theme-color" content="#da532c">
 
-  <!-- Hover preload link -->
-  <script defer src="//instant.page/5.1.0" type="module"
-    integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+  
+    <!-- Hover preload link -->
+    <script defer src="//instant.page/5.1.0" type="module"
+      integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+    
+      <!-- Google Analytics -->
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com"> <!--  fallback-->
+    <script defer src="/assets/gtag.js"></script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-143770576-1"></script>
+    
+    <!-- Hotjar Tracking Code for https://chendachao.github.io/ -->
+    <script defer src="/assets/hotjar.js"></script>
 
-  <!-- Google Analytics -->
-  <link rel="preconnect" href="https://www.google-analytics.com">
-  <link rel="dns-prefetch" href="https://www.google-analytics.com"> <!--  fallback-->
-  <script defer src="/assets/gtag.js"></script>
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-143770576-1"></script>
+    <script>
+      if (!(['127.0.0.1', 'localhost'].some(function(host) { return window.location.host.startsWith(host) }))
+        && (window.location.host.endsWith('.github.io') && window.location.protocol != "https:"))
+        window.location.protocol = "https";
+    </script>
+  
 
-  <!-- Hotjar Tracking Code for https://chendachao.github.io/ -->
-  <script defer src="/assets/hotjar.js"></script>
-
-  <script>
-    if (!(['127.0.0.1', 'localhost'].some(function(host) { return window.location.host.startsWith(host) }))
-      && (window.location.host.endsWith('.github.io') && window.location.protocol != "https:"))
-      window.location.protocol = "https";
-  </script>
 
   <style>
     html {
@@ -95,7 +98,7 @@
     }
   </style>
 
-<script defer src="runtime.aabf7bbe410387a1bdd4.bundle.js"></script><script defer src="806.32497ff97bb927cb244a.bundle.js"></script><script defer src="177.f8833f69d537eb9acb54.bundle.js"></script><script defer src="app.b16f13d70a9067c29017.bundle.js"></script><script defer src="log.c48fde79933bee332153.bundle.js"></script><script defer src="install.f488a2a42d63aedc0805.bundle.js"></script><script defer src="svgxuse.fbffd8f6ee38ce3dcee6.bundle.js"></script><link href="app.525d446de3d114ca625d.css" rel="stylesheet"></head>
+<script defer src="runtime.d367c1bf55464843c9d1.bundle.js"></script><script defer src="806.32497ff97bb927cb244a.bundle.js"></script><script defer src="177.f8833f69d537eb9acb54.bundle.js"></script><script defer src="app.b16f13d70a9067c29017.bundle.js"></script><script defer src="log.c48fde79933bee332153.bundle.js"></script><script defer src="install.f488a2a42d63aedc0805.bundle.js"></script><script defer src="svgxuse.fbffd8f6ee38ce3dcee6.bundle.js"></script><link href="app.525d446de3d114ca625d.css" rel="stylesheet"></head>
 
 <body data-theme="light">
   <header>
@@ -415,7 +418,7 @@
 
   <footer class="footer">
     <div></div>
-    <div class="version"></div>
+    <div class="version">v1.10.2</div>
     <div class="text-right" style="margin-left: auto;">
       <button class="qrcode-container border-active" data-tooltip data-tippy-content="This site's QRCode"
         data-i18n-attr="data-tippy-content=APP.SITE_QRCODE">

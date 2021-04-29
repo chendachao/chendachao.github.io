@@ -69,24 +69,27 @@
   <meta name="msapplication-config" content="/assets/images/icons/browserconfig.xml">
   <meta name="theme-color" content="#da532c">
 
-  <!-- Hover preload link -->
-  <script defer src="//instant.page/5.1.0" type="module"
-    integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+  <% if (process.env.NODE_ENV === 'production') { %>
+    <!-- Hover preload link -->
+    <script defer src="//instant.page/5.1.0" type="module"
+      integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+    
+      <!-- Google Analytics -->
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com"> <!--  fallback-->
+    <script defer src="/assets/gtag.js"></script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-143770576-1"></script>
+    
+    <!-- Hotjar Tracking Code for https://chendachao.github.io/ -->
+    <script defer src="/assets/hotjar.js"></script>
 
-  <!-- Google Analytics -->
-  <link rel="preconnect" href="https://www.google-analytics.com">
-  <link rel="dns-prefetch" href="https://www.google-analytics.com"> <!--  fallback-->
-  <script defer src="/assets/gtag.js"></script>
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-143770576-1"></script>
+    <script>
+      if (!(['127.0.0.1', 'localhost'].some(function(host) { return window.location.host.startsWith(host) }))
+        && (window.location.host.endsWith('.github.io') && window.location.protocol != "https:"))
+        window.location.protocol = "https";
+    </script>
+  <% } %>
 
-  <!-- Hotjar Tracking Code for https://chendachao.github.io/ -->
-  <script defer src="/assets/hotjar.js"></script>
-
-  <script>
-    if (!(['127.0.0.1', 'localhost'].some(function(host) { return window.location.host.startsWith(host) }))
-      && (window.location.host.endsWith('.github.io') && window.location.protocol != "https:"))
-      window.location.protocol = "https";
-  </script>
 
   <style>
     html {
@@ -415,7 +418,7 @@
 
   <footer class="footer">
     <div></div>
-    <div class="version"></div>
+    <div class="version"><%= process.env.VERSION %></div>
     <div class="text-right" style="margin-left: auto;">
       <button class="qrcode-container border-active" data-tooltip data-tippy-content="This site's QRCode"
         data-i18n-attr="data-tippy-content=APP.SITE_QRCODE">

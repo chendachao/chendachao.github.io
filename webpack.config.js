@@ -1,4 +1,5 @@
-require('dotenv').config();
+
+const {config, devMode} = require('./config');
 const webpack = require('webpack');
 const WebpackBar = require('webpackbar');
 const path = require('path');
@@ -46,7 +47,7 @@ const commonConfig = merge([
       publicPath: '',
       // ecmaVersion: 5 // work in webpack 5
     },
-    target: process.env.NODE_ENV === "development" ? "web" : "browserslist",
+    target: devMode ? "web" : "browserslist",
     resolve: {
       // preferRelative: true,
       preferAbsolute: true,
@@ -80,18 +81,18 @@ const commonConfig = merge([
         title: 'Chen Dachao - 陈大超',
         template: 'src/index.html',
         // hash: true,
-        minify: false,
+        minify: !devMode,
         excludeChunks: ['cv', 'stone']
       }),
       new HtmlWebpackPlugin({
         template: 'src/index-cv.html',
-        minify: false,
+        minify: !devMode,
         filename: 'cv.html',
         chunks: ['cv']
       }),
       new HtmlWebpackPlugin({
         template: 'src/index-stone.html',
-        minify: false,
+        minify: !devMode,
         filename: 'stone.html',
         chunks: ['stone']
       }),
@@ -129,7 +130,10 @@ const commonConfig = merge([
       }),
       new webpack.ProvidePlugin({
         process: 'process/browser',
-      })
+      }),
+      new webpack.DefinePlugin({
+        "process.env": JSON.stringify(config),
+      }),
     ]
   },
   parts.loadFonts({
@@ -271,7 +275,6 @@ const developmentConfig = merge([
 ]);
 
 module.exports = mode => {
-  console.log('mode', mode);
   if (mode.production) {
     // TODO: workaround for workbox issue https://github.com/GoogleChrome/workbox/issues/1790
     commonConfig.plugins.push(...pwaPlugins);

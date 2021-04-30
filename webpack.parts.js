@@ -6,6 +6,7 @@ const openBrowser = require('react-dev-utils/openBrowser');
 // const gitRevisionPlugin = new GitRevisionPlugin({
 //   lightweightTags: true
 // });
+const { devMode } = require('./config');
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
@@ -22,8 +23,8 @@ exports.devServer = ({ host, port } = {}) => ({
     //
     // 0.0.0.0 is available to all network devices
     // unlike default `localhost`.
-    host: host || localhost, // Defaults to `localhost`
-    port: port || 8088, // Defaults to 8080
+    host: host || 'localhost', // Defaults to `localhost`
+    port: port || 8088, // Defaults to 8088
     // contentBase: path.join(__dirname, "/dist"),
     // writeToDisk: true,
     overlay: {
@@ -80,8 +81,6 @@ exports.loadCSS = ({ include, exclude, use = [] } = {}) => ({
 
 exports.extractCSS = ({include, exclude, use = []}) => {
   // Output extracted CSS to a file
-  const devMode = process.env.NODE_ENV === 'development';
-  console.log('process.env.NODE_ENV', process.env.NODE_ENV);
   const plugin = new MiniCssExtractPlugin({
     filename: devMode ? '[name].css' : '[name].[contenthash].css', // long term caching
     chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css',
@@ -208,7 +207,6 @@ exports.loadFonts = ({ include, exclude, options } = {}) => ({
   }
 });
 
-console.log('process.env.npm_package_version', process.env.npm_package_version);
 // const bundleVersion = `${gitRevisionPlugin.version()} (${new Date().toISOString().substr(0, 10)})`; 
 // const bundleVersion = `${gitRevisionPlugin.version()}`; 
 const bundleVersion = `v${process.env.npm_package_version}`; 

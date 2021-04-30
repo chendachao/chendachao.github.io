@@ -2,7 +2,7 @@ import toasted from 'toastr';
 import 'toastr/build/toastr.min.css';
 
 toasted.options = {
-  closeButtonW: true,
+  closeButton: true,
   debug: false,
   newestOnTop: false,
   progressBar: true,

@@ -13,8 +13,7 @@
   <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self' data: gap: 'unsafe-eval' instant.page www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+  <meta http-equiv="Content-Security-Policy" content="<%= htmlWebpackPlugin.options.CSP %>" />
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="application-name" content="Larry Chen" />
@@ -39,8 +38,8 @@
   <meta name="twitter:url" content="https://chendachao.github.io/" />
   <meta name="twitter:title" content="Chen Dachao's Homepage." />
   <meta name="twitter:description" content="Chen Dachao's Homepage." />
-  <meta name="twitter:image" content="/assets/images/screenshots/screenshot1.png" />
-  <meta name="twitter:image:src" content="/assets/images/screenshots/screenshot1.png" />
+  <meta name="twitter:image" content="/assets/images/screenshots/screenshot1.jpg" />
+  <meta name="twitter:image:src" content="/assets/images/screenshots/screenshot1.jpg" />
   <meta name="twitter:image:alt" content="Chen Dachao's Homepage." />
 
   <!-- For Open Graph -->
@@ -52,7 +51,7 @@
   <meta property="og:title" content="Larry Chen' Homepage" />
   <meta property="og:description" content="Chen Dachao's Homepage." />
   <meta property="og:url" content="https://chendachao.github.io/" />
-  <meta property="og:image" content="/assets/images/screenshots/screenshot1.png" />
+  <meta property="og:image" content="/assets/images/screenshots/screenshot1.jpg" />
   <meta property="og:og:image:alt" content="Chen Dachao's Homepage." />
 
   <!-- favicon -->
@@ -72,13 +71,13 @@
     <!-- Hover preload link -->
     <script defer src="//instant.page/5.1.0" type="module"
       integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
-    
+
       <!-- Google Analytics -->
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com"> <!--  fallback-->
     <script defer src="/assets/gtag.js"></script>
     <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-143770576-1"></script>
-    
+
     <!-- Hotjar Tracking Code for https://chendachao.github.io/ -->
     <script defer src="/assets/hotjar.js"></script>
 
@@ -88,7 +87,6 @@
         window.location.protocol = "https";
     </script>
   <% } %>
-
 
   <style>
     html {
@@ -180,7 +178,7 @@
             '>
             HTML(5)/CSS(3), <strong>Angular</strong>, React, NodeJS/Express, AWS/Serverless,
             <strong>Linux</strong>, Docker, Nginx, MongoDB
-          </div> 
+          </div>
         " data-i18n-id="APP.WEB_DEVELOPER">web developer</span><span data-i18n-id="APP.LIVING"> living in Shanghai,
           China.</span>
         <span data-i18n-id="APP.CURRENT_PROJECT">I'm working on a project to better helps developers create web
@@ -278,7 +276,7 @@
           </li>
 
           <!-- <li>
-            <a rel="nofollow" href="https://www.linkedin.com/sharing/share-offsite/?url=https://chendachao.github.io/" 
+            <a rel="nofollow" href="https://www.linkedin.com/sharing/share-offsite/?url=https://chendachao.github.io/"
               onclick="javascript:window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://chendachao.github.io/','Windows','screenX=400,screenY=350,left=400,width=650,height=350,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no');return false")"
               target="_blank" title="Print this article " style="color: #ffffff">Share linkiedn</a>
           </li>
@@ -442,7 +440,7 @@
       margin: 1rem 0 0.5rem;">
     <div class="text-center">
       <!-- TODO: change to loading placeholder -->
-      <img src="./assets/images/chendachao.github.io.png" alt="https://chendachao.github.io" class="mobile-qrcode"
+      <img src="./assets/images/chendachao.github.io.jpg" alt="https://chendachao.github.io" class="mobile-qrcode"
         height="320" width="320" loading="lazy">
     </div>
     <div class="actions">

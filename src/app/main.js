@@ -3,7 +3,7 @@ import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import notify from './utils/notify';
 // import notify3 from './utils/notify3';
-import { isIE, isPC } from './utils';
+import { isIE } from './utils';
 import { scrollToTop } from './utils/scroll';
 
 import Theme from './components/theme';
@@ -26,35 +26,36 @@ if(svgContainers.length) {
 
 // Initialize tooltip and popover
 setTimeout(() => {
-  import('./components/tooltip').then(TooltipAndPopover => TooltipAndPopover.default());
+  import('./components/tooltip').then(({ TooltipAndPopover }) => TooltipAndPopover());
 }, 10);
 
-import('./components/dialog').then(SetQRCode => SetQRCode.default());
-
-// Show intro
-import('./components/intro').then(Intro => {
-  const intro = new Intro.default();
-
-  if(isPC()) {
-    // Load two fast in PC, need delay the intro popup
+let qrcodeHandler = document.querySelector('.qrcode-handler');
+qrcodeHandler.addEventListener('click', () => {
+  import('./components/dialog').then(({ initDialog, showDialogWithQRCode }) => {
+    initDialog();
     setTimeout(() => {
-      intro.init();
-    }, 5000);
-  } else {
-    intro.init();
-  }
-
-  const startReplayBtn = document.querySelector('.start-replay-tour');
-  const starthintBtn = document.querySelector('.start-hint');
-  
-  startReplayBtn.addEventListener('click', () => {
-    intro.initAndShowIntro();
+      showDialogWithQRCode();
+    }, 0);
   });
+});
 
-  starthintBtn.addEventListener('click', () => {
-    intro.toggleHint();
+// Load intro
+const loadIntro = () => {
+  return import('./components/intro')
+  .then(({ Intro }) => {
+    return new Intro();
   });
- 
+}
+
+const startReplayBtn = document.querySelector('.start-replay-tour');
+const starthintBtn = document.querySelector('.start-hint');
+
+startReplayBtn.addEventListener('click', () => {
+  loadIntro().then(intro => intro.initAndShowIntro());
+});
+
+starthintBtn.addEventListener('click', () => {
+  loadIntro().then(intro => intro.toggleHint());
 });
 
 // hide the install app button if in IE
@@ -114,7 +115,7 @@ window.addEventListener('load', function() {
   }
 
   updateOnlineStatus();
-  
+
   window.addEventListener('online', updateOnlineStatus);
   window.addEventListener('offline', updateOnlineStatus);
 });
@@ -131,14 +132,14 @@ window.addEventListener('error', globalErrorHandler);
 window.addEventListener('unhandledrejection', globalErrorHandler);
 
  // window.onerror = function(msg, url, line, col, error) {
-//   // Note that col & error are new to the HTML 5 spec and may not be 
+//   // Note that col & error are new to the HTML 5 spec and may not be
 //   // supported in every browser.  It worked for me in Chrome.
 //   var extra = !col ? '' : '\ncolumn: ' + col;
 //   extra += !error ? '' : '\nerror: ' + error;
 //   console.log("Error: " + msg + "\nurl: " + url + "\nline: " + line + extra);
 
 //   var suppressErrorAlert = true;
-//   // If you return true, then error alerts (like in older versions of 
+//   // If you return true, then error alerts (like in older versions of
 //   // Internet Explorer) will be suppressed.
 //   return suppressErrorAlert;
 // };

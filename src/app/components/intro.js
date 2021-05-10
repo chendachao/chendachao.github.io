@@ -24,11 +24,11 @@ class Intro {
     !hideIntro && this.initAndShowIntro();
     // this.initAndShowIntro();
   }
-  
+
   hideIntro = () => {
     localStorage.setItem('hideIntro', true);
   };
-  
+
   initAndShowIntro() {
     const intro = introJs();
     intro.setOptions({
@@ -66,7 +66,7 @@ class Intro {
     });
 
     intro.start();
-    
+
     intro.onskip(this.hideIntro);
     intro.oncomplete(this.hideIntro);
   }
@@ -121,4 +121,6 @@ class Intro {
 
 }
 
-export default Intro;
+export {
+  Intro
+};

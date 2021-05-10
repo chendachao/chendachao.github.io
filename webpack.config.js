@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const { ESBuildMinifyPlugin } = require('esbuild-loader');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
@@ -16,6 +16,10 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const {merge} = require('webpack-merge');
 const glob = require('glob-all');
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const smp = new SpeedMeasurePlugin();
 
 const parts = require('./webpack.parts');
 
@@ -80,6 +84,9 @@ const commonConfig = merge([
       new HtmlWebpackPlugin({
         title: 'Chen Dachao - 陈大超',
         template: 'src/index.html',
+        CSP: `default-src 'self' data: gap: 'unsafe-eval' instant.page www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/;
+              style-src 'self' http://* 'unsafe-inline';
+              script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'`,
         // hash: true,
         minify: !devMode,
         excludeChunks: ['cv', 'stone']
@@ -213,7 +220,8 @@ const productionConfig = merge([
           target: 'es2015', // Syntax to compile to (see options below for possible values)
           css: true,
         }),
-        new OptimizeCSSAssetsPlugin({})
+        // new OptimizeCSSAssetsPlugin({}),
+        new CssMinimizerPlugin(),
       ],
     },
     plugins: [
@@ -224,7 +232,8 @@ const productionConfig = merge([
     include: PATHS.app,
     exclude(path) {
       return path.match(/node_modules/);
-    }
+    },
+    cacheDirectory: true
   }),
   parts.purifyCSS({
     paths: glob.sync([
@@ -275,12 +284,16 @@ const developmentConfig = merge([
 ]);
 
 module.exports = mode => {
+  let webpackConfig = merge(commonConfig, developmentConfig, {mode: 'development'}); // development
+  if(mode.analyse) {
+    commonConfig.plugins.push(new BundleAnalyzerPlugin());
+  }
   if (mode.production) {
     // TODO: workaround for workbox issue https://github.com/GoogleChrome/workbox/issues/1790
     commonConfig.plugins.push(...pwaPlugins);
-    return merge(commonConfig, productionConfig, {mode: 'production'});
+    webpackConfig = merge(commonConfig, productionConfig, {mode: 'production'});
   }
-  
-  return merge(commonConfig, developmentConfig, {mode: 'development'});
+
+  return mode.smp ? smp.wrap(webpackConfig) : webpackConfig;
 };
 

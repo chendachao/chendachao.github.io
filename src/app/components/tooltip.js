@@ -25,7 +25,7 @@ import { isIE, isPC } from '../utils';
 import i18n from '../utils/i18n';
 
 function TooltipAndPopover() {
-  const template = document.querySelector('#wechat-popup'); 
+  const template = document.querySelector('#wechat-popup');
   const container = document.createElement('div');
   const commonConig = {
     allowHTML: true,
@@ -95,4 +95,6 @@ function TooltipAndPopover() {
   });
 }
 
-export default TooltipAndPopover;
+export {
+  TooltipAndPopover
+};

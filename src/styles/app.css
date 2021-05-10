@@ -45,7 +45,7 @@ body {
 /* fix end */
 
 body:before,
-body:after { 
+body:after {
   content: '';
   display: block;
   background-attachment: scroll;
@@ -136,7 +136,7 @@ img[data-src] {
 .bird-small-right {
   position: absolute;
    /* open hardware acceleration */
-  transform: translateZ(0); 
+  transform: translateZ(0);
 }
 
 .bird-big-left {
@@ -219,7 +219,7 @@ img[data-src] {
   background: var(--color-moon-bg);
   background-size: var(--color-moon-bg-size);
   /* open hardware acceleration */
-  transform: translateZ(0); 
+  transform: translateZ(0);
   animation: colorize 24s 0s cubic-bezier(0.2, 1.05, 0.45, 0.94) infinite alternate, rise 5s;
 }
 
@@ -423,9 +423,8 @@ only screen and (device-width: 767px) {
 
 /* custom-marker */
 details > summary.custom-marker { list-style-type: none; } /* Firefox */
-/* summary::marker, */
-/* details > summary.custom-marker::-webkit-details-marker { */
-details > summary.custom-marker::marker {
+summary::marker, /* Chrome */
+details > summary.custom-marker::-webkit-details-marker /* QQ, wechat */ {
   display: none
 }
 
@@ -528,7 +527,7 @@ details.my-portfolio[open] summary + div {
 }
 
 .container-grid > .card:active,
-.container-grid > .card:focus, 
+.container-grid > .card:focus,
 .container-grid > .card:hover {
   background: var(--color-card-bg);
 }

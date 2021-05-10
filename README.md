@@ -11,7 +11,7 @@
 - [Vercel](https://chendachao-github-io.chendachao.vercel.app/)
 
 ## Screenshots
-![site](src/assets/images/screenshots/screenshot1.png "my site with dark theme")
+![site](src/assets/images/screenshots/screenshot1.jpg "my site with dark theme")
 ![site](src/assets/images/screenshots/screenshot2.jpg "my site with light theme")
 
 ## Performance
@@ -23,6 +23,7 @@
 - [Google Search Console](https://search.google.com/search-console)
 - [GTmetrix](https://gtmetrix.com)
 - [Image Compressor](https://imagecompressor.com/)
+- [Image Squoosh](https://squoosh.app/) 🏅
 - [Smart PNG and JPEG compression](https://tinypng.com/)
 - [SVG Compressor](https://jakearchibald.github.io/svgomg/)
 - [Convert Font to SVG](https://onlinefontconverter.com/)

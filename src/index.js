@@ -1,8 +1,10 @@
 // es6 generator support
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-// import './error-tracing';
-import(/* webpackPrefetch: true */ './error-tracing');
+if(process.env.APP_ENV !== 'development') {
+  // import './error-tracing';
+  import(/* webpackPrefetch: true */ './error-tracing');
+}
 
 import notify from '@app/utils/notify';
 import i18n from '@app/utils/i18n';
@@ -22,7 +24,7 @@ serviceWorker.register({
     if(['default', 'denied'].includes(Notification.permission)) {
       subscribeBtn.removeAttribute('hidden');
     }
-    
+
     // subscribe push notifications
     subscribeBtn.addEventListener('click', async () => {
       try {
@@ -67,7 +69,7 @@ serviceWorker.register({
     const updateReady = function () {
       showNotification(format('APP.NEW_VERSION_TITLE'), format('APP.NEW_VERSION_CONTENT'));
       notify.info(format('APP.NEW_VERSION_TITLE'), format('APP.UPDATE'), {
-        onclick: () => { 
+        onclick: () => {
           window.location.reload();
         }
       });
@@ -89,5 +91,5 @@ serviceWorker.register({
     console.log("registered app for offline use. details:", registration);
   }
 });
- 
+
 

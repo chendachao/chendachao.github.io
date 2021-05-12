@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.8](https://github.com/chendachao/chendachao.github.io/compare/v1.10.7...v1.10.8) (2021-05-12)
+
 ### [1.10.7](https://github.com/chendachao/chendachao.github.io/compare/v1.10.6...v1.10.7) (2021-05-12)
 
 ### [1.10.6](https://github.com/chendachao/chendachao.github.io/compare/v1.10.5...v1.10.6) (2021-05-10)

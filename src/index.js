@@ -1,6 +1,6 @@
 // es6 generator support
-import "core-js/stable";
-import "regenerator-runtime/runtime";
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 if(process.env.APP_ENV !== 'development') {
   // import './error-tracing';
   import(/* webpackPrefetch: true */ './error-tracing');
@@ -73,7 +73,7 @@ serviceWorker.register({
           window.location.reload();
         }
       });
-    }
+    };
 
     const waitingServiceWorker = registration.waiting;
     if(waitingServiceWorker) {
@@ -84,11 +84,11 @@ serviceWorker.register({
         }
       });
 
-      waitingServiceWorker.postMessage({ type: "SKIP_WAITING" });
+      waitingServiceWorker.postMessage({ type: 'SKIP_WAITING' });
     }
   },
   onSuccess: registration => {
-    console.log("registered app for offline use. details:", registration);
+    console.log('registered app for offline use. details:', registration);
   }
 });
 

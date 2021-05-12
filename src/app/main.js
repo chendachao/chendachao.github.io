@@ -45,7 +45,7 @@ const loadIntro = () => {
   .then(({ Intro }) => {
     return new Intro();
   });
-}
+};
 
 const startReplayBtn = document.querySelector('.start-replay-tour');
 const starthintBtn = document.querySelector('.start-hint');
@@ -87,8 +87,8 @@ window.addEventListener('load', function() {
           url = canonicalElement.href;
       }
       navigator.share({
-        title: `Larry Chen' Homepage`,
-        text: `Welcome to visite Larry Chen's homepage`,
+        title: 'Larry Chen\' Homepage',
+        text: 'Welcome to visite Larry Chen\'s homepage',
         url,
       })
       .then(() => console.log('Successful share!'))
@@ -98,7 +98,7 @@ window.addEventListener('load', function() {
 
   let errorToasted;
   const updateOnlineStatus = function (event) {
-    var message = navigator.onLine ? "" : i18n.format('APP.OFFLINE');
+    var message = navigator.onLine ? '' : i18n.format('APP.OFFLINE');
     if(message) {
       errorToasted = notify.error(message.toUpperCase(), '', {
         timeOut: 0,
@@ -112,7 +112,7 @@ window.addEventListener('load', function() {
         });
       }
     }
-  }
+  };
 
   updateOnlineStatus();
 
@@ -126,7 +126,7 @@ const globalErrorHandler = (event) => {
   //   message = event.error.stack;
   // }
   notify.error(message, 'Global Error');
-}
+};
 
 window.addEventListener('error', globalErrorHandler);
 window.addEventListener('unhandledrejection', globalErrorHandler);

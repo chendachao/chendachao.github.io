@@ -5,7 +5,9 @@ import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategi
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute } from 'workbox-precaching';
 
+/* eslint-disable no-undef */
 importScripts('/assets/sw-patch.js');
+/* eslint-enable no-undef */
 
 googleAnalytics.initialize({
   parameterOverrides: {

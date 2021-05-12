@@ -158,7 +158,7 @@ const showDialogWithQRCode = () => {
       closeModal();
       download(img.src);
     });
-}
+};
 
 export {
   initDialog,

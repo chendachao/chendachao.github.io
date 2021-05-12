@@ -10,7 +10,8 @@
 .hover-visible:focus {
   opacity: 1;
   box-shadow: 0 2px 5px var(--subtle3);
-   /* transition: transform 0.1s ease-out;
+
+  /* transition: transform 0.1s ease-out;
   transform: scale(1.25); */
 }
 
@@ -47,16 +48,16 @@
 }
 
 .text-white {
-  color: var(--white) !important; 
+  color: var(--white) !important;
 }
 
 .text-black {
-  color: var(--black); 
+  color: var(--black);
 }
 
 .mr-1 {
   margin-right: 1rem;
-} 
+}
 
 .icon-size-md {
   width: 2rem !important;
@@ -83,24 +84,24 @@
 
 .highlight:hover {
   color: var(--text-highlight2);
+
   /* text-shadow: -3px 3px 2px #7c630a; */
 
   /* background: linear-gradient(330deg, #178bb7 0%, #d8ca1e 25%, #52e0e0 50%, #f1e526 75%, #095090 100%); */
+
   /* background: linear-gradient(330deg, #178bb7 0%, #8bc1ef 25%, #52e0e0 50%, #f1e526 75%, #076b39 100%); */
   background: linear-gradient(90deg, #e86ff1 0%, #3ce2e2 70%, #f5b45a 100%);
 
   /* background: rgb(63,94,251);
   background: radial-gradient(circle, #ffe506 0%, purple 100%); */
 
-
   /* github */
+
   /* background: linear-gradient(92.05deg, #BCA1F7 12.09%, #E577B4 42.58%, #FF7170 84.96%); */
-  
+
   background-clip: text;
   -webkit-background-clip: text;
-  text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
   box-decoration-break: clone;
 }
 
@@ -108,9 +109,6 @@
   background: linear-gradient(130deg, #507bf4, #f166b2);
   background-clip: text;
   -webkit-background-clip: text;
-  text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
   box-decoration-break: clone;
 }
-

@@ -1,17 +1,21 @@
 
 /* TODO: black bg and white text for faster print */
+
 /* print mode style */
 @media print {
   *,
   *::before,
   *::after {
     /* Black prints faster */
+
     /* color: var(--black) !important;  */
+
     /* text-shadow: none !important; */
     box-shadow: none !important;
     background: var(--color-global-bg-fallback) !important;
     -webkit-print-color-adjust: exact;
   }
+
   body {
     background-attachment: fixed;
   }
@@ -32,4 +36,3 @@
     page-break-after: avoid;
   }
 }
-

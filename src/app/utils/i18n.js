@@ -83,7 +83,7 @@ const I18n = () => {
   const triggerLanguageHandler = function () {
     setLocale(locale);
     reformat(locale);
-  }
+  };
 
   function init() {
     triggerLanguageHandler(initialLocale);
@@ -99,7 +99,7 @@ const I18n = () => {
     init,
     format,
     locale
-  }
+  };
 };
 
 const i18n = I18n();

@@ -63,9 +63,9 @@ function installPWA(evt) {
   })
   .catch(err => {
     console.err(err);
-    if ( err.message.indexOf( "user gesture" ) > -1 ) { 
+    if ( err.message.indexOf( 'user gesture' ) > -1 ) { 
     //recycle, but make sure there is a user gesture involved 
-    } else if ( err.message.indexOf( "The app is already installed" ) > -1 ) { 
+    } else if ( err.message.indexOf( 'The app is already installed' ) > -1 ) { 
     //the app is installed, no need to prompt, but you may need to log or update state values 
     } else { 
       return err; 

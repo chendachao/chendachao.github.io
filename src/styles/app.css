@@ -1,34 +1,35 @@
-/*🔥*/
+/* 🔥 */
 * {
   margin: 0;
   padding: 0;
-
   font-family: var(--font-family-sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   /* Bugfix for blue border when tab on modile and tablet devices */
+
   /* -webkit-tap-highlight-color: rgba(255, 255, 255, 0); */
   -webkit-tap-highlight-color: transparent;
 }
 
 *,
-*:after,
-*:before {
-  box-sizing: border-box
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 ::selection {
-  background-color: var(--selection-bg);
-  color: var(--black);
-
   /* fix for hover highlight text */
   background: var(--selection-bg);
   -webkit-text-fill-color: var(--black);
+  background-color: var(--selection-bg);
+  color: var(--black);
 }
 
 /* fix CSS3 gradient background set !90deg on body doesn't stretch but instead repeats? */
+
 /* https://stackoverflow.com/a/3294418/6294371 */
+
 /* html {
   min-height: 100%;
 }
@@ -42,10 +43,11 @@ body {
   background: var(--color-global-bg-fallback);
   background-image: var(--color-global-bg);
 } */
+
 /* fix end */
 
-body:before,
-body:after {
+body::before,
+body::after {
   content: '';
   display: block;
   background-attachment: scroll;
@@ -64,43 +66,46 @@ body:after {
   transition: opacity 1s linear;
 }
 
-body:before {
+body::before {
   background: var(--color-global-bg-fallback-light);
   background-image: var(--color-global-bg-light);
 }
 
-body:after {
+body::after {
   background: var(--color-global-bg-fallback-dark);
   background-image: var(--color-global-bg-dark);
   opacity: 0;
 }
 
-body[data-theme="dark"]:after {
+body[data-theme="dark"]::after {
   opacity: 1;
 }
 
-body[data-theme="gray"]:after {
+body[data-theme="gray"]::after {
   opacity: 1;
   background-image: var(--color-global-bg-gray);
   filter: grayscale(100%);
+  /* stylelint-disable */
   filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  /* stylelint-enable */
 }
 
 body[data-theme="gray"] * {
   filter: grayscale(100%);
+  /* stylelint-disable */
   filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+  /* stylelint-enable */
 }
 
 body {
   overflow-x: hidden;
   animation: fade-in 3s ease;
-
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-/*--- optional styling for placeholder images ---*/
+/* --- optional styling for placeholder images --- */
 img[data-src] {
   background-color: var(--subtle);
 }
@@ -127,6 +132,7 @@ img[data-src] {
 
 .main {
   flex-grow: 1;
+
   /* padding: 15px calc((100vw - min(900px, calc(100vw - 50px))) / 2); */
 }
 
@@ -135,14 +141,15 @@ img[data-src] {
 .bird-small-left,
 .bird-small-right {
   position: absolute;
-   /* open hardware acceleration */
+
+  /* open hardware acceleration */
   transform: translateZ(0);
 }
 
 .bird-big-left {
   opacity: 1;
   top: 50px;
-  left: 00px;
+  left: 0;
   width: 10px;
   height: 10px;
   border: 2px solid var(--black);
@@ -151,13 +158,12 @@ img[data-src] {
   border-left-color: transparent;
   border-bottom-color: transparent;
   transform: rotateZ(-75deg);
-  animation: move var(--bird-fly-speed) linear infinite, flap .5s linear alternate infinite;
+  animation: move var(--bird-fly-speed) linear infinite, flap 0.5s linear alternate infinite;
   z-index: 70;
 }
 
 .bird-big-right {
   z-index: 70;
-
   opacity: 1;
   top: 50px;
   width: 10px;
@@ -168,14 +174,14 @@ img[data-src] {
   border-right-color: transparent;
   border-top-color: transparent;
   transform: rotateZ(80deg);
-  margin: 0px 6px;
-  animation: move var(--bird-fly-speed) linear infinite, flap .5s linear alternate infinite;
+  margin: 0 6px;
+  animation: move var(--bird-fly-speed) linear infinite, flap 0.5s linear alternate infinite;
 }
 
 .bird-small-left {
   opacity: 1;
   top: 45px;
-  left: 0px;
+  left: 0;
   width: 10px;
   height: 8px;
   border: 2px solid var(--black);
@@ -184,13 +190,12 @@ img[data-src] {
   border-left-color: transparent;
   border-bottom-color: transparent;
   transform: rotateZ(-80deg);
-  animation: move2 var(--bird-fly-speed) linear infinite 1.5s, flap .5s linear alternate infinite 1.5s;
+  animation: move2 var(--bird-fly-speed) linear infinite 1.5s, flap 0.5s linear alternate infinite 1.5s;
   z-index: 70;
 }
 
 .bird-small-right {
   z-index: 70;
-
   opacity: 1;
   top: 45px;
   width: 10px;
@@ -201,8 +206,8 @@ img[data-src] {
   border-right-color: transparent;
   border-top-color: transparent;
   transform: rotateZ(75deg);
-  margin: 0px 5px;
-  animation: move2 var(--bird-fly-speed) linear infinite 1.5s, flap .5s linear alternate infinite 1.5s;
+  margin: 0 5px;
+  animation: move2 var(--bird-fly-speed) linear infinite 1.5s, flap 0.5s linear alternate infinite 1.5s;
 }
 
 [class^="moon"] {
@@ -218,6 +223,7 @@ img[data-src] {
   border-radius: 50%;
   background: var(--color-moon-bg);
   background-size: var(--color-moon-bg-size);
+
   /* open hardware acceleration */
   transform: translateZ(0);
   animation: colorize 24s 0s cubic-bezier(0.2, 1.05, 0.45, 0.94) infinite alternate, rise 5s;
@@ -249,7 +255,7 @@ img[data-src] {
 }
 
 .brand-icon:hover {
-  animation: jump infinite 5s cubic-bezier(0.280, 0.840, 0.420, 1);
+  animation: jump infinite 5s cubic-bezier(0.28, 0.84, 0.42, 1);
 }
 
 .bio {
@@ -257,7 +263,9 @@ img[data-src] {
   text-align: justify;
   font-weight: 900;
   font-size: calc(1em + 1vw);
+
   /* font-size: clamp(min, viewport-width-unit, max); */
+
   /* letter-spacing: -0.1vw; */
   padding: 1rem;
   transition: 1s;
@@ -281,9 +289,9 @@ img[data-src] {
   font-style: italic;
   font-weight: bold;
   width: 10rem;
+
   /* margin-top: -10px; */
   font-size: 7px;
-
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
@@ -291,7 +299,7 @@ img[data-src] {
 }
 
 @media only screen and (max-width: 767px),
-only screen and (device-width: 767px) {
+  only screen and (device-width: 767px) {
   .wechat-qrcode-desc {
     font-size: 6px;
     margin-top: -5px;
@@ -327,12 +335,13 @@ only screen and (device-width: 767px) {
   margin-bottom: 2px;
   opacity: 0.8;
   color: var(--text-color);
-
   display: flex;
   align-items: center;
 
   /* background: linear-gradient(0deg, var(--bg-light), var(--bg-white)); */
+
   /* transition: 1s; */
+
   /* transition: all 0.3s ease 0s; */
 }
 
@@ -349,13 +358,15 @@ only screen and (device-width: 767px) {
 
 .icon.loading {
   /* background: var(--bg-light); */
+
   /* border-radius: 4px; */
+
   /* display: block; */
   position: relative;
   overflow: hidden;
 }
 
-.icon.loading:before {
+.icon.loading::before {
   content: "";
   animation: sweep-loading 1.3s infinite;
   height: 100%;
@@ -363,6 +374,7 @@ only screen and (device-width: 767px) {
   left: 0;
   right: 0;
   top: 0;
+
   /* transform: translate(-50%, -50%); */
   z-index: 1;
   background: linear-gradient(135deg, transparent 30%, var(--bg-gray) 50%, transparent 70%);
@@ -386,6 +398,7 @@ only screen and (device-width: 767px) {
 
 .icon-snapchat-ghost {
   background: var(--snapchat);
+
   /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
@@ -410,7 +423,7 @@ only screen and (device-width: 767px) {
 }
 
 .icon-stackoverflow {
-  background: var(--stackoverflow)
+  background: var(--stackoverflow);
 }
 
 .developer-mode-link {
@@ -422,20 +435,21 @@ only screen and (device-width: 767px) {
 }
 
 /* custom-marker */
-details > summary.custom-marker { list-style-type: none; } /* Firefox */
-summary::marker, /* Chrome */
-details > summary.custom-marker::-webkit-details-marker /* QQ, wechat */ {
-  display: none
-}
-
 details > summary.custom-marker {
   position: relative;
   padding-left: 2.5rem !important;
+  list-style-type: none; /* Firefox */
+}
+
+summary::marker, /* Chrome */
+details > summary.custom-marker::marker,
+details > summary.custom-marker::-webkit-details-marker /* QQ, wechat */ {
+  display: none;
 }
 
 details > summary.custom-marker::before,
 details > summary.custom-marker::after {
-  width: .5em;
+  width: 0.5em;
   height: 0.15em;
   border-radius: 2px;
   background-color: var(--text-highlight);
@@ -444,7 +458,7 @@ details > summary.custom-marker::after {
   top: 50%;
   left: 1rem;
   transform: translateY(-50%);
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 details > summary.custom-marker::before {
@@ -454,6 +468,7 @@ details > summary.custom-marker::before {
 details[open] > summary.custom-marker::before {
   transform: translateY(-50%) rotate(180deg);
 }
+
 /* custom-marker end */
 
 /* common */
@@ -475,18 +490,18 @@ details > summary + .content {
   margin: 0;
   padding: 0.5rem 0.5rem 1rem 0.5rem;
 }
+
 /* common end */
 
 /* my-portfolio style */
 details.my-portfolio {
   border-radius: 24px;
-  box-shadow: 0px 0px 4px var(--color-shadow2);
+  box-shadow: 0 0 4px var(--color-shadow2);
 }
 
 details.my-portfolio summary {
   padding: 4px;
   border: none;
-
   font-size: calc(1em + 1vw);
 }
 
@@ -495,14 +510,15 @@ details.my-portfolio:not([open]) summary {
 }
 
 details.my-portfolio[open] summary {
-  box-shadow: 0px 2px 3px 1px rgb(228 179 179 / 20%);
+  box-shadow: 0 2px 3px 1px rgb(228 179 179 / 20%);
   border-top-right-radius: 24px;
   border-top-left-radius: 24px;
 }
 
 details.my-portfolio[open] summary + div {
-  animation: sweep .2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: sweep 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
+
 /* my-portfolio end */
 
 .container-grid {
@@ -566,15 +582,15 @@ details.my-portfolio[open] summary + div {
   aspect-ratio: 1 / 1;
   object-fit: contain;
   border-radius: 4px;
-  box-shadow: 0px 0px 4px 0px var(--color-shadow2);
+  box-shadow: 0 0 4px 0 var(--color-shadow2);
   will-change: transform;
   transition:
-  .4s ease-in-out transform,
-  .4s ease-in-out box-shadow;
+    0.4s ease-in-out transform,
+    0.4s ease-in-out box-shadow;
 }
 
 .mobile-qrcode:hover {
-  transform: translate3d(0px, -5px, 0px);
+  transform: translate3d(0, -5px, 0);
   box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 81, 0.01), 6px 6px 6px 6px rgba(34, 33, 81, 0.15);
 }
 
@@ -583,7 +599,7 @@ details.my-portfolio[open] summary + div {
   flex-wrap: wrap;
   align-items: center;
   color: var(--text-color);
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 
 .footer .version {
@@ -601,12 +617,12 @@ details.my-portfolio[open] summary + div {
 .svgicon,
 [class^="svgicon-"],
 [class*=" svgicon-"] {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }
 
 .no-scirpt-warning-msg {

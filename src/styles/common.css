@@ -1,14 +1,14 @@
 .btn,
 button,
 a {
-  text-decoration: none
+  text-decoration: none;
 }
 
 .btn,
 button,
 label,
 a {
-  cursor: pointer
+  cursor: pointer;
 }
 
 .btn,
@@ -24,7 +24,7 @@ a.btn {
   font: inherit;
   text-decoration: none;
   will-change: transform;
-  transition: transform 0.15s cubic-bezier(0, 1.8, 1, 1.8)
+  transition: transform 0.15s cubic-bezier(0, 1.8, 1, 1.8);
 }
 
 .btn.btn-primary,
@@ -37,13 +37,13 @@ a.btn.btn-primary {
 .btn:hover,
 button.btn:hover,
 a.btn:hover {
-  transform: translateY(-1px)
+  transform: translateY(-1px);
 }
 
 .notify-badge {
   position: absolute;
   right: 0.5rem;
-  top: 0rem;
+  top: 0;
   background: var(--text-highlight);
   text-align: center;
   border-radius: 30px 30px 30px 30px;
@@ -52,4 +52,3 @@ a.btn:hover {
   font-size: 8px;
   min-width: 1.2rem;
 }
-

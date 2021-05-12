@@ -12,7 +12,7 @@ function Theme() {
   if (daysBetween(new Date(), startDate, endDate)) {
     setTheme('gray');
   } else {
-    const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
+    const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
     const isSystemDarkTheme = mediaQueryList.matches;
     let defaultTheme = localStorage.getItem('theme') || (isSystemDarkTheme && 'dark');
     defaultTheme && setTheme(defaultTheme);

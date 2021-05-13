@@ -14,10 +14,11 @@
     "analyse": "cross-env DOTENV_CONFIG_PATH=./.env.prod webpack build --mode production --env production --profile --json > stats.json",
     "analyse:forward": "cross-env DOTENV_CONFIG_PATH=./.env.prod webpack build --mode production --env production smp",
     "analyse:backward": "cross-env DOTENV_CONFIG_PATH=./.env.prod webpack build --mode production --env production analyse",
-    "lint:styles": "stylelint ./src/**/*.{css,scss} > ./.tmp/styles.txt",
-    "fix:styles": "stylelint ./src/**/*.{css,scss} --fix",
-    "lint:scripts": "eslint ./src > ./.tmp/scripts.txt",
-    "fix:scripts": "eslint ./src --fix",
+    "prelint": "mkdir -p ./.tmp",
+    "lint:styles": "yarn prelint && stylelint ./src/**/*.{css,scss} > ./.tmp/styles.txt",
+    "format:styles": "stylelint ./src/**/*.{css,scss} --fix",
+    "lint:scripts": "yarn prelint && eslint ./src > ./.tmp/scripts.txt",
+    "format:scripts": "eslint ./src --fix",
     "release": "standard-version",
     "version": "npm run release --commit-all",
     "version:patch": "npm run release -- --release-as patch",
@@ -38,7 +39,8 @@
       "stylelint --fix"
     ],
     "*.{js,jsx,ts,tsx}": [
-      "eslint --cache --fix"
+      "eslint --cache --fix",
+      "prettier --write"
     ]
   },
   "devDependencies": {
@@ -80,7 +82,9 @@
     "standard-version": "9.2.0",
     "style-loader": "2.0.0",
     "stylelint": "13.13.0",
+    "stylelint-config-recommended-scss": "4.2.0",
     "stylelint-config-standard": "22.0.0",
+    "stylelint-scss": "3.19.0",
     "terser-webpack-plugin": "5.1.1",
     "tslib": "2.2.0",
     "webpack": "5.35.1",

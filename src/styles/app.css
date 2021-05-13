@@ -434,17 +434,11 @@ img[data-src] {
   opacity: 1;
 }
 
-/* custom-marker */
 details > summary.custom-marker {
   position: relative;
   padding-left: 2.5rem !important;
-  list-style-type: none; /* Firefox */
-}
 
-summary::marker, /* Chrome */
-details > summary.custom-marker::marker,
-details > summary.custom-marker::-webkit-details-marker /* QQ, wechat */ {
-  display: none;
+  /* list-style-type: none */
 }
 
 details > summary.custom-marker::before,
@@ -480,6 +474,15 @@ details summary {
   font-weight: bold;
   cursor: pointer;
   user-select: none;
+}
+
+details > summary {
+  list-style: none;
+}
+
+/* details>summary::marker, */
+details > summary::-webkit-details-marker {
+  display: none;
 }
 
 details > summary:focus {

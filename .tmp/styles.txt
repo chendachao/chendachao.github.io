@@ -1,4 +1,0 @@
-
-src/styles/app.css
- 480:18  ✖  Expected a trailing semicolon   declaration-block-trailing-semicolon
-

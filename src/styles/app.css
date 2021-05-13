@@ -77,11 +77,11 @@ body::after {
   opacity: 0;
 }
 
-body[data-theme="dark"]::after {
+body[data-theme='dark']::after {
   opacity: 1;
 }
 
-body[data-theme="gray"]::after {
+body[data-theme='gray']::after {
   opacity: 1;
   background-image: var(--color-global-bg-gray);
   filter: grayscale(100%);
@@ -90,7 +90,7 @@ body[data-theme="gray"]::after {
   /* stylelint-enable */
 }
 
-body[data-theme="gray"] * {
+body[data-theme='gray'] * {
   filter: grayscale(100%);
   /* stylelint-disable */
   filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
@@ -190,7 +190,8 @@ img[data-src] {
   border-left-color: transparent;
   border-bottom-color: transparent;
   transform: rotateZ(-80deg);
-  animation: move2 var(--bird-fly-speed) linear infinite 1.5s, flap 0.5s linear alternate infinite 1.5s;
+  animation: move2 var(--bird-fly-speed) linear infinite 1.5s,
+    flap 0.5s linear alternate infinite 1.5s;
   z-index: 70;
 }
 
@@ -207,10 +208,11 @@ img[data-src] {
   border-top-color: transparent;
   transform: rotateZ(75deg);
   margin: 0 5px;
-  animation: move2 var(--bird-fly-speed) linear infinite 1.5s, flap 0.5s linear alternate infinite 1.5s;
+  animation: move2 var(--bird-fly-speed) linear infinite 1.5s,
+    flap 0.5s linear alternate infinite 1.5s;
 }
 
-[class^="moon"] {
+[class^='moon'] {
   position: absolute;
   top: 7%;
   bottom: 0;
@@ -230,7 +232,7 @@ img[data-src] {
 }
 
 @media screen and (max-height: 500px) {
-  [class^="moon"] {
+  [class^='moon'] {
     top: 14%;
   }
 }
@@ -298,8 +300,7 @@ img[data-src] {
   bottom: 8px;
 }
 
-@media only screen and (max-width: 767px),
-  only screen and (device-width: 767px) {
+@media only screen and (max-width: 767px), only screen and (device-width: 767px) {
   .wechat-qrcode-desc {
     font-size: 6px;
     margin-top: -5px;
@@ -367,7 +368,7 @@ img[data-src] {
 }
 
 .icon.loading::before {
-  content: "";
+  content: '';
   animation: sweep-loading 1.3s infinite;
   height: 100%;
   position: absolute;
@@ -587,14 +588,13 @@ details.my-portfolio[open] summary + div {
   border-radius: 4px;
   box-shadow: 0 0 4px 0 var(--color-shadow2);
   will-change: transform;
-  transition:
-    0.4s ease-in-out transform,
-    0.4s ease-in-out box-shadow;
+  transition: 0.4s ease-in-out transform, 0.4s ease-in-out box-shadow;
 }
 
 .mobile-qrcode:hover {
   transform: translate3d(0, -5px, 0);
-  box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 81, 0.01), 6px 6px 6px 6px rgba(34, 33, 81, 0.15);
+  box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+    6px 6px 6px 6px rgba(34, 33, 81, 0.15);
 }
 
 .footer {
@@ -618,8 +618,8 @@ details.my-portfolio[open] summary + div {
 }
 
 .svgicon,
-[class^="svgicon-"],
-[class*=" svgicon-"] {
+[class^='svgicon-'],
+[class*=' svgicon-'] {
   display: inline-block;
   width: 24px;
   height: 24px;

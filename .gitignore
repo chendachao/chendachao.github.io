@@ -3,3 +3,4 @@ dist/
 debug.log
 stats.json
 .eslintcache
+.tmp

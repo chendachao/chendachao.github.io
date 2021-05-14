@@ -1,36 +1,35 @@
+const { config, devMode } = require('./config')
+const webpack = require('webpack')
+const WebpackBar = require('webpackbar')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
+const TerserJSPlugin = require('terser-webpack-plugin')
+const { ESBuildMinifyPlugin } = require('esbuild-loader')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
+const WebpackNotifierPlugin = require('webpack-notifier')
+const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const { merge } = require('webpack-merge')
+const glob = require('glob-all')
 
-const {config, devMode} = require('./config');
-const webpack = require('webpack');
-const WebpackBar = require('webpackbar');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const TerserJSPlugin = require('terser-webpack-plugin');
-const { ESBuildMinifyPlugin } = require('esbuild-loader');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
-const WebpackNotifierPlugin = require('webpack-notifier');
-const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const {merge} = require('webpack-merge');
-const glob = require('glob-all');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
+const smp = new SpeedMeasurePlugin()
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
-const smp = new SpeedMeasurePlugin();
+const parts = require('./webpack.parts')
 
-const parts = require('./webpack.parts');
-
-const rootPath = process.cwd();
+const rootPath = process.cwd()
 // const rootPath = __dirname;
-const resolve = relativePath => path.resolve(rootPath, relativePath);
+const resolve = relativePath => path.resolve(rootPath, relativePath)
 
 const PATHS = {
   app: resolve('src'),
-  build: resolve('dist')
-};
+  build: resolve('dist'),
+}
 
 // const inlineBundles = /^(app|runtime).*.bundle.js$/;
 
@@ -51,17 +50,17 @@ const commonConfig = merge([
       publicPath: '',
       // ecmaVersion: 5 // work in webpack 5
     },
-    target: devMode ? "web" : "browserslist",
+    target: devMode ? 'web' : 'browserslist',
     resolve: {
       // preferRelative: true,
       preferAbsolute: true,
       modules: ['node_modules', './src'],
-      extensions: [".ts", ".js", 'css', 'scss'],
+      extensions: ['.ts', '.js', 'css', 'scss'],
       symlinks: false,
       alias: {
         // process: 'process/browser',
-        '@app': resolve('./src/app')
-      }
+        '@app': resolve('./src/app'),
+      },
     },
     optimization: {
       moduleIds: 'deterministic',
@@ -77,7 +76,7 @@ const commonConfig = merge([
         //     enforce: true
         //   },
         // }
-      }
+      },
     },
     plugins: [
       new CleanWebpackPlugin(),
@@ -89,19 +88,19 @@ const commonConfig = merge([
               script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'`,
         // hash: true,
         minify: !devMode,
-        excludeChunks: ['cv', 'stone']
+        excludeChunks: ['cv', 'stone'],
       }),
       new HtmlWebpackPlugin({
         template: 'src/index-cv.html',
         minify: !devMode,
         filename: 'cv.html',
-        chunks: ['cv']
+        chunks: ['cv'],
       }),
       new HtmlWebpackPlugin({
         template: 'src/index-stone.html',
         minify: !devMode,
         filename: 'stone.html',
-        chunks: ['stone']
+        chunks: ['stone'],
       }),
       // new ScriptExtHtmlWebpackPlugin({
       //   // inline: inlineBundles, // cause pwa update issue
@@ -121,35 +120,35 @@ const commonConfig = merge([
       // }),
       new CopyWebpackPlugin({
         patterns: [
-          {from: 'LICENSE'},
-          {from: 'src/site.webmanifest'},
-          {from: 'src/robots.txt'},
-          {from: 'src/assets', to: 'assets'},
+          { from: 'LICENSE' },
+          { from: 'src/site.webmanifest' },
+          { from: 'src/robots.txt' },
+          { from: 'src/assets', to: 'assets' },
           {
             from: 'node_modules/sw-offline-google-analytics/build/importScripts/sw-offline-google-analytics.prod.v0.0.25.js',
-            to: 'sw-offline-google-analytics.js'
+            to: 'sw-offline-google-analytics.js',
           },
-        ]
+        ],
       }),
       new WebpackBar({
-        name: `🔥 Larry's Homepage`,
+        name: "🔥 Larry's Homepage",
         color: '#3ce2e2',
       }),
       new webpack.ProvidePlugin({
         process: 'process/browser',
       }),
       new webpack.DefinePlugin({
-        "process.env": JSON.stringify(config),
+        'process.env': JSON.stringify(config),
       }),
-    ]
+    ],
   },
   parts.loadFonts({
     options: {
-      name: './fonts/[name].[ext]'
-    }
+      name: './fonts/[name].[ext]',
+    },
   }),
   parts.attachRevision(),
-]);
+])
 
 const pwaPlugins = [
   new GenerateSW({
@@ -166,9 +165,7 @@ const pwaPlugins = [
       },
     },
     sourcemap: true,
-    importScripts: [
-      'assets/sw-patch.js'
-    ],
+    importScripts: ['assets/sw-patch.js'],
     runtimeCaching: [
       {
         urlPattern: /^\/api\//,
@@ -179,7 +176,7 @@ const pwaPlugins = [
         handler: 'StaleWhileRevalidate',
         options: {
           cacheName: 'js-css-cache',
-        }
+        },
       },
       {
         urlPattern: /\.(?:png|gif|jpg|jpeg|svg|ico)$/,
@@ -191,9 +188,9 @@ const pwaPlugins = [
             purgeOnQuotaError: true,
             maxAgeSeconds: 365 * 24 * 60 * 60,
           },
-        }
+        },
       },
-    ]
+    ],
   }),
   // new InjectManifest({
   //   swSrc: './src/sw.js',
@@ -202,7 +199,7 @@ const pwaPlugins = [
   //   // globIgnores: ['dist/*.map', 'dist/site.webmanifest', 'dist/*.config'],
   //   // globPatterns: ['dist/*.{js,png,php,css}', 'dist/img/*.{png,jpg,jpeg}', 'dist/fonts/*'],
   // })
-];
+]
 
 const productionConfig = merge([
   {
@@ -224,33 +221,29 @@ const productionConfig = merge([
         new CssMinimizerPlugin(),
       ],
     },
-    plugins: [
-      new CompressionPlugin()
-    ]
+    plugins: [new CompressionPlugin()],
   },
   parts.loadJavaScript({
     include: PATHS.app,
     exclude(path) {
-      return path.match(/node_modules/);
+      return path.match(/node_modules/)
     },
-    cacheDirectory: true
+    cacheDirectory: true,
   }),
   parts.purifyCSS({
-    paths: glob.sync([
-      path.join(__dirname, 'src/**/*'),
-    ], { nodir: true })
+    paths: glob.sync([path.join(__dirname, 'src/**/*')], { nodir: true }),
   }),
   parts.extractCSS({
-    use: ['css-loader?importLoaders=1', parts.autoprefix()]
+    use: ['css-loader?importLoaders=1', parts.autoprefix()],
   }),
   parts.loadImages({
     options: {
       name: './assets/images/[name].[contenthash].[ext]',
-      limit: 10000
+      limit: 10000,
     },
     exclude: path.join(__dirname, 'src/assets/images/icons/*'),
   }),
-]);
+])
 
 const developmentConfig = merge([
   {
@@ -260,13 +253,13 @@ const developmentConfig = merge([
       // Ignore node_modules so CPU usage with poll
       // watching drops significantly.
       new webpack.WatchIgnorePlugin({
-        paths: [ path.join(__dirname, 'node_modules') ]
+        paths: [path.join(__dirname, 'node_modules')],
       }),
       new WebpackNotifierPlugin({
-        title: 'Webpack'
+        title: 'Webpack',
       }),
-      new webpack.HotModuleReplacementPlugin()
-    ]
+      new webpack.HotModuleReplacementPlugin(),
+    ],
   },
   parts.devServer({
     // Customize host/port here if needed
@@ -278,22 +271,21 @@ const developmentConfig = merge([
   //   use: [parts.autoprefix()]
   // }),
   parts.extractCSS({
-    use: ['css-loader?importLoaders=1', parts.autoprefix()]
+    use: ['css-loader?importLoaders=1', parts.autoprefix()],
   }),
   parts.loadImages(),
-]);
+])
 
 module.exports = mode => {
-  let webpackConfig = merge(commonConfig, developmentConfig, {mode: 'development'}); // development
-  if(mode.analyse) {
-    commonConfig.plugins.push(new BundleAnalyzerPlugin());
+  let webpackConfig = merge(commonConfig, developmentConfig, { mode: 'development' }) // development
+  if (mode.analyse) {
+    commonConfig.plugins.push(new BundleAnalyzerPlugin())
   }
   if (mode.production) {
     // TODO: workaround for workbox issue https://github.com/GoogleChrome/workbox/issues/1790
-    commonConfig.plugins.push(...pwaPlugins);
-    webpackConfig = merge(commonConfig, productionConfig, {mode: 'production'});
+    commonConfig.plugins.push(...pwaPlugins)
+    webpackConfig = merge(commonConfig, productionConfig, { mode: 'production' })
   }
 
-  return mode.smp ? smp.wrap(webpackConfig) : webpackConfig;
-};
-
+  return mode.smp ? smp.wrap(webpackConfig) : webpackConfig
+}

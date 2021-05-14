@@ -1,4 +1,4 @@
-import toastifier from 'toastifier';
-import 'toastifier/dist/toastifier.min.css';
+import toastifier from 'toastifier'
+import 'toastifier/dist/toastifier.min.css'
 
-export default toastifier;
+export default toastifier

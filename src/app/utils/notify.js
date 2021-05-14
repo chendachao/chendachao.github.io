@@ -1,5 +1,5 @@
-import toasted from 'toastr';
-import 'toastr/build/toastr.min.css';
+import toasted from 'toastr'
+import 'toastr/build/toastr.min.css'
 
 toasted.options = {
   closeButton: true,
@@ -15,7 +15,7 @@ toasted.options = {
   showEasing: 'swing',
   hideEasing: 'linear',
   showMethod: 'fadeIn',
-  hideMethod: 'fadeOut'
-};
+  hideMethod: 'fadeOut',
+}
 
-export default toasted;
+export default toasted

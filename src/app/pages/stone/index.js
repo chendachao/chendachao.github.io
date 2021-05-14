@@ -1,4 +1,2 @@
-import './style.css';
-console.log('投石问路');
-
-
+import './style.css'
+console.log('投石问路')

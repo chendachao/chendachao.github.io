@@ -569,7 +569,7 @@ details.my-portfolio[open] summary + div {
   pointer-events: none;
 }
 
-.qrcode-container {
+.qrcode-handler {
   margin-right: 1rem;
   cursor: pointer;
   opacity: 0.54;
@@ -577,7 +577,7 @@ details.my-portfolio[open] summary + div {
   background: transparent;
 }
 
-.qrcode-container:hover {
+.qrcode-handler:hover {
   opacity: 1;
 }
 

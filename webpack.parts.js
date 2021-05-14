@@ -1,12 +1,12 @@
-const webpack = require('webpack')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const PurgecssPlugin = require('purgecss-webpack-plugin')
-const openBrowser = require('react-dev-utils/openBrowser')
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const openBrowser = require('react-dev-utils/openBrowser');
 // const GitRevisionPlugin = require('git-revision-webpack-plugin');
 // const gitRevisionPlugin = new GitRevisionPlugin({
 //   lightweightTags: true
 // });
-const { devMode } = require('./config')
+const { devMode } = require('./config');
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
@@ -41,10 +41,10 @@ exports.devServer = ({ host, port } = {}) => ({
     // open: true,
     // TODO: webpack-dev-server will integrate this feature later
     after: () => {
-      openBrowser(`http://localhost:${port || 8088}`)
+      openBrowser(`http://localhost:${port || 8088}`);
     },
   },
-})
+});
 
 exports.loadJavaScript = ({ include, exclude, options } = {}) => ({
   module: {
@@ -62,7 +62,7 @@ exports.loadJavaScript = ({ include, exclude, options } = {}) => ({
       },
     ],
   },
-})
+});
 
 exports.loadCSS = ({ include, exclude, use = [] } = {}) => ({
   module: {
@@ -75,7 +75,7 @@ exports.loadCSS = ({ include, exclude, use = [] } = {}) => ({
       },
     ],
   },
-})
+});
 
 exports.extractCSS = ({ include, exclude, use = [] }) => {
   // Output extracted CSS to a file
@@ -83,7 +83,7 @@ exports.extractCSS = ({ include, exclude, use = [] }) => {
     filename: devMode ? '[name].css' : '[name].[contenthash].css', // long term caching
     chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css',
     ignoreOrder: true, // Enable to remove warnings about conflicting order
-  })
+  });
 
   const prodOptions = {
     esModule: true,
@@ -94,7 +94,7 @@ exports.extractCSS = ({ include, exclude, use = [] }) => {
     // publicPath: (resourcePath, context) => {
     //   return path.relative(path.dirname(resourcePath), context) + '/';
     // },
-  }
+  };
 
   return {
     module: {
@@ -113,15 +113,15 @@ exports.extractCSS = ({ include, exclude, use = [] }) => {
       ],
     },
     plugins: [plugin],
-  }
-}
+  };
+};
 
 exports.autoprefix = () => ({
   loader: 'postcss-loader',
   options: {
     plugins: () => [require('autoprefixer')()],
   },
-})
+});
 
 exports.purifyCSS = ({ paths }) => ({
   plugins: [
@@ -131,7 +131,7 @@ exports.purifyCSS = ({ paths }) => ({
       minify: true,
     }),
   ],
-})
+});
 
 exports.loadImages = ({ include, exclude, options } = {}) => ({
   module: {
@@ -163,7 +163,7 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
       },
     ],
   },
-})
+});
 
 exports.loadFonts = ({ include, exclude, options } = {}) => ({
   module: {
@@ -200,11 +200,11 @@ exports.loadFonts = ({ include, exclude, options } = {}) => ({
       },
     ],
   },
-})
+});
 
 // const bundleVersion = `${gitRevisionPlugin.version()} (${new Date().toISOString().substr(0, 10)})`;
 // const bundleVersion = `${gitRevisionPlugin.version()}`;
-const bundleVersion = `v${process.env.npm_package_version}`
+const bundleVersion = `v${process.env.npm_package_version}`;
 exports.attachRevision = () => ({
   plugins: [
     // gitRevisionPlugin,
@@ -213,4 +213,4 @@ exports.attachRevision = () => ({
       // 'process.env.VERSION': JSON.stringify(`v${pkg.version}-${gitRevisionPlugin.version()}`),
     }),
   ],
-})
+});

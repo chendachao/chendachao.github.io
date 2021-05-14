@@ -7,9 +7,9 @@ var getScrollTop = function () {
     window.pageYOffset ||
     (document.documentElement && document.documentElement.scrollTop) ||
     document.body.scrollTop ||
-    window.scrollY
-  return scrollTop
-}
+    window.scrollY;
+  return scrollTop;
+};
 
 var getOffsetHeight = function () {
   // The overall height of the html
@@ -18,46 +18,46 @@ var getOffsetHeight = function () {
   // document.body.offsetHeight ||
   var offsetHeight =
     (document.documentElement && document.documentElement.scrollHeight) ||
-    document.body.scrollHeight
-  return offsetHeight
-}
+    document.body.scrollHeight;
+  return offsetHeight;
+};
 
 var getScrollLeft = function () {
   var scrollLeft =
-    (document.documentElement && document.documentElement.scrollLeft) || document.body.scrollLeft
-  return scrollLeft
-}
+    (document.documentElement && document.documentElement.scrollLeft) || document.body.scrollLeft;
+  return scrollLeft;
+};
 
-var lastScrollTop = getScrollTop()
+var lastScrollTop = getScrollTop();
 
 window.addEventListener('scroll', function (ev) {
-  console.log('Scroll vertical or herizontal')
+  console.log('Scroll vertical or herizontal');
 
   // currentScrollTop
-  var scrollTop = getScrollTop()
-  var offsetHeight = getOffsetHeight()
+  var scrollTop = getScrollTop();
+  var offsetHeight = getOffsetHeight();
 
   if (scrollTop > lastScrollTop) {
-    console.log('Scroll down')
+    console.log('Scroll down');
     // >= is needed because if the horizontal scrollbar is visible then window.innerHeight includes
     // it and in that case the left side of the equation is somewhat greater.
     // window.innerHeight: viewport height
     // var scrolledToBottom = (scrollTop + window.innerHeight) >= offsetHeight - 2;
-    var scrolledToBottom = scrollTop + window.innerHeight >= offsetHeight
+    var scrolledToBottom = scrollTop + window.innerHeight >= offsetHeight;
     if (scrolledToBottom) {
-      console.log("you're at the bottom of the page")
+      console.log("you're at the bottom of the page");
     }
   } else {
-    console.log('Scroll up')
-    var scrolledToTop = scrollTop === 0
+    console.log('Scroll up');
+    var scrolledToTop = scrollTop === 0;
 
     if (scrolledToTop) {
-      console.log("you're at the top of the page")
+      console.log("you're at the top of the page");
     }
   }
 
-  lastScrollTop = scrollTop
-})
+  lastScrollTop = scrollTop;
+});
 
 // As a bonus: how to scroll to the bottom programmatically by keeping the horizontal scrollpos:
 // Since window.innerHeight includes the height of the horizontal scrollbar when it is visible
@@ -79,56 +79,56 @@ export var scrollToTop = (ratio = 20, smooth) => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
-    })
+    });
   } else {
-    var currentScrollTop = getScrollTop()
+    var currentScrollTop = getScrollTop();
     if (currentScrollTop > 0) {
-      window.requestAnimationFrame(scrollToTop)
-      window.scrollTo(0, currentScrollTop - currentScrollTop / ratio) // Tip: for slower motion of the scrolling, increase the hardcoded number 8. The bigger the number - the smoother/slower the scrolling.
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, currentScrollTop - currentScrollTop / ratio); // Tip: for slower motion of the scrolling, increase the hardcoded number 8. The bigger the number - the smoother/slower the scrolling.
     }
   }
-}
+};
 
 export var scrollToBottom = (ratio = 20, smooth) => {
-  var offsetHeight = getOffsetHeight()
+  var offsetHeight = getOffsetHeight();
   if (smooth) {
     window.scrollTo({
       top: offsetHeight,
       behavior: 'smooth',
-    })
+    });
   } else {
-    var currentScrollTop = getScrollTop()
-    var scrollBottom = currentScrollTop + window.innerHeight - offsetHeight
+    var currentScrollTop = getScrollTop();
+    var scrollBottom = currentScrollTop + window.innerHeight - offsetHeight;
     if (scrollBottom < 0) {
-      window.requestAnimationFrame(scrollToBottom)
-      window.scrollTo(0, scrollBottom - scrollBottom / ratio) // Tip: for slower motion of the scrolling, increase the hardcoded number 8. The bigger the number - the smoother/slower the scrolling.
+      window.requestAnimationFrame(scrollToBottom);
+      window.scrollTo(0, scrollBottom - scrollBottom / ratio); // Tip: for slower motion of the scrolling, increase the hardcoded number 8. The bigger the number - the smoother/slower the scrolling.
     }
   }
-}
+};
 
 // Scroll to a certain element
 export var scrollIntoView = element => {
   element.scrollIntoView({
     behavior: 'smooth',
-  })
-}
+  });
+};
 
-const scrollToTopBtn = document.querySelector('.scroll-to-top-btn')
+const scrollToTopBtn = document.querySelector('.scroll-to-top-btn');
 scrollToTopBtn &&
   scrollToTopBtn.addEventListener('click', () => {
-    scrollToTop(null, true)
+    scrollToTop(null, true);
     // scrollToTop();
-  })
+  });
 
-const scrollToBottomBtn = document.querySelector('.scroll-to-bottom-btn')
+const scrollToBottomBtn = document.querySelector('.scroll-to-bottom-btn');
 scrollToBottomBtn &&
   scrollToBottomBtn.addEventListener('click', () => {
-    scrollToBottom(null, true)
+    scrollToBottom(null, true);
     // scrollToBottom();
-  })
+  });
 
-const scrollToViewBtn = document.querySelector('.scroll-to-view-btn')
+const scrollToViewBtn = document.querySelector('.scroll-to-view-btn');
 scrollToViewBtn &&
   scrollToViewBtn.addEventListener('click', () => {
-    scrollIntoView(document.querySelector('.hello'))
-  })
+    scrollIntoView(document.querySelector('.hello'));
+  });

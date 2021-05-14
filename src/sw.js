@@ -1,27 +1,27 @@
-import * as googleAnalytics from 'workbox-google-analytics'
-import { skipWaiting, clientsClaim } from 'workbox-core'
-import { registerRoute } from 'workbox-routing'
-import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategies'
-import { ExpirationPlugin } from 'workbox-expiration'
-import { precacheAndRoute } from 'workbox-precaching'
+import * as googleAnalytics from 'workbox-google-analytics';
+import { skipWaiting, clientsClaim } from 'workbox-core';
+import { registerRoute } from 'workbox-routing';
+import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategies';
+import { ExpirationPlugin } from 'workbox-expiration';
+import { precacheAndRoute } from 'workbox-precaching';
 
 /* eslint-disable no-undef */
-importScripts('/assets/sw-patch.js')
+importScripts('/assets/sw-patch.js');
 /* eslint-enable no-undef */
 
 googleAnalytics.initialize({
   parameterOverrides: {
     cd1: 'offline',
   },
-})
+});
 
 // skipWaiting();
-clientsClaim()
+clientsClaim();
 
 // make sure we grab from cache if no network
 registerRoute(function ({ url, event }) {
-  return !url.pathname.match(/^\/api\//)
-}, new StaleWhileRevalidate())
+  return !url.pathname.match(/^\/api\//);
+}, new StaleWhileRevalidate());
 
 registerRoute(
   /\.(?:js|css)$/,
@@ -30,7 +30,7 @@ registerRoute(
     // Use a custom cache name.
     cacheName: 'js-css-cache',
   }),
-)
+);
 // registerRoute(
 //   /\.(?:js|css)$/,
 //   new NetworkFirst({
@@ -55,13 +55,13 @@ registerRoute(
       }),
     ],
   }),
-)
+);
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
  * requests for URLs in the manifest.
  * See https://goo.gl/S9QRab
  */
-self.__precacheManifest = [].concat(self.__precacheManifest || [])
-precacheAndRoute(self.__precacheManifest, {})
-precacheAndRoute(self.__WB_MANIFEST)
+self.__precacheManifest = [].concat(self.__precacheManifest || []);
+precacheAndRoute(self.__precacheManifest, {});
+precacheAndRoute(self.__WB_MANIFEST);

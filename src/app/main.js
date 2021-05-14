@@ -1,65 +1,65 @@
-import 'lazysizes'
+import 'lazysizes';
 // import a plugin
-import 'lazysizes/plugins/parent-fit/ls.parent-fit'
-import notify from './utils/notify'
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import notify from './utils/notify';
 // import notify3 from './utils/notify3';
-import { isIE } from './utils'
-import { scrollToTop } from './utils/scroll'
+import { isIE } from './utils';
+import { scrollToTop } from './utils/scroll';
 
-import Theme from './components/theme'
+import Theme from './components/theme';
 // Initial theme
-Theme()
+Theme();
 
-import i18n from './utils/i18n'
-i18n.init()
+import i18n from './utils/i18n';
+i18n.init();
 
 // Loading skeleton for svg icons
-const svgContainers = document.querySelectorAll('.icon.loading')
+const svgContainers = document.querySelectorAll('.icon.loading');
 if (svgContainers.length) {
-  const svg = svgContainers[0].querySelector('svg')
+  const svg = svgContainers[0].querySelector('svg');
   svg.addEventListener('load', () => {
     svgContainers.forEach(svg => {
-      svg.classList.remove('loading')
-    })
-  })
+      svg.classList.remove('loading');
+    });
+  });
 }
 
 // Initialize tooltip and popover
 setTimeout(() => {
-  import('./components/tooltip').then(({ TooltipAndPopover }) => TooltipAndPopover())
-}, 10)
+  import('./components/tooltip').then(({ TooltipAndPopover }) => TooltipAndPopover());
+}, 10);
 
-const qrcodeHandler = document.querySelector('.qrcode-handler')
+const qrcodeHandler = document.querySelector('.qrcode-handler');
 import('./components/dialog').then(({ showModal, displayQRCode }) => {
-  qrcodeHandler.removeAttribute('hidden')
+  qrcodeHandler.removeAttribute('hidden');
   qrcodeHandler.addEventListener('click', () => {
-    showModal()
-    displayQRCode()
-  })
-})
+    showModal();
+    displayQRCode();
+  });
+});
 
 // Load intro
 const loadIntro = () => {
   return import('./components/intro').then(({ Intro }) => {
-    return new Intro()
-  })
-}
+    return new Intro();
+  });
+};
 
-const startReplayBtn = document.querySelector('.start-replay-tour')
-const starthintBtn = document.querySelector('.start-hint')
+const startReplayBtn = document.querySelector('.start-replay-tour');
+const starthintBtn = document.querySelector('.start-hint');
 
 startReplayBtn.addEventListener('click', () => {
-  loadIntro().then(intro => intro.initAndShowIntro())
-})
+  loadIntro().then(intro => intro.initAndShowIntro());
+});
 
 starthintBtn.addEventListener('click', () => {
-  loadIntro().then(intro => intro.toggleHint())
-})
+  loadIntro().then(intro => intro.toggleHint());
+});
 
 // hide the install app button if in IE
 if (isIE()) {
-  const installButton = document.querySelector('#btnInstall')
-  installButton.setAttribute('hidden', '')
+  const installButton = document.querySelector('#btnInstall');
+  installButton.setAttribute('hidden', '');
 }
 
 // const test = document.querySelector('.test');
@@ -71,18 +71,18 @@ window.addEventListener('load', function () {
   // scrollToTop();
 
   // Click to open json file
-  const developerModeLink = document.querySelector('.developer-mode-link')
-  developerModeLink.setAttribute('href', `/assets/data/${i18n.locale}/chendachao.json`)
+  const developerModeLink = document.querySelector('.developer-mode-link');
+  developerModeLink.setAttribute('href', `/assets/data/${i18n.locale}/chendachao.json`);
 
   // Share application
   if (navigator.share) {
-    const shareBtn = document.querySelector('.share-btn')
-    shareBtn.removeAttribute('hidden')
+    const shareBtn = document.querySelector('.share-btn');
+    shareBtn.removeAttribute('hidden');
     shareBtn.addEventListener('click', () => {
-      let url = document.location.href
-      const canonicalElement = document.querySelector('link[rel=canonical]')
+      let url = document.location.href;
+      const canonicalElement = document.querySelector('link[rel=canonical]');
       if (canonicalElement !== null) {
-        url = canonicalElement.href
+        url = canonicalElement.href;
       }
       navigator
         .share({
@@ -91,44 +91,44 @@ window.addEventListener('load', function () {
           url,
         })
         .then(() => console.log('Successful share!'))
-        .catch(error => console.log('Error sharing', error))
-    })
+        .catch(error => console.log('Error sharing', error));
+    });
   }
 
-  let errorToasted
+  let errorToasted;
   const updateOnlineStatus = function (event) {
-    var message = navigator.onLine ? '' : i18n.format('APP.OFFLINE')
+    var message = navigator.onLine ? '' : i18n.format('APP.OFFLINE');
     if (message) {
       errorToasted = notify.error(message.toUpperCase(), '', {
         timeOut: 0,
         positionClass: 'toast-top-full-width',
-      })
+      });
     } else {
       if (errorToasted) {
-        errorToasted.remove()
+        errorToasted.remove();
         notify.success(i18n.format('APP.ONLINE'), '', {
           timeOut: 800,
-        })
+        });
       }
     }
-  }
+  };
 
-  updateOnlineStatus()
+  updateOnlineStatus();
 
-  window.addEventListener('online', updateOnlineStatus)
-  window.addEventListener('offline', updateOnlineStatus)
-})
+  window.addEventListener('online', updateOnlineStatus);
+  window.addEventListener('offline', updateOnlineStatus);
+});
 
 const globalErrorHandler = event => {
-  var message = (event.error || event.message).toString()
+  var message = (event.error || event.message).toString();
   // if(event.error) {
   //   message = event.error.stack;
   // }
-  notify.error(message, i18n.format('APP.GLOBAL_ERROR'))
-}
+  notify.error(message, i18n.format('APP.GLOBAL_ERROR'));
+};
 
-window.addEventListener('error', globalErrorHandler)
-window.addEventListener('unhandledrejection', globalErrorHandler)
+window.addEventListener('error', globalErrorHandler);
+window.addEventListener('unhandledrejection', globalErrorHandler);
 
 // window.onerror = function(msg, url, line, col, error) {
 //   // Note that col & error are new to the HTML 5 spec and may not be

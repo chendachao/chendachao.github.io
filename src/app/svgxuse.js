@@ -1,1 +1,1 @@
-import 'svgxuse'
+import 'svgxuse';

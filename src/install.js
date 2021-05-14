@@ -1,24 +1,24 @@
 // TODO: if support sw or manifest then show the install button
-let deferredInstallPrompt = null
-const installButton = document.querySelector('#btnInstall')
+let deferredInstallPrompt = null;
+const installButton = document.querySelector('#btnInstall');
 
 // CODELAB: Add event listener for beforeinstallprompt event
-window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent)
+window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
 
 // hide install button if app installed
 if (window.matchMedia('(display-mode: standalone)').matches) {
-  console.log('display-mode is standalone')
-  installButton.setAttribute('hidden', '')
+  console.log('display-mode is standalone');
+  installButton.setAttribute('hidden', '');
 } else {
-  deferredInstallPrompt && installButton.removeAttribute('hidden')
+  deferredInstallPrompt && installButton.removeAttribute('hidden');
 }
 
 // Safari
 if (window.navigator.standalone === true) {
-  console.log('display-mode is standalone')
-  installButton.setAttribute('hidden', '')
+  console.log('display-mode is standalone');
+  installButton.setAttribute('hidden', '');
 } else {
-  deferredInstallPrompt && installButton.removeAttribute('hidden')
+  deferredInstallPrompt && installButton.removeAttribute('hidden');
 }
 
 /**
@@ -30,10 +30,10 @@ if (window.navigator.standalone === true) {
 function saveBeforeInstallPromptEvent(evt) {
   // Analytics.trackEvent('eligible for prompt');
   // CODELAB: Add code to save event & show the install button.
-  deferredInstallPrompt = evt
-  installButton.removeAttribute('hidden')
+  deferredInstallPrompt = evt;
+  installButton.removeAttribute('hidden');
 
-  installButton.addEventListener('click', installPWA)
+  installButton.addEventListener('click', installPWA);
 }
 
 /**
@@ -48,34 +48,34 @@ function installPWA(evt) {
   deferredInstallPrompt
     .prompt()
     .then(evt => {
-      return deferredInstallPrompt.userChoice
+      return deferredInstallPrompt.userChoice;
     })
     .then(choiceResult => {
       // Analytics.trackEvent(`prompt ${choice.outcome}`);
       // Log user response to prompt.
       if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt', choiceResult)
+        console.log('User accepted the A2HS prompt', choiceResult);
         // Hide the install button, it can't be called twice.
-        evt.srcElement.setAttribute('hidden', true)
+        evt.srcElement.setAttribute('hidden', true);
       } else {
-        console.log('User dismissed the A2HS prompt', choiceResult)
+        console.log('User dismissed the A2HS prompt', choiceResult);
       }
-      deferredInstallPrompt = null
+      deferredInstallPrompt = null;
     })
     .catch(err => {
-      console.err(err)
+      console.err(err);
       if (err.message.indexOf('user gesture') > -1) {
         //recycle, but make sure there is a user gesture involved
       } else if (err.message.indexOf('The app is already installed') > -1) {
         //the app is installed, no need to prompt, but you may need to log or update state values
       } else {
-        return err
+        return err;
       }
-    })
+    });
 }
 
 // Add event listener for appinstalled event
-window.addEventListener('appinstalled', logAppInstalled)
+window.addEventListener('appinstalled', logAppInstalled);
 
 /**
  * Event handler for appinstalled event.
@@ -85,5 +85,5 @@ window.addEventListener('appinstalled', logAppInstalled)
  */
 function logAppInstalled(evt) {
   // CODELAB: Add code to log the event
-  console.log('Larry Homepage App was installed.', evt)
+  console.log('Larry Homepage App was installed.', evt);
 }

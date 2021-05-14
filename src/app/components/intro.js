@@ -1,35 +1,35 @@
-import introJs from 'intro.js'
+import introJs from 'intro.js';
 
-import 'intro.js/introjs.css'
+import 'intro.js/introjs.css';
 // import 'intro.js/themes/introjs-modern.css';
 // import 'intro.js/themes/introjs-royal.css';
 
-import 'intro.js/themes/introjs-nazanin.css'
+import 'intro.js/themes/introjs-nazanin.css';
 // import 'intro.js/themes/introjs-nassim.css';
 // import 'intro.js/themes/introjs-flattener.css';
 
-import i18n from '../utils/i18n'
+import i18n from '../utils/i18n';
 
 class Intro {
-  isHintDisplayed = false
-  format = i18n.format
+  isHintDisplayed = false;
+  format = i18n.format;
 
   constructor() {
     // this.format = i18n.format;
   }
 
   init() {
-    const hideIntro = JSON.parse(localStorage.getItem('hideIntro'))
-    !hideIntro && this.initAndShowIntro()
+    const hideIntro = JSON.parse(localStorage.getItem('hideIntro'));
+    !hideIntro && this.initAndShowIntro();
     // this.initAndShowIntro();
   }
 
   hideIntro = () => {
-    localStorage.setItem('hideIntro', true)
-  }
+    localStorage.setItem('hideIntro', true);
+  };
 
   initAndShowIntro() {
-    const intro = introJs()
+    const intro = introJs();
     intro.setOptions({
       showProgress: true,
       steps: [
@@ -62,16 +62,16 @@ class Intro {
           tooltipPosition: 'left',
         },
       ],
-    })
+    });
 
-    intro.start()
+    intro.start();
 
-    intro.onskip(this.hideIntro)
-    intro.oncomplete(this.hideIntro)
+    intro.onskip(this.hideIntro);
+    intro.oncomplete(this.hideIntro);
   }
 
   initHint() {
-    const intro = introJs()
+    const intro = introJs();
     intro.setOptions({
       showProgress: true,
       hints: [
@@ -101,22 +101,22 @@ class Intro {
           hintPosition: 'left',
         },
       ],
-    })
+    });
 
-    intro.addHints()
+    intro.addHints();
   }
 
   toggleHint() {
-    const intro = introJs()
+    const intro = introJs();
     if (this.isHintDisplayed) {
-      intro.hideHints()
-      this.isHintDisplayed = false
+      intro.hideHints();
+      this.isHintDisplayed = false;
     } else {
-      this.initHint()
-      intro.showHints()
-      this.isHintDisplayed = true
+      this.initHint();
+      intro.showHints();
+      this.isHintDisplayed = true;
     }
   }
 }
 
-export { Intro }
+export { Intro };

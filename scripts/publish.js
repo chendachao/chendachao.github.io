@@ -1,15 +1,15 @@
-const ghpages = require('gh-pages')
+const ghpages = require('gh-pages');
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const repo = GITHUB_TOKEN
   ? `https://chendachao:${GITHUB_TOKEN}@github.com/chendachao/chendachao.github.io.git`
-  : 'https://github.com/chendachao/chendachao.github.io.git'
+  : 'https://github.com/chendachao/chendachao.github.io.git';
 const user = GITHUB_TOKEN
   ? {
       name: 'chendachao',
       email: 'chendachao@users.noreply.github.com',
     }
-  : null
+  : null;
 
 ghpages.publish(
   'dist',
@@ -20,8 +20,8 @@ ghpages.publish(
   },
   function (err) {
     if (err) {
-      console.error(err)
+      console.error(err);
     }
-    console.log('publish done')
+    console.log('publish done');
   },
-)
+);

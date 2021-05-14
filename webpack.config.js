@@ -1,35 +1,35 @@
-const { config, devMode } = require('./config')
-const webpack = require('webpack')
-const WebpackBar = require('webpackbar')
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
-const TerserJSPlugin = require('terser-webpack-plugin')
-const { ESBuildMinifyPlugin } = require('esbuild-loader')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
-const WebpackNotifierPlugin = require('webpack-notifier')
-const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin')
-const CompressionPlugin = require('compression-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const { merge } = require('webpack-merge')
-const glob = require('glob-all')
+const { config, devMode } = require('./config');
+const webpack = require('webpack');
+const WebpackBar = require('webpackbar');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const { ESBuildMinifyPlugin } = require('esbuild-loader');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
+const WebpackNotifierPlugin = require('webpack-notifier');
+const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { merge } = require('webpack-merge');
+const glob = require('glob-all');
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
-const smp = new SpeedMeasurePlugin()
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+const smp = new SpeedMeasurePlugin();
 
-const parts = require('./webpack.parts')
+const parts = require('./webpack.parts');
 
-const rootPath = process.cwd()
+const rootPath = process.cwd();
 // const rootPath = __dirname;
-const resolve = relativePath => path.resolve(rootPath, relativePath)
+const resolve = relativePath => path.resolve(rootPath, relativePath);
 
 const PATHS = {
   app: resolve('src'),
   build: resolve('dist'),
-}
+};
 
 // const inlineBundles = /^(app|runtime).*.bundle.js$/;
 
@@ -148,7 +148,7 @@ const commonConfig = merge([
     },
   }),
   parts.attachRevision(),
-])
+]);
 
 const pwaPlugins = [
   new GenerateSW({
@@ -199,7 +199,7 @@ const pwaPlugins = [
   //   // globIgnores: ['dist/*.map', 'dist/site.webmanifest', 'dist/*.config'],
   //   // globPatterns: ['dist/*.{js,png,php,css}', 'dist/img/*.{png,jpg,jpeg}', 'dist/fonts/*'],
   // })
-]
+];
 
 const productionConfig = merge([
   {
@@ -226,7 +226,7 @@ const productionConfig = merge([
   parts.loadJavaScript({
     include: PATHS.app,
     exclude(path) {
-      return path.match(/node_modules/)
+      return path.match(/node_modules/);
     },
     cacheDirectory: true,
   }),
@@ -243,7 +243,7 @@ const productionConfig = merge([
     },
     exclude: path.join(__dirname, 'src/assets/images/icons/*'),
   }),
-])
+]);
 
 const developmentConfig = merge([
   {
@@ -274,18 +274,18 @@ const developmentConfig = merge([
     use: ['css-loader?importLoaders=1', parts.autoprefix()],
   }),
   parts.loadImages(),
-])
+]);
 
 module.exports = mode => {
-  let webpackConfig = merge(commonConfig, developmentConfig, { mode: 'development' }) // development
+  let webpackConfig = merge(commonConfig, developmentConfig, { mode: 'development' }); // development
   if (mode.analyse) {
-    commonConfig.plugins.push(new BundleAnalyzerPlugin())
+    commonConfig.plugins.push(new BundleAnalyzerPlugin());
   }
   if (mode.production) {
     // TODO: workaround for workbox issue https://github.com/GoogleChrome/workbox/issues/1790
-    commonConfig.plugins.push(...pwaPlugins)
-    webpackConfig = merge(commonConfig, productionConfig, { mode: 'production' })
+    commonConfig.plugins.push(...pwaPlugins);
+    webpackConfig = merge(commonConfig, productionConfig, { mode: 'production' });
   }
 
-  return mode.smp ? smp.wrap(webpackConfig) : webpackConfig
-}
+  return mode.smp ? smp.wrap(webpackConfig) : webpackConfig;
+};

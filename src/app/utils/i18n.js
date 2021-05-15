@@ -58,7 +58,7 @@ const I18n = () => {
     });
 
     // Change attr like tooltip
-    document.querySelectorAll('*[data-i18n-attr]').forEach(i18nLabel => {
+    return document.querySelectorAll('*[data-i18n-attr]').forEach(i18nLabel => {
       const { i18nAttr } = i18nLabel.dataset;
       const attr = i18nAttr.split('=');
       i18nLabel.setAttribute(attr[0], format(attr[1]));
@@ -67,6 +67,7 @@ const I18n = () => {
 
   function setLocale(lang) {
     locale = lang;
+    document.documentElement.setAttribute('lang', lang);
     localStorage.setItem('lang', lang);
   }
 
@@ -84,22 +85,27 @@ const I18n = () => {
   async function reformat(lang) {
     const message = await getI18nMessages(lang);
     messages[lang] = message;
-    render();
+    return render();
   }
 
   const triggerLanguageHandler = function () {
     setLocale(locale);
-    reformat(locale);
+    return reformat(locale);
   };
 
   function init() {
-    triggerLanguageHandler(initialLocale);
     const languageBtn = document.querySelector('.language-btn');
     languageBtn.addEventListener('click', function (e) {
       locale = locale === 'en' ? 'zh' : 'en';
-      triggerLanguageHandler(locale);
+      // Options 1
+      setLocale(locale);
       window.location.reload();
+      // Options 2, TODO: the tooltip won't work, and the html title won't change
+      // triggerLanguageHandler(locale).then(() => {
+      //   //window.location.reload();
+      // });
     });
+    return triggerLanguageHandler(initialLocale);
   }
 
   return {

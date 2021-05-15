@@ -11,7 +11,9 @@ import Theme from './components/theme';
 Theme();
 
 import i18n from './utils/i18n';
-i18n.init();
+i18n.init().then(() => {
+  document.title = i18n.format('APP.HTML_TITLE');
+});
 
 // Loading skeleton for svg icons
 const svgContainers = document.querySelectorAll('.icon.loading');
@@ -120,7 +122,7 @@ window.addEventListener('load', function () {
 });
 
 const globalErrorHandler = event => {
-  var message = (event.error || event.message).toString();
+  var message = (event.error || event.message || event.reason.message).toString();
   // if(event.error) {
   //   message = event.error.stack;
   // }

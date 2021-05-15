@@ -1,6 +1,14 @@
 
 /* TODO: black bg and white text for faster print */
 
+/*
+  - https://www.matuzo.at/blog/i-totally-forgot-about-print-style-sheets/
+  - https://www.smashingmagazine.com/2013/03/tips-and-tricks-for-print-style-sheets/#print-qr-codes-for-easy-url-references
+  - https://css-tricks.github.io/The-Printliminator/
+  - https://github.com/BafS/Gutenberg
+  - https://github.com/vladocar/Hartija---CSS-Print-Framework
+*/
+
 /* print mode style */
 @media print {
   *,
@@ -14,10 +22,58 @@
     box-shadow: none !important;
     background: var(--color-global-bg-fallback) !important;
     -webkit-print-color-adjust: exact;
+
+    /* print-color-adjust: exact; */
+  }
+
+  *,
+  *::before,
+  *::after,
+  *::first-letter,
+  p::first-line,
+  div::first-line,
+  blockquote::first-line,
+  li::first-line {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
   }
 
   body {
     background-attachment: fixed;
+  }
+
+  body > *:not(main):not(footer):not([class^="print-"]),
+  .no-print {
+    display: none !important;
+  }
+
+  /* a[href]:after {
+    content: ' (' attr(href) ')';
+  } */
+
+  /* a[href^='http']:not([href*='chendachao.github.io']):after {
+    content: ' (' attr(href) ')';
+  } */
+
+  /* abbr[title]:after {
+    content: ' (' attr(title) ')';
+  } */
+
+  /* .map {
+    width: 400px;
+    height: 300px;
+    background-image: url('http://maps.googleapis.com/maps/api/staticmap?center=Wien+Floridsdorf&zoom=13&scale=false&size=400x300&maptype=roadmap&format=png&visual_refresh=true');
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  } */
+
+  .print-site-qrcode {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: inherit !important;
   }
 
   details.my-portfolio {

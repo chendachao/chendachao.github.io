@@ -45,14 +45,14 @@ window.addEventListener('scroll', function (ev) {
     // var scrolledToBottom = (scrollTop + window.innerHeight) >= offsetHeight - 2;
     var scrolledToBottom = scrollTop + window.innerHeight >= offsetHeight;
     if (scrolledToBottom) {
-      console.log("you're at the bottom of the page");
+      console.log('you\'re at the bottom of the page');
     }
   } else {
     console.log('Scroll up');
     var scrolledToTop = scrollTop === 0;
 
     if (scrolledToTop) {
-      console.log("you're at the top of the page");
+      console.log('you\'re at the top of the page');
     }
   }
 

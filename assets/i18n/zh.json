@@ -1,4 +1,5 @@
-{ 
+{
+  "APP.HTML_TITLE": "陈大超",
   "APP.COMMA": "，",
   "APP.PERIOD": "。",
   "APP.DEVELOPER_MODE": "开发者视图",
@@ -35,6 +36,7 @@
   "APP.NEW_VERSION_TITLE": "发现新的版本",
   "APP.NEW_VERSION_CONTENT": "请刷新页面以更新版本",
   "APP.NOTIFICATIONS_BLOCKED": "弹出消息被屏蔽，请在设置里打开",
+  "APP.GLOBAL_ERROR": "哥哥，貌似哪个地方出问题了，小弟尽快给您修复。",
   "APP.CLOSE": "关闭",
   "APP.NEW": "新",
   "APP.DOWNLOAD": "下载二维码",

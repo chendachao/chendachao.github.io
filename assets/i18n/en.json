@@ -1,4 +1,5 @@
 {
+  "APP.HTML_TITLE": "Chen Dachao",
   "APP.COMMA": ",",
   "APP.PERIOD": ".",
   "APP.DEVELOPER_MODE": "Developer mode",
@@ -35,6 +36,7 @@
   "APP.PORTFOLIO.BLOG": "My Blog",
   "APP.WIP": "Work in progress",
   "APP.QRCODE_MOBILE_DESC": "Scan the QRcode to view this site on moblie 🛸",
+  "APP.GLOBAL_ERROR": "Something went wrong! Please refresh the window.",
   "APP.CLOSE": "Close",
   "APP.NEW": "NEW",
   "APP.DOWNLOAD": "Download QRCode",

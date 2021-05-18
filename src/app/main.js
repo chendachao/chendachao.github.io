@@ -89,7 +89,7 @@ window.addEventListener('load', function () {
       navigator
         .share({
           title: 'Larry Chen\' Homepage',
-          text: 'Welcome to visite Larry Chen\'s homepage',
+          text: 'Welcome to visit Larry\'s homepage',
           url,
         })
         .then(() => console.log('Successful share!'))

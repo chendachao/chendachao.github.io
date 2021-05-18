@@ -40,6 +40,10 @@
     text-shadow: none !important;
   }
 
+  @page {
+    margin: 1cm;
+  }
+
   body {
     background-attachment: fixed;
   }
@@ -71,7 +75,7 @@
 
   .print-site-qrcode {
     position: absolute;
-    left: 20px;
+    right: 20px;
     top: 20px;
     display: inherit !important;
   }
@@ -91,4 +95,20 @@
   h3 {
     page-break-after: avoid;
   }
+
+  .footer {
+    page-break-after: always;
+  }
+
+  /* mobile */
+  @media (max-width: 767px),
+    (device-width: 767px) {
+    :root {
+      --bird-fly-speed: 25s;
+
+      /* --color-global-bg-deg: 45deg; */
+      --centered-content-width: 91.8%;
+    }
+  }
+
 }

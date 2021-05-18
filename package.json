@@ -1,7 +1,7 @@
 {
   "name": "chendachao",
   "homepage": "https://github.com/chendachao/chendachao.github.io",
-  "version": "1.10.10",
+  "version": "1.10.11",
   "description": "Larry's Home Page",
   "main": "src/index.js",
   "scripts": {
@@ -102,7 +102,7 @@
     "workbox-webpack-plugin": "6.1.5"
   },
   "dependencies": {
-    "@sentry/browser": "6.3.1",
+    "@sentry/browser": "6.4.0",
     "@sentry/tracing": "6.3.6",
     "axios": "0.21.1",
     "bowser": "2.11.0",

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.12](https://github.com/chendachao/chendachao.github.io/compare/v1.10.11...v1.10.12) (2021-06-06)
+
+
+### Features
+
+* trycatch promise ([b225b3e](https://github.com/chendachao/chendachao.github.io/commit/b225b3e68d08868cd5d9bd180baba1d9ec099c38))
+
 ### [1.10.11](https://github.com/chendachao/chendachao.github.io/compare/v1.10.10...v1.10.11) (2021-05-18)
 
 

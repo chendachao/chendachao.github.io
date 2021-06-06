@@ -8,6 +8,7 @@ if (process.env.APP_ENV !== 'development') {
 
 import notify from '@app/utils/notify';
 import i18n from '@app/utils/i18n';
+import { tryCatchPormise } from '@app/utils';
 // import(/* webpackPrefetch: true */'@app/pwa');
 import(/* webpackPreload: true */ '@app/main');
 import 'normalize.css';
@@ -27,23 +28,40 @@ serviceWorker.register({
 
     // subscribe push notifications
     subscribeBtn.addEventListener('click', async () => {
-      try {
-        const result = await Notification.requestPermission();
-        if (result === 'granted') {
-          subscribeBtn.setAttribute('hidden', '');
-          // navigator.serviceWorker.getRegistration().then(function (reg) {
-          //   // Show Local Notification
-          //   reg.pushManager.subscribe({ userVisibleOnly: true });
-          // });
-          // Show Local Notification
-          registration.pushManager.subscribe({ userVisibleOnly: true });
-        } else {
-          throw new Error(format('APP.NOTIFICATIONS_BLOCKED'));
-        }
-      } catch (error) {
+      // try {
+      //   const result = await Notification.requestPermission();
+      //   if (result === 'granted') {
+      //     subscribeBtn.setAttribute('hidden', '');
+      //     // navigator.serviceWorker.getRegistration().then(function (reg) {
+      //     //   // Show Local Notification
+      //     //   reg.pushManager.subscribe({ userVisibleOnly: true });
+      //     // });
+      //     // Show Local Notification
+      //     registration.pushManager.subscribe({ userVisibleOnly: true });
+      //   } else {
+      //     throw new Error(format('APP.NOTIFICATIONS_BLOCKED'));
+      //   }
+      // } catch (error) {
+      //   notify.error(error, 'Notifications Error');
+      //   console.log('Notifications Error', error);
+      // }
+
+      const [result, error] = await tryCatchPormise(async () => await Notification.requestPermission());
+      if(error) {
         notify.error(error, 'Notifications Error');
         console.log('Notifications Error', error);
+      } else if (result === 'granted') {
+        subscribeBtn.setAttribute('hidden', '');
+        // navigator.serviceWorker.getRegistration().then(function (reg) {
+        //   // Show Local Notification
+        //   reg.pushManager.subscribe({ userVisibleOnly: true });
+        // });
+        // Show Local Notification
+        registration.pushManager.subscribe({ userVisibleOnly: true });
+      } else {
+        notify.error(format('APP.NOTIFICATIONS_BLOCKED'), 'Notifications Error');
       }
+
     });
   },
   onUpdate: registration => {

@@ -1,6 +1,8 @@
 import IntlMessageFormat from 'intl-messageformat';
 import axios from 'axios';
 
+import { tryCatchPormise } from '@app/utils';
+
 const I18n = () => {
   const getDefaultLang = function () {
     let lang =
@@ -73,13 +75,11 @@ const I18n = () => {
 
   const getI18nMessages = async lang => {
     const url = `/assets/i18n/${lang}.json`;
-    let response;
-    try {
-      response = await axios.get(url);
-    } catch (error) {
+    let [response, err] = await tryCatchPormise(async () => await axios.get(url));
+    if(err) {
       response = await axios.get('/assets/i18n/en.json'); // fallback to en
     }
-    return response.data;
+    return response?.data;
   };
 
   async function reformat(lang) {

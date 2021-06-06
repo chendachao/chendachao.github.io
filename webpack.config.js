@@ -131,7 +131,7 @@ const commonConfig = merge([
         ],
       }),
       new WebpackBar({
-        name: "🔥 Larry's Homepage",
+        name: '🔥 Larry\'s Homepage',
         color: '#3ce2e2',
       }),
       new webpack.ProvidePlugin({
@@ -247,7 +247,8 @@ const productionConfig = merge([
 
 const developmentConfig = merge([
   {
-    devtool: 'source-map',
+    // devtool: 'source-map',
+    devtool: 'cheap-module-source-map',
     plugins: [
       // new ErrorOverlayPlugin(),
       // Ignore node_modules so CPU usage with poll

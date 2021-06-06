@@ -2,10 +2,11 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const openBrowser = require('react-dev-utils/openBrowser');
-// const GitRevisionPlugin = require('git-revision-webpack-plugin');
-// const gitRevisionPlugin = new GitRevisionPlugin({
-//   lightweightTags: true
-// });
+const { GitRevisionPlugin } = require('git-revision-webpack-plugin');
+const gitRevisionPlugin = new GitRevisionPlugin({
+  lightweightTags: true,
+  commithashCommand: 'rev-parse --short=6 HEAD',
+});
 const { devMode } = require('./config');
 
 exports.devServer = ({ host, port } = {}) => ({
@@ -202,15 +203,15 @@ exports.loadFonts = ({ include, exclude, options } = {}) => ({
   },
 });
 
-// const bundleVersion = `${gitRevisionPlugin.version()} (${new Date().toISOString().substr(0, 10)})`;
-// const bundleVersion = `${gitRevisionPlugin.version()}`;
+// const bundleVersion = `${gitRevisionPlugin.version()} (${gitRevisionPlugin.lastcommitdatetime().substr(0, 10)})`;
+const commithash = gitRevisionPlugin.commithash();
 const bundleVersion = `v${process.env.npm_package_version}`;
 exports.attachRevision = () => ({
   plugins: [
     // gitRevisionPlugin,
     new webpack.DefinePlugin({
       'process.env.VERSION': JSON.stringify(bundleVersion),
-      // 'process.env.VERSION': JSON.stringify(`v${pkg.version}-${gitRevisionPlugin.version()}`),
+      'process.env.GIT_SHA1': JSON.stringify(commithash),
     }),
   ],
 });

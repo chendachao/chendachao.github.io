@@ -4764,6 +4764,11 @@ git-remote-origin-url@^2.0.0:
     gitconfiglocal "^1.0.0"
     pify "^2.3.0"
 
+git-revision-webpack-plugin@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/git-revision-webpack-plugin/-/git-revision-webpack-plugin-5.0.0.tgz#0683a6a110ece618499880431cd89e1eb597b536"
+  integrity sha512-RptQN/4UKcEPkCBmRy8kLPo5i8MnF8+XfAgFYN9gbwmKLTLx4YHsQw726H+C5+sIGDixDkmGL3IxPA2gKo+u4w==
+
 git-semver-tags@^4.0.0, git-semver-tags@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/git-semver-tags/-/git-semver-tags-4.1.1.tgz#63191bcd809b0ec3e151ba4751c16c444e5b5780"

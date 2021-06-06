@@ -34,3 +34,23 @@ export const daysBetween = (d, d1 = new Date(), d2 = new Date()) => {
   const d2ts = d2.getTime();
   return d1ts <= dts && dts <= d2ts;
 };
+
+export const tryCatchPormise = async (tryer) => {
+  try {
+    const result = await tryer();
+    return [result, null];
+  } catch (error) {
+    console.log('error', error);
+    return [null, error];
+  }
+};
+
+export const tryCatch = (tryer) => {
+  try {
+    const result = tryer();
+    return [result, null];
+  } catch (error) {
+    console.log('error', error);
+    return [null, error];
+  }
+};

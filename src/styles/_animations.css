@@ -80,7 +80,7 @@
   from {
     top: 40%;
     left: -50%;
-    opacity: 0.6;
+    opacity: 0;
     background-position: 50% 100%;
     transform: scale(1.2);
   }

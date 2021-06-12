@@ -97,6 +97,21 @@ window.addEventListener('load', function () {
     });
   }
 
+  const siteQrcode = document.querySelector('.print-site-qrcode');
+  window.addEventListener('beforeprint', () => {
+    siteQrcode.style.display = 'inherit';
+  });
+  window.addEventListener('afterprint', () => {
+    siteQrcode.style.display = 'none';
+  });
+  // window.matchMedia("print").addEventListener('change', (e) => {
+  //   if(e.matches) {
+  //     print.style.display = 'inherit';
+  //   } else {
+  //     console.log("Close.");
+  //   }
+  // });
+
   let errorToasted;
   const updateOnlineStatus = function (event) {
     var message = navigator.onLine ? '' : i18n.format('APP.OFFLINE');

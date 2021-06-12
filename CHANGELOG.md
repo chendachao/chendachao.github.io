@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.13](https://github.com/chendachao/chendachao.github.io/compare/v1.10.12...v1.10.13) (2021-06-12)
+
+
+### Features
+
+* reduce img & opacity moon & print qrcode ([666362d](https://github.com/chendachao/chendachao.github.io/commit/666362d15c0667bb73c207c69be500e8fa458f25))
+
 ### [1.10.12](https://github.com/chendachao/chendachao.github.io/compare/v1.10.11...v1.10.12) (2021-06-06)
 
 

@@ -97,20 +97,35 @@ window.addEventListener('load', function () {
     });
   }
 
-  const siteQrcode = document.querySelector('.print-site-qrcode');
-  window.addEventListener('beforeprint', () => {
-    siteQrcode.style.display = 'inherit';
-  });
-  window.addEventListener('afterprint', () => {
-    siteQrcode.style.display = 'none';
-  });
-  // window.matchMedia("print").addEventListener('change', (e) => {
-  //   if(e.matches) {
-  //     print.style.display = 'inherit';
-  //   } else {
-  //     console.log("Close.");
-  //   }
-  // });
+  (function() {
+    const siteQrcode = document.querySelector('.print-site-qrcode');
+
+    const beforePrint = () => {
+      siteQrcode.style.position = 'absolute';
+      siteQrcode.style.right = '15px';
+      siteQrcode.style.top = '35px';
+      siteQrcode.style.display = 'inherit';
+    };
+
+    const afterPrint = () => {
+      siteQrcode.style.display = 'none';
+    };
+
+    if(window.matchMedia) {
+      var mediaQueryList = window.matchMedia('print');
+      mediaQueryList.addEventListener('change', mql => {
+        if(mql.matches) {
+          beforePrint();
+        } else {
+          afterPrint();
+        }
+      });
+    }
+
+    window.addEventListener('beforeprint', beforePrint);
+    window.addEventListener('afterprint', afterPrint);
+
+  }());
 
   let errorToasted;
   const updateOnlineStatus = function (event) {

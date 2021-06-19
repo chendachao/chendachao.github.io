@@ -36,9 +36,9 @@
 
     <!-- For Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="https://chendachao.github.io/" />
+    <meta name="twitter:site" content="<%= htmlWebpackPlugin.options.href %>" />
     <meta name="twitter:creator" content="Larry Chen" />
-    <meta name="twitter:url" content="https://chendachao.github.io/" />
+    <meta name="twitter:url" content="<%= htmlWebpackPlugin.options.href %>" />
     <meta name="twitter:title" content="Chen Dachao's Homepage." />
     <meta name="twitter:description" content="Chen Dachao's Homepage." />
     <meta name="twitter:image" content="/assets/images/screenshots/screenshot1.jpg" />
@@ -53,10 +53,10 @@
     <meta property="og:site_name" content="Homepage" />
     <meta property="og:title" content="Larry Chen' Homepage" />
     <meta property="og:description" content="Chen Dachao's Homepage." />
-    <meta property="og:url" content="https://chendachao.github.io/" />
+    <meta property="og:url" content="<%= htmlWebpackPlugin.options.href %>" />
     <meta property="og:image" content="/assets/images/screenshots/screenshot1.jpg" />
     <meta property="og:og:image:alt" content="Chen Dachao's Homepage." />
-    <link rel="canonical" href="https://chendachao.github.io/" />
+    <link rel="canonical" href="<%= htmlWebpackPlugin.options.href %>" />
 
     <!-- favicon -->
     <!-- <link rel="apple-touch-icon" type="image/svg+xml" href="/assets/images/portfolios/home.svg" /> -->
@@ -94,7 +94,7 @@
     <script defer src="/assets/gtag.js"></script>
     <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-143770576-1"></script>
 
-    <!-- Hotjar Tracking Code for https://chendachao.github.io/ -->
+    <!-- Hotjar Tracking Code for this site -->
     <script defer src="/assets/hotjar.js"></script>
 
     <script>
@@ -121,8 +121,8 @@
     <section hidden class="print-site-qrcode">
       <div>
         <img
-          src="./assets/images/chendachao.github.io.png"
-          alt="https://chendachao.github.io"
+          src="./assets/images/chendachao.png"
+          alt="<%= htmlWebpackPlugin.options.origin %>"
           height="60"
           width="60"
           loading="lazy"
@@ -194,15 +194,17 @@
             <use href="/assets/images/base-symbol-defs.svg#install"></use>
           </svg>
         </button>
-        <a
-          href="javascript:void(0)"
-          onclick="javascript:self.print && self.print() || window.print && window.print()"
+        <button
+          onclick="javascript:if(self.print) {self.print()} else if(window.print) {window.print()} else {throw new Error('The Platform doesn\'t support print');}"
           class="help-icon btn-print border-active"
+          data-tooltip
+          data-tippy-content="Print"
+          data-i18n-attr="data-tippy-content=APP.PRINT"
         >
           <svg class="svgicon text-white">
             <use href="/assets/images/base-symbol-defs.svg#printer"></use>
           </svg>
-        </a>
+        </button>
       </section>
     </header>
 
@@ -421,8 +423,8 @@
             </li>
 
             <!-- <li>
-            <a rel="nofollow" href="https://www.linkedin.com/sharing/share-offsite/?url=https://chendachao.github.io/"
-              onclick="javascript:window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://chendachao.github.io/','Windows','screenX=400,screenY=350,left=400,width=650,height=350,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no');return false")"
+            <a rel="nofollow" href="https://www.linkedin.com/sharing/share-offsite/?url=https://chendachao.netlify.app/"
+              onclick="javascript:window.open('https://www.linkedin.com/sharing/share-offsite/?url=https://chendachao.netlify.app/','Windows','screenX=400,screenY=350,left=400,width=650,height=350,toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,directories=no,status=no');return false")"
               target="_blank" title="Print this article " style="color: #ffffff">Share linkiedn</a>
           </li>
           <li>
@@ -460,13 +462,7 @@
                   />
                 </div>
                 <div>Homepage</div>
-                <a
-                  class="link"
-                  href="https://chendachao.github.io/"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                >
-                </a>
+                <a class="link" href="/" target="_blank" rel="noopener noreferrer nofollow"> </a>
               </section>
               <section
                 class="card border-active"
@@ -672,14 +668,21 @@
       <hr style="background-color: lightgray; border: none; height: 1px; margin: 1rem 0 0.5rem" />
       <div class="text-center">
         <!-- TODO: change to loading placeholder -->
-        <img
-          src="./assets/images/chendachao.github.io.png"
-          alt="https://chendachao.github.io"
-          class="mobile-qrcode"
-          height="320"
-          width="320"
-          loading="lazy"
-        />
+        <a
+          download
+          aria-label="download"
+          class="download-img-wrapper"
+          href="./assets/images/chendachao.png"
+        >
+          <img
+            src="./assets/images/chendachao.png"
+            alt="<%= htmlWebpackPlugin.options.origin %>"
+            class="mobile-qrcode"
+            height="320"
+            width="320"
+            loading="lazy"
+          />
+        </a>
       </div>
       <div class="actions">
         <!-- <a aria-label="download" class="btn btn-primary download-btn mr-1" data-i18n-id="APP.DOWNLOAD">Download QRCode</a> -->

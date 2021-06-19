@@ -1,5 +1,6 @@
 import QRCode from 'qrcode';
 import dialogPolyfill from 'dialog-polyfill';
+import { origin } from '@app/constants';
 // import './dialog.css';
 import(/* webpackPreload: true */ './dialog.css');
 
@@ -67,15 +68,16 @@ dialog.addEventListener('cancel', ev => {
 });
 
 const displayQRCode = () => {
-  let LOCAL_REGEXP = /localhost|127.0.0.1/;
-  let mySite = LOCAL_REGEXP.test(window.location.origin)
-    ? 'https://chendachao.github.io'
+  const LOCAL_REGEXP = /localhost|127.0.0.1/;
+  const mySite = LOCAL_REGEXP.test(window.location.origin)
+    ? origin
     : window.location.origin;
 
-  let img = document.querySelector('.mobile-qrcode');
+  const downloadImgWrapper = document.querySelector('.download-img-wrapper');
+  const img = document.querySelector('.mobile-qrcode');
   img.setAttribute('alt', mySite);
 
-  let canvas = document.createElement('canvas');
+  const canvas = document.createElement('canvas');
   const QRCodeDim = {
     width: 320,
     height: 320,
@@ -141,6 +143,8 @@ const displayQRCode = () => {
           imgDim.height,
         );
         img.src = cvs.toDataURL('image/png');
+        downloadImgWrapper.href = img.src;
+        downloadImgWrapper.download = `${window.location.hostname}.png`;
       };
     })
     .catch(err => {

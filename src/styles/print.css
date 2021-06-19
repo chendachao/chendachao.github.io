@@ -57,7 +57,7 @@
     content: ' (' attr(href) ')';
   } */
 
-  /* a[href^='http']:not([href*='chendachao.github.io']):after {
+  /* a[href^='http']:not([href*='chendachao.github.io']):not([href*='chendachao.netlify.app']):after {
     content: ' (' attr(href) ')';
   } */
 

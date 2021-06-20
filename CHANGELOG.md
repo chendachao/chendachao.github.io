@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.17](https://github.com/chendachao/chendachao.github.io/compare/v1.10.16...v1.10.17) (2021-06-20)
+
+
+### Features
+
+* chores ([440cad8](https://github.com/chendachao/chendachao.github.io/commit/440cad814c22bd4df1bd717e387ece7c7312b42c))
+
 ### [1.10.16](https://github.com/chendachao/chendachao.github.io/compare/v1.10.15...v1.10.16) (2021-06-19)
 
 

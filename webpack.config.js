@@ -81,14 +81,24 @@ const commonConfig = merge([
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        title: 'Chen Dachao - 陈大超',
         template: 'src/index.html',
-        CSP: `default-src 'self' data: gap: 'unsafe-eval' instant.page www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/;
-              style-src 'self' http://* 'unsafe-inline';
-              script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'`,
+        title: 'Chen Dachao - 陈大超',
         hostname: 'chendachao.netlify.app',
         origin: 'https://chendachao.netlify.app',
         href: 'https://chendachao.netlify.app/',
+        meta: {
+          'Content-Security-Policy': {
+            'http-equiv': 'Content-Security-Policy',
+            'content': `default-src 'self' data: gap: 'unsafe-eval' instant.page www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/;
+                  style-src 'self' http://* 'unsafe-inline';
+                  script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'`,
+          },
+          // Will generate: <meta http-equiv="Content-Security-Policy" content="default-src https:">
+          // Which equals to the following http header: `Content-Security-Policy: default-src https:`
+          // 'set-cookie': { 'http-equiv': 'set-cookie', content: 'name=value; expires=date; path=url' },
+          // Will generate: <meta http-equiv="set-cookie" content="value; expires=date; path=url">
+          // Which equals to the following http header: `set-cookie: value; expires=date; path=url`
+        },
         // hash: true,
         minify: !devMode,
         excludeChunks: ['cv', 'stone'],

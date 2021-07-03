@@ -1,6 +1,7 @@
 import 'lazysizes';
 // import a plugin
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import * as Sentry from '@sentry/browser';
 import notify from './utils/notify';
 // import notify3 from './utils/notify3';
 import { isIE } from './utils';
@@ -99,16 +100,25 @@ window.addEventListener('load', function () {
 
   (function() {
     const siteQrcode = document.querySelector('.print-site-qrcode');
+    const myPortfolio = document.querySelector('.my-portfolio');
+    const isMyPortfolioOpened = myPortfolio.hasAttribute('open');
 
     const beforePrint = () => {
       siteQrcode.style.position = 'absolute';
       siteQrcode.style.right = '15px';
       siteQrcode.style.top = '35px';
       siteQrcode.style.display = 'inherit';
+
+      if(!isMyPortfolioOpened) {
+        myPortfolio.setAttribute('open', '');
+      }
     };
 
     const afterPrint = () => {
       siteQrcode.style.display = 'none';
+      if(!isMyPortfolioOpened) {
+        myPortfolio.removeAttribute('open');
+      }
     };
 
     if(window.matchMedia) {
@@ -157,6 +167,7 @@ const globalErrorHandler = event => {
   //   message = event.error.stack;
   // }
   notify.error(message, i18n.format('APP.GLOBAL_ERROR'));
+  Sentry.captureException(event.error);
 };
 
 window.addEventListener('error', globalErrorHandler);

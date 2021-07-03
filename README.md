@@ -34,8 +34,8 @@
 
 ## TODOs:
 - ✅ JSON description for developer view
-- [ ] More social icons
-- [ ] Share on Wechat, QQ, twitter and so on.
+- ✅ More social icons
+- ✅ Share on Wechat, QQ, twitter and so on.
 - [ ] Show rainbow sometimes.
 - [ ] FM/Music section.
 - ✅ My projects section.
@@ -43,6 +43,7 @@
 - ✅ Change them to gray on specific day.
 - ✅ [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Up✅e' button
 - ✅ [PWA] Update alert
+- [ ] [Sentry] Update all sourcemaps to Sentry
 
 ## PWA Debug:
 1. Run command `yarn build:w`.

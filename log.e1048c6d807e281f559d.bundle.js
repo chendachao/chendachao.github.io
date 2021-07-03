@@ -1,0 +1,1 @@
+(self.webpackChunkchendachao=self.webpackChunkchendachao||[]).push([[326],{70556:function(){console.log("\u2728Hello, nice to meet you \u{1F339}. This is Larry from China.\u2728")}},function(n){"use strict";var c=function(o){return n(n.s=o)},e=c(70556)}]);

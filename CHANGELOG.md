@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.18](https://github.com/chendachao/chendachao.github.io/compare/v1.10.17...v1.10.18) (2021-07-04)
+
+
+### Features
+
+* close portfolio by default ([87d7752](https://github.com/chendachao/chendachao.github.io/commit/87d775259dc95c9f0647dfae52df664628e29fad))
+
+
+### Bug Fixes
+
+* print show portfolio ([a87f555](https://github.com/chendachao/chendachao.github.io/commit/a87f555c56935ecbcc39dbfde6bc9f8d478ac733))
+
 ### [1.10.17](https://github.com/chendachao/chendachao.github.io/compare/v1.10.16...v1.10.17) (2021-06-20)
 
 

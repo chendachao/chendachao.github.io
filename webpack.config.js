@@ -216,6 +216,7 @@ const pwaPlugins = [
 
 const productionConfig = merge([
   {
+    // devtool: 'source-map',
     optimization: {
       minimize: true,
       minimizer: [

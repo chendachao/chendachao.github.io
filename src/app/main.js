@@ -99,11 +99,10 @@ window.addEventListener('load', function () {
   }
 
   (function() {
-    const siteQrcode = document.querySelector('.print-site-qrcode');
-    const myPortfolio = document.querySelector('.my-portfolio');
-    const isMyPortfolioOpened = myPortfolio.hasAttribute('open');
-
     const beforePrint = () => {
+      const siteQrcode = document.querySelector('.print-site-qrcode');
+      const myPortfolio = document.querySelector('.my-portfolio');
+      const isMyPortfolioOpened = myPortfolio.hasAttribute('open');
       siteQrcode.style.position = 'absolute';
       siteQrcode.style.right = '15px';
       siteQrcode.style.top = '35px';
@@ -115,6 +114,9 @@ window.addEventListener('load', function () {
     };
 
     const afterPrint = () => {
+      const siteQrcode = document.querySelector('.print-site-qrcode');
+      const myPortfolio = document.querySelector('.my-portfolio');
+      const isMyPortfolioOpened = myPortfolio.hasAttribute('open');
       siteQrcode.style.display = 'none';
       if(!isMyPortfolioOpened) {
         myPortfolio.removeAttribute('open');
@@ -134,7 +136,6 @@ window.addEventListener('load', function () {
 
     window.addEventListener('beforeprint', beforePrint);
     window.addEventListener('afterprint', afterPrint);
-
   }());
 
   let errorToasted;

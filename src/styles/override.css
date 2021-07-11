@@ -4,12 +4,17 @@
   border-radius: 0;
   filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.25));
   opacity: 1;
-  color: #fafafa
+  color: #fafafa;
 }
 
 .tippy-box .tippy-content {
   text-align: left;
+
   /* letter-spacing: -0.1vw; */
+}
+
+.tippy-box * {
+  font-family: cursive;
 }
 
 .tippy-box[data-theme~='gradient'] {

@@ -1,14 +1,13 @@
-
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
     window.location.hostname === '[::1]' ||
     // 127.0.0.0/8 are considered localhost for IPv4.
-    window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/)
+    window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/),
 );
 
 export function register(config) {
-  if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+  if (process.env.APP_ENV !== 'development' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL || '', window.location.href);
     if (publicUrl.origin !== window.location.origin) {
@@ -30,15 +29,14 @@ export function register(config) {
         // service worker/PWA documentation.
         navigator.serviceWorker.ready.then(() => {
           console.log(
-            'This web app is being served cache-first by a service ' + 'worker. To learn more, visit https://bit.ly/CRA-PWA'
+            'This web app is being served cache-first by a service ' +
+              'worker. To learn more, visit https://bit.ly/CRA-PWA',
           );
         });
-
       } else {
         // Is not localhost. Just register service worker
         registerValidSW(swUrl, config);
       }
-
     });
   }
 }
@@ -66,7 +64,7 @@ function registerValidSW(swUrl, config) {
                 // new update available
                 console.log(
                   'New content is available and will be used when all ' +
-                    'tabs for this page are closed. See https://bit.ly/CRA-PWA.'
+                    'tabs for this page are closed. See https://bit.ly/CRA-PWA.',
                 );
                 // Execute callback
                 if (config && config.onUpdate) {
@@ -96,31 +94,31 @@ function registerValidSW(swUrl, config) {
       console.log('SW registration failed: ', registrationError);
     });
 
-    // // When the user asks to refresh the UI, we'll need to reload the window
-    // navigator.serviceWorker.addEventListener('message', event => {
-    //   console.log('reload-window', event.data);
-    //   if (!event.data) {
-    //     return;
-    //   }
-    //   switch (event.data) {
-    //     case 'reload-window':
-    //       // window.location.reload();
-    //       break;
-    //     default:
-    //       // NOOP
-    //       break;
-    //   }
-    // });
+  // // When the user asks to refresh the UI, we'll need to reload the window
+  // navigator.serviceWorker.addEventListener('message', event => {
+  //   console.log('reload-window', event.data);
+  //   if (!event.data) {
+  //     return;
+  //   }
+  //   switch (event.data) {
+  //     case 'reload-window':
+  //       // window.location.reload();
+  //       break;
+  //     default:
+  //       // NOOP
+  //       break;
+  //   }
+  // });
 
-    // auto refresh to update when new version is available
-    // var refreshing;
-    // navigator.serviceWorker.addEventListener('controllerchange', () => {
-    //   if (refreshing) {
-    //     return;
-    //   }
-    //   refreshing = true;
-    //   window.location.reload();
-    // });
+  // auto refresh to update when new version is available
+  // var refreshing;
+  // navigator.serviceWorker.addEventListener('controllerchange', () => {
+  //   if (refreshing) {
+  //     return;
+  //   }
+  //   refreshing = true;
+  //   window.location.reload();
+  // });
 }
 
 function checkValidServiceWorker(swUrl, config) {
@@ -131,7 +129,10 @@ function checkValidServiceWorker(swUrl, config) {
     .then(response => {
       // Ensure service worker exists, and that we really are getting a JS file.
       const contentType = response.headers.get('content-type');
-      if (response.status === 404 || (contentType != null && contentType.indexOf('javascript') === -1)) {
+      if (
+        response.status === 404 ||
+        (contentType != null && contentType.indexOf('javascript') === -1)
+      ) {
         // No service worker found. Probably a different app. Reload the page.
         navigator.serviceWorker.ready.then(registration => {
           registration.unregister().then(() => {

@@ -11,7 +11,6 @@ import 'intro.js/themes/introjs-nazanin.css';
 import i18n from '../utils/i18n';
 
 class Intro {
-
   isHintDisplayed = false;
   format = i18n.format;
 
@@ -24,49 +23,49 @@ class Intro {
     !hideIntro && this.initAndShowIntro();
     // this.initAndShowIntro();
   }
-  
+
   hideIntro = () => {
     localStorage.setItem('hideIntro', true);
   };
-  
+
   initAndShowIntro() {
     const intro = introJs();
     intro.setOptions({
       showProgress: true,
       steps: [
         {
-          intro: this.format('APP.INTRO.INTRO')
+          intro: this.format('APP.INTRO.INTRO'),
         },
         {
           element: '#step1',
           intro: this.format('APP.INTRO.STEP1'),
-          tooltipPosition: 'bottom'
+          tooltipPosition: 'bottom',
         },
         {
           element: '#step2',
           intro: this.format('APP.INTRO.STEP2'),
-          tooltipPosition: 'top'
+          tooltipPosition: 'top',
         },
         {
           element: '#step3',
           intro: this.format('APP.INTRO.STEP3'),
-          tooltipPosition: 'auto'
+          tooltipPosition: 'auto',
         },
         {
           element: '#step4',
           intro: this.format('APP.INTRO.STEP4'),
-          tooltipPosition: 'left'
+          tooltipPosition: 'left',
         },
         {
           element: '#step5',
           intro: this.format('APP.INTRO.STEP5'),
-          tooltipPosition: 'left'
+          tooltipPosition: 'left',
         },
       ],
     });
 
     intro.start();
-    
+
     intro.onskip(this.hideIntro);
     intro.oncomplete(this.hideIntro);
   }
@@ -79,29 +78,29 @@ class Intro {
         {
           element: '.step11',
           hint: this.format('APP.INTRO.STEP1'),
-          hintPosition: 'left'
+          hintPosition: 'left',
         },
         {
           element: '.step12',
           hint: this.format('APP.INTRO.STEP2'),
-          hintPosition: 'top-left'
+          hintPosition: 'top-left',
         },
         {
           element: '.step13',
           hint: this.format('APP.INTRO.STEP3'),
-          hintPosition: 'top'
+          hintPosition: 'top',
         },
         {
           element: '.step14',
           hint: this.format('APP.INTRO.STEP4'),
-          hintPosition: 'left'
+          hintPosition: 'left',
         },
         {
           element: '.step15',
           hint: this.format('APP.INTRO.STEP5'),
-          hintPosition: 'left'
+          hintPosition: 'left',
         },
-      ]
+      ],
     });
 
     intro.addHints();
@@ -109,7 +108,7 @@ class Intro {
 
   toggleHint() {
     const intro = introJs();
-    if(this.isHintDisplayed) {
+    if (this.isHintDisplayed) {
       intro.hideHints();
       this.isHintDisplayed = false;
     } else {
@@ -118,7 +117,6 @@ class Intro {
       this.isHintDisplayed = true;
     }
   }
-
 }
 
-export default Intro;
+export { Intro };

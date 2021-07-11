@@ -12,9 +12,9 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v2.1.5
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install and build
@@ -30,10 +30,10 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
         with: 
           fetch-depth: 0
-      - uses: actions/setup-node@v2.1.2
+      - uses: actions/setup-node@v2.1.5
         with:
           node-version: ${{ matrix.node-version }}
       - name: Deploy to Github Pages
@@ -48,14 +48,15 @@ jobs:
     runs-on: ubuntu-latest
     if: "! contains(github.event.head_commit.message, 'wip')"
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.3.4
       - run: mkdir /tmp/artifacts
       - name: Run Lighthouse
         uses: foo-software/lighthouse-check-action@master
         id: lighthouseCheck
         with:
           outputDirectory: /tmp/artifacts
-          urls: 'https://chendachao.github.io'
+          urls: 'https://chendachao.github.io,https://chendachao.netlify.app/,https://chendachao-github-io.chendachao.vercel.app/'
+          slackWebhookUrl: ${{ secrets.LIGHTHOUSE_CHECK_WEBHOOK_URL }}
       - name: Upload artifacts
         uses: actions/upload-artifact@master
         with:

@@ -15,15 +15,16 @@ var getOffsetHeight = function () {
   // The overall height of the html
   // Grodriguez's fix for scrollHeight:
   // accounting for cases where html/body are set to height:100%
+  // document.body.offsetHeight ||
   var offsetHeight =
-    document.body.offsetHeight ||
     (document.documentElement && document.documentElement.scrollHeight) ||
     document.body.scrollHeight;
   return offsetHeight;
 };
 
 var getScrollLeft = function () {
-  var scrollLeft = (document.documentElement && document.documentElement.scrollLeft) || document.body.scrollLeft;
+  var scrollLeft =
+    (document.documentElement && document.documentElement.scrollLeft) || document.body.scrollLeft;
   return scrollLeft;
 };
 
@@ -41,17 +42,17 @@ window.addEventListener('scroll', function (ev) {
     // >= is needed because if the horizontal scrollbar is visible then window.innerHeight includes
     // it and in that case the left side of the equation is somewhat greater.
     // window.innerHeight: viewport height
-    // var scrolledToBottom = (scrollTop + window.innerHeight) >= scrollHeight - 2;
+    // var scrolledToBottom = (scrollTop + window.innerHeight) >= offsetHeight - 2;
     var scrolledToBottom = scrollTop + window.innerHeight >= offsetHeight;
     if (scrolledToBottom) {
-      console.log("you're at the bottom of the page");
+      console.log('you\'re at the bottom of the page');
     }
   } else {
     console.log('Scroll up');
     var scrolledToTop = scrollTop === 0;
 
     if (scrolledToTop) {
-      console.log("you're at the top of the page");
+      console.log('you\'re at the top of the page');
     }
   }
 
@@ -68,7 +69,6 @@ window.addEventListener('scroll', function (ev) {
 // without problems even when the horizontal scrollbar is visible.
 // window.scrollTo(scrollLeft, offsetHeight);
 
-
 // <button class="hello">hello</button>
 // <button class="scroll-to-top-btn">Scroll To Top</button>
 // <button class="scroll-into-view-btn">Scroll into View</button>
@@ -78,55 +78,57 @@ export var scrollToTop = (ratio = 20, smooth) => {
   if (smooth) {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   } else {
     var currentScrollTop = getScrollTop();
-    if(currentScrollTop > 0) {
+    if (currentScrollTop > 0) {
       window.requestAnimationFrame(scrollToTop);
       window.scrollTo(0, currentScrollTop - currentScrollTop / ratio); // Tip: for slower motion of the scrolling, increase the hardcoded number 8. The bigger the number - the smoother/slower the scrolling.
     }
   }
-}
+};
 
 export var scrollToBottom = (ratio = 20, smooth) => {
   var offsetHeight = getOffsetHeight();
   if (smooth) {
     window.scrollTo({
       top: offsetHeight,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   } else {
     var currentScrollTop = getScrollTop();
-    var scrollBottom = (currentScrollTop + window.innerHeight) - offsetHeight;
-    if(scrollBottom < 0) {
+    var scrollBottom = currentScrollTop + window.innerHeight - offsetHeight;
+    if (scrollBottom < 0) {
       window.requestAnimationFrame(scrollToBottom);
       window.scrollTo(0, scrollBottom - scrollBottom / ratio); // Tip: for slower motion of the scrolling, increase the hardcoded number 8. The bigger the number - the smoother/slower the scrolling.
     }
   }
-}
+};
 
 // Scroll to a certain element
-export var scrollIntoView = (element) => {
-  element.scrollIntoView({ 
-    behavior: 'smooth' 
+export var scrollIntoView = element => {
+  element.scrollIntoView({
+    behavior: 'smooth',
   });
-}
+};
 
 const scrollToTopBtn = document.querySelector('.scroll-to-top-btn');
-scrollToTopBtn && scrollToTopBtn.addEventListener('click', () => {
-  scrollToTop(null, true);
-  // scrollToTop();
-});
+scrollToTopBtn &&
+  scrollToTopBtn.addEventListener('click', () => {
+    scrollToTop(null, true);
+    // scrollToTop();
+  });
 
 const scrollToBottomBtn = document.querySelector('.scroll-to-bottom-btn');
-scrollToBottomBtn && scrollToBottomBtn.addEventListener('click', () => {
-  scrollToBottom(null, true);
-  // scrollToBottom();
-});
+scrollToBottomBtn &&
+  scrollToBottomBtn.addEventListener('click', () => {
+    scrollToBottom(null, true);
+    // scrollToBottom();
+  });
 
 const scrollToViewBtn = document.querySelector('.scroll-to-view-btn');
-scrollToViewBtn && scrollToViewBtn.addEventListener('click', () => {
-  scrollIntoView(document.querySelector('.hello'));
-});
-
+scrollToViewBtn &&
+  scrollToViewBtn.addEventListener('click', () => {
+    scrollIntoView(document.querySelector('.hello'));
+  });

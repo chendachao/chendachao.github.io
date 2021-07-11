@@ -1,5 +1,10 @@
-import toasted from './utils/toasted';
-import { isIE, isPC } from './utils';
+import 'lazysizes';
+// import a plugin
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import * as Sentry from '@sentry/browser';
+import notify from './utils/notify';
+// import notify3 from './utils/notify3';
+import { isIE } from './utils';
 import { scrollToTop } from './utils/scroll';
 
 import Theme from './components/theme';
@@ -7,103 +12,184 @@ import Theme from './components/theme';
 Theme();
 
 import i18n from './utils/i18n';
-i18n.init();
+i18n.init().then(() => {
+  document.title = i18n.format('APP.HTML_TITLE');
+  document.querySelector('#commentScript').setAttribute('data-isso-lang', i18n.locale);
+});
+
+// Loading skeleton for svg icons
+const svgContainers = document.querySelectorAll('.icon.loading');
+if (svgContainers.length) {
+  const svg = svgContainers[0].querySelector('svg');
+  svg.addEventListener('load', () => {
+    svgContainers.forEach(svg => {
+      svg.classList.remove('loading');
+    });
+  });
+}
 
 // Initialize tooltip and popover
-import('./components/tooltip').then(TooltipAndPopover => TooltipAndPopover.default());
+setTimeout(() => {
+  import('./components/tooltip').then(({ TooltipAndPopover }) => TooltipAndPopover());
+}, 10);
 
-import('./components/dialog').then(SetQRCode => SetQRCode.default());
-
-// Show intro
-import('./components/intro').then(Intro => {
-  const intro = new Intro.default();
-
-  if(isPC()) {
-    // Load two fast in PC, need delay the intro popup
-    setTimeout(() => {
-      intro.init();
-    }, 5000);
-  } else {
-    intro.init();
-  }
-
-  const startReplayBtn = document.querySelector('.start-replay-tour');
-  const starthintBtn = document.querySelector('.start-hint');
-
-  startReplayBtn.addEventListener('click', () => {
-    intro.initAndShowIntro();
+const qrcodeHandler = document.querySelector('.qrcode-handler');
+import('./components/dialog').then(({ showModal, displayQRCode }) => {
+  qrcodeHandler.removeAttribute('hidden');
+  qrcodeHandler.addEventListener('click', () => {
+    showModal();
+    displayQRCode();
   });
+});
 
-  starthintBtn.addEventListener('click', () => {
-    intro.toggleHint();
+// Load intro
+const loadIntro = () => {
+  return import('./components/intro').then(({ Intro }) => {
+    return new Intro();
   });
- 
+};
+
+const startReplayBtn = document.querySelector('.start-replay-tour');
+const starthintBtn = document.querySelector('.start-hint');
+
+startReplayBtn.addEventListener('click', () => {
+  loadIntro().then(intro => intro.initAndShowIntro());
+});
+
+starthintBtn.addEventListener('click', () => {
+  loadIntro().then(intro => intro.toggleHint());
 });
 
 // hide the install app button if in IE
 if (isIE()) {
-  const installButton = document.getElementById('btnInstall');
+  const installButton = document.querySelector('#btnInstall');
   installButton.setAttribute('hidden', '');
 }
 
-window.addEventListener('load', function() {
+// const test = document.querySelector('.test');
+// test.addEventListener('click', () => {
+//   notify3('test', {type: 'error'});
+// });
 
-  const versionEl = document.querySelector('.version');
-  versionEl.innerText = process.env.VERSION;
-
+window.addEventListener('load', function () {
   // scrollToTop();
 
   // Click to open json file
   const developerModeLink = document.querySelector('.developer-mode-link');
   developerModeLink.setAttribute('href', `/assets/data/${i18n.locale}/chendachao.json`);
 
-  let errorToasted;
-  const updateOnlineStatus = function (event) {
-    var message = navigator.onLine ? "" : i18n.format('APP.OFFLINE');
-    if(message) {
-      errorToasted = toasted.error(message.toUpperCase(), { 
-        action: {
-          text: 'Close',
-          onClick: (e, toasted) => {
-            toasted.delete();
-          },
-        },
-      });
-    } else {
-      errorToasted && errorToasted.delete();
-    }
+  // Share application
+  if (navigator.share) {
+    const shareBtn = document.querySelector('.share-btn');
+    shareBtn.removeAttribute('hidden');
+    shareBtn.addEventListener('click', () => {
+      let url = document.location.href;
+      const canonicalElement = document.querySelector('link[rel=canonical]');
+      if (canonicalElement !== null) {
+        url = canonicalElement.href;
+      }
+      navigator
+        .share({
+          title: 'Larry Chen\' Homepage',
+          text: 'Welcome to visit Larry\'s homepage',
+          url,
+        })
+        .then(() => console.log('Successful share!'))
+        .catch(error => console.log('Error sharing', error));
+    });
   }
 
+  (function() {
+    const beforePrint = () => {
+      const siteQrcode = document.querySelector('.print-site-qrcode');
+      const myPortfolio = document.querySelector('.my-portfolio');
+      const isMyPortfolioOpened = myPortfolio.hasAttribute('open');
+      siteQrcode.style.position = 'absolute';
+      siteQrcode.style.right = '15px';
+      siteQrcode.style.top = '35px';
+      siteQrcode.style.display = 'inherit';
+
+      if(!isMyPortfolioOpened) {
+        myPortfolio.setAttribute('open', '');
+      }
+    };
+
+    const afterPrint = () => {
+      const siteQrcode = document.querySelector('.print-site-qrcode');
+      const myPortfolio = document.querySelector('.my-portfolio');
+      const isMyPortfolioOpened = myPortfolio.hasAttribute('open');
+      siteQrcode.style.display = 'none';
+      if(!isMyPortfolioOpened) {
+        myPortfolio.removeAttribute('open');
+      }
+    };
+
+    if(window.matchMedia) {
+      var mediaQueryList = window.matchMedia('print');
+      mediaQueryList.addEventListener('change', mql => {
+        if(mql.matches) {
+          beforePrint();
+        } else {
+          afterPrint();
+        }
+      });
+    }
+
+    window.addEventListener('beforeprint', beforePrint);
+    window.addEventListener('afterprint', afterPrint);
+  }());
+
+  let errorToasted;
+  const updateOnlineStatus = function (event) {
+    var message = navigator.onLine ? '' : i18n.format('APP.OFFLINE');
+    if (message) {
+      errorToasted = notify.error(message.toUpperCase(), '', {
+        timeOut: 0,
+        positionClass: 'toast-top-full-width',
+      });
+    } else {
+      if (errorToasted) {
+        errorToasted.remove();
+        notify.success(i18n.format('APP.ONLINE'), '', {
+          timeOut: 800,
+        });
+      }
+    }
+  };
+
   updateOnlineStatus();
-  
+
   window.addEventListener('online', updateOnlineStatus);
   window.addEventListener('offline', updateOnlineStatus);
 });
 
-window.addEventListener('error', function(event) {
-  var message = (event.error || event.message).toString();
+const globalErrorHandler = event => {
+  var message = (event.error || event.message || event.reason.message).toString();
   // if(event.error) {
   //   message = event.error.stack;
   // }
-  toasted.error(message);
-});
+  notify.error(message, i18n.format('APP.GLOBAL_ERROR'));
+  Sentry.captureException(event.error);
+};
 
- // window.onerror = function(msg, url, line, col, error) {
-//   // Note that col & error are new to the HTML 5 spec and may not be 
+window.addEventListener('error', globalErrorHandler);
+window.addEventListener('unhandledrejection', globalErrorHandler);
+
+// window.onerror = function(msg, url, line, col, error) {
+//   // Note that col & error are new to the HTML 5 spec and may not be
 //   // supported in every browser.  It worked for me in Chrome.
 //   var extra = !col ? '' : '\ncolumn: ' + col;
 //   extra += !error ? '' : '\nerror: ' + error;
 //   console.log("Error: " + msg + "\nurl: " + url + "\nline: " + line + extra);
 
 //   var suppressErrorAlert = true;
-//   // If you return true, then error alerts (like in older versions of 
+//   // If you return true, then error alerts (like in older versions of
 //   // Internet Explorer) will be suppressed.
 //   return suppressErrorAlert;
 // };
 
 // trigger
-// window.setTimeout(function() {throw new Error('sdfsdfd')}, 0);
-
+// window.setInterval(function() {throw new Error('Test global error catch')}, 2000);
 
 // var width=300;
 // var height=200;

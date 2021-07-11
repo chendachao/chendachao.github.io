@@ -2,3 +2,5 @@ node_modules/
 dist/
 debug.log
 stats.json
+.eslintcache
+.tmp

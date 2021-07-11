@@ -1,0 +1,28 @@
+[build]
+  base = ""
+  publish = "dist"
+  command = "yarn build"
+
+# [[headers]]
+#   form = "/*"
+
+#   [headers.values]
+#     cache-control = "max-age=7200"
+
+# [[headers]]
+#   form = "/assets/*"
+
+#   [headers.values]
+#     cache-control = "max-age=31536000"
+
+# [[redirects]]
+#   from = "/graphql"
+#   to = "https://graphql.io"
+#   status = 200
+#   force = true
+#   headers = {X-From = "Netlify"}
+
+# [context.deploy-preview]
+#   command = "yarn build-preview"
+
+  

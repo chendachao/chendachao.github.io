@@ -1,16 +1,24 @@
 import IntlMessageFormat from 'intl-messageformat';
 import axios from 'axios';
 
+import { tryCatchPormise } from '@app/utils';
+
 const I18n = () => {
   const getDefaultLang = function () {
-    let lang = localStorage.getItem('lang') || (window.navigator.languages && window.navigator.languages[0]) || null;
-    lang = lang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
+    let lang =
+      localStorage.getItem('lang') ||
+      (window.navigator.languages && window.navigator.languages[0]) ||
+      null;
+    lang =
+      lang ||
+      window.navigator.language ||
+      window.navigator.browserLanguage ||
+      window.navigator.userLanguage;
 
     let shortLang = lang;
     if (shortLang.indexOf('-') !== -1) shortLang = shortLang.split('-')[0];
     if (shortLang.indexOf('_') !== -1) shortLang = shortLang.split('_')[0];
 
-    console.log(lang, shortLang);
     return shortLang;
   };
 
@@ -47,13 +55,13 @@ const I18n = () => {
     // Change label
     const i18nLabels = document.querySelectorAll('*[data-i18n-id]');
     i18nLabels.forEach(i18nLabel => {
-      const {i18nId} = i18nLabel.dataset;
+      const { i18nId } = i18nLabel.dataset;
       i18nLabel.innerHTML = format(i18nId);
     });
 
     // Change attr like tooltip
-    document.querySelectorAll('*[data-i18n-attr]').forEach(i18nLabel => {
-      const {i18nAttr} = i18nLabel.dataset;
+    return document.querySelectorAll('*[data-i18n-attr]').forEach(i18nLabel => {
+      const { i18nAttr } = i18nLabel.dataset;
       const attr = i18nAttr.split('=');
       i18nLabel.setAttribute(attr[0], format(attr[1]));
     });
@@ -61,46 +69,50 @@ const I18n = () => {
 
   function setLocale(lang) {
     locale = lang;
+    document.documentElement.setAttribute('lang', lang);
     localStorage.setItem('lang', lang);
   }
 
   const getI18nMessages = async lang => {
     const url = `/assets/i18n/${lang}.json`;
-    let response;
-    try {
-      response = await axios.get(url);
-    } catch (error) {
+    let [response, err] = await tryCatchPormise(async () => await axios.get(url));
+    if(err) {
       response = await axios.get('/assets/i18n/en.json'); // fallback to en
     }
-    return response.data;
+    return response?.data;
   };
 
   async function reformat(lang) {
     const message = await getI18nMessages(lang);
     messages[lang] = message;
-    render();
+    return render();
   }
 
   const triggerLanguageHandler = function () {
     setLocale(locale);
-    reformat(locale);
-  }
+    return reformat(locale);
+  };
 
   function init() {
-    triggerLanguageHandler(initialLocale);
     const languageBtn = document.querySelector('.language-btn');
     languageBtn.addEventListener('click', function (e) {
       locale = locale === 'en' ? 'zh' : 'en';
-      triggerLanguageHandler(locale);
+      // Options 1
+      setLocale(locale);
       window.location.reload();
+      // Options 2, TODO: the tooltip won't work, and the html title won't change
+      // triggerLanguageHandler(locale).then(() => {
+      //   //window.location.reload();
+      // });
     });
+    return triggerLanguageHandler(initialLocale);
   }
 
   return {
     init,
     format,
-    locale
-  }
+    locale,
+  };
 };
 
 const i18n = I18n();

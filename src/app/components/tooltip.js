@@ -25,7 +25,7 @@ import { isIE, isPC } from '../utils';
 import i18n from '../utils/i18n';
 
 function TooltipAndPopover() {
-  const template = document.getElementById('wechat-popup');
+  const template = document.querySelector('#wechat-popup');
   const container = document.createElement('div');
   const commonConig = {
     allowHTML: true,
@@ -42,7 +42,7 @@ function TooltipAndPopover() {
   };
 
   // Common tooltip
-  if(isPC()) {
+  if (isPC()) {
     const tippyInstances = tippy('[data-tooltip]');
     const singleton = createSingleton(tippyInstances, commonConig);
   } else {
@@ -82,7 +82,7 @@ function TooltipAndPopover() {
       qrCode.addEventListener('click', toggleScale, true);
       content.querySelectorAll('[data-i18n-id]').forEach(i18nLabel => {
         console.log('i18nLabel', i18nLabel);
-        const {i18nId} = i18nLabel.dataset;
+        const { i18nId } = i18nLabel.dataset;
         i18nLabel.innerHTML = i18n.format(i18nId);
       });
     },
@@ -95,4 +95,4 @@ function TooltipAndPopover() {
   });
 }
 
-export default TooltipAndPopover;
+export { TooltipAndPopover };

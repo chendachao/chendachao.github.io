@@ -1,5 +1,4 @@
 :root {
-
   --white: #fff;
   --gray1: #f8f9fa;
   --gray2: #e9ecef;
@@ -11,24 +10,20 @@
   --gray8: #343a40;
   --gray9: #212529;
   --black: #000;
-
+  --black2: rgba(0, 0, 0, 0.17);
   --blue1: rgb(29, 26, 79);
   --blue2: #3b5998;
   --blue3: #00aced;
   --blue4: #178bb7;
-
   --purple1: rgb(128, 13, 206);
   --purple2: rgba(131, 58, 180, 1);
   --purple3: #833ab4;
-
   --pink1: #f166b2;
-
   --red1: #d00;
   --red2: #f20;
   --red3: #f33;
   --red4: rgb(236, 61, 61);
   --red5: rgba(209, 63, 63, 1);
-
   --orange1: #f1a50d;
   --orange2: rgb(220, 144, 37);
   --orange3: rgba(194, 141, 65, 1);
@@ -36,18 +31,14 @@
   --orange5: #f5b45a;
   --orange6: #fc8b53;
   --orange7: #efbb35;
-
   --yellow1: #ffe506;
   --yellow2: #fdd55a;
   --yellow3: #d8ca1e;
-
   --green1: #076b39;
-  --green3: #4AAE9B;
+  --green3: #4aae9b;
   --cyan1: #3ce2e2;
-
   --light: var(--gray1);
   --dark: var(--gray8);
-
   --blue: var(--blue1);
   --purple: var(--purple1);
   --pink: var(--pink1);
@@ -57,51 +48,48 @@
   --green: var(--green1);
   --cyan: var(--cyan1);
   --gray: var(--gray5);
-
-
-  --subtle: rgba(0, 0, 0, .1);
-  --subtle2: rgba(0, 0, 0, .05);
+  --subtle: rgba(0, 0, 0, 0.1);
+  --subtle2: rgba(0, 0, 0, 0.05);
   --subtle3: rgba(0, 0, 0, 0.3);
-
   --text-highlight: var(--orange1);
   --text-highlight2: var(--yellow1);
   --text-color: var(--white);
   --text-subtle-color: var(--gray6);
   --selection-bg: var(--orange7);
-
   --color-shadow: var(--gray2);
   --color-shadow2: var(--gray4);
-
   --bg-white: var(--white);
   --bg-light: var(--gray3);
   --bg-gray: #fff;
-
   --color-global-bg-deg: 45deg;
-  --color-global-bg-fallback: #833ab4;
-  --color-global-bg: linear-gradient(var(--color-global-bg-deg), rgb(128, 13, 206) 0%, rgb(236, 61, 61) 70%, rgb(220, 144, 37) 100%);
+  --color-global-bg-fallback-light: #833ab4;
+  --color-global-bg-fallback-dark: rgb(29, 26, 79);
+  --color-global-bg-light: linear-gradient(var(--color-global-bg-deg), rgb(28 17 115) 0%, rgb(238 36 36) 70%, rgb(220, 144, 37) 100%);
+  --color-global-bg-dark: linear-gradient(var(--color-global-bg-deg), rgb(1 20 86) 0%, rgb(107 3 109) 100%);
+
+  /* --color-global-bg-dark: linear-gradient(var(--color-global-bg-deg), rgba(19,0,45,1) 0%, rgba(19,0,45,1) 0%, rgba(92,16,160,1) 100%); */
+  --color-global-bg-gray: gray;
+  --color-card-bg: radial-gradient(circle farthest-corner at right bottom, #9e1985 0, #d08452 100%);
 
   /* --color-moon-bg: linear-gradient(gold, #d00); */
   --color-moon-bg: linear-gradient(to top, #d00 0%, #fc8b53 50%, #fdd55a 100%);
   --color-moon-bg-size: 200% 200%;
-
+  --color-peach-gradient: linear-gradient(40deg, #ffd86f, #fc6262);
+  --color-purple-gradient: linear-gradient(40deg, #ff6ec4, #7873f5);
   --color-brand: var(--yellow1);
   --brand-text-shadow: -5px 5px 10px #ab870a;
-
   --bird-fly-speed: 90s;
-
-
+  --centered-content-width: 61.8%;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 767px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
-
-  --fb: #3B5998;
-  --reddit: #FC471E;
-  --h-news: #F60;
+  --font-family-sans-serif: -apple-system, blinkmacsystemfont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-monospace: sfmono-regular, menlo, monaco, consolas, "Liberation Mono", "Courier New", monospace;
+  --fb: #3b5998;
+  --reddit: #fc471e;
+  --h-news: #f60;
   --twitter: #00aced;
   --google: #dd4b39;
   --linkedin: #007bb5;
@@ -109,155 +97,42 @@
   --skype: #00aff0;
   --wechat: #1aad28;
   --envelope: #2368c0;
-  --reddit: #ff5700;
   --github: #292626;
-  /*#45160814;*/
+
+  /* --reddit: #ff5700; */
+
+  /* #45160814; */
   --stackoverflow: rgb(250, 250, 251);
+  --comment-margin-left: -4em;
+  --comment-margin-right: -4em;
 }
 
 :root [data-theme="dark"] {
-  --color-global-bg-fallback: rgb(29, 26, 79);
-  --color-global-bg: linear-gradient(var(--color-global-bg-deg), rgba(29, 26, 79, 1) 0%, rgba(142, 21, 218, 1) 100%);
-
   --color-moon-bg: lightgoldenrodyellow;
+  --color-card-bg: radial-gradient(circle farthest-corner at right bottom, #2c20a6 0, #c642db 100%);
 }
 
-:root [data-theme="gray"] {
-  --color-global-bg: gray;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-moon-bg: lightgoldenrodyellow;
+    --color-card-bg: radial-gradient(circle farthest-corner at right bottom, #2c20a6 0, #c642db 100%);
+  }
 }
+
+/* :root [data-theme="gray"] {
+} */
 
 /* Resposible varaibles */
+
 /* mobile */
 @media only screen and (max-width: 767px),
-only screen and (device-width: 767px) {
+  only screen and (device-width: 767px) {
   :root {
     --bird-fly-speed: 25s;
-    --color-global-bg-deg: 90deg;
-  }
-}
 
-/* Animations */
-@keyframes fade-in {
-  from {
-    opacity: 0.1;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes move {
-  0% {
-    left: 0px;
-  }
-
-  33% {
-    top: 20px;
-  }
-
-  50% {
-    top: 70px;
-  }
-
-  66% {
-    top: 100px;
-  }
-
-  100% {
-    left: 100%;
-  }
-}
-
-@keyframes move2 {
-  from {
-    left: 0;
-  }
-
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes flap {
-  from {
-    border-radius: 90%;
-  }
-
-  to {
-    border-radius: 10%;
-  }
-}
-
-@keyframes colorize {
-  0% {
-    box-shadow: 0 0 40px 6px #f20, 0 0 150px 10px #f33;
-  }
-
-  35% {
-    box-shadow: 0 0 40px 6px orange, 0 0 150px 10px #e0596b;
-  }
-
-  65% {
-    box-shadow: none;
-  }
-
-  85% {
-    box-shadow: none;
-    background: linear-gradient(gold, #d90 #d00);
-    background-position: 50% 0;
-  }
-
-  100% {
-    box-shadow: 0 0 40px 6px #efb503, 0 0 150px 10px #d66c39;
-  }
-}
-
-@keyframes rise {
-  from {
-    top: 40%;
-    left: -50%;
-    background-position: 50% 100%;
-    transform: scale(1.2);
-  }
-
-  to {
-    top: 7%;
-    left: 60%;
-    background-position: 50% 0;
-  }
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px)
-  }
-  100% {
-    transform: translateY(0px)
-  }
-}
-
-@keyframes sweep {
-  0% {
-    opacity: 0;
-    margin-left: -1em;
-    margin-right: 1em;
-  }
-  100% {
-    opacity: 1;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@keyframes grow {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 1em;
+    /* --color-global-bg-deg: 45deg; */
+    --centered-content-width: 91.8%;
+    --comment-margin-left: 0;
+    --comment-margin-right: 0;
   }
 }

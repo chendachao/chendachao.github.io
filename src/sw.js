@@ -5,7 +5,9 @@ import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategi
 import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute } from 'workbox-precaching';
 
+/* eslint-disable no-undef */
 importScripts('/assets/sw-patch.js');
+/* eslint-enable no-undef */
 
 googleAnalytics.initialize({
   parameterOverrides: {
@@ -17,12 +19,9 @@ googleAnalytics.initialize({
 clientsClaim();
 
 // make sure we grab from cache if no network
-registerRoute(
-  function ({url, event}) {
-    return !url.pathname.match(/^\/api\//);
-  },
-  new StaleWhileRevalidate()
-);
+registerRoute(function ({ url, event }) {
+  return !url.pathname.match(/^\/api\//);
+}, new StaleWhileRevalidate());
 
 registerRoute(
   /\.(?:js|css)$/,
@@ -30,7 +29,7 @@ registerRoute(
   new StaleWhileRevalidate({
     // Use a custom cache name.
     cacheName: 'js-css-cache',
-  })
+  }),
 );
 // registerRoute(
 //   /\.(?:js|css)$/,
@@ -53,9 +52,9 @@ registerRoute(
         maxEntries: 200,
         purgeOnQuotaError: true,
         maxAgeSeconds: 365 * 24 * 60 * 60,
-      })
-    ]
-  })
+      }),
+    ],
+  }),
 );
 
 /**
@@ -66,6 +65,3 @@ registerRoute(
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 precacheAndRoute(self.__precacheManifest, {});
 precacheAndRoute(self.__WB_MANIFEST);
-
-
-

@@ -1,24 +1,34 @@
-require('dotenv').config();
+const { config, devMode } = require('./config');
 const webpack = require('webpack');
+const WebpackBar = require('webpackbar');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const { ESBuildMinifyPlugin } = require('esbuild-loader');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const {merge} = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const glob = require('glob-all');
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+const smp = new SpeedMeasurePlugin();
 
 const parts = require('./webpack.parts');
 
+const rootPath = process.cwd();
+// const rootPath = __dirname;
+const resolve = relativePath => path.resolve(rootPath, relativePath);
+
 const PATHS = {
-  app: path.resolve(__dirname, 'src'),
-  build: path.resolve(__dirname, 'dist')
+  app: resolve('src'),
+  build: resolve('dist'),
 };
 
 // const inlineBundles = /^(app|runtime).*.bundle.js$/;
@@ -27,95 +37,128 @@ const commonConfig = merge([
   {
     entry: {
       app: [PATHS.app],
-      print: './src/print.js',
+      log: './src/log.js',
       install: './src/install.js',
       cv: ['./src/index-cv.js'],
       stone: ['./src/index-stone.js'],
+      svgxuse: ['./src/app/svgxuse.js'], // For IE to load external svg defs
     },
     output: {
       filename: '[name].[contenthash].bundle.js',
-      // filename: '[name].[hash:8].bundle.js',
-      path: PATHS.build
+      chunkFilename: '[name].[chunkhash].chunk.js',
+      path: PATHS.build,
+      publicPath: '',
+      // ecmaVersion: 5 // work in webpack 5
     },
+    target: devMode ? 'web' : 'browserslist',
     resolve: {
-      extensions: [".ts", ".js", 'css', 'scss'],
+      // preferRelative: true,
+      preferAbsolute: true,
+      modules: ['node_modules', './src'],
+      extensions: ['.ts', '.js', 'css', 'scss'],
       symlinks: false,
       alias: {
-        '@app': path.resolve(__dirname, './src/app')
-      }
+        // process: 'process/browser',
+        '@app': resolve('./src/app'),
+      },
     },
     optimization: {
-      moduleIds: 'hashed',
+      moduleIds: 'deterministic',
       runtimeChunk: 'single',
       // runtimeChunk: true,
       splitChunks: {
         chunks: 'all',
         // cacheGroups: {
-        //   vendor: {
+        //   defaultVendors: {
         //     test: /[\\/]node_modules[\\/]/,
         //     name: 'vendors',
         //     chunks: 'all',
         //     enforce: true
         //   },
         // }
-      }
+      },
     },
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: 'src/index.html',
-        minify: false,
-        excludeChunks: ['cv', 'stone']
+        title: 'Chen Dachao - 陈大超',
+        hostname: 'chendachao.netlify.app',
+        origin: 'https://chendachao.netlify.app',
+        href: 'https://chendachao.netlify.app/',
+        meta: {
+          'Content-Security-Policy': {
+            'http-equiv': 'Content-Security-Policy',
+            'content': `default-src 'self' data: gap: 'unsafe-eval' larrychen.tech instant.page www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/;
+                  style-src 'self' http://* 'unsafe-inline';
+                  script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'`,
+          },
+          // Will generate: <meta http-equiv="Content-Security-Policy" content="default-src https:">
+          // Which equals to the following http header: `Content-Security-Policy: default-src https:`
+          // 'set-cookie': { 'http-equiv': 'set-cookie', content: 'name=value; expires=date; path=url' },
+          // Will generate: <meta http-equiv="set-cookie" content="value; expires=date; path=url">
+          // Which equals to the following http header: `set-cookie: value; expires=date; path=url`
+        },
+        // hash: true,
+        minify: !devMode,
+        excludeChunks: ['cv', 'stone'],
       }),
       new HtmlWebpackPlugin({
         template: 'src/index-cv.html',
-        minify: false,
+        minify: !devMode,
         filename: 'cv.html',
-        chunks: ['cv']
+        chunks: ['cv'],
       }),
       new HtmlWebpackPlugin({
         template: 'src/index-stone.html',
-        minify: false,
+        minify: !devMode,
         filename: 'stone.html',
-        chunks: ['stone']
+        chunks: ['stone'],
       }),
-      new ScriptExtHtmlWebpackPlugin({
-        // inline: inlineBundles, // cause pwa update issue
-        preload: /^vendors~app.*.bundle.js$/,
-        custom: {
-          test: /^vendors~app.*.bundle.js$/,
-          attribute: 'crossorigin',
-          value: 'anonymous'
-        },
-        defer: [
-          /^print.*.bundle.js$/,
-          /^install.*.bundle.js$/,
-        ],
-        // sync: 'first.js',
-        defaultAttribute: 'async'
-      }),
-      new webpack.HashedModuleIdsPlugin(),
+      // new ScriptExtHtmlWebpackPlugin({
+      //   // inline: inlineBundles, // cause pwa update issue
+      //   preload: /^vendors~app.*.chunk.js$/,
+      //   custom: {
+      //     test: /^vendors~app.*.chunk.js$/,
+      //     attribute: 'crossorigin',
+      //     value: 'anonymous'
+      //   },
+      //   defer: [
+      //     /^log.*.chunk.js$/,
+      //     /^install.*.chunk.js$/,
+      //     /^svgxuse.*.chunk.js$/,
+      //   ],
+      //   // sync: 'first.js',
+      //   defaultAttribute: 'async'
+      // }),
       new CopyWebpackPlugin({
         patterns: [
-          {from: 'src/manifest.json'},
-          {from: 'src/favicon.ico'},
-          {from: 'src/robots.txt'},
-          {from: 'src/assets/sw-patch.js', to: 'assets'},
-          {from: 'src/assets/data', to: 'assets/data'},
-          {from: 'src/assets/images/icons', to: 'images/icons'},
-          {from: 'src/assets/i18n', to: 'assets/i18n'},
+          { from: 'LICENSE' },
+          { from: 'src/site.webmanifest' },
+          { from: 'src/robots.txt' },
+          { from: 'src/assets', to: 'assets' },
           {
             from: 'node_modules/sw-offline-google-analytics/build/importScripts/sw-offline-google-analytics.prod.v0.0.25.js',
-            to: 'sw-offline-google-analytics.js'
+            to: 'sw-offline-google-analytics.js',
           },
-        ]
+        ],
       }),
-    ]
+      new WebpackBar({
+        name: '🔥 Larry\'s Homepage',
+        color: '#3ce2e2',
+      }),
+      new webpack.ProvidePlugin({
+        process: 'process/browser',
+      }),
+      new webpack.DefinePlugin({
+        'process.env': JSON.stringify(config),
+      }),
+    ],
   },
   parts.loadFonts({
     options: {
-      name: './fonts/[name].[ext]'
-    }
+      name: './fonts/[name].[ext]',
+    },
   }),
   parts.attachRevision(),
 ]);
@@ -135,9 +178,7 @@ const pwaPlugins = [
       },
     },
     sourcemap: true,
-    importScripts: [
-      'assets/sw-patch.js'
-    ],
+    importScripts: ['assets/sw-patch.js'],
     runtimeCaching: [
       {
         urlPattern: /^\/api\//,
@@ -148,7 +189,7 @@ const pwaPlugins = [
         handler: 'StaleWhileRevalidate',
         options: {
           cacheName: 'js-css-cache',
-        }
+        },
       },
       {
         urlPattern: /\.(?:png|gif|jpg|jpeg|svg|ico)$/,
@@ -160,58 +201,59 @@ const pwaPlugins = [
             purgeOnQuotaError: true,
             maxAgeSeconds: 365 * 24 * 60 * 60,
           },
-        }
+        },
       },
-    ]
+    ],
   }),
   // new InjectManifest({
   //   swSrc: './src/sw.js',
   //   exclude: [inlineBundles],
   //   // globDirectory: '.',
-  //   // globIgnores: ['dist/*.map', 'dist/manifest.json', 'dist/*.config'],
+  //   // globIgnores: ['dist/*.map', 'dist/site.webmanifest', 'dist/*.config'],
   //   // globPatterns: ['dist/*.{js,png,php,css}', 'dist/img/*.{png,jpg,jpeg}', 'dist/fonts/*'],
   // })
 ];
 
 const productionConfig = merge([
   {
+    // devtool: 'source-map',
     optimization: {
-      minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+      minimize: true,
+      minimizer: [
+        // new TerserJSPlugin({
+        //   parallel: true,
+        //   // terserOptions: {
+        //   //   cache: true,
+        //   //   sourceMap: true,
+        //   // }
+        // }),
+        new ESBuildMinifyPlugin({
+          target: 'es2015', // Syntax to compile to (see options below for possible values)
+          css: true,
+        }),
+        // new OptimizeCSSAssetsPlugin({}),
+        new CssMinimizerPlugin(),
+      ],
     },
-    plugins: [
-      new CompressionPlugin()
-    ]
+    plugins: [new CompressionPlugin()],
   },
   parts.loadJavaScript({
     include: PATHS.app,
     exclude(path) {
       return path.match(/node_modules/);
-    }
-  }),
-  parts.loadHTML({
-    options: {
-      minimize: {
-        // minimize: true,
-        // minifyJS: true,
-        // minifyCSS: true,
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: false
-      },
-    }
+    },
+    cacheDirectory: true,
   }),
   parts.purifyCSS({
-    paths: glob.sync([
-      path.join(__dirname, 'src/**/*'),
-    ], { nodir: true })
+    paths: glob.sync([path.join(__dirname, 'src/**/*')], { nodir: true }),
   }),
   parts.extractCSS({
-    use: ['css-loader', parts.autoprefix()]
+    use: ['css-loader?importLoaders=1', parts.autoprefix()],
   }),
   parts.loadImages({
     options: {
-      name: './images/[name].[contenthash].[ext]',
-      limit: 10000
+      name: './assets/images/[name].[contenthash].[ext]',
+      limit: 10000,
     },
     exclude: path.join(__dirname, 'src/assets/images/icons/*'),
   }),
@@ -219,41 +261,46 @@ const productionConfig = merge([
 
 const developmentConfig = merge([
   {
-    devtool: 'source-map',
+    // devtool: 'source-map',
+    devtool: 'cheap-module-source-map',
     plugins: [
       // new ErrorOverlayPlugin(),
       // Ignore node_modules so CPU usage with poll
       // watching drops significantly.
-      new webpack.WatchIgnorePlugin([
-        path.join(__dirname, 'node_modules')
-      ]),
-      new WebpackNotifierPlugin({
-        title: 'Webpack'
+      new webpack.WatchIgnorePlugin({
+        paths: [path.join(__dirname, 'node_modules')],
       }),
-    
-    ]
+      new WebpackNotifierPlugin({
+        title: 'Webpack',
+      }),
+      new webpack.HotModuleReplacementPlugin(),
+    ],
   },
   parts.devServer({
     // Customize host/port here if needed
     host: process.env.HOST,
     port: process.env.PORT,
   }),
-  parts.loadHTML(),
   parts.loadJavaScript(),
-  // parts.loadCSS(),
+  // parts.loadCSS({
+  //   use: [parts.autoprefix()]
+  // }),
   parts.extractCSS({
-    use: ['css-loader', parts.autoprefix()]
+    use: ['css-loader?importLoaders=1', parts.autoprefix()],
   }),
   parts.loadImages(),
 ]);
 
 module.exports = mode => {
-  if (mode === 'production') {
+  let webpackConfig = merge(commonConfig, developmentConfig, { mode: 'development' }); // development
+  if (mode.analyse) {
+    commonConfig.plugins.push(new BundleAnalyzerPlugin());
+  }
+  if (mode.production) {
     // TODO: workaround for workbox issue https://github.com/GoogleChrome/workbox/issues/1790
     commonConfig.plugins.push(...pwaPlugins);
-    return merge(commonConfig, productionConfig, {mode});
+    webpackConfig = merge(commonConfig, productionConfig, { mode: 'production' });
   }
-  
-  return merge(commonConfig, developmentConfig, {mode});
-};
 
+  return mode.smp ? smp.wrap(webpackConfig) : webpackConfig;
+};

@@ -1,0 +1,29 @@
+
+.comment-container {
+  color: var(--text-color);
+  margin-left: var(--comment-margin-left);
+  margin-right: var(--comment-margin-right);
+}
+
+.comment-container > summary {
+  list-style: revert;
+}
+.comment-container > summary::-webkit-details-marker {
+  display: inline-block;
+}
+
+.comment-container .comment-title {
+  pointer-events: none;
+  color: var(--gray);
+}
+
+/* override */
+.comment-container .isso-postbox {
+  color: black;
+}
+
+.comment-container #isso-thread > h4 {
+  display: none;
+}
+
+/* override end */

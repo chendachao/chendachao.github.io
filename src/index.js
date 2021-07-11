@@ -1,51 +1,67 @@
 // es6 generator support
-import '@babel/polyfill';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+if (process.env.APP_ENV !== 'development') {
+  // import './error-tracing';
+  import(/* webpackPrefetch: true */ './error-tracing');
+}
 
-import toasted from './app/utils/toasted';
-import i18n from './app/utils/i18n';
-// import(/* webpackPrefetch: true */'./app/pwa');
-import(/* webpackPreload: true */'./app/main');
+import notify from '@app/utils/notify';
+import i18n from '@app/utils/i18n';
+import { tryCatchPormise } from '@app/utils';
+// import(/* webpackPrefetch: true */'@app/pwa');
+import(/* webpackPreload: true */ '@app/main');
 import 'normalize.css';
-import './styles/main.css';
-import(/* webpackPreload: true */'./styles/override.css');
+import 'styles/index.css';
+import(/* webpackPreload: true */ 'styles/override.css');
 
-import * as serviceWorker from './app/pwa';
+import * as serviceWorker from '@app/pwa';
 
 const format = i18n.format;
 
 serviceWorker.register({
   onRegister: registration => {
     var subscribeBtn = document.querySelector('.subscribe-btn');
-    if(['default', 'denied'].includes(Notification.permission)) {
+    if (['default', 'denied'].includes(Notification.permission)) {
       subscribeBtn.removeAttribute('hidden');
     }
-    
+
     // subscribe push notifications
     subscribeBtn.addEventListener('click', async () => {
-      try {
-        const result = await Notification.requestPermission();
-        if (result === 'granted') {
-          subscribeBtn.setAttribute('hidden', '');
-          // navigator.serviceWorker.getRegistration().then(function (reg) {
-          //   // Show Local Notification
-          //   reg.pushManager.subscribe({ userVisibleOnly: true });
-          // });
-          // Show Local Notification
-          registration.pushManager.subscribe({ userVisibleOnly: true });
-        } else {
-          throw new Error('Notifications blocked. Please enable them in your browser.');
-        }
-      } catch (error) {
-        toasted.error(error, { 
-          action: {
-            text: 'X',
-            onClick: (e, toasted) => {
-              toasted.delete();
-            },
-          },
-        });
-        console.log('Notifications error', error);
+      // try {
+      //   const result = await Notification.requestPermission();
+      //   if (result === 'granted') {
+      //     subscribeBtn.setAttribute('hidden', '');
+      //     // navigator.serviceWorker.getRegistration().then(function (reg) {
+      //     //   // Show Local Notification
+      //     //   reg.pushManager.subscribe({ userVisibleOnly: true });
+      //     // });
+      //     // Show Local Notification
+      //     registration.pushManager.subscribe({ userVisibleOnly: true });
+      //   } else {
+      //     throw new Error(format('APP.NOTIFICATIONS_BLOCKED'));
+      //   }
+      // } catch (error) {
+      //   notify.error(error, 'Notifications Error');
+      //   console.log('Notifications Error', error);
+      // }
+
+      const [result, error] = await tryCatchPormise(async () => await Notification.requestPermission());
+      if(error) {
+        notify.error(error, 'Notifications Error');
+        console.log('Notifications Error', error);
+      } else if (result === 'granted') {
+        subscribeBtn.setAttribute('hidden', '');
+        // navigator.serviceWorker.getRegistration().then(function (reg) {
+        //   // Show Local Notification
+        //   reg.pushManager.subscribe({ userVisibleOnly: true });
+        // });
+        // Show Local Notification
+        registration.pushManager.subscribe({ userVisibleOnly: true });
+      } else {
+        notify.error(format('APP.NOTIFICATIONS_BLOCKED'), 'Notifications Error');
       }
+
     });
   },
   onUpdate: registration => {
@@ -55,12 +71,12 @@ serviceWorker.register({
 
     function showNotification(title, message) {
       if (Notification.permission === 'granted') {
-        navigator.serviceWorker.getRegistration().then(function(reg) {
+        navigator.serviceWorker.getRegistration().then(function (reg) {
           const options = {
             body: message,
             // TODO: these image cna't work
-            icon: '/images/bell.svg',
-            badge: '/images/notification.svg',
+            icon: '/assets/images/bases/bell.svg',
+            badge: '/assets/images/bases/notification.svg',
           };
           // Show Local Notification
           reg.showNotification(title, options);
@@ -70,31 +86,26 @@ serviceWorker.register({
 
     const updateReady = function () {
       showNotification(format('APP.NEW_VERSION_TITLE'), format('APP.NEW_VERSION_CONTENT'));
-      toasted.success(format('APP.NEW_VERSION_TITLE'), {
-          action: {
-            text: 'Update',
-            onClick: (e, toasted) => {
-              window.location.reload();
-            },
-          },
+      notify.info(format('APP.NEW_VERSION_TITLE'), format('APP.UPDATE'), {
+        onclick: () => {
+          window.location.reload();
+        },
       });
-    }
+    };
 
     const waitingServiceWorker = registration.waiting;
-    if(waitingServiceWorker) {
+    if (waitingServiceWorker) {
       waitingServiceWorker.addEventListener('statechange', event => {
         console.log('onUpdate statechange', event.target.state);
-        if(event.target.state === 'activated') {
+        if (event.target.state === 'activated') {
           updateReady();
         }
       });
 
-      waitingServiceWorker.postMessage({ type: "SKIP_WAITING" });
+      waitingServiceWorker.postMessage({ type: 'SKIP_WAITING' });
     }
   },
   onSuccess: registration => {
-    console.log("registered app for offline use. details:", registration);
-  }
+    console.log('registered app for offline use. details:', registration);
+  },
 });
- 
-

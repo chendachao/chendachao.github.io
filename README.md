@@ -30,7 +30,7 @@
 - [Pixel Perfect Icon Solutions && Custom Font](https://icomoon.io/)
 - [SVG Sprit](https://svgsprit.es/) - has some issues, be caution with it.
 - [Hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
-- [emoji](http://xahlee.info/comp/unicode_arrows.html)
+- [Emoji](http://xahlee.info/comp/unicode_arrows.html)
 
 ## TODOs:
 - ✅ JSON description for developer view
@@ -43,8 +43,8 @@
 - ✅ Change them to gray on specific day.
 - ✅ [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Up✅e' button
 - ✅ [PWA] Update alert
-- [ ] [Sentry] Update all sourcemaps to Sentry
-- ✅ Comments
+[ ] [Sentry] Update all sourcemaps to Sentry
+✅ Comments
 
 ## PWA Debug:
 1. Run command `yarn build:w`.

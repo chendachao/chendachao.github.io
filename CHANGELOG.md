@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/chendachao/chendachao.github.io/compare/v1.10.18...v1.11.0) (2021-07-11)
+
+
+### Features
+
+* **comment:** add isso comment section and opened note ([667f249](https://github.com/chendachao/chendachao.github.io/commit/667f2496942f8654b68c1cd2f1ff04ff5bca32c4))
+
 ### [1.10.18](https://github.com/chendachao/chendachao.github.io/compare/v1.10.17...v1.10.18) (2021-07-04)
 
 

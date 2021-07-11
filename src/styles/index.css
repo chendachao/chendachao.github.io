@@ -3,4 +3,5 @@
 @import '_utilities';
 @import 'print';
 @import 'common';
+@import 'comment';
 @import 'app';

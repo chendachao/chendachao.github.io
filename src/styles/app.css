@@ -435,68 +435,6 @@ img[data-src] {
   opacity: 1;
 }
 
-details > summary.custom-marker {
-  position: relative;
-  padding-left: 2.5rem !important;
-
-  /* list-style-type: none */
-}
-
-details > summary.custom-marker::before,
-details > summary.custom-marker::after {
-  width: 0.5em;
-  height: 0.15em;
-  border-radius: 2px;
-  background-color: var(--text-highlight);
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 1rem;
-  transform: translateY(-50%);
-  transition: transform 0.2s ease-in-out;
-}
-
-details > summary.custom-marker::before {
-  transform: translateY(-50%) rotate(90deg);
-}
-
-details[open] > summary.custom-marker::before {
-  transform: translateY(-50%) rotate(180deg);
-}
-
-/* custom-marker end */
-
-/* common */
-details {
-  margin: 1.3rem 0;
-}
-
-details summary {
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-}
-
-details > summary {
-  list-style: none;
-}
-
-/* details>summary::marker, */
-details > summary::-webkit-details-marker {
-  display: none;
-}
-
-details > summary:focus {
-  outline: none;
-}
-
-details > summary + .content {
-  margin: 0;
-  padding: 0.5rem 0.5rem 1rem 0.5rem;
-}
-
-/* common end */
-
 /* my-portfolio style */
 details.my-portfolio {
   border-radius: 24px;

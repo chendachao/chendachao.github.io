@@ -581,13 +581,13 @@
                 data-i18n-attr="data-tippy-content=APP.WIP"
               >
                 <div class="icon rounded loading">
-                  <svg class="svg icon-size-md svgicon" role="img" aria-label="Flower">
-                    <title id="title" lang="en">Flower</title>
-                    <desc>Flower</desc>
+                  <svg class="svg icon-size-md svgicon" role="img" aria-label="Resumes">
+                    <title id="title" lang="en">Resumes</title>
+                    <desc>Resumes</desc>
                     <use href="/assets/images/portfolio-symbol-defs.svg#cv"></use>
                   </svg>
                 </div>
-                <div>Flower</div>
+                <div>Resumes</div>
                 <a
                   class="link"
                   href="https://mystone.netlify.app"
@@ -597,10 +597,10 @@
                 </a>
               </section>
               <section
-                class="card border-active disabled"
+                class="card border-active"
                 data-tooltip
-                data-tippy-content="Work in progress."
-                data-i18n-attr="data-tippy-content=APP.WIP"
+                data-tippy-content="My Note."
+                data-i18n-attr="data-tippy-content=APP.PORTFOLIO.NOTE"
               >
                 <div class="icon rounded loading">
                   <svg class="svg icon-size-md svgicon" role="img" aria-label="Note">
@@ -612,7 +612,7 @@
                 <div>Note</div>
                 <a
                   class="link"
-                  href="https://mystone.netlify.app"
+                  href="https://note.larrychen.tech"
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                 >
@@ -628,6 +628,41 @@
             </svg>
           </section>
         </section>
+        <details class="comment-container" hidden>
+          <summary class="border-bottom">
+            <a class="comment-title" href="/app/homepage/home?section=888#isso-thread"
+              ><span data-i18n-id="APP.COMMENTS">Comments</span></a
+            >
+          </summary>
+          <script
+            id="commentScript"
+            data-isso="https://larrychen.tech/isso/"
+            data-isso-css="true"
+            data-isso-lang="en"
+            data-isso-reply-to-self="true"
+            data-isso-require-author="true"
+            data-isso-require-email="false"
+            data-isso-max-comments-top="10"
+            data-isso-max-comments-nested="5"
+            data-isso-reveal-on-click="5"
+            data-isso-avatar="true"
+            data-isso-avatar-bg="#f0f0f0"
+            data-isso-avatar-fg="#9abf88 #5698c4 #e279a3 #9163b6"
+            data-isso-vote="true"
+            data-isso-vote-levels="0,5,10,25,100"
+            data-isso-feed="true"
+            src="https://larrychen.tech/isso/js/embed.min.js"
+            defer
+            crossorigin="anonymous"
+            onload="document.querySelector('.comment-container').removeAttribute('hidden');"
+            onerror="document.querySelector('.comment-container').setAttribute('hidden', '')"
+          ></script>
+          <section
+            id="isso-thread"
+            data-title="Homepage Comments"
+            data-isso-id="/app/homepage/home?section=888"
+          ></section>
+        </details>
       </div>
     </main>
 

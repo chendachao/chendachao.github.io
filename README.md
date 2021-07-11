@@ -44,6 +44,7 @@
 - ✅ [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Up✅e' button
 - ✅ [PWA] Update alert
 - [ ] [Sentry] Update all sourcemaps to Sentry
+- ✅ Comments
 
 ## PWA Debug:
 1. Run command `yarn build:w`.

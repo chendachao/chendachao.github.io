@@ -103,6 +103,8 @@
 
   /* #45160814; */
   --stackoverflow: rgb(250, 250, 251);
+  --comment-margin-left: -4em;
+  --comment-margin-right: -4em;
 }
 
 :root [data-theme="dark"] {
@@ -130,5 +132,7 @@
 
     /* --color-global-bg-deg: 45deg; */
     --centered-content-width: 91.8%;
+    --comment-margin-left: 0;
+    --comment-margin-right: 0;
   }
 }

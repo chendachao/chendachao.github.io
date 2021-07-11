@@ -14,6 +14,7 @@ Theme();
 import i18n from './utils/i18n';
 i18n.init().then(() => {
   document.title = i18n.format('APP.HTML_TITLE');
+  document.querySelector('#commentScript').setAttribute('data-isso-lang', i18n.locale);
 });
 
 // Loading skeleton for svg icons

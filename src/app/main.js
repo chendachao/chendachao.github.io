@@ -14,7 +14,35 @@ Theme();
 import i18n from './utils/i18n';
 i18n.init().then(() => {
   document.title = i18n.format('APP.HTML_TITLE');
-  document.querySelector('#commentScript').setAttribute('data-isso-lang', i18n.locale);
+  // const commentScript = document.querySelector('#commentScript');
+  // commentScript.setAttribute('data-isso-lang', i18n.locale);
+  const commentScript = document.createElement('script');
+  // commentScript.dataset.isso = 'https://larrychen.tech/isso/';
+  commentScript.setAttribute('data-isso', 'https://larrychen.tech/isso/');
+  commentScript.setAttribute('data-isso-css', true);
+  commentScript.setAttribute('data-isso-lang', i18n.locale);
+  commentScript.setAttribute('data-isso-reply-to-self', true);
+  commentScript.setAttribute('data-isso-require-author', true);
+  commentScript.setAttribute('data-isso-require-email', false);
+  commentScript.setAttribute('data-isso-max-comments-top', 10);
+  commentScript.setAttribute('data-isso-max-comments-nested', 5);
+  commentScript.setAttribute('data-isso-reveal-on-click', 5);
+  commentScript.setAttribute('data-isso-avatar', true);
+  commentScript.setAttribute('data-isso-avatar-bg', '#f0f0f0');
+  commentScript.setAttribute('data-isso-avatar-fg', '#9abf88 #5698c4 #e279a3 #9163b6');
+  commentScript.setAttribute('data-isso-vote', true);
+  commentScript.setAttribute('data-isso-vote-level', '0,5,10,25,100');
+  commentScript.setAttribute('data-isso-feed', true);
+  commentScript.src = 'https://larrychen.tech/isso/js/embed.min.js';
+  commentScript.defer = true;
+  commentScript.setAttribute('crossorigin', 'anonymous');
+  commentScript.onload = () => {
+    document.querySelector('.comment-container').removeAttribute('hidden');
+  };
+  commentScript.onerror = () => {
+    document.querySelector('.comment-container').setAttribute('hidden', '');
+  };
+  document.body.append(commentScript);
 });
 
 // Loading skeleton for svg icons

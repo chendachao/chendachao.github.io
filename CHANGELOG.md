@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.5](https://github.com/chendachao/chendachao.github.io/compare/v1.11.4...v1.11.5) (2021-07-14)
+
+
+### Features
+
+* change assets base url ([5225f24](https://github.com/chendachao/chendachao.github.io/commit/5225f243a3f559bf2f2ae23f493e77aa5f564d6f))
+
 ### [1.11.4](https://github.com/chendachao/chendachao.github.io/compare/v1.11.3...v1.11.4) (2021-07-14)
 
 

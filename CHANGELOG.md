@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.4](https://github.com/chendachao/chendachao.github.io/compare/v1.11.3...v1.11.4) (2021-07-14)
+
+
+### Features
+
+* add base url to html ([8dd5e11](https://github.com/chendachao/chendachao.github.io/commit/8dd5e11f52980d9863608e42f9b7733a1a6d3fd1))
+
 ### [1.11.3](https://github.com/chendachao/chendachao.github.io/compare/v1.11.2...v1.11.3) (2021-07-12)
 
 

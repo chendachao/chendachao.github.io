@@ -101,9 +101,9 @@ const displayQRCode = () => {
         width: 48,
         height: 48,
       };
-      // const logo = '/assets/images/bases/home.svg';
-      // const logo = '/assets/images/larrychen.jpg';
-      const logo = '/assets/images/icons/favicon.ico';
+      // const logo = './assets/images/bases/home.svg';
+      // const logo = './assets/images/larrychen.jpg';
+      const logo = './assets/images/icons/favicon.ico';
       const ctx = cvs.getContext('2d');
       const logoObj = new Image();
       logoObj.src = logo;

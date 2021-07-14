@@ -75,8 +75,8 @@ serviceWorker.register({
           const options = {
             body: message,
             // TODO: these image cna't work
-            icon: '/assets/images/bases/bell.svg',
-            badge: '/assets/images/bases/notification.svg',
+            icon: './assets/images/bases/bell.svg',
+            badge: './assets/images/bases/notification.svg',
           };
           // Show Local Notification
           reg.showNotification(title, options);

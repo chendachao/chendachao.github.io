@@ -104,7 +104,7 @@ window.addEventListener('load', function () {
 
   // Click to open json file
   const developerModeLink = document.querySelector('.developer-mode-link');
-  developerModeLink.setAttribute('href', `/assets/data/${i18n.locale}/chendachao.json`);
+  developerModeLink.setAttribute('href', `./assets/data/${i18n.locale}/chendachao.json`);
 
   // Share application
   if (navigator.share) {

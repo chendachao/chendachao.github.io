@@ -74,10 +74,10 @@ const I18n = () => {
   }
 
   const getI18nMessages = async lang => {
-    const url = `/assets/i18n/${lang}.json`;
+    const url = `./assets/i18n/${lang}.json`;
     let [response, err] = await tryCatchPormise(async () => await axios.get(url));
     if(err) {
-      response = await axios.get('/assets/i18n/en.json'); // fallback to en
+      response = await axios.get('./assets/i18n/en.json'); // fallback to en
     }
     return response?.data;
   };

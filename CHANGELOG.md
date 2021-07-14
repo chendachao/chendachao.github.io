@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.6](https://github.com/chendachao/chendachao.github.io/compare/v1.11.5...v1.11.6) (2021-07-14)
+
+
+### Features
+
+* add star animation ([c8c4bb2](https://github.com/chendachao/chendachao.github.io/commit/c8c4bb2781bf5e1f73cdfff68c4d90a1074a564f))
+
 ### [1.11.5](https://github.com/chendachao/chendachao.github.io/compare/v1.11.4...v1.11.5) (2021-07-14)
 
 

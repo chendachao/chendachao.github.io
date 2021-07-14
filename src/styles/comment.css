@@ -14,7 +14,7 @@
 
 .comment-container .comment-title {
   pointer-events: none;
-  color: var(--gray);
+  color: var(--text-color);
 }
 
 /* override */

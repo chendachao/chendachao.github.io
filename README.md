@@ -24,8 +24,8 @@
 - [Google Search Console](https://search.google.com/search-console)
 - [GTmetrix](https://gtmetrix.com)
 - [Image Compressor](https://imagecompressor.com/)
-- [Image Squoosh](https://squoosh.app/) 🏅
-- [Smart PNG and JPEG compression](https://tinypng.com/)
+- [Image Squoosh](https://squoosh.app/)
+- [Smart PNG and JPEG compression](https://tinypng.com/)🏅
 - [SVG Compressor](https://jakearchibald.github.io/svgomg/)
 - [Convert Font to SVG](https://onlinefontconverter.com/)
 - [Pixel Perfect Icon Solutions && Custom Font](https://icomoon.io/)
@@ -81,6 +81,7 @@
 - [Favicon checker and generator](https://realfavicongenerator.net/)
 - [PWA Builder](https://www.pwabuilder.com/)
 - [Web Share](https://web.dev/web-share/)
+- [CSS Animations on Demand](https://animista.net/)
 
 
 PS:

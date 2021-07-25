@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.7](https://github.com/chendachao/chendachao.github.io/compare/v1.11.6...v1.11.7) (2021-07-25)
+
+
+### Features
+
+* revert start animation ([a7908b1](https://github.com/chendachao/chendachao.github.io/commit/a7908b133d06dcd291da020cc0f82bbb8205221a))
+
 ### [1.11.6](https://github.com/chendachao/chendachao.github.io/compare/v1.11.5...v1.11.6) (2021-07-14)
 
 

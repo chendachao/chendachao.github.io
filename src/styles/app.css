@@ -256,13 +256,13 @@ img[data-src] {
   text-shadow: var(--brand-text-shadow);
 }
 
-.brand:hover .brand-icon {
-  /* animation: jump infinite 5s cubic-bezier(0.28, 0.84, 0.42, 1); */
+.brand-icon:hover {
+  animation: jump infinite 5s cubic-bezier(0.28, 0.84, 0.42, 1);
 }
 
-.brand:hover .flip-vertical-right {
+/* .brand-icon:hover.flip-vertical-right {
   animation: flip-vertical-right infinite 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-}
+} */
 
 .bio {
   position: relative;

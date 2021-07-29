@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.8](https://github.com/chendachao/chendachao.github.io/compare/v1.11.7...v1.11.8) (2021-07-29)
+
+
+### Features
+
+* refactor notify msg ([d10b80b](https://github.com/chendachao/chendachao.github.io/commit/d10b80bd9c1a6688ce8ad6f72c1eb7c82c88cec3))
+
 ### [1.11.7](https://github.com/chendachao/chendachao.github.io/compare/v1.11.6...v1.11.7) (2021-07-25)
 
 

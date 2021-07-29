@@ -46,8 +46,10 @@ serviceWorker.register({
       //   console.log('Notifications Error', error);
       // }
 
-      const [result, error] = await tryCatchPormise(async () => await Notification.requestPermission());
-      if(error) {
+      const [result, error] = await tryCatchPormise(
+        async () => await Notification.requestPermission(),
+      );
+      if (error) {
         notify.error(error, 'Notifications Error');
         console.log('Notifications Error', error);
       } else if (result === 'granted') {
@@ -61,7 +63,6 @@ serviceWorker.register({
       } else {
         notify.error(format('APP.NOTIFICATIONS_BLOCKED'), 'Notifications Error');
       }
-
     });
   },
   onUpdate: registration => {
@@ -69,7 +70,7 @@ serviceWorker.register({
     //   window.location.reload();
     // })
 
-    function showNotification(title, message) {
+    function showSystemNotification(title, message) {
       if (Notification.permission === 'granted') {
         navigator.serviceWorker.getRegistration().then(function (reg) {
           const options = {
@@ -85,8 +86,14 @@ serviceWorker.register({
     }
 
     const updateReady = function () {
-      showNotification(format('APP.NEW_VERSION_TITLE'), format('APP.NEW_VERSION_CONTENT'));
-      notify.info(format('APP.NEW_VERSION_TITLE'), format('APP.UPDATE'), {
+      const notificationTitle = format('APP.NEW_VERSION_TITLE');
+      const notificationBody = format('APP.NEW_VERSION_BODY');
+      const notificationBody2 = format('APP.NEW_VERSION_BODY2');
+      // Show notification in OS level
+      showSystemNotification(notificationTitle, notificationBody2);
+      // Show notification in browser
+      notify.info(notificationBody, notificationTitle, {
+        timeOut: 0,
         onclick: () => {
           window.location.reload();
         },

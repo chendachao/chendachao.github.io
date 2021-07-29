@@ -96,7 +96,13 @@ if (isIE()) {
 
 // const test = document.querySelector('.test');
 // test.addEventListener('click', () => {
-//   notify3('test', {type: 'error'});
+//   // notify3('test', {type: 'error'});
+//   notify.info(i18n.format('APP.NEW_VERSION_BODY'), i18n.format('APP.NEW_VERSION_TITLE'), {
+//     timeOut: 0,
+//     onclick: () => {
+//       window.location.reload();
+//     },
+//   });
 // });
 
 window.addEventListener('load', function () {
@@ -127,7 +133,7 @@ window.addEventListener('load', function () {
     });
   }
 
-  (function() {
+  (function () {
     const beforePrint = () => {
       const siteQrcode = document.querySelector('.print-site-qrcode');
       const myPortfolio = document.querySelector('.my-portfolio');
@@ -137,7 +143,7 @@ window.addEventListener('load', function () {
       siteQrcode.style.top = '35px';
       siteQrcode.style.display = 'inherit';
 
-      if(!isMyPortfolioOpened) {
+      if (!isMyPortfolioOpened) {
         myPortfolio.setAttribute('open', '');
       }
     };
@@ -147,15 +153,15 @@ window.addEventListener('load', function () {
       const myPortfolio = document.querySelector('.my-portfolio');
       const isMyPortfolioOpened = myPortfolio.hasAttribute('open');
       siteQrcode.style.display = 'none';
-      if(!isMyPortfolioOpened) {
+      if (!isMyPortfolioOpened) {
         myPortfolio.removeAttribute('open');
       }
     };
 
-    if(window.matchMedia) {
+    if (window.matchMedia) {
       var mediaQueryList = window.matchMedia('print');
       mediaQueryList.addEventListener('change', mql => {
-        if(mql.matches) {
+        if (mql.matches) {
           beforePrint();
         } else {
           afterPrint();
@@ -165,7 +171,7 @@ window.addEventListener('load', function () {
 
     window.addEventListener('beforeprint', beforePrint);
     window.addEventListener('afterprint', afterPrint);
-  }());
+  })();
 
   let errorToasted;
   const updateOnlineStatus = function (event) {

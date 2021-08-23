@@ -1562,33 +1562,43 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@formatjs/ecma402-abstract@1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.7.0.tgz#440b341ba18451d53d9172e3110d96ca420b3760"
-  integrity sha512-0IQF4oDZdO8ruyrNJZuRle3F/YiGgRwTNrZyMI1N1X8GERZusOrXU9Stw+j/lyyfDWaJK44b+Qnri/qfLPCtGQ==
+"@formatjs/ecma402-abstract@1.9.8":
+  version "1.9.8"
+  resolved "https://registry.yarnpkg.com/@formatjs/ecma402-abstract/-/ecma402-abstract-1.9.8.tgz#f3dad447fbc7f063f88e2a148b7a353161740e74"
+  integrity sha512-2U4n11bLmTij/k4ePCEFKJILPYwdMcJTdnKVBi+JMWBgu5O1N+XhCazlE6QXqVO1Agh2Doh0b/9Jf1mSmSVfhA==
+  dependencies:
+    "@formatjs/intl-localematcher" "0.2.20"
+    tslib "^2.1.0"
+
+"@formatjs/fast-memoize@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/fast-memoize/-/fast-memoize-1.2.0.tgz#1123bfcc5d21d761f15d8b1c32d10e1b6530355d"
+  integrity sha512-fObitP9Tlc31SKrPHgkPgQpGo4+4yXfQQITTCNH8AZdEqB7Mq4nPrjpUL/tNGN3lEeJcFxDbi0haX8HM7QvQ8w==
   dependencies:
     tslib "^2.1.0"
 
-"@formatjs/fast-memoize@1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@formatjs/fast-memoize/-/fast-memoize-1.1.1.tgz#3006b58aca1e39a98aca213356b42da5d173f26b"
-  integrity sha512-mIqBr5uigIlx13eZTOPSEh2buDiy3BCdMYUtewICREQjbb4xarDiVWoXSnrERM7NanZ+0TAHNXSqDe6HpEFQUg==
-
-"@formatjs/icu-messageformat-parser@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-1.2.1.tgz#f6d1c5e507bedf96e6cb73d362ed56b034f0fa44"
-  integrity sha512-gGG2AGCmdNGSJJFDrblNvz1j0yOw9tIhUy0t9vRFlMQOlAIknaLYxNjl3S6ztLg47QAZC7BT8uFnIGZ2/nhxAA==
+"@formatjs/icu-messageformat-parser@2.0.11":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-2.0.11.tgz#e4ba40b9a8aefc8bccfc96be5906d3bca305b4b3"
+  integrity sha512-5mWb8U8aulYGwnDZWrr+vdgn5PilvtrqQYQ1pvpgzQes/osi85TwmL2GqTGLlKIvBKD2XNA61kAqXYY95w4LWg==
   dependencies:
-    "@formatjs/ecma402-abstract" "1.7.0"
-    "@formatjs/icu-skeleton-parser" "1.2.1"
+    "@formatjs/ecma402-abstract" "1.9.8"
+    "@formatjs/icu-skeleton-parser" "1.2.12"
     tslib "^2.1.0"
 
-"@formatjs/icu-skeleton-parser@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@formatjs/icu-skeleton-parser/-/icu-skeleton-parser-1.2.1.tgz#aa3204b941b436cb88fea9269a6bdf10610336aa"
-  integrity sha512-mTpmCozmksatv3gQ+6/9dwwtoR+r+DFms22X6D6GLS4TaeaFKIPmC3k/DlsMGZIr3Q+dT+is5IcexChrPBGmCg==
+"@formatjs/icu-skeleton-parser@1.2.12":
+  version "1.2.12"
+  resolved "https://registry.yarnpkg.com/@formatjs/icu-skeleton-parser/-/icu-skeleton-parser-1.2.12.tgz#45426eb1448c0c08c931eb9f0672283c0e4d0062"
+  integrity sha512-DTFxWmEA02ZNW6fsYjGYSADvtrqqjCYF7DSgCmMfaaE0gLP4pCdAgOPE+lkXXU+jP8iCw/YhMT2Seyk/C5lBWg==
   dependencies:
-    "@formatjs/ecma402-abstract" "1.7.0"
+    "@formatjs/ecma402-abstract" "1.9.8"
+    tslib "^2.1.0"
+
+"@formatjs/intl-localematcher@0.2.20":
+  version "0.2.20"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-localematcher/-/intl-localematcher-0.2.20.tgz#782aef53d1c1b6112ee67468dc59f9b8d1ba7b17"
+  integrity sha512-/Ro85goRZnCojzxOegANFYL0LaDIpdPjAukR7xMTjOtRx+3yyjR0ifGTOW3/Kjhmab3t6GnyHBYWZSudxEOxPA==
+  dependencies:
     tslib "^2.1.0"
 
 "@hapi/address@^2.1.2":
@@ -5364,13 +5374,13 @@ interpret@^2.2.0:
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-2.2.0.tgz#1a78a0b5965c40a5416d007ad6f50ad27c417df9"
   integrity sha512-Ju0Bz/cEia55xDwUWEa8+olFpCiQoypjnQySseKtmjNrnps3P+xfpUmGr90T7yjlVJmOtybRvPXhKMbHr+fWnw==
 
-intl-messageformat@9.6.11:
-  version "9.6.11"
-  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.6.11.tgz#1bc25c75f2fe0f9f2f5d7af4321f8c240294f256"
-  integrity sha512-BTctIjSZ4V8QXPDRCGdyBL0+TH3RLzaZMADmngYmu/pbnFxCypEoIPWqsBtgxGhXEEzm0caa68bGrtoX50DWYA==
+intl-messageformat@9.9.1:
+  version "9.9.1"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.9.1.tgz#255d453b0656b4f7e741f31d2b4a95bf2adfe064"
+  integrity sha512-cuzS/XKHn//hvKka77JKU2dseiVY2dofQjIOZv6ZFxFt4Z9sPXnZ7KQ9Ak2r+4XBCjI04MqJ1PhKs/3X22AkfA==
   dependencies:
-    "@formatjs/fast-memoize" "1.1.1"
-    "@formatjs/icu-messageformat-parser" "1.2.1"
+    "@formatjs/fast-memoize" "1.2.0"
+    "@formatjs/icu-messageformat-parser" "2.0.11"
     tslib "^2.1.0"
 
 intro.js@3.0.1:

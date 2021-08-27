@@ -5373,10 +5373,10 @@ intl-messageformat@9.6.11:
     "@formatjs/icu-messageformat-parser" "1.2.1"
     tslib "^2.1.0"
 
-intro.js@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/intro.js/-/intro.js-3.0.1.tgz#ccea302ebcf14e3ba817de83a8e3be15f3f72be1"
-  integrity sha512-tFOLaFUJbhRvKixgNw/hjFtcsbsS9cUmj4XraE2uC9huYVQSoQKSTioknyRZ/KZeaTMObmcxOvKtVIkHQNyKeQ==
+intro.js@4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/intro.js/-/intro.js-4.2.2.tgz#9077549cc6ef697e78d18d1c05003b7471281e1a"
+  integrity sha512-Zgz2e8syCuttJ2vJlDOWCSWPUJBr7AOJkU5Ti3zcvXho+y//q0ixwoT+PkPLJWI7AX35IdgRcxAEWUrOAJYiNQ==
 
 ip-regex@^2.1.0:
   version "2.1.0"

@@ -248,12 +248,12 @@ img[data-src] {
 .brand-icon {
   width: calc(5em + 4vw) !important;
   height: calc(5em + 4vw) !important;
-  transition: 1s;
   position: relative;
   transform-origin: bottom;
 
   /* color: var(--color-brand); */
   text-shadow: var(--brand-text-shadow);
+  transition: all cubic-bezier(1,0,0,1) 3s;
 }
 
 .brand-icon:hover {

@@ -1,4 +1,4 @@
-import Bowser from 'bowser';
+import Bowser from 'bowser'; // ua-parser-js
 
 const browser = Bowser.getParser(window.navigator.userAgent);
 const IE = 'Internet Explorer';

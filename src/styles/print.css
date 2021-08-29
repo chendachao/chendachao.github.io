@@ -1,4 +1,3 @@
-
 /* TODO: black bg and white text for faster print */
 
 /*
@@ -11,6 +10,7 @@
 
 /* print mode style */
 @media print {
+
   *,
   *::before,
   *::after {
@@ -48,8 +48,8 @@
     background-attachment: fixed;
   }
 
-  body > *:not(main):not(footer):not([class^="print-"]),
-  .no-print {
+  body>*:not(main):not(footer):not([class^="print-"]),
+  .print-hidden {
     display: none !important;
   }
 
@@ -102,7 +102,7 @@
 
   /* mobile */
   @media (max-width: 767px),
-    (device-width: 767px) {
+  (device-width: 767px) {
     :root {
       --bird-fly-speed: 25s;
 

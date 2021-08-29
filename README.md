@@ -60,6 +60,7 @@
 - https://codepen.io/Metty/pen/KrvLQx
 - https://codepen.io/Stockin/pen/jeNQEN
 - https://www.flaticon.com/
+- https://www.veryicon.com/
 - https://cssgradient.io/
 - https://coolors.co/gradient-maker/f8dadc-b6edc8-eeacdc
 - https://www.checkmycolours.com/

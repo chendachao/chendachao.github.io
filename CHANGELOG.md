@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.9](https://github.com/chendachao/chendachao.github.io/compare/v1.11.8...v1.11.9) (2021-08-29)
+
+
+### Features
+
+* bump lib ([5497f7e](https://github.com/chendachao/chendachao.github.io/commit/5497f7eda3e0892a121ab20a1443b92fff065f71))
+* bump lib ([e9aed5b](https://github.com/chendachao/chendachao.github.io/commit/e9aed5bcf68bc981ae0c7944b16a079ef4f3ca6e))
+* bump lib ([2094014](https://github.com/chendachao/chendachao.github.io/commit/20940146d417254d0f5e382dd11992fba3d465a2))
+* improve i18n ([14869fa](https://github.com/chendachao/chendachao.github.io/commit/14869fa190c8c497210ffdf50420f7849e3e0be2))
+
 ### [1.11.8](https://github.com/chendachao/chendachao.github.io/compare/v1.11.7...v1.11.8) (2021-07-29)
 
 

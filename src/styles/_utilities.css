@@ -79,7 +79,33 @@
 .highlight {
   color: var(--text-highlight);
   cursor: help;
-  border-bottom-style: dotted;
+
+  /* border-bottom-style: dotted; */
+  position: relative;
+}
+
+.highlight::before {
+	content: "";
+  position: absolute;
+  width: 0;
+  left: 0;
+  bottom: -0.35em;
+  transition: width .2s ease-in-out;
+
+  /* height: 0.125em;
+  background-color: rgb(255, 156, 52); */
+
+  height: 0.4em;
+
+  /* background-image: url("data:image/svg+xml,%3Csvg width='53' height='4' viewBox='0 0 53 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M51.9 3C49 3 49 1 46.2 1c-2.8 0-2.8 2-5.7 2-2.8 0-2.8-2-5.7-2C32 1 32 3 29.1 3c-2.8 0-2.8-2-5.7-2-2.8 0-2.8 2-5.6 2S15 1 12.1 1C9.5 1 9.5 3 6.7 3 3.8 3 3.8 1 1 1' stroke='rgb(255, 156, 52)' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='52.9' height='4' fill='%23404040'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E"); */
+  background-image: url(./../assets/images/bases/wave.svg);
+  background-repeat: repeat-x;
+}
+
+.highlight:hover::before {
+  width: 100%;
+  right: 0;
+  z-index: 1;
 }
 
 .highlight:hover {

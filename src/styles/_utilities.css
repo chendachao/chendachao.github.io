@@ -79,9 +79,9 @@
 .highlight {
   color: var(--text-highlight);
   cursor: help;
-
-  /* border-bottom-style: dotted; */
+  border-bottom-style: dotted;
   position: relative;
+  transition: border .2s ease-in-out;
 }
 
 .highlight::before {
@@ -109,6 +109,7 @@
 }
 
 .highlight:hover {
+  border-bottom-style: none;
   color: var(--text-highlight2);
 
   /* text-shadow: -3px 3px 2px #7c630a; */

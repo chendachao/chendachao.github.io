@@ -85,6 +85,7 @@
 }
 
 .highlight::before {
+  font-size: 0.7em;
 	content: "";
   position: absolute;
   width: 0;

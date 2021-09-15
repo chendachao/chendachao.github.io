@@ -2,6 +2,7 @@
 
 /* dialog */
 .qrcode-dialog {
+  position: relative;
   min-width: 350px;
   max-width: 95vw;
   border: none;
@@ -18,21 +19,20 @@ only screen and (device-width: 767px) {
 }
 
 .qrcode-dialog .close-icon {
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  /* transform: translateY(-100%); */
+
+  padding: 16px 8px;
+  background: transparent;
   border: none;
-  outline: none;
-  background: none;
-  cursor: pointer;
-  width: 20px;
-  margin-left: 5px;
-  border-radius: 50%;
-  font-size: 1rem;
-  will-change: transform;
+  font-weight: bold;
+  color: gray;
 }
 
 .qrcode-dialog .close-icon:hover {
-  transform: scale(1.5);
-  background: 0 0;
   color: var(--red);
 }
 
@@ -44,24 +44,29 @@ only screen and (device-width: 767px) {
 
 .dialog-bg::backdrop {
   /* native */
+
   /* position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0; */
   background-color: rgba(0, 0, 0, 0.6);
+
   /* backdrop-filter: blur(2px); */
 }
 
 .dialog-bg+.backdrop {
   /* polyfill */
+
   /* position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0; */
+
   /* background-color: rgba(0, 0, 0, 0.46); */
   background-color: rgba(0, 0, 0, 0.6);
+
   /* backdrop-filter: blur(2px); */
 }
 
@@ -71,27 +76,27 @@ only screen and (device-width: 767px) {
 
 @keyframes shake {
   0% {
-    transform: translate3D(0, -50%, 1000px);
+    transform: translate3d(0, -50%, 1000px);
   }
 
   12.5% {
-    transform: translate3D(-6px, -50%, 1000px) rotateY(-5deg);
+    transform: translate3d(-6px, -50%, 1000px) rotateY(-5deg);
   }
 
   37.5% {
-    transform: translate3D(5px, -50%, 1000px) rotateY(4deg);
+    transform: translate3d(5px, -50%, 1000px) rotateY(4deg);
   }
 
   62.5% {
-    transform: translate3D(-3px, -50%, 1000px) rotateY(-2deg);
+    transform: translate3d(-3px, -50%, 1000px) rotateY(-2deg);
   }
 
   87.5% {
-    transform: translate3D(2px, -50%, 1000px) rotateY(1deg);
+    transform: translate3d(2px, -50%, 1000px) rotateY(1deg);
   }
 
   100% {
-    transform: translate3D(0, -50%, 1000px);
+    transform: translate3d(0, -50%, 1000px);
   }
 }
 

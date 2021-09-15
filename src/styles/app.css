@@ -237,6 +237,25 @@ img[data-src] {
   }
 }
 
+.satellite {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  background: var(--satellite-color);
+  border-radius: 50%;
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .satellite {
+    animation: orbit 60s linear infinite;
+  }
+}
+
 .centered-content {
   color: var(--text-color);
   width: var(--centered-content-width);

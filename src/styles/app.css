@@ -252,7 +252,7 @@ img[data-src] {
 
 @media (prefers-reduced-motion: no-preference){
   .satellite {
-    animation: orbit 6s linear infinite;
+    animation: orbit 60s linear infinite;
   }
 }
 

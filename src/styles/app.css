@@ -244,15 +244,15 @@ img[data-src] {
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 20px;
-  height: 20px;
+  width: 1vw;
+  height: 1vw;
   background: var(--satellite-color);
   border-radius: 50%;
 }
 
 @media (prefers-reduced-motion: no-preference){
   .satellite {
-    animation: orbit 60s linear infinite;
+    animation: orbit 6s linear infinite;
   }
 }
 

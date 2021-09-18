@@ -248,6 +248,7 @@ img[data-src] {
   height: 1vw;
   background: var(--satellite-color);
   border-radius: 50%;
+  will-change: transform;
 }
 
 @media (prefers-reduced-motion: no-preference){

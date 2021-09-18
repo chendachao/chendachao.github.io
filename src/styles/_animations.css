@@ -98,12 +98,12 @@
   from {
     transform:
       rotate(0deg)
-      translateX(calc(100% + 5vw));
+      translateX(calc(200% + 5vw));
   }
   to {
     transform:
       rotate(360deg)
-      translateX(calc(100% + 5vw));
+      translateX(calc(200% + 5vw));
   }
 }
 

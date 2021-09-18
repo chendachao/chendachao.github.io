@@ -140,3 +140,19 @@
   -webkit-text-fill-color: transparent;
   box-decoration-break: clone;
 }
+
+.scan-overlay {
+  position: relative;
+}
+.scan-overlay::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: url(./../assets/images/bases//glitch-overlay.svg);
+  background-size: 100% 100%;
+  opacity: .3;
+  pointer-events: none;
+}

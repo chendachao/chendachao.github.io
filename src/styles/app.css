@@ -303,6 +303,10 @@ img[data-src] {
   top: -1rem;
 }
 
+.wechat-qrcode-container {
+  position: relative;
+}
+
 .wechat-qrcode {
   width: calc(2em + 10vw);
   cursor: pointer;
@@ -321,16 +325,17 @@ img[data-src] {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  bottom: 8px;
+  bottom: 0;
 }
 
 @media only screen and (max-width: 767px), only screen and (device-width: 767px) {
   .wechat-qrcode-desc {
     font-size: 6px;
-    margin-top: -5px;
-    line-height: 7px;
+    
+    /* margin-top: -5px;
+    line-height: 7px; */
     width: 5rem;
-    bottom: 4px;
+    bottom: 0;
   }
 }
 

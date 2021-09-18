@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.11](https://github.com/chendachao/chendachao.github.io/compare/v1.11.10...v1.11.11) (2021-09-18)
+
+
+### Features
+
+* add satellite to moon ([cb40969](https://github.com/chendachao/chendachao.github.io/commit/cb409693f4b44c15659bab3df11a2fd1148eba46))
+* add wave line tp highlight ([e62871b](https://github.com/chendachao/chendachao.github.io/commit/e62871bfcaa768d6053ff100b1f43581e22df32a))
+* add wave line tp highlight ([532a1f9](https://github.com/chendachao/chendachao.github.io/commit/532a1f9b0af9924360dbc703a75d73e303cc185e))
+* bump lib ([15da893](https://github.com/chendachao/chendachao.github.io/commit/15da893e56f90f7dd36106fcb19b9111316765eb))
+* change satellite orbit size ([60690fd](https://github.com/chendachao/chendachao.github.io/commit/60690fd155863318c25213593fc80a910f67345c))
+* remove code ([cec9fe9](https://github.com/chendachao/chendachao.github.io/commit/cec9fe9c3234f519cd7c68fc0e3574c33ba3a7d1))
+* replace wavy svg ([5457bda](https://github.com/chendachao/chendachao.github.io/commit/5457bda1a35d3074a3f6af9fa8237cb44f107597))
+
+
+### Bug Fixes
+
+* fix satellite size issue ([8c95637](https://github.com/chendachao/chendachao.github.io/commit/8c95637632e938872132dfee856a23205c94ec31))
+* fix satellite size issue ([39d54cf](https://github.com/chendachao/chendachao.github.io/commit/39d54cf3cef56f5f0c7ffb1b59cbeb3289b3e6e1))
+
 ### [1.11.10](https://github.com/chendachao/chendachao.github.io/compare/v1.11.9...v1.11.10) (2021-08-29)
 
 ### [1.11.9](https://github.com/chendachao/chendachao.github.io/compare/v1.11.8...v1.11.9) (2021-08-29)

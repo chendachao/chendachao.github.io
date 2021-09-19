@@ -229,7 +229,10 @@
         <div class="bird-small-right"></div>
       </div>
       <div class="moon step15 print-hidden" id="step5">
-        <div class="satellite"></div>
+        <div class="satellite">
+          <!-- 🌎 -->
+          🛰
+        </div>
       </div>
       <div class="brand text-center">
         <img
@@ -682,24 +685,24 @@
       </div>
     </main>
 
+    <div class="corner-bars text-right">
+      <button
+        hidden
+        class="qrcode-handler border-active print-hidden"
+        data-tooltip
+        data-tippy-content="This site's QRCode"
+        data-i18n-attr="data-tippy-content=APP.SITE_QRCODE"
+      >
+        <svg class="border-active svgicon text-white" role="img" aria-label="QR Code">
+          <title id="title" lang="en">QR Code</title>
+          <desc>QR Code</desc>
+          <use href="./assets/images/base-symbol-defs.svg#scan-qr-code"></use>
+        </svg>
+      </button>
+    </div>
+
     <footer class="footer">
-      <div></div>
       <div class="version"><%= process.env.VERSION %></div>
-      <div class="text-right" style="margin-left: auto">
-        <button
-          hidden
-          class="qrcode-handler border-active print-hidden"
-          data-tooltip
-          data-tippy-content="This site's QRCode"
-          data-i18n-attr="data-tippy-content=APP.SITE_QRCODE"
-        >
-          <svg class="border-active svgicon text-white" role="img" aria-label="QR Code">
-            <title id="title" lang="en">QR Code</title>
-            <desc>QR Code</desc>
-            <use href="./assets/images/base-symbol-defs.svg#scan-qr-code"></use>
-          </svg>
-        </button>
-      </div>
     </footer>
 
     <dialog
@@ -725,9 +728,9 @@
         </svg>
       </button>
       <div>
-        <small data-i18n-id="APP.QRCODE_MOBILE_DESC"
-          >Scan the QR Code to view this site on moblie ㊙️</small
-        >
+        <small data-i18n-id="APP.QRCODE_MOBILE_DESC">
+          Scan the QR Code to view this site on moblie ㊙️
+        </small>
       </div>
       <hr style="background-color: lightgray; border: none; height: 1px; margin: 1rem 0 0.5rem" />
       <div class="text-center scan-overlay">

@@ -9,7 +9,6 @@
 
 .tippy-box .tippy-content {
   text-align: left;
-
   /* letter-spacing: -0.1vw; */
 }
 
@@ -56,7 +55,6 @@
 .introjs-overlay {
   background: transparent !important;
 }
-
 /* bugfix for arrow */
 .introjs-arrow.top-middle {
   border-top-color: transparent;

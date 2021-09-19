@@ -1,5 +1,4 @@
 @import "~dialog-polyfill/dialog-polyfill.css";
-
 /* dialog */
 .qrcode-dialog {
   position: relative;
@@ -22,12 +21,12 @@ only screen and (device-width: 767px) {
   position: absolute;
   top: 0;
   right: 0;
-
   /* transform: translateY(-100%); */
 
   padding: 16px 8px;
   background: transparent;
   border: none;
+  outline: none;
   font-weight: bold;
   color: gray;
 }
@@ -51,7 +50,6 @@ only screen and (device-width: 767px) {
   right: 0;
   bottom: 0; */
   background-color: rgba(0, 0, 0, 0.6);
-
   /* backdrop-filter: blur(2px); */
 }
 
@@ -66,7 +64,6 @@ only screen and (device-width: 767px) {
 
   /* background-color: rgba(0, 0, 0, 0.46); */
   background-color: rgba(0, 0, 0, 0.6);
-
   /* backdrop-filter: blur(2px); */
 }
 

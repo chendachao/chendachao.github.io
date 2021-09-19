@@ -4,7 +4,14 @@
     "stylelint-config-recommended-scss",
     "stylelint-config-prettier"
   ],
-   "ignoreFiles": [
-        "src/styles/mvp.css"
-    ]
+  "ignoreFiles": [
+      "src/styles/mvp.css"
+  ],
+   "rules": {
+    "comment-empty-line-before": ["never", {
+      except: ["first-nested"],
+      ignore: ["after-comment", "stylelint-commands"],
+      ignoreComments: [/^(\-\-).*(\-\-)$/]
+    }]
+  }
 }

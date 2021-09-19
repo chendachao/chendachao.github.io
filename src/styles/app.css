@@ -5,9 +5,7 @@
   font-family: var(--font-family-sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   /* Bugfix for blue border when tab on modile and tablet devices */
-
   /* -webkit-tap-highlight-color: rgba(255, 255, 255, 0); */
   -webkit-tap-highlight-color: transparent;
 }
@@ -25,7 +23,6 @@
   background-color: var(--selection-bg);
   color: var(--black);
 }
-
 /* fix CSS3 gradient background set !90deg on body doesn't stretch but instead repeats? */
 
 /* https://stackoverflow.com/a/3294418/6294371 */
@@ -132,7 +129,6 @@ img[data-src] {
 
 .main {
   flex-grow: 1;
-
   /* padding: 15px calc((100vw - min(900px, calc(100vw - 50px))) / 2); */
 }
 
@@ -141,7 +137,6 @@ img[data-src] {
 .bird-small-left,
 .bird-small-right {
   position: absolute;
-
   /* open hardware acceleration */
   transform: translateZ(0);
 }
@@ -225,7 +220,6 @@ img[data-src] {
   border-radius: 50%;
   background: var(--color-moon-bg);
   background-size: var(--color-moon-bg-size);
-
   /* open hardware acceleration */
   transform: translateZ(0);
   animation: colorize 24s 0s cubic-bezier(0.2, 1.05, 0.45, 0.94) infinite alternate, rise 5s;
@@ -246,7 +240,8 @@ img[data-src] {
   margin: auto;
   width: 1vw;
   height: 1vw;
-  background: var(--satellite-color);
+  font-size: 0.5rem;
+  /* background: var(--satellite-color); */
   border-radius: 50%;
   will-change: transform;
 }
@@ -270,7 +265,6 @@ img[data-src] {
   height: calc(5em + 4vw) !important;
   position: relative;
   transform-origin: bottom;
-
   /* color: var(--color-brand); */
   text-shadow: var(--brand-text-shadow);
   transition: all cubic-bezier(1,0,0,1) 3s;
@@ -279,7 +273,6 @@ img[data-src] {
 .brand-icon:hover {
   animation: jump infinite 5s cubic-bezier(0.28, 0.84, 0.42, 1);
 }
-
 /* .brand-icon:hover.flip-vertical-right {
   animation: flip-vertical-right infinite 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 } */
@@ -289,9 +282,7 @@ img[data-src] {
   text-align: justify;
   font-weight: 900;
   font-size: calc(1em + 1vw);
-
   /* font-size: clamp(min, viewport-width-unit, max); */
-
   /* letter-spacing: -0.1vw; */
   padding: 1rem;
   transition: 1s;
@@ -319,7 +310,6 @@ img[data-src] {
   font-style: italic;
   font-weight: bold;
   width: 10rem;
-
   /* margin-top: -10px; */
   font-size: 7px;
   position: absolute;
@@ -331,7 +321,6 @@ img[data-src] {
 @media only screen and (max-width: 767px), only screen and (device-width: 767px) {
   .wechat-qrcode-desc {
     font-size: 6px;
-    
     /* margin-top: -5px;
     line-height: 7px; */
     width: 5rem;
@@ -339,7 +328,7 @@ img[data-src] {
   }
 }
 
-/* icons style */
+/* -- icons style -- */
 .social-icons {
   display: flex;
   flex-wrap: wrap;
@@ -367,11 +356,8 @@ img[data-src] {
   color: var(--text-color);
   display: flex;
   align-items: center;
-
   /* background: linear-gradient(0deg, var(--bg-light), var(--bg-white)); */
-
   /* transition: 1s; */
-
   /* transition: all 0.3s ease 0s; */
 }
 
@@ -388,9 +374,7 @@ img[data-src] {
 
 .icon.loading {
   /* background: var(--bg-light); */
-
   /* border-radius: 4px; */
-
   /* display: block; */
   position: relative;
   overflow: hidden;
@@ -404,7 +388,6 @@ img[data-src] {
   left: 0;
   right: 0;
   top: 0;
-
   /* transform: translate(-50%, -50%); */
   z-index: 1;
   background: linear-gradient(135deg, transparent 30%, var(--bg-gray) 50%, transparent 70%);
@@ -428,7 +411,6 @@ img[data-src] {
 
 .icon-snapchat-ghost {
   background: var(--snapchat);
-
   /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
@@ -464,7 +446,7 @@ img[data-src] {
   opacity: 1;
 }
 
-/* my-portfolio style */
+/* -- my-portfolio style -- */
 details.my-portfolio {
   border-radius: 24px;
   box-shadow: 0 0 4px var(--color-shadow2);
@@ -490,8 +472,7 @@ details.my-portfolio[open] summary + div {
   animation: sweep 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* my-portfolio end */
-
+/* -- my-portfolio end -- */
 .container-grid {
   display: grid;
   grid-gap: 0.2rem;
@@ -568,13 +549,19 @@ details.my-portfolio[open] summary + div {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   color: var(--text-color);
   padding-bottom: 0.5rem;
 }
 
 .footer .version {
-  margin-left: auto;
+  /* margin-left: auto; */
   color: var(--text-color);
+}
+
+.corner-bars {
+  position: sticky;
+  bottom: 1em;
 }
 
 .signature {

@@ -1,5 +1,4 @@
 /* TODO: black bg and white text for faster print */
-
 /*
   - https://www.matuzo.at/blog/i-totally-forgot-about-print-style-sheets/
   - https://www.smashingmagazine.com/2013/03/tips-and-tricks-for-print-style-sheets/#print-qr-codes-for-easy-url-references
@@ -7,7 +6,6 @@
   - https://github.com/BafS/Gutenberg
   - https://github.com/vladocar/Hartija---CSS-Print-Framework
 */
-
 /* print mode style */
 @media print {
 
@@ -15,14 +13,11 @@
   *::before,
   *::after {
     /* Black prints faster */
-
     /* color: var(--black) !important;  */
-
     /* text-shadow: none !important; */
     box-shadow: none !important;
     background: var(--color-global-bg-fallback) !important;
     -webkit-print-color-adjust: exact;
-
     /* print-color-adjust: exact; */
   }
 
@@ -52,19 +47,15 @@
   .print-hidden {
     display: none !important;
   }
-
   /* a[href]:after {
     content: ' (' attr(href) ')';
   } */
-
   /* a[href^='http']:not([href*='chendachao.github.io']):not([href*='chendachao.netlify.app']):after {
     content: ' (' attr(href) ')';
   } */
-
   /* abbr[title]:after {
     content: ' (' attr(title) ')';
   } */
-
   /* .map {
     width: 400px;
     height: 300px;
@@ -99,13 +90,11 @@
   .footer {
     page-break-after: always;
   }
-
   /* mobile */
   @media (max-width: 767px),
   (device-width: 767px) {
     :root {
       --bird-fly-speed: 25s;
-
       /* --color-global-bg-deg: 45deg; */
       --centered-content-width: 91.8%;
     }

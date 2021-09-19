@@ -52,7 +52,6 @@ a.btn:hover {
   font-size: 8px;
   min-width: 1.2rem;
 }
-
 /* common */
 details {
   margin: 1.3rem 0;
@@ -67,7 +66,6 @@ details summary {
 details > summary {
   list-style: none;
 }
-
 /* details>summary::marker, */
 details > summary::-webkit-details-marker {
   display: none;
@@ -81,7 +79,6 @@ details > summary + .content {
   margin: 0;
   padding: 0.5rem 0.5rem 1rem 0.5rem;
 }
-
 /* common end */
 
 details > summary.border-bottom {
@@ -92,12 +89,10 @@ details > summary.border-bottom {
   font-size: calc(1em + 1vw);
   border-radius: 10px;
 }
-
 /* custom-marker */
 details > summary.custom-marker {
   position: relative;
   padding-left: 2.5rem !important;
-
   /* list-style-type: none */
 }
 
@@ -122,5 +117,4 @@ details > summary.custom-marker::before {
 details[open] > summary.custom-marker::before {
   transform: translateY(-50%) rotate(180deg);
 }
-
 /* custom-marker end */

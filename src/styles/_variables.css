@@ -131,3 +131,6 @@
     --comment-margin-right: 0;
   }
 }
+/* Detecting Hover-Capable Devices */
+/* @media (hover:hover) and (pointer:fine) {
+} */

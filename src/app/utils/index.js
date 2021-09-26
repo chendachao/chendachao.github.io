@@ -20,6 +20,13 @@ export const isPC = function () {
   return browser.getPlatformType() === 'desktop';
 };
 
+// isHoverableDevice.matches
+// pointer: coarse for a pointer such as a finger used on a touch screen
+// pointer: fine a mouse
+export const isHoverableDevice = window.matchMedia(
+  '(hover: hover) and (pointer: fine)'
+);
+
 export const isSameDay = (d1, d2) => {
   return (
     d1.getFullYear() === d2.getFullYear() &&

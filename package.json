@@ -99,6 +99,7 @@
     "webpack-dev-server": "3.11.2",
     "webpack-merge": "5.8.0",
     "webpack-notifier": "1.13.0",
+    "webpack-subresource-integrity": "5.0.0",
     "webpackbar": "5.0.0-3",
     "workbox-webpack-plugin": "6.2.4"
   },

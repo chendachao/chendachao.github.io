@@ -12,6 +12,7 @@ const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { merge } = require('webpack-merge');
 const glob = require('glob-all');
@@ -49,6 +50,8 @@ const commonConfig = merge([
       path: PATHS.build,
       publicPath: '',
       // ecmaVersion: 5 // work in webpack 5
+      // the following setting is required for SRI to work:
+      crossOriginLoading: 'anonymous',
     },
     target: devMode ? 'web' : 'browserslist',
     resolve: {
@@ -235,7 +238,10 @@ const productionConfig = merge([
         new CssMinimizerPlugin(),
       ],
     },
-    plugins: [new CompressionPlugin()],
+    plugins: [
+      new CompressionPlugin(),
+      new SubresourceIntegrityPlugin(),
+    ],
   },
   parts.loadJavaScript({
     include: PATHS.app,

@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.12](https://github.com/chendachao/chendachao.github.io/compare/v1.11.11...v1.11.12) (2021-10-01)
+
+
+### Features
+
+* **social:** add telegram and slack and escape html ([aec05e1](https://github.com/chendachao/chendachao.github.io/commit/aec05e1b47ae875f2038686b821f9e93ded87c30))
+* add scan effect to images ([2257204](https://github.com/chendachao/chendachao.github.io/commit/2257204637afcb992056704a6ce6afad40d0687e))
+* chores ([91e1348](https://github.com/chendachao/chendachao.github.io/commit/91e1348e64fde9cee7fa8c670dec16ef34d31819))
+* sri ([23c55d4](https://github.com/chendachao/chendachao.github.io/commit/23c55d4a20352432cb4ac4809dfd838d57dbd851))
+
 ### [1.11.11](https://github.com/chendachao/chendachao.github.io/compare/v1.11.10...v1.11.11) (2021-09-18)
 
 

@@ -331,8 +331,15 @@ img[data-src] {
 /* -- icons style -- */
 .social-icons {
   display: flex;
-  flex-wrap: wrap-reverse;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 424px), only screen and (device-width: 424px) {
+  .social-icons {
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+  }
 }
 
 .social-icons li {

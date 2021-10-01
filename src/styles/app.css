@@ -331,8 +331,8 @@ img[data-src] {
 /* -- icons style -- */
 .social-icons {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap-reverse;
+  justify-content: space-evenly;
 }
 
 .social-icons li {

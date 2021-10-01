@@ -240,7 +240,7 @@ img[data-src] {
   margin: auto;
   width: 1vw;
   height: 1vw;
-  font-size: 0.5rem;
+  font-size: var(--satellite-size);
   /* background: var(--satellite-color); */
   border-radius: 50%;
   will-change: transform;
@@ -267,7 +267,7 @@ img[data-src] {
   transform-origin: bottom;
   /* color: var(--color-brand); */
   text-shadow: var(--brand-text-shadow);
-  transition: all cubic-bezier(1,0,0,1) 3s;
+  transition: transform ease-in-out 3s;
 }
 
 .brand-icon:hover {
@@ -436,6 +436,14 @@ img[data-src] {
 
 .icon-stackoverflow {
   background: var(--stackoverflow);
+}
+
+.icon-slack {
+  background: var(--slack);
+}
+
+.icon-telegram {
+  background: var(--telegram);
 }
 
 .developer-mode-link {

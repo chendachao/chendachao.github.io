@@ -4405,6 +4405,11 @@ domhandler@^4.0.0, domhandler@^4.2.0:
   dependencies:
     domelementtype "^2.2.0"
 
+dompurify@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.3.3.tgz#c1af3eb88be47324432964d8abc75cf4b98d634c"
+  integrity sha512-dqnqRkPMAjOZE0FogZ+ceJNM2dZ3V/yNOuFB7+39qpO93hHhfRpHw3heYQC7DPK9FqbQTfBKUJhiSfz4MvXYwg==
+
 domutils@^1.5.1:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/domutils/-/domutils-1.7.0.tgz#56ea341e834e06e6748af7a1cb25da67ea9f8c2a"
@@ -10220,7 +10225,7 @@ webpack-sources@^3.2.0:
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-3.2.0.tgz#b16973bcf844ebcdb3afde32eda1c04d0b90f89d"
   integrity sha512-fahN08Et7P9trej8xz/Z7eRu8ltyiygEo/hnRi9KqBUs80KeDcnf96ZJo++ewWd84fEf3xSX9bp4ZS9hbw0OBw==
 
-webpack-subresource-integrity@^5.0.0:
+webpack-subresource-integrity@5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/webpack-subresource-integrity/-/webpack-subresource-integrity-5.0.0.tgz#8268b9cc1a229a8f8129ca9eeb59cde52185b6b1"
   integrity sha512-x9514FpLRydO+UAQ8DY4aLtCjxmdLkuQVcDFN1kGzuusREYJ1B0rzk/iIlWiL6dnvrhEGFj2+UsdxDkP8Z4UKg==

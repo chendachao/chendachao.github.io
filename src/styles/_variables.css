@@ -96,12 +96,15 @@
   --wechat: #1aad28;
   --envelope: #2368c0;
   --github: #292626;
+  --slack: var(--white);
+  --telegram: #039be5;
   /* --reddit: #ff5700; */
   /* #45160814; */
   --stackoverflow: rgb(250, 250, 251);
   --comment-margin-left: -4em;
   --comment-margin-right: -4em;
   --satellite-color: var(--orange1);
+  --satellite-size: 0.5rem;
 }
 
 :root [data-theme="dark"] {
@@ -129,6 +132,7 @@
     --centered-content-width: 91.8%;
     --comment-margin-left: 0;
     --comment-margin-right: 0;
+    --satellite-size: 0.3rem;
   }
 }
 /* Detecting Hover-Capable Devices */

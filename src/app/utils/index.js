@@ -1,4 +1,5 @@
 import Bowser from 'bowser'; // ua-parser-js
+import DOMPurify from 'dompurify';
 
 const browser = Bowser.getParser(window.navigator.userAgent);
 const IE = 'Internet Explorer';
@@ -60,4 +61,23 @@ export const tryCatch = (tryer) => {
     console.log('error', error);
     return [null, error];
   }
+};
+
+export const getDefaultHTMLPolicy = () => {
+  let defaultHTMLPolicy;
+  /* global trustedTypes */
+  if (window.trustedTypes && trustedTypes.createPolicy) { // Feature testing
+    defaultHTMLPolicy = trustedTypes.createPolicy('default', {
+      createHTML: (string, sink) => DOMPurify.sanitize(string, {RETURN_TRUSTED_TYPE: true})
+    });
+  }
+  return defaultHTMLPolicy;
+};
+
+export const setEscapedHTML = (i18nLabel, string) => {
+  const defaultHTMLPolicy = getDefaultHTMLPolicy();
+  if(defaultHTMLPolicy) {
+    string = defaultHTMLPolicy.createHTML(string);
+  }
+  i18nLabel.innerHTML = string;
 };

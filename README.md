@@ -84,6 +84,7 @@
 - [PWA Builder](https://www.pwabuilder.com/)
 - [Web Share](https://web.dev/web-share/)
 - [CSS Animations on Demand](https://animista.net/)
+- [Comparison table of HTML special character encoding for web pages](https://www.22vd.com/33993.html)
 
 
 PS:

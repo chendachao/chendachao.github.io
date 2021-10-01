@@ -1,7 +1,7 @@
 import IntlMessageFormat from 'intl-messageformat';
 import axios from 'axios';
 
-import { tryCatchPormise } from '@app/utils';
+import { tryCatchPormise, setEscapedHTML } from '@app/utils';
 
 const I18n = () => {
   const getDefaultLang = function () {
@@ -56,7 +56,7 @@ const I18n = () => {
     const i18nLabels = document.querySelectorAll('*[data-i18n-id]');
     i18nLabels.forEach(i18nLabel => {
       const { i18nId } = i18nLabel.dataset;
-      i18nLabel.innerHTML = format(i18nId);
+      setEscapedHTML(i18nLabel, format(i18nId));
     });
 
     // Change attr like tooltip

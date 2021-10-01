@@ -20,7 +20,7 @@ import 'tippy.js/animations/perspective-extreme.css';
 // import 'tippy.js/animations/shift-toward-subtle.css';
 // import 'tippy.js/animations/shift-toward-extreme.css';
 
-import { isIE, isPC } from '../utils';
+import { isIE, isPC, setEscapedHTML } from '../utils';
 
 import i18n from '../utils/i18n';
 
@@ -83,7 +83,7 @@ function TooltipAndPopover() {
       content.querySelectorAll('[data-i18n-id]').forEach(i18nLabel => {
         console.log('i18nLabel', i18nLabel);
         const { i18nId } = i18nLabel.dataset;
-        i18nLabel.innerHTML = i18n.format(i18nId);
+        setEscapedHTML(i18nLabel, i18n.format(i18nId));
       });
     },
     onHide: instance => {

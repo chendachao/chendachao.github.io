@@ -93,8 +93,12 @@ const commonConfig = merge([
           'Content-Security-Policy': {
             'http-equiv': 'Content-Security-Policy',
             'content': `default-src 'self' data: gap: 'unsafe-eval' larrychen.tech instant.page www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/;
-                  style-src 'self' http://* 'unsafe-inline';
-                  script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'`,
+                  style-src 'self' http: https: 'unsafe-inline';
+                  script-src 'self' http: https: 'unsafe-inline' 'unsafe-eval';
+                  object-src 'none';
+                  base-uri 'none';
+                  `,
+                  // script-src 'self' 'strict-dynamic' 'nonce-rAnd0m123' 'unsafe-inline' http: https:;
           },
           // Will generate: <meta http-equiv="Content-Security-Policy" content="default-src https:">
           // Which equals to the following http header: `Content-Security-Policy: default-src https:`

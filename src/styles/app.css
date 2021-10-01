@@ -335,10 +335,10 @@ img[data-src] {
   justify-content: center;
 }
 
-@media only screen and (max-width: 424px), only screen and (device-width: 424px) {
+@media only screen and (max-width: 426px), only screen and (device-width: 426px) {
   .social-icons {
     flex-wrap: wrap-reverse;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
   }
 }
 

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.14](https://github.com/chendachao/chendachao.github.io/compare/v1.11.13...v1.11.14) (2021-10-01)
+
+
+### Bug Fixes
+
+* **social:** tweak social icon layout ([dc5dbd7](https://github.com/chendachao/chendachao.github.io/commit/dc5dbd7026cba438275204db25f5cfbace215ce6))
+
 ### [1.11.13](https://github.com/chendachao/chendachao.github.io/compare/v1.11.12...v1.11.13) (2021-10-01)
 
 

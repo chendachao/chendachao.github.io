@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.11.16](https://github.com/chendachao/chendachao.github.io/compare/v1.11.15...v1.11.16) (2021-10-07)
+
+
+### Bug Fixes
+
+* **social:** open slack directly ([e10cbf1](https://github.com/chendachao/chendachao.github.io/commit/e10cbf113207cf61917059528099d238dc1a5e91))
+
 ### [1.11.15](https://github.com/chendachao/chendachao.github.io/compare/v1.11.14...v1.11.15) (2021-10-01)
 
 

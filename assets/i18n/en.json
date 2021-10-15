@@ -2,6 +2,7 @@
   "APP.HTML_TITLE": "Chen Dachao",
   "APP.COMMA": ",",
   "APP.PERIOD": ".",
+  "APP.ONLINE_DAYS": "This site has been online for <b>{days, plural, =0 {one day.} =1 {one day.} other {# days.} }</b>",
   "APP.DEVELOPER_MODE": "Programmer view",
   "APP.LANGUAGE_SWITCH": "Switch to Chinese 🇨🇳",
   "APP.TUTOR_GUIDE": "Show me around",

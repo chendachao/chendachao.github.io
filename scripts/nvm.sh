@@ -4,6 +4,7 @@
 
 . ~/.nvm/nvm.sh
 
+# Switch the Node.js version
 nvm use
 
 nvm install

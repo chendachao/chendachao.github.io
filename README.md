@@ -32,6 +32,7 @@
 - [SVG Sprit](https://svgsprit.es/) - has some issues, be caution with it.
 - [Hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
 - [Emoji](http://xahlee.info/comp/unicode_arrows.html)
+- [Open Emoji](https://openmoji.org/)
 
 ## TODOs:
 - ✅ JSON description for developer view

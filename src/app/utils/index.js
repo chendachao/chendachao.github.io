@@ -74,10 +74,10 @@ export const getDefaultHTMLPolicy = () => {
   return defaultHTMLPolicy;
 };
 
-export const setEscapedHTML = (i18nLabel, string) => {
+export const setEscapedHTML = (element, string) => {
   const defaultHTMLPolicy = getDefaultHTMLPolicy();
   if(defaultHTMLPolicy) {
     string = defaultHTMLPolicy.createHTML(string);
   }
-  i18nLabel.innerHTML = string;
+  element.innerHTML = string;
 };

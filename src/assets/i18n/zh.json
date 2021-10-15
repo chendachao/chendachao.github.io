@@ -2,6 +2,7 @@
   "APP.HTML_TITLE": "陈大超",
   "APP.COMMA": "，",
   "APP.PERIOD": "。",
+  "APP.ONLINE_DAYS": "本站已上线<b>{days, plural, =0 {一天。} =1 {一天。} other {#天。} }</b>",
   "APP.DEVELOPER_MODE": "程序员视图",
   "APP.LANGUAGE_SWITCH": "切换到英语🇬🇧",
   "APP.TUTOR_GUIDE": "仙人指路",

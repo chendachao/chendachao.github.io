@@ -37,17 +37,15 @@ const I18n = () => {
   let locale = initialLocale;
   const messages = {};
   const greeting = {
-    id: 'app.greeting',
+    id: 'APP.GREETING',
     defaultMessage: 'Hello, {name}!',
     description: 'Greeting to welcome the user to the app',
   };
 
-  function format(key, opts) {
-    opts = opts || {};
-
+  function format(key, opts={}) {
     const localeMsg = messages[locale];
 
-    var msg = new IntlMessageFormat(localeMsg[key], locale);
+    const msg = new IntlMessageFormat(localeMsg[key], locale, null, {ignoreTag: true});
     return msg.format(opts);
   }
 

@@ -67,6 +67,7 @@ dialog.addEventListener('cancel', ev => {
   shake();
 });
 
+// TODO: if the image was already rendered, there's no need to rerender again, add flag to handle it
 const displayQRCode = () => {
   const LOCAL_REGEXP = /localhost|127.0.0.1/;
   const mySite = LOCAL_REGEXP.test(window.location.origin)

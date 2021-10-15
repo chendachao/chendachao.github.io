@@ -4,7 +4,7 @@ import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import * as Sentry from '@sentry/browser';
 import notify from './utils/notify';
 // import notify3 from './utils/notify3';
-import { isIE } from './utils';
+import { isIE, setEscapedHTML } from './utils';
 import { scrollToTop } from './utils/scroll';
 
 import Theme from './components/theme';
@@ -111,6 +111,12 @@ window.addEventListener('load', function () {
   // Click to open json file
   const developerModeLink = document.querySelector('.developer-mode-link');
   developerModeLink.setAttribute('href', `./assets/data/${i18n.locale}/chendachao.json`);
+
+  const onlineDaysEle = document.querySelector('.online-days');
+  const onlineDate = new Date('2014-09-12');
+  const delta = Date.now() - onlineDate.getTime();
+  const days = Math.ceil(delta / (24 * 60 * 60 * 1000));
+  setEscapedHTML(onlineDaysEle, i18n.format('APP.ONLINE_DAYS', {days}));
 
   // Share application
   if (navigator.share) {

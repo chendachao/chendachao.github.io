@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/chendachao/chendachao.github.io/compare/v1.11.16...v1.12.0) (2021-10-15)
+
+
+### Bug Fixes
+
+* **footer:** add online days ([b89e45a](https://github.com/chendachao/chendachao.github.io/commit/b89e45a5103484adf084f3bf4dcff5864bb168ad))
+
 ### [1.11.16](https://github.com/chendachao/chendachao.github.io/compare/v1.11.15...v1.11.16) (2021-10-07)
 
 

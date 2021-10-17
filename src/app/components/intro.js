@@ -34,31 +34,31 @@ class Intro {
       showProgress: true,
       steps: [
         {
-          intro: this.format('APP.INTRO.INTRO'),
+          intro: this.format({id: 'APP.INTRO.INTRO'}),
         },
         {
           element: '#step1',
-          intro: this.format('APP.INTRO.STEP1'),
+          intro: this.format({id: 'APP.INTRO.STEP1'}),
           tooltipPosition: 'bottom',
         },
         {
           element: '#step2',
-          intro: this.format('APP.INTRO.STEP2'),
+          intro: this.format({id: 'APP.INTRO.STEP2'}),
           tooltipPosition: 'top',
         },
         {
           element: '#step3',
-          intro: this.format('APP.INTRO.STEP3'),
+          intro: this.format({id: 'APP.INTRO.STEP3'}),
           tooltipPosition: 'auto',
         },
         {
           element: '#step4',
-          intro: this.format('APP.INTRO.STEP4'),
+          intro: this.format({id: 'APP.INTRO.STEP4'}),
           tooltipPosition: 'left',
         },
         {
           element: '#step5',
-          intro: this.format('APP.INTRO.STEP5'),
+          intro: this.format({id: 'APP.INTRO.STEP5'}),
           tooltipPosition: 'left',
         },
       ],
@@ -77,27 +77,27 @@ class Intro {
       hints: [
         {
           element: '.step11',
-          hint: this.format('APP.INTRO.STEP1'),
+          hint: this.format({id: 'APP.INTRO.STEP1'}),
           hintPosition: 'left',
         },
         {
           element: '.step12',
-          hint: this.format('APP.INTRO.STEP2'),
+          hint: this.format({id: 'APP.INTRO.STEP2'}),
           hintPosition: 'top-left',
         },
         {
           element: '.step13',
-          hint: this.format('APP.INTRO.STEP3'),
+          hint: this.format({id: 'APP.INTRO.STEP3'}),
           hintPosition: 'top',
         },
         {
           element: '.step14',
-          hint: this.format('APP.INTRO.STEP4'),
+          hint: this.format({id: 'APP.INTRO.STEP4'}),
           hintPosition: 'left',
         },
         {
           element: '.step15',
-          hint: this.format('APP.INTRO.STEP5'),
+          hint: this.format({id: 'APP.INTRO.STEP5'}),
           hintPosition: 'left',
         },
       ],

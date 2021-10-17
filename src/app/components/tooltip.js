@@ -80,11 +80,7 @@ function TooltipAndPopover() {
       const content = instance.popper;
       const qrCode = content.querySelector('.tippy-box');
       qrCode.addEventListener('click', toggleScale, true);
-      content.querySelectorAll('[data-i18n-id]').forEach(i18nLabel => {
-        console.log('i18nLabel', i18nLabel);
-        const { i18nId } = i18nLabel.dataset;
-        setEscapedHTML(i18nLabel, i18n.format(i18nId));
-      });
+      i18n.renderElement(content);
     },
     onHide: instance => {
       const content = instance.popper;

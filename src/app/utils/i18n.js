@@ -42,35 +42,52 @@ const I18n = () => {
     description: 'Greeting to welcome the user to the app',
   };
 
-  // format({
-  //   id,
-  //   defaultMessage,
-  //   description,
-  //   opts={}
-  // })
-
-  function format(key, opts={}) {
+  /**
+    format(
+      {
+        id,
+        defaultMessage,
+        description,
+      },
+      opts={}
+    )
+   */
+  function format(i18nMsgObj, opts={}) {
     const localeMsg = messages[locale];
+    let message = '';
+    if (Object.prototype.toString.call(i18nMsgObj) === '[object String]') {
+      message = localeMsg[i18nMsgObj] || i18nMsgObj || 'missed i18n msg';
+    } else {
+      const {id, defaultMessage, description} = i18nMsgObj;
+      message = localeMsg[id] || defaultMessage || id;
+    }
 
-    const defaultMessage = key || '666';
-    const msg = new IntlMessageFormat(localeMsg[key] || defaultMessage, locale, null, {ignoreTag: true});
-    return msg.format(opts);
+    const msgFormat = new IntlMessageFormat(message, locale, null, {ignoreTag: true});
+    return msgFormat.format(opts);
+  }
+
+  function renderElement(element) {
+    const i18nLabels = element.querySelectorAll('*[data-i18n-id]');
+    i18nLabels.forEach(i18nLabel => {
+      const { i18nId, i18nDefaultMessage } = i18nLabel.dataset;
+      setEscapedHTML(i18nLabel, format({id: i18nId, defaultMessage: i18nDefaultMessage}));
+    });
+  }
+
+  function renderByAttr(element) {
+    return element.querySelectorAll('*[data-i18n-attr]').forEach(i18nLabel => {
+      const { i18nAttr } = i18nLabel.dataset;
+      const attr = i18nAttr.split('=');
+      i18nLabel.setAttribute(attr[0], format({id: attr[1]}));
+    });
   }
 
   function render() {
     // Change label
-    const i18nLabels = document.querySelectorAll('*[data-i18n-id]');
-    i18nLabels.forEach(i18nLabel => {
-      const { i18nId } = i18nLabel.dataset;
-      setEscapedHTML(i18nLabel, format(i18nId));
-    });
+    renderElement(document);
 
     // Change attr like tooltip
-    return document.querySelectorAll('*[data-i18n-attr]').forEach(i18nLabel => {
-      const { i18nAttr } = i18nLabel.dataset;
-      const attr = i18nAttr.split('=');
-      i18nLabel.setAttribute(attr[0], format(attr[1]));
-    });
+    return renderByAttr(document);
   }
 
   function setLocale(lang) {
@@ -116,6 +133,7 @@ const I18n = () => {
 
   return {
     init,
+    renderElement,
     format,
     locale,
   };

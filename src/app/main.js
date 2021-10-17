@@ -13,7 +13,7 @@ Theme();
 
 import i18n from './utils/i18n';
 i18n.init().then(() => {
-  document.title = i18n.format('APP.HTML_TITLE');
+  document.title = i18n.format({id: 'APP.HTML_TITLE'});
   // const commentScript = document.querySelector('#commentScript');
   // commentScript.setAttribute('data-isso-lang', i18n.locale);
   const commentScript = document.createElement('script');
@@ -97,7 +97,7 @@ if (isIE()) {
 // const test = document.querySelector('.test');
 // test.addEventListener('click', () => {
 //   // notify3('test', {type: 'error'});
-//   notify.info(i18n.format('APP.NEW_VERSION_BODY'), i18n.format('APP.NEW_VERSION_TITLE'), {
+//   notify.info(i18n.format({id: 'APP.NEW_VERSION_BODY'}), i18n.format({id: 'APP.NEW_VERSION_TITLE'}), {
 //     timeOut: 0,
 //     onclick: () => {
 //       window.location.reload();
@@ -118,7 +118,10 @@ window.addEventListener('load', function () {
 
   const delta = Date.now() - onlineDate.getTime();
   const days = Math.ceil(delta / (24 * 60 * 60 * 1000));
-  setEscapedHTML(onlineDaysEle, i18n.format('APP.ONLINE_DAYS', {onlineDate: formattedOnlineDate, days}));
+  setEscapedHTML(onlineDaysEle, i18n.format({
+    id: 'APP.ONLINE_DAYS',
+    defaultMessage: 'Since <b>{onlineDate}</b>, this website has been online for <b>{days, plural, =0 {one day.} =1 {one day.} other {# days.} }</b>'
+  }, {onlineDate: formattedOnlineDate, days}));
 
   // Share application
   if (navigator.share) {
@@ -183,7 +186,7 @@ window.addEventListener('load', function () {
 
   let errorToasted;
   const updateOnlineStatus = function (event) {
-    var message = navigator.onLine ? '' : i18n.format('APP.OFFLINE');
+    var message = navigator.onLine ? '' : i18n.format({id: 'APP.OFFLINE'});
     if (message) {
       errorToasted = notify.error(message.toUpperCase(), '', {
         timeOut: 0,
@@ -192,7 +195,7 @@ window.addEventListener('load', function () {
     } else {
       if (errorToasted) {
         errorToasted.remove();
-        notify.success(i18n.format('APP.ONLINE'), '', {
+        notify.success(i18n.format({id: 'APP.ONLINE'}), '', {
           timeOut: 800,
         });
       }
@@ -210,7 +213,7 @@ const globalErrorHandler = event => {
   // if(event.error) {
   //   message = event.error.stack;
   // }
-  notify.error(message, i18n.format('APP.GLOBAL_ERROR'));
+  notify.error(message, i18n.format({id: 'APP.GLOBAL_ERROR'}));
   Sentry.captureException(event.error);
 };
 

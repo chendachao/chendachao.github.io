@@ -39,7 +39,7 @@ serviceWorker.register({
       //     // Show Local Notification
       //     registration.pushManager.subscribe({ userVisibleOnly: true });
       //   } else {
-      //     throw new Error(format('APP.NOTIFICATIONS_BLOCKED'));
+      //     throw new Error(format({id: 'APP.NOTIFICATIONS_BLOCKED'}));
       //   }
       // } catch (error) {
       //   notify.error(error, 'Notifications Error');
@@ -61,7 +61,7 @@ serviceWorker.register({
         // Show Local Notification
         registration.pushManager.subscribe({ userVisibleOnly: true });
       } else {
-        notify.error(format('APP.NOTIFICATIONS_BLOCKED'), 'Notifications Error');
+        notify.error(format({id: 'APP.NOTIFICATIONS_BLOCKED'}), 'Notifications Error');
       }
     });
   },
@@ -86,9 +86,9 @@ serviceWorker.register({
     }
 
     const updateReady = function () {
-      const notificationTitle = format('APP.NEW_VERSION_TITLE');
-      const notificationBody = format('APP.NEW_VERSION_BODY');
-      const notificationBody2 = format('APP.NEW_VERSION_BODY2');
+      const notificationTitle = format({id: 'APP.NEW_VERSION_TITLE'});
+      const notificationBody = format({id: 'APP.NEW_VERSION_BODY'});
+      const notificationBody2 = format({id: 'APP.NEW_VERSION_BODY2'});
       // Show notification in OS level
       showSystemNotification(notificationTitle, notificationBody2);
       // Show notification in browser

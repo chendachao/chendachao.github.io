@@ -42,10 +42,18 @@ const I18n = () => {
     description: 'Greeting to welcome the user to the app',
   };
 
+  // format({
+  //   id,
+  //   defaultMessage,
+  //   description,
+  //   opts={}
+  // })
+
   function format(key, opts={}) {
     const localeMsg = messages[locale];
 
-    const msg = new IntlMessageFormat(localeMsg[key], locale, null, {ignoreTag: true});
+    const defaultMessage = key || '666';
+    const msg = new IntlMessageFormat(localeMsg[key] || defaultMessage, locale, null, {ignoreTag: true});
     return msg.format(opts);
   }
 

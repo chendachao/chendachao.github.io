@@ -30,6 +30,12 @@
   outline: var(--text-highlight) auto 1px;
 }
 
+.line-h {
+  background-color: lightgray;
+  border: none;
+  height: 1px;
+}
+
 .p-relative {
   position: relative;
 }

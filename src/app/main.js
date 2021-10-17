@@ -114,9 +114,11 @@ window.addEventListener('load', function () {
 
   const onlineDaysEle = document.querySelector('.online-days');
   const onlineDate = new Date('2014-09-12');
+  const formattedOnlineDate = new Intl.DateTimeFormat(i18n.locale, { dateStyle: 'full'}).format(onlineDate);
+
   const delta = Date.now() - onlineDate.getTime();
   const days = Math.ceil(delta / (24 * 60 * 60 * 1000));
-  setEscapedHTML(onlineDaysEle, i18n.format('APP.ONLINE_DAYS', {days}));
+  setEscapedHTML(onlineDaysEle, i18n.format('APP.ONLINE_DAYS', {onlineDate: formattedOnlineDate, days}));
 
   // Share application
   if (navigator.share) {

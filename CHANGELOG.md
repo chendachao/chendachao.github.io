@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.2](https://github.com/chendachao/chendachao.github.io/compare/v1.12.1...v1.12.2) (2021-10-18)
+
+
+### Bug Fixes
+
+* **i18n:** add emoji ([41b1e4d](https://github.com/chendachao/chendachao.github.io/commit/41b1e4d7695c3e96a0a45320d47f541425ba7bca))
+
 ### [1.12.1](https://github.com/chendachao/chendachao.github.io/compare/v1.13.0...v1.12.1) (2021-10-17)
 
 ### Bug Fixes

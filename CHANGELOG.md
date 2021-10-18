@@ -4,9 +4,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.12.1](https://github.com/chendachao/chendachao.github.io/compare/v1.13.0...v1.12.1) (2021-10-17)
 
-## [1.13.0](https://github.com/chendachao/chendachao.github.io/compare/v1.12.0...v1.13.0) (2021-10-17)
-
-
 ### Bug Fixes
 
 * **i18n:** add default option ([fa7b5ba](https://github.com/chendachao/chendachao.github.io/commit/fa7b5ba29ba3a679f19b8fdbc576eac7908278cb))

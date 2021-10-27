@@ -80,6 +80,7 @@
 - https://www.calligrapher.ai/
 - http://patorjk.com/text-color-fader/
 - https://getwaves.io/
+- https://www.zachleat.com/web/vector-raster-split/
 - [Log tracing](https://sentry.io/)
 - [Favicon checker and generator](https://realfavicongenerator.net/)
 - [PWA Builder](https://www.pwabuilder.com/)

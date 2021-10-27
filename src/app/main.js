@@ -114,7 +114,7 @@ window.addEventListener('load', function () {
 
   const onlineDaysEle = document.querySelector('.online-days');
   const onlineDate = new Date('2014-09-12');
-  const formattedOnlineDate = new Intl.DateTimeFormat(i18n.locale, { dateStyle: 'full'}).format(onlineDate);
+  const formattedOnlineDate = new Intl.DateTimeFormat(i18n.locale, { dateStyle: 'long'}).format(onlineDate);
 
   const delta = Date.now() - onlineDate.getTime();
   const days = Math.ceil(delta / (24 * 60 * 60 * 1000));

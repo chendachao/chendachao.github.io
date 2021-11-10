@@ -26,6 +26,7 @@
 - [Image Compressor](https://imagecompressor.com/)
 - [Image Squoosh](https://squoosh.app/)
 - [Smart PNG and JPEG compression](https://tinypng.com/)🏅
+- [微图](https://www.zachleat.com/web/vector-raster-split/)
 - [SVG Compressor](https://jakearchibald.github.io/svgomg/)
 - [Convert Font to SVG](https://onlinefontconverter.com/)
 - [Pixel Perfect Icon Solutions && Custom Font](https://icomoon.io/)

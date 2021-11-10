@@ -46,7 +46,7 @@ const commonConfig = merge([
     },
     output: {
       filename: '[name].[contenthash].bundle.js',
-      chunkFilename: '[name].[chunkhash].chunk.js',
+      chunkFilename: '[name].[contenthash].chunk.js',
       path: PATHS.build,
       publicPath: '',
       // ecmaVersion: 5 // work in webpack 5
@@ -92,7 +92,7 @@ const commonConfig = merge([
         meta: {
           'Content-Security-Policy': {
             'http-equiv': 'Content-Security-Policy',
-            'content': `default-src 'self' data: gap: 'unsafe-eval' larrychen.tech instant.page www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/;
+            'content': `default-src 'self' data: gap: 'unsafe-eval' larrychen.tech instant.page platform-api.sharethis.com l.sharethis.com count-server.sharethis.com www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/;
                   style-src 'self' http: https: 'unsafe-inline';
                   script-src 'self' http: https: 'unsafe-inline' 'unsafe-eval';
                   object-src 'none';

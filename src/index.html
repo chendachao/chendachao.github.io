@@ -92,6 +92,12 @@
       document.documentElement.classList.add('js');
     </script>
 
+    <!-- Share this reaction-buttons -->
+    <script
+      defer
+      src="https://platform-api.sharethis.com/js/sharethis.js#property=618b38f1a2a2930013a8ebc0&product=inline-reaction-buttons"
+    ></script>
+
     <% if (process.env.APP_ENV === 'production') { %>
     <!-- Hover preload link -->
     <script
@@ -679,6 +685,9 @@
               <desc>Larry Chen</desc>
               <use href="./assets/images/base-symbol-defs.svg#signature"></use>
             </svg>
+          </section>
+          <section class="text-center">
+            <div class="sharethis-inline-reaction-buttons"></div>
           </section>
         </section>
         <details class="comment-container print-hidden" hidden>

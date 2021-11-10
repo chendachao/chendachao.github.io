@@ -11,6 +11,7 @@ import i18n from '@app/utils/i18n';
 import { tryCatchPormise } from '@app/utils';
 // import(/* webpackPrefetch: true */'@app/pwa');
 import(/* webpackPreload: true */ '@app/main');
+import('pwacompat');
 import 'normalize.css';
 import 'styles/index.css';
 import(/* webpackPreload: true */ 'styles/override.css');

@@ -92,10 +92,16 @@
       document.documentElement.classList.add('js');
     </script>
 
-    <!-- Share this reaction-buttons -->
+    <!-- Sharethis reaction-buttons -->
     <script
       defer
       src="https://platform-api.sharethis.com/js/sharethis.js#property=618b38f1a2a2930013a8ebc0&product=inline-reaction-buttons"
+    ></script>
+
+    <!-- Sharethis share-buttons -->
+    <script
+      defer
+      src="https://platform-api.sharethis.com/js/sharethis.js#property=618b69ec0e31be0012eb74ab&product=sticky-share-buttons"
     ></script>
 
     <% if (process.env.APP_ENV === 'production') { %>
@@ -727,6 +733,8 @@
         </details>
       </div>
     </main>
+
+    <div class="sharethis-sticky-share-buttons"></div>
 
     <div class="corner-bars text-right">
       <button

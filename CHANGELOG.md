@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.3](https://github.com/chendachao/chendachao.github.io/compare/v1.12.2...v1.12.3) (2021-11-10)
+
+
+### Features
+
+* **i18n:** add emoji ([59be7f8](https://github.com/chendachao/chendachao.github.io/commit/59be7f898d285af46165a71311649e63acf9b60e))
+* **i18n:** chores ([04e670a](https://github.com/chendachao/chendachao.github.io/commit/04e670aaa9d0ec531de25ca871e78117b9662aa9))
+* **reaction:** add sharethis reaction buttons ([90baf0f](https://github.com/chendachao/chendachao.github.io/commit/90baf0fd1e53a5d148ea9243dfc68646386136e4))
+
+
+### Bug Fixes
+
+* **i18n:** add coffee ([de0b3af](https://github.com/chendachao/chendachao.github.io/commit/de0b3afea2d643431212a8a01338cebfb0e31228))
+
 ### [1.12.2](https://github.com/chendachao/chendachao.github.io/compare/v1.12.1...v1.12.2) (2021-10-18)
 
 

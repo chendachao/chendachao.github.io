@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.4](https://github.com/chendachao/chendachao.github.io/compare/v1.12.3...v1.12.4) (2021-11-10)
+
+
+### Features
+
+* **reaction:** add sharethis share buttons ([9019ff9](https://github.com/chendachao/chendachao.github.io/commit/9019ff9d2eb61689d906bbe133cf0f8ed3bbcf9e))
+
 ### [1.12.3](https://github.com/chendachao/chendachao.github.io/compare/v1.12.2...v1.12.3) (2021-11-10)
 
 

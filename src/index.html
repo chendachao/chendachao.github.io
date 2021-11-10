@@ -92,16 +92,10 @@
       document.documentElement.classList.add('js');
     </script>
 
-    <!-- Sharethis reaction-buttons -->
+    <!-- Sharethis -->
     <script
       defer
       src="https://platform-api.sharethis.com/js/sharethis.js#property=618b38f1a2a2930013a8ebc0&product=inline-reaction-buttons"
-    ></script>
-
-    <!-- Sharethis share-buttons -->
-    <script
-      defer
-      src="https://platform-api.sharethis.com/js/sharethis.js#property=618b69ec0e31be0012eb74ab&product=sticky-share-buttons"
     ></script>
 
     <% if (process.env.APP_ENV === 'production') { %>
@@ -249,7 +243,7 @@
       <div class="brand text-center">
         <img
           id="step1"
-          class="brand-icon step11 lazyload flip-vertical-right"
+          class="brand-icon step11 lazyload flip-vertical-right image-share-buttons"
           src="./assets/images/bases/star.svg"
           alt="Star"
           width="calc(5em + 4vw)"
@@ -517,7 +511,6 @@
                 data-tippy-content="My Homepage."
                 data-i18n-attr="data-tippy-content=APP.PORTFOLIO.HOMEPAGE"
               >
-                <span class="notify-badge" data-i18n-id="APP.NEW">NEW</span>
                 <div class="icon rounded loading p-relative">
                   <img
                     class="svg icon-size-md"
@@ -683,6 +676,30 @@
                 >
                 </a>
               </section>
+              <section
+                class="card border-active"
+                data-tooltip
+                data-tippy-content="Online sharing code editor."
+                data-i18n-attr="data-tippy-content=APP.PORTFOLIO.CODING"
+              >
+                <span class="notify-badge" data-i18n-id="APP.NEW">NEW</span>
+                <div class="icon rounded loading">
+                  <svg class="svg icon-size-md svgicon" role="img" aria-label="Coding">
+                    <title id="title" lang="en">Coding</title>
+                    <desc>Coding</desc>
+                    <use href="./assets/images/portfolio-symbol-defs.svg#coding"></use>
+                    Sorry, your browser does not support inline SVG.
+                  </svg>
+                </div>
+                <div>Coding</div>
+                <a
+                  class="link"
+                  href="https://coding.larrychen.tech"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                >
+                </a>
+              </section>
             </div>
           </details>
           <section class="text-right">
@@ -693,7 +710,10 @@
             </svg>
           </section>
           <section class="text-center">
+            <!-- ShareThis BEGIN -->
             <div class="sharethis-inline-reaction-buttons"></div>
+            <div class="sharethis-inline-share-buttons print-hidden"></div>
+            <!-- ShareThis END -->
           </section>
         </section>
         <details class="comment-container print-hidden" hidden>
@@ -733,8 +753,6 @@
         </details>
       </div>
     </main>
-
-    <div class="sharethis-sticky-share-buttons"></div>
 
     <div class="corner-bars text-right">
       <button

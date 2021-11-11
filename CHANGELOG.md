@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.6](https://github.com/chendachao/chendachao.github.io/compare/v1.12.5...v1.12.6) (2021-11-11)
+
+
+### Features
+
+* **meta:** add meta for QZone ([e7e3506](https://github.com/chendachao/chendachao.github.io/commit/e7e35066f04767bac57d416bf4523e8b3c843df2))
+
 ### [1.12.5](https://github.com/chendachao/chendachao.github.io/compare/v1.12.4...v1.12.5) (2021-11-10)
 
 

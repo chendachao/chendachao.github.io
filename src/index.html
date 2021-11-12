@@ -31,7 +31,7 @@
     <!-- title will be overrided by scripts according the language user selected -->
     <title><%= htmlWebpackPlugin.options.title %></title>
     <meta name="author" content="Larry Chen" />
-    <meta name="Description" content="Chen Dachao's Homepage." />
+    <meta name="description" content="Chen Dachao's Homepage." />
     <meta name="keywords" content="Homepage,web,webpack,es6,html,css,animation" />
 
     <!-- For Twitter -->
@@ -60,8 +60,12 @@
 
     <!-- For QZone -->
     <meta itemprop="name" content="Homepage" />
-    <meta itemprop="description" content="Chen Dachao's Homepage." />
-    <meta itemprop="image" content="./assets/images/screenshots/screenshot1.jpg" />
+    <meta name="description" itemprop="description" content="Chen Dachao's Homepage." />
+    <!-- <meta itemprop="image" content="./assets/images/screenshots/screenshot1.jpg" /> -->
+    <meta
+      itemprop="image"
+      content="http://ws234.com/content/templates/emlog_dux/images/fxlogo.png"
+    />
 
     <!-- favicon -->
     <!-- <link rel="apple-touch-icon" type="image/svg+xml" href="./assets/images/portfolios/home.svg" /> -->
@@ -329,9 +333,9 @@
             class="highlight text-nowrap"
             data-tooltip
             data-tippy-content="Change the world, make our life better."
-            data-i18n-attr="data-tippy-content=APP.PROGRAMMING_DESC"
-            data-i18n-id="APP.PROGRAMMING"
-            >programming</span
+            data-i18n-attr="data-tippy-content=APP.CODING_DESC"
+            data-i18n-id="APP.CODING"
+            >coding</span
           ><span data-i18n-id="APP.AND"> and </span>
           <span
             class="highlight text-nowrap"

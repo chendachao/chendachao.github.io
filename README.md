@@ -11,9 +11,15 @@
 - [Netlify](https://chendachao.netlify.app/)
 - [Vercel](https://chendachao-github-io.chendachao.vercel.app/)
 
-## Screenshots
+<details>
+  <summary>
+    Screenshots:
+  </summary>
+
 ![Dark theme screenshot](src/assets/images/screenshots/screenshot1.jpg "Dark theme screenshot")
 ![Light theme screenshot](src/assets/images/screenshots/screenshot2.jpg "Light theme screenshot")
+
+</details>
 
 ## Performance
 - [Performance](https://developers.google.com/web/fundamentals/performance/why-performance-matters)

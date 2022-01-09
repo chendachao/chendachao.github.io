@@ -88,7 +88,7 @@ const displayQRCode = () => {
     width: QRCodeDim.width,
     height: QRCodeDim.height,
     margin: QRCodeDim.margin,
-    errorCorrectionLevel: 'H',
+    errorCorrectionLevel: 'Q',
     quality: 1,
     version: 5, // 6
     color: {

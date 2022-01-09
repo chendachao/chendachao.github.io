@@ -76,6 +76,7 @@
 - https://kazuhikoarase.github.io/qrcode-generator/js/demo/
 - https://iconmonstr.com/
 - https://validator.nu/
+- https://obfuscator.io/
 - https://mailto.now.sh/
 - https://vercel.com/
 - https://myraah.io/index.php/visualmind

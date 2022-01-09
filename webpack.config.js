@@ -14,6 +14,7 @@ const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackObfuscator = require('webpack-obfuscator');
 const { merge } = require('webpack-merge');
 const glob = require('glob-all');
 
@@ -245,6 +246,9 @@ const productionConfig = merge([
     plugins: [
       new CompressionPlugin(),
       new SubresourceIntegrityPlugin(),
+      new WebpackObfuscator ({
+        rotateStringArray: true
+      }, ['sw.js'])
     ],
   },
   parts.loadJavaScript({

@@ -43,7 +43,7 @@
     background-attachment: fixed;
   }
 
-  body>*:not(main):not(footer):not([class^="print-"]),
+  body>*:not(.app-main):not(.app-footer):not([class^="print-"]),
   .print-hidden {
     display: none !important;
   }
@@ -87,7 +87,7 @@
     page-break-after: avoid;
   }
 
-  .footer {
+  .app-footer {
     page-break-after: always;
   }
   /* mobile */
@@ -96,7 +96,6 @@
     :root {
       --bird-fly-speed: 25s;
       /* --color-global-bg-deg: 45deg; */
-      --centered-content-width: 91.8%;
     }
   }
 

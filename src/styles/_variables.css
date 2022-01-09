@@ -77,7 +77,6 @@
   --color-brand: var(--yellow1);
   --brand-text-shadow: -5px 5px 10px #ab870a;
   --bird-fly-speed: 90s;
-  --centered-content-width: 61.8%;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 767px;
@@ -129,7 +128,6 @@
   :root {
     --bird-fly-speed: 25s;
     /* --color-global-bg-deg: 45deg; */
-    --centered-content-width: 91.8%;
     --comment-margin-left: 0;
     --comment-margin-right: 0;
     --satellite-size: 0.3rem;

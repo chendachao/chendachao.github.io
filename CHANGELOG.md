@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.14.0](https://github.com/chendachao/chendachao.github.io/compare/v1.12.6...v1.14.0) (2022-01-10)
+
+
+### Features
+
+* **meta:** add meta for QZone ([12c12de](https://github.com/chendachao/chendachao.github.io/commit/12c12de27ef3d46821e6597a2e1707464095c806))
+* **meta:** fix meta twitter image not shown issue ([ad56561](https://github.com/chendachao/chendachao.github.io/commit/ad565616c19469971438fc0d9db0db7777a13934))
+
+
+### Bug Fixes
+
+* **comment:** fix isso style and bg issue ([c02c48a](https://github.com/chendachao/chendachao.github.io/commit/c02c48ada97357faa4060fdd74f02ceb3db6070c))
+* **i18n:** chores ([84d0676](https://github.com/chendachao/chendachao.github.io/commit/84d0676d8392b74dfa451956eb0ac090122206d4))
+* **meta:** fix meta twitter image not shown issue ([38b41c1](https://github.com/chendachao/chendachao.github.io/commit/38b41c1d0a5b6ae9479978d6c6b9410bf0f86c65))
+
 ## [1.13.0](https://github.com/chendachao/chendachao.github.io/compare/v1.12.6...v1.13.0) (2022-01-10)
 
 

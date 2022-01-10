@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.1](https://github.com/chendachao/chendachao.github.io/compare/v1.14.0...v1.14.1) (2022-01-10)
+
+
+### Bug Fixes
+
+* **node:** fix netlify issue ([b992cd5](https://github.com/chendachao/chendachao.github.io/commit/b992cd5c4b05a2854fa7012f030e4c1c5d163fdd))
+
 ## [1.14.0](https://github.com/chendachao/chendachao.github.io/compare/v1.12.6...v1.14.0) (2022-01-10)
 
 

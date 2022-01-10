@@ -14,10 +14,10 @@ jobs:
         with:
           ref: main
 
-      - name: Use Node.js 14.16.1
+      - name: Use Node.js 16.13.1
         uses: actions/setup-node@v1
         with:
-          node-version: 14.16.1
+          node-version: 16.13.1
           registry-url: https://registry.npmjs.org/
 
       - name: Version Diff
@@ -57,10 +57,10 @@ jobs:
         with:
           ref: main
 
-      - name: Use Node.js 14.16.1
+      - name: Use Node.js 16.13.1
         uses: actions/setup-node@v1
         with:
-          node-version: 14.16.1
+          node-version: 16.13.1
           registry-url: https://registry.npmjs.org/
 
       - name: Cache Yarn modules
@@ -101,10 +101,10 @@ jobs:
         with:
           ref: main
 
-      - name: Use Node.js 14.16.1
+      - name: Use Node.js 16.13.1
         uses: actions/setup-node@v1
         with:
-          node-version: 14.16.1
+          node-version: 16.13.1
 
       - name: download artifact
         uses: actions/download-artifact@main

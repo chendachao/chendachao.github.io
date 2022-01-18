@@ -16,7 +16,7 @@
   "APP.MY_NAME_DESC": "<div class=text-center>Chen Dachao<br/>陈大超</div>",
   "APP.IMA": "I'm a ",
   "APP.WEB_DEVELOPER": "web developer",
-  "APP.WEB_DEVELOPER_DESC": "<div><h3>⚔️ Web Developer & Technology Architect 🥷</h3><hr class='line-h'/>HTML(5)/CSS(3), <strong>Angular</strong>, React, NodeJS/Express, AWS/Serverless,<strong>Linux</strong>, Docker, Nginx, MongoDB</div>",
+  "APP.WEB_DEVELOPER_DESC": "<div><h3>⚔️ Web Developer & Technology Architect 🥷</h3><hr class='line-h'/>HTML(5)/CSS(3), <strong>Angular</strong>, React, NodeJS/Express, AWS/Serverless, <strong>Linux</strong>, Docker, Nginx, MongoDB</div>",
   "APP.LIVING": " living in Shanghai, China.",
   "APP.CURRENT_PROJECT": "I'm working on a project to better helps developers create web components visually with ease.",
   "APP.ILIKE": "I like ",

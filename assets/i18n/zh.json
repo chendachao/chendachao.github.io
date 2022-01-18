@@ -16,7 +16,7 @@
   "APP.MY_NAME_DESC": "<div class=text-center>Chen Dachao<br/>Larry Chen</div>",
   "APP.IMA": "一位来自中国上海的",
   "APP.WEB_DEVELOPER": " WEB 开发者",
-  "APP.WEB_DEVELOPER_DESC": "<div><h3>⚔️ WEB 开发者 & 前端架构师 🥷</h3><hr class='line-h'/>HTML(5)/CSS(3), <strong>Angular</strong>, React, NodeJS/Express, AWS/Serverless,<strong>Linux</strong>, Docker, Nginx, MongoDB</div>",
+  "APP.WEB_DEVELOPER_DESC": "<div><h3>⚔️ WEB 开发者 & 前端架构师 🥷</h3><hr class='line-h'/>HTML(5)/CSS(3), <strong>Angular</strong>, React, NodeJS/Express, AWS/Serverless, <strong>Linux</strong>, Docker, Nginx, MongoDB</div>",
   "APP.LIVING": "。",
   "APP.CURRENT_PROJECT": "目前在做一个可通过可视化的方式创建WEB组件的项目。",
   "APP.ILIKE": "我喜欢 ",

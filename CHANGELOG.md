@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.3](https://github.com/chendachao/chendachao.github.io/compare/v1.14.2...v1.14.3) (2022-01-21)
+
+
+### Features
+
+* **baiduanalytics:** integrate baidu analytics ([72d88ec](https://github.com/chendachao/chendachao.github.io/commit/72d88ecbe77e1766934e6f298d7f709af77d64b1))
+
 ### [1.14.2](https://github.com/chendachao/chendachao.github.io/compare/v1.14.1...v1.14.2) (2022-01-15)
 
 ### [1.14.1](https://github.com/chendachao/chendachao.github.io/compare/v1.14.0...v1.14.1) (2022-01-10)

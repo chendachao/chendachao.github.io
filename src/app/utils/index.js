@@ -140,7 +140,9 @@ export const geoFindMe = () => {
 };
 
 export const ipLookUp = () => {
-  return fetch('http://ip-api.com/json')
+  // return fetch('http://ip-api.com/json')
+  const key = process.env.EXTREME_IP_LOOKUP_KEY;
+  return fetch(`https://extreme-ip-lookup.com/json/?key=${key}`)
   .then(data => data.json())
   .then(response => {
     console.log('User\'s Location Data is ', response);
@@ -185,6 +187,7 @@ export const injectBaiduAnalytics = () => {
   (function() {
     var hm = document.createElement('script');
     hm.src = 'https://hm.baidu.com/hm.js?566887a8a643fe1eb0067f1c15c33a2a';
+    hm.defer = true;
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(hm, s);
   })();

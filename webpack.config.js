@@ -93,7 +93,7 @@ const commonConfig = merge([
         meta: {
           'Content-Security-Policy': {
             'http-equiv': 'Content-Security-Policy',
-            'content': `default-src 'self' data: gap: 'unsafe-eval' larrychen.tech instant.page platform-api.sharethis.com platform-cdn.sharethis.com l.sharethis.com count-server.sharethis.com www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/;
+            'content': `default-src 'self' data: gap: 'unsafe-eval' larrychen.tech instant.page platform-api.sharethis.com platform-cdn.sharethis.com l.sharethis.com count-server.sharethis.com www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/ http://ip-api.com/json https://hm.baidu.com;
                   style-src 'self' http: https: 'unsafe-inline';
                   script-src 'self' http: https: 'unsafe-inline' 'unsafe-eval';
                   object-src 'none';

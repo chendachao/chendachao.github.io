@@ -63,6 +63,20 @@ export const tryCatch = (tryer) => {
   }
 };
 
+export const createLink = ({src, rel}) => {
+  const link = document.createElement('link');
+  link.setAttribute('rel', rel);
+  link.src = src;
+  return link;
+};
+
+export const createScript = ({src, defer}) => {
+  const script = document.createElement('script');
+  script.src = src;
+  script.defer = defer;
+  return script;
+};
+
 export const getDefaultHTMLPolicy = () => {
   let defaultHTMLPolicy;
   /* global trustedTypes */
@@ -80,4 +94,114 @@ export const setEscapedHTML = (element, string) => {
     string = defaultHTMLPolicy.createHTML(string);
   }
   element.innerHTML = string;
+};
+
+export const isChinaTimezone = () => {
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  console.log('User\'s timezone', timezone);
+  if (['Asia/Shanghai', 'Asia/Hong_Kong', 'Asia/Macau', 'Asia/Beijing'].includes(timezone)) {
+    return true;
+  } else {
+    // WARNING: There are other countries in the same timezone
+    const offset = new Date().getTimezoneOffset();
+    if (offset/60 == -8) {
+      console.log('Hello from China! Maybe!!!');
+      return true;
+    }
+  }
+};
+
+// browser compatibility issue or user may denied Geolocation
+export const geoFindMe = () => {
+  return new Promise((resolve, reject) => {
+    if (!('geolocation' in navigator)){
+      // geolocation is not supported
+      // get your location some other way
+      console.log('Geolocation is not supported by your browser');
+      reject();
+    }
+    function success(position) {
+      // for when getting location is a success
+      var latitude  = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      console.log('latitude', latitude,
+      'longitude', longitude);
+      // http://api.geonames.org/countryCodeJSON?formatted=true&lat=47.03&lng=10.2&username=demo&style=full
+      // getCountryCodeByGeocoding(longitude, latitude)
+      resolve();
+    }
+    function error(error_message) {
+       // for when getting location results in an error
+       console.error('An error has occured while retrieving location', error_message);
+       reject();
+    }
+    navigator.geolocation.getCurrentPosition(success, error);
+  });
+};
+
+export const ipLookUp = () => {
+  return fetch('http://ip-api.com/json')
+  .then(data => data.json())
+  .then(response => {
+    console.log('User\'s Location Data is ', response);
+    console.log('User\'s Country', response.country);
+    return response.countryCode;
+  })
+  .catch(err => {
+    console.log('Request failed.  Returned status of', err);
+    return;
+  });
+};
+
+export const injectGoogleAnalytics = () => {
+  // <!-- Google Analytics -->
+  const preconnectLink = createLink({
+    src: 'https://www.google-analytics.com',
+    rel: 'preconnect'
+  });
+  const dnsPrefetchLink = createLink({
+    src: 'https://www.google-analytics.com',
+    rel: 'dns-prefetch'
+  });
+  // fallback
+  const gmScript = createScript({
+    src: 'https://www.googletagmanager.com/gtag/js?id=UA-143770576-1',
+    defer: true
+  });
+  const gtScript = createScript({
+    src: 'https://www.googletagmanager.com/gtag/js?id=UA-143770576-1',
+    defer: true
+  });
+
+  document.head.appendChild(preconnectLink);
+  document.head.appendChild(dnsPrefetchLink);
+  document.head.appendChild(gmScript);
+  document.head.appendChild(gtScript);
+};
+
+export const injectBaiduAnalytics = () => {
+  //  <!-- Baidu Analytics -->
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?566887a8a643fe1eb0067f1c15c33a2a';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+};
+
+export const initAnalytics = () => {
+  const countryCode = ipLookUp();
+  countryCode.then(code => {
+    if ('CN' === code) {
+      injectBaiduAnalytics();
+    } else if (isChinaTimezone()) {
+      injectBaiduAnalytics();
+    } else {
+      injectGoogleAnalytics();
+    }
+  }).catch(err => {
+    console.error('IP lookup failed', err);
+    injectBaiduAnalytics();
+  });
 };

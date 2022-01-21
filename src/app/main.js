@@ -4,7 +4,7 @@ import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import * as Sentry from '@sentry/browser';
 import notify from './utils/notify';
 // import notify3 from './utils/notify3';
-import { isIE, setEscapedHTML } from './utils';
+import { isIE, setEscapedHTML, initAnalytics } from './utils';
 import { scrollToTop } from './utils/scroll';
 
 import Theme from './components/theme';
@@ -206,6 +206,10 @@ window.addEventListener('load', function () {
 
   window.addEventListener('online', updateOnlineStatus);
   window.addEventListener('offline', updateOnlineStatus);
+
+  if (process.env.APP_ENV === 'production') {
+    initAnalytics();
+  }
 });
 
 const globalErrorHandler = event => {

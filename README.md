@@ -39,7 +39,8 @@
 - [SVG Sprit](https://svgsprit.es/) - has some issues, be caution with it.
 - [Hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
 - [Emoji](http://xahlee.info/comp/unicode_arrows.html)
-- [Open Emoji](https://openmoji.org/)
+- [Open Emoji](https://openmoji.org/)　
+- [Word 2 Emoji](https://translate.yandex.com/?lang=en-emj&text=candies)　
 
 ## TODOs:
 - ✅ JSON description for developer view
@@ -97,7 +98,10 @@
 - [CSS Animations on Demand](https://animista.net/)
 - [Comparison table of HTML special character encoding for web pages](https://www.22vd.com/33993.html)
 - [sharethis](https://platform.sharethis.com/)
-
+- [IP Geolocation API](https://ip-api.com/)
+- [Free IP Lookup Geolocation API](https://extreme-ip-lookup.com/)
+- [Locate and identify website visitors by IP address](https://ipstack.com/)
+- [GeoNames WebServices overview](https://www.geonames.org/export/ws-overview.html)
 
 PS:
   - [JSON description](https://chendachao.netlify.app/assets/data/en/chendachao.json)

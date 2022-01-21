@@ -97,18 +97,22 @@ export const setEscapedHTML = (element, string) => {
 };
 
 export const isChinaTimezone = () => {
-  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  console.log('User\'s timezone', timezone);
-  if (['Asia/Shanghai', 'Asia/Hong_Kong', 'Asia/Macau', 'Asia/Beijing'].includes(timezone)) {
-    return true;
-  } else {
-    // WARNING: There are other countries in the same timezone
-    const offset = new Date().getTimezoneOffset();
-    if (offset/60 == -8) {
-      console.log('Hello from China! Maybe!!!');
-      return true;
-    }
+  let timezone;
+  try {
+    timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    console.log('User\'s timezone', timezone);
+  } catch (err) {
+    console.log('Not support Intl.DateTimeFormat');
   }
+
+  // WARNING: There are other countries in the same timezone
+  const offset = new Date().getTimezoneOffset();
+  if (offset/60 == -8) {
+    console.log('Hello from China! Maybe!!!');
+  }
+
+  return ['Asia/Shanghai', 'Asia/Hong_Kong', 'Asia/Macau', 'Asia/Beijing'].includes(timezone)
+        || offset/60 == -8;
 };
 
 // browser compatibility issue or user may denied Geolocation
@@ -194,17 +198,18 @@ export const injectBaiduAnalytics = () => {
 };
 
 export const initAnalytics = () => {
-  const countryCode = ipLookUp();
-  countryCode.then(code => {
-    if ('CN' === code) {
+  if (isChinaTimezone()) {
+    ipLookUp().then(code => {
+      if ('CN' === code) {
+        injectBaiduAnalytics();
+      } else {
+        injectGoogleAnalytics();
+      }
+    }).catch(err => {
+      console.error('IP lookup failed', err);
       injectBaiduAnalytics();
-    } else if (isChinaTimezone()) {
-      injectBaiduAnalytics();
-    } else {
-      injectGoogleAnalytics();
-    }
-  }).catch(err => {
-    console.error('IP lookup failed', err);
-    injectBaiduAnalytics();
-  });
+    });
+  } else {
+    injectGoogleAnalytics();
+  }
 };

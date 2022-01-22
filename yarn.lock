@@ -6605,7 +6605,7 @@ isobject@^3.0.0, isobject@^3.0.1:
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
 
-javascript-obfuscator@^3.0.0:
+javascript-obfuscator@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/javascript-obfuscator/-/javascript-obfuscator-3.0.0.tgz#97f4a1d256798b9707be4f3732f6523d599461d8"
   integrity sha512-uktiqchzVDabd4ne5baz3D1gapCKrdRcma3zsyODrtsmJEnof5E21Fou0aXZbzyB3a0HOlQnXkRlq/QcuEGo3w==
@@ -7446,9 +7446,9 @@ nan@^2.12.1:
   integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==
 
 nanoid@^3.1.20, nanoid@^3.1.22:
-  version "3.1.22"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.22.tgz#b35f8fb7d151990a8aebd5aa5015c03cf726f844"
-  integrity sha512-/2ZUaJX2ANuLtTvqTlgqBQNJoQO398KyJgZloL0PZkC0dpysjncRUPsFe3DUPzz/y3h+u7C46np8RMuvF3jsSQ==
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.2.0.tgz#62667522da6673971cca916a6d3eff3f415ff80c"
+  integrity sha512-fmsZYa9lpn69Ad5eDn7FMcnnSR+8R34W9qJEijxYhTbfOWzr22n1QxCMzXLK+ODyW2973V3Fux959iQoUxzUIA==
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -10707,7 +10707,7 @@ webpack-notifier@1.13.0:
     node-notifier "^9.0.0"
     strip-ansi "^6.0.0"
 
-webpack-obfuscator@^3.5.0:
+webpack-obfuscator@3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/webpack-obfuscator/-/webpack-obfuscator-3.5.0.tgz#33d02216258398c7dc52baa84c525e36a7ef5b2f"
   integrity sha512-4/r6y8Dsa1Mg05RhheJ30+5IgnNLc6zP0ncTF/LiWONSJiorFkQZeKw9Blk8WNRQatZqZY73bd3im4DoDaCBCw==

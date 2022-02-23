@@ -43,18 +43,18 @@
 - [Word 2 Emoji](https://translate.yandex.com/?lang=en-emj&text=candies)　
 
 ## TODOs:
-- ✅ JSON description for developer view
-- ✅ More social icons
-- ✅ Share on Wechat, QQ, twitter and so on.
+- [x] JSON description for developer view
+- [x] More social icons
+- [x] Share on Wechat, QQ, twitter and so on.
 - [ ] Show rainbow sometimes.
 - [ ] FM/Music section.
-- ✅ My projects section.
-- ✅ Intro for all sections.
-- ✅ Change them to gray on specific day.
-- ✅ [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe Up✅e' button
-- ✅ [PWA] Update alert
+- [x] My projects section.
+- [x] Intro for all sections.
+- [x] Change them to gray on specific day.
+- [x] [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe' button
+- [x] [PWA] Update alert
 - [ ] [Sentry] Update all sourcemaps to Sentry
-- ✅ Comments
+- [x] Comments
 
 ## PWA Debug:
 1. Run command `yarn build:w`.

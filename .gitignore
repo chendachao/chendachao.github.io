@@ -4,3 +4,4 @@ debug.log
 stats.json
 .eslintcache
 .tmp
+yarn-error.log

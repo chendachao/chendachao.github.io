@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.4](https://github.com/chendachao/chendachao.github.io/compare/v1.14.3...v1.14.4) (2022-02-23)
+
+
+### Features
+
+* **lib:** upgrade lib ([d75dfd8](https://github.com/chendachao/chendachao.github.io/commit/d75dfd85f139a4db6f8c572f8aae2e693a9ddab4))
+
+
+### Bug Fixes
+
+* **countrycode:** change get country code api ([dc3f64d](https://github.com/chendachao/chendachao.github.io/commit/dc3f64d51e4835e10672de22132165da2ea41ad6))
+* **countrycode:** change get country code api ([e2a0291](https://github.com/chendachao/chendachao.github.io/commit/e2a0291844741ef8f179a650049eb8ada467d144))
+
 ### [1.14.3](https://github.com/chendachao/chendachao.github.io/compare/v1.14.2...v1.14.3) (2022-01-21)
 
 

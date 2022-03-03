@@ -106,8 +106,10 @@
     "workbox-webpack-plugin": "6.2.4"
   },
   "dependencies": {
+    "@ppzp/noty": "0.0.3",
     "@sentry/browser": "6.11.0",
     "@sentry/tracing": "6.11.0",
+    "alertifyjs": "1.13.1",
     "axios": "0.21.2",
     "bowser": "2.11.0",
     "core-js": "3.16.3",

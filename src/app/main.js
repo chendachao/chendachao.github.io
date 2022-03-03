@@ -4,6 +4,7 @@ import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import * as Sentry from '@sentry/browser';
 import notify from './utils/notify';
 // import notify3 from './utils/notify3';
+import notify4 from './utils/notify4';
 import { isIE, setEscapedHTML, initAnalytics } from './utils';
 import { scrollToTop } from './utils/scroll';
 
@@ -97,8 +98,14 @@ if (isIE()) {
 // const test = document.querySelector('.test');
 // test.addEventListener('click', () => {
 //   // notify3('test', {type: 'error'});
-//   notify.info(i18n.format({id: 'APP.NEW_VERSION_BODY'}), i18n.format({id: 'APP.NEW_VERSION_TITLE'}), {
-//     timeOut: 0,
+//   // notify.info(i18n.format({id: 'APP.NEW_VERSION_BODY'}), i18n.format({id: 'APP.NEW_VERSION_TITLE'}), {
+//   //   timeOut: 0,
+//   //   onclick: () => {
+//   //     window.location.reload();
+//   //   },
+//   // });
+//   notify4.success('一条普通通知', '通知内容', {
+//     duration: 0,
 //     onclick: () => {
 //       window.location.reload();
 //     },

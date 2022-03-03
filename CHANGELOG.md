@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.5](https://github.com/chendachao/chendachao.github.io/compare/v1.14.4...v1.14.5) (2022-03-03)
+
+
+### Features
+
+* **chore:** tip on sun ([7dc51a2](https://github.com/chendachao/chendachao.github.io/commit/7dc51a27001868cf2671146ecee817675a2bfd1f))
+
 ### [1.14.4](https://github.com/chendachao/chendachao.github.io/compare/v1.14.3...v1.14.4) (2022-02-23)
 
 

@@ -10,23 +10,23 @@
   --gray8: #343a40;
   --gray9: #212529;
   --black: #000;
-  --black2: rgba(0, 0, 0, 0.17);
-  --blue1: rgb(29, 26, 79);
+  --black2: rgb(0 0 0 / 17%);
+  --blue1: rgb(29 26 79);
   --blue2: #3b5998;
   --blue3: #00aced;
   --blue4: #178bb7;
-  --purple1: rgb(128, 13, 206);
-  --purple2: rgba(131, 58, 180, 1);
+  --purple1: rgb(128 13 206);
+  --purple2: rgb(131 58 180 / 100%);
   --purple3: #833ab4;
   --pink1: #f166b2;
   --red1: #d00;
   --red2: #f20;
   --red3: #f33;
-  --red4: rgb(236, 61, 61);
-  --red5: rgba(209, 63, 63, 1);
+  --red4: rgb(236 61 61);
+  --red5: rgb(209 63 63 / 100%);
   --orange1: #f1a50d;
-  --orange2: rgb(220, 144, 37);
-  --orange3: rgba(194, 141, 65, 1);
+  --orange2: rgb(220 144 37);
+  --orange3: rgb(194 141 65 / 100%);
   --orange4: #ab870a;
   --orange5: #f5b45a;
   --orange6: #fc8b53;
@@ -48,9 +48,9 @@
   --green: var(--green1);
   --cyan: var(--cyan1);
   --gray: var(--gray5);
-  --subtle: rgba(0, 0, 0, 0.1);
-  --subtle2: rgba(0, 0, 0, 0.05);
-  --subtle3: rgba(0, 0, 0, 0.3);
+  --subtle: rgb(0 0 0 / 10%);
+  --subtle2: rgb(0 0 0 / 5%);
+  --subtle3: rgb(0 0 0 / 30%);
   --text-highlight: var(--orange1);
   --text-highlight2: var(--yellow1);
   --text-color: var(--white);
@@ -63,12 +63,14 @@
   --bg-gray: #fff;
   --color-global-bg-deg: 45deg;
   --color-global-bg-fallback-light: #833ab4;
-  --color-global-bg-fallback-dark: rgb(29, 26, 79);
-  --color-global-bg-light: linear-gradient(var(--color-global-bg-deg), rgb(28 17 115) 0%, rgb(238 36 36) 70%, rgb(220, 144, 37) 100%);
+  --color-global-bg-fallback-dark: rgb(29 26 79);
+  --color-global-bg-light: linear-gradient(var(--color-global-bg-deg), rgb(28 17 115) 0%, rgb(238 36 36) 70%, rgb(220 144 37) 100%);
   --color-global-bg-dark: linear-gradient(var(--color-global-bg-deg), rgb(1 20 86) 0%, rgb(107 3 109) 100%);
+
   /* --color-global-bg-dark: linear-gradient(var(--color-global-bg-deg), rgba(19,0,45,1) 0%, rgba(19,0,45,1) 0%, rgba(92,16,160,1) 100%); */
   --color-global-bg-gray: gray;
   --color-card-bg: radial-gradient(circle farthest-corner at right bottom, #9e1985 0, #d08452 100%);
+
   /* --color-moon-bg: linear-gradient(gold, #d00); */
   --color-moon-bg: linear-gradient(to top, #d00 0%, #fc8b53 50%, #fdd55a 100%);
   --color-moon-bg-size: 200% 200%;
@@ -97,9 +99,10 @@
   --github: #292626;
   --slack: var(--white);
   --telegram: #039be5;
+
   /* --reddit: #ff5700; */
   /* #45160814; */
-  --stackoverflow: rgb(250, 250, 251);
+  --stackoverflow: rgb(250 250 251);
   --comment-margin-left: -4em;
   --comment-margin-right: -4em;
   --satellite-color: var(--orange1);
@@ -119,6 +122,7 @@
     --color-card-bg: radial-gradient(circle farthest-corner at right bottom, #2c20a6 0, #c642db 100%);
   }
 }
+
 /* :root [data-theme="gray"] {
 } */
 /* Resposible varaibles */
@@ -127,12 +131,14 @@
   only screen and (device-width: 767px) {
   :root {
     --bird-fly-speed: 25s;
+
     /* --color-global-bg-deg: 45deg; */
     --comment-margin-left: 0;
     --comment-margin-right: 0;
     --satellite-size: 0.3rem;
   }
 }
+
 /* Detecting Hover-Capable Devices */
 /* @media (hover:hover) and (pointer:fine) {
 } */

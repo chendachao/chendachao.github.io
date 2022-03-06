@@ -1,6 +1,6 @@
-@import '_variables';
-@import '_animations';
-@import '_utilities';
+@import 'variables';
+@import 'animations';
+@import 'utilities';
 @import 'print';
 @import 'common';
 @import 'comment';

@@ -5,6 +5,7 @@
   font-family: var(--font-family-sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   /* Bugfix for blue border when tab on modile and tablet devices */
   /* -webkit-tap-highlight-color: rgba(255, 255, 255, 0); */
   -webkit-tap-highlight-color: transparent;
@@ -23,6 +24,7 @@
   background-color: var(--selection-bg);
   color: var(--black);
 }
+
 /* fix CSS3 gradient background set !90deg on body doesn't stretch but instead repeats? */
 
 /* https://stackoverflow.com/a/3294418/6294371 */
@@ -42,7 +44,6 @@ body {
 } */
 
 /* fix end */
-
 body::before,
 body::after {
   content: '';
@@ -98,6 +99,7 @@ body {
   color: var(--text-color);
   animation: fade-in 3s ease;
   will-change: opacity;
+
   /* overflow-x: hidden; */
   /* display: flex;
   flex-direction: column;
@@ -122,6 +124,7 @@ body {
   grid-column: 1 / -1;
   display: flex;
   flex-direction: column;
+  /* stylelint-disable-next-line */
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -139,6 +142,7 @@ body {
 
 .left-side {
   grid-column: span 1;
+
   /* width: clamp(100px, 50px, 200px); */
 }
 
@@ -160,16 +164,13 @@ body {
   .app-main {
     grid-template-rows: 1fr auto auto;
   }
-
   .left-side {
     grid-row: 2;
     grid-column: 1 / -1;
   }
-
   .app-content {
     grid-column: 1 / -1;
   }
-
   .right-side {
     grid-column: 1 / -1;
   }
@@ -205,6 +206,7 @@ img[data-src] {
 .bird-small-left,
 .bird-small-right {
   position: absolute;
+
   /* open hardware acceleration */
   transform: translateZ(0);
 }
@@ -262,7 +264,7 @@ img[data-src] {
   z-index: 70;
   opacity: 1;
   top: 45px;
-  left: 0px;
+  left: 0;
   width: 10px;
   height: 8px;
   border: 2px solid var(--black);
@@ -289,6 +291,7 @@ img[data-src] {
   border-radius: 50%;
   background: var(--color-moon-bg);
   background-size: var(--color-moon-bg-size);
+
   /* open hardware acceleration */
   transform: translateZ(0);
   animation: colorize 24s 0s cubic-bezier(0.2, 1.05, 0.45, 0.94) infinite alternate, rise 5s;
@@ -310,6 +313,7 @@ img[data-src] {
   width: 1vw;
   height: 1vw;
   font-size: var(--satellite-size);
+
   /* background: var(--satellite-color); */
   border-radius: 50%;
   will-change: transform;
@@ -332,6 +336,7 @@ img[data-src] {
   height: calc(5em + 4vw) !important;
   position: relative;
   transform-origin: bottom;
+
   /* color: var(--color-brand); */
   text-shadow: var(--brand-text-shadow);
   transition: transform ease-in-out 3s;
@@ -340,6 +345,7 @@ img[data-src] {
 .brand-icon:hover {
   animation: jump infinite 5s cubic-bezier(0.28, 0.84, 0.42, 1);
 }
+
 /* .brand-icon:hover.flip-vertical-right {
   animation: flip-vertical-right infinite 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 } */
@@ -349,6 +355,7 @@ img[data-src] {
   text-align: justify;
   font-weight: 900;
   font-size: calc(1em + 1vw);
+
   /* font-size: clamp(min, viewport-width-unit, max); */
   /* letter-spacing: -0.1vw; */
   padding: 1rem;
@@ -377,6 +384,7 @@ img[data-src] {
   font-style: italic;
   font-weight: bold;
   width: 10rem;
+
   /* margin-top: -10px; */
   font-size: 7px;
   position: absolute;
@@ -388,6 +396,7 @@ img[data-src] {
 @media only screen and (max-width: 767px), only screen and (device-width: 767px) {
   .wechat-qrcode-desc {
     font-size: 6px;
+
     /* margin-top: -5px;
     line-height: 7px; */
     width: 5rem;
@@ -405,6 +414,7 @@ img[data-src] {
 @media only screen and (max-width: 426px), only screen and (device-width: 426px) {
   .social-icons {
     flex-wrap: wrap-reverse;
+
     /* justify-content: space-evenly; */
   }
 }
@@ -430,6 +440,7 @@ img[data-src] {
   color: var(--text-color);
   display: flex;
   align-items: center;
+
   /* background: linear-gradient(0deg, var(--bg-light), var(--bg-white)); */
   /* transition: 1s; */
   /* transition: all 0.3s ease 0s; */
@@ -462,6 +473,7 @@ img[data-src] {
   left: 0;
   right: 0;
   top: 0;
+
   /* transform: translate(-50%, -50%); */
   z-index: 1;
   background: linear-gradient(135deg, transparent 30%, var(--bg-gray) 50%, transparent 70%);
@@ -485,6 +497,7 @@ img[data-src] {
 
 .icon-snapchat-ghost {
   background: var(--snapchat);
+
   /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
@@ -614,6 +627,7 @@ details.my-portfolio[open] summary + div {
 .mobile-qrcode {
   width: 100% !important;
   aspect-ratio: 1 / 1;
+
   /* object-fit: contain; */
   object-fit: cover;
   border-radius: 4px;
@@ -624,8 +638,10 @@ details.my-portfolio[open] summary + div {
 
 .mobile-qrcode:hover {
   transform: translate3d(0, -5px, 0);
-  box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 81, 0.01),
-    6px 6px 6px 6px rgba(34, 33, 81, 0.15);
+  /* stylelint-disable */
+  box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px 0 rgba(34, 33, 81, 1%),
+    6px 6px 6px 6px rgba(34, 33, 81, 15%);
+  /* stylelint-enable */
 }
 
 .corner-bars {
@@ -648,8 +664,8 @@ details.my-portfolio[open] summary + div {
   width: 24px;
   height: 24px;
   stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
+  stroke: currentcolor;
+  fill: currentcolor;
 }
 
 .no-scirpt-warning-msg {

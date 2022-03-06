@@ -2,7 +2,7 @@
 /* Override */
 .tippy-box {
   border-radius: 0;
-  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(1px 1px 3px rgb(0 0 0 / 25%));
   opacity: 1;
   color: #fafafa;
   max-width: 370px !important;
@@ -10,6 +10,7 @@
 
 .tippy-box .tippy-content {
   text-align: left;
+  
   /* letter-spacing: -0.1vw; */
 }
 
@@ -39,9 +40,10 @@
   outline: none;
 }
 
+/* stylelint-disable-next-line */
 .introjs-helperLayer {
   background: transparent !important;
-  box-shadow: 0 0 0 9999px rgba(25, 24, 24, 0.51) !important;
+  box-shadow: 0 0 0 9999px rgb(25 24 24 / 51%) !important;
 }
 
 .introjs-tooltiptext {
@@ -56,25 +58,21 @@
 .introjs-overlay {
   background: transparent !important;
 }
+
 /* bugfix for arrow */
 .introjs-arrow.top-middle {
-  border-top-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: #ecf0f1;
-  border-left-color: transparent;
+  border-color: transparent transparent #ecf0f1;
 }
 
 .introjs-arrow.bottom-middle {
-  border-top-color: #ecf0f1;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
+  border-color: #ecf0f1 transparent transparent;
 }
 
 .introjs-arrow.top-right {
   border: 5px solid transparent;
 }
+
 /* @ppzp/noty */
 .ppz-noty-item1 .text {
-  color: rgba(0, 0, 0);
+  color: rgb(0 0 0);
 }

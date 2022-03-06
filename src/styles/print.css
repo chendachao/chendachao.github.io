@@ -8,7 +8,6 @@
 */
 /* print mode style */
 @media print {
-
   *,
   *::before,
   *::after {
@@ -18,9 +17,9 @@
     box-shadow: none !important;
     background: var(--color-global-bg-fallback) !important;
     -webkit-print-color-adjust: exact;
+
     /* print-color-adjust: exact; */
   }
-
   *,
   *::before,
   *::after,
@@ -42,11 +41,11 @@
   body {
     background-attachment: fixed;
   }
-
   body>*:not(.app-main):not(.app-footer):not([class^="print-"]),
   .print-hidden {
     display: none !important;
   }
+
   /* a[href]:after {
     content: ' (' attr(href) ')';
   } */
@@ -70,31 +69,29 @@
     top: 20px;
     display: inherit !important;
   }
-
   details.my-portfolio {
     border: 1px solid var(--color-shadow2);
   }
-
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3;
   }
-
   h2,
   h3 {
     page-break-after: avoid;
   }
-
   .app-footer {
     page-break-after: always;
   }
+
   /* mobile */
   @media (max-width: 767px),
   (device-width: 767px) {
     :root {
       --bird-fly-speed: 25s;
+
       /* --color-global-bg-deg: 45deg; */
     }
   }

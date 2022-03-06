@@ -8,6 +8,7 @@
 .comment-container > summary {
   list-style: revert;
 }
+
 .comment-container > summary::-webkit-details-marker {
   display: inline-block;
 }
@@ -16,6 +17,7 @@
   pointer-events: none;
   color: var(--text-color);
 }
+
 /* override */
 .comment-container .isso-postbox {
   color: black;
@@ -24,4 +26,5 @@
 .comment-container #isso-thread > h4 {
   display: none;
 }
+
 /* override end */

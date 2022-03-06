@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
@@ -12,11 +13,14 @@ const { devMode } = require('./config');
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
     historyApiFallback: true,
-    stats: 'errors-only',
-    // stats: {
-    //   errors: true,
-    //   warnings: false
-    // },
+    devMiddleware: {
+      stats: 'errors-only',
+      // stats: {
+      //   errors: true,
+      //   warnings: false
+      // },
+      // writeToDisk: true,
+    },
     // Parse host and port from env to allow customization.
     //
     // If you use Docker, Vagrant or Cloud9, set
@@ -26,23 +30,34 @@ exports.devServer = ({ host, port } = {}) => ({
     // unlike default `localhost`.
     host: host || 'localhost', // Defaults to `localhost`
     port: port || 8088, // Defaults to 8088
-    // contentBase: path.join(__dirname, "/dist"),
-    // writeToDisk: true,
-    overlay: {
-      errors: true,
-      warnings: true,
+    // Dev server client for web socket transport, hot and live reload logic
+    hot: false,
+    client: {
+      overlay: {
+        errors: true,
+        warnings: true,
+      },
+      // progress: true,
     },
-    watchOptions: {
-      // Delay the rebuild after the first change
-      aggregateTimeout: 300,
-
-      // Poll using interval (in ms, accepts boolean too)
-      poll: 1000,
+    static: {
+      staticOptions: {
+        // Delay the rebuild after the first change
+        aggregateTimeout: 300,
+        // Poll using interval (in ms, accepts boolean too)
+        poll: 1000,
+        // watchContentBase: true,
+      },
+      // directory: path.join(__dirname, '/dist'),
+      // serveIndex: true,
+      // watch: true,
     },
+    // watchFiles: path.join(__dirname, '/dist'),
+    // open: {
+    //   target: ['http://localhost:8088', 'http://localhost:8088/stone.html'],
+    // },
     // open: true,
-    // TODO: webpack-dev-server will integrate this feature later
-    after: () => {
-      openBrowser(`http://localhost:${port || 8088}`);
+    onAfterSetupMiddleware: function (devServer) {
+      openBrowser(`http://localhost:${devServer.options.port || 8088}`);
     },
   },
 });
@@ -88,9 +103,9 @@ exports.extractCSS = ({ include, exclude, use = [] }) => {
 
   const prodOptions = {
     esModule: true,
-    modules: {
-      namedExport: true,
-    },
+    // modules: {
+    //   namedExport: true,
+    // },
     publicPath: '',
     // publicPath: (resourcePath, context) => {
     //   return path.relative(path.dirname(resourcePath), context) + '/';

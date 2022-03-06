@@ -7,7 +7,6 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const { ESBuildMinifyPlugin } = require('esbuild-loader');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const { GenerateSW, InjectManifest } = require('workbox-webpack-plugin');
@@ -53,6 +52,7 @@ const commonConfig = merge([
       // ecmaVersion: 5 // work in webpack 5
       // the following setting is required for SRI to work:
       crossOriginLoading: 'anonymous',
+      clean: true,
     },
     target: devMode ? 'web' : 'browserslist',
     resolve: {
@@ -83,7 +83,6 @@ const commonConfig = merge([
       },
     },
     plugins: [
-      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: 'src/index.html',
         title: 'Chen Dachao - 陈大超',
@@ -275,6 +274,12 @@ const productionConfig = merge([
 
 const developmentConfig = merge([
   {
+    entry: {
+      // Runtime code for hot module replacement
+      hot: 'webpack/hot/dev-server.js',
+      // Dev server client for web socket transport, hot and live reload logic
+      client: 'webpack-dev-server/client/index.js?hot=true&live-reload=true',
+    },
     // devtool: 'source-map',
     devtool: 'cheap-module-source-map',
     plugins: [
@@ -300,7 +305,19 @@ const developmentConfig = merge([
   //   use: [parts.autoprefix()]
   // }),
   parts.extractCSS({
-    use: ['css-loader?importLoaders=1', parts.autoprefix()],
+    use: [
+    {
+      loader: 'css-loader',
+      options: {
+        importLoaders: 1,
+        modules: {
+            auto: true,
+            namedExport: true,
+            exportLocalsConvention: 'camelCase',
+        }
+      },
+    },
+    parts.autoprefix()],
   }),
   parts.loadImages(),
 ]);

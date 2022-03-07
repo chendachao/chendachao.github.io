@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.6](https://github.com/chendachao/chendachao.github.io/compare/v1.14.5...v1.14.6) (2022-03-07)
+
+
+### Features
+
+* add poem i18n for sun and star ([f938305](https://github.com/chendachao/chendachao.github.io/commit/f938305552589514d9859ecd0ed932231cd968b0))
+
+
+### Bug Fixes
+
+* style lint issue ([7176e6d](https://github.com/chendachao/chendachao.github.io/commit/7176e6d93b7885e0b8a5ef3e8fa839bff4e2314f))
+
 ### [1.14.5](https://github.com/chendachao/chendachao.github.io/compare/v1.14.4...v1.14.5) (2022-03-03)
 
 

@@ -53,7 +53,7 @@ const I18n = () => {
     )
    */
   function format(i18nMsgObj, opts={}) {
-    const localeMsg = messages[locale];
+    const localeMsg = messages[locale] || {};
     let message = '';
     if (Object.prototype.toString.call(i18nMsgObj) === '[object String]') {
       message = localeMsg[i18nMsgObj] || i18nMsgObj || 'missed i18n msg';

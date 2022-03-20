@@ -70,6 +70,7 @@
 - https://codepen.io/Stockin/pen/jeNQEN
 - https://www.flaticon.com/
 - https://www.veryicon.com/
+- https://css.gg/app
 - https://cssgradient.io/
 - https://coolors.co/gradient-maker/f8dadc-b6edc8-eeacdc
 - https://doodad.dev/gradient-generator/

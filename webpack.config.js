@@ -21,6 +21,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const smp = new SpeedMeasurePlugin();
 
+const cdn = require('./cdn');
+
 const parts = require('./webpack.parts');
 
 const rootPath = process.cwd();
@@ -72,6 +74,7 @@ const commonConfig = merge([
       // runtimeChunk: true,
       splitChunks: {
         chunks: 'all',
+        maxSize: 50000,
         // cacheGroups: {
         //   defaultVendors: {
         //     test: /[\\/]node_modules[\\/]/,
@@ -92,7 +95,7 @@ const commonConfig = merge([
         meta: {
           'Content-Security-Policy': {
             'http-equiv': 'Content-Security-Policy',
-            'content': `default-src 'self' data: gap: 'unsafe-eval' larrychen.tech instant.page platform-api.sharethis.com platform-cdn.sharethis.com l.sharethis.com count-server.sharethis.com www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/ http://ip-api.com/json https://hm.baidu.com https://extreme-ip-lookup.com;
+            'content': `default-src 'self' data: gap: 'unsafe-eval' larrychen.tech instant.page platform-api.sharethis.com platform-cdn.sharethis.com l.sharethis.com count-server.sharethis.com www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/ http://ip-api.com/json https://hm.baidu.com https://extreme-ip-lookup.com https://botd.fpapi.io;
                   style-src 'self' http: https: 'unsafe-inline';
                   script-src 'self' http: https: 'unsafe-inline' 'unsafe-eval';
                   object-src 'none';
@@ -109,6 +112,7 @@ const commonConfig = merge([
         // hash: true,
         minify: !devMode,
         excludeChunks: ['cv', 'stone'],
+        cdn,
       }),
       new HtmlWebpackPlugin({
         template: 'src/index-cv.html',
@@ -192,6 +196,10 @@ const pwaPlugins = [
         handler: 'StaleWhileRevalidate',
       },
       {
+        urlPattern: /^https:\/\/cdn.jsdelivr.net\/npm\//,
+        handler: 'StaleWhileRevalidate',
+      },
+      {
         urlPattern: /\.(?:js|css)$/,
         handler: 'StaleWhileRevalidate',
         options: {
@@ -223,7 +231,7 @@ const pwaPlugins = [
 
 const productionConfig = merge([
   {
-    // devtool: 'source-map',
+    devtool: 'source-map',
     optimization: {
       minimize: true,
       minimizer: [
@@ -241,6 +249,12 @@ const productionConfig = merge([
         // new OptimizeCSSAssetsPlugin({}),
         new CssMinimizerPlugin(),
       ],
+    },
+    externals: {
+      jquery: 'jQuery',
+      'toastr': 'toastr',
+      'dompurify': 'DOMPurify',
+      'axios': 'axios',
     },
     plugins: [
       new CompressionPlugin(),
@@ -281,6 +295,7 @@ const developmentConfig = merge([
       client: 'webpack-dev-server/client/index.js?hot=true&live-reload=true',
     },
     // devtool: 'source-map',
+    // devtool: 'eval-source-map',
     devtool: 'cheap-module-source-map',
     plugins: [
       // new ErrorOverlayPlugin(),
@@ -325,7 +340,10 @@ const developmentConfig = merge([
 module.exports = mode => {
   let webpackConfig = merge(commonConfig, developmentConfig, { mode: 'development' }); // development
   if (mode.analyse) {
-    commonConfig.plugins.push(new BundleAnalyzerPlugin());
+    commonConfig.plugins.push(new BundleAnalyzerPlugin({
+      openAnalyzer: true,
+      analyzerMode: 'server',
+    }));
   }
   if (mode.production) {
     // TODO: workaround for workbox issue https://github.com/GoogleChrome/workbox/issues/1790

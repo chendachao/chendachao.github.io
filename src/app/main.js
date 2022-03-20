@@ -1,7 +1,7 @@
 import 'lazysizes';
 // import a plugin
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
-import * as Sentry from '@sentry/browser';
+// import * as Sentry from '@sentry/browser';
 import notify from './utils/notify';
 // import notify3 from './utils/notify3';
 import notify4 from './utils/notify4';
@@ -97,19 +97,19 @@ if (isIE()) {
 
 // const test = document.querySelector('.test');
 // test.addEventListener('click', () => {
-//   // notify3('test', {type: 'error'});
-//   // notify.info(i18n.format({id: 'APP.NEW_VERSION_BODY'}), i18n.format({id: 'APP.NEW_VERSION_TITLE'}), {
-//   //   timeOut: 0,
-//   //   onclick: () => {
-//   //     window.location.reload();
-//   //   },
-//   // });
-//   notify4.success('一条普通通知', '通知内容', {
-//     duration: 0,
+//   notify.info(i18n.format({id: 'APP.NEW_VERSION_BODY'}), i18n.format({id: 'APP.NEW_VERSION_TITLE'}), {
+//     timeOut: 0,
 //     onclick: () => {
 //       window.location.reload();
 //     },
 //   });
+//   // notify3('test', {type: 'error'});
+//   // notify4.success('一条普通通知', '通知内容', {
+//   //   duration: 0,
+//   //   onclick: () => {
+//   //     window.location.reload();
+//   //   },
+//   // });
 // });
 
 window.addEventListener('load', function () {
@@ -225,7 +225,10 @@ const globalErrorHandler = event => {
   //   message = event.error.stack;
   // }
   notify.error(message, i18n.format({id: 'APP.GLOBAL_ERROR'}));
-  Sentry.captureException(event.error);
+  // Sentry.captureException(event.error);
+  import('@sentry/browser').then(({ captureException }) => {
+    captureException(event.error);
+  });
 };
 
 window.addEventListener('error', globalErrorHandler);

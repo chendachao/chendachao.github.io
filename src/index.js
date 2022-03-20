@@ -1,9 +1,10 @@
 // es6 generator support
-import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+import 'core-js/stable';
 if (process.env.APP_ENV !== 'development') {
   // import './error-tracing';
   import(/* webpackPrefetch: true */ './error-tracing');
+  // import(/* webpackPrefetch: true */ './app/utils/bot-detection');
 }
 
 import notify from '@app/utils/notify';

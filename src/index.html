@@ -108,7 +108,10 @@
       src="https://platform-api.sharethis.com/js/sharethis.js#property=618b38f1a2a2930013a8ebc0&product=inline-reaction-buttons"
     ></script>
 
-    <% if (process.env.APP_ENV === 'production') { %>
+    <% if (process.env.APP_ENV === 'production') { %> <% for(var css of
+    htmlWebpackPlugin.options.cdn.css) { %>
+    <link rel="stylesheet" href="<%=css%>" />
+    <% } %> <% } %> <% if (process.env.APP_ENV === 'production') { %>
     <!-- Hover preload link -->
     <script
       defer
@@ -152,7 +155,7 @@
       <section class="help-icon-menu-bar">
         <button hidden class="help-icon share-btn border-active">
           <svg class="svgicon text-white">
-            <use href="./assets/images/base-symbol-defs.svg#share"></use>
+            <use href="./assets/images/base-sprites.svg#share"></use>
           </svg>
         </button>
         <button
@@ -163,7 +166,7 @@
           data-i18n-attr="data-tippy-content=APP.LANGUAGE_SWITCH"
         >
           <svg class="svgicon text-white">
-            <use href="./assets/images/base-symbol-defs.svg#i18n"></use>
+            <use href="./assets/images/base-sprites.svg#i18n"></use>
           </svg>
         </button>
         <button
@@ -174,7 +177,7 @@
           data-i18n-attr="data-tippy-content=APP.TUTOR_GUIDE"
         >
           <svg class="svgicon text-white">
-            <use href="./assets/images/base-symbol-defs.svg#map"></use>
+            <use href="./assets/images/base-sprites.svg#map"></use>
           </svg>
         </button>
         <button
@@ -185,7 +188,7 @@
           data-i18n-attr="data-tippy-content=APP.TUTOR_HINT_GUIDE"
         >
           <svg class="svgicon text-white">
-            <use href="./assets/images/base-symbol-defs.svg#info"></use>
+            <use href="./assets/images/base-sprites.svg#info"></use>
           </svg>
         </button>
         <button
@@ -197,7 +200,7 @@
           data-i18n-attr="data-tippy-content=APP.NOTIFICATION_SUBSCRIBE"
         >
           <svg class="svgicon text-white">
-            <use href="./assets/images/base-symbol-defs.svg#bell"></use>
+            <use href="./assets/images/base-sprites.svg#bell"></use>
           </svg>
         </button>
         <button
@@ -210,7 +213,7 @@
           data-i18n-attr="data-tippy-content=APP.INSTALL"
         >
           <svg class="svgicon text-white">
-            <use href="./assets/images/base-symbol-defs.svg#install"></use>
+            <use href="./assets/images/base-sprites.svg#install"></use>
           </svg>
         </button>
         <button
@@ -221,7 +224,7 @@
           data-i18n-attr="data-tippy-content=APP.PRINT"
         >
           <svg class="svgicon text-white">
-            <use href="./assets/images/base-symbol-defs.svg#printer"></use>
+            <use href="./assets/images/base-sprites.svg#printer"></use>
           </svg>
         </button>
       </section>
@@ -275,7 +278,7 @@
           <!-- <svg id="step1" class="brand-icon step11 svgicon" width="calc(5em + 4vw)" height="calc(5em + 4vw)" role="img" aria-label="Star">
           <title id="title" lang="en">Star</title>
           <desc>Star</desc>
-          <use href="./assets/images/base-symbol-defs.svg#star"></use>
+          <use href="./assets/images/base-sprites.svg#star"></use>
         </svg> -->
         </div>
         <div class="centered-content text-shadow">
@@ -291,7 +294,7 @@
                 data-i18n-attr="data-tippy-content=APP.DEVELOPER_MODE"
               >
                 <svg class="border-active svgicon text-white">
-                  <use href="./assets/images/base-symbol-defs.svg#code"></use>
+                  <use href="./assets/images/base-sprites.svg#code"></use>
                 </svg>
               </a>
             </div>
@@ -386,7 +389,7 @@
                   <svg class="svg svgicon" role="img" aria-label="Github">
                     <title id="title" lang="en">github</title>
                     <desc>github</desc>
-                    <use href="./assets/images/social-symbol-defs.svg#github"></use>
+                    <use href="./assets/images/social-sprites.svg#github"></use>
                   </svg>
                 </a>
               </li>
@@ -400,7 +403,7 @@
                   <svg class="svg svgicon" role="img" aria-label="Email">
                     <title id="title" lang="en">Email</title>
                     <desc>Email</desc>
-                    <use href="./assets/images/social-symbol-defs.svg#outlook"></use>
+                    <use href="./assets/images/social-sprites.svg#outlook"></use>
                   </svg>
                 </a>
               </li>
@@ -413,7 +416,7 @@
                   <svg class="svg svgicon" role="img" aria-label="wechat">
                     <title id="title" lang="en">wechat</title>
                     <desc>wechat</desc>
-                    <use href="./assets/images/social-symbol-defs.svg#wechat"></use>
+                    <use href="./assets/images/social-sprites.svg#wechat"></use>
                   </svg>
                 </a>
               </li>
@@ -426,7 +429,7 @@
                   <svg class="svg svgicon" role="img" aria-label="Skype">
                     <title id="title" lang="en">Skype</title>
                     <desc>Skype</desc>
-                    <use href="./assets/images/social-symbol-defs.svg#skype"></use>
+                    <use href="./assets/images/social-sprites.svg#skype"></use>
                   </svg>
                 </a>
               </li> -->
@@ -440,7 +443,7 @@
                   <svg class="svg svgicon" role="img" aria-label="Telegram">
                     <title id="title" lang="en">Telegram</title>
                     <desc>Telegram</desc>
-                    <use href="./assets/images/social-symbol-defs.svg#telegram"></use>
+                    <use href="./assets/images/social-sprites.svg#telegram"></use>
                   </svg>
                 </a>
               </li>
@@ -455,7 +458,7 @@
                   <svg class="svg svgicon" role="img" aria-label="Slack">
                     <title id="title" lang="en">Slack</title>
                     <desc>Slack</desc>
-                    <use href="./assets/images/social-symbol-defs.svg#slack"></use>
+                    <use href="./assets/images/social-sprites.svg#slack"></use>
                   </svg>
                 </a>
               </li>
@@ -469,7 +472,7 @@
                   <svg class="svg svgicon" role="img" aria-label="Linkedin">
                     <title id="title" lang="en">Linkedin</title>
                     <desc>Linkedin</desc>
-                    <use href="./assets/images/social-symbol-defs.svg#linkedin"></use>
+                    <use href="./assets/images/social-sprites.svg#linkedin"></use>
                   </svg>
                 </a>
               </li>
@@ -483,7 +486,7 @@
                   <svg class="svg svgicon" role="img" aria-label="Twitter">
                     <title id="title" lang="en">Twitter</title>
                     <desc>Twitter</desc>
-                    <use href="./assets/images/social-symbol-defs.svg#twitter"></use>
+                    <use href="./assets/images/social-sprites.svg#twitter"></use>
                   </svg>
                 </a>
               </li>
@@ -497,7 +500,7 @@
                   <svg class="svg svgicon" role="img" aria-label="Stackoverflow">
                     <title id="title" lang="en">Stackoverflow</title>
                     <desc>Stackoverflow</desc>
-                    <use href="./assets/images/social-symbol-defs.svg#so"></use>
+                    <use href="./assets/images/social-sprites.svg#so"></use>
                   </svg>
                 </a>
               </li>
@@ -524,7 +527,7 @@
             </li> -->
             </ul>
 
-            <details class="my-portfolio step14" id="step4">
+            <details class="my-portfolio step14" id="step4" open>
               <summary class="custom-marker" data-i18n-id="APP.BUSY_WITH">I'm busy with...</summary>
               <div class="container-grid content font-weight-bold">
                 <section
@@ -553,7 +556,7 @@
                     <svg class="svg icon-size-md svgicon" role="img" aria-label="Coder">
                       <title id="title" lang="en">Coder</title>
                       <desc>Coder</desc>
-                      <use href="./assets/images/portfolio-symbol-defs.svg#coder"></use>
+                      <use href="./assets/images/portfolio-sprites.svg#coder"></use>
                       Sorry, your browser does not support inline SVG.
                     </svg>
                   </div>
@@ -576,7 +579,7 @@
                     <svg class="svg icon-size-md svgicon" role="img" aria-label="Blog">
                       <title id="title" lang="en">Blog</title>
                       <desc>Blog</desc>
-                      <use href="./assets/images/portfolio-symbol-defs.svg#rss"></use>
+                      <use href="./assets/images/portfolio-sprites.svg#rss"></use>
                     </svg>
                   </div>
                   <div>Blog</div>
@@ -620,7 +623,7 @@
                     <svg class="svg icon-size-md svgicon" role="img" aria-label="Stone">
                       <title id="title" lang="en">Stone</title>
                       <desc>Stone</desc>
-                      <use href="./assets/images/portfolio-symbol-defs.svg#throwing_a_stone"></use>
+                      <use href="./assets/images/portfolio-sprites.svg#throwing_a_stone"></use>
                     </svg>
                   </div>
                   <div>Stone</div>
@@ -642,7 +645,7 @@
                     <svg class="svg icon-size-md svgicon" role="img" aria-label="Dashboard">
                       <title id="title" lang="en">Dashboard</title>
                       <desc>Dashboard</desc>
-                      <use href="./assets/images/portfolio-symbol-defs.svg#dashboard2"></use>
+                      <use href="./assets/images/portfolio-sprites.svg#dashboard2"></use>
                     </svg>
                   </div>
                   <div>Dashboard</div>
@@ -664,7 +667,7 @@
                     <svg class="svg icon-size-md svgicon" role="img" aria-label="Resumes">
                       <title id="title" lang="en">Resumes</title>
                       <desc>Resumes</desc>
-                      <use href="./assets/images/portfolio-symbol-defs.svg#cv"></use>
+                      <use href="./assets/images/portfolio-sprites.svg#cv"></use>
                     </svg>
                   </div>
                   <div>Resumes</div>
@@ -686,7 +689,7 @@
                     <svg class="svg icon-size-md svgicon" role="img" aria-label="Note">
                       <title id="title" lang="en">Note</title>
                       <desc>Note</desc>
-                      <use href="./assets/images/portfolio-symbol-defs.svg#notepad"></use>
+                      <use href="./assets/images/portfolio-sprites.svg#notepad"></use>
                     </svg>
                   </div>
                   <div>Note</div>
@@ -709,7 +712,7 @@
                     <svg class="svg icon-size-md svgicon" role="img" aria-label="Coding">
                       <title id="title" lang="en">Coding</title>
                       <desc>Coding</desc>
-                      <use href="./assets/images/portfolio-symbol-defs.svg#coding"></use>
+                      <use href="./assets/images/portfolio-sprites.svg#coding"></use>
                       Sorry, your browser does not support inline SVG.
                     </svg>
                   </div>
@@ -728,7 +731,7 @@
               <svg class="svgicon text-black signature" role="img" aria-label="Larry Chen">
                 <title id="title" lang="en">Larry Chen</title>
                 <desc>Larry Chen</desc>
-                <use href="./assets/images/base-symbol-defs.svg#signature"></use>
+                <use href="./assets/images/base-sprites.svg#signature"></use>
               </svg>
             </section>
             <section class="text-center">
@@ -787,7 +790,7 @@
             <svg class="border-active svgicon text-white" role="img" aria-label="QR Code">
               <title id="title" lang="en">QR Code</title>
               <desc>QR Code</desc>
-              <use href="./assets/images/base-symbol-defs.svg#scan-qr-code"></use>
+              <use href="./assets/images/base-sprites.svg#scan-qr-code"></use>
             </svg>
           </button>
         </div>
@@ -860,6 +863,11 @@
         </button>
       </div>
     </dialog>
+
+    <% if (process.env.APP_ENV === 'production') { %> <% for(var js of
+    htmlWebpackPlugin.options.cdn.js) { %>
+    <script type="text/javascript" src="<%=js%>"></script>
+    <% } %> <% } %>
 
     <!-- <script src="./assets/js/xy-polyfill.js" nomodule></script>
     <script src="./assets/js/script.js" type="module"></script> -->

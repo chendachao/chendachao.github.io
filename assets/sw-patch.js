@@ -1,1 +1,3 @@
 self.addEventListener("push",i=>{const o="Welcome!",n={body:i.data.text()},s=self.registration.pushManager.getSubscription().then(function(t){if(Notification.permission==="granted")return self.registration.showNotification(o,n)}).catch(function(t){console.log("Error show notification",t)});i.waitUntil(s)}),self.addEventListener("message",function(i){i.data&&i.data.action==="SKIP_WAITING"&&(console.log("Inside Service Worker",i.data.action),self.skipWaiting())});
+
+//# sourceMappingURL=sw-patch.js.map

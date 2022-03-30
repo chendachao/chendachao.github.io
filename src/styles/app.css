@@ -201,6 +201,12 @@ img[data-src] {
   opacity: 1;
 }
 
+@media (prefers-reduced-motion) {
+  .bird-fly {
+    display: none
+  }
+}
+
 .bird-big-left,
 .bird-big-right,
 .bird-small-left,
@@ -317,11 +323,13 @@ img[data-src] {
   /* background: var(--satellite-color); */
   border-radius: 50%;
   will-change: transform;
+  animation: orbit 60s linear infinite;
 }
 
-@media (prefers-reduced-motion: no-preference){
+@media (prefers-reduced-motion) {
   .satellite {
-    animation: orbit 60s linear infinite;
+    animation: none;
+    display: none
   }
 }
 
@@ -344,6 +352,12 @@ img[data-src] {
 
 .brand-icon:hover {
   animation: jump infinite 5s cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+@media (prefers-reduced-motion) {
+  .brand-icon:hover {
+    animation-name: none
+  }
 }
 
 /* .brand-icon:hover.flip-vertical-right {

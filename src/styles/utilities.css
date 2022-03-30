@@ -135,6 +135,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   box-decoration-break: clone;
+  animation: color-change 6s alternate infinite
 }
 
 [data-theme="dark"] .highlight:hover {

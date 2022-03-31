@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.8](https://github.com/chendachao/chendachao.github.io/compare/v1.14.7...v1.14.8) (2022-03-31)
+
+
+### Bug Fixes
+
+* prefers-reduced-motion ([050c505](https://github.com/chendachao/chendachao.github.io/commit/050c505d28929591d03a1636cd9fdaf9f7bb5130))
+* prefers-reduced-motion & html validation check ([30946b9](https://github.com/chendachao/chendachao.github.io/commit/30946b997709d4bc25cec929171a2fa612859b39))
+
 ### [1.14.7](https://github.com/chendachao/chendachao.github.io/compare/v1.14.6...v1.14.7) (2022-03-20)
 
 ### [1.14.6](https://github.com/chendachao/chendachao.github.io/compare/v1.14.5...v1.14.6) (2022-03-07)

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.11](https://github.com/chendachao/chendachao.github.io/compare/v1.14.10...v1.14.11) (2022-05-03)
+
+
+### Bug Fixes
+
+* **meta:** wechat social share link ([49816a8](https://github.com/chendachao/chendachao.github.io/commit/49816a8d2481743c19aeedf8f4434d4f6bf7803d))
+
 ### [1.14.10](https://github.com/chendachao/chendachao.github.io/compare/v1.14.9...v1.14.10) (2022-05-03)
 
 

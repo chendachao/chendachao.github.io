@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.10](https://github.com/chendachao/chendachao.github.io/compare/v1.14.9...v1.14.10) (2022-05-03)
+
+
+### Bug Fixes
+
+* **meta:** social share link preview image can not work issue ([db6b44b](https://github.com/chendachao/chendachao.github.io/commit/db6b44b63922201166fead9598018114637057d8))
+
 ### [1.14.9](https://github.com/chendachao/chendachao.github.io/compare/v1.14.8...v1.14.9) (2022-05-03)
 
 ### [1.14.8](https://github.com/chendachao/chendachao.github.io/compare/v1.14.7...v1.14.8) (2022-03-31)

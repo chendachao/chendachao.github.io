@@ -33,18 +33,19 @@
     <!-- title will be overrided by scripts according the language user selected -->
     <title><%= htmlWebpackPlugin.options.title %></title>
     <meta name="author" content="Larry Chen" />
-    <meta name="description" content="Chen Dachao's Homepage." />
+    <meta name="description" content="Welcome my friend, click to know more about me 👉" />
     <meta name="keywords" content="Homepage,web,webpack,es6,html,css,animation" />
 
     <!-- <meta property="fb:app_id" content="234324443" /> -->
 
     <!-- For Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:domain" content="<%= htmlWebpackPlugin.options.hostname %>" />
     <meta name="twitter:site" content="<%= htmlWebpackPlugin.options.href %>" />
     <meta name="twitter:creator" content="Larry Chen" />
     <meta name="twitter:url" content="<%= htmlWebpackPlugin.options.href %>" />
     <meta name="twitter:title" content="Chen Dachao's Homepage." />
-    <meta name="twitter:description" content="Chen Dachao's Homepage." />
+    <meta name="twitter:description" content="Welcome my friend, click to know more about me 👉" />
     <!-- <meta name="twitter:image" content=".<%= htmlWebpackPlugin.options.origin %>/assets/images/screenshots/screenshot1.jpg" /> -->
     <meta
       name="twitter:image:src"
@@ -56,7 +57,7 @@
     <!-- <meta property="twitter:site:id" content="13334762">
     <meta property="twitter:creator:id" content="13334762"> -->
 
-    <!-- For Open Graph -->
+    <!-- For Open Graph: Facebook Meta Tags -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:image:type" content="image/jpg" />
@@ -64,7 +65,7 @@
     <meta property="og:image:width" content="630" />
     <meta property="og:site_name" content="Homepage" />
     <meta property="og:title" content="Larry Chen' Homepage" />
-    <meta property="og:description" content="Chen Dachao's Homepage." />
+    <meta property="og:description" content="Welcome my friend, click to know more about me 👉" />
     <meta property="og:url" content="<%= htmlWebpackPlugin.options.href %>" />
     <meta
       property="og:image"
@@ -74,12 +75,18 @@
     <link rel="canonical" href="<%= htmlWebpackPlugin.options.href %>" />
 
     <!-- For Qzone -->
-    <meta itemprop="name" content="Homepage" />
-    <meta name="description" itemprop="description" content="Chen Dachao's Homepage." />
+    <meta itemprop="name" content="Larry Chen' Homepage" />
+    <meta
+      name="description"
+      itemprop="description"
+      content="Welcome my friend, click to know more about me 👉"
+    />
     <meta
       itemprop="image"
       content="<%= htmlWebpackPlugin.options.origin %>/assets/images/screenshots/screenshot1.jpg"
     />
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 
     <!-- favicon -->
     <!-- <link rel="apple-touch-icon" type="image/svg+xml" href="./assets/images/portfolios/home.svg" /> -->

@@ -46,6 +46,14 @@ i18n.init().then(() => {
   document.body.append(commentScript);
 });
 
+/* eslint-disable no-undef */
+if (WeixinJSBridge) {
+/* eslint-enable no-undef */
+  import('@app/utils/wechat-jsbridge').then(() => {
+    console.log('wechat-jsbridge loaded');
+  });
+}
+
 // Loading skeleton for svg icons
 const svgContainers = document.querySelectorAll('.icon.loading');
 if (svgContainers.length) {

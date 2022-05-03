@@ -20,6 +20,7 @@
     <link rel="manifest" href="site.webmanifest" />
     <meta name="application-name" content="Larry Chen" />
     <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
     <!-- <link rel="preload" href="font.woff2" as="font" type="font/woff2"> -->
     <!-- <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="My Blog - Larry Chen"> -->
 
@@ -44,8 +45,11 @@
     <meta name="twitter:url" content="<%= htmlWebpackPlugin.options.href %>" />
     <meta name="twitter:title" content="Chen Dachao's Homepage." />
     <meta name="twitter:description" content="Chen Dachao's Homepage." />
-    <!-- <meta name="twitter:image" content="./assets/images/screenshots/screenshot1.jpg" /> -->
-    <meta name="twitter:image:src" content="/assets/images/screenshots/screenshot1.jpg" />
+    <!-- <meta name="twitter:image" content=".<%= htmlWebpackPlugin.options.origin %>/assets/images/screenshots/screenshot1.jpg" /> -->
+    <meta
+      name="twitter:image:src"
+      content="<%= htmlWebpackPlugin.options.origin %>/assets/images/screenshots/screenshot1.jpg"
+    />
     <meta name="twitter:image:alt" content="Chen Dachao's Homepage." />
     <meta property="twitter:image:width" content="1200" />
     <meta property="twitter:image:height" content="1200" />
@@ -62,14 +66,20 @@
     <meta property="og:title" content="Larry Chen' Homepage" />
     <meta property="og:description" content="Chen Dachao's Homepage." />
     <meta property="og:url" content="<%= htmlWebpackPlugin.options.href %>" />
-    <meta property="og:image" content="/assets/images/screenshots/screenshot1.jpg" />
+    <meta
+      property="og:image"
+      content="<%= htmlWebpackPlugin.options.origin %>/assets/images/screenshots/screenshot1.jpg"
+    />
     <meta property="og:og:image:alt" content="Chen Dachao's Homepage." />
     <link rel="canonical" href="<%= htmlWebpackPlugin.options.href %>" />
 
     <!-- For Qzone -->
     <meta itemprop="name" content="Homepage" />
     <meta name="description" itemprop="description" content="Chen Dachao's Homepage." />
-    <meta itemprop="image" content="/assets/images/screenshots/screenshot1.jpg" />
+    <meta
+      itemprop="image"
+      content="<%= htmlWebpackPlugin.options.origin %>/assets/images/screenshots/screenshot1.jpg"
+    />
 
     <!-- favicon -->
     <!-- <link rel="apple-touch-icon" type="image/svg+xml" href="./assets/images/portfolios/home.svg" /> -->

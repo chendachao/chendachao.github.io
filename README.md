@@ -53,7 +53,7 @@
 - [x] Change them to gray on specific day.
 - [x] [PWA] Update event subscribe with push/notifications API, recommend a 'Subscribe' button
 - [x] [PWA] Update alert
-- [ ] [Sentry] Update all sourcemaps to Sentry
+- [ ] [Sentry] Upload all sourcemaps to Sentry
 - [x] Comments
 
 ## PWA Debug:

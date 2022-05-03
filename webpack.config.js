@@ -196,7 +196,7 @@ const pwaPlugins = [
         handler: 'StaleWhileRevalidate',
       },
       {
-        urlPattern: /^https:\/\/cdn.jsdelivr.net\/npm\//,
+        urlPattern: /^https:\/\/cdn\.jsdelivr\.net\/npm\//,
         handler: 'StaleWhileRevalidate',
       },
       {

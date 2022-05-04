@@ -123,12 +123,6 @@
       document.documentElement.classList.add('js');
     </script>
 
-    <!-- Sharethis -->
-    <script
-      defer
-      src="https://platform-api.sharethis.com/js/sharethis.js#property=618b38f1a2a2930013a8ebc0&product=inline-reaction-buttons"
-    ></script>
-
     <% if (process.env.APP_ENV === 'production') { %> <% for(var css of
     htmlWebpackPlugin.options.cdn.css) { %>
     <link defer rel="stylesheet" href="<%=css%>" />
@@ -872,7 +866,7 @@
 
     <% if (process.env.APP_ENV === 'production') { %> <% for(var js of
     htmlWebpackPlugin.options.cdn.js) { %>
-    <script defer type="text/javascript" src="<%=js%>"></script>
+    <script type="text/javascript" src="<%=js%>"></script>
     <% } %> <% } %> <% if (process.env.APP_ENV === 'production') { %>
     <!-- Hover preload link -->
     <script
@@ -880,6 +874,12 @@
       src="//instant.page/5.1.0"
       crossorigin="anonymous"
       integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"
+    ></script>
+
+    <!-- Sharethis -->
+    <script
+      defer
+      src="https://platform-api.sharethis.com/js/sharethis.js#property=618b38f1a2a2930013a8ebc0&product=inline-reaction-buttons"
     ></script>
 
     <!-- Google Analytics -->

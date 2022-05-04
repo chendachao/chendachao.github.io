@@ -57,12 +57,14 @@ if (window.WeixinJSBridge) {
 // Loading skeleton for svg icons
 const svgContainers = document.querySelectorAll('.icon.loading');
 if (svgContainers.length) {
-  const svg = svgContainers[0].querySelector('svg');
-  svg.addEventListener('load', () => {
+  const removeLoadingClass = () => {
     svgContainers.forEach(svg => {
       svg.classList.remove('loading');
     });
-  });
+  };
+  const svg = svgContainers[0].querySelector('svg');
+  svg.addEventListener('load', removeLoadingClass);
+  svg.addEventListener('error', removeLoadingClass);
 }
 
 // Initialize tooltip and popover

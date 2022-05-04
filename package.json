@@ -108,7 +108,7 @@
     "@fpjs-incubator/botd-agent": "0.1.24",
     "@ppzp/noty": "0.0.4",
     "@sentry/browser": "6.18.1",
-    "@sentry/tracing": "6.18.1",
+    "@sentry/tracing": "6.19.7",
     "alertifyjs": "1.13.1",
     "axios": "0.26.0",
     "bowser": "2.11.0",

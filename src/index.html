@@ -133,23 +133,6 @@
     htmlWebpackPlugin.options.cdn.css) { %>
     <link rel="stylesheet" href="<%=css%>" />
     <% } %> <% } %> <% if (process.env.APP_ENV === 'production') { %>
-    <!-- Hover preload link -->
-    <script
-      defer
-      src="//instant.page/5.1.0"
-      integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"
-    ></script>
-
-    <!-- Google Analytics -->
-    <!-- <link rel="preconnect" href="https://www.google-analytics.com" />
-    <link rel="dns-prefetch" href="https://www.google-analytics.com" /> -->
-    <!--  fallback-->
-    <!-- <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-143770576-1"></script>
-    <script defer src="./assets/gtag.js"></script> -->
-
-    <!-- Hotjar Tracking Code for this site -->
-    <script defer src="./assets/hotjar.js"></script>
-
     <script>
       if (
         !['127.0.0.1', 'localhost'].some(function (host) {
@@ -890,7 +873,25 @@
     <% if (process.env.APP_ENV === 'production') { %> <% for(var js of
     htmlWebpackPlugin.options.cdn.js) { %>
     <script type="text/javascript" src="<%=js%>"></script>
-    <% } %> <% } %>
+    <% } %> <% } %> <% if (process.env.APP_ENV === 'production') { %>
+    <!-- Hover preload link -->
+    <script
+      defer
+      src="//instant.page/5.1.0"
+      crossorigin="anonymous"
+      integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"
+    ></script>
+
+    <!-- Google Analytics -->
+    <!-- <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="dns-prefetch" href="https://www.google-analytics.com" /> -->
+    <!--  fallback-->
+    <!-- <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-143770576-1"></script>
+      <script defer src="./assets/gtag.js"></script> -->
+
+    <!-- Hotjar Tracking Code for this site -->
+    <script defer src="./assets/hotjar.js"></script>
+    <% } %>
 
     <!-- <script src="./assets/js/xy-polyfill.js" nomodule></script>
     <script src="./assets/js/script.js" type="module"></script> -->

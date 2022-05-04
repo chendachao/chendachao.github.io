@@ -5,7 +5,7 @@ var shareTitle = 'Larry Chen\' Homepage';
 var appid = '';
 /* eslint-disable no-undef */
 function shareFriend() {
-  WeixinJSBridge.invoke(
+  window.WeixinJSBridge.invoke(
     'sendAppMessage',
     {
       'appid': appid,
@@ -22,7 +22,7 @@ function shareFriend() {
   );
 }
 function shareTimeline() {
-  WeixinJSBridge.invoke(
+  window.WeixinJSBridge.invoke(
     'shareTimeline',
     {
       'img_url': imgUrl,
@@ -38,7 +38,7 @@ function shareTimeline() {
   );
 }
 function shareWeibo() {
-  WeixinJSBridge.invoke(
+  window.WeixinJSBridge.invoke(
     'shareWeibo',
     {
       'content': descContent,
@@ -54,17 +54,17 @@ document.addEventListener(
   'WeixinJSBridgeReady',
   function onBridgeReady() {
     // share to friend
-    WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+    window.WeixinJSBridge.on('menu:share:appmessage', function (argv) {
       shareFriend();
     });
 
     // share to timeline
-    WeixinJSBridge.on('menu:share:timeline', function (argv) {
+    window.WeixinJSBridge.on('menu:share:timeline', function (argv) {
       shareTimeline();
     });
 
     // share to weibo
-    WeixinJSBridge.on('menu:share:weibo', function (argv) {
+    window.WeixinJSBridge.on('menu:share:weibo', function (argv) {
       shareWeibo();
     });
   },

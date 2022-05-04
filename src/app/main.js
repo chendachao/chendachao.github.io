@@ -47,7 +47,7 @@ i18n.init().then(() => {
 });
 
 /* eslint-disable no-undef */
-if (WeixinJSBridge) {
+if (window.WeixinJSBridge) {
 /* eslint-enable no-undef */
   import('@app/utils/wechat-jsbridge').then(() => {
     console.log('wechat-jsbridge loaded');
@@ -275,3 +275,22 @@ window.addEventListener('unhandledrejection', globalErrorHandler);
 // atts+=',menubar='+menubar+',scrollbars='+scrollbars+',resizable='+resizable;
 // var url = "/ems/ezrf_get_details.html?op_type="+key+"&title="+title +"#";
 // window.open(url,‘win_name’,s atts);
+
+// window.addEventListener('unload', () => {
+//   // Collect RUM data like before
+//   let rumData = new FormData();
+//   rumData.append('entries', JSON.stringify(performance.getEntries()));
+//   // Check for sendBeacon support
+//   if ('sendBeacon' in navigator) {
+//     // Beacon requested
+//     if (navigator.sendBeacon(endpoint, rumData)) {
+//       console.log('sendBeacon worked! We are good');
+//     } else {
+//       console.log('sendBeacon failed! Use XHR or fetch instead');
+//     }
+//   } else {
+//     console.log('sendBeacon not available! Use XHR or fetch instead');
+//   }
+// }, false);
+
+

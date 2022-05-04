@@ -131,7 +131,7 @@
 
     <% if (process.env.APP_ENV === 'production') { %> <% for(var css of
     htmlWebpackPlugin.options.cdn.css) { %>
-    <link rel="stylesheet" href="<%=css%>" />
+    <link defer rel="stylesheet" href="<%=css%>" />
     <% } %> <% } %> <% if (process.env.APP_ENV === 'production') { %>
     <script>
       if (
@@ -872,7 +872,7 @@
 
     <% if (process.env.APP_ENV === 'production') { %> <% for(var js of
     htmlWebpackPlugin.options.cdn.js) { %>
-    <script type="text/javascript" src="<%=js%>"></script>
+    <script defer type="text/javascript" src="<%=js%>"></script>
     <% } %> <% } %> <% if (process.env.APP_ENV === 'production') { %>
     <!-- Hover preload link -->
     <script

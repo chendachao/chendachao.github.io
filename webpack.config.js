@@ -55,6 +55,7 @@ const commonConfig = merge([
       // the following setting is required for SRI to work:
       crossOriginLoading: 'anonymous',
       clean: true,
+      assetModuleFilename: 'static/[name].[hash:8].[ext][query]'
     },
     target: devMode ? 'web' : 'browserslist',
     resolve: {
@@ -67,6 +68,9 @@ const commonConfig = merge([
         // process: 'process/browser',
         '@app': resolve('./src/app'),
       },
+    },
+    experiments: {
+      topLevelAwait: true,
     },
     optimization: {
       moduleIds: 'deterministic',
@@ -84,6 +88,13 @@ const commonConfig = merge([
         //   },
         // }
       },
+    },
+    cache: {
+      type: 'filesystem',
+      buildDependencies: {
+        config: [__filename],
+      },
+      name: 'default-development',
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -246,9 +257,11 @@ const productionConfig = merge([
           target: 'es2015', // Syntax to compile to (see options below for possible values)
           css: true,
         }),
-        // new OptimizeCSSAssetsPlugin({}),
         new CssMinimizerPlugin(),
       ],
+    },
+    cache: {
+      name: 'default-production',
     },
     externals: {
       jquery: 'jQuery',

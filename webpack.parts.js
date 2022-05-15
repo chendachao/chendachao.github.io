@@ -177,10 +177,20 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
 
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'static/[hash][ext][query]',
-        },
+        type: 'asset',
+        // type: 'asset/resource',
+        // generator: {
+        //   filename: 'static/[name].[hash:8].[ext][query]',
+        // },
+        // parser: {
+        //   dataUrlCondition: {
+        //     maxSize: 4 * 1024 // 4kb
+        //   }
+        // }
+      },
+      {
+        resourceQuery: /raw/,
+        type: 'asset/source',
       },
     ],
   },

@@ -46,6 +46,16 @@ i18n.init().then(() => {
   document.body.append(commentScript);
 });
 
+const worker = new Worker(new URL('./utils/web.worker.js', import.meta.url), {
+  name: 'web',
+  type: 'module',
+  /* webpackEntryOptions: { filename: 'workers/[name].[hash:8].js' } */
+});
+worker.onmessage = e => {
+  console.log('worker value', e.data.value);
+};
+worker.postMessage({action: 'INIT', payload: 123});
+
 /* eslint-disable no-undef */
 if (window.WeixinJSBridge) {
 /* eslint-enable no-undef */
@@ -73,12 +83,12 @@ setTimeout(() => {
 }, 10);
 
 const qrcodeHandler = document.querySelector('.qrcode-handler');
-import('./components/dialog').then(({ showModal, displayQRCode }) => {
-  qrcodeHandler.removeAttribute('hidden');
-  qrcodeHandler.addEventListener('click', () => {
-    showModal();
-    displayQRCode();
-  });
+// This is a top-level-await
+const { showModal, displayQRCode } = await import('./components/dialog');
+qrcodeHandler.removeAttribute('hidden');
+qrcodeHandler.addEventListener('click', () => {
+  showModal();
+  displayQRCode();
 });
 
 // Load intro
@@ -122,9 +132,12 @@ if (isIE()) {
 //   // });
 // });
 
-window.addEventListener('load', function () {
-  // scrollToTop();
-
+window.addEventListener('load', function () { // page is fully loaded
+  setTimeout(() => {
+    scrollToTop({smooth: true});
+  });
+});
+document.addEventListener('DOMContentLoaded', function () { // DOM fully loaded and parsed
   // Click to open json file
   const developerModeLink = document.querySelector('.developer-mode-link');
   developerModeLink.setAttribute('href', `./assets/data/${i18n.locale}/chendachao.json`);

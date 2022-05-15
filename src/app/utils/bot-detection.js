@@ -5,15 +5,15 @@ const botdPromise = Botd.load({
   publicKey: 'xCiNPhIyIySAAyywALkEJhlP',
 });
 
-(async () => {
-  try {
-    // Get the bot detection result when you need it.
-    // Result will contain the requestId property,
-    // that you can securely verify on the server.
-    const botd = await botdPromise;
-    const result = await botd.detect({tag: 'homepage'});
-    console.log('BotD', result);
-  } catch (error) {
-    console.error(error);
-  }
-})();
+try {
+  // Get the bot detection result when you need it.
+  // Result will contain the requestId property,
+  // that you can securely verify on the server.
+  // This is a top-level-await
+  const botd = await botdPromise;
+  const result = await botd.detect({tag: 'homepage'});
+  // debugger
+  console.log('BotD', result);
+} catch (error) {
+  console.error(error);
+}

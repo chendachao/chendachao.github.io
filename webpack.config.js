@@ -106,11 +106,26 @@ const commonConfig = merge([
         meta: {
           'Content-Security-Policy': {
             'http-equiv': 'Content-Security-Policy',
-            'content': `default-src 'self' data: gap: 'unsafe-eval' larrychen.tech instant.page platform-api.sharethis.com platform-cdn.sharethis.com l.sharethis.com count-server.sharethis.com www.google.com www.google.co.kr www.googletagmanager.com www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com wss://ws12.hotjar.com wss://ws16.hotjar.com *.ingest.sentry.io/ http://ip-api.com/json https://hm.baidu.com https://extreme-ip-lookup.com https://botd.fpapi.io;
-                  style-src 'self' http: https: 'unsafe-inline';
-                  script-src 'self' http: https: 'unsafe-inline' 'unsafe-eval';
+            'content': `
+                  default-src 'self';
+                  script-src 'self' 'unsafe-inline' 'unsafe-eval' data:
+                          larrychen.tech instant.page platform-api.sharethis.com
+                          count-server.sharethis.com buttons-config.sharethis.com
+                          www.google.com www.google.co.kr www.googletagmanager.com
+                          www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com
+                          wss://ws12.hotjar.com wss://ws16.hotjar.com cdn.jsdelivr.net hm.baidu.com;
+                  style-src 'self' 'unsafe-inline';
+                  img-src 'self' data: platform-cdn.sharethis.com hm.baidu.com;
+                  connect-src 'self' larrychen.tech chendachao.github.io chendachao.netlify.app
+                              chendachao-github-io-chendachao.vercel.app l.sharethis.com *.ingest.sentry.io/
+                              extreme-ip-lookup.com http://ip-api.com/json botd.fpapi.io;
+                  font-src 'self' data: fonts.gstatic.com fonts.googleapis.com;
+                  form-action 'self';
+                  prefetch-src 'self' larrychen.tech;
                   object-src 'none';
                   base-uri 'none';
+                  upgrade-insecure-requests;
+                  report-to default;
                   `,
                   // script-src 'self' 'strict-dynamic' 'nonce-rAnd0m123' 'unsafe-inline' http: https:;
           },
@@ -272,9 +287,9 @@ const productionConfig = merge([
     plugins: [
       new CompressionPlugin(),
       new SubresourceIntegrityPlugin(),
-      new WebpackObfuscator ({
-        rotateStringArray: true
-      }, ['sw.js'])
+      // new WebpackObfuscator({
+      //   rotateStringArray: true
+      // }, ['sw.js']),
     ],
   },
   parts.loadJavaScript({

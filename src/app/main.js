@@ -46,10 +46,10 @@ i18n.init().then(() => {
   document.body.append(commentScript);
 });
 
-const worker = new Worker(new URL('./utils/web.worker.js', import.meta.url), {
-  name: 'web',
-  type: 'module',
-  /* webpackEntryOptions: { filename: 'workers/[name].[hash:8].js' } */
+const worker = new Worker(new URL('./utils/webworker.js', import.meta.url), {
+  name: 'webworker',
+  // type: 'module',
+  /* webpackEntryOptions: { filename: 'workers/[name].[contenthash].js' } */
 });
 worker.onmessage = e => {
   console.log('worker value', e.data.value);

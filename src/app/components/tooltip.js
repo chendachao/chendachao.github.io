@@ -20,12 +20,14 @@ import 'tippy.js/animations/perspective-extreme.css';
 // import 'tippy.js/animations/shift-toward-subtle.css';
 // import 'tippy.js/animations/shift-toward-extreme.css';
 
-import { isIE, isPC, setEscapedHTML } from '../utils';
+import { isIE, isPC, setEscapedHTML, createElementFromHTMLStr } from '../utils';
 
 import i18n from '../utils/i18n';
 
+import wechatTemplateString from './tooltip-wechat.template.html?raw';
+
 function TooltipAndPopover() {
-  const template = document.querySelector('#wechat-popup');
+
   const container = document.createElement('div');
   const commonConig = {
     allowHTML: true,
@@ -50,13 +52,17 @@ function TooltipAndPopover() {
   }
 
   // show the popup of wechat qrCode
-  if (isIE()) {
-    container.appendChild(template);
-  } else {
-    container.appendChild(document.importNode(template.content, true));
-    // const clone = template.content.cloneNode(true);
-    // container.appendChild(clone);
-  }
+  const template = createElementFromHTMLStr(wechatTemplateString);
+  // const template = document.querySelector('#wechat-popup');
+  container.appendChild(template);
+  // if (isIE()) {
+  //   container.appendChild(template);
+  // } else {
+  //   container.appendChild(document.importNode(template, true));
+  //   // container.appendChild(document.importNode(template.content, true));
+  //   // const clone = template.content.cloneNode(true);
+  //   // container.appendChild(clone);
+  // }
 
   // click to scale qrcode
   function toggleScale(event) {

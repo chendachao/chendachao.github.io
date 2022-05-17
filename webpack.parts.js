@@ -52,13 +52,22 @@ exports.devServer = ({ host, port } = {}) => ({
       // watch: true,
     },
     // watchFiles: path.join(__dirname, '/dist'),
-    // open: {
-    //   target: ['http://localhost:8088', 'http://localhost:8088/stone.html'],
-    // },
     // open: true,
-    onAfterSetupMiddleware: function (devServer) {
+    // open: {
+    //   // target: ['http://localhost:8088', 'http://localhost:8088/stone.html'],
+    //   target: ['http://localhost:8088'],
+    //   app: {
+    //     name: 'Google Chrome',
+    //     arguments: ['--aggressive-tab-discard', '--auto-open-devtools-for-tabs'],
+    //   },
+    // },
+    setupMiddlewares: (middlewares, devServer) => {
+      if (!devServer) {
+        throw new Error('webpack-dev-server is not defined');
+      }
       openBrowser(`http://localhost:${devServer.options.port || 8088}`);
-    },
+      return middlewares;
+    }
   },
 });
 
@@ -70,8 +79,9 @@ exports.loadJavaScript = ({ include, exclude, options } = {}) => ({
         include,
         exclude,
         use: [
+          'thread-loader',
           {
-            loader: 'babel-loader',
+            loader: 'babel-loader?cacheDirectory',
             options,
           },
         ],

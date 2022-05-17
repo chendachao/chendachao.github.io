@@ -183,6 +183,12 @@ const commonConfig = merge([
       new WebpackBar({
         name: '🔥 Larry\'s Homepage',
         color: '#3ce2e2',
+        reporter: {
+          done(context) {
+            // Called when compile finished
+            console.log('done');
+          }
+        }
       }),
       new webpack.ProvidePlugin({
         process: 'process/browser',
@@ -261,6 +267,8 @@ const productionConfig = merge([
     optimization: {
       minimize: true,
       minimizer: [
+        // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+        // `...`,
         // new TerserJSPlugin({
         //   parallel: true,
         //   // terserOptions: {
@@ -287,9 +295,9 @@ const productionConfig = merge([
     plugins: [
       new CompressionPlugin(),
       new SubresourceIntegrityPlugin(),
-      // new WebpackObfuscator({
-      //   rotateStringArray: true
-      // }, ['sw.js']),
+      new WebpackObfuscator({
+        rotateStringArray: true
+      }, ['sw.js']), // exclude js file
     ],
   },
   parts.loadJavaScript({

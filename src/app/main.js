@@ -15,6 +15,7 @@ Theme();
 import i18n from './utils/i18n';
 i18n.init().then(() => {
   document.title = i18n.format({id: 'APP.HTML_TITLE'});
+  if (window.__PRERENDER_INJECTED) return;
   // const commentScript = document.querySelector('#commentScript');
   // commentScript.setAttribute('data-isso-lang', i18n.locale);
   const commentScript = document.createElement('script');
@@ -135,6 +136,7 @@ if (isIE()) {
 window.addEventListener('load', function () { // page is fully loaded
   setTimeout(() => {
     scrollToTop({smooth: true});
+    document.dispatchEvent(new Event('trigger-prerender-event'));
   });
 });
 document.addEventListener('DOMContentLoaded', function () { // DOM fully loaded and parsed
@@ -154,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () { // DOM fully loaded 
   }, {onlineDate: formattedOnlineDate, days}));
 
   // Share application
-  if (navigator.share) {
+  if (navigator.share && !window.__PRERENDER_INJECTED) {
     const shareBtn = document.querySelector('.share-btn');
     shareBtn.removeAttribute('hidden');
     shareBtn.addEventListener('click', () => {
@@ -238,6 +240,8 @@ document.addEventListener('DOMContentLoaded', function () { // DOM fully loaded 
   window.addEventListener('offline', updateOnlineStatus);
 
   if (process.env.APP_ENV === 'production') {
+    console.log('window.__PRERENDER_INJECTED.foo', window.__PRERENDER_INJECTED.foo);
+    if (window.__PRERENDER_INJECTED) return; // <---- hey, relax, it’s prerender
     initAnalytics();
   }
 });

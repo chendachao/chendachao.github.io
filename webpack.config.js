@@ -14,6 +14,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackObfuscator = require('webpack-obfuscator');
+const PrerenderSPAPlugin = require('prerender-spa-plugin-next');
 const { merge } = require('webpack-merge');
 const glob = require('glob-all');
 
@@ -196,6 +197,33 @@ const commonConfig = merge([
       new webpack.DefinePlugin({
         'process.env': JSON.stringify(config),
       }),
+      // new PrerenderSPAPlugin({
+      //   // indexPath: 'index.html',
+      //   // Required - Routes to render.
+      //   routes: ['/'],
+      //   rendererOptions: {
+      //     // Optional - The name of the property to add to the window object with the contents of `inject`.
+      //     injectProperty: '__PRERENDER_INJECTED',
+      //     // Optional - Any values you'd like your app to have access to via `window.injectProperty`.
+      //     inject: {
+      //       foo: 'bar'
+      //     },
+      //     maxConcurrentRoutes: 4,
+      //     renderAfterDocumentEvent: 'trigger-prerender-event',
+      //     // renderAfterElementExists: 'my-app-element',
+      //     // renderAfterTime: 5000,
+      //     // timeout: 20000,
+      //     // headless: false
+      //   },
+      //   postProcess: function (context) {
+      //     // remove some libs in prerender mode
+      //     // const regEx = /<script.*?src="?\/js\/(?!chunk|bundle|app).*?<\/script>/;
+      //     // const regEx = /<script.*?src="?(?!chunk|bundle|app).*?<\/script>/;
+      //     // context.html = context.html.replace(regEx, '');
+      //     context.html = '666';
+      //     return context;
+      //   },
+      // })
     ],
   },
   parts.loadFonts({

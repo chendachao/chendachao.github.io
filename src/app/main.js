@@ -259,7 +259,8 @@ const globalErrorHandler = event => {
 };
 
 window.addEventListener('error', globalErrorHandler);
-window.addEventListener('unhandledrejection', globalErrorHandler);
+window.onerror = globalErrorHandler;
+window.addEventListener('unhandledrejection', globalErrorHandler); // Capture promise error
 
 // window.onerror = function(msg, url, line, col, error) {
 //   // Note that col & error are new to the HTML 5 spec and may not be

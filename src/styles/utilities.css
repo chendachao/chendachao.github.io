@@ -27,9 +27,9 @@
   box-shadow: -10px 10px 15px var(--subtle3);
 }
 
-.border-active:not(.disabled):active {
+/* .border-active:not(.disabled):active {
   outline: var(--text-highlight) auto 1px;
-}
+} */
 
 .line-h {
   background-color: lightgray;
@@ -109,15 +109,18 @@
   background-repeat: repeat-x;
 }
 
+.highlight:focus::before,
 .highlight:hover::before {
   width: 100%;
   right: 0;
   z-index: 1;
 }
 
+.highlight:focus,
 .highlight:hover {
   border-bottom-style: none;
   color: var(--text-highlight2);
+  outline: none !important;
 
   /* text-shadow: -3px 3px 2px #7c630a; */
   /* background: linear-gradient(330deg, #178bb7 0%, #d8ca1e 25%, #52e0e0 50%, #f1e526 75%, #095090 100%); */

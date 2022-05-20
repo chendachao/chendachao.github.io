@@ -15,6 +15,7 @@ const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackObfuscator = require('webpack-obfuscator');
 const PrerenderSPAPlugin = require('prerender-spa-plugin-next');
+// const SentryCliPlugin = require('@sentry/webpack-plugin');
 const { merge } = require('webpack-merge');
 const glob = require('glob-all');
 
@@ -326,6 +327,17 @@ const productionConfig = merge([
       new WebpackObfuscator({
         rotateStringArray: true
       }, ['sw.js']), // exclude js file
+      // new SentryCliPlugin({
+      //   include: './dist',
+      //   ignoreFile: '.sentrycliignore',
+      //   ignore: ['node_modules', 'webpack.config.js'],
+      //   configFile: 'sentry.properties',
+      //   dryRun: true,
+      //   release: `chendachao.github.io@${process.env.VERSION}-${process.env.GIT_SHA1}`,
+      //   project: 'chendachao',
+      //   org: 'larrychen',
+      //   dist: '123',
+      // }),
     ],
   },
   parts.loadJavaScript({

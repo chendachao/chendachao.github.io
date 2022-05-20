@@ -150,14 +150,14 @@
   <body data-theme="light">
     <header class="app-header">
       <section class="help-icon-menu-bar">
-        <button hidden class="help-icon share-btn border-active">
+        <button hidden class="help-icon share-btn">
           <svg class="svgicon text-white" role="img" aria-label="Share">
             <use xlink:href="./assets/images/base-sprites.svg#share"></use>
           </svg>
         </button>
         <button
           aria-label="language"
-          class="help-icon language-btn border-active"
+          class="help-icon language-btn"
           data-tooltip
           data-tippy-content="Switch language"
           data-i18n-attr="data-tippy-content=APP.LANGUAGE_SWITCH"
@@ -168,7 +168,7 @@
         </button>
         <button
           aria-label="guide"
-          class="help-icon start-replay-tour border-active"
+          class="help-icon start-replay-tour"
           data-tooltip
           data-tippy-content="Tutorial guide"
           data-i18n-attr="data-tippy-content=APP.TUTOR_GUIDE"
@@ -179,7 +179,7 @@
         </button>
         <button
           aria-label="hint"
-          class="help-icon start-hint border-active"
+          class="help-icon start-hint"
           data-tooltip
           data-tippy-content="Tutorial with hint"
           data-i18n-attr="data-tippy-content=APP.TUTOR_HINT_GUIDE"
@@ -191,7 +191,7 @@
         <button
           aria-label="subscribe"
           hidden
-          class="help-icon subscribe-btn border-active"
+          class="help-icon subscribe-btn"
           data-tooltip
           data-tippy-content="Subscribe"
           data-i18n-attr="data-tippy-content=APP.NOTIFICATION_SUBSCRIBE"
@@ -203,7 +203,7 @@
         <button
           aria-label="pwa install"
           hidden
-          class="help-icon pwa-install-btn border-active"
+          class="help-icon pwa-install-btn"
           id="btnInstall"
           data-tooltip
           data-tippy-content="Install to Desktop"
@@ -215,7 +215,7 @@
         </button>
         <button
           onclick="javascript:if(self.print) {self.print()} else if(window.print) {window.print()} else {throw new Error('The Platform doesn\'t support print');}"
-          class="help-icon btn-print border-active"
+          class="help-icon btn-print"
           data-tooltip
           data-tippy-content="Print"
           data-i18n-attr="data-tippy-content=APP.PRINT"
@@ -250,6 +250,7 @@
         <div
           class="moon step15 print-hidden"
           id="step5"
+          tabindex="1"
           data-tooltip
           data-tippy-content="大漠孤烟直，长河落日圆。"
           data-i18n-attr="data-tippy-content=APP.SUN_TOOLTIP"
@@ -263,6 +264,7 @@
           <img
             id="step1"
             class="brand-icon step11 lazyload flip-vertical-right image-share-buttons"
+            tabindex="0"
             src="./assets/images/bases/star.svg"
             alt="Star"
             style="width: 'calc(5em + 4vw)'; height: 'calc(5em + 4vw)'"
@@ -289,7 +291,7 @@
                 data-tippy-content="Developer mode"
                 data-i18n-attr="data-tippy-content=APP.DEVELOPER_MODE"
               >
-                <svg class="border-active svgicon text-white" role="img" aria-label="Code">
+                <svg class="svgicon text-white" role="img" aria-label="Code">
                   <use xlink:href="./assets/images/base-sprites.svg#code"></use>
                 </svg>
               </a>
@@ -298,6 +300,7 @@
             <span data-i18n-id="APP.HELLO">Hello, this is </span
             ><span
               class="highlight text-nowrap"
+              tabindex="0"
               data-tooltip
               data-i18n-attr="data-tippy-content=APP.MY_NAME_DESC"
               data-tippy-content="<div class='text-center'>Chen Dachao<br/>陈大超</div>"
@@ -306,7 +309,7 @@
             ><span data-i18n-id="APP.COMMA">,</span> <span data-i18n-id="APP.IMA">I'm a </span
             ><span
               class="highlight text-nowrap"
-              style="outline: none"
+              tabindex="0"
               data-tooltip
               data-i18n-attr="data-tippy-content=APP.WEB_DEVELOPER_DESC"
               data-tippy-content="
@@ -327,6 +330,7 @@
             <span data-i18n-id="APP.ILIKE" data-i18n-default-message="I like ">I like </span
             ><span
               class="highlight text-nowrap"
+              tabindex="0"
               data-tooltip
               data-tippy-content="Life lies in movement."
               data-i18n-attr="data-tippy-content=APP.RUNNING_DESC"
@@ -335,6 +339,7 @@
             ><span data-i18n-id="APP.COMMA">,</span>
             <span
               class="highlight text-nowrap"
+              tabindex="0"
               data-tooltip
               data-tippy-content="Why the universe is so vast?"
               data-i18n-attr="data-tippy-content=APP.THINKING_DESC"
@@ -343,6 +348,7 @@
             ><span data-i18n-id="APP.COMMA">,</span>
             <span
               class="highlight text-nowrap"
+              tabindex="0"
               data-tooltip
               data-tippy-content="Change the world, make our life better."
               data-i18n-attr="data-tippy-content=APP.CODING_DESC"
@@ -351,6 +357,7 @@
             ><span data-i18n-id="APP.AND"> and </span>
             <span
               class="highlight text-nowrap"
+              tabindex="0"
               data-tooltip
               data-tippy-content="☕Coffee is life, the first taste is bitter, but finally sweet."
               data-i18n-attr="data-tippy-content=APP.COFFEE_DESC"
@@ -375,12 +382,14 @@
               </div>
             </template> -->
             <ul id="step3" class="social-icons step13">
-              <li data-tippy-content="Github: chendachao" data-tooltip>
+              <li>
                 <a
                   class="icon loading icon-github hover-visible box-shadow circle"
                   href="https://github.com/chendachao"
                   target="_blank"
                   rel="noopener noreferrer nofollow"
+                  data-tippy-content="Github: chendachao"
+                  data-tooltip
                 >
                   <svg class="svg svgicon" role="img" aria-label="Github">
                     <title id="titleGithub" lang="en">Github</title>
@@ -389,12 +398,14 @@
                   </svg>
                 </a>
               </li>
-              <li data-tippy-content="Email: chendachao@outlook.com" data-tooltip>
+              <li>
                 <a
                   class="icon loading icon-envelope-o hover-visible box-shadow circle"
                   href="mailto:chendachao@outlook.com?subject=Greetings%20Larry&body=Hi%20Larry%2C%20%0A%0AI%20like%20the%20color%20of%20your%20website%2C%20It's%20very%20interesting...%0A%0A%0A%0A"
                   target="_blank"
                   rel="noopener noreferrer nofollow"
+                  data-tippy-content="Email: chendachao@outlook.com"
+                  data-tooltip
                 >
                   <svg class="svg svgicon" role="img" aria-label="Email">
                     <title id="titleEmail" lang="en">Email</title>
@@ -407,6 +418,7 @@
                 <a
                   class="icon loading icon-wechat hover-visible box-shadow circle"
                   id="wechat"
+                  tabindex="0"
                   rel="noopener noreferrer nofollow"
                 >
                   <svg class="svg svgicon" role="img" aria-label="wechat">
@@ -416,11 +428,12 @@
                   </svg>
                 </a>
               </li>
-              <!-- <li data-tippy-content="Skype" data-tooltip>
+              <!-- <li
                 <a
                   class="icon loading icon-skype hover-visible box-shadow circle"
                   href="skype:chendachao@outlook.com?chat"
                   rel="noopener noreferrer nofollow"
+                  data-tippy-content="Skype" data-tooltip>
                 >
                   <svg class="svg svgicon" role="img" aria-label="Skype">
                     <title id="titleSkype" lang="en">Skype</title>
@@ -429,12 +442,14 @@
                   </svg>
                 </a>
               </li> -->
-              <li data-tippy-content="Telegram: chendachao" data-tooltip>
+              <li>
                 <a
                   class="icon loading icon-telegram hover-visible box-shadow circle"
                   href="https://t.me/chendachao"
                   rel="noopener noreferrer nofollow"
                   target="_blank"
+                  data-tippy-content="Telegram: chendachao"
+                  data-tooltip
                 >
                   <svg class="svg svgicon" role="img" aria-label="Telegram">
                     <title id="titleTelegram" lang="en">Telegram</title>
@@ -443,13 +458,15 @@
                   </svg>
                 </a>
               </li>
-              <li data-tippy-content="Slack: chendachao.slack.com" data-tooltip>
+              <li>
                 <!-- href="https://slack.com/app_redirect?channel=C74EB2YN9" -->
                 <a
                   class="icon loading icon-slack hover-visible box-shadow circle"
                   href="slack://channel?team=T74A7AN3U&id=C74EB2YN9"
                   rel="noopener noreferrer nofollow"
                   target="_blank"
+                  data-tippy-content="Slack: chendachao.slack.com"
+                  data-tooltip
                 >
                   <svg class="svg svgicon" role="img" aria-label="Slack">
                     <title id="titleSlack" lang="en">Slack</title>
@@ -458,12 +475,14 @@
                   </svg>
                 </a>
               </li>
-              <li data-tippy-content="Linkedin: chendachao" data-tooltip>
+              <li>
                 <a
                   class="icon loading icon-linkedin hover-visible box-shadow circle"
                   href="https://www.linkedin.com/in/chendachao"
                   target="_blank"
                   rel="noopener noreferrer nofollow"
+                  data-tippy-content="Linkedin: chendachao"
+                  data-tooltip
                 >
                   <svg class="svg svgicon" role="img" aria-label="Linkedin">
                     <title id="titleLinkedin" lang="en">Linkedin</title>
@@ -472,12 +491,14 @@
                   </svg>
                 </a>
               </li>
-              <li data-tippy-content="Twitter: dachaochen" data-tooltip>
+              <li>
                 <a
                   class="icon loading icon-twitter hover-visible box-shadow circle"
                   target="_blank"
                   href="https://twitter.com/dachaochen"
                   rel="noopener noreferrer nofollow"
+                  data-tippy-content="Twitter: dachaochen"
+                  data-tooltip
                 >
                   <svg class="svg svgicon" role="img" aria-label="Twitter">
                     <title id="titleTwitter" lang="en">Twitter</title>
@@ -486,12 +507,14 @@
                   </svg>
                 </a>
               </li>
-              <li data-tippy-content="Stackoverflow: chen-dachao" data-tooltip>
+              <li>
                 <a
                   class="icon loading icon-stackoverflow hover-visible box-shadow circle"
                   target="_blank"
                   href="https://stackoverflow.com/users/6294371/chen-dachao"
                   rel="noopener noreferrer nofollow"
+                  data-tippy-content="Stackoverflow: chen-dachao"
+                  data-tooltip
                 >
                   <svg class="svg svgicon" role="img" aria-label="Stackoverflow">
                     <title id="titleStackoverflow" lang="en">Stackoverflow</title>
@@ -527,7 +550,8 @@
               <summary class="custom-marker" data-i18n-id="APP.BUSY_WITH">I'm busy with...</summary>
               <div class="container-grid content font-weight-bold">
                 <section
-                  class="card border-active"
+                  class="card"
+                  tabindex="0"
                   data-tooltip
                   data-tippy-content="My Homepage."
                   data-i18n-attr="data-tippy-content=APP.PORTFOLIO.HOMEPAGE"
@@ -540,10 +564,18 @@
                     />
                   </div>
                   <div>Homepage</div>
-                  <a class="link" href="/" target="_blank" rel="noopener noreferrer nofollow"> </a>
+                  <a
+                    class="link"
+                    tabindex="-1"
+                    href="/"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                  >
+                  </a>
                 </section>
                 <section
-                  class="card border-active"
+                  class="card"
+                  tabindex="0"
                   data-tooltip
                   data-tippy-content="Online code editor."
                   data-i18n-attr="data-tippy-content=APP.PORTFOLIO.CODER"
@@ -559,6 +591,7 @@
                   <div>Coder</div>
                   <a
                     class="link"
+                    tabindex="-1"
                     href="https://coder.larrychen.tech/temp"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
@@ -566,7 +599,8 @@
                   </a>
                 </section>
                 <section
-                  class="card border-active"
+                  class="card"
+                  tabindex="0"
                   data-tooltip
                   data-tippy-content="My Blog."
                   data-i18n-attr="data-tippy-content=APP.PORTFOLIO.BLOG"
@@ -581,6 +615,7 @@
                   <div>Blog</div>
                   <a
                     class="link"
+                    tabindex="-1"
                     href="https://blog.larrychen.tech/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
@@ -588,7 +623,8 @@
                   </a>
                 </section>
                 <section
-                  class="card border-active disabled"
+                  class="card disabled"
+                  tabindex="0"
                   data-tooltip
                   data-tippy-content="Work in progress."
                   data-i18n-attr="data-tippy-content=APP.WIP"
@@ -603,6 +639,7 @@
                   <div>Longmen</div>
                   <a
                     class="link"
+                    tabindex="-1"
                     href="https://longmen.larrychen.tech/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
@@ -610,7 +647,8 @@
                   </a>
                 </section>
                 <section
-                  class="card border-active disabled"
+                  class="card disabled"
+                  tabindex="0"
                   data-tooltip
                   data-tippy-content="Work in progress."
                   data-i18n-attr="data-tippy-content=APP.WIP"
@@ -627,6 +665,7 @@
                   <div>Stone</div>
                   <a
                     class="link"
+                    tabindex="-1"
                     href="https://mystone.netlify.app"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
@@ -634,7 +673,8 @@
                   </a>
                 </section>
                 <section
-                  class="card border-active disabled"
+                  class="card disabled"
+                  tabindex="0"
                   data-tooltip
                   data-tippy-content="Work in progress."
                   data-i18n-attr="data-tippy-content=APP.WIP"
@@ -649,6 +689,7 @@
                   <div>Dashboard</div>
                   <a
                     class="link"
+                    tabindex="-1"
                     href="https://mystone.netlify.app"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
@@ -656,7 +697,8 @@
                   </a>
                 </section>
                 <section
-                  class="card border-active disabled"
+                  class="card disabled"
+                  tabindex="0"
                   data-tooltip
                   data-tippy-content="Work in progress."
                   data-i18n-attr="data-tippy-content=APP.WIP"
@@ -671,6 +713,7 @@
                   <div>Resumes</div>
                   <a
                     class="link"
+                    tabindex="-1"
                     href="https://mystone.netlify.app"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
@@ -678,7 +721,8 @@
                   </a>
                 </section>
                 <section
-                  class="card border-active"
+                  class="card"
+                  tabindex="0"
                   data-tooltip
                   data-tippy-content="My Note."
                   data-i18n-attr="data-tippy-content=APP.PORTFOLIO.NOTE"
@@ -693,6 +737,7 @@
                   <div>Note</div>
                   <a
                     class="link"
+                    tabindex="-1"
                     href="https://note.larrychen.tech"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
@@ -700,7 +745,8 @@
                   </a>
                 </section>
                 <section
-                  class="card border-active"
+                  class="card"
+                  tabindex="0"
                   data-tooltip
                   data-tippy-content="Online sharing code editor."
                   data-i18n-attr="data-tippy-content=APP.PORTFOLIO.CODING"
@@ -717,6 +763,7 @@
                   <div>Coding</div>
                   <a
                     class="link"
+                    tabindex="-1"
                     href="https://coding.larrychen.tech"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
@@ -780,12 +827,12 @@
         <div class="corner-bars text-right">
           <button
             hidden
-            class="qrcode-handler border-active print-hidden"
+            class="qrcode-handler print-hidden"
             data-tooltip
             data-tippy-content="This site's QRCode"
             data-i18n-attr="data-tippy-content=APP.SITE_QRCODE"
           >
-            <svg class="border-active svgicon text-white" role="img" aria-label="QR Code">
+            <svg class="svgicon text-white" role="img" aria-label="QR Code">
               <title id="titleQRCode" lang="en">QR Code</title>
               <desc>QR Code</desc>
               <use xlink:href="./assets/images/base-sprites.svg#scan-qr-code"></use>
@@ -805,8 +852,14 @@
       class="fixed qrcode-dialog dialog-bg fade"
       data-animation="scale-in scale-out"
     >
-      <button aria-label="close" type="button" class="dialog-dismiss-trigger close-icon">
+      <button
+        tabindex="-1"
+        aria-label="close"
+        type="button"
+        class="dialog-dismiss-trigger close-icon"
+      >
         <svg
+          tabindex="0"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -850,7 +903,12 @@
       <div class="actions">
         <!-- <a aria-label="download" class="btn btn-primary download-btn mr-1" href data-i18n-id="APP.DOWNLOAD">Download QRCode</a> -->
         <button class="btn btn-primary mr-1">
-          <a aria-label="download" class="download-btn" href data-i18n-id="APP.DOWNLOAD"
+          <a
+            aria-label="download"
+            tabindex="-1"
+            class="download-btn"
+            href
+            data-i18n-id="APP.DOWNLOAD"
             >Download QRCode</a
           >
         </button>

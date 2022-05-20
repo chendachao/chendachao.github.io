@@ -40,6 +40,10 @@ a.btn:hover {
   transform: translateY(-1px);
 }
 
+a.link:active {
+  outline: var(--text-highlight) auto 1px;
+}
+
 .notify-badge {
   position: absolute;
   right: 0.5rem;

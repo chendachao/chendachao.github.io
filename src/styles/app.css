@@ -191,11 +191,6 @@ body {
   }
 }
 
-/* --- optional styling for placeholder images --- */
-img[data-src] {
-  background-color: var(--subtle);
-}
-
 .help-icon-menu-bar {
   padding-top: 10px;
   margin-right: 1rem;
@@ -359,8 +354,7 @@ img[data-src] {
   height: calc(5em + 4vw) !important;
   position: relative;
   transform-origin: bottom;
-
-  /* color: var(--color-brand); */
+  color: var(--color-brand);
   text-shadow: var(--brand-text-shadow);
   transition: transform ease-in-out 3s;
 }

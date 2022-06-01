@@ -12,6 +12,10 @@ import Theme from './components/theme';
 // Initial theme
 Theme();
 
+window.lazySizesConfig = {
+	addClasses: true
+};
+
 import i18n from './utils/i18n';
 i18n.init().then(() => {
   document.title = i18n.format({id: 'APP.HTML_TITLE'});

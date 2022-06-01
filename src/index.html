@@ -267,7 +267,8 @@
             tabindex="0"
             src="./assets/images/bases/star.svg"
             alt="Star"
-            style="width: 'calc(5em + 4vw)'; height: 'calc(5em + 4vw)'"
+            onerror="this.classList.add('error');"
+            style="width: calc(5em + 4vw); height: calc(5em + 4vw)"
             loading="lazy"
             data-tooltip
             data-tippy-content="落霞与孤鹜齐飞，秋水共长天一色。"
@@ -894,7 +895,7 @@
           <img
             src="./assets/images/chendachao.png"
             alt="<%= htmlWebpackPlugin.options.origin %>"
-            class="mobile-qrcode"
+            class="lazyload mobile-qrcode"
             height="320"
             width="320"
           />

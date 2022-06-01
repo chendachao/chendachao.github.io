@@ -127,3 +127,50 @@ details[open] > summary.custom-marker::before {
 }
 
 /* custom-marker end */
+
+/* style for lazyload resources */
+.lazyload {
+  opacity: 0.6;
+  filter: blur(50px);
+	transform: scale(0.8);
+}
+
+.lazyloaded {
+	opacity: 1;
+	transform: scale(1);
+	transition: all 600ms;
+}
+
+img.error {
+  display: inline-block;
+  transform: scale(1);
+  content: '';
+
+  /* color: transparent; */
+}
+
+img.error::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #dcd2d2 url("./../assets/images/bases/break.svg") no-repeat center / 50% 50%;
+
+  /* background: transparent url("./../assets/images/bases/break.svg") no-repeat center / 50% 50%; */
+}
+
+img.error::after {
+  content: ":(" " " attr(alt);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  line-height: 2;
+  background-color: var(--subtle);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

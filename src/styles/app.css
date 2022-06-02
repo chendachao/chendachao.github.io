@@ -360,7 +360,8 @@ body {
 }
 
 .brand-icon:hover {
-  animation: jump infinite 5s cubic-bezier(0.28, 0.84, 0.42, 1);
+  /* animation: jump infinite 5s cubic-bezier(0.28, 0.84, 0.42, 1); */
+  animation: jello-horizontal 0.9s both;
 }
 
 @media (prefers-reduced-motion) {
@@ -616,6 +617,12 @@ details.my-portfolio[open] summary + div {
 .container-grid > .card:focus,
 .container-grid > .card:hover {
   background: var(--color-card-bg);
+}
+
+.container-grid > .card:not(.disabled):active,
+.container-grid > .card:not(.disabled):focus,
+.container-grid > .card:not(.disabled):hover {
+  animation: heartbeat 1.17s ease-in-out infinite both;
 }
 
 .container-grid > .card > .link {

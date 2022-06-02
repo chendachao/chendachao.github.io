@@ -20,7 +20,7 @@ function showModal() {
   dialog.classList.add(showModalClass);
   setTimeout(() => {
     dialog.classList.remove(showModalClass);
-  }, 650);
+  }, 1300);
 }
 
 function closeModal(message) {

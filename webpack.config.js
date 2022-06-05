@@ -116,7 +116,8 @@ const commonConfig = merge([
                           www.google.com www.google.co.kr www.googletagmanager.com
                           www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com
                           wss://ws12.hotjar.com wss://ws16.hotjar.com cdn.jsdelivr.net hm.baidu.com;
-                  style-src 'self' 'unsafe-inline';
+                  frame-src 'self' vars.hotjar.com;
+                  style-src 'self' 'unsafe-inline' cdn.jsdelivr.net;
                   img-src 'self' data: platform-cdn.sharethis.com hm.baidu.com;
                   connect-src 'self' larrychen.tech chendachao.github.io chendachao.netlify.app
                               chendachao-github-io-chendachao.vercel.app l.sharethis.com *.ingest.sentry.io/

@@ -74,6 +74,7 @@
 - https://cssgradient.io/
 - https://coolors.co/gradient-maker/f8dadc-b6edc8-eeacdc
 - https://doodad.dev/gradient-generator/
+- https://webgradients.com/?ref=usniemvuilaptrinh
 - https://www.checkmycolours.com/
 - https://kazuhikoarase.github.io/qrcode-generator/js/demo/
 - https://iconmonstr.com/

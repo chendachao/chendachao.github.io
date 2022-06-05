@@ -619,9 +619,9 @@ details.my-portfolio[open] summary + div {
   background: var(--color-card-bg);
 }
 
-.container-grid > .card:not(.disabled):active,
-.container-grid > .card:not(.disabled):focus,
-.container-grid > .card:not(.disabled):hover {
+.container-grid > .card:not(.disabled):active .icon .svg,
+.container-grid > .card:not(.disabled):focus .icon .svg,
+.container-grid > .card:not(.disabled):hover .icon .svg {
   animation: heartbeat 1.17s ease-in-out infinite both;
 }
 

@@ -91,10 +91,10 @@ const displayQRCode = () => {
     errorCorrectionLevel: 'Q',
     quality: 1,
     version: 5, // 6
-    color: {
-      // dark: "#010599FF",
-      // light: "#f5f5f5"
-    },
+    // color: {
+    //   dark: "#010599FF",
+    //   light: "#ffffff9d"
+    // },
   })
     .then(cvs => {
       const imgDim = {
@@ -143,9 +143,9 @@ const displayQRCode = () => {
           imgDim.width,
           imgDim.height,
         );
-        img.src = cvs.toDataURL('image/png');
+        img.src = cvs.toDataURL('image/jpeg');
         downloadImgWrapper.href = img.src;
-        downloadImgWrapper.download = `${window.location.hostname}.png`;
+        downloadImgWrapper.download = `${window.location.hostname}.jpeg`;
       };
     })
     .catch(err => {
@@ -155,7 +155,7 @@ const displayQRCode = () => {
 
   var downloadBtn = document.querySelector('.download-btn');
   function download(imgData) {
-    downloadBtn.download = `${window.location.hostname}.png`;
+    downloadBtn.download = `${window.location.hostname}.jpeg`;
     downloadBtn.href = imgData;
   }
 

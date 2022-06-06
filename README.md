@@ -39,8 +39,8 @@
 - [SVG Sprit](https://svgsprit.es/) - has some issues, be caution with it.
 - [Hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
 - [Emoji](http://xahlee.info/comp/unicode_arrows.html)
-- [Open Emoji](https://openmoji.org/)　
-- [Word 2 Emoji](https://translate.yandex.com/?lang=en-emj&text=candies)　
+- [Open Emoji](https://openmoji.org/)
+- [Word 2 Emoji](https://translate.yandex.com/?lang=en-emj&text=candies)
 
 ## TODOs:
 - [x] JSON description for developer view
@@ -92,8 +92,12 @@
 - https://www.calligrapher.ai/
 - http://patorjk.com/text-color-fader/
 - https://getwaves.io/
+- https://www.shapedivider.app/?ref=usniemvuilaptrinh
+- https://www.blobmaker.app/?ref=usniemvuilaptrinh
+- https://ui.glass/generator/?ref=usniemvuilaptrinh
 - https://www.zachleat.com/web/vector-raster-split/
 - https://github.com/WICG/focus-visible
+- [Glassmorphism effect](https://ui.glass/generator)
 - [Log tracing](https://sentry.io/)
 - [Favicon checker and generator](https://realfavicongenerator.net/)
 - [PWA Builder](https://www.pwabuilder.com/)
@@ -109,6 +113,7 @@
 - [OPEN GRAPH CHECKER](https://smallseotools.com/open-graph/)
 - [The Open Graph protocol](https://ogp.me/)
 - https://xsgames.co/animatiss/
+- [Security Headers](https://securityheaders.com/?q=https%3A%2F%2Flarrychen.tech%2F&followRedirects=on)
 
 PS:
   - [JSON description](https://chendachao.netlify.app/assets/data/en/chendachao.json)

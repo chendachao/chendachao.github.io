@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.14.13](https://github.com/chendachao/chendachao.github.io/compare/v1.14.12...v1.14.13) (2022-06-06)
+
+
+### Features
+
+* a11ly focus ([560ddec](https://github.com/chendachao/chendachao.github.io/commit/560ddecc2bb45350d2fd457370caca780a94b765))
+* error img ([030592c](https://github.com/chendachao/chendachao.github.io/commit/030592c77a11030188e54eeb32adfabf7e04995f))
+* improve animations ([3cdeb3e](https://github.com/chendachao/chendachao.github.io/commit/3cdeb3e09baef1ec1eda05e7264df786cd6dbe5f))
+* move wechat tooltip tmeplate to standalone html ([ec08fc7](https://github.com/chendachao/chendachao.github.io/commit/ec08fc7d604f8baca7376b424c259d38b8a8dd5d))
+* top level await ([9ccd2ea](https://github.com/chendachao/chendachao.github.io/commit/9ccd2ea69332725f9dce669e5b0cb2eff0adada1))
+* webpack optimize ([717fb54](https://github.com/chendachao/chendachao.github.io/commit/717fb5492633f86298c9fd6b18d1c333d652ccc5))
+* webworker & top level await & scroll ([7e054bc](https://github.com/chendachao/chendachao.github.io/commit/7e054bc7a512d4f8311025c32df826b06e8818f3))
+* webworker & update CSP ([7250623](https://github.com/chendachao/chendachao.github.io/commit/72506239b973aba8da3aaf9edbbe80cc793b79fd))
+
+
+### Bug Fixes
+
+* csp ([f10ee81](https://github.com/chendachao/chendachao.github.io/commit/f10ee81a18ed2ba1f575cdb2cdba4ad7ae1adb88))
+* prerender ([d83e960](https://github.com/chendachao/chendachao.github.io/commit/d83e960ab549aeceb8e2723d613feaeaa1956ea7))
+
 ### [1.14.12](https://github.com/chendachao/chendachao.github.io/compare/v1.14.11...v1.14.12) (2022-05-04)
 
 ### [1.14.11](https://github.com/chendachao/chendachao.github.io/compare/v1.14.10...v1.14.11) (2022-05-03)

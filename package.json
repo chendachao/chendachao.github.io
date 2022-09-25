@@ -128,6 +128,7 @@
     "sw-offline-google-analytics": "0.0.25",
     "tippy.js": "6.3.7",
     "toastifier": "1.2.2",
+    "toastify-js": "^1.11.2",
     "toastr": "2.1.4"
   },
   "repository": {

@@ -7,7 +7,8 @@ if (process.env.APP_ENV !== 'development') {
   // import(/* webpackPrefetch: true */ './app/utils/bot-detection');
 }
 
-import notify from '@app/utils/notify';
+// import notify from '@app/utils/notify';
+import notify from '@app/utils/notify5';
 import i18n from '@app/utils/i18n';
 import { tryCatchPormise } from '@app/utils';
 // import(/* webpackPrefetch: true */'@app/pwa');
@@ -16,10 +17,24 @@ import('pwacompat');
 import 'normalize.css';
 import 'styles/index.css';
 import(/* webpackPreload: true */ 'styles/override.css');
+import { initFlashlight, removeFlashlight, moveFlashlight } from './app/utils/flashlight';
 
 import * as serviceWorker from '@app/pwa';
 
 const format = i18n.format;
+
+// Flashlight
+initFlashlight();
+function onPageload() {
+  document.body.addEventListener('mousemove', moveFlashlight);
+  document.addEventListener('keyup', (evt) => {
+    evt = evt || window.event;
+    if (evt.key === 'Escape') {
+      removeFlashlight();
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded', onPageload);
 
 serviceWorker.register({
   onRegister: registration => {
@@ -95,10 +110,14 @@ serviceWorker.register({
       showSystemNotification(notificationTitle, notificationBody2);
       // Show notification in browser
       notify.info(notificationBody, notificationTitle, {
-        timeOut: 0,
-        onclick: () => {
+        duration: -1,
+        onClick: () => {
           window.location.reload();
         },
+        // timeOut: 0,
+        // onclick: () => {
+        //   window.location.reload();
+        // },
       });
     };
 

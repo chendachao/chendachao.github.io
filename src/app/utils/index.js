@@ -218,7 +218,6 @@ export function createElementFromHTMLStr(htmlString) {
   const templateTag = isIE() ? 'div' : 'template';
   const template = document.createElement(templateTag);
   template.innerHTML = htmlString.trim();
-
   // Change this to div.childNodes to support multiple top-level nodes.
   return isIE() ? template.firstElementChild : template.content.firstChild;
 }

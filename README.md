@@ -33,6 +33,7 @@
 - [Image Squoosh](https://squoosh.app/)
 - [Smart PNG and JPEG compression](https://tinypng.com/)🏅
 - [微图](https://www.zachleat.com/web/vector-raster-split/)
+- [自动替换图像的背景](https://bgsub.cn/)
 - [SVG Compressor](https://jakearchibald.github.io/svgomg/)
 - [Convert Font to SVG](https://onlinefontconverter.com/)
 - [Pixel Perfect Icon Solutions && Custom Font](https://icomoon.io/)
@@ -64,6 +65,7 @@
 ## References
 - https://web.dev/tags/performance/
 - https://formito.com/tools/favicon
+- (Favicon Generator)[https://favicon.io/]
 - https://simpleicons.org/
 - https://www.cssscript.com/customizable-interactive-tooltips-pure-javascript-tippy-js/
 - https://codepen.io/Metty/pen/KrvLQx
@@ -114,12 +116,13 @@
 - [The Open Graph protocol](https://ogp.me/)
 - https://xsgames.co/animatiss/
 - [Security Headers](https://securityheaders.com/?q=https%3A%2F%2Flarrychen.tech%2F&followRedirects=on)
+- https://webcode.tools
+- [Image Maps](https://pictogon.com/?ref=usniemvuilaptrinh)
 
-PS:
-  - [JSON description](https://chendachao.netlify.app/assets/data/en/chendachao.json)
-  - [JSON description Local](http://localhost:8088/assets/data/en/chendachao.json)
-
-Push with `yarn deploy:patch` not ps
+> **Note**
+  > - [JSON description](https://chendachao.netlify.app/assets/data/en/chendachao.json)
+  > - [JSON description Local](http://localhost:8088/assets/data/en/chendachao.json)
+  > Push with `yarn deploy:patch` not ps
 
 ## Commit Message
 type must be one of [build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test] [type-enum]

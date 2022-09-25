@@ -2,7 +2,8 @@
 <html dir="ltr" lang="en" class="no-js">
   <head>
     <base href="." />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html;" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- <meta name="google-site-verification" content="xPlkjlkkj343iZyNYR1igMQUhsHogunEnOtD1k"> -->
     <meta
@@ -35,6 +36,9 @@
     <meta name="author" content="Larry Chen" />
     <meta name="description" content="Welcome my friend, click to know more about me 👉" />
     <meta name="keywords" content="Homepage,web,webpack,es6,html,css,animation" />
+    <meta name="copyright" content="Larry @2022" />
+    <meta name="robots" content="index, follow" />
+    <meta name="rating" content="safe for kids" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -43,7 +47,7 @@
     <!-- For Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:domain" content="<%= htmlWebpackPlugin.options.hostname %>" />
-    <meta name="twitter:site" content="<%= htmlWebpackPlugin.options.href %>" />
+    <meta name="twitter:site" content="@dachaochen" />
     <meta name="twitter:creator" content="Larry Chen" />
     <meta name="twitter:url" content="<%= htmlWebpackPlugin.options.href %>" />
     <meta name="twitter:title" content="Chen Dachao's Homepage." />
@@ -150,6 +154,7 @@
   </head>
 
   <body data-theme="light">
+    <div id="flashlight"></div>
     <header class="app-header">
       <section class="help-icon-menu-bar">
         <button hidden class="help-icon share-btn">
@@ -240,6 +245,7 @@
               height="60"
               width="60"
               loading="lazy"
+              decoding="async"
             />
           </div>
         </section>
@@ -319,7 +325,7 @@
             <div>
               <h3>Web Developer & Technology Architect</h3>
               <hr class='line-h'>
-              HTML(5)/CSS(3), <strong>Angular</strong>, React, NodeJS/Express, AWS/Serverless,
+              HTML(5)/CSS(3), <strong>React</strong>, Angular, NodeJS/Express, AWS/Serverless,
               <strong>Linux</strong>, Docker, Nginx, MongoDB
             </div>
           "
@@ -848,6 +854,16 @@
     <footer class="app-footer">
       <div class="version"><%= process.env.VERSION %></div>
       <div class="online-days"></div>
+      <div>
+        <span data-i18n-id="APP.FLASHLIGHT">Flashlight:</span>
+        <select id="flashlight_selection">
+          <option value="">Off</option>
+          <option value="grayscale">Grayscale</option>
+          <option value="white">Bright White</option>
+          <option value="soft-light">Soft Light</option>
+          <option value="invert">Invert</option>
+        </select>
+      </div>
     </footer>
 
     <dialog
@@ -855,35 +871,37 @@
       class="fixed qrcode-dialog dialog-bg fade"
       data-animation="appear-from-top disappear-from-top"
     >
-      <button
-        tabindex="-1"
-        aria-label="close"
-        type="button"
-        class="dialog-dismiss-trigger close-icon"
-      >
-        <svg
-          tabindex="0"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="feather feather-x"
-          role="img"
-          aria-label="Close"
-        >
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      <div>
-        <small data-i18n-id="APP.QRCODE_MOBILE_DESC">
-          Scan the QR Code to view this site on moblie ㊙️
-        </small>
+      <div class="dialog-title-container">
+        <h4 class="dialog-title" data-i18n-id="APP.QRCODE_MOBILE_DESC">
+          Scan the QR Code to view this site on moblie 🛸
+        </h4>
+        <div>
+          <button
+            tabindex="-1"
+            aria-label="close"
+            type="button"
+            class="dialog-dismiss-trigger close-icon"
+          >
+            <svg
+              tabindex="0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-x"
+              role="img"
+              aria-label="Close"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
       </div>
       <hr class="line-h" style="margin: 1rem 0 0.5rem" />
       <div class="text-center scan-overlay">
@@ -898,8 +916,6 @@
             src="./assets/images/chendachao.png"
             alt="<%= htmlWebpackPlugin.options.origin %>"
             class="lazyload mobile-qrcode"
-            height="320"
-            width="320"
           />
         </a>
       </div>

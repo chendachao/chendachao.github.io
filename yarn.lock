@@ -8392,6 +8392,11 @@ toastifier@1.2.2:
   resolved "https://registry.yarnpkg.com/toastifier/-/toastifier-1.2.2.tgz#4bf80c51fd5d5ea589e69850b493b37fbf9d743f"
   integrity sha512-LlUjH2zEIfWkChIiUZgzwKCIHt0zj62QkPsGuKF+aQeYgqimrESZXfPv5rBlG271wFlnfKYoGd0L6mwIwTO/yg==
 
+toastify-js@^1.11.2:
+  version "1.11.2"
+  resolved "https://registry.npmmirror.com/toastify-js/-/toastify-js-1.11.2.tgz#5c66cb05cee30b09e5bd8961ab809e41a3ce716c"
+  integrity sha512-bMBNKhZLPX/sDhpwM7KHIRUTtqCylQeoZDiEWy5zE7iDUJ92XmP8AKgDAp9rXx6pR5GXGFtQHHoH62toahbHgQ==
+
 toastr@2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/toastr/-/toastr-2.1.4.tgz#8b43be64fb9d0c414871446f2db8e8ca4e95f181"

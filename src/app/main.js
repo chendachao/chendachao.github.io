@@ -2,9 +2,10 @@ import 'lazysizes';
 // import a plugin
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 // import * as Sentry from '@sentry/browser';
-import notify from './utils/notify';
+// import notify from './utils/notify';
 // import notify3 from './utils/notify3';
-import notify4 from './utils/notify4';
+// import notify4 from './utils/notify4';
+import notify from './utils/notify5';
 import { isIE, setEscapedHTML, initAnalytics } from './utils';
 import { scrollToTop } from './utils/scroll';
 
@@ -121,12 +122,12 @@ if (isIE()) {
 
 // const test = document.querySelector('.test');
 // test.addEventListener('click', () => {
-//   notify.info(i18n.format({id: 'APP.NEW_VERSION_BODY'}), i18n.format({id: 'APP.NEW_VERSION_TITLE'}), {
-//     timeOut: 0,
-//     onclick: () => {
-//       window.location.reload();
-//     },
-//   });
+//   // notify.warning(i18n.format({id: 'APP.NEW_VERSION_BODY'}), i18n.format({id: 'APP.NEW_VERSION_TITLE'}), {
+//   //   timeOut: 0,
+//   //   onclick: () => {
+//   //     window.location.reload();
+//   //   },
+//   // });
 //   // notify3('test', {type: 'error'});
 //   // notify4.success('一条普通通知', '通知内容', {
 //   //   duration: 0,
@@ -134,6 +135,12 @@ if (isIE()) {
 //   //     window.location.reload();
 //   //   },
 //   // });
+//   notify.warning(i18n.format({id: 'APP.NEW_VERSION_BODY'}), i18n.format({id: 'APP.NEW_VERSION_TITLE'}), {
+//     // duration: -1,
+//     onClick: function(){
+//       window.location.reload();
+//     } // Callback after click
+//   });
 // });
 
 window.addEventListener('load', function () { // page is fully loaded
@@ -165,15 +172,18 @@ document.addEventListener('DOMContentLoaded', function () { // DOM fully loaded 
       let url = document.location.href;
       const canonicalElement = document.querySelector('link[rel=canonical]');
       if (canonicalElement !== null) {
-        url = canonicalElement.href;
+        url = canonicalElement.href; // location.href
       }
       navigator
         .share({
           title: 'Larry Chen\' Homepage',
           text: 'Welcome to visit Larry\'s homepage',
           url,
+          // files, // array of File objects representing files to be shared.
         })
-        .then(() => console.log('Successful share!'))
+        .then(() => {
+          notify.success('Successful shared!');
+        })
         .catch(error => console.log('Error sharing', error));
     });
   }
@@ -223,14 +233,16 @@ document.addEventListener('DOMContentLoaded', function () { // DOM fully loaded 
     var message = navigator.onLine ? '' : i18n.format({id: 'APP.OFFLINE'});
     if (message) {
       errorToasted = notify.error(message.toUpperCase(), '', {
-        timeOut: 0,
-        positionClass: 'toast-top-full-width',
+        duration: -1,
+        // timeOut: 0,
+        // positionClass: 'toast-top-full-width',
       });
     } else {
       if (errorToasted) {
         errorToasted.remove();
         notify.success(i18n.format({id: 'APP.ONLINE'}), '', {
-          timeOut: 800,
+          // timeOut: 800,
+          duration: 800,
         });
       }
     }
@@ -276,7 +288,7 @@ window.addEventListener('unhandledrejection', globalErrorHandler); // Capture pr
 // };
 
 // trigger
-// window.setInterval(function() {throw new Error('Test global error catch')}, 2000);
+// window.setInterval(function() {throw new Error('Test global error catch')}, 10000);
 
 // var width=300;
 // var height=200;
@@ -297,9 +309,12 @@ window.addEventListener('unhandledrejection', globalErrorHandler); // Capture pr
 // window.open(url,‘win_name’,s atts);
 
 // window.addEventListener('unload', () => {
+//   const endpoint = '/log';
 //   // Collect RUM data like before
 //   let rumData = new FormData();
-//   rumData.append('entries', JSON.stringify(performance.getEntries()));
+//   // rumData.append('entries', JSON.stringify(performance.getEntries()));
+//   const blob = new Blob([JSON.stringify(performance.getEntries())], { type: 'application/json; charset=UTF-8' });
+//   rumData.append('entries', blob, );
 //   // Check for sendBeacon support
 //   if ('sendBeacon' in navigator) {
 //     // Beacon requested
@@ -310,6 +325,15 @@ window.addEventListener('unhandledrejection', globalErrorHandler); // Capture pr
 //     }
 //   } else {
 //     console.log('sendBeacon not available! Use XHR or fetch instead');
+//     fetch(endpoint, {
+//       method: 'POST',
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       // body: JSON.stringify({some: "data"}),
+//       body: JSON.stringify(performance.getEntries()),
+//       keepalive: true
+//     });
 //   }
 // }, false);
 

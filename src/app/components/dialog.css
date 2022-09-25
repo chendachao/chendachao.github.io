@@ -18,19 +18,23 @@ only screen and (device-width: 767px) {
   }
 }
 
+.qrcode-dialog .dialog-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.qrcode-dialog .dialog-title {
+  flex-grow: 1;
+}
+
 .qrcode-dialog .close-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  /* transform: translateY(-100%); */
-
-  padding: 16px 8px;
   background: transparent;
   border: none;
   outline: none;
   font-weight: bold;
   color: gray;
+  height: 0;
+  margin-left: 5px;
 }
 
 .qrcode-dialog .close-icon:hover {

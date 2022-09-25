@@ -1,0 +1,29 @@
+
+.toastify {
+  display: flex;
+  max-width: calc(95vw);
+  width: fit-content;
+}
+
+.toastify.on {
+  opacity: .8;
+}
+
+.toastify:hover {
+  box-shadow: 0 0 12px #000;
+  opacity: 1;
+}
+
+.toastify .toast-close {
+  position: relative;
+  right: -0.3em;
+  top: -0.3em;
+  opacity: .8;
+}
+
+.toastify .toast-close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: .4;
+}

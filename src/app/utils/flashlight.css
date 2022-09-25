@@ -1,0 +1,29 @@
+#flashlight {
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+}
+
+#flashlight.grayscale {
+  background-color: gray;
+  mix-blend-mode: saturation;
+}
+
+#flashlight.white {
+  background-color: white;
+  mix-blend-mode: overlay;
+}
+
+#flashlight.soft-light {
+  background-color: white;
+  mix-blend-mode: soft-light;
+  filter: blur(20px);
+}
+
+#flashlight.invert {
+  background-color: white;
+  mix-blend-mode: difference;
+}

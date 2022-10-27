@@ -107,6 +107,7 @@
     "workbox-webpack-plugin": "6.5.3"
   },
   "dependencies": {
+    "@emotion/css": "^11.10.0",
     "@fpjs-incubator/botd-agent": "0.1.24",
     "@ppzp/noty": "0.0.4",
     "@sentry/browser": "6.19.7",
@@ -124,6 +125,7 @@
     "pwacompat": "2.0.17",
     "qrcode": "1.5.0",
     "regenerator-runtime": "0.13.9",
+    "smooth-signature": "^1.0.12",
     "svgxuse": "1.2.6",
     "sw-offline-google-analytics": "0.0.25",
     "tippy.js": "6.3.7",

@@ -398,6 +398,10 @@ body {
 
 .wechat-qrcode {
   width: calc(2em + 10vw);
+  height: auto;
+  /* aspect-ratio: 1 / 1;
+  width: 100%;
+  object-fit: contain; */
   cursor: pointer;
   will-change: transform;
   transition: transform 1.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -652,9 +656,9 @@ details.my-portfolio[open] summary + div {
 .mobile-qrcode {
   width: 100% !important;
   aspect-ratio: 1 / 1;
-
   /* object-fit: contain; */
   object-fit: cover;
+
   border-radius: 4px;
   box-shadow: 0 0 4px 0 var(--color-shadow2);
   will-change: transform;

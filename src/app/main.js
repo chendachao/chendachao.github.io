@@ -1,6 +1,7 @@
 import 'lazysizes';
 // import a plugin
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import { listen, prefetch } from 'quicklink';
 // import * as Sentry from '@sentry/browser';
 // import notify from './utils/notify';
 // import notify3 from './utils/notify3';
@@ -144,6 +145,7 @@ if (isIE()) {
 // });
 
 window.addEventListener('load', function () { // page is fully loaded
+  listen();
   setTimeout(() => {
     scrollToTop({smooth: true});
   });
@@ -259,7 +261,7 @@ document.addEventListener('DOMContentLoaded', function () { // DOM fully loaded 
 });
 
 const globalErrorHandler = event => {
-  var message = (event.error || event.message || event.reason.message).toString();
+  var message = (event.error && event.error.message || event.message || event.reason.message).toString();
   // if(event.error) {
   //   message = event.error.stack;
   // }

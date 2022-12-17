@@ -5,7 +5,7 @@ import './toastify.css';
 import { createElementFromHTMLStr } from '.';
 
 const defaultOptions = {
-  text: 'This is a toast',
+  text: 'Something wrong happened when you see this.',
   // avatar: './assets/images/icons/favicon.ico',
   // node: document.querySelector('.node'),
   // duration: -1,
@@ -38,13 +38,13 @@ const notify = {
   Toastify,
   custom: (message, title, overrides={}) => {
     const avatar = overrides.avatar;
-    const templateStr = getTemplateStr(message, title, avatar);
+    const node = overrides.node || createElementFromHTMLStr(getTemplateStr(message, title, avatar));
 
     return Toastify({
       ...defaultOptions,
       ...overrides,
       ...{
-        node: createElementFromHTMLStr(templateStr),
+        node,
         style: {
           background: 'linear-gradient(to right, #00b09b, #96c93d)',
           ...defaultOptions.style,
@@ -79,7 +79,8 @@ const notify = {
       node: createElementFromHTMLStr(templateStr),
       style: {
         ...defaultOptions.style,
-        background: '#F89406',
+        background: 'linear-gradient(to right, rgb(255, 95, 109), rgb(255, 195, 113))',
+        // background: '#F89406',
       }
     });
   },
@@ -94,7 +95,9 @@ const notify = {
       node: createElementFromHTMLStr(templateStr),
       style: {
         ...defaultOptions.style,
-        background: '#51A351',
+        // background: '#51A351',
+        // background: 'linear-gradient(to right, #00b09b, #96c93d)'
+        background: 'linear-gradient(to right, rgb(0, 176, 155), rgb(150, 201, 61))',
       }
     });
   },

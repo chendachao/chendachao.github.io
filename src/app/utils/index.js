@@ -81,7 +81,7 @@ export const getDefaultHTMLPolicy = () => {
   let defaultHTMLPolicy;
   /* global trustedTypes */
   if (window.trustedTypes && trustedTypes.createPolicy) { // Feature testing
-    defaultHTMLPolicy = trustedTypes.createPolicy('default', {
+    defaultHTMLPolicy = trustedTypes.createPolicy('sanitize', {
       createHTML: (string, sink) => DOMPurify.sanitize(string, {RETURN_TRUSTED_TYPE: true})
     });
   }
@@ -217,7 +217,11 @@ export const initAnalytics = () => {
 export function createElementFromHTMLStr(htmlString) {
   const templateTag = isIE() ? 'div' : 'template';
   const template = document.createElement(templateTag);
+  // if ('content' in document.createElement('template')) {
+  //   // `<template>` is supported.
+  // }
   template.innerHTML = htmlString.trim();
   // Change this to div.childNodes to support multiple top-level nodes.
-  return isIE() ? template.firstElementChild : template.content.firstChild;
+  // return isIE() ? template.firstElementChild : template.content.firstChild;
+  return isIE() ? template.firstElementChild : template.content.cloneNode(true).firstChild;
 }

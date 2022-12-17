@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const esbuild = require('esbuild');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const openBrowser = require('react-dev-utils/openBrowser');
@@ -84,6 +85,18 @@ exports.loadJavaScript = ({ include, exclude, options } = {}) => ({
             loader: 'babel-loader?cacheDirectory',
             options,
           },
+          // {
+          //   // wait fort top-level-await
+          //   // https://github.com/evanw/esbuild/issues/253
+          //   loader: 'esbuild-loader',
+          //   options: {
+          //     loader: 'jsx',  // Remove this if you're not using JSX
+          //     target: 'es2015',  // Syntax to compile to (see options below for possible values)
+          //     // implementation: esbuild,
+          //     // target: "esnext",
+          //     // module: 'esm'
+          //   }
+          // },
         ],
       },
     ],

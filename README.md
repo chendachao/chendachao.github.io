@@ -71,6 +71,7 @@
 - https://codepen.io/Metty/pen/KrvLQx
 - https://codepen.io/Stockin/pen/jeNQEN
 - https://www.flaticon.com/
+- https://icongo.github.io/
 - https://www.veryicon.com/
 - https://css.gg/app
 - https://cssgradient.io/

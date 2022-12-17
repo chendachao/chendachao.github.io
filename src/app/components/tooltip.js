@@ -20,6 +20,9 @@ import 'tippy.js/animations/perspective-extreme.css';
 // import 'tippy.js/animations/shift-toward-subtle.css';
 // import 'tippy.js/animations/shift-toward-extreme.css';
 
+import 'viewerjs/dist/viewer.css';
+import Viewer from 'viewerjs';
+
 import { isIE, isPC, setEscapedHTML, createElementFromHTMLStr } from '../utils';
 
 import i18n from '../utils/i18n';
@@ -54,7 +57,8 @@ function TooltipAndPopover() {
   // show the popup of wechat qrCode
   const template = createElementFromHTMLStr(wechatTemplateString);
   // const template = document.querySelector('#wechat-popup');
-  container.appendChild(template);
+  // container.appendChild(template);
+  container.append(template);
   // if (isIE()) {
   //   container.appendChild(template);
   // } else {
@@ -84,15 +88,23 @@ function TooltipAndPopover() {
     duration: [675, 1000],
     onShown: instance => {
       const content = instance.popper;
-      const qrCode = content.querySelector('.tippy-box');
-      qrCode.addEventListener('click', toggleScale, true);
+      // const qrCode = content.querySelector('.tippy-box');
+      // qrCode.addEventListener('click', toggleScale, true);
       i18n.renderElement(content);
+
+      const viewer = new Viewer(document.getElementById('wechat-qrcode'), {
+        // inline: true,
+        zIndex: 10000,
+        viewed() {
+          viewer.zoomTo(1);
+        },
+      });
     },
     onHide: instance => {
-      const content = instance.popper;
-      const qrCode = content.querySelector('.tippy-box');
-      qrCode.classList.remove('scale');
-      qrCode.removeEventListener('click', toggleScale, true);
+      // const content = instance.popper;
+      // const qrCode = content.querySelector('.tippy-box');
+      // qrCode.classList.remove('scale');
+      // qrCode.removeEventListener('click', toggleScale, true);
     },
   });
 }

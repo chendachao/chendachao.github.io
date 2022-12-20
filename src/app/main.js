@@ -7,7 +7,7 @@ import { listen, prefetch } from 'quicklink';
 // import notify3 from './utils/notify3';
 // import notify4 from './utils/notify4';
 import notify from './utils/notify5';
-import { isIE, setEscapedHTML, initAnalytics } from './utils';
+import { isPC, isIE, setEscapedHTML, initAnalytics } from './utils';
 import { scrollToTop } from './utils/scroll';
 
 import Theme from './components/theme';
@@ -149,6 +149,10 @@ window.addEventListener('load', function () { // page is fully loaded
   setTimeout(() => {
     scrollToTop({smooth: true});
   });
+  if (isPC()) {
+    const flashlightEle = document.querySelector('#flashlightContainer');
+    flashlightEle.removeAttribute('hidden');
+  }
 });
 document.addEventListener('DOMContentLoaded', function () { // DOM fully loaded and parsed
   // Click to open json file

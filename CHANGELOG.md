@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.15.0](https://github.com/chendachao/chendachao.github.io/compare/v1.14.13...v1.15.0) (2022-12-20)
+
+
+### Features
+
+* disable flashlight in mobile ([0b46d66](https://github.com/chendachao/chendachao.github.io/commit/0b46d66ea2a3258a15f7452d1d6a1dd6853ee991))
+* flashlight & i18n & notify ([e289dae](https://github.com/chendachao/chendachao.github.io/commit/e289daed6a9054dedb7338cb8ed3a856024dd445))
+* quicklink ([db29c50](https://github.com/chendachao/chendachao.github.io/commit/db29c5065728cc6a0e3f53ed9469e3460a5fde3c))
+
 ### [1.14.13](https://github.com/chendachao/chendachao.github.io/compare/v1.14.12...v1.14.13) (2022-06-06)
 
 

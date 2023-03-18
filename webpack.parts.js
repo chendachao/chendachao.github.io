@@ -199,7 +199,7 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
       // },
 
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg|avif|jxl)$/i,
         type: 'asset',
         // type: 'asset/resource',
         // generator: {

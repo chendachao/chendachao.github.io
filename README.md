@@ -36,6 +36,8 @@
 - [自动替换图像的背景](https://bgsub.cn/)
 - [SVG Compressor](https://jakearchibald.github.io/svgomg/)
 - [Convert Font to SVG](https://onlinefontconverter.com/)
+- [Media Convert](https://mconverter.eu/convert/jpg/jxl/)
+- [Convert images to AVIF](https://avif.io/)
 - [Pixel Perfect Icon Solutions && Custom Font](https://icomoon.io/)
 - [SVG Sprit](https://svgsprit.es/) - has some issues, be caution with it.
 - [Hotjar](https://insights.hotjar.com/sites/1939682/dashboard)
@@ -81,6 +83,9 @@
 - https://www.checkmycolours.com/
 - https://kazuhikoarase.github.io/qrcode-generator/js/demo/
 - https://iconmonstr.com/
+- https://feathericons.com/
+- https://tabler-icons.io/
+- https://www.iconbolt.com/
 - https://validator.nu/
 - https://obfuscator.io/
 - https://mailto.now.sh/
@@ -119,6 +124,7 @@
 - [Security Headers](https://securityheaders.com/?q=https%3A%2F%2Flarrychen.tech%2F&followRedirects=on)
 - https://webcode.tools
 - [Image Maps](https://pictogon.com/?ref=usniemvuilaptrinh)
+- https://www.revolvermaps.com/
 
 > **Note**
   > - [JSON description](https://chendachao.netlify.app/assets/data/en/chendachao.json)

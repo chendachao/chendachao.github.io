@@ -1,11 +1,15 @@
 <div class="wechat-qrcode-container text-center scan-overlay">
   <figure>
-    <img
-      class="wechat-qrcode lazyload"
-      src="./assets/images/wechat-qr-code.jpg"
-      alt="wechat: ProgrammerLarry"
-      id="wechat-qrcode"
-    />
+    <picture>
+      <source srcset="./assets/images/wechat-qr-code.avif" type="image/avif" />
+      <source srcset="./assets/images/wechat-qr-code.jxl" type="image/jxl" />
+      <img
+        class="wechat-qrcode lazyload"
+        src="./assets/images/wechat-qr-code.jpg"
+        alt="wechat: ProgrammerLarry"
+        id="wechat-qrcode"
+      />
+    </picture>
     <figcaption class="wechat-qrcode-desc" data-i18n-id="APP.QRCODE_DESC">
       Add me in WeChat
     </figcaption>

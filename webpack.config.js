@@ -112,12 +112,13 @@ const commonConfig = merge([
                   script-src 'self' 'unsafe-inline' 'unsafe-eval' data:
                           larrychen.tech instant.page platform-api.sharethis.com
                           count-server.sharethis.com buttons-config.sharethis.com
+                          rf.revolvermaps.com
                           www.google.com www.google.co.kr www.googletagmanager.com
                           www.google-analytics.com stats.g.doubleclick.net *.hotjar.com wss://ws1.hotjar.com
                           wss://ws12.hotjar.com wss://ws16.hotjar.com cdn.jsdelivr.net hm.baidu.com;
-                  frame-src 'self' vars.hotjar.com;
+                  frame-src 'self' vars.hotjar.com rf.revolvermaps.com;
                   style-src 'self' 'unsafe-inline' cdn.jsdelivr.net;
-                  img-src 'self' data: platform-cdn.sharethis.com hm.baidu.com;
+                  img-src 'self' data: platform-cdn.sharethis.com hm.baidu.com rf.revolvermaps.com;
                   connect-src 'self' larrychen.tech chendachao.github.io chendachao.netlify.app
                               chendachao-github-io-chendachao.vercel.app l.sharethis.com *.ingest.sentry.io/
                               extreme-ip-lookup.com http://ip-api.com/json botd.fpapi.io;
@@ -193,6 +194,7 @@ const commonConfig = merge([
         }
       }),
       new webpack.ProvidePlugin({
+        // Buffer: ['buffer', 'Buffer'],
         process: 'process/browser',
       }),
       new webpack.DefinePlugin({

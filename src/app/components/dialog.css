@@ -44,7 +44,7 @@ only screen and (device-width: 767px) {
 .qrcode-dialog .actions {
   margin-top: 0.5rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .dialog-bg::backdrop {

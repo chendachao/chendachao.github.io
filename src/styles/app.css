@@ -159,6 +159,10 @@ body {
   grid-column: span 1;
 
   /* width: clamp(100px, 50px, 200px); */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .app-content {
@@ -189,6 +193,15 @@ body {
   .right-side {
     grid-column: 1 / -1;
   }
+  .globe-container {
+    margin-left: auto;
+    margin-bottom: auto;
+  }
+}
+
+.globe-container {
+  margin-left: 1em;
+  margin-bottom: 3em;
 }
 
 .help-icon-menu-bar {
@@ -399,6 +412,7 @@ body {
 .wechat-qrcode {
   width: calc(2em + 10vw);
   height: auto;
+
   /* aspect-ratio: 1 / 1;
   width: 100%;
   object-fit: contain; */
@@ -656,9 +670,9 @@ details.my-portfolio[open] summary + div {
 .mobile-qrcode {
   width: 100% !important;
   aspect-ratio: 1 / 1;
+
   /* object-fit: contain; */
   object-fit: cover;
-
   border-radius: 4px;
   box-shadow: 0 0 4px 0 var(--color-shadow2);
   will-change: transform;

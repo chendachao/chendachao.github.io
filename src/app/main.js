@@ -154,7 +154,8 @@ window.addEventListener('load', function () { // page is fully loaded
     flashlightEle.removeAttribute('hidden');
   }
 });
-document.addEventListener('DOMContentLoaded', function () { // DOM fully loaded and parsed
+// document.addEventListener('DOMContentLoaded', function () { // DOM fully loaded and parsed
+window.addEventListener('load', function () {
   // Click to open json file
   const developerModeLink = document.querySelector('.developer-mode-link');
   developerModeLink.setAttribute('href', `./assets/data/${i18n.locale}/chendachao.json`);

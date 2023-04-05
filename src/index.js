@@ -15,6 +15,7 @@ import { tryCatchPormise } from '@app/utils';
 import(/* webpackPreload: true */ '@app/main');
 import('pwacompat');
 import 'normalize.css';
+import 'styles/app.css';
 import 'styles/index.css';
 import(/* webpackPreload: true */ 'styles/override.css');
 import { initFlashlight, removeFlashlight, moveFlashlight } from './app/utils/flashlight';

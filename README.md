@@ -69,6 +69,7 @@
 - https://formito.com/tools/favicon
 - (Favicon Generator)[https://favicon.io/]
 - https://simpleicons.org/
+- [Avatar maker](https://avatarmaker.com)
 - https://www.cssscript.com/customizable-interactive-tooltips-pure-javascript-tippy-js/
 - https://codepen.io/Metty/pen/KrvLQx
 - https://codepen.io/Stockin/pen/jeNQEN
@@ -84,6 +85,8 @@
 - https://kazuhikoarase.github.io/qrcode-generator/js/demo/
 - https://iconmonstr.com/
 - https://feathericons.com/
+- https://heroicons.com/
+- https://react-icons.github.io/react-icons
 - https://tabler-icons.io/
 - https://www.iconbolt.com/
 - https://validator.nu/
@@ -125,6 +128,7 @@
 - https://webcode.tools
 - [Image Maps](https://pictogon.com/?ref=usniemvuilaptrinh)
 - https://www.revolvermaps.com/
+- https://plausible.io/larrychen.tech
 
 > **Note**
   > - [JSON description](https://chendachao.netlify.app/assets/data/en/chendachao.json)

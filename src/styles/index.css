@@ -4,4 +4,5 @@
 @import 'print';
 @import 'common';
 @import 'comment';
-@import 'app';
+
+/* @import 'app'; */

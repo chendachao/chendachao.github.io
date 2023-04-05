@@ -41,6 +41,7 @@
     <meta name="rating" content="safe for kids" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <!-- <meta property="fb:app_id" content="234324443" /> -->
 
@@ -239,6 +240,7 @@
         <div></div>
         <div class="globe-container">
           <script
+            fetchpriority="low"
             type="text/javascript"
             src="//rf.revolvermaps.com/0/0/8.js?i=5nwz9giuftw&amp;m=8&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33"
             async="async"
@@ -626,11 +628,17 @@
                   data-i18n-attr="data-tippy-content=APP.PORTFOLIO.BLOG"
                 >
                   <div class="icon rounded loading">
-                    <svg class="svg icon-size-md svgicon" role="img" aria-label="Blog">
+                    <img
+                      class="svg icon-size-md svgicon"
+                      alt="Blog"
+                      role="img"
+                      src="./assets/images/bases/blog.svg"
+                    />
+                    <!-- <svg class="svg icon-size-md svgicon" role="img" aria-label="Blog">
                       <title id="titleBlog" lang="en">Blog</title>
                       <desc>Blog</desc>
                       <use xlink:href="./assets/images/portfolio-sprites.svg#rss"></use>
-                    </svg>
+                    </svg> -->
                   </div>
                   <div>Blog</div>
                   <a
@@ -979,6 +987,10 @@
       data-cf-beacon='{"token": "0f7d46082b154335a9f0ba8813cce248"}'
     ></script>
     <!-- End Cloudflare Web Analytics -->
+
+    <!-- Plausible Analytics -->
+    <script defer data-domain="larrychen.tech" src="https://plausible.io/js/script.js"></script>
+    <!-- End Plausible Analytics -->
 
     <!-- Google Analytics -->
     <!-- <link rel="preconnect" href="https://www.google-analytics.com" />

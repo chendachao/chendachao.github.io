@@ -122,6 +122,7 @@
     "intl-messageformat": "9.13.0",
     "intro.js": "3.0.1",
     "lazysizes": "5.3.2",
+    "medium-zoom": "^1.0.8",
     "normalize.css": "8.0.1",
     "pwacompat": "2.0.17",
     "qrcode": "1.5.0",

@@ -68,6 +68,7 @@
 - https://web.dev/tags/performance/
 - https://formito.com/tools/favicon
 - (Favicon Generator)[https://favicon.io/]
+- https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
 - https://simpleicons.org/
 - [Avatar maker](https://avatarmaker.com)
 - https://www.cssscript.com/customizable-interactive-tooltips-pure-javascript-tippy-js/
@@ -79,6 +80,10 @@
 - https://css.gg/app
 - https://cssgradient.io/
 - https://coolors.co/gradient-maker/f8dadc-b6edc8-eeacdc
+- https://gradientbuttons.colorion.co/#google_vignette
+- https://www.colorion.co/
+- https://flatui.colorion.co/
+- https://material.colorion.co/
 - https://doodad.dev/gradient-generator/
 - https://webgradients.com/?ref=usniemvuilaptrinh
 - https://www.checkmycolours.com/
@@ -123,6 +128,7 @@
 - [Preview and Generate Open Graph Meta Tags](https://www.opengraph.xyz/)
 - [OPEN GRAPH CHECKER](https://smallseotools.com/open-graph/)
 - [The Open Graph protocol](https://ogp.me/)
+- META SEO inspector
 - https://xsgames.co/animatiss/
 - [Security Headers](https://securityheaders.com/?q=https%3A%2F%2Flarrychen.tech%2F&followRedirects=on)
 - https://webcode.tools

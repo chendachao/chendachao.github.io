@@ -2,6 +2,7 @@ import 'lazysizes';
 // import a plugin
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import { listen, prefetch } from 'quicklink';
+import { Accessibility } from 'accessibility';
 // import * as Sentry from '@sentry/browser';
 // import notify from './utils/notify';
 // import notify3 from './utils/notify3';
@@ -153,7 +154,14 @@ window.addEventListener('load', function () { // page is fully loaded
     const flashlightEle = document.querySelector('#flashlightContainer');
     flashlightEle.removeAttribute('hidden');
   }
-});
+  var options = {
+    icon: {
+      position: { bottom: { size: 50, units: 'px' }, right: { size: 0, units: 'px' }, type: 'fixed' },
+    },
+  };
+
+  new Accessibility(options);
+}, false);
 // document.addEventListener('DOMContentLoaded', function () { // DOM fully loaded and parsed
 window.addEventListener('load', function () {
   // Click to open json file

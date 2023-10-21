@@ -644,11 +644,14 @@ details.my-portfolio[open] summary + div {
 }
 
 .container-grid > .card > .link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+}
+
+.container-grid > .card > .link:active {
+  color: var(--text-highlight);
 }
 
 .container-grid > .card.disabled > .link {

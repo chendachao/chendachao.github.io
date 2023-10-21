@@ -10,7 +10,7 @@
 
 .tippy-box .tippy-content {
   text-align: left;
-  
+
   /* letter-spacing: -0.1vw; */
 }
 
@@ -75,4 +75,9 @@
 /* @ppzp/noty */
 .ppz-noty-item1 .text {
   color: rgb(0 0 0);
+}
+
+._access-icon._access {
+  font-size: 30px !important;
+  right: 0 !important;
 }

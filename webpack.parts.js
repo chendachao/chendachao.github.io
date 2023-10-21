@@ -120,7 +120,7 @@ exports.extractCSS = ({ include, exclude, use = [] }) => {
   // Output extracted CSS to a file
   const plugin = new MiniCssExtractPlugin({
     filename: devMode ? '[name].css' : '[name].[contenthash].css', // long term caching
-    chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css',
+    chunkFilename: 'css/[name].[hash].css',
     ignoreOrder: true, // Enable to remove warnings about conflicting order
   });
 

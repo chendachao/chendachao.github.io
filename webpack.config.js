@@ -49,7 +49,7 @@ const commonConfig = merge([
     },
     output: {
       filename: '[name].[contenthash].bundle.js',
-      chunkFilename: '[name].[contenthash].chunk.js',
+      chunkFilename: 'scripts/[name].[contenthash].chunk.js',
       path: PATHS.build,
       publicPath: '',
       // ecmaVersion: 5 // work in webpack 5
@@ -78,16 +78,21 @@ const commonConfig = merge([
       runtimeChunk: 'single',
       // runtimeChunk: true,
       splitChunks: {
+        name: 'scripts/vendor',
         chunks: 'all',
         maxSize: 50000,
-        // cacheGroups: {
-        //   defaultVendors: {
-        //     test: /[\\/]node_modules[\\/]/,
-        //     name: 'vendors',
-        //     chunks: 'all',
-        //     enforce: true
-        //   },
-        // }
+        cacheGroups: {
+          defaultVendors: {
+            test: /[\\/]node_modules[\\/]/,
+            filename: '[name].bundle.js',
+          },
+          commons: {
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: 'vendor',
+            filename: '[name].bundle.js',
+            chunks: 'all',
+          },
+        },
       },
     },
     cache: {
@@ -286,6 +291,25 @@ const productionConfig = merge([
         }),
         new CssMinimizerPlugin(),
       ],
+      splitChunks: {
+        name: 'scripts/vendor',
+        chunks: 'all',
+        minChunks: 1,
+        cacheGroups: {
+          defaultVendors: {
+            test: /[\\/]node_modules[\\/]/,
+            filename: '[name].bundle.js',
+          },
+          commons: {
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: 'vendor',
+            filename: '[name].bundle.js',
+            chunks: 'all',
+          },
+        },
+      },
+      moduleIds: 'hashed',
+      runtimeChunk: 'single',
     },
     cache: {
       name: 'default-production',

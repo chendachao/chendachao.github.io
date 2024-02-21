@@ -115,7 +115,7 @@
     "@sentry/tracing": "6.19.7",
     "accessibility": "4.5.6",
     "alertifyjs": "1.13.1",
-    "axios": "0.26.0",
+    "axios": "0.28.0",
     "bowser": "2.11.0",
     "core-js": "3.22.4",
     "dialog-polyfill": "0.5.6",

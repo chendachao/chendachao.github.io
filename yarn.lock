@@ -1694,10 +1694,10 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.2.tgz#830beaec4b4091a9e9398ac50f865ddea52186b9"
   integrity sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA==
 
-"@ppzp/noty@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@ppzp/noty/-/noty-0.0.4.tgz#bb3002d5c7f69cf8ff93879dc3a56ef5e0067624"
-  integrity sha512-GYdY/vmB/aQPvY42NwIEMBi3Z1v/3J+S9GjGJoYY4ugNEB/2x2nJeC+X3MCriPd5a9dttoJ+8H8QLFsRC/DEyA==
+"@ppzp/noty@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.npmmirror.com/@ppzp/noty/-/noty-0.0.5.tgz#195bd2e1cf27a522a70c227eba093deaf8d504f3"
+  integrity sha512-auoLnATsFtdeBywXlHHJrcPhv4reSPuyXhOqExRc/8uxbSp+++b1VfoUDQwoCufQvdTtkRxjaDYFvgX6QJft/g==
 
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.0"
